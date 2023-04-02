@@ -1,0 +1,69 @@
+{
+    "centre":[ 
+        {"value": "WCTZ" , "label": "演示账套"},
+        {"value": "GLPT" , "label": "管理平台"},
+        {"value": "JXKEAO" , "label": "嘉兴KEM"},
+        {"value": "ZJCSDZ" , "label": "电子研发中心"},
+        {"value": "ZJKBDDZ" , "label": "电子制造中心"},
+        {"value": "ZJKBDJD" , "label": "机电中心"},
+        {"value": "ZJZBZX" , "label": "工程技术"},
+        {"value": "ADAS" , "label": "智能科技"},
+        {"value": "LAB" , "label": "实验中心"}
+    ],
+    "menu":[
+        {
+            "name": "home" ,
+            "meta": {"icon": "el-icon-s-platform", "name": "首页"}
+        },
+        {
+            "name": "base" ,
+            "children" : [
+                {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}}
+            ],
+            "meta": {"icon": "el-icon-s-management", "name": "基础档案"}
+        },
+        {
+            "name": "purchase" ,
+            "children" : [
+                {"name": "rva",  "meta": {"icon": "el-icon-tickets", "name": "收货单"}}
+            ],
+            "meta": {"icon": "el-icon-goods", "name": "采购管理"}
+        },
+        {
+            "name": "produce" ,
+            "children": [
+                {"name": "workOrder",  "meta": {"icon": "el-icon-tickets", "name": "工单查询"}},
+                {"name": "workOrderEdit",  "meta": {"icon": "el-icon-tickets", "name": "工单编辑"}}
+            ],
+            "meta": {"icon": "el-icon-position", "name": "生产管理"}
+        },
+        {
+            "name": "sale" ,
+            "children" : [],
+            "meta": {"icon": "el-icon-box", "name": "销售管理"}
+        },
+        {
+            "name": "stock" ,
+            "children" : [
+                {"name": "currStock",  "meta": {"icon": "el-icon-tickets", "name": "现存量查询"}}
+            ],
+            "meta": {"icon": "el-icon-s-home", "name": "库存管理"}
+        },
+        {
+            "name": "system" ,
+            "children" : [
+                {"name": "contacts",  "meta": {"icon": "el-icon-user-solid", "name": "人员档案"}}
+            ],
+            "meta": {"icon": "el-icon-s-tools", "name": "系统管理"}
+        },
+        {
+            "name": "chatgpt" ,
+            "meta": {"icon": "el-icon-chat-line-square", "name": "ChatGPT"}
+        }
+    ],
+    "contacts": [
+        {"centre": "ZJKBDDZ","name":" 尤安冰","phone": "8894","dep":"生产管理部","email":"anbing.you@keboda.com"},
+        {"centre": "ZJKBDDZ","name":" 周洁茹","phone": "6252","dep":"销售组","email":"jieru.zhou@keboda.com"},
+        {"centre": "ZJKBDJD","name":" 王丽娟","phone": "8646","dep":"生产管理部","email":"lijuan.wang@keboda.com"}
+    ]
+}
