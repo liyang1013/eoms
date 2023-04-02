@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.ImgFileMapper">
+
+    <update id="updateQty">
+        update ${centre}.img_file
+        set img10 = img10 + #{img10}, img11 = img11 + #{img10}
+        <where>
+            img01 = #{img01} and img02 = #{img02}
+            <if test="img03 != null">
+                and img03 = #{img03}
+            </if>
+            <if test="img04 != null">
+                and img04 = #{img04}
+            </if>
+        </where>
+    </update>
+</mapper>

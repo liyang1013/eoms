@@ -1,0 +1,31 @@
+#Tomcat
+server:
+  port: 8080
+# DataSource
+spring:
+  jackson:
+    date-format: "yyyy-MM-dd"
+    time-zone: "GMT+8"
+
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
+    username: wctz
+    password: wctz
+
+mybatis:
+  type-aliases-package: com.keboda.eomsback.*.pojo
+  mapper-locations: classpath:mapping/*/*Mapper.xml
+
+page helper:
+  helper-dialect: oracle
+  reasonable: true
+  support-methods-arguments: true
+
+
+logging:
+  level:
+    com.keboda.eomsback.* : DEBUG
+
+chatgpt:
+  api-key: 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

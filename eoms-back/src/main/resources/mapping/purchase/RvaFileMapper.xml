@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.RvaFileMapper">
+    <update id="alterRva">
+        update ${rvaplant}.rva_file
+        set rvaconf = #{rvaconf}
+        where rva01 = #{rva01}
+    </update>
+
+    <select id="searchRvaList" resultType="com.keboda.eomsback.purchase.pojo.RvaFile">
+        select rva01, rva02, pmc03, rvaconf, rva10, rva06, gen02,rvaud02,rvaud03,rva32,rvaud13,rvaud14,rvaplant
+        from ${centre}.rva_file
+        left join ${centre}.pmc_file on pmc01 = rva05
+        left join ${centre}.gen_file on gen01 = rva33
+        <where>
+            <if test="code_1 != null and code_1 !='' ">
+                and rva01 like '%${code_1}%'
+            </if>
+            <if test="code_2 != null and code_2 !='' ">
+                and rva02 like '%${code_2}%'
+            </if>
+            <if test="pmc != null and pmc !='' ">
+                and ( pmc01 like '%${pmc}%' or pmc03 like '%${pmc}%' )
+            </if>
+        </where>
+        order by rva06,rva01
+    </select>
+
+</mapper>

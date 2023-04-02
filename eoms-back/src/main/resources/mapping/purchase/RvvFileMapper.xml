@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.RvvFileMapper">
+  <update id="updateQty">
+    update ${centre}.rvv_file
+    set rvv17 = #{rvv17}, rvv87 = #{rvv17}, rvv39 = round(rvv38 * #{rvv17},2), rvv39t = round(rvv38t * #{rvv17},2)
+    where rvv01 = #{rvv01} and rvv02 = #{rvv02}
+  </update>
+
+  <select id="selectByRvb" resultType="com.keboda.eomsback.purchase.pojo.RvvFile">
+    select *
+    from ${centre}.rvv_file
+    where rvv04 = #{rvb01} and rvv05 = #{rvb02} and rvv03 = #{rvv03}
+  </select>
+</mapper>

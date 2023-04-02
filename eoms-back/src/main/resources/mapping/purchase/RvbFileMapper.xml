@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.RvbFileMapper">
+    <update id="updateQty">
+        update ${centre}.rvb_file
+        set rvb07 = #{rvb07},rvb09 = #{rvb30},rvb30 = #{rvb30},rvb33 = #{rvb30},rvb87 = #{rvb07},rvb88 = round( rvb10 * #{rvb07},2 ),rvb88t = round(rvb10t * #{rvb07},2)
+        where rvb01 = #{rvb01} and rvb02 = #{rvb02}
+    </update>
+
+    <select id="searchRvbList" resultType="com.keboda.eomsback.purchase.pojo.RvbFile">
+        select ima021,rvb01,rvb02,rvb05,rvb051,rvb90,rvb04,rvb03,rvb07,rvb10t,rvb88t,rvbplant,qty
+        from ${centre}.rvb_file
+        left join ${centre}.ima_file on ima01 = rvb05
+        left join (select sum(IQTY) qty,CDANHAO,CPRODUCENO from TC_WDF_FILE group by CDANHAO,CPRODUCENO) t on t.CDANHAO = rvb01 and CPRODUCENO = rvb05
+        where rvb01 = #{code_1}
+        order by rvb02
+    </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.purchase.pojo.RvbFile">
+        select *
+        from ${centre}.rvb_file
+        where rvb01 = #{rvb01} and rvb02 = #{rvb02}
+    </select>
+
+</mapper>

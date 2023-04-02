@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.common.mapper.SfbFileMapper">
+  <update id="updateDate">
+      update ${centre}.sfb_file
+      <set>
+          <if test="sfb.sfb81 != null and sfb.sfb81 &lt; ddate and flag ">
+              sfb81 = #{ddate},
+          </if>
+          <if test="sfb.sfb81 != null and sfb.sfb81 > ddate and !flag ">
+              sfb81 = #{ddate},
+          </if>
+          <if test="sfb.sfb13 != null and sfb.sfb13 &lt; ddate and flag">
+              sfb13 = #{ddate},
+          </if>
+          <if test="sfb.sfb13 != null and sfb.sfb13 > ddate and !flag">
+              sfb13 = #{ddate},
+          </if>
+          <if test="sfb.sfb15 != null and sfb.sfb15 &lt; ddate and flag">
+              sfb15 = #{ddate},
+          </if>
+          <if test="sfb.sfb15 != null and sfb.sfb15 > ddate and !flag">
+              sfb15 = #{ddate},
+          </if>
+          <if test="sfb.sfb25 != null and sfb.sfb25 &lt; ddate and flag">
+              sfb25 = #{ddate},
+          </if>
+          <if test="sfb.sfb25 != null and sfb.sfb25 > ddate and !flag">
+              sfb25 = #{ddate},
+          </if>
+          <if test="sfb.sfb36 != null and sfb.sfb36 &lt; ddate and flag">
+              sfb36 = #{ddate},
+          </if>
+          <if test="sfb.sfb36 != null and sfb.sfb36  > ddate and !flag">
+              sfb36 = #{ddate},
+          </if>
+          <if test="sfb.sfb38 != null and sfb.sfb38 &lt; ddate and flag">
+              sfb38 = #{ddate},
+          </if>
+          <if test="sfb.sfb38 != null and sfb.sfb38 > ddate and !flag">
+              sfb38 = #{ddate},
+          </if>
+      </set>
+      where sfb01 =#{sfb.sfb01}
+  </update>
+
+  <select id="sfb01Arr" resultType="com.keboda.eomsback.common.pojo.SfbFile">
+    select SFB01 ,IMA02
+    from ${centre}.SFB_FILE
+    left join ${centre}.IMA_FILE on sfb05 = ima01
+    where ROWNUM  <![CDATA[<]]> 51 and SFB01 like '%${queryStr}%'
+  </select>
+  <select id="selectDateByCode" resultType="com.keboda.eomsback.common.pojo.SfbFile">
+    select sfb01 , sfb04 ,sfb81 ,sfb13 ,sfb15, sfb25 ,sfb36 ,sfb38
+    from ${centre}.sfb_file
+    where sfb01 = #{sfb01}
+  </select>
+  <select id="sfbArr" resultType="com.keboda.eomsback.common.pojo.SfbFile">
+    select sfb01,sfb81,sfb05, ima02 ,sfb04,sfb98, gem02
+    from ${centre}.sfb_file
+    left join ${centre}.ima_file on ima01 = sfb05
+    left join ${centre}.gem_file on gem01 =sfb98
+    left join ${centre}.sfv_file on sfv11 =sfb01
+    left join ${centre}.sfs_file on sfs03 = sfb01
+    left join ${centre}.sfe_file on sfe01 = sfb01
+    <where>
+      <if test="sfb01 != null and sfb01 != ''">
+        and sfb01 like '%${sfb01}%'
+      </if>
+      <if test="startdate != null">
+        and sfb81 > to_date(#{startdate},'yyyy-mm-dd')
+      </if>
+      <if test="enddate != null">
+        and sfb81  <![CDATA[<]]> to_date(#{enddate},'yyyy-mm-dd')
+      </if>
+      <if test="sfb05 != null and sfb05 != ''">
+        and ( ima01 like '%${sfb05}%' or  ima02 like '%${sfb05}%' )
+      </if>
+      <if test="sfp01 != null and sfp01 != ''">
+        and nvl(sfs01, sfe02) like '%${sfp01}%'
+      </if>
+      <if test="sfu01 != null and sfu01 != ''">
+        and sfv01 like '%${sfu01}%'
+      </if>
+    </where>
+    group by sfb01,sfb81,sfb05, ima02 ,sfb04,sfb98, gem02
+  </select>
+</mapper>
