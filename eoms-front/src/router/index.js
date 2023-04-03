@@ -2,8 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '@/store'
 
-import Contacts from '@/views/system/ContactsView.vue'
-
 Vue.use(VueRouter)
 
 //重复点击报错
@@ -58,11 +56,11 @@ const routes = [
         name: 'rva',
         component: () => import('@/views/purchase/RvaView')
       },
-      // {
-      //   path: 'contacts',
-      //   name: 'contacts',
-      //   component: () => import("@/views/system/ContactsView")
-      // }
+      {
+        path: 'contacts',
+        name: 'contacts',
+        component: () => import("@/views/system/ContactsView")
+      }
     ]
   }
 ]
@@ -77,8 +75,7 @@ const router = new VueRouter({
  * 路由守护
  */
 router.beforeEach((to, from, next) => {
-  store.commit('SET_CURRENT_MENU', to.name);
-  if(to.name === '/') router.addRoute('/',{ path: '/contacts', name: 'contacts',component: Contacts })
+  store.commit('SET_CURRENT_MENU', to.name)
   next()
 })
 
