@@ -1,44 +1,20 @@
 <template>
-    <div :class="{ navCollapsed: isSidebarNavCollapse }">
-        <sidebarNav class="sidebar" />
-        <div class="main-container">
-            <TopAside />
-            <el-card class="box-card" shadow="always">
-                <router-view class="content"></router-view>
-            </el-card>
-            
-        </div>
-    </div>
+  <div >
+    <h1>HOME</h1>
+  </div>
 </template>
 
 <script>
 
 import sidebarNav from '@/components/sidebar-nav.vue'
 import TopAside from '@/components/main-content/top-aside'
-import { mapState } from 'vuex'
+import {mapState} from 'vuex'
 
 export default {
-    name: 'home',
-    data() {
-        return {}
-    },
-    computed: {
-        ...mapState(['isSidebarNavCollapse'])
-    },
-    components: {
-        sidebarNav,
-        TopAside
-    }
+  name: 'home',
 }
 </script>
 
 <style lang="scss" scoped>
 
-.main-container{
-    background-color: rgb(240 242 245);
-    .box-card{
-        padding: 0px;
-    }
-    
-}
 </style>
