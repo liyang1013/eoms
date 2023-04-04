@@ -10,8 +10,7 @@ export default new Vuex.Store({
     isSidebarNavCollapse: false,
     crumbList: [],
     sidebarMenu: configJson.menu,
-    currentMenu: 'home',
-    contacts: configJson.contacts
+    currentMenu: 'home'
   },
   getters: {
   },

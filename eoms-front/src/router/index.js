@@ -34,7 +34,7 @@ const routes = [
       {
         path: 'workOrder',
         name: 'workOrder',
-        component: () => import('@/views/ProduceView')
+        component: () => import('@/views/produce/ProduceView.vue')
       },
       {
         path: 'currStock',
@@ -44,12 +44,12 @@ const routes = [
       {
         path: 'workOrderEdit',
         name: 'workOrderEdit',
-        component: () => import('@/views/WorkOrderEditView')
+        component: () => import('@/views/produce/WorkOrderEditView.vue')
       },
       {
         path: 'chatgpt',
         name: 'chatgpt',
-        component: () => import('@/views/ChatGPTView')
+        component: () => import('@/views/lab/ChatGPTView.vue')
       },
       {
         path: 'rva',
@@ -60,6 +60,11 @@ const routes = [
         path: 'contacts',
         name: 'contacts',
         component: () => import("@/views/system/ContactsView")
+      },
+      {
+        path: 'operation',
+        name: 'operation',
+        component: () => import("@/views/system/OperationView")
       }
     ]
   }

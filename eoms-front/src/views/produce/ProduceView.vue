@@ -107,7 +107,7 @@
 </template>
 
 <script>
-import selectedCentre from '@/components/selected-centre'
+import selectedCentre from '@/components/selected-centre.vue'
 
 export default {
     name: 'ProduceView',

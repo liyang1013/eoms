@@ -76,38 +76,37 @@ public class SfbServiceImpl implements ISfbService {
 
             //工单日期修改
             if ((sfb.getSfb81() != null && sfb.getSfb81().compareTo(ddate) != 0)
-                    || (sfb.getSfb13() != null && sfb.getSfb13().compareTo(ddate) != 0)
-                    || (sfb.getSfb15() != null && sfb.getSfb15().compareTo(ddate) != 0)
-                    || (sfb.getSfb25() != null && sfb.getSfb25().compareTo(ddate) != 0)
-                    || (sfb.getSfb36() != null && sfb.getSfb36().compareTo(ddate) != 0)
-                    || (sfb.getSfb38() != null && sfb.getSfb38().compareTo(ddate) != 0)
+                    || (sfb.getSfb13() != null && (sfbModify.getFlag() ? sfb.getSfb13().compareTo(ddate) < 0 : sfb.getSfb13().compareTo(ddate) > 0))
+                    || (sfb.getSfb15() != null && (sfbModify.getFlag() ? sfb.getSfb15().compareTo(ddate) < 0 : sfb.getSfb15().compareTo(ddate) > 0))
+                    || (sfb.getSfb25() != null && (sfbModify.getFlag() ? sfb.getSfb25().compareTo(ddate) < 0 : sfb.getSfb25().compareTo(ddate) > 0))
+                    || (sfb.getSfb36() != null && (sfbModify.getFlag() ? sfb.getSfb36().compareTo(ddate) < 0 : sfb.getSfb36().compareTo(ddate) > 0))
+                    || (sfb.getSfb38() != null && (sfbModify.getFlag() ? sfb.getSfb38().compareTo(ddate) < 0 : sfb.getSfb38().compareTo(ddate) > 0))
             ) sfbFileMapper.updateDate(sfb, sfbModify.getCentre(), ddate, sfbModify.getFlag());
-
 
             //发料日期修改
             List<SfpFile> sfpArr = sfpFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
             if (sfpArr.size() > 0) {
                 for (SfpFile sfp : sfpArr) {
-                    if ((sfp.getSfp02() != null && sfp.getSfp02().compareTo(ddate) != 0)
-                            || (sfp.getSfp03() != null && sfp.getSfp03().compareTo(ddate) != 0)
+                    if ((sfp.getSfp02() != null && (sfbModify.getFlag() ? sfp.getSfp02().compareTo(ddate) < 0 : sfp.getSfp02().compareTo(ddate) > 0))
+                            || (sfp.getSfp03() != null && (sfbModify.getFlag() ?  sfp.getSfp03().compareTo(ddate) < 0 : sfp.getSfp03().compareTo(ddate) > 0))
                     ) {
                         sfpFileMapper.updateDate(sfp, sfbModify.getCentre(), ddate, sfbModify.getFlag());
                     }
                     //发料异动记录
-                    if (sfp.getTlf06() != null && sfp.getTlf06().compareTo(ddate) != 0) {
+                    System.out.println(sfp.getTlf06() != null);
+                    if (sfp.getTlf06() != null && ((sfbModify.getFlag() ? sfp.getTlf06().compareTo(ddate) < 0 : sfp.getTlf06().compareTo(ddate) > 0))) {
                         tlfFileMapper.updateDate(sfb.getSfb01(), sfp.getSfp01(), sfbModify.getCentre(), ddate);
                     }
                 }
             }
 
-
             //报工日期修改
             List<ShbFile> shbArr = shbFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
             if (shbArr.size() > 0) {
                 for (ShbFile shb : shbArr) {
-                    if ((shb.getShb02() != null && shb.getShb02().compareTo(ddate) != 0)
-                            || (shb.getShb03() != null && shb.getShb03().compareTo(ddate) != 0)
-                            || (shb.getShb32() != null && shb.getShb32().compareTo(ddate) != 0)
+                    if ((shb.getShb02() != null && (sfbModify.getFlag() ?  shb.getShb02().compareTo(ddate) < 0 : shb.getShb02().compareTo(ddate) > 0))
+                            || (shb.getShb03() != null && (sfbModify.getFlag() ? shb.getShb03().compareTo(ddate) < 0 : shb.getShb03().compareTo(ddate) > 0))
+                            || (shb.getShb32() != null && (sfbModify.getFlag() ? shb.getShb32().compareTo(ddate) < 0 : shb.getShb32().compareTo(ddate) > 0))
                     ) {
                         shbFileMapper.updateDate(shb, sfbModify.getCentre(), ddate, sfbModify.getFlag());
                     }
@@ -118,8 +117,8 @@ public class SfbServiceImpl implements ISfbService {
             List<QcfFile> qcfArr = qcfFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
             if (qcfArr.size() > 0) {
                 for (QcfFile qcf : qcfArr) {
-                    if ((qcf.getQcf04() != null && qcf.getQcf04().compareTo(ddate) != 0)
-                            || (qcf.getQcf15() != null && qcf.getQcf15().compareTo(ddate) != 0)
+                    if ((qcf.getQcf04() != null && (sfbModify.getFlag() ? qcf.getQcf04().compareTo(ddate) < 0 : qcf.getQcf04().compareTo(ddate) > 0))
+                            || (qcf.getQcf15() != null && (sfbModify.getFlag() ? qcf.getQcf15().compareTo(ddate) < 0 : qcf.getQcf15().compareTo(ddate) > 0))
                     ) {
                         qcfFileMapper.updateDate(qcf, sfbModify.getCentre(), ddate, sfbModify.getFlag());
                     }
@@ -130,15 +129,14 @@ public class SfbServiceImpl implements ISfbService {
             List<SfuFile> sfuArr = sfuFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
             if (sfuArr.size() > 0) {
                 for (SfuFile sfu : sfuArr) {
-                    if ((sfu.getSfu02() != null && sfu.getSfu02().compareTo(ddate) != 0)
-                            || (sfu.getSfu14() != null && sfu.getSfu14().compareTo(ddate) != 0)
+                    if ((sfu.getSfu02() != null && (sfbModify.getFlag() ? sfu.getSfu02().compareTo(ddate) < 0 : sfu.getSfu02().compareTo(ddate) > 0))
+                            || (sfu.getSfu14() != null && (sfbModify.getFlag() ? sfu.getSfu14().compareTo(ddate) < 0 : sfu.getSfu14().compareTo(ddate) > 0))
                     ) {
                         sfuFileMapper.updateDate(sfu, sfbModify.getCentre(), ddate, sfbModify.getFlag());
                     }
 
-
                     //入库异动记录
-                    if (sfu.getTlf06() != null && sfu.getTlf06().compareTo(ddate) != 0) {
+                    if (sfu.getTlf06() != null && (sfbModify.getFlag() ? sfu.getTlf06().compareTo(ddate) < 0 : sfu.getTlf06().compareTo(ddate) > 0)) {
                         tlfFileMapper.updateDate(sfu.getSfu01(), sfb.getSfb01(), sfbModify.getCentre(), ddate);
                     }
                 }

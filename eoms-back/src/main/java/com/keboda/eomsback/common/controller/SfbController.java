@@ -51,7 +51,7 @@ public class SfbController {
     @RequestMapping("/modifyDate")
     public BaseResult modifyDate(@RequestBody SfbModify sfbModify){
         try{iSfbService.modifyDate(sfbModify);}
-        catch (Exception e){return BaseResult.fail(e.getMessage());}
+        catch (Exception e){e.printStackTrace();return BaseResult.fail(e.getMessage());}
         return BaseResult.success("修改工单日期成功");
     }
 }
