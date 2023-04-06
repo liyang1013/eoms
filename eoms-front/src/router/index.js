@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/',
     name: '/',
-    component: () => import('@/views/index'),
+    component: () => import('@/views/IndexView'),
     children: [
       {
         path: 'home',
@@ -77,11 +77,23 @@ const router = new VueRouter({
 })
 
 /**
- * 路由守护
+ * 路由守护,没token就不允许进入
  */
 router.beforeEach((to, from, next) => {
+  if(to.name === '/login'){
+    if(localStorage.getItem('token')){
+      next({name: '/'})
+    }
+  }else {
+    if(!localStorage.getItem('token')){
+      next({name: '/login'})
+    }
+  }
+  next();
+})
+
+router.afterEach(to => {
   store.commit('SET_CURRENT_MENU', to.name)
-  next()
 })
 
 export default router

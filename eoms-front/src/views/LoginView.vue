@@ -18,18 +18,26 @@
 </template>
 
 <script>
+import store from "@/store";
+
 export default {
     name: 'login',
     data(){
         return{
             user: {
                 username: 'JX2302304',
-                password: ''
+                password: 'JX2302304'
             }
         }
     },
     methods: {
-        login(){}
+        login(){
+          this.$http.post('/api/user/login', this.user).then(res => {
+            localStorage.setItem('token',res.data.result.token);
+            this.$store.commit('SET_USERNAME',res.data.result.username)
+            this.$router.push('/');
+          })
+        }
     }
 
 }

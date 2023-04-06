@@ -12,7 +12,7 @@ const http = axios.create({
  */
 http.interceptors.request.use(
   (request) => {
-    request.headers.Token = 'token'
+    request.headers.Token = localStorage.getItem('token')
     return request
   },
 )
@@ -22,7 +22,7 @@ http.interceptors.request.use(
  */
 http.interceptors.response.use(
   response => {
-    if (response.data.status === 200 && response.data.message != '成功') {
+    if (response.data.status === 200 && response.data.message !== '成功') {
       Message.info(response.data.message);
     }
     else if (response.data.status === 500) {
