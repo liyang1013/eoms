@@ -18,7 +18,8 @@
         {
             "name": "base" ,
             "children" : [
-                {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}}
+                {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}},
+                {"name": "import",  "meta": {"icon": "el-icon-upload2", "name": "导入工具"}}
             ],
             "meta": {"icon": "el-icon-s-management", "name": "基础档案"}
         },

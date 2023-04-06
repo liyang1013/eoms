@@ -65,6 +65,11 @@ const routes = [
         path: 'operation',
         name: 'operation',
         component: () => import("@/views/system/OperationView")
+      },
+      {
+        path: 'import',
+        name: 'import',
+        component: () => import("@/views/base/ImportView")
       }
     ]
   }

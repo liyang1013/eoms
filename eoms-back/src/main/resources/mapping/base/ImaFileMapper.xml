@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.base.mapper.ImaFileMapper">
+    <update id="alterStockParameter">
+        update ${centre}.ima_file
+        set ima27 = #{ima27},imaud09 = #{imaud09},ima271 = #{ima271}
+        where ima01 = #{ima01}
+    </update>
 
     <select id="imgArr" resultType="com.keboda.eomsback.common.pojo.ImgFile">
         select img01,ima02,img02,img03,img04,imd02,img09,img10,img23

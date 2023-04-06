@@ -1,19 +1,24 @@
 package com.keboda.eomsback.base.controller;
 
+import cn.hutool.poi.excel.ExcelReader;
+import cn.hutool.poi.excel.ExcelUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.keboda.eomsback.base.mapper.ImaFileMapper;
 import com.keboda.eomsback.base.pojo.ImaFile;
 import com.keboda.eomsback.common.SearchVo;
 import com.keboda.eomsback.common.pojo.ImgFile;
 import com.keboda.eomsback.base.service.IImaService;
 import com.keboda.eomsback.common.BaseResult;
-import com.keboda.eomsback.purchase.pojo.RvaFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("/ima")
 @RestController
@@ -39,5 +44,10 @@ public class ImaController {
         return BaseResult.success(arr);
     }
 
-
+    @RequestMapping("/alterStockParameter")
+    public BaseResult alterStockParameter( MultipartFile file, String centre){
+        try{iImaService.alterStockParameter(file,centre);}
+        catch (Exception e){return BaseResult.fail(e.getMessage());}
+        return BaseResult.success("库存参数刷新成功");
+    }
 }
