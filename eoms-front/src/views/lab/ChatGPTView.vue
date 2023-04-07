@@ -39,15 +39,12 @@
 </template>
 
 <script>
-    // import tools from '../tools/functions.js'
-    // import storage from '../tools/localStorage.js'
-    // import xss from 'xss'
     export default {
       name: 'ChatApp',
         data() {
           return {
               window:window,
-              secret:"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",
+              secret:"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",
               message:"",
               originMessage:"",
               msgList:[],

@@ -27,5 +27,3 @@ logging:
   level:
     com.keboda.eomsback.* : DEBUG
 
-chatgpt:
-  api-key: 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

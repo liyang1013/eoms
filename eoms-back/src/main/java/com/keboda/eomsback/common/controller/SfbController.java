@@ -24,34 +24,27 @@ public class SfbController {
 
     @RequestMapping("/sfb01Arr")
     public BaseResult sfb01Arr(String queryStr,String centre){
-        List<SfbFile> asf01_arr;
-        try{asf01_arr = iSfbService.sfb01Arr(queryStr,centre); }
-        catch (Exception e) { return BaseResult.fail(e.getMessage()); }
+        List<SfbFile> asf01_arr = iSfbService.sfb01Arr(queryStr,centre);
         return BaseResult.success(asf01_arr);
     }
 
     @RequestMapping("/sfbProcess")
     public BaseResult sfbProcess(String sfb01,String centre){
-        SfbProcessVo sfbProcessVo;
-        try{sfbProcessVo = iSfbService.sfbProcess(sfb01,centre);}
-        catch (Exception e){return BaseResult.fail(e.getMessage());}
+        SfbProcessVo sfbProcessVo = iSfbService.sfbProcess(sfb01,centre);
         return BaseResult.success(sfbProcessVo);
     }
 
     @RequestMapping("/sfbArr")
     public BaseResult sfbArr(@RequestBody SfbSearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<SfbFile> sfbFilePage;
-        try{sfbFilePage = iSfbService.sfbArr(searchVo);}
-        catch (Exception e){return BaseResult.fail(e.getMessage());}
+        Page<SfbFile> sfbFilePage = iSfbService.sfbArr(searchVo);
         return BaseResult.success(sfbFilePage,sfbFilePage.getTotal());
 
     }
 
     @RequestMapping("/modifyDate")
     public BaseResult modifyDate(@RequestBody SfbModify sfbModify){
-        try{iSfbService.modifyDate(sfbModify);}
-        catch (Exception e){e.printStackTrace();return BaseResult.fail(e.getMessage());}
+        iSfbService.modifyDate(sfbModify);
         return BaseResult.success("修改工单日期成功");
     }
 }

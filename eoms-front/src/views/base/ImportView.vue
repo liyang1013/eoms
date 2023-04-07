@@ -2,25 +2,16 @@
   <div>
     <selected-centre v-model="centre" style="margin-bottom: 10px"></selected-centre>
     <el-alert type="success" class="tip_alert" :closable="false">
-      <el-upload
-          class="upload-demo"
-          drag
-          action="/api/ima/alterStockParameter"
-          :data="{'centre':centre}"
-          multiple>
-        <i class="el-icon-upload"></i>
-        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <div class="el-upload__tip" slot="tip" style="text-align: center;color:#67C23A;font-size: 15px ">
-          料件库存参数信息批量修改
-        </div>
-      </el-upload>
+     <el-card style="background-color: rgba(255,255,255,0);float: left;border:none" shadow="never">
+       <baseUpload url="/api/ima/alterStockParameter" title="料件库存参数信息批量修改" :centre="centre"></baseUpload>
+     </el-card>
     </el-alert>
   </div>
 </template>
 
 <script>
 import selectedCentre from '@/components/selected-centre';
-
+import baseUpload from "@/components/base-upload";
 export default {
   name: "import",
   data() {
@@ -28,8 +19,17 @@ export default {
       centre: 'WCTZ'
     }
   },
+  methods: {
+    upload_success(data) {
+      this.$message.success(data.message)
+    },
+    upload_err(data) {
+      this.$message.warning(data.message)
+    }
+  },
   components: {
-    selectedCentre
+    selectedCentre,
+    baseUpload
   }
 }
 </script>

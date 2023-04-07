@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -45,9 +46,8 @@ public class ImaController {
     }
 
     @RequestMapping("/alterStockParameter")
-    public BaseResult alterStockParameter( MultipartFile file, String centre){
-        try{iImaService.alterStockParameter(file,centre);}
-        catch (Exception e){return BaseResult.fail(e.getMessage());}
+    public BaseResult alterStockParameter( MultipartFile file, String centre) throws IOException {
+        iImaService.alterStockParameter(file,centre);
         return BaseResult.success("库存参数刷新成功");
     }
 }

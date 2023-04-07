@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.FileNotFoundException;
 import java.nio.file.OpenOption;
 import java.util.List;
 
@@ -19,10 +20,8 @@ public class OperationController {
     private IOperationService iOperationService;
 
     @RequestMapping("/searchOperation")
-    public BaseResult searchOperation(@RequestBody Operation operation){
-        List<Operation> list;
-        try{list = iOperationService.searchOperation(operation);}
-        catch (Exception e){return BaseResult.fail(e.getMessage());}
+    public BaseResult searchOperation(@RequestBody Operation operation) throws FileNotFoundException {
+        List<Operation> list = iOperationService.searchOperation(operation);
         return BaseResult.success(list);
     }
 }

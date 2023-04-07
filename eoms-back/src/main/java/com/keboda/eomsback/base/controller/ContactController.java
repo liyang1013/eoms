@@ -20,9 +20,7 @@ public class ContactController {
 
     @RequestMapping("/searchContact")
     public BaseResult searchContact(@RequestBody Contact contact){
-        List<Contact> list;
-        try{list = iContactService.searchContact(contact);}
-        catch (Exception e){return BaseResult.fail(e.getMessage());}
+        List<Contact> list = iContactService.searchContact(contact);
         return BaseResult.success(list);
     }
 
