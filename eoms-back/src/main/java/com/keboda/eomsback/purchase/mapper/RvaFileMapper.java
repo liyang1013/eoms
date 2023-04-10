@@ -9,4 +9,6 @@ public interface RvaFileMapper {
     Page<RvaFile> searchRvaList( SearchVo searchVo);
 
     void alterRva(RvaFile rvaFile);
+
+    RvaFile selectByKey(@Param("rva01") String rva01, @Param("centre") String centre);
 }

@@ -25,5 +25,10 @@
         </where>
         order by rva06,rva01
     </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.purchase.pojo.RvaFile">
+        select *
+        from ${centre}.rva_file
+        where rva01 = #{rva01}
+    </select>
 
 </mapper>

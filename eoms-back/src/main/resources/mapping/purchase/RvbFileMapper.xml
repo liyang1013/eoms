@@ -3,7 +3,7 @@
 <mapper namespace="com.keboda.eomsback.purchase.mapper.RvbFileMapper">
     <update id="updateQty">
         update ${centre}.rvb_file
-        set rvb07 = #{rvb07},rvb09 = #{rvb30},rvb30 = #{rvb30},rvb33 = #{rvb30},rvb87 = #{rvb07},rvb88 = round( rvb10 * #{rvb07},2 ),rvb88t = round(rvb10t * #{rvb07},2)
+        set rvb07 = #{rvb07},rvb33 = #{rvb07},rvb87 = #{rvb07},rvb88 = round( rvb10 * #{rvb07},2 ),rvb88t = round(rvb10t * #{rvb07},2)
         where rvb01 = #{rvb01} and rvb02 = #{rvb02}
     </update>
 

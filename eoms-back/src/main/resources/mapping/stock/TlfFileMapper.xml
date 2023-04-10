@@ -9,7 +9,7 @@
     </update>
     <update id="updateQty">
         update ${centre}.TLF_FILE
-        set tlf10 = tlf10 + #{tlf10}, tlf18 = tlf18 + #{tlf18},
+        set tlf10 = #{tlf10}, tlf18 = tlf18 + #{tlf18}
         where tlf026 = #{tlf026} and tlf027 = #{tlf027} and tlf036 = #{tlf036} and tlf037 = #{tlf037}
     </update>
 </mapper>
