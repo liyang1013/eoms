@@ -2,14 +2,13 @@ package com.keboda.eomsback.base.controller;
 
 import com.keboda.eomsback.base.pojo.Operation;
 import com.keboda.eomsback.base.service.IOperationService;
-import com.keboda.eomsback.common.BaseResult;
+import com.keboda.eomsback.base.pojo.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.FileNotFoundException;
-import java.nio.file.OpenOption;
 import java.util.List;
 
 @RestController

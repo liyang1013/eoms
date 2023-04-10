@@ -15,4 +15,16 @@
             </if>
         </where>
     </update>
+    <select id="searchImgList" resultType="com.keboda.eomsback.stock.pojo.ImgFile">
+        select img01,ima02,img02,img03,img04,imd02,img09,img10,img23
+        from ${centre}.img_file
+                 left join ${centre}.imd_file on img02 = imd01
+                 left join ${centre}.ima_file on ima01 = img01
+        <where>
+            <if test="code_1 != null and code_1 != '' " >
+                and ( img01 like '%${code_1}%' or ima02 like '%${code_1}%' )
+            </if>
+        </where>
+        order by img01,img02
+    </select>
 </mapper>

@@ -172,7 +172,6 @@ public class RvbFile extends RvbFileKey implements Serializable {
      */
     private String ima021;
 
-    private BigDecimal qty;
 
     private static final long serialVersionUID = 1L;
 }

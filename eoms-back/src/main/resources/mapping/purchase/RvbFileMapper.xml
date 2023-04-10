@@ -8,10 +8,9 @@
     </update>
 
     <select id="searchRvbList" resultType="com.keboda.eomsback.purchase.pojo.RvbFile">
-        select ima021,rvb01,rvb02,rvb05,rvb051,rvb90,rvb04,rvb03,rvb07,rvb10t,rvb88t,rvbplant,qty
+        select ima021,rvb01,rvb02,rvb05,rvb051,rvb90,rvb04,rvb03,rvb07,rvb10t,rvb88t,rvbplant,rvb30
         from ${centre}.rvb_file
         left join ${centre}.ima_file on ima01 = rvb05
-        left join (select sum(IQTY) qty,CDANHAO,CPRODUCENO from TC_WDF_FILE group by CDANHAO,CPRODUCENO) t on t.CDANHAO = rvb01 and CPRODUCENO = rvb05
         where rvb01 = #{code_1}
         order by rvb02
     </select>

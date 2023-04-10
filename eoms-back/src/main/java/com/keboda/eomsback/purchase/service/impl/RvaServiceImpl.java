@@ -1,7 +1,7 @@
 package com.keboda.eomsback.purchase.service.impl;
 
 import com.github.pagehelper.Page;
-import com.keboda.eomsback.common.SearchVo;
+import com.keboda.eomsback.base.pojo.SearchVo;
 import com.keboda.eomsback.purchase.mapper.*;
 import com.keboda.eomsback.purchase.pojo.*;
 import com.keboda.eomsback.purchase.service.IRvaService;
@@ -12,10 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.beans.Transient;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
-
-import static java.math.BigDecimal.ROUND_HALF_UP;
 
 @Service
 public class RvaServiceImpl implements IRvaService {

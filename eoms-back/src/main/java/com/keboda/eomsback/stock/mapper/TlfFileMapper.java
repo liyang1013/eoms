@@ -1,6 +1,5 @@
 package com.keboda.eomsback.stock.mapper;
 
-import com.keboda.eomsback.common.pojo.TlfFile;
 import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;

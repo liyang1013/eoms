@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.produce.mapper.SfpFileMapper">
+    <update id="updateDate">
+        update ${centre}.sfp_file
+        <set>
+            <if test="sfp.sfp02 != null and sfp.sfp02 &lt; ddate and flag">
+                sfp02 = #{ddate},
+            </if>
+            <if test="sfp.sfp02 != null and sfp.sfp02 > ddate and !flag">
+                sfp02 = #{ddate},
+            </if>
+            <if test="sfp.sfp03 != null and sfp.sfp03 &lt; ddate and flag">
+                sfp03 = #{ddate},
+            </if>
+            <if test="sfp.sfp03 != null and sfp.sfp03 > ddate and !flag">
+                sfp03 = #{ddate},
+            </if>
+        </set>
+        where sfp01 =#{sfp.sfp01}
+    </update>
+
+    <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.SfpFile">
+      select sfp01 , sfp02 ,  sfp03 , tlf06
+      from ${centre}.sfp_file
+      left join ${centre}.SFS_FILE on sfp01 = sfs01
+      left join ${centre}.Sfe_file on sfe02 = sfp01
+      left join ${centre}.tlf_file on tlf036 = nvl(sfe01,sfs03) and tlf026 = sfp01 and tlf01 = nvl(sfe07,sfs04)
+      where sfe01 =  #{sfb01} or sfs03 = #{sfb01}
+      group by sfp01,sfp02,sfp03,tlf06
+      order by sfp02
+    </select>
+</mapper>

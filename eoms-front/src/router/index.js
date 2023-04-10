@@ -29,7 +29,7 @@ const routes = [
       {
         path: 'ima',
         name: 'ima',
-        component: () => import('@/views/base/ImaView')
+        component: () => import('@/views/stock/ImaView.vue')
       },
       {
         path: 'workOrder',
@@ -59,12 +59,12 @@ const routes = [
       {
         path: 'contacts',
         name: 'contacts',
-        component: () => import("@/views/system/ContactsView")
+        component: () => import("@/views/base/ContactsView.vue")
       },
       {
         path: 'operation',
         name: 'operation',
-        component: () => import("@/views/system/OperationView")
+        component: () => import("@/views/base/OperationView.vue")
       },
       {
         path: 'import',

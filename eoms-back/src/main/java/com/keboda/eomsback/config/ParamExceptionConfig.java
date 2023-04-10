@@ -1,7 +1,7 @@
 package com.keboda.eomsback.config;
 
 
-import com.keboda.eomsback.common.BaseResult;
+import com.keboda.eomsback.base.pojo.BaseResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

@@ -18,8 +18,8 @@
         {
             "name": "base" ,
             "children" : [
-                {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}},
-                {"name": "import",  "meta": {"icon": "el-icon-upload2", "name": "导入工具"}}
+                {"name": "contacts",  "meta": {"icon": "el-icon-user-solid", "name": "人员档案"}},
+                {"name": "operation",  "meta": {"icon": "el-icon-tickets", "name": "作业档案"}}
             ],
             "meta": {"icon": "el-icon-s-management", "name": "基础档案"}
         },
@@ -33,8 +33,8 @@
         {
             "name": "produce" ,
             "children": [
-                {"name": "workOrder",  "meta": {"icon": "el-icon-tickets", "name": "工单查询"}},
-                {"name": "workOrderEdit",  "meta": {"icon": "el-icon-tickets", "name": "工单编辑"}}
+                {"name": "workOrder",  "meta": {"icon": "el-icon-tickets", "name": "工单日期查询"}},
+                {"name": "workOrderEdit",  "meta": {"icon": "el-icon-tickets", "name": "工单"}}
             ],
             "meta": {"icon": "el-icon-position", "name": "生产管理"}
         },
@@ -46,6 +46,7 @@
         {
             "name": "stock" ,
             "children" : [
+                {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}},
                 {"name": "currStock",  "meta": {"icon": "el-icon-tickets", "name": "现存量查询"}}
             ],
             "meta": {"icon": "el-icon-s-home", "name": "库存管理"}
@@ -53,8 +54,7 @@
         {
             "name": "system" ,
             "children" : [
-                {"name": "contacts",  "meta": {"icon": "el-icon-user-solid", "name": "人员档案"}},
-                {"name": "operation",  "meta": {"icon": "el-icon-tickets", "name": "作业档案"}}
+                {"name": "import",  "meta": {"icon": "el-icon-upload2", "name": "数据导入"}}
             ],
             "meta": {"icon": "el-icon-s-tools", "name": "系统管理"}
         },

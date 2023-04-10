@@ -1,42 +1,42 @@
 <template>
-  <el-container class="img-container">
-    <el-header class="img-header">
-      <el-autocomplete placeholder="请输入物料编号" v-model="ima01" :fetch-suggestions="querySearchAsync"
-                       @select="handleSelect">
-        <template slot-scope="{ item }">
-          <span style="float: left">{{ item.ima01 }}</span>
-          <span style="float: right; color: #8492a6; font-size: 13px">{{ item.ima02 }}</span>
-        </template>
-        <selectedCentre v-model="centre" slot="prepend" class="centre_select">
-
-        </selectedCentre>
-        <el-button slot="append" icon="el-icon-search" @click="search">搜索</el-button>
-      </el-autocomplete>
-    </el-header>
-    <el-main class="img-main">
-      <el-table :data="img" size="mini" stripe border :header-cell-style="{ 'text-align': 'center' }"
-                :cell-style="{ 'text-align': 'center' }" max-height="550px">
-        <el-table-column prop="img01" label="物料编码">
-        </el-table-column>
-        <el-table-column prop="ima02" label="物料">
-        </el-table-column>
-        <el-table-column prop="img02" label="仓库编码">
-        </el-table-column>
-        <el-table-column prop="imd02" label="仓库">
-        </el-table-column>
-        <el-table-column prop="img23" label="是否可用">
-        </el-table-column>
-        <el-table-column prop="img10" label="库存数量">
-        </el-table-column>
-        <el-table-column prop="img09" label="库存单位">
-        </el-table-column>
-        <el-table-column prop="img03" label="储位">
-        </el-table-column>
-        <el-table-column prop="img04" label="批号">
-        </el-table-column>
-      </el-table>
-    </el-main>
-  </el-container>
+  <div>
+    <el-form :inline="true" :model="img" class="demo-form-inline" size="mini">
+      <el-form-item label="中心:">
+        <selectedCentre v-model="img.centre"></selectedCentre>
+      </el-form-item>
+      <el-form-item label="料件:">
+        <el-input v-model="img.code_1" placeholder="料件编码/名称"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
+    </el-form>
+    <el-table :data="imgList" stripe border max-height="450px" v-loading="table_loading"
+              element-loading-spinner="el-icon-loading">
+      <el-table-column prop="img01" label="物料编码">
+      </el-table-column>
+      <el-table-column prop="ima02" label="物料">
+      </el-table-column>
+      <el-table-column prop="img02" label="仓库编码">
+      </el-table-column>
+      <el-table-column prop="imd02" label="仓库">
+      </el-table-column>
+      <el-table-column prop="img23" label="是否可用">
+      </el-table-column>
+      <el-table-column prop="img10" label="库存数量">
+      </el-table-column>
+      <el-table-column prop="img09" label="库存单位">
+      </el-table-column>
+      <el-table-column prop="img03" label="储位">
+      </el-table-column>
+      <el-table-column prop="img04" label="批号">
+      </el-table-column>
+    </el-table>
+    <el-pagination background layout="total, sizes, prev, pager, next" :total="img.total" style=" margin-top: 10px;"
+                   @current-change="handleCurrentChange" @size-change="handleSizeChange" :page-sizes="img.sizes"
+                   :current-page.sync="img.currentPage" :page-size="img.size">
+    </el-pagination>
+  </div>
 </template>
 
 <script>
@@ -47,29 +47,38 @@ export default {
   name: 'StockView',
   data() {
     return {
-      ima01: '',
-      centre: 'WCTZ',
-      img: []
+      img: {
+        code_1: null,
+        centre: 'WCTZ',
+        currentPage: 1,
+        sizes: [20, 50, 100, 500],
+        size: 20,
+        total: 0
+      },
+      imgList: [],
+      table_loading: false
     }
   },
   components: {
     selectedCentre
   },
   methods: {
-    search() {
-
-      this.$http.get('/api/ima/imgArr?ima01=' + this.ima01 + '&centre=' + this.centre)
-          .then(res => this.img = res.data.status === 200 ? res.data.result : [])
-
+    search(val) {
+      this.img.currentPage = val;
+      this.table_loading = true;
+      this.$http.post('/api/img/searchImgList', this.img)
+          .then(res => {this.imgList = res.data.result; this.img.total = res.data.total;}).finally(() => this.table_loading = false)
     },
     handleSelect(val) {
       this.ima01 = val.ima01;
       this.search();
     },
-    querySearchAsync(queryStr, cb) {
-      if (queryStr.trim()) {
-        this.$http.get('/api/ima/imaArr?queryStr=' + queryStr + '&centre=' + this.centre).then(res => cb(res.data.result))
-      }
+    handleCurrentChange(val) {
+      this.search(val);
+    },
+    handleSizeChange(val) {
+      this.img.size = val;
+      this.search(1);
     },
   }
 

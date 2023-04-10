@@ -1,7 +1,7 @@
 package com.keboda.eomsback.purchase.service;
 
 import com.github.pagehelper.Page;
-import com.keboda.eomsback.common.SearchVo;
+import com.keboda.eomsback.base.pojo.SearchVo;
 import com.keboda.eomsback.purchase.pojo.RvaFile;
 import com.keboda.eomsback.purchase.pojo.RvbFile;
 

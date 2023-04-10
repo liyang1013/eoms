@@ -39,7 +39,7 @@ export default {
   background-color: rgb(240 242 245);
 
   .box-card {
-    padding: 0px;
+    padding: 0;
   }
 
 }

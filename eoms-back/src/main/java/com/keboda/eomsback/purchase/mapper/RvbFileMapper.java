@@ -1,8 +1,7 @@
 package com.keboda.eomsback.purchase.mapper;
 
-import com.keboda.eomsback.common.SearchVo;
+import com.keboda.eomsback.base.pojo.SearchVo;
 import com.keboda.eomsback.purchase.pojo.RvbFile;
-import com.keboda.eomsback.purchase.pojo.RvbFileKey;
 import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
