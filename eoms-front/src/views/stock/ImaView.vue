@@ -5,7 +5,7 @@
         <selectedCentre v-model="ima.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:">
-        <el-input v-model="ima.code_1" placeholder="料件编码/名称"></el-input>
+        <el-input v-model="ima.code_1" placeholder="料件编码/名称" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -69,7 +69,7 @@ export default {
     }
   },
   components: {
-    selectedCentre
+    selectedCentre,
   },
   methods: {
     search(val) {

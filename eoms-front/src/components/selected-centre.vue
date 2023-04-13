@@ -1,6 +1,6 @@
 <!-- 通用中心下拉框组件 -->
 <template>
-  <el-select v-model="tempval" @change="$emit('change', $event)" placeholder="选择中心">
+  <el-select v-model="tempval" @change="$emit('change', $event)" placeholder="选择中心" clearable >
     <el-option v-for="item in centres" :key="item.value" :label="item.label" :value="item.value">
       <span style="float: left">{{ item.label }}</span>
       <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>

@@ -1,10 +1,9 @@
 package com.keboda.eomsback.produce.service.impl;
 
 import com.github.pagehelper.Page;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
 import com.keboda.eomsback.produce.pojo.vo.SfbProcessVo;
-import com.keboda.eomsback.produce.pojo.vo.SfbSearchVo;
 import com.keboda.eomsback.produce.service.ISfbService;
 import com.keboda.eomsback.produce.mapper.*;
 import com.keboda.eomsback.produce.pojo.*;

@@ -2,13 +2,12 @@ package com.keboda.eomsback.produce.controller;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
 import com.keboda.eomsback.produce.pojo.vo.SfbProcessVo;
-import com.keboda.eomsback.produce.pojo.vo.SfbSearchVo;
 import com.keboda.eomsback.produce.service.ISfbService;
-import com.keboda.eomsback.base.pojo.BaseResult;
+import com.keboda.eomsback.entity.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

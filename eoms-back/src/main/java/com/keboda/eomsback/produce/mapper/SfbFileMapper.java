@@ -1,9 +1,8 @@
 package com.keboda.eomsback.produce.mapper;
 
 import com.github.pagehelper.Page;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.SfbFile;
-import com.keboda.eomsback.produce.pojo.vo.SfbSearchVo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;

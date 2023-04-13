@@ -6,12 +6,21 @@ spring:
   jackson:
     date-format: "yyyy-MM-dd"
     time-zone: "GMT+8"
-
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
-    username: wctz
-    password: wctz
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          driver-class-name: oracle.jdbc.driver.OracleDriver
+          url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
+          username: wctz
+          password: wctz
+        slave:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/eoms?characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
 
 mybatis:
   type-aliases-package: com.keboda.eomsback.*.pojo

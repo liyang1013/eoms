@@ -2,11 +2,11 @@ package com.keboda.eomsback.purchase.controller;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.purchase.pojo.RvaFile;
 import com.keboda.eomsback.purchase.pojo.RvbFile;
 import com.keboda.eomsback.purchase.service.IRvaService;
-import com.keboda.eomsback.base.pojo.BaseResult;
+import com.keboda.eomsback.entity.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -24,6 +24,9 @@
             <if test="code_1 != null and code_1 != '' " >
                 and ( img01 like '%${code_1}%' or ima02 like '%${code_1}%' )
             </if>
+            <if test="code_2 != null and code_2 != '' " >
+                and img02 = #{code_2}
+            </if>
         </where>
         order by img01,img02
     </select>

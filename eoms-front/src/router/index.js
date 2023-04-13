@@ -59,7 +59,7 @@ const routes = [
       {
         path: 'contacts',
         name: 'contacts',
-        component: () => import("@/views/base/ContactsView.vue")
+        component: () => import("@/views/base/GenView.vue")
       },
       {
         path: 'operation',

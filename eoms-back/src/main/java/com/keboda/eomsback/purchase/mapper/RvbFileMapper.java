@@ -1,6 +1,6 @@
 package com.keboda.eomsback.purchase.mapper;
 
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.purchase.pojo.RvbFile;
 import org.apache.ibatis.annotations.Param;
 

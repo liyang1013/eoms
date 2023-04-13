@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.ImdFileMapper">
+
+  <select id="searchImdList" resultType="com.keboda.eomsback.stock.pojo.ImdFile">
+    select imd01,IMD02
+    from ${centre}.imd_file
+    <where>
+      <if test="code_1 != null and code != '' ">
+        and ( imd01 like '%${code_1}%' or imd02 like '%${code_1}%'  )
+      </if>
+    </where>
+  </select>
+</mapper>

@@ -1,6 +1,6 @@
 <!-- 通用审核码下拉框组件 -->
 <template>
-    <el-select v-model="tempval" @change="$emit('change', $event)" placeholder="选择审核状态">
+    <el-select v-model="tempval" @change="$emit('change', $event)" placeholder="选择审核状态" >
         <el-option v-for="item in confs" :key="item.value" :label="item.name" :value="item.value">
             <span style="float: left">{{ item.name }}</span>
             <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
@@ -11,7 +11,7 @@
 <script>
 
 export default {
-    name: 'selectedCentre',
+    name: 'selectedConf',
     data() {
         return {
             tempval: this.conf,

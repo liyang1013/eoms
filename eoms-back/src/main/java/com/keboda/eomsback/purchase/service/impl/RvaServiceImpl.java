@@ -1,7 +1,7 @@
 package com.keboda.eomsback.purchase.service.impl;
 
 import com.github.pagehelper.Page;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.purchase.mapper.*;
 import com.keboda.eomsback.purchase.pojo.*;
 import com.keboda.eomsback.purchase.service.IRvaService;

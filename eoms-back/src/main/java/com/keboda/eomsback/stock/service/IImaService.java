@@ -2,7 +2,7 @@ package com.keboda.eomsback.stock.service;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.stock.pojo.ImaFile;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.stock.pojo.ImgFile;
 import org.springframework.web.multipart.MultipartFile;
 

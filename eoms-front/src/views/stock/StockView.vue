@@ -4,8 +4,11 @@
       <el-form-item label="中心:">
         <selectedCentre v-model="img.centre"></selectedCentre>
       </el-form-item>
+      <el-form-item label="仓库:">
+        <selectedImd v-model="img.code_2" :centre="img.centre"></selectedImd>
+      </el-form-item>
       <el-form-item label="料件:">
-        <el-input v-model="img.code_1" placeholder="料件编码/名称"></el-input>
+        <el-input v-model="img.code_1" placeholder="料件编码/名称" clearable></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -42,6 +45,7 @@
 <script>
 
 import selectedCentre from '@/components/selected-centre.vue'
+import selectedImd from "@/components/selected-imd.vue";
 
 export default {
   name: 'StockView',
@@ -49,6 +53,7 @@ export default {
     return {
       img: {
         code_1: null,
+        code_2: null,
         centre: 'WCTZ',
         currentPage: 1,
         sizes: [20, 50, 100, 500],
@@ -60,7 +65,8 @@ export default {
     }
   },
   components: {
-    selectedCentre
+    selectedCentre,
+    selectedImd
   },
   methods: {
     search(val) {

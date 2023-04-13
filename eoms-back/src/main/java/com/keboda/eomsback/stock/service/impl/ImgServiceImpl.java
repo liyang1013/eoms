@@ -1,7 +1,7 @@
 package com.keboda.eomsback.stock.service.impl;
 
 import com.github.pagehelper.Page;
-import com.keboda.eomsback.base.pojo.SearchVo;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.stock.mapper.ImgFileMapper;
 import com.keboda.eomsback.stock.pojo.ImgFile;
 import com.keboda.eomsback.stock.service.IImgService;

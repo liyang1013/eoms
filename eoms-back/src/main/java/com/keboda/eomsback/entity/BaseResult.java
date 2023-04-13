@@ -1,4 +1,4 @@
-package com.keboda.eomsback.base.pojo;
+package com.keboda.eomsback.entity;
 
 import lombok.Data;
 
