@@ -12,7 +12,10 @@
         <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
       </el-form-item>
     </el-form>
-
+    <el-alert title="员工维护作业: aooi040;" type="success"
+              class="tip_alert"
+              :closable="false">
+    </el-alert>
     <el-table :data="genList" border style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
@@ -39,7 +42,6 @@
 
 <script>
 
-import {mapState} from 'vuex';
 import selectedCentre from '@/components/selected-centre.vue';
 
 export default ({
@@ -71,20 +73,22 @@ export default ({
       }).finally(() => this.table_loading = false);
     },
     reset() {
-      this.gen = {
-        centre: 'WCTZ',
-        code_1: null
-      }
+      this.gen.centre = 'WCTZ';
+      this.gen.code_1 =  null
     },
-    handleCurrentChange(val) {
+    handleCurrentChange(val){
       this.search(val);
     },
-    handleSizeChange(val) {
+    handleSizeChange(val){
       this.gen.size = val;
       this.search(1);
     }
-  },
+  }
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.tip_alert {
+  margin-bottom: 15px;
+}
+</style>

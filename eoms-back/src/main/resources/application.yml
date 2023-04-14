@@ -27,10 +27,10 @@ mybatis:
   mapper-locations: classpath:mapping/*/*Mapper.xml
 
 page helper:
-  helper-dialect: oracle
+  auto-dialect: true
   reasonable: true
   support-methods-arguments: true
-
+  auto-runtime-dialect: true
 
 logging:
   level:

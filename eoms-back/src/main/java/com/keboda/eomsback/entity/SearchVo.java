@@ -14,6 +14,8 @@ public class SearchVo {
 
     private String code_2;
 
+    private String code_3;
+
     private String pmc;
 
     private String centre;

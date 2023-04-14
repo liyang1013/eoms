@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.OperationMapper">
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from operation
+    where code = #{code,jdbcType=VARCHAR}
+  </delete>
+  <select id="searchOperationList" resultType="com.keboda.eomsback.system.pojo.Operation">
+      select *
+      from operation
+      <where>
+          <if test="code_1 != null and code_1 != '' ">
+              and code like '%${code_1}%'
+          </if>
+          <if test="code_2 != null and code_2 != '' ">
+              and name like '%${code_2}%'
+          </if>
+          <if test="code_3 != null and code_3 != '' ">
+              and tips like '%${code_3}%'
+          </if>
+      </where>
+  </select>
+
+  <insert id="insertSelective" keyColumn="code" keyProperty="code" parameterType="com.keboda.eomsback.system.pojo.Operation" useGeneratedKeys="true">
+    insert into operation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="tips != null">
+        tips,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tips != null">
+        #{tips,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.Operation">
+    update operation
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="tips != null">
+        tips = #{tips,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where code = #{code,jdbcType=VARCHAR}
+  </update>
+
+</mapper>
