@@ -12,4 +12,8 @@ public interface ImgFileMapper {
     void updateQty(@Param("centre") String centre, @Param("img01") String img01, @Param("img02") String img02, @Param("img03") String img03, @Param("img04") String img04, @Param("img10") BigDecimal img10);
 
     Page<ImgFile> searchImgList(SearchVo searchVo);
+
+    ImgFile selectByKey(@Param("centre") String centre, @Param("img02") String img02, @Param("img01") String img01);
+
+    void insertSelective(ImgFile imgFile);
 }

@@ -6,4 +6,6 @@ import com.keboda.eomsback.stock.pojo.ImgFile;
 
 public interface IImgService {
     Page<ImgFile> searchImgList(SearchVo searchVo);
+
+    void repairImg(SearchVo searchVo);
 }

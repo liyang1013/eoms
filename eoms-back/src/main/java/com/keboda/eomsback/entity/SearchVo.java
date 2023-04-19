@@ -10,6 +10,8 @@ import java.util.Date;
 @Data
 public class SearchVo {
 
+    private String code;
+
     private String code_1;
 
     private String code_2;

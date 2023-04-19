@@ -10,5 +10,11 @@
         and ( imd01 like '%${code_1}%' or imd02 like '%${code_1}%'  )
       </if>
     </where>
+    order by imd01,imd02
   </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.stock.pojo.ImdFile">
+      select *
+      from ${centre}.imd_file
+      where imd01 = #{imd01}
+    </select>
 </mapper>

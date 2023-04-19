@@ -26,4 +26,9 @@
         </where>
         order by ima01
     </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.stock.pojo.ImaFile">
+        select *
+        from ${centre}.ima_file
+        where ima01 = #{ima01}
+    </select>
 </mapper>

@@ -12,6 +12,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button type="primary"  icon="el-icon-set-up" @click="repairImg" round>现存量修复</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="imgList" stripe border max-height="450px" v-loading="table_loading"
@@ -74,6 +75,9 @@ export default {
       this.table_loading = true;
       this.$http.post('/api/img/searchImgList', this.img)
           .then(res => {this.imgList = res.data.result; this.img.total = res.data.total;}).finally(() => this.table_loading = false)
+    },
+    repairImg(){
+      this.$http.post('/api/img/repairImg',this.img);
     },
     handleSelect(val) {
       this.ima01 = val.ima01;

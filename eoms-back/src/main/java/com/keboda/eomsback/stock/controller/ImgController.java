@@ -24,4 +24,10 @@ public class ImgController {
         Page<ImgFile> page = iImgService.searchImgList(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
+
+    @RequestMapping("/repairImg")
+    public BaseResult repairImg(@RequestBody SearchVo searchVo){
+        iImgService.repairImg(searchVo);
+        return BaseResult.success("修复现存量成功");
+    }
 }

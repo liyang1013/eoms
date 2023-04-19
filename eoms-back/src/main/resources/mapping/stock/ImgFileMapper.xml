@@ -30,4 +30,250 @@
         </where>
         order by img01,img02
     </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.stock.pojo.ImgFile">
+        select *
+        from ${centre}.img_file
+        where img01 = #{img01} and img02 = #{img02}
+    </select>
+    <insert id="insertSelective" keyColumn="IMG01" keyProperty="img01" parameterType="com.keboda.eomsback.stock.pojo.ImgFile">
+        insert into ${centre}.IMG_FILE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="img01 != null">
+                IMG01,
+            </if>
+            <if test="img02 != null">
+                IMG02,
+            </if>
+            <if test="img03 != null">
+                IMG03,
+            </if>
+            <if test="img04 != null">
+                IMG04,
+            </if>
+            <if test="img05 != null">
+                IMG05,
+            </if>
+            <if test="img06 != null">
+                IMG06,
+            </if>
+            <if test="img07 != null">
+                IMG07,
+            </if>
+            <if test="img08 != null">
+                IMG08,
+            </if>
+            <if test="img09 != null">
+                IMG09,
+            </if>
+            <if test="img10 != null">
+                IMG10,
+            </if>
+            <if test="img11 != null">
+                IMG11,
+            </if>
+            <if test="img12 != null">
+                IMG12,
+            </if>
+            <if test="img13 != null">
+                IMG13,
+            </if>
+            <if test="img14 != null">
+                IMG14,
+            </if>
+            <if test="img15 != null">
+                IMG15,
+            </if>
+            <if test="img16 != null">
+                IMG16,
+            </if>
+            <if test="img17 != null">
+                IMG17,
+            </if>
+            <if test="img18 != null">
+                IMG18,
+            </if>
+            <if test="img19 != null">
+                IMG19,
+            </if>
+            <if test="img20 != null">
+                IMG20,
+            </if>
+            <if test="img21 != null">
+                IMG21,
+            </if>
+            <if test="img22 != null">
+                IMG22,
+            </if>
+            <if test="img23 != null">
+                IMG23,
+            </if>
+            <if test="img24 != null">
+                IMG24,
+            </if>
+            <if test="img25 != null">
+                IMG25,
+            </if>
+            <if test="img26 != null">
+                IMG26,
+            </if>
+            <if test="img27 != null">
+                IMG27,
+            </if>
+            <if test="img28 != null">
+                IMG28,
+            </if>
+            <if test="img30 != null">
+                IMG30,
+            </if>
+            <if test="img31 != null">
+                IMG31,
+            </if>
+            <if test="img32 != null">
+                IMG32,
+            </if>
+            <if test="img33 != null">
+                IMG33,
+            </if>
+            <if test="img34 != null">
+                IMG34,
+            </if>
+            <if test="img35 != null">
+                IMG35,
+            </if>
+            <if test="img36 != null">
+                IMG36,
+            </if>
+            <if test="img37 != null">
+                IMG37,
+            </if>
+            <if test="img38 != null">
+                IMG38,
+            </if>
+            <if test="imgplant != null">
+                IMGPLANT,
+            </if>
+            <if test="imglegal != null">
+                IMGLEGAL,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="img01 != null">
+                #{img01,jdbcType=VARCHAR},
+            </if>
+            <if test="img02 != null">
+                #{img02,jdbcType=VARCHAR},
+            </if>
+            <if test="img03 != null">
+                #{img03,jdbcType=VARCHAR},
+            </if>
+            <if test="img04 != null">
+                #{img04,jdbcType=VARCHAR},
+            </if>
+            <if test="img05 != null">
+                #{img05,jdbcType=VARCHAR},
+            </if>
+            <if test="img06 != null">
+                #{img06,jdbcType=DECIMAL},
+            </if>
+            <if test="img07 != null">
+                #{img07,jdbcType=VARCHAR},
+            </if>
+            <if test="img08 != null">
+                #{img08,jdbcType=DECIMAL},
+            </if>
+            <if test="img09 != null">
+                #{img09,jdbcType=VARCHAR},
+            </if>
+            <if test="img10 != null">
+                #{img10,jdbcType=DECIMAL},
+            </if>
+            <if test="img11 != null">
+                #{img11,jdbcType=DECIMAL},
+            </if>
+            <if test="img12 != null">
+                #{img12,jdbcType=DECIMAL},
+            </if>
+            <if test="img13 != null">
+                #{img13,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img14 != null">
+                #{img14,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img15 != null">
+                #{img15,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img16 != null">
+                #{img16,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img17 != null">
+                #{img17,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img18 != null">
+                #{img18,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img19 != null">
+                #{img19,jdbcType=VARCHAR},
+            </if>
+            <if test="img20 != null">
+                #{img20,jdbcType=DECIMAL},
+            </if>
+            <if test="img21 != null">
+                #{img21,jdbcType=DECIMAL},
+            </if>
+            <if test="img22 != null">
+                #{img22,jdbcType=VARCHAR},
+            </if>
+            <if test="img23 != null">
+                #{img23,jdbcType=VARCHAR},
+            </if>
+            <if test="img24 != null">
+                #{img24,jdbcType=VARCHAR},
+            </if>
+            <if test="img25 != null">
+                #{img25,jdbcType=VARCHAR},
+            </if>
+            <if test="img26 != null">
+                #{img26,jdbcType=VARCHAR},
+            </if>
+            <if test="img27 != null">
+                #{img27,jdbcType=DECIMAL},
+            </if>
+            <if test="img28 != null">
+                #{img28,jdbcType=DECIMAL},
+            </if>
+            <if test="img30 != null">
+                #{img30,jdbcType=DECIMAL},
+            </if>
+            <if test="img31 != null">
+                #{img31,jdbcType=DECIMAL},
+            </if>
+            <if test="img32 != null">
+                #{img32,jdbcType=DECIMAL},
+            </if>
+            <if test="img33 != null">
+                #{img33,jdbcType=DECIMAL},
+            </if>
+            <if test="img34 != null">
+                #{img34,jdbcType=DECIMAL},
+            </if>
+            <if test="img35 != null">
+                #{img35,jdbcType=VARCHAR},
+            </if>
+            <if test="img36 != null">
+                #{img36,jdbcType=VARCHAR},
+            </if>
+            <if test="img37 != null">
+                #{img37,jdbcType=TIMESTAMP},
+            </if>
+            <if test="img38 != null">
+                #{img38,jdbcType=VARCHAR},
+            </if>
+            <if test="imgplant != null">
+                #{imgplant,jdbcType=VARCHAR},
+            </if>
+            <if test="imglegal != null">
+                #{imglegal,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 </mapper>

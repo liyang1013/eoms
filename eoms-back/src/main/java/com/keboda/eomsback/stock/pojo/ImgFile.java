@@ -3,7 +3,11 @@ package com.keboda.eomsback.stock.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * IMG_FILE
@@ -90,6 +94,8 @@ public class ImgFile extends ImgFileKey implements Serializable {
      * 物料名称
      */
     private String ima02;
+
+    private String centre;
 
     private static final long serialVersionUID = 1L;
 }
