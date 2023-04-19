@@ -42,7 +42,5 @@ public class GenFile implements Serializable {
 
     private String gen08;
 
-    private String token;
-
     private static final long serialVersionUID = 1L;
 }

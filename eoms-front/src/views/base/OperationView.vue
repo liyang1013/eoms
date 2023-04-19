@@ -13,12 +13,10 @@
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
         <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
-        <el-button type="primary" icon="el-icon-plus" round>新增</el-button>
+        <el-button type="primary" icon="el-icon-plus" round @click="dialogTableVisible = true">新增</el-button>
       </el-form-item>
     </el-form>
-    <el-alert title="作业录入: p_zz; 自定义报表: p_query" type="success"
-              class="tip_alert"
-              :closable="false">
+    <el-alert title="作业录入: p_zz; 自定义报表: p_query" type="success" :closable="false">
     </el-alert>
     <el-table :data="operations" border style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
@@ -41,6 +39,19 @@
                    @current-change="handleCurrentChange" @size-change="handleSizeChange" :page-sizes="operation.sizes"
                    :current-page.sync="operation.currentPage" :page-size="operation.size">
     </el-pagination>
+
+    <!-- 新增作业 -->
+    <el-dialog :visible.sync="dialogTableVisible" width="600px">
+      <el-table :data="tempOperation" border max-height="300px">
+        <el-table-column prop="code" label="项次" width="160"></el-table-column>
+        <el-table-column prop="name" label="采购订单号" width="200"></el-table-column>
+        <el-table-column prop="tips" label="料件编号" width="200"></el-table-column>
+      </el-table>
+      <el-divider></el-divider>
+      <div style="text-align: right;">
+        <el-button type="primary" round >保存</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -59,7 +70,11 @@ export default {
         total: 0
       },
       operations: [],
-      table_loading: false
+      table_loading: false,
+      dialogTableVisible: false,
+      tempOperation: [
+          {code: null, name: null, tips: null}
+      ]
     }
   },
   methods: {
@@ -106,7 +121,4 @@ export default {
 </script>
 
 <style scoped>
-.tip_alert {
-  margin-bottom: 15px;
-}
 </style>

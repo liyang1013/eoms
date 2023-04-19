@@ -18,9 +18,7 @@
         <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
       </el-form-item>
     </el-form>
-    <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300" type="success"
-              class="tip_alert"
-              :closable="false">
+    <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300" type="success" :closable="false">
     </el-alert>
     <el-table :data="rvaList" border style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
@@ -203,9 +201,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tip_alert {
-  margin-bottom: 15px;
-}
 
 ::v-deep .el-dialog {
   .el-dialog__header {

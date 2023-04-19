@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.ZxFileMapper">
+
+  <select id="searchZxList" resultType="com.keboda.eomsback.system.pojo.ZxFile">
+    select zx01,zx02, zx03,zw02 as zx04,zx08,zx09,zx10,zx16,zx18
+    from DS.ZX_FILE
+        left join DS.ZW_FILE on zx04 = zw01
+    <where>
+        zxacti = 'Y'
+      <if test="centre != null and centre != '' ">
+        and zx08  = #{centre}
+      </if>
+      <if test="code_1 != null and code_1 != '' ">
+        and ( zx01  like '%${code_1}%' or zx02 like '%${code_1}%' )
+      </if>
+    </where>
+    group by zx01,zx02,zx03,zw02,zx08,zx09,zx10,zx16,zx18
+    order by zx01,zx02
+  </select>
+  <select id="selectByKey" resultType="com.keboda.eomsback.system.pojo.ZxFile">
+    select zx01,zx02
+    from DS.ZX_FILE
+    where zx01 = #{zx01}
+  </select>
+</mapper>

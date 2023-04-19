@@ -6,5 +6,4 @@ import com.keboda.eomsback.system.pojo.GenFile;
 
 public interface GenFileMapper {
 
-    Page<GenFile> searchGenList(SearchVo searchVo);
 }

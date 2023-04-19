@@ -1,12 +1,12 @@
 <template>
   <div class="login-body">
-    <el-form :model="user"  label-width="80px" class="login-box" label-position="left">
+    <el-form :model="zx"  label-width="80px" class="login-box" label-position="left">
         <h3 class="login-title">欢迎登录</h3>
         <el-form-item label="用户名:">
-            <el-input type="text" placeholder="请输入用户名" v-model="user.username"/>
+            <el-input type="text" placeholder="请输入用户名" v-model="zx.zx01"/>
         </el-form-item>
         <el-form-item label="密码:">
-            <el-input type="password" placeholder="请输入密码" v-model="user.password"/>
+            <el-input type="password" placeholder="请输入密码" v-model="zx.zx02"/>
         </el-form-item>
         <el-form-item>
             <el-col :span="9">
@@ -24,17 +24,17 @@ export default {
     name: 'login',
     data(){
         return{
-            user: {
-                username: 'JX2302304',
-                password: 'JX2302304'
+            zx: {
+                zx01: 'JX2302304',
+                zx02: 'JX2302304'
             }
         }
     },
     methods: {
         login(){
-          this.$http.post('/api/user/login', this.user).then(res => {
+          this.$http.post('/api/zx/login', this.zx).then(res => {
             localStorage.setItem('token',res.data.result.token);
-            this.$store.commit('SET_USERNAME',res.data.result.username)
+            this.$store.commit('SET_USERNAME',res.data.result.zx01)
             this.$router.push('/');
           })
         }

@@ -44,7 +44,7 @@
         data() {
           return {
               window:window,
-              secret:"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",
+              secret:"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",
               message:"",
               originMessage:"",
               msgList:[],

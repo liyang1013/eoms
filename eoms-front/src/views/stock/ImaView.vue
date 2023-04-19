@@ -12,7 +12,7 @@
         <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
       </el-form-item>
     </el-form>
-    <el-alert title="料件基本资料: aimi100; " type="success" class="tip_alert" :closable="false">
+    <el-alert title="料件基本资料: aimi100; " type="success" :closable="false">
     </el-alert>
     <el-table :data="imaList" border style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
@@ -97,7 +97,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tip_alert {
-  margin-bottom: 15px;
-}
 </style>

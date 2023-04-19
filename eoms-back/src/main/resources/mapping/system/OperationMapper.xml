@@ -21,6 +21,7 @@
               and tips like '%${code_3}%'
           </if>
       </where>
+      group by code,name
   </select>
 
   <insert id="insertSelective" keyColumn="code" keyProperty="code" parameterType="com.keboda.eomsback.system.pojo.Operation" useGeneratedKeys="true">
