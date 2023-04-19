@@ -26,9 +26,9 @@ public class SearchVo {
 
     private Date enddate;
 
-    private Integer currentPage;
+    private Integer currentPage = 1;
 
-    private Integer size;
+    private Integer size = 20;
 
     private Integer total;
 }

@@ -5,7 +5,7 @@
         <selectedCentre v-model="ima.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:">
-        <el-input v-model="ima.code_1" placeholder="料件编码/名称" clearable></el-input>
+        <selectedIma v-model="ima.code_1" :centre="ima.centre" ></selectedIma>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -50,7 +50,8 @@
 </template>
 
 <script>
-import selectedCentre from '@/components/selected-centre.vue';
+import selectedCentre from '@/components/selected/selected-centre.vue';
+import selectedIma from "@/components/selected/selected-ima.vue";
 
 export default {
   name: 'ima',
@@ -70,6 +71,7 @@ export default {
   },
   components: {
     selectedCentre,
+    selectedIma
   },
   methods: {
     search(val) {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import selectedCentre from '@/components/selected-centre';
+import selectedCentre from '@/components/selected/selected-centre.vue';
 import baseUpload from "@/components/base-upload";
 export default {
   name: "import",

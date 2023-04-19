@@ -8,7 +8,7 @@
         <selectedImd v-model="img.code_2" :centre="img.centre"></selectedImd>
       </el-form-item>
       <el-form-item label="料件:">
-        <el-input v-model="img.code_1" placeholder="料件编码/名称" clearable></el-input>
+        <selectedIma v-model="img.code_1" :centre="img.centre" ></selectedIma>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -45,8 +45,9 @@
 
 <script>
 
-import selectedCentre from '@/components/selected-centre.vue'
-import selectedImd from "@/components/selected-imd.vue";
+import selectedCentre from '@/components/selected/selected-centre.vue'
+import selectedImd from "@/components/selected/selected-imd.vue";
+import selectedIma from "@/components/selected/selected-ima.vue";
 
 export default {
   name: 'StockView',
@@ -67,7 +68,8 @@ export default {
   },
   components: {
     selectedCentre,
-    selectedImd
+    selectedImd,
+    selectedIma
   },
   methods: {
     search(val) {

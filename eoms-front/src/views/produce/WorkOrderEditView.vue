@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import selectedCentre from '@/components/selected-centre.vue'
+import selectedCentre from '@/components/selected/selected-centre.vue'
 
 export default {
   name: 'workOrderEdit',
