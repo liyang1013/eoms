@@ -24,24 +24,30 @@
       group by code,name
   </select>
 
-  <insert id="insertSelective" keyColumn="code" keyProperty="code" parameterType="com.keboda.eomsback.system.pojo.Operation" useGeneratedKeys="true">
-    insert into operation
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="name != null">
-        name,
-      </if>
-      <if test="tips != null">
-        tips,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="tips != null">
-        #{tips,jdbcType=VARCHAR},
-      </if>
-    </trim>
+  <insert id="insertSelective" keyColumn="code" keyProperty="code" parameterType="com.keboda.eomsback.system.pojo.Operation" >
+      insert into operation
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+          <if test="code != null">
+              code,
+          </if>
+          <if test="name != null">
+              name,
+          </if>
+          <if test="tips != null">
+              tips,
+          </if>
+      </trim>
+      <trim prefix="values (" suffix=")" suffixOverrides=",">
+          <if test="code != null">
+              #{code,jdbcType=VARCHAR},
+          </if>
+          <if test="name != null">
+              #{name,jdbcType=VARCHAR},
+          </if>
+          <if test="tips != null">
+              #{tips,jdbcType=VARCHAR},
+          </if>
+      </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.Operation">
     update operation

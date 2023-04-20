@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/operation")
 public class OperationController {
@@ -23,6 +25,12 @@ public class OperationController {
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
         Page<Operation> page = iOperationService.searchOperationList(searchVo);
         return BaseResult.success(page,page.getTotal());
+    }
+
+    @RequestMapping("/addOperation")
+    public BaseResult addOperation(@RequestBody List<Operation> operationList){
+        iOperationService.addOperation(operationList);
+        return BaseResult.success("新增成功");
     }
 
     @RequestMapping("/deletOperation")

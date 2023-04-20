@@ -1,7 +1,8 @@
 <template>
   <el-autocomplete v-model="tempval" @change="changeIma" @select="selectIma" :fetch-suggestions="querySearchImaAsync" placeholder="输入料件编码/名称" clearable>
     <template slot-scope="{ item }">
-      <span style="float: left; font-size: 9px">{{ item.ima02 +' '+ item.ima01}}</span>
+      <p style="float: left; font-size: 10px">{{item.ima02}}</p>
+      <p style="float: right; font-size: 10px;color: #8492a6; ">{{item.ima01}}</p>
     </template>
   </el-autocomplete>
 </template>

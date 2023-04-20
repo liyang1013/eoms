@@ -17,14 +17,6 @@
             "meta": {"icon": "el-icon-s-platform", "name": "首页"}
         },
         {
-            "name": "base" ,
-            "children" : [
-                {"name": "contacts",  "meta": {"icon": "el-icon-user-solid", "name": "人员档案"}},
-                {"name": "operation",  "meta": {"icon": "el-icon-tickets", "name": "作业档案"}}
-            ],
-            "meta": {"icon": "el-icon-s-management", "name": "基础档案"}
-        },
-        {
             "name": "purchase" ,
             "children" : [
                 {"name": "rva",  "meta": {"icon": "el-icon-tickets", "name": "收货单"}}
@@ -55,6 +47,8 @@
         {
             "name": "system" ,
             "children" : [
+                {"name": "contacts",  "meta": {"icon": "el-icon-user-solid", "name": "人员档案"}},
+                {"name": "operation",  "meta": {"icon": "el-icon-tickets", "name": "作业档案"}},
                 {"name": "import",  "meta": {"icon": "el-icon-upload2", "name": "数据导入"}}
             ],
             "meta": {"icon": "el-icon-s-tools", "name": "系统管理"}

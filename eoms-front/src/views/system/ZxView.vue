@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :inline="true" :model="zx" class="demo-form-inline" size="mini">
+    <el-form :inline="true" :model="zx" class="demo-form-inline" >
       <el-form-item label="中心:">
         <selectedCentre v-model="zx.centre" ></selectedCentre>
       </el-form-item>
@@ -42,8 +42,8 @@
 
 import selectedCentre from '@/components/selected/selected-centre.vue';
 
-export default ({
-  name: 'contact',
+export default {
+  name: "zx",
   data() {
     return {
       zx: {
@@ -82,7 +82,7 @@ export default ({
       this.search(1);
     }
   }
-})
+}
 </script>
 
 <style scoped>

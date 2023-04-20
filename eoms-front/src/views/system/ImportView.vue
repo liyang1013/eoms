@@ -11,7 +11,7 @@
 
 <script>
 import selectedCentre from '@/components/selected/selected-centre.vue';
-import baseUpload from "@/components/base-upload";
+import baseUpload from "@/components/base-upload.vue";
 export default {
   name: "import",
   data() {

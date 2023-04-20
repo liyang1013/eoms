@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.GazFileMapper">
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.GazFile">
+    update GAZ_FILE
+    <set>
+      <if test="gaz03 != null">
+        GAZ03 = #{gaz03,jdbcType=VARCHAR},
+      </if>
+      <if test="gaz04 != null">
+        GAZ04 = #{gaz04,jdbcType=VARCHAR},
+      </if>
+      <if test="gazuser != null">
+        GAZUSER = #{gazuser,jdbcType=VARCHAR},
+      </if>
+      <if test="gazgrup != null">
+        GAZGRUP = #{gazgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="gazmodu != null">
+        GAZMODU = #{gazmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="gazdate != null">
+        GAZDATE = #{gazdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gaz06 != null">
+        GAZ06 = #{gaz06,jdbcType=VARCHAR},
+      </if>
+      <if test="gazorig != null">
+        GAZORIG = #{gazorig,jdbcType=VARCHAR},
+      </if>
+      <if test="gazoriu != null">
+        GAZORIU = #{gazoriu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where GAZ01 = #{gaz01,jdbcType=VARCHAR}
+      and GAZ02 = #{gaz02,jdbcType=VARCHAR}
+      and GAZ05 = #{gaz05,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByKey" resultType="com.keboda.eomsback.system.pojo.GazFile">
+    select *
+    from DS.GAZ_FILE
+    where gaz01 = #{gaz01} and gaz02 = 2
+  </select>
+  <select id="searchGazList" resultType="com.keboda.eomsback.system.pojo.GazFile">
+      select *
+      from DS.GAZ_FILE
+      <where>
+          gaz02 = 2
+          <if test="code_1 != null and code_1 != ''">
+              and (gaz01 like '%${code_1}%' or gaz03 like '%${code_1}%')
+          </if>
+          <if test="code_2 != null and code_2 != ''">
+              and gaz04 like '%${code_2}%'
+          </if>
+      </where>
+      order by gaz01,gaz03
+  </select>
+
+</mapper>

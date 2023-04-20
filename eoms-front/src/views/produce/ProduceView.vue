@@ -97,7 +97,7 @@
 import selectedCentre from '@/components/selected/selected-centre.vue'
 
 export default {
-  name: 'ProduceView',
+  name: 'produceView',
   data() {
     return {
       sfb01: '',

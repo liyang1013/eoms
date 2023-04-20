@@ -40,7 +40,7 @@
 
 <script>
     export default {
-      name: 'ChatApp',
+      name: 'chatApp',
         data() {
           return {
               window:window,

@@ -170,12 +170,12 @@ export default {
       this.rva.centre = 'WCTZ';
     },
     resetrva() {
-      this.rvaList.find(e => {
-        if (e.rva01 === this.rvab.rva.rva01) {
-          this.rvab.rva = {...e}
-          return
-        }
-      })
+      // this.rvaList.find(e => {
+      //   if (e.rva01 === this.rvab.rva.rva01) {
+      //     this.rvab.rva = {...e}
+      //     return
+      //   }
+      // })
       this.$http.post('/api/rva/searchRvbList', {
         code_1: this.rvab.rva.rva01,
         centre: this.rvab.rva.rvaplant
@@ -214,4 +214,5 @@ export default {
   .el-divider {
     margin: 10px 0 !important;
   }
-}</style>
+}
+</style>
