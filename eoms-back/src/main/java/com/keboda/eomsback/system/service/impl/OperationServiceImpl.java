@@ -37,6 +37,8 @@ public class OperationServiceImpl implements IOperationService {
     @Transactional
     public void addOperation(List<Operation> operationList) {
         for (Operation operation : operationList) {
+            Operation op = operationMapper.selectByKey(operation.getCode());
+            if(op != null) throw new RuntimeException("作业编码:"+op.getCode()+"已存在");
             operationMapper.insertSelective(operation);
         }
     }

@@ -16,4 +16,6 @@ public interface IImaService {
     Page<ImaFile> searchImaList(SearchVo searchVo);
 
     void alterStockParameter(MultipartFile file,String centre) throws IOException;
+
+    void imaPackage(MultipartFile file, String centre) throws IOException;
 }

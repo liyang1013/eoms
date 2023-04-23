@@ -33,4 +33,10 @@ public class ImaController {
         iImaService.alterStockParameter(file,centre);
         return BaseResult.success("库存参数刷新成功");
     }
+
+    @RequestMapping("/imaPackage")
+    public BaseResult imaPackage( MultipartFile file, String centre) throws IOException {
+        iImaService.imaPackage(file,centre);
+        return BaseResult.success("产品包装批量维护成功");
+    }
 }

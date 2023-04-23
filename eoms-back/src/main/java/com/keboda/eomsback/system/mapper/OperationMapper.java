@@ -10,4 +10,6 @@ public interface OperationMapper {
     int insertSelective(Operation record);
     int updateByPrimaryKeySelective(Operation record);
     Page<Operation> searchOperationList(SearchVo searchVo);
+
+    Operation selectByKey(String code);
 }

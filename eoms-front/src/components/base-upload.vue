@@ -1,19 +1,24 @@
 <template>
-  <el-upload
-      class="upload-demo"
-      drag
-      :action=url
-      :data="{'centre':centre}"
-      :on-success="upload_success"
-      :on-error="upload_err"
-      accept=".xlsx,.xls"
-      multiple>
-    <i class="el-icon-upload"></i>
-    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-    <div class="el-upload__tip" slot="tip" style="text-align: center;color:#67C23A;font-size: 15px ">
-      {{title}}
-    </div>
-  </el-upload>
+  <div>
+    <el-alert type="success" center :closable="false">
+      <el-link type="primary" :underline="false" :href="href">{{ msg }}</el-link>
+    </el-alert>
+    <el-upload
+        class="upload-demo"
+        drag
+        :action=url
+        :data="{'centre':centre}"
+        :on-success="upload_success"
+        :on-error="upload_err"
+        accept=".xlsx,.xls"
+        multiple>
+      <i class="el-icon-upload"></i>
+      <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+      <div class="el-upload__tip" slot="tip" style="text-align: center;color:#67C23A;font-size: 15px ">
+        {{ title }}
+      </div>
+    </el-upload>
+  </div>
 </template>
 
 <script>
@@ -24,13 +29,21 @@ export default {
       type: String,
       default: null
     },
-    title:{
+    title: {
       type: String,
       default: '默认模板'
     },
-    centre:{
+    centre: {
       type: String,
       default: 'WCTZ'
+    },
+    msg: {
+      type: String,
+      default: '导入模板下载'
+    },
+    href:{
+      type: String,
+      default: 'javascript:void(0)'
     }
   },
   methods: {

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.ObkFileMapper">
+
+  <select id="selectByKeyLimitOne" resultType="com.keboda.eomsback.stock.pojo.ObkFile">
+    select *
+    from ${centre}.obk_file
+    where obk01 = #{obk01} and rownum = 1
+    order by obkacti desc
+  </select>
+
+  <insert id="insertSelective" keyColumn="OBK01" keyProperty="obk01" parameterType="com.keboda.eomsback.stock.pojo.ObkFile" >
+    insert into ${centre}.OBK_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="obk01 != null">
+        OBK01,
+      </if>
+      <if test="obk02 != null">
+        OBK02,
+      </if>
+      <if test="obk05 != null">
+        OBK05,
+      </if>
+      <if test="obk03 != null">
+        OBK03,
+      </if>
+      <if test="obk04 != null">
+        OBK04,
+      </if>
+      <if test="obk06 != null">
+        OBK06,
+      </if>
+      <if test="obk07 != null">
+        OBK07,
+      </if>
+      <if test="obk08 != null">
+        OBK08,
+      </if>
+      <if test="obk09 != null">
+        OBK09,
+      </if>
+      <if test="obk10 != null">
+        OBK10,
+      </if>
+      <if test="obk11 != null">
+        OBK11,
+      </if>
+      <if test="obk12 != null">
+        OBK12,
+      </if>
+      <if test="obk13 != null">
+        OBK13,
+      </if>
+      <if test="obk14 != null">
+        OBK14,
+      </if>
+      <if test="obkacti != null">
+        OBKACTI,
+      </if>
+      <if test="obkdate != null">
+        OBKDATE,
+      </if>
+      <if test="obkgrup != null">
+        OBKGRUP,
+      </if>
+      <if test="obkuser != null">
+        OBKUSER,
+      </if>
+      <if test="obkmodu != null">
+        OBKMODU,
+      </if>
+      <if test="obkorig != null">
+        OBKORIG,
+      </if>
+      <if test="obkoriu != null">
+        OBKORIU,
+      </if>
+      <if test="tcObk15 != null">
+        TC_OBK15,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="obk01 != null">
+        #{obk01,jdbcType=VARCHAR},
+      </if>
+      <if test="obk02 != null">
+        #{obk02,jdbcType=VARCHAR},
+      </if>
+      <if test="obk05 != null">
+        #{obk05,jdbcType=VARCHAR},
+      </if>
+      <if test="obk03 != null">
+        #{obk03,jdbcType=VARCHAR},
+      </if>
+      <if test="obk04 != null">
+        #{obk04,jdbcType=TIMESTAMP},
+      </if>
+      <if test="obk06 != null">
+        #{obk06,jdbcType=VARCHAR},
+      </if>
+      <if test="obk07 != null">
+        #{obk07,jdbcType=VARCHAR},
+      </if>
+      <if test="obk08 != null">
+        #{obk08,jdbcType=DECIMAL},
+      </if>
+      <if test="obk09 != null">
+        #{obk09,jdbcType=DECIMAL},
+      </if>
+      <if test="obk10 != null">
+        #{obk10,jdbcType=DECIMAL},
+      </if>
+      <if test="obk11 != null">
+        #{obk11,jdbcType=VARCHAR},
+      </if>
+      <if test="obk12 != null">
+        #{obk12,jdbcType=VARCHAR},
+      </if>
+      <if test="obk13 != null">
+        #{obk13,jdbcType=VARCHAR},
+      </if>
+      <if test="obk14 != null">
+        #{obk14,jdbcType=VARCHAR},
+      </if>
+      <if test="obkacti != null">
+        #{obkacti,jdbcType=VARCHAR},
+      </if>
+      <if test="obkdate != null">
+        #{obkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="obkgrup != null">
+        #{obkgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="obkuser != null">
+        #{obkuser,jdbcType=VARCHAR},
+      </if>
+      <if test="obkmodu != null">
+        #{obkmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="obkorig != null">
+        #{obkorig,jdbcType=VARCHAR},
+      </if>
+      <if test="obkoriu != null">
+        #{obkoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="tcObk15 != null">
+        #{tcObk15,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.ObkFile">
+    update ${centre}.OBK_FILE
+    <set>
+      <if test="obk03 != null">
+        OBK03 = #{obk03,jdbcType=VARCHAR},
+      </if>
+      <if test="obk04 != null">
+        OBK04 = #{obk04,jdbcType=TIMESTAMP},
+      </if>
+      <if test="obk06 != null">
+        OBK06 = #{obk06,jdbcType=VARCHAR},
+      </if>
+      <if test="obk07 != null">
+        OBK07 = #{obk07,jdbcType=VARCHAR},
+      </if>
+      <if test="obk08 != null">
+        OBK08 = #{obk08,jdbcType=DECIMAL},
+      </if>
+      <if test="obk09 != null">
+        OBK09 = #{obk09,jdbcType=DECIMAL},
+      </if>
+      <if test="obk10 != null">
+        OBK10 = #{obk10,jdbcType=DECIMAL},
+      </if>
+      <if test="obk11 != null">
+        OBK11 = #{obk11,jdbcType=VARCHAR},
+      </if>
+      <if test="obk12 != null">
+        OBK12 = #{obk12,jdbcType=VARCHAR},
+      </if>
+      <if test="obk13 != null">
+        OBK13 = #{obk13,jdbcType=VARCHAR},
+      </if>
+      <if test="obk14 != null">
+        OBK14 = #{obk14,jdbcType=VARCHAR},
+      </if>
+      <if test="obkacti != null">
+        OBKACTI = #{obkacti,jdbcType=VARCHAR},
+      </if>
+      <if test="obkdate != null">
+        OBKDATE = #{obkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="obkgrup != null">
+        OBKGRUP = #{obkgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="obkuser != null">
+        OBKUSER = #{obkuser,jdbcType=VARCHAR},
+      </if>
+      <if test="obkmodu != null">
+        OBKMODU = #{obkmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="obkorig != null">
+        OBKORIG = #{obkorig,jdbcType=VARCHAR},
+      </if>
+      <if test="obkoriu != null">
+        OBKORIU = #{obkoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="tcObk15 != null">
+        TC_OBK15 = #{tcObk15,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OBK01 = #{obk01,jdbcType=VARCHAR}
+      and OBK02 = #{obk02,jdbcType=VARCHAR}
+      and OBK05 = #{obk05,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

@@ -52,7 +52,7 @@ public class ImaFile implements Serializable {
 
     private String ima17;
 
-    private BigDecimal ima17_fac;
+    private BigDecimal ima17Fac;
 
     private BigDecimal ima18;
 
@@ -88,7 +88,7 @@ public class ImaFile implements Serializable {
 
     private String ima31;
 
-    private BigDecimal ima31_fac;
+    private BigDecimal ima31Fac;
 
     private BigDecimal ima32;
 
@@ -116,7 +116,7 @@ public class ImaFile implements Serializable {
 
     private String ima44;
 
-    private BigDecimal ima44_fac;
+    private BigDecimal ima44Fac;
 
     private BigDecimal ima45;
 
@@ -146,7 +146,7 @@ public class ImaFile implements Serializable {
 
     private String ima55;
 
-    private BigDecimal ima55_fac;
+    private BigDecimal ima55Fac;
 
     private BigDecimal ima56;
 
@@ -170,7 +170,7 @@ public class ImaFile implements Serializable {
 
     private String ima63;
 
-    private BigDecimal ima63_fac;
+    private BigDecimal ima63Fac;
 
     private BigDecimal ima64;
 
@@ -198,7 +198,7 @@ public class ImaFile implements Serializable {
 
     private String ima86;
 
-    private BigDecimal ima86_fac;
+    private BigDecimal ima86Fac;
 
     private String ima87;
 
@@ -884,6 +884,8 @@ public class ImaFile implements Serializable {
      * 料件大类
      */
     private String imz02;
+
+    private String centre;
 
     private static final long serialVersionUID = 1L;
 }

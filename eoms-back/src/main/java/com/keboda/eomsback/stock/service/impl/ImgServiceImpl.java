@@ -57,8 +57,8 @@ public class ImgServiceImpl implements IImgService {
             imgFile.setImg14(DateUtils.parseDate(DateUtils.formatDate(new Date())));
             imgFile.setImg17(DateUtils.parseDate(DateUtils.formatDate(new Date())));
             imgFile.setImg18(DateUtils.parseDate("2099-12-31"));
-            imgFile.setImg20(imaFile.getIma44_fac());
-            imgFile.setImg21(imaFile.getIma44_fac());
+            imgFile.setImg20(imaFile.getIma44Fac());
+            imgFile.setImg21(imaFile.getIma44Fac());
             imgFile.setImg22(imdFile.getImd10());
             imgFile.setImg23(imdFile.getImd11());
             imgFile.setImg24(imdFile.getImd12());
@@ -69,7 +69,7 @@ public class ImgServiceImpl implements IImgService {
             imgFile.setImg31(BigDecimal.ZERO);
             imgFile.setImg32(BigDecimal.ZERO);
             imgFile.setImg33(BigDecimal.ZERO);
-            imgFile.setImg34(imaFile.getIma86_fac());
+            imgFile.setImg34(imaFile.getIma86Fac());
             imgFile.setImg37(DateUtils.parseDate(DateUtils.formatDate(new Date())));
             imgFileMapper.insertSelective(imgFile);
         }else throw new RuntimeException("库存记录已存在不需要修复");

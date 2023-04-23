@@ -57,7 +57,7 @@
         </el-table-column>
         <el-table-column prop="tips" label="详情">
           <template slot-scope="scope">
-            <el-input v-model="scope.row.tips"></el-input>
+            <el-input type="textarea" :rows="1" v-model="scope.row.tips"></el-input>
           </template>
         </el-table-column>
         <el-table-column label="操作">
@@ -86,7 +86,7 @@
           <el-button type="primary"  icon="el-icon-search" @click="searchGazList(1)" round>查询</el-button>
         </el-form-item>
       </el-form>
-      <el-table :data="gazList" border max-height="350px">
+      <el-table :data="gazList" border max-height="350px" ref="gazTable">
         <el-table-column type="selection" width="60"></el-table-column>
         <el-table-column type="index" label="序号" width="60"></el-table-column>
         <el-table-column prop="gaz01" label="作业编码" width="120"></el-table-column>
@@ -100,7 +100,7 @@
       </el-pagination>
       <el-divider></el-divider>
       <div style="text-align: right;">
-        <el-button type="primary" round >导入</el-button>
+        <el-button type="primary" round @click="gaz2Operation">导入</el-button>
       </div>
     </el-dialog>
 
@@ -180,6 +180,23 @@ export default {
           this.tempOperation = [{code: null, name: null, tips: null}]
         }
       });
+    },
+    gaz2Operation(){
+      this.$refs.gazTable.selection.forEach(item =>{
+        let flag = false
+        this.tempOperation.forEach(e =>{
+          if(item.gaz01 === e.code){
+            e.name = item.gaz03
+            e.tips = item.gaz04
+            flag = true
+          }
+        })
+        if(!flag) this.tempOperation.push({code: item.gaz01,name: item.gaz03,tips: item.gaz04})
+      })
+      if(this.$refs.gazTable.selection.length){
+        this.tempOperation = this.tempOperation.filter(item =>item.code || item.name || item.tips)
+        this.dialogTableVisible = false
+      }
     },
     handleCurrentChange(val) {
       this.search(val);

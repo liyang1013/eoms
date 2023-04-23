@@ -25,6 +25,9 @@ spring:
 mybatis:
   type-aliases-package: com.keboda.eomsback.*.pojo
   mapper-locations: classpath:mapping/*/*Mapper.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
 
 page helper:
   auto-dialect: true

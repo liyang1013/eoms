@@ -19,4 +19,6 @@ public interface ImaFileMapper {
     void alterStockParameter(@Param("centre") String centre, @Param("ima01") String ima01, @Param("ima27") BigDecimal  ima27, @Param("imaud09") BigDecimal imaud09, @Param("ima271") BigDecimal ima271);
 
     ImaFile selectByKey(@Param("centre") String centre, @Param("ima01") String ima01);
+
+    int updateByPrimaryKeySelective(ImaFile record);
 }

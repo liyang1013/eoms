@@ -31,4 +31,1232 @@
         from ${centre}.ima_file
         where ima01 = #{ima01}
     </select>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.ImaFile">
+        update ${centre}.IMA_FILE
+        <set>
+            <if test="ima02 != null">
+                IMA02 = #{ima02,jdbcType=VARCHAR},
+            </if>
+            <if test="ima021 != null">
+                IMA021 = #{ima021,jdbcType=VARCHAR},
+            </if>
+            <if test="ima03 != null">
+                IMA03 = #{ima03,jdbcType=VARCHAR},
+            </if>
+            <if test="ima04 != null">
+                IMA04 = #{ima04,jdbcType=VARCHAR},
+            </if>
+            <if test="ima05 != null">
+                IMA05 = #{ima05,jdbcType=VARCHAR},
+            </if>
+            <if test="ima06 != null">
+                IMA06 = #{ima06,jdbcType=VARCHAR},
+            </if>
+            <if test="ima07 != null">
+                IMA07 = #{ima07,jdbcType=VARCHAR},
+            </if>
+            <if test="ima08 != null">
+                IMA08 = #{ima08,jdbcType=VARCHAR},
+            </if>
+            <if test="ima09 != null">
+                IMA09 = #{ima09,jdbcType=VARCHAR},
+            </if>
+            <if test="ima10 != null">
+                IMA10 = #{ima10,jdbcType=VARCHAR},
+            </if>
+            <if test="ima11 != null">
+                IMA11 = #{ima11,jdbcType=VARCHAR},
+            </if>
+            <if test="ima12 != null">
+                IMA12 = #{ima12,jdbcType=VARCHAR},
+            </if>
+            <if test="ima13 != null">
+                IMA13 = #{ima13,jdbcType=VARCHAR},
+            </if>
+            <if test="ima14 != null">
+                IMA14 = #{ima14,jdbcType=VARCHAR},
+            </if>
+            <if test="ima15 != null">
+                IMA15 = #{ima15,jdbcType=VARCHAR},
+            </if>
+            <if test="ima16 != null">
+                IMA16 = #{ima16,jdbcType=DECIMAL},
+            </if>
+            <if test="ima17 != null">
+                IMA17 = #{ima17,jdbcType=VARCHAR},
+            </if>
+            <if test="ima17Fac != null">
+                IMA17_FAC = #{ima17Fac,jdbcType=DECIMAL},
+            </if>
+            <if test="ima18 != null">
+                IMA18 = #{ima18,jdbcType=DECIMAL},
+            </if>
+            <if test="ima19 != null">
+                IMA19 = #{ima19,jdbcType=VARCHAR},
+            </if>
+            <if test="ima20 != null">
+                IMA20 = #{ima20,jdbcType=DECIMAL},
+            </if>
+            <if test="ima21 != null">
+                IMA21 = #{ima21,jdbcType=VARCHAR},
+            </if>
+            <if test="ima22 != null">
+                IMA22 = #{ima22,jdbcType=DECIMAL},
+            </if>
+            <if test="ima23 != null">
+                IMA23 = #{ima23,jdbcType=VARCHAR},
+            </if>
+            <if test="ima24 != null">
+                IMA24 = #{ima24,jdbcType=VARCHAR},
+            </if>
+            <if test="ima25 != null">
+                IMA25 = #{ima25,jdbcType=VARCHAR},
+            </if>
+            <if test="ima26 != null">
+                IMA26 = #{ima26,jdbcType=DECIMAL},
+            </if>
+            <if test="ima261 != null">
+                IMA261 = #{ima261,jdbcType=DECIMAL},
+            </if>
+            <if test="ima262 != null">
+                IMA262 = #{ima262,jdbcType=DECIMAL},
+            </if>
+            <if test="ima27 != null">
+                IMA27 = #{ima27,jdbcType=DECIMAL},
+            </if>
+            <if test="ima271 != null">
+                IMA271 = #{ima271,jdbcType=DECIMAL},
+            </if>
+            <if test="ima28 != null">
+                IMA28 = #{ima28,jdbcType=DECIMAL},
+            </if>
+            <if test="ima29 != null">
+                IMA29 = #{ima29,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima30 != null">
+                IMA30 = #{ima30,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima31 != null">
+                IMA31 = #{ima31,jdbcType=VARCHAR},
+            </if>
+            <if test="ima31Fac != null">
+                IMA31_FAC = #{ima31Fac,jdbcType=DECIMAL},
+            </if>
+            <if test="ima32 != null">
+                IMA32 = #{ima32,jdbcType=DECIMAL},
+            </if>
+            <if test="ima33 != null">
+                IMA33 = #{ima33,jdbcType=DECIMAL},
+            </if>
+            <if test="ima34 != null">
+                IMA34 = #{ima34,jdbcType=VARCHAR},
+            </if>
+            <if test="ima35 != null">
+                IMA35 = #{ima35,jdbcType=VARCHAR},
+            </if>
+            <if test="ima36 != null">
+                IMA36 = #{ima36,jdbcType=VARCHAR},
+            </if>
+            <if test="ima37 != null">
+                IMA37 = #{ima37,jdbcType=VARCHAR},
+            </if>
+            <if test="ima38 != null">
+                IMA38 = #{ima38,jdbcType=DECIMAL},
+            </if>
+            <if test="ima39 != null">
+                IMA39 = #{ima39,jdbcType=VARCHAR},
+            </if>
+            <if test="ima40 != null">
+                IMA40 = #{ima40,jdbcType=DECIMAL},
+            </if>
+            <if test="ima41 != null">
+                IMA41 = #{ima41,jdbcType=DECIMAL},
+            </if>
+            <if test="ima42 != null">
+                IMA42 = #{ima42,jdbcType=VARCHAR},
+            </if>
+            <if test="ima43 != null">
+                IMA43 = #{ima43,jdbcType=VARCHAR},
+            </if>
+            <if test="ima44 != null">
+                IMA44 = #{ima44,jdbcType=VARCHAR},
+            </if>
+            <if test="ima44Fac != null">
+                IMA44_FAC = #{ima44Fac,jdbcType=DECIMAL},
+            </if>
+            <if test="ima45 != null">
+                IMA45 = #{ima45,jdbcType=DECIMAL},
+            </if>
+            <if test="ima46 != null">
+                IMA46 = #{ima46,jdbcType=DECIMAL},
+            </if>
+            <if test="ima47 != null">
+                IMA47 = #{ima47,jdbcType=DECIMAL},
+            </if>
+            <if test="ima48 != null">
+                IMA48 = #{ima48,jdbcType=DECIMAL},
+            </if>
+            <if test="ima49 != null">
+                IMA49 = #{ima49,jdbcType=DECIMAL},
+            </if>
+            <if test="ima491 != null">
+                IMA491 = #{ima491,jdbcType=DECIMAL},
+            </if>
+            <if test="ima50 != null">
+                IMA50 = #{ima50,jdbcType=DECIMAL},
+            </if>
+            <if test="ima51 != null">
+                IMA51 = #{ima51,jdbcType=DECIMAL},
+            </if>
+            <if test="ima52 != null">
+                IMA52 = #{ima52,jdbcType=DECIMAL},
+            </if>
+            <if test="ima53 != null">
+                IMA53 = #{ima53,jdbcType=DECIMAL},
+            </if>
+            <if test="ima531 != null">
+                IMA531 = #{ima531,jdbcType=DECIMAL},
+            </if>
+            <if test="ima532 != null">
+                IMA532 = #{ima532,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima54 != null">
+                IMA54 = #{ima54,jdbcType=VARCHAR},
+            </if>
+            <if test="ima55 != null">
+                IMA55 = #{ima55,jdbcType=VARCHAR},
+            </if>
+            <if test="ima55Fac != null">
+                IMA55_FAC = #{ima55Fac,jdbcType=DECIMAL},
+            </if>
+            <if test="ima56 != null">
+                IMA56 = #{ima56,jdbcType=DECIMAL},
+            </if>
+            <if test="ima561 != null">
+                IMA561 = #{ima561,jdbcType=DECIMAL},
+            </if>
+            <if test="ima562 != null">
+                IMA562 = #{ima562,jdbcType=DECIMAL},
+            </if>
+            <if test="ima57 != null">
+                IMA57 = #{ima57,jdbcType=DECIMAL},
+            </if>
+            <if test="ima571 != null">
+                IMA571 = #{ima571,jdbcType=VARCHAR},
+            </if>
+            <if test="ima58 != null">
+                IMA58 = #{ima58,jdbcType=DECIMAL},
+            </if>
+            <if test="ima59 != null">
+                IMA59 = #{ima59,jdbcType=DECIMAL},
+            </if>
+            <if test="ima60 != null">
+                IMA60 = #{ima60,jdbcType=DECIMAL},
+            </if>
+            <if test="ima61 != null">
+                IMA61 = #{ima61,jdbcType=DECIMAL},
+            </if>
+            <if test="ima62 != null">
+                IMA62 = #{ima62,jdbcType=DECIMAL},
+            </if>
+            <if test="ima63 != null">
+                IMA63 = #{ima63,jdbcType=VARCHAR},
+            </if>
+            <if test="ima63Fac != null">
+                IMA63_FAC = #{ima63Fac,jdbcType=DECIMAL},
+            </if>
+            <if test="ima64 != null">
+                IMA64 = #{ima64,jdbcType=DECIMAL},
+            </if>
+            <if test="ima641 != null">
+                IMA641 = #{ima641,jdbcType=DECIMAL},
+            </if>
+            <if test="ima65 != null">
+                IMA65 = #{ima65,jdbcType=DECIMAL},
+            </if>
+            <if test="ima66 != null">
+                IMA66 = #{ima66,jdbcType=DECIMAL},
+            </if>
+            <if test="ima67 != null">
+                IMA67 = #{ima67,jdbcType=VARCHAR},
+            </if>
+            <if test="ima68 != null">
+                IMA68 = #{ima68,jdbcType=DECIMAL},
+            </if>
+            <if test="ima69 != null">
+                IMA69 = #{ima69,jdbcType=DECIMAL},
+            </if>
+            <if test="ima70 != null">
+                IMA70 = #{ima70,jdbcType=VARCHAR},
+            </if>
+            <if test="ima71 != null">
+                IMA71 = #{ima71,jdbcType=DECIMAL},
+            </if>
+            <if test="ima72 != null">
+                IMA72 = #{ima72,jdbcType=DECIMAL},
+            </if>
+            <if test="ima73 != null">
+                IMA73 = #{ima73,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima74 != null">
+                IMA74 = #{ima74,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima86 != null">
+                IMA86 = #{ima86,jdbcType=VARCHAR},
+            </if>
+            <if test="ima86Fac != null">
+                IMA86_FAC = #{ima86Fac,jdbcType=DECIMAL},
+            </if>
+            <if test="ima87 != null">
+                IMA87 = #{ima87,jdbcType=VARCHAR},
+            </if>
+            <if test="ima871 != null">
+                IMA871 = #{ima871,jdbcType=DECIMAL},
+            </if>
+            <if test="ima872 != null">
+                IMA872 = #{ima872,jdbcType=VARCHAR},
+            </if>
+            <if test="ima873 != null">
+                IMA873 = #{ima873,jdbcType=DECIMAL},
+            </if>
+            <if test="ima874 != null">
+                IMA874 = #{ima874,jdbcType=VARCHAR},
+            </if>
+            <if test="ima88 != null">
+                IMA88 = #{ima88,jdbcType=DECIMAL},
+            </if>
+            <if test="ima881 != null">
+                IMA881 = #{ima881,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima89 != null">
+                IMA89 = #{ima89,jdbcType=DECIMAL},
+            </if>
+            <if test="ima90 != null">
+                IMA90 = #{ima90,jdbcType=DECIMAL},
+            </if>
+            <if test="ima91 != null">
+                IMA91 = #{ima91,jdbcType=DECIMAL},
+            </if>
+            <if test="ima92 != null">
+                IMA92 = #{ima92,jdbcType=VARCHAR},
+            </if>
+            <if test="ima93 != null">
+                IMA93 = #{ima93,jdbcType=VARCHAR},
+            </if>
+            <if test="ima94 != null">
+                IMA94 = #{ima94,jdbcType=VARCHAR},
+            </if>
+            <if test="ima95 != null">
+                IMA95 = #{ima95,jdbcType=DECIMAL},
+            </if>
+            <if test="ima75 != null">
+                IMA75 = #{ima75,jdbcType=VARCHAR},
+            </if>
+            <if test="ima76 != null">
+                IMA76 = #{ima76,jdbcType=VARCHAR},
+            </if>
+            <if test="ima77 != null">
+                IMA77 = #{ima77,jdbcType=DECIMAL},
+            </if>
+            <if test="ima78 != null">
+                IMA78 = #{ima78,jdbcType=DECIMAL},
+            </if>
+            <if test="ima79 != null">
+                IMA79 = #{ima79,jdbcType=DECIMAL},
+            </if>
+            <if test="ima80 != null">
+                IMA80 = #{ima80,jdbcType=DECIMAL},
+            </if>
+            <if test="ima81 != null">
+                IMA81 = #{ima81,jdbcType=DECIMAL},
+            </if>
+            <if test="ima82 != null">
+                IMA82 = #{ima82,jdbcType=DECIMAL},
+            </if>
+            <if test="ima83 != null">
+                IMA83 = #{ima83,jdbcType=DECIMAL},
+            </if>
+            <if test="ima84 != null">
+                IMA84 = #{ima84,jdbcType=DECIMAL},
+            </if>
+            <if test="ima85 != null">
+                IMA85 = #{ima85,jdbcType=DECIMAL},
+            </if>
+            <if test="ima851 != null">
+                IMA851 = #{ima851,jdbcType=VARCHAR},
+            </if>
+            <if test="ima852 != null">
+                IMA852 = #{ima852,jdbcType=VARCHAR},
+            </if>
+            <if test="ima853 != null">
+                IMA853 = #{ima853,jdbcType=VARCHAR},
+            </if>
+            <if test="ima96 != null">
+                IMA96 = #{ima96,jdbcType=DECIMAL},
+            </if>
+            <if test="ima97 != null">
+                IMA97 = #{ima97,jdbcType=DECIMAL},
+            </if>
+            <if test="ima98 != null">
+                IMA98 = #{ima98,jdbcType=DECIMAL},
+            </if>
+            <if test="ima99 != null">
+                IMA99 = #{ima99,jdbcType=DECIMAL},
+            </if>
+            <if test="ima100 != null">
+                IMA100 = #{ima100,jdbcType=VARCHAR},
+            </if>
+            <if test="ima101 != null">
+                IMA101 = #{ima101,jdbcType=VARCHAR},
+            </if>
+            <if test="ima102 != null">
+                IMA102 = #{ima102,jdbcType=VARCHAR},
+            </if>
+            <if test="ima103 != null">
+                IMA103 = #{ima103,jdbcType=VARCHAR},
+            </if>
+            <if test="ima104 != null">
+                IMA104 = #{ima104,jdbcType=DECIMAL},
+            </if>
+            <if test="ima105 != null">
+                IMA105 = #{ima105,jdbcType=VARCHAR},
+            </if>
+            <if test="ima106 != null">
+                IMA106 = #{ima106,jdbcType=VARCHAR},
+            </if>
+            <if test="ima107 != null">
+                IMA107 = #{ima107,jdbcType=VARCHAR},
+            </if>
+            <if test="ima108 != null">
+                IMA108 = #{ima108,jdbcType=VARCHAR},
+            </if>
+            <if test="ima109 != null">
+                IMA109 = #{ima109,jdbcType=VARCHAR},
+            </if>
+            <if test="ima110 != null">
+                IMA110 = #{ima110,jdbcType=VARCHAR},
+            </if>
+            <if test="ima111 != null">
+                IMA111 = #{ima111,jdbcType=VARCHAR},
+            </if>
+            <if test="ima121 != null">
+                IMA121 = #{ima121,jdbcType=DECIMAL},
+            </if>
+            <if test="ima122 != null">
+                IMA122 = #{ima122,jdbcType=DECIMAL},
+            </if>
+            <if test="ima123 != null">
+                IMA123 = #{ima123,jdbcType=DECIMAL},
+            </if>
+            <if test="ima124 != null">
+                IMA124 = #{ima124,jdbcType=DECIMAL},
+            </if>
+            <if test="ima125 != null">
+                IMA125 = #{ima125,jdbcType=DECIMAL},
+            </if>
+            <if test="ima126 != null">
+                IMA126 = #{ima126,jdbcType=DECIMAL},
+            </if>
+            <if test="ima127 != null">
+                IMA127 = #{ima127,jdbcType=DECIMAL},
+            </if>
+            <if test="ima128 != null">
+                IMA128 = #{ima128,jdbcType=DECIMAL},
+            </if>
+            <if test="ima129 != null">
+                IMA129 = #{ima129,jdbcType=DECIMAL},
+            </if>
+            <if test="ima130 != null">
+                IMA130 = #{ima130,jdbcType=VARCHAR},
+            </if>
+            <if test="ima131 != null">
+                IMA131 = #{ima131,jdbcType=VARCHAR},
+            </if>
+            <if test="ima132 != null">
+                IMA132 = #{ima132,jdbcType=VARCHAR},
+            </if>
+            <if test="ima133 != null">
+                IMA133 = #{ima133,jdbcType=VARCHAR},
+            </if>
+            <if test="ima134 != null">
+                IMA134 = #{ima134,jdbcType=VARCHAR},
+            </if>
+            <if test="ima135 != null">
+                IMA135 = #{ima135,jdbcType=VARCHAR},
+            </if>
+            <if test="ima136 != null">
+                IMA136 = #{ima136,jdbcType=VARCHAR},
+            </if>
+            <if test="ima137 != null">
+                IMA137 = #{ima137,jdbcType=VARCHAR},
+            </if>
+            <if test="ima138 != null">
+                IMA138 = #{ima138,jdbcType=VARCHAR},
+            </if>
+            <if test="ima139 != null">
+                IMA139 = #{ima139,jdbcType=VARCHAR},
+            </if>
+            <if test="ima140 != null">
+                IMA140 = #{ima140,jdbcType=VARCHAR},
+            </if>
+            <if test="ima141 != null">
+                IMA141 = #{ima141,jdbcType=VARCHAR},
+            </if>
+            <if test="ima142 != null">
+                IMA142 = #{ima142,jdbcType=DECIMAL},
+            </if>
+            <if test="ima143 != null">
+                IMA143 = #{ima143,jdbcType=DECIMAL},
+            </if>
+            <if test="ima144 != null">
+                IMA144 = #{ima144,jdbcType=VARCHAR},
+            </if>
+            <if test="ima145 != null">
+                IMA145 = #{ima145,jdbcType=VARCHAR},
+            </if>
+            <if test="ima146 != null">
+                IMA146 = #{ima146,jdbcType=VARCHAR},
+            </if>
+            <if test="ima147 != null">
+                IMA147 = #{ima147,jdbcType=VARCHAR},
+            </if>
+            <if test="ima148 != null">
+                IMA148 = #{ima148,jdbcType=DECIMAL},
+            </if>
+            <if test="ima901 != null">
+                IMA901 = #{ima901,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima902 != null">
+                IMA902 = #{ima902,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima903 != null">
+                IMA903 = #{ima903,jdbcType=VARCHAR},
+            </if>
+            <if test="ima904 != null">
+                IMA904 = #{ima904,jdbcType=VARCHAR},
+            </if>
+            <if test="ima905 != null">
+                IMA905 = #{ima905,jdbcType=VARCHAR},
+            </if>
+            <if test="ima906 != null">
+                IMA906 = #{ima906,jdbcType=VARCHAR},
+            </if>
+            <if test="ima907 != null">
+                IMA907 = #{ima907,jdbcType=VARCHAR},
+            </if>
+            <if test="ima908 != null">
+                IMA908 = #{ima908,jdbcType=VARCHAR},
+            </if>
+            <if test="ima909 != null">
+                IMA909 = #{ima909,jdbcType=DECIMAL},
+            </if>
+            <if test="ima910 != null">
+                IMA910 = #{ima910,jdbcType=VARCHAR},
+            </if>
+            <if test="imaacti != null">
+                IMAACTI = #{imaacti,jdbcType=VARCHAR},
+            </if>
+            <if test="imauser != null">
+                IMAUSER = #{imauser,jdbcType=VARCHAR},
+            </if>
+            <if test="imagrup != null">
+                IMAGRUP = #{imagrup,jdbcType=VARCHAR},
+            </if>
+            <if test="imamodu != null">
+                IMAMODU = #{imamodu,jdbcType=VARCHAR},
+            </if>
+            <if test="imadate != null">
+                IMADATE = #{imadate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="imaag != null">
+                IMAAG = #{imaag,jdbcType=VARCHAR},
+            </if>
+            <if test="imaag1 != null">
+                IMAAG1 = #{imaag1,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud01 != null">
+                IMAUD01 = #{imaud01,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud02 != null">
+                IMAUD02 = #{imaud02,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud03 != null">
+                IMAUD03 = #{imaud03,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud04 != null">
+                IMAUD04 = #{imaud04,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud05 != null">
+                IMAUD05 = #{imaud05,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud06 != null">
+                IMAUD06 = #{imaud06,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud07 != null">
+                IMAUD07 = #{imaud07,jdbcType=DECIMAL},
+            </if>
+            <if test="imaud08 != null">
+                IMAUD08 = #{imaud08,jdbcType=DECIMAL},
+            </if>
+            <if test="imaud09 != null">
+                IMAUD09 = #{imaud09,jdbcType=DECIMAL},
+            </if>
+            <if test="imaud10 != null">
+                IMAUD10 = #{imaud10,jdbcType=DECIMAL},
+            </if>
+            <if test="imaud11 != null">
+                IMAUD11 = #{imaud11,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud12 != null">
+                IMAUD12 = #{imaud12,jdbcType=DECIMAL},
+            </if>
+            <if test="imaud13 != null">
+                IMAUD13 = #{imaud13,jdbcType=TIMESTAMP},
+            </if>
+            <if test="imaud14 != null">
+                IMAUD14 = #{imaud14,jdbcType=TIMESTAMP},
+            </if>
+            <if test="imaud15 != null">
+                IMAUD15 = #{imaud15,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima1001 != null">
+                IMA1001 = #{ima1001,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1002 != null">
+                IMA1002 = #{ima1002,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1003 != null">
+                IMA1003 = #{ima1003,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1004 != null">
+                IMA1004 = #{ima1004,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1005 != null">
+                IMA1005 = #{ima1005,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1006 != null">
+                IMA1006 = #{ima1006,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1007 != null">
+                IMA1007 = #{ima1007,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1008 != null">
+                IMA1008 = #{ima1008,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1009 != null">
+                IMA1009 = #{ima1009,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1010 != null">
+                IMA1010 = #{ima1010,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1011 != null">
+                IMA1011 = #{ima1011,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1012 != null">
+                IMA1012 = #{ima1012,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima1013 != null">
+                IMA1013 = #{ima1013,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima1014 != null">
+                IMA1014 = #{ima1014,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1015 != null">
+                IMA1015 = #{ima1015,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima1016 != null">
+                IMA1016 = #{ima1016,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1017 != null">
+                IMA1017 = #{ima1017,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1018 != null">
+                IMA1018 = #{ima1018,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1019 != null">
+                IMA1019 = #{ima1019,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1020 != null">
+                IMA1020 = #{ima1020,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1021 != null">
+                IMA1021 = #{ima1021,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1022 != null">
+                IMA1022 = #{ima1022,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1023 != null">
+                IMA1023 = #{ima1023,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1024 != null">
+                IMA1024 = #{ima1024,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1025 != null">
+                IMA1025 = #{ima1025,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1026 != null">
+                IMA1026 = #{ima1026,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1027 != null">
+                IMA1027 = #{ima1027,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1028 != null">
+                IMA1028 = #{ima1028,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1029 != null">
+                IMA1029 = #{ima1029,jdbcType=VARCHAR},
+            </if>
+            <if test="ima911 != null">
+                IMA911 = #{ima911,jdbcType=VARCHAR},
+            </if>
+            <if test="ima912 != null">
+                IMA912 = #{ima912,jdbcType=DECIMAL},
+            </if>
+            <if test="ima913 != null">
+                IMA913 = #{ima913,jdbcType=VARCHAR},
+            </if>
+            <if test="ima914 != null">
+                IMA914 = #{ima914,jdbcType=VARCHAR},
+            </if>
+            <if test="ima391 != null">
+                IMA391 = #{ima391,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1321 != null">
+                IMA1321 = #{ima1321,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1911 != null">
+                IMA1911 = #{ima1911,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1912 != null">
+                IMA1912 = #{ima1912,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1913 != null">
+                IMA1913 = #{ima1913,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1914 != null">
+                IMA1914 = #{ima1914,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1915 != null">
+                IMA1915 = #{ima1915,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1916 != null">
+                IMA1916 = #{ima1916,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1919 != null">
+                IMA1919 = #{ima1919,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1401 != null">
+                IMA1401 = #{ima1401,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima915 != null">
+                IMA915 = #{ima915,jdbcType=VARCHAR},
+            </if>
+            <if test="ima916 != null">
+                IMA916 = #{ima916,jdbcType=VARCHAR},
+            </if>
+            <if test="ima917 != null">
+                IMA917 = #{ima917,jdbcType=DECIMAL},
+            </if>
+            <if test="ima150 != null">
+                IMA150 = #{ima150,jdbcType=VARCHAR},
+            </if>
+            <if test="ima151 != null">
+                IMA151 = #{ima151,jdbcType=VARCHAR},
+            </if>
+            <if test="ima152 != null">
+                IMA152 = #{ima152,jdbcType=VARCHAR},
+            </if>
+            <if test="ima918 != null">
+                IMA918 = #{ima918,jdbcType=VARCHAR},
+            </if>
+            <if test="ima919 != null">
+                IMA919 = #{ima919,jdbcType=VARCHAR},
+            </if>
+            <if test="ima920 != null">
+                IMA920 = #{ima920,jdbcType=VARCHAR},
+            </if>
+            <if test="ima921 != null">
+                IMA921 = #{ima921,jdbcType=VARCHAR},
+            </if>
+            <if test="ima922 != null">
+                IMA922 = #{ima922,jdbcType=VARCHAR},
+            </if>
+            <if test="ima923 != null">
+                IMA923 = #{ima923,jdbcType=VARCHAR},
+            </if>
+            <if test="ima924 != null">
+                IMA924 = #{ima924,jdbcType=VARCHAR},
+            </if>
+            <if test="ima925 != null">
+                IMA925 = #{ima925,jdbcType=VARCHAR},
+            </if>
+            <if test="ima601 != null">
+                IMA601 = #{ima601,jdbcType=DECIMAL},
+            </if>
+            <if test="ima153 != null">
+                IMA153 = #{ima153,jdbcType=DECIMAL},
+            </if>
+            <if test="ima926 != null">
+                IMA926 = #{ima926,jdbcType=VARCHAR},
+            </if>
+            <if test="ima154 != null">
+                IMA154 = #{ima154,jdbcType=VARCHAR},
+            </if>
+            <if test="ima155 != null">
+                IMA155 = #{ima155,jdbcType=VARCHAR},
+            </if>
+            <if test="ima149 != null">
+                IMA149 = #{ima149,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1491 != null">
+                IMA1491 = #{ima1491,jdbcType=VARCHAR},
+            </if>
+            <if test="imaoriu != null">
+                IMAORIU = #{imaoriu,jdbcType=VARCHAR},
+            </if>
+            <if test="imaorig != null">
+                IMAORIG = #{imaorig,jdbcType=VARCHAR},
+            </if>
+            <if test="ima9021 != null">
+                IMA9021 = #{ima9021,jdbcType=TIMESTAMP},
+            </if>
+            <if test="ima022 != null">
+                IMA022 = #{ima022,jdbcType=DECIMAL},
+            </if>
+            <if test="ima251 != null">
+                IMA251 = #{ima251,jdbcType=VARCHAR},
+            </if>
+            <if test="ima940 != null">
+                IMA940 = #{ima940,jdbcType=VARCHAR},
+            </if>
+            <if test="ima941 != null">
+                IMA941 = #{ima941,jdbcType=VARCHAR},
+            </if>
+            <if test="ima156 != null">
+                IMA156 = #{ima156,jdbcType=VARCHAR},
+            </if>
+            <if test="ima157 != null">
+                IMA157 = #{ima157,jdbcType=VARCHAR},
+            </if>
+            <if test="ima158 != null">
+                IMA158 = #{ima158,jdbcType=VARCHAR},
+            </if>
+            <if test="ima927 != null">
+                IMA927 = #{ima927,jdbcType=VARCHAR},
+            </if>
+            <if test="ima120 != null">
+                IMA120 = #{ima120,jdbcType=VARCHAR},
+            </if>
+            <if test="ima159 != null">
+                IMA159 = #{ima159,jdbcType=VARCHAR},
+            </if>
+            <if test="ima928 != null">
+                IMA928 = #{ima928,jdbcType=VARCHAR},
+            </if>
+            <if test="ima929 != null">
+                IMA929 = #{ima929,jdbcType=VARCHAR},
+            </if>
+            <if test="ima160 != null">
+                IMA160 = #{ima160,jdbcType=VARCHAR},
+            </if>
+            <if test="ima161 != null">
+                IMA161 = #{ima161,jdbcType=VARCHAR},
+            </if>
+            <if test="ima162 != null">
+                IMA162 = #{ima162,jdbcType=VARCHAR},
+            </if>
+            <if test="ima163 != null">
+                IMA163 = #{ima163,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1631 != null">
+                IMA1631 = #{ima1631,jdbcType=VARCHAR},
+            </if>
+            <if test="ima721 != null">
+                IMA721 = #{ima721,jdbcType=DECIMAL},
+            </if>
+            <if test="ima171 != null">
+                IMA171 = #{ima171,jdbcType=DECIMAL},
+            </if>
+            <if test="ima172 != null">
+                IMA172 = #{ima172,jdbcType=DECIMAL},
+            </if>
+            <if test="ima1030 != null">
+                IMA1030 = #{ima1030,jdbcType=VARCHAR},
+            </if>
+            <if test="ima930 != null">
+                IMA930 = #{ima930,jdbcType=VARCHAR},
+            </if>
+            <if test="ima931 != null">
+                IMA931 = #{ima931,jdbcType=VARCHAR},
+            </if>
+            <if test="ima932 != null">
+                IMA932 = #{ima932,jdbcType=VARCHAR},
+            </if>
+            <if test="ima933 != null">
+                IMA933 = #{ima933,jdbcType=VARCHAR},
+            </if>
+            <if test="ima934 != null">
+                IMA934 = #{ima934,jdbcType=VARCHAR},
+            </if>
+            <if test="ima164 != null">
+                IMA164 = #{ima164,jdbcType=VARCHAR},
+            </if>
+            <if test="ima1641 != null">
+                IMA1641 = #{ima1641,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma200 != null">
+                TB_IMA200 = #{tbIma200,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma201 != null">
+                TB_IMA201 = #{tbIma201,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma202 != null">
+                TB_IMA202 = #{tbIma202,jdbcType=DECIMAL},
+            </if>
+            <if test="tbIma203 != null">
+                TB_IMA203 = #{tbIma203,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma204 != null">
+                TB_IMA204 = #{tbIma204,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma205 != null">
+                TB_IMA205 = #{tbIma205,jdbcType=DECIMAL},
+            </if>
+            <if test="tbIma206 != null">
+                TB_IMA206 = #{tbIma206,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma207 != null">
+                TB_IMA207 = #{tbIma207,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma208 != null">
+                TB_IMA208 = #{tbIma208,jdbcType=VARCHAR},
+            </if>
+            <if test="tbIma209 != null">
+                TB_IMA209 = #{tbIma209,jdbcType=DECIMAL},
+            </if>
+            <if test="imaud16 != null">
+                IMAUD16 = #{imaud16,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud17 != null">
+                IMAUD17 = #{imaud17,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud18 != null">
+                IMAUD18 = #{imaud18,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud19 != null">
+                IMAUD19 = #{imaud19,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud20 != null">
+                IMAUD20 = #{imaud20,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud21 != null">
+                IMAUD21 = #{imaud21,jdbcType=VARCHAR},
+            </if>
+            <if test="imaud22 != null">
+                IMAUD22 = #{imaud22,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma01 != null">
+                TA_IMA01 = #{taIma01,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma02 != null">
+                TA_IMA02 = #{taIma02,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma03 != null">
+                TA_IMA03 = #{taIma03,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma04 != null">
+                TA_IMA04 = #{taIma04,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma05 != null">
+                TA_IMA05 = #{taIma05,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma06 != null">
+                TA_IMA06 = #{taIma06,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma07 != null">
+                TA_IMA07 = #{taIma07,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma08 != null">
+                TA_IMA08 = #{taIma08,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma09 != null">
+                TA_IMA09 = #{taIma09,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma10 != null">
+                TA_IMA10 = #{taIma10,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma11 != null">
+                TA_IMA11 = #{taIma11,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma12 != null">
+                TA_IMA12 = #{taIma12,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma13 != null">
+                TA_IMA13 = #{taIma13,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma14 != null">
+                TA_IMA14 = #{taIma14,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma15 != null">
+                TA_IMA15 = #{taIma15,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma16 != null">
+                TA_IMA16 = #{taIma16,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma17 != null">
+                TA_IMA17 = #{taIma17,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma18 != null">
+                TA_IMA18 = #{taIma18,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma19 != null">
+                TA_IMA19 = #{taIma19,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma20 != null">
+                TA_IMA20 = #{taIma20,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma21 != null">
+                TA_IMA21 = #{taIma21,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma22 != null">
+                TA_IMA22 = #{taIma22,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma23 != null">
+                TA_IMA23 = #{taIma23,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma24 != null">
+                TA_IMA24 = #{taIma24,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma25 != null">
+                TA_IMA25 = #{taIma25,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma26 != null">
+                TA_IMA26 = #{taIma26,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma27 != null">
+                TA_IMA27 = #{taIma27,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma28 != null">
+                TA_IMA28 = #{taIma28,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma29 != null">
+                TA_IMA29 = #{taIma29,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma30 != null">
+                TA_IMA30 = #{taIma30,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma31 != null">
+                TA_IMA31 = #{taIma31,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma32 != null">
+                TA_IMA32 = #{taIma32,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma33 != null">
+                TA_IMA33 = #{taIma33,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma34 != null">
+                TA_IMA34 = #{taIma34,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma35 != null">
+                TA_IMA35 = #{taIma35,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma36 != null">
+                TA_IMA36 = #{taIma36,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma37 != null">
+                TA_IMA37 = #{taIma37,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma38 != null">
+                TA_IMA38 = #{taIma38,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma39 != null">
+                TA_IMA39 = #{taIma39,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma40 != null">
+                TA_IMA40 = #{taIma40,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma41 != null">
+                TA_IMA41 = #{taIma41,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma42 != null">
+                TA_IMA42 = #{taIma42,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma43 != null">
+                TA_IMA43 = #{taIma43,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma44 != null">
+                TA_IMA44 = #{taIma44,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma45 != null">
+                TA_IMA45 = #{taIma45,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma46 != null">
+                TA_IMA46 = #{taIma46,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma47 != null">
+                TA_IMA47 = #{taIma47,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma48 != null">
+                TA_IMA48 = #{taIma48,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma49 != null">
+                TA_IMA49 = #{taIma49,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma50 != null">
+                TA_IMA50 = #{taIma50,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma51 != null">
+                TA_IMA51 = #{taIma51,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma52 != null">
+                TA_IMA52 = #{taIma52,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma53 != null">
+                TA_IMA53 = #{taIma53,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma54 != null">
+                TA_IMA54 = #{taIma54,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma55 != null">
+                TA_IMA55 = #{taIma55,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma56 != null">
+                TA_IMA56 = #{taIma56,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma57 != null">
+                TA_IMA57 = #{taIma57,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma58 != null">
+                TA_IMA58 = #{taIma58,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma59 != null">
+                TA_IMA59 = #{taIma59,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma60 != null">
+                TA_IMA60 = #{taIma60,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma61 != null">
+                TA_IMA61 = #{taIma61,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma62 != null">
+                TA_IMA62 = #{taIma62,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma63 != null">
+                TA_IMA63 = #{taIma63,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma64 != null">
+                TA_IMA64 = #{taIma64,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma65 != null">
+                TA_IMA65 = #{taIma65,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma66 != null">
+                TA_IMA66 = #{taIma66,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma67 != null">
+                TA_IMA67 = #{taIma67,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma68 != null">
+                TA_IMA68 = #{taIma68,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma69 != null">
+                TA_IMA69 = #{taIma69,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma70 != null">
+                TA_IMA70 = #{taIma70,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma71 != null">
+                TA_IMA71 = #{taIma71,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma72 != null">
+                TA_IMA72 = #{taIma72,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma73 != null">
+                TA_IMA73 = #{taIma73,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma74 != null">
+                TA_IMA74 = #{taIma74,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma75 != null">
+                TA_IMA75 = #{taIma75,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma76 != null">
+                TA_IMA76 = #{taIma76,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma77 != null">
+                TA_IMA77 = #{taIma77,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma78 != null">
+                TA_IMA78 = #{taIma78,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma79 != null">
+                TA_IMA79 = #{taIma79,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma80 != null">
+                TA_IMA80 = #{taIma80,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma81 != null">
+                TA_IMA81 = #{taIma81,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma82 != null">
+                TA_IMA82 = #{taIma82,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma83 != null">
+                TA_IMA83 = #{taIma83,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma84 != null">
+                TA_IMA84 = #{taIma84,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma85 != null">
+                TA_IMA85 = #{taIma85,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma86 != null">
+                TA_IMA86 = #{taIma86,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma87 != null">
+                TA_IMA87 = #{taIma87,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma88 != null">
+                TA_IMA88 = #{taIma88,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma89 != null">
+                TA_IMA89 = #{taIma89,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma90 != null">
+                TA_IMA90 = #{taIma90,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma91 != null">
+                TA_IMA91 = #{taIma91,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma92 != null">
+                TA_IMA92 = #{taIma92,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma93 != null">
+                TA_IMA93 = #{taIma93,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma94 != null">
+                TA_IMA94 = #{taIma94,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma95 != null">
+                TA_IMA95 = #{taIma95,jdbcType=TIMESTAMP},
+            </if>
+            <if test="taIma96 != null">
+                TA_IMA96 = #{taIma96,jdbcType=TIMESTAMP},
+            </if>
+            <if test="taIma97 != null">
+                TA_IMA97 = #{taIma97,jdbcType=DECIMAL},
+            </if>
+            <if test="taIma98 != null">
+                TA_IMA98 = #{taIma98,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma99 != null">
+                TA_IMA99 = #{taIma99,jdbcType=VARCHAR},
+            </if>
+            <if test="taIma100 != null">
+                TA_IMA100 = #{taIma100,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where IMA01 = #{ima01,jdbcType=VARCHAR}
+    </update>
 </mapper>

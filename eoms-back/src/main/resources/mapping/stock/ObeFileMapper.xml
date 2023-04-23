@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.ObeFileMapper">
+
+  <insert id="insertSelective" keyColumn="OBE01" keyProperty="obe01" parameterType="com.keboda.eomsback.stock.pojo.ObeFile" >
+    insert into ${centre}.OBE_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="obe02 != null">
+        OBE02,
+      </if>
+      <if test="obe11 != null">
+        OBE11,
+      </if>
+      <if test="obe12 != null">
+        OBE12,
+      </if>
+      <if test="obe13 != null">
+        OBE13,
+      </if>
+      <if test="obe21 != null">
+        OBE21,
+      </if>
+      <if test="obe22 != null">
+        OBE22,
+      </if>
+      <if test="obe23 != null">
+        OBE23,
+      </if>
+      <if test="obe24 != null">
+        OBE24,
+      </if>
+      <if test="obe251 != null">
+        OBE251,
+      </if>
+      <if test="obe252 != null">
+        OBE252,
+      </if>
+      <if test="obe253 != null">
+        OBE253,
+      </if>
+      <if test="obe26 != null">
+        OBE26,
+      </if>
+      <if test="obe28 != null">
+        OBE28,
+      </if>
+      <if test="obe291 != null">
+        OBE291,
+      </if>
+      <if test="obe292 != null">
+        OBE292,
+      </if>
+      <if test="obe293 != null">
+        OBE293,
+      </if>
+      <if test="obe30 != null">
+        OBE30,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="obe02 != null">
+        #{obe02,jdbcType=VARCHAR},
+      </if>
+      <if test="obe11 != null">
+        #{obe11,jdbcType=VARCHAR},
+      </if>
+      <if test="obe12 != null">
+        #{obe12,jdbcType=DECIMAL},
+      </if>
+      <if test="obe13 != null">
+        #{obe13,jdbcType=DECIMAL},
+      </if>
+      <if test="obe21 != null">
+        #{obe21,jdbcType=VARCHAR},
+      </if>
+      <if test="obe22 != null">
+        #{obe22,jdbcType=DECIMAL},
+      </if>
+      <if test="obe23 != null">
+        #{obe23,jdbcType=DECIMAL},
+      </if>
+      <if test="obe24 != null">
+        #{obe24,jdbcType=DECIMAL},
+      </if>
+      <if test="obe251 != null">
+        #{obe251,jdbcType=DECIMAL},
+      </if>
+      <if test="obe252 != null">
+        #{obe252,jdbcType=DECIMAL},
+      </if>
+      <if test="obe253 != null">
+        #{obe253,jdbcType=DECIMAL},
+      </if>
+      <if test="obe26 != null">
+        #{obe26,jdbcType=DECIMAL},
+      </if>
+      <if test="obe28 != null">
+        #{obe28,jdbcType=VARCHAR},
+      </if>
+      <if test="obe291 != null">
+        #{obe291,jdbcType=DECIMAL},
+      </if>
+      <if test="obe292 != null">
+        #{obe292,jdbcType=DECIMAL},
+      </if>
+      <if test="obe293 != null">
+        #{obe293,jdbcType=DECIMAL},
+      </if>
+      <if test="obe30 != null">
+        #{obe30,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.ObeFile">
+    update ${centre}.OBE_FILE
+    <set>
+      <if test="obe02 != null">
+        OBE02 = #{obe02,jdbcType=VARCHAR},
+      </if>
+      <if test="obe11 != null">
+        OBE11 = #{obe11,jdbcType=VARCHAR},
+      </if>
+      <if test="obe12 != null">
+        OBE12 = #{obe12,jdbcType=DECIMAL},
+      </if>
+      <if test="obe13 != null">
+        OBE13 = #{obe13,jdbcType=DECIMAL},
+      </if>
+      <if test="obe21 != null">
+        OBE21 = #{obe21,jdbcType=VARCHAR},
+      </if>
+      <if test="obe22 != null">
+        OBE22 = #{obe22,jdbcType=DECIMAL},
+      </if>
+      <if test="obe23 != null">
+        OBE23 = #{obe23,jdbcType=DECIMAL},
+      </if>
+      <if test="obe24 != null">
+        OBE24 = #{obe24,jdbcType=DECIMAL},
+      </if>
+      <if test="obe251 != null">
+        OBE251 = #{obe251,jdbcType=DECIMAL},
+      </if>
+      <if test="obe252 != null">
+        OBE252 = #{obe252,jdbcType=DECIMAL},
+      </if>
+      <if test="obe253 != null">
+        OBE253 = #{obe253,jdbcType=DECIMAL},
+      </if>
+      <if test="obe26 != null">
+        OBE26 = #{obe26,jdbcType=DECIMAL},
+      </if>
+      <if test="obe28 != null">
+        OBE28 = #{obe28,jdbcType=VARCHAR},
+      </if>
+      <if test="obe291 != null">
+        OBE291 = #{obe291,jdbcType=DECIMAL},
+      </if>
+      <if test="obe292 != null">
+        OBE292 = #{obe292,jdbcType=DECIMAL},
+      </if>
+      <if test="obe293 != null">
+        OBE293 = #{obe293,jdbcType=DECIMAL},
+      </if>
+      <if test="obe30 != null">
+        OBE30 = #{obe30,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where OBE01 = #{obe01,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

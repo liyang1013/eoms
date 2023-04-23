@@ -23,8 +23,13 @@
       </where>
       group by code,name
   </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.system.pojo.Operation">
+        select *
+        from Operation
+        where code = #{code}
+    </select>
 
-  <insert id="insertSelective" keyColumn="code" keyProperty="code" parameterType="com.keboda.eomsback.system.pojo.Operation" >
+    <insert id="insertSelective" keyColumn="code" keyProperty="code" parameterType="com.keboda.eomsback.system.pojo.Operation" >
       insert into operation
       <trim prefix="(" suffix=")" suffixOverrides=",">
           <if test="code != null">
