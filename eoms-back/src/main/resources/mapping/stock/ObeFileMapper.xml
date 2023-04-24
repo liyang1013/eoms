@@ -5,6 +5,9 @@
   <insert id="insertSelective" keyColumn="OBE01" keyProperty="obe01" parameterType="com.keboda.eomsback.stock.pojo.ObeFile" >
     insert into ${centre}.OBE_FILE
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="obe01 != null">
+        OBE01,
+      </if>
       <if test="obe02 != null">
         OBE02,
       </if>
@@ -58,6 +61,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="obe01 != null">
+        #{obe01,jdbcType=VARCHAR},
+      </if>
       <if test="obe02 != null">
         #{obe02,jdbcType=VARCHAR},
       </if>
@@ -168,5 +174,18 @@
     </set>
     where OBE01 = #{obe01,jdbcType=VARCHAR}
   </update>
+    <select id="selectMaxCount" resultType="java.lang.Integer">
+      select max(to_number(obe01))
+      from ${centre}.OBE_FILE
+      where trim(translate(obe01, '0123456789', ' ')) is null
+    </select>
+  <select id="selectByParam" resultType="com.keboda.eomsback.stock.pojo.ObeFile">
+    select *
+    from ${centre}.OBE_FILE
+    where obe02 = #{obe02} and obe11 = #{obe11} and obe12 = #{obe12} and obe13 = #{obe13}
+    and obe21 = #{obe21} and obe22 = #{obe22} and obe23 = #{obe23} and obe251 = #{obe251}
+    and obe252 = #{obe252} and obe253 = #{obe253} and obe291 = #{obe291} and obe292 = #{obe292}
+    and obe30 = #{obe30}
+  </select>
 
 </mapper>

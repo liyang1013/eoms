@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.OblFileMapper">
+  <insert id="insertSelective" keyColumn="OBL01" keyProperty="obl01" parameterType="com.keboda.eomsback.stock.pojo.OblFile">
+    insert into ${centre}.OBL_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="obl01 != null">
+        OBL01,
+      </if>
+      <if test="obl02 != null">
+        OBL02,
+      </if>
+      <if test="obl03 != null">
+        OBL03,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="obl01 != null">
+        #{obl01,jdbcType=VARCHAR},
+      </if>
+      <if test="obl02 != null">
+        #{obl02,jdbcType=VARCHAR},
+      </if>
+      <if test="obl03 != null">
+        #{obl03,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.OblFile">
+    update OBL_FILE
+    <set>
+      <if test="obl03 != null">
+        OBL03 = #{obl03,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OBL01 = #{obl01,jdbcType=VARCHAR}
+      and OBL02 = #{obl02,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByKey" resultType="com.keboda.eomsback.stock.pojo.OblFile">
+    select *
+    from ${centre}.obl_file
+    where   obl01 = #{obl01} and obl02 = #{obl02}
+  </select>
+
+</mapper>
