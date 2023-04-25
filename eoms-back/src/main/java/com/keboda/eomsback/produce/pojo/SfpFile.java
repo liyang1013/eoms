@@ -105,5 +105,7 @@ public class SfpFile implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tlf06;
 
+    private String tlf907;
+
     private static final long serialVersionUID = 1L;
 }

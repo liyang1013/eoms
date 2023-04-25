@@ -1,69 +1,63 @@
 <template>
-  <div class="login-body">
-    <el-form :model="zx"  label-width="80px" class="login-box" label-position="left">
-        <h3 class="login-title">欢迎登录</h3>
-        <el-form-item label="用户名:">
-            <el-input type="text" placeholder="请输入用户名" v-model="zx.zx01"/>
-        </el-form-item>
-        <el-form-item label="密码:">
-            <el-input type="password" placeholder="请输入密码" v-model="zx.zx02"/>
-        </el-form-item>
-        <el-form-item>
-            <el-col :span="9">
-                <el-button type="primary" @click="login">登录</el-button>
-            </el-col>
-        </el-form-item>
-    </el-form>
+  <div class="bk">
+    <el-card shadow="always" style="margin: 200px auto;">
+      总是显示
+    </el-card>
+    <div class="login-box">
+
+    </div>
   </div>
+
 </template>
-
 <script>
-import store from "@/store";
-
 export default {
-    name: 'login',
-    data(){
-        return{
-            zx: {
-                zx01: 'JX2302304',
-                zx02: 'JX2302304'
-            }
-        }
-    },
-    methods: {
-        login(){
-          this.$http.post('/api/zx/login', this.zx).then(res => {
-            localStorage.setItem('token',res.data.result.token);
-            this.$store.commit('SET_USERNAME',res.data.result.zx01)
-            this.$router.push('/');
-          })
-        }
+  name: 'login',
+  data() {
+    return {
+      zx: {
+        zx01: 'JX2302304',
+        zx02: 'JX2302304'
+      }
     }
-
+  },
+  methods: {
+    login() {
+      this.$http.post('/api/zx/login', this.zx).then(res => {
+        localStorage.setItem('token', res.data.result.token);
+        this.$store.commit('SET_USERNAME', res.data.result.zx01)
+        this.$router.push('/');
+      })
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 
 .login-box {
-    border: 1px solid #DCDFE6;
-    width: 420px;
-    margin: 200px auto;
-    padding: 35px 35px 15px 35px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    box-shadow: 0 0 25px #909399;
-    background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #DCDFE6;
+  width: 420px;
+  height: 250px;
+  margin: 200px auto;
+  padding: 35px 35px 15px 35px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  box-shadow: 0 0 25px #909399;
+  background-color: rgba(255, 255, 255, 0.5);
 }
+
 .login-title {
-    text-align: center;
-    margin: 0 auto 40px auto;
-    color: #303133;
+  text-align: center;
+  margin: 0 auto 40px auto;
+  color: #303133;
 }
-.login-body{
-    background-size: 100vw 100vh;
-    background: url(../image/background.jpg)  ;
+
+.bk {
+  height: 100%;
+  width: 100%;
+  background: url(../image/background.jpg) no-repeat;
+  overflow: hidden;
 }
 
 </style>

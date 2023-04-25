@@ -38,6 +38,8 @@
                   :cell-style="{ 'text-align': 'center' }">
           <el-table-column prop="sfp01" label="发料单号" width="120">
           </el-table-column>
+          <el-table-column prop="tlf907" label="发料类型" width="120">
+          </el-table-column>
           <el-table-column prop="sfp02" label="录入日期" width="120">
           </el-table-column>
           <el-table-column prop="sfp03" label="扣账日期" width="120">
@@ -80,6 +82,8 @@
         <el-table :data="product.sfu" size="mini" stripe :header-cell-style="{ 'text-align': 'center' }"
                   :cell-style="{ 'text-align': 'center' }">
           <el-table-column prop="sfu01" label="入库单号" width="120">
+          </el-table-column>
+          <el-table-column prop="tlf907" label="入库类型" width="120">
           </el-table-column>
           <el-table-column prop="sfu14" label="录入日期" width="120">
           </el-table-column>

@@ -3,14 +3,16 @@ package com.keboda.eomsback.purchase.service.impl;
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.purchase.mapper.*;
-import com.keboda.eomsback.purchase.pojo.*;
+import com.keboda.eomsback.purchase.pojo.RvaFile;
+import com.keboda.eomsback.purchase.pojo.RvbFile;
+import com.keboda.eomsback.purchase.pojo.RvvFile;
 import com.keboda.eomsback.purchase.service.IRvaService;
 import com.keboda.eomsback.stock.mapper.ImgFileMapper;
 import com.keboda.eomsback.stock.mapper.TlfFileMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.beans.Transient;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -23,10 +25,6 @@ public class RvaServiceImpl implements IRvaService {
     private RvbFileMapper rvbFileMapper;
     @Resource
     private RvvFileMapper rvvFileMapper;
-    @Resource
-    private RvuFileMapper rvuFileMapper;
-    @Resource
-    private ImgFileMapper imgFileMapper;
     @Resource
     private TlfFileMapper tlfFileMapper;
     @Resource
@@ -47,13 +45,13 @@ public class RvaServiceImpl implements IRvaService {
      * @param rvaFile
      */
     @Override
-    @Transient
+    @Transactional
     public void alterRva(RvaFile rvaFile) {
         rvaFileMapper.alterRva(rvaFile);
     }
 
     @Override
-    @Transient
+    @Transactional
     public void alterRvb(List<RvbFile> rvbFiles) {
         for (RvbFile rvb : rvbFiles) {
             RvbFile rvbFile = rvbFileMapper.selectByKey(rvb.getRvb01(),rvb.getRvb02(),rvb.getRvbplant());

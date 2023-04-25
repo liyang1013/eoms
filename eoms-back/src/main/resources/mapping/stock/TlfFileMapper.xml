@@ -5,7 +5,7 @@
     <update id="updateDate">
         update ${centre}.TLF_FILE
         set tlf06 = #{ddate}
-        where tlf026 = #{tlf026} and tlf036 = #{tlf036}
+        where tlf62 = #{tlf62} and ( tlf036 = #{tlf0236} or  tlf026 = #{tlf0236})
     </update>
     <update id="updateQty">
         update ${centre}.TLF_FILE

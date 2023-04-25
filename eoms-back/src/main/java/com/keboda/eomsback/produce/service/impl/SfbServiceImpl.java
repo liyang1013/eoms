@@ -77,7 +77,7 @@ public class SfbServiceImpl implements ISfbService {
             if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
 
             //工单日期修改
-            if ((sfb.getSfb81() != null && sfb.getSfb81().compareTo(ddate) != 0)
+            if ((sfb.getSfb81() != null && ((sfbModify.getFlag() ? sfb.getSfb81().compareTo(ddate) < 0: sfb.getSfb81().compareTo(ddate) > 0)))
                     || (sfb.getSfb13() != null && (sfbModify.getFlag() ? sfb.getSfb13().compareTo(ddate) < 0 : sfb.getSfb13().compareTo(ddate) > 0))
                     || (sfb.getSfb15() != null && (sfbModify.getFlag() ? sfb.getSfb15().compareTo(ddate) < 0 : sfb.getSfb15().compareTo(ddate) > 0))
                     || (sfb.getSfb25() != null && (sfbModify.getFlag() ? sfb.getSfb25().compareTo(ddate) < 0 : sfb.getSfb25().compareTo(ddate) > 0))
@@ -95,9 +95,8 @@ public class SfbServiceImpl implements ISfbService {
                         sfpFileMapper.updateDate(sfp, sfbModify.getCentre(), ddate, sfbModify.getFlag());
                     }
                     //发料异动记录
-                    System.out.println(sfp.getTlf06() != null);
                     if (sfp.getTlf06() != null && ((sfbModify.getFlag() ? sfp.getTlf06().compareTo(ddate) < 0 : sfp.getTlf06().compareTo(ddate) > 0))) {
-                        tlfFileMapper.updateDate(sfb.getSfb01(), sfp.getSfp01(), sfbModify.getCentre(), ddate);
+                        tlfFileMapper.updateDate(sfb.getSfb01(), sfp.getSfp01(), sfbModify.getCentre(), ddate);//只修改了发料单
                     }
                 }
             }
@@ -136,10 +135,9 @@ public class SfbServiceImpl implements ISfbService {
                     ) {
                         sfuFileMapper.updateDate(sfu, sfbModify.getCentre(), ddate, sfbModify.getFlag());
                     }
-
                     //入库异动记录
                     if (sfu.getTlf06() != null && (sfbModify.getFlag() ? sfu.getTlf06().compareTo(ddate) < 0 : sfu.getTlf06().compareTo(ddate) > 0)) {
-                        tlfFileMapper.updateDate(sfu.getSfu01(), sfb.getSfb01(), sfbModify.getCentre(), ddate);
+                        tlfFileMapper.updateDate(sfb.getSfb01(), sfu.getSfu01(), sfbModify.getCentre(), ddate);
                     }
                 }
             }

@@ -21,13 +21,13 @@
     </update>
 
     <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.SfpFile">
-      select sfp01 , sfp02 ,  sfp03 , tlf06
+      select sfp01 , sfp02 ,  sfp03 , tlf06,case when tlf907 = 1 then '退料' else '发料' end as tlf907
       from ${centre}.sfp_file
       left join ${centre}.SFS_FILE on sfp01 = sfs01
       left join ${centre}.Sfe_file on sfe02 = sfp01
-      left join ${centre}.tlf_file on tlf036 = nvl(sfe01,sfs03) and tlf026 = sfp01 and tlf01 = nvl(sfe07,sfs04)
+      left join ${centre}.tlf_file on tlf62 = nvl(sfe01,sfs03) and tlf01 = nvl(sfe07,sfs04) and ( tlf026 = sfp01 or tlf036= sfp01 )
       where sfe01 =  #{sfb01} or sfs03 = #{sfb01}
-      group by sfp01,sfp02,sfp03,tlf06
+      group by sfp01,sfp02,sfp03,tlf06,tlf907
       order by sfp02
     </select>
 </mapper>
