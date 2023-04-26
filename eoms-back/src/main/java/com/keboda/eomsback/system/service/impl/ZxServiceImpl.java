@@ -26,11 +26,12 @@ public class ZxServiceImpl implements IZxService {
         if(zxFile.getZx01() == null || zxFile.getZx01().trim().isEmpty()){
             throw new RuntimeException("用户名不能为空");
         }
-        if(zxFile.getZx02() == null || zxFile.getZx02().trim().isEmpty()){
+        if(zxFile.getZx10() == null || zxFile.getZx10().trim().isEmpty()){
             throw new RuntimeException("密码不能为空");
         }
         ZxFile login = zxFileMapper.selectByKey(zxFile);
-        login.setToken(JwtTokenUtils.getToken(login.getZx01(),login.getZx02()));
+        if(login == null) throw new RuntimeException("用户名或密码错误");
+        login.setToken(JwtTokenUtils.getToken(login.getZx01(),login.getZx10()));
         return login;
     }
 }

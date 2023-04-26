@@ -57,11 +57,11 @@
                 let _this=this;
                 if(this.sendDisable) return;
                 //用户点击了ctrl+enter触发
-                if(e && e.ctrlKey && e.keyCode==13) { 
+                if(e && e.ctrlKey && e.keyCode===13) {
                     this.originMessage += '\n';
                     return;
                 }
-                if(this.originMessage=="") return;
+                if(this.originMessage==="") return;
                 _this.message+=`(You:${this.originMessage})`;
                 let sendMessage = {
                     "prompt":_this.message,
@@ -92,7 +92,6 @@
                     }
                     _this.originMessage="";
                     let retMessage=response.data.choices[0].text;
-                    retMessage=retMessage;
                     _this.message+=retMessage;
                     let showMessage={
                         isme:false,
@@ -101,7 +100,6 @@
                         time:new Date()
                     }
                     _this.msgList.push(showMessage);
-                    _this.alertSound();
                     _this.scrollBottom();
                 })
             },
@@ -112,13 +110,7 @@
                     var container = _this.$el.querySelector(".chatBox");
                     container.scrollTop = 999999999;
                 });
-            },
-            //提醒声音
-            alertSound(){
-                
             }
-        },
-        mounted: function () {
         }
     }
 </script>
