@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.InvLotLocIdMapper">
+
+    <select id="invLotLocIdListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InvLotLocId">
+        select stock.customerid,inv.sku,inv.skudescr1,inv.skudescr2,stock.lotnum,stock.qty,stock.locationid,stock.traceid,
+        stock.qtyallocated,stock.qtyonhold,stock.grossWeight,stock.muid
+        from inv_Lot_Loc_Id stock
+        left join bas_sku inv on stock.sku = inv.sku and stock.customerid = inv.customerid
+        <where>
+            <if test="centre != null and centre != '' ">
+                and stock.customerid = #{centre}
+            </if>
+            <if test="code_1 != null and code_1 != '' ">
+                and inv.sku = #{code_1}
+            </if>
+        </where>
+    </select>
+</mapper>

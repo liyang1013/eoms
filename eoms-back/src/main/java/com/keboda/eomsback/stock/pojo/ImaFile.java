@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 /**
  * 物料表
  * IMA_FILE
+ *
  * @author
  */
 @Data

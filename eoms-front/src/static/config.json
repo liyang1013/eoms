@@ -40,7 +40,8 @@
             "name": "stock" ,
             "children" : [
                 {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}},
-                {"name": "currStock",  "meta": {"icon": "el-icon-tickets", "name": "现存量查询"}}
+                {"name": "currStock",  "meta": {"icon": "el-icon-tickets", "name": "现存量查询"}},
+                {"name": "invTransfer",  "meta": {"icon": "el-icon-unlock", "name": "FLUX库存控制"}}
             ],
             "meta": {"icon": "el-icon-s-home", "name": "库存管理"}
         },
@@ -52,6 +53,13 @@
                 {"name": "import",  "meta": {"icon": "el-icon-upload2", "name": "数据导入"}}
             ],
             "meta": {"icon": "el-icon-s-tools", "name": "系统管理"}
+        },
+        {
+            "name": "rcs" ,
+            "children" : [
+                {"name": "robotStates",  "meta": {"icon": "el-icon-truck", "name": "小车状态"}}
+            ],
+            "meta": {"icon": "el-icon-paperclip", "name": "FLUX RCS"}
         },
         {
             "name": "chatgpt" ,

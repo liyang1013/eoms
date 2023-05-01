@@ -57,9 +57,9 @@ const routes = [
         component: () => import('@/views/purchase/RvaView')
       },
       {
-        path: 'contacts',
-        name: 'contacts',
-        component: () => import("@/views/system/ZxView.vue")
+        path: 'invTransfer',
+        name: 'invTransfer',
+        component: () => import("@/views/stock/InvTransferView.vue")
       },
       {
         path: 'operation',
@@ -70,7 +70,17 @@ const routes = [
         path: 'import',
         name: 'import',
         component: () => import("@/views/system/ImportView.vue")
-      }
+      },
+      {
+        path: 'contacts',
+        name: 'contacts',
+        component: () => import("@/views/system/ZxView.vue")
+      },
+      {
+        path: 'robotStates',
+        name: 'robotStates',
+        component: () => import("@/views/rcs/robotStatesView.vue")
+      },
     ]
   }
 ]

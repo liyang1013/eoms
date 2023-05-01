@@ -9,7 +9,6 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="料件基本资料: aimi100; " type="success" :closable="false">
@@ -82,10 +81,6 @@ export default {
         this.ima.total = res.data.total;
       }).finally(() => this.table_loading = false);
 
-    },
-    reset() {
-      this.ima.code_1 = null;
-      this.ima.centre = 'WCTZ';
     },
     handleCurrentChange(val) {
       this.search(val);

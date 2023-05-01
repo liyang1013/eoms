@@ -20,7 +20,6 @@
         where qcf01 =#{qcf.qcf01}
     </update>
 
-
     <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.QcfFile">
       select qcf01 , qcf04 ,qcf15
       from ${centre}.qcf_file

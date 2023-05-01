@@ -1,8 +1,9 @@
 <template>
-  <el-autocomplete v-model="tempval" @change="changeIma" @select="selectIma" :fetch-suggestions="querySearchImaAsync" placeholder="输入料件编码/名称" clearable>
+  <el-autocomplete class="ima_input" v-model="tempval" @change="changeIma" @select="selectIma" :fetch-suggestions="querySearchImaAsync"
+                   placeholder="输入料件编码/名称" clearable>
     <template slot-scope="{ item }">
-      <p style="float: left; font-size: 10px">{{item.ima02}}</p>
-      <p style="float: right; font-size: 10px;color: #8492a6; ">{{item.ima01}}</p>
+      <span style="float: left">{{ item.ima02 }}</span>
+      <span style="float: right; color: #8492a6; font-size: 13px">{{ item.ima01 }}</span>
     </template>
   </el-autocomplete>
 </template>
@@ -29,19 +30,21 @@ export default {
     event: 'change'
   },
   methods: {
-    querySearchImaAsync(queryString, cb){
-      this.$http.post('/api/ima/searchImaList', {
-        centre: this.centre,
-        code_1: queryString
-      }).then(res => cb(res.data.result))
+    querySearchImaAsync(queryString, cb) {
+      if (this.centre) {
+        this.$http.post('/api/ima/searchImaList', {
+          centre: this.centre,
+          code_1: queryString
+        }).then(res => cb(res.data.result))
+      }
     },
-    selectIma(obj){
+    selectIma(obj) {
       this.tempval = obj.ima01
-      this.$emit('change',obj.ima01 )
+      this.$emit('change', obj.ima01)
     },
-    changeIma(val){
+    changeIma(val) {
       this.tempval = val
-      this.$emit('change',val)
+      this.$emit('change', val)
     }
   }
 }
@@ -49,4 +52,7 @@ export default {
 
 <style>
 
+.ima_input {
+  width: 300px;
+}
 </style>
