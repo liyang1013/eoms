@@ -1,11 +1,11 @@
-package com.keboda.eomsback.stock.service.impl;
+package com.keboda.eomsback.flux.service.impl;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
-import com.keboda.eomsback.stock.mapper.InvLotLocIdMapper;
-import com.keboda.eomsback.stock.pojo.InvLotLocId;
-import com.keboda.eomsback.stock.service.IInvLotLocIdService;
+import com.keboda.eomsback.flux.mapper.InvLotLocIdMapper;
+import com.keboda.eomsback.flux.pojo.InvLotLocId;
+import com.keboda.eomsback.flux.service.IInvLotLocIdService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

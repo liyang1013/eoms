@@ -1,69 +1,183 @@
 {
-    "centre":[ 
-        {"value": "WCTZ" , "label": "演示账套"},
-        {"value": "GLPT" , "label": "管理平台"},
-        {"value": "JXKEAO" , "label": "嘉兴KEM"},
-        {"value": "ZJCSDZ" , "label": "电子研发中心"},
-        {"value": "ZJKBDDZ" , "label": "嘉兴电子"},
-        {"value": "ZJKBDJD" , "label": "嘉兴机电"},
-        {"value": "ZJZBZX" , "label": "工程技术"},
-        {"value": "ADAS" , "label": "智能科技"},
-        {"value": "LAB" , "label": "实验中心"},
-        {"value": "KEBODA" , "label": "上海电子"}
-    ],
-    "menu":[
+  "centre": [
+    {
+      "value": "WCTZ",
+      "label": "演示账套"
+    },
+    {
+      "value": "GLPT",
+      "label": "管理平台"
+    },
+    {
+      "value": "JXKEAO",
+      "label": "嘉兴KEM"
+    },
+    {
+      "value": "ZJCSDZ",
+      "label": "电子研发中心"
+    },
+    {
+      "value": "ZJKBDDZ",
+      "label": "嘉兴电子"
+    },
+    {
+      "value": "ZJKBDJD",
+      "label": "嘉兴机电"
+    },
+    {
+      "value": "ZJZBZX",
+      "label": "工程技术"
+    },
+    {
+      "value": "ADAS",
+      "label": "智能科技"
+    },
+    {
+      "value": "LAB",
+      "label": "实验中心"
+    },
+    {
+      "value": "KEBODA",
+      "label": "上海电子"
+    }
+  ],
+  "menu": [
+    {
+      "name": "home",
+      "meta": {
+        "icon": "el-icon-s-platform",
+        "name": "首页"
+      }
+    },
+    {
+      "name": "purchase",
+      "children": [
         {
-            "name": "home" ,
-            "meta": {"icon": "el-icon-s-platform", "name": "首页"}
-        },
-        {
-            "name": "purchase" ,
-            "children" : [
-                {"name": "rva",  "meta": {"icon": "el-icon-tickets", "name": "收货单"}}
-            ],
-            "meta": {"icon": "el-icon-goods", "name": "采购管理"}
-        },
-        {
-            "name": "produce" ,
-            "children": [
-                {"name": "workOrder",  "meta": {"icon": "el-icon-tickets", "name": "工单日期查询"}},
-                {"name": "workOrderEdit",  "meta": {"icon": "el-icon-tickets", "name": "工单"}}
-            ],
-            "meta": {"icon": "el-icon-position", "name": "生产管理"}
-        },
-        {
-            "name": "sale" ,
-            "children" : [],
-            "meta": {"icon": "el-icon-box", "name": "销售管理"}
-        },
-        {
-            "name": "stock" ,
-            "children" : [
-                {"name": "ima",  "meta": {"icon": "el-icon-tickets", "name": "料件信息"}},
-                {"name": "currStock",  "meta": {"icon": "el-icon-tickets", "name": "现存量查询"}},
-                {"name": "invTransfer",  "meta": {"icon": "el-icon-unlock", "name": "FLUX库存控制"}}
-            ],
-            "meta": {"icon": "el-icon-s-home", "name": "库存管理"}
-        },
-        {
-            "name": "system" ,
-            "children" : [
-                {"name": "contacts",  "meta": {"icon": "el-icon-user-solid", "name": "人员档案"}},
-                {"name": "operation",  "meta": {"icon": "el-icon-tickets", "name": "作业档案"}},
-                {"name": "import",  "meta": {"icon": "el-icon-upload2", "name": "数据导入"}}
-            ],
-            "meta": {"icon": "el-icon-s-tools", "name": "系统管理"}
-        },
-        {
-            "name": "rcs" ,
-            "children" : [
-                {"name": "robotStates",  "meta": {"icon": "el-icon-truck", "name": "小车状态"}}
-            ],
-            "meta": {"icon": "el-icon-paperclip", "name": "FLUX RCS"}
-        },
-        {
-            "name": "chatgpt" ,
-            "meta": {"icon": "el-icon-chat-line-square", "name": "ChatGPT"}
+          "name": "rva",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "收货单"
+          }
         }
-    ]
+      ],
+      "meta": {
+        "icon": "el-icon-goods",
+        "name": "采购管理"
+      }
+    },
+    {
+      "name": "produce",
+      "children": [
+        {
+          "name": "workOrder",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "工单日期查询"
+          }
+        },
+        {
+          "name": "workOrderEdit",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "工单"
+          }
+        }
+      ],
+      "meta": {
+        "icon": "el-icon-position",
+        "name": "生产管理"
+      }
+    },
+    {
+      "name": "sale",
+      "children": [],
+      "meta": {
+        "icon": "el-icon-box",
+        "name": "销售管理"
+      }
+    },
+    {
+      "name": "stock",
+      "children": [
+        {
+          "name": "ima",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "料件信息"
+          }
+        },
+        {
+          "name": "currStock",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "现存量查询"
+          }
+        },
+        {
+          "name": "invTransfer",
+          "meta": {
+            "icon": "el-icon-unlock",
+            "name": "FLUX库存控制"
+          }
+        }
+      ],
+      "meta": {
+        "icon": "el-icon-s-home",
+        "name": "库存管理"
+      }
+    },
+    {
+      "name": "system",
+      "children": [
+        {
+          "name": "contacts",
+          "meta": {
+            "icon": "el-icon-user-solid",
+            "name": "人员档案"
+          }
+        },
+        {
+          "name": "operation",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "作业档案"
+          }
+        },
+        {
+          "name": "import",
+          "meta": {
+            "icon": "el-icon-upload2",
+            "name": "数据导入"
+          }
+        }
+      ],
+      "meta": {
+        "icon": "el-icon-s-tools",
+        "name": "系统管理"
+      }
+    },
+    {
+      "name": "rcs",
+      "children": [
+        {
+          "name": "robotStates",
+          "meta": {
+            "icon": "el-icon-truck",
+            "name": "小车状态"
+          }
+        }
+      ],
+      "meta": {
+        "icon": "el-icon-paperclip",
+        "name": "FLUX RCS"
+      }
+    },
+    {
+      "name": "chatgpt",
+      "meta": {
+        "icon": "el-icon-chat-line-square",
+        "name": "ChatGPT"
+      }
+    }
+  ]
 }

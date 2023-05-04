@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.flux.mapper.RobotsStatusFileMapper">
+    <insert id="insertByKeySelective">
+        insert into TC_ROBOTS_STATUS_FILE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="ip != null">
+                ip,
+            </if>
+            <if test="agvtype != null">
+                agvtype ,
+            </if>
+            <if test="xPosition != null">
+                xPosition,
+            </if>
+            <if test="yPosition != null">
+                yPosition,
+            </if>
+            <if test="xTarget != null">
+                xTarget,
+            </if>
+            <if test="yTarget != null">
+                yTarget,
+            </if>
+            <if test="enable != null">
+                enable,
+            </if>
+            <if test="floorid != null">
+                floorid,
+            </if>
+            <if test="mapid != null">
+                mapid,
+            </if>
+            <if test="taskState != null">
+                taskState,
+            </if>
+            <if test="agvState != null">
+                agvState,
+            </if>
+            <if test="loaded != null">
+                loaded,
+            </if>
+            <if test="battery != null">
+                battery,
+            </if>
+            <if test="online != null">
+                online,
+            </if>
+            <if test="updatetime != null">
+                updatetime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="ip != null">
+               #{ip},
+            </if>
+            <if test="agvtype != null">
+               #{agvtype},
+            </if>
+            <if test="xPosition != null">
+              #{xPosition},
+            </if>
+            <if test="yPosition != null">
+                #{yPosition},
+            </if>
+            <if test="xTarget != null">
+               #{xTarget},
+            </if>
+            <if test="yTarget != null">
+               #{yTarget},
+            </if>
+            <if test="enable != null">
+               #{enable},
+            </if>
+            <if test="floorid != null">
+                #{floorid},
+            </if>
+            <if test="mapid != null">
+                #{mapid},
+            </if>
+            <if test="taskState != null">
+                #{taskState},
+            </if>
+            <if test="agvState != null">
+                #{agvState},
+            </if>
+            <if test="loaded != null">
+               #{loaded},
+            </if>
+            <if test="battery != null">
+                #{battery},
+            </if>
+            <if test="online != null">
+               #{online},
+            </if>
+            <if test="updatetime != null">
+                #{updatetime},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByKeySelective">
+        update TC_ROBOTS_STATUS_FILE
+        <set>
+            <if test="ip != null">
+                ip = #{ip},
+            </if>
+            <if test="agvtype != null">
+                agvtype = #{agvtype},
+            </if>
+            <if test="xPosition != null">
+                xPosition = #{xPosition},
+            </if>
+            <if test="yPosition != null">
+                yPosition = #{yPosition},
+            </if>
+            <if test="xTarget != null">
+                xTarget = #{xTarget},
+            </if>
+            <if test="yTarget != null">
+                yTarget = #{yTarget},
+            </if>
+            <if test="enable != null">
+                enable = #{enable},
+            </if>
+            <if test="floorid != null">
+                floorid = #{floorid},
+            </if>
+            <if test="mapid != null">
+                mapid = #{mapid},
+            </if>
+            <if test="taskState != null">
+                taskState = #{taskState},
+            </if>
+            <if test="agvState != null">
+                agvState = #{agvState},
+            </if>
+            <if test="loaded != null">
+                loaded = #{loaded},
+            </if>
+            <if test="battery != null">
+                battery = #{battery},
+            </if>
+            <if test="online != null">
+                online = #{online},
+            </if>
+            <if test="updatetime != null">
+                updatetime = #{updatetime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.RobotsStatusFile">
+        select *
+        from TC_ROBOTS_STATUS_FILE
+        where id = #{id}
+    </select>
+</mapper>

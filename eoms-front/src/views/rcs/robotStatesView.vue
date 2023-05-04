@@ -1,6 +1,6 @@
 <template>
-  <el-row :gutter="20">
-    <el-col :span="8" v-for="(item,index) in status">
+  <el-row :gutter="10">
+    <el-col :span="8" v-for="item in status">
       <el-card class="car">
         <div slot="header">
           <p>
@@ -10,27 +10,27 @@
           </p>
         </div>
         <div>
-          <p style="overflow: hidden">
-            <span style="float: left;width: 50%;text-align: center">当前坐标：{{item.position.x}},{{item.position.y}}</span>
-            <span style="float: left;width: 50%;text-align: center">当前角度: {{item.position.angle + '°'}} </span>
+          <p style="overflow: hidden" class="span_50">
+            <span>当前坐标：{{item.position.x}},{{item.position.y}}</span>
+            <span>当前角度: {{item.position.angle + '°'}} </span>
           </p>
           <br>
-          <p style="overflow: hidden">
-            <span style="float: left;width: 50%;text-align: center">
+          <p style="overflow: hidden" class="span_50">
+            <span>
               目标坐标：{{item.target.x}},{{item.target.y}}
             </span>
-            <span style="float: left;width: 50%;text-align: center">
+            <span>
               目标角度: {{item.target.angle + '°'}}
             </span>
           </p><br>
-          <p style="overflow: hidden">
-            <span style="float: left;width: 33.3%;text-align: center">
+          <p style="overflow: hidden" class="span_33">
+            <span>
               设备启用：{{item.enable}}
             </span>
-            <span style="float: left;width: 33.3%;text-align: center">
+            <span>
               所在楼层：{{item.position.floorId}}
             </span>
-            <span style="float: left;width: 33.3%;text-align: center">
+            <span>
                所在地图：{{item.mapId}}
             </span>
           </p><br>
@@ -81,7 +81,7 @@ export default {
   created() {
     setInterval(() => {
       this.timer()
-    }, 1000)
+    }, 500)
   },
   beforeDestroy() {
     clearInterval(this.timer);
@@ -102,15 +102,29 @@ export default {
   };
   ::v-deep .el-card__body{
     background-color: #DCDFE6;
+    .span_33{
+      span{
+        float: left;
+        width: 33.3%;
+        text-align: center
+      }
+    }
+    .span_50{
+      span{
+        float: left;
+        width: 50%;
+        text-align: center
+      }
+    }
+  }
+  .status-div{
+    overflow: hidden;
+    span{
+      width: 20%;
+      font-size: 14px;
+      float: left;
+      text-align: center;
+    }
   }
 };
-.status-div{
-  overflow: hidden;
-  span{
-    width: 20%;
-    font-size: 14px;
-    float: left;
-    text-align: center;
-  }
-}
 </style>

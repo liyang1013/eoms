@@ -39,7 +39,4 @@ page helper:
   support-methods-arguments: true
   auto-runtime-dialect: true
 
-logging:
-  level:
-    com.keboda.eomsback.* : DEBUG
 
