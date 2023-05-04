@@ -42,7 +42,7 @@
     from DS.GAZ_FILE
     where gaz01 = #{gaz01} and gaz02 = 2
   </select>
-  <select id="searchGazList" resultType="com.keboda.eomsback.system.pojo.GazFile">
+  <select id="searchGazListPageHelper" resultType="com.keboda.eomsback.system.pojo.GazFile">
       select *
       from DS.GAZ_FILE
       <where>

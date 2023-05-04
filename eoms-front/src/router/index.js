@@ -39,12 +39,12 @@ const routes = [
       {
         path: 'currStock',
         name: 'currStock',
-        component: () => import('@/views/stock/StockView.vue')
+        component: () => import('@/views/stock/ImgView.vue')
       },
       {
         path: 'workOrderEdit',
         name: 'workOrderEdit',
-        component: () => import('@/views/produce/WorkOrderEditView.vue')
+        component: () => import('@/views/produce/SfbView.vue')
       },
       {
         path: 'chatgpt',
@@ -59,7 +59,7 @@ const routes = [
       {
         path: 'invTransfer',
         name: 'invTransfer',
-        component: () => import("@/views/stock/InvTransferView.vue")
+        component: () => import("@/views/flux/InvTransferView.vue")
       },
       {
         path: 'operation',
@@ -79,7 +79,7 @@ const routes = [
       {
         path: 'robotStates',
         name: 'robotStates',
-        component: () => import("@/views/rcs/robotStatesView.vue")
+        component: () => import("@/views/flux/robotStatesView.vue")
       },
     ]
   }

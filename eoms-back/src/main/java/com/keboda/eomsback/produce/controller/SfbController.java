@@ -34,17 +34,23 @@ public class SfbController {
         return BaseResult.success(sfbProcessVo);
     }
 
-    @RequestMapping("/searchSfbList")
-    public BaseResult searchSfbList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchSfbListPageHelper")
+    public BaseResult searchSfbListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<SfbFile> sfbFilePage = iSfbService.searchSfbList(searchVo);
+        Page<SfbFile> sfbFilePage = iSfbService.searchSfbListPageHelper(searchVo);
         return BaseResult.success(sfbFilePage,sfbFilePage.getTotal());
 
     }
 
-    @RequestMapping("/modifyDate")
-    public BaseResult modifyDate(@RequestBody SfbModify sfbModify){
-        iSfbService.modifyDate(sfbModify);
+    @RequestMapping("/modifySfbDate")
+    public BaseResult modifySfbDate(@RequestBody SfbModify sfbModify){
+        iSfbService.modifySfbDate(sfbModify);
         return BaseResult.success("修改工单日期成功");
+    }
+
+    @RequestMapping("/closeSfb")
+    public BaseResult closeSfb(@RequestBody SfbModify sfbModify){
+        iSfbService.closeSfb(sfbModify);
+        return BaseResult.success("工单结案成功");
     }
 }

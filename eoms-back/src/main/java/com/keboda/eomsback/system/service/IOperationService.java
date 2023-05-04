@@ -7,7 +7,7 @@ import com.keboda.eomsback.system.pojo.Operation;
 import java.util.List;
 
 public interface IOperationService {
-    Page<Operation> searchOperationList(SearchVo searchVo);
+    Page<Operation> searchOperationListPageHelper(SearchVo searchVo);
 
     void deletOperation(Operation operation);
 

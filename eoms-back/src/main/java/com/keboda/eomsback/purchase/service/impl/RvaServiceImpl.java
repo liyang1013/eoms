@@ -31,8 +31,8 @@ public class RvaServiceImpl implements IRvaService {
     private PmnFileMapper pmnFileMapper;
 
     @Override
-    public Page<RvaFile> searchRvaList(SearchVo searchVo) {
-        return rvaFileMapper.searchRvaList(searchVo);
+    public Page<RvaFile> searchRvaListPageHelper(SearchVo searchVo) {
+        return rvaFileMapper.searchRvaListPageHelper(searchVo);
     }
 
     @Override

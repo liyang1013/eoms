@@ -112,13 +112,6 @@
             "icon": "el-icon-tickets",
             "name": "现存量查询"
           }
-        },
-        {
-          "name": "invTransfer",
-          "meta": {
-            "icon": "el-icon-unlock",
-            "name": "FLUX库存控制"
-          }
         }
       ],
       "meta": {
@@ -157,21 +150,29 @@
       }
     },
     {
-      "name": "rcs",
+      "name": "flux",
       "children": [
         {
           "name": "robotStates",
           "meta": {
             "icon": "el-icon-truck",
-            "name": "小车状态"
+            "name": "RCS小车状态"
+          }
+        },
+        {
+          "name": "invTransfer",
+          "meta": {
+            "icon": "el-icon-unlock",
+            "name": "WMS库存控制"
           }
         }
       ],
       "meta": {
         "icon": "el-icon-paperclip",
-        "name": "FLUX RCS"
+        "name": "FLUX"
       }
     },
+
     {
       "name": "chatgpt",
       "meta": {

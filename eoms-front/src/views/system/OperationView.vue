@@ -12,7 +12,6 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
         <el-button type="primary" icon="el-icon-plus" round @click="drawer = true">新增</el-button>
       </el-form-item>
     </el-form>
@@ -77,10 +76,10 @@
 
       <el-form :inline="true" :model="gaz" class="demo-form-inline" size="mini">
         <el-form-item label="作业:">
-          <el-input v-model="gaz.code_1" placeholder="作业编号/名称" ></el-input>
+          <el-input v-model="gaz.code_1" placeholder="作业编号/名称" clearable ></el-input>
         </el-form-item>
         <el-form-item label="目的:">
-          <el-input v-model="gaz.code_2" placeholder="作业目的" ></el-input>
+          <el-input v-model="gaz.code_2" placeholder="作业目的" clearable ></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary"  icon="el-icon-search" @click="searchGazList(1)" round>查询</el-button>
@@ -143,22 +142,17 @@ export default {
     search(val) {
       this.operation.currentPage = val;
       this.table_loading = true
-      this.$http.post('/api/operation/searchOperationList', this.operation).then(res => {
+      this.$http.post('/api/operation/searchOperationListPageHelper', this.operation).then(res => {
         this.operations = res.data.result;
         this.operation.total = res.data.total
       }).finally(() => this.table_loading = false);
     },
     searchGazList(val){
       this.gaz.currentPage = val;
-      this.$http.post('/api/gaz/searchGazList', this.gaz).then(res => {
+      this.$http.post('/api/gaz/searchGazListPageHelper', this.gaz).then(res => {
         this.gazList = res.data.result;
         this.gaz.total = res.data.total
       });
-    },
-    reset() {
-      this.operation.code_1 = null;
-      this.operation.code_2 = null;
-      this.operation.code_3 = null
     },
     deleteOperation(row){
       this.$confirm('此操作将永久删除该记录, 是否继续?', '提示', {

@@ -29,8 +29,8 @@ public class ImgServiceImpl implements IImgService {
     private ImdFileMapper imdFileMapper;
 
     @Override
-    public Page<ImgFile> searchImgList(SearchVo searchVo) {
-        return imgFileMapper.searchImgList(searchVo);
+    public Page<ImgFile> searchImgListPageHelper(SearchVo searchVo) {
+        return imgFileMapper.searchImgListPageHelper(searchVo);
     }
 
     @Override

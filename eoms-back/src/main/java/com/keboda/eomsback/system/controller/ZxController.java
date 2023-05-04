@@ -19,10 +19,10 @@ public class ZxController {
     @Autowired
     private IZxService iZxService;
 
-    @RequestMapping("/searchZxList")
-    public BaseResult searchGenList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchZxListPageHelper")
+    public BaseResult searchGenListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<ZxFile> page = iZxService.searchZxList(searchVo);
+        Page<ZxFile> page = iZxService.searchZxListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 

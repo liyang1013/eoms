@@ -15,7 +15,6 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300" type="success" :closable="false">
@@ -150,7 +149,7 @@ export default {
     search(val) {
       this.rva.currentPage = val;
       this.table_loading = true;
-      this.$http.post('/api/rva/searchRvaList', this.rva).then(res => {
+      this.$http.post('/api/rva/searchRvaListPageHelper', this.rva).then(res => {
         this.rvaList = res.data.result
         this.rva.total = res.data.total;
       }).finally(() => this.table_loading = false);
@@ -162,12 +161,6 @@ export default {
       this.$http.post('/api/rva/searchRvbList', {code_1: row.rva01, centre: row.rvaplant}).then(res => {
         this.rvab.rvbList = res.data.result;
       })
-    },
-    reset() {
-      this.rva.code_1 = null;
-      this.rva.code_2 = null;
-      this.rva.pmc = null;
-      this.rva.centre = 'WCTZ';
     },
     resetrva() {
       // this.rvaList.find(e => {

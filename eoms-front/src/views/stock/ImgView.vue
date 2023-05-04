@@ -75,7 +75,7 @@ export default {
     search(val) {
       this.img.currentPage = val;
       this.table_loading = true;
-      this.$http.post('/api/img/searchImgList', this.img)
+      this.$http.post('/api/img/searchImgListPageHelper', this.img)
           .then(res => {this.imgList = res.data.result; this.img.total = res.data.total;}).finally(() => this.table_loading = false)
     },
     repairImg(){

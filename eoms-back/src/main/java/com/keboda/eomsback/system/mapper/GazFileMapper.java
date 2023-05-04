@@ -12,5 +12,5 @@ public interface GazFileMapper {
 
     GazFile selectByKey(@Param("gaz01") String gaz01);
 
-    Page<GazFile> searchGazList(SearchVo searchVo);
+    Page<GazFile> searchGazListPageHelper(SearchVo searchVo);
 }

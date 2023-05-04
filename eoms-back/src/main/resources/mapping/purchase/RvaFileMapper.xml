@@ -7,7 +7,7 @@
         where rva01 = #{rva01}
     </update>
 
-    <select id="searchRvaList" resultType="com.keboda.eomsback.purchase.pojo.RvaFile">
+    <select id="searchRvaListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.RvaFile">
         select rva01, rva02, pmc03, rvaconf, rva10, rva06, gen02,rvaud02,rvaud03,rva32,rvaud13,rvaud14,rvaplant
         from ${centre}.rva_file
         left join ${centre}.pmc_file on pmc01 = rva05

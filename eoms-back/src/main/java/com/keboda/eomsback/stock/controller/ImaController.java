@@ -21,10 +21,10 @@ public class ImaController {
     @Autowired
     private IImaService iImaService;
 
-    @RequestMapping("/searchImaList")
-    public BaseResult searchImaList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchImaListPageHelper")
+    public BaseResult searchImaListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<ImaFile> page = iImaService.searchImaList(searchVo);
+        Page<ImaFile> page = iImaService.searchImaListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 

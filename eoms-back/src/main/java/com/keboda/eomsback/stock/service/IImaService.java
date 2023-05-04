@@ -13,7 +13,7 @@ public interface IImaService {
 
     List<ImgFile> imgArr(String ima01, String centre);
 
-    Page<ImaFile> searchImaList(SearchVo searchVo);
+    Page<ImaFile> searchImaListPageHelper(SearchVo searchVo);
 
     void alterStockParameter(MultipartFile file,String centre) throws IOException;
 

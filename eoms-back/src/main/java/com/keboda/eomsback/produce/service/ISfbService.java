@@ -13,7 +13,9 @@ public interface ISfbService {
 
     SfbProcessVo sfbProcess(String sfb01, String centre) throws RuntimeException;
 
-    Page<SfbFile> searchSfbList(SearchVo searchVo);
+    Page<SfbFile> searchSfbListPageHelper(SearchVo searchVo);
 
-    void modifyDate(SfbModify sfbModify);
+    void modifySfbDate(SfbModify sfbModify);
+
+    void closeSfb(SfbModify sfbModify);
 }

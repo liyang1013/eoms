@@ -13,7 +13,9 @@ public interface SfbFileMapper {
 
     SfbFile selectDateByCode(@Param("sfb01") String sfb01, @Param("centre") String centre);
 
-    Page<SfbFile> searchSfbList(SearchVo searchVo);
+    Page<SfbFile> searchSfbListPageHelper(SearchVo searchVo);
 
     void updateDate(@Param("sfb") SfbFile sfb, @Param("centre") String centre, @Param("ddate") Date ddate,@Param("flag") Boolean flag);
+
+    void closeSfb(@Param("centre") String centre, @Param("sfb01") String sfb01, @Param("ddate") Date parseDate);
 }

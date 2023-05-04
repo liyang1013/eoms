@@ -23,7 +23,6 @@ spring:
           password: root
         flux:
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#          url: jdbc:sqlserver://172.17.200.156:1433;DatabaseName=WMS_PROD
           url: jdbc:sqlserver://172.17.200.149:1433;DatabaseName=WMS_FTEST
           username: JX2001001
           password: JX2001001

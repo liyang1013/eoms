@@ -7,7 +7,7 @@
     delete from operation
     where code = #{code,jdbcType=VARCHAR}
   </delete>
-  <select id="searchOperationList" resultType="com.keboda.eomsback.system.pojo.Operation">
+  <select id="searchOperationListPageHelper" resultType="com.keboda.eomsback.system.pojo.Operation">
       select *
       from operation
       <where>

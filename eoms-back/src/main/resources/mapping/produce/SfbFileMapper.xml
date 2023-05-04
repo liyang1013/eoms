@@ -43,8 +43,23 @@
       </set>
       where sfb01 =#{sfb.sfb01}
   </update>
+    <update id="closeSfb">
+        update ${centre}.SFB_FILE
+        set sfb04 = 8,
+            sfb28 = 3,
+            sfb38 = (select sma53 from ${centre}.sma_file),
+            sfb36 = (select max(sfp03)
+                     from SFP_FILE
+                         left join SFQ_FILE on sfq01  = sfp01
+                     where sfq02  = #{sfb01}),
+            sfb37 = (select max(sfp03)
+                     from SFP_FILE
+                              left join SFQ_FILE on sfq01  = sfp01
+                     where sfq02  = #{sfb01})
+        where sfb01 = #{sfb01}
+    </update>
 
-  <select id="sfb01Arr" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
+    <select id="sfb01Arr" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
     select SFB01 ,IMA02
     from ${centre}.SFB_FILE
     left join ${centre}.IMA_FILE on sfb05 = ima01
@@ -55,7 +70,7 @@
     from ${centre}.sfb_file
     where sfb01 = #{sfb01}
   </select>
-  <select id="searchSfbList" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
+  <select id="searchSfbListPageHelper" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
     select sfb01,sfb81,sfb05, ima02 ,sfb04,sfb98, gem02
     from ${centre}.sfb_file
     left join ${centre}.ima_file on ima01 = sfb05

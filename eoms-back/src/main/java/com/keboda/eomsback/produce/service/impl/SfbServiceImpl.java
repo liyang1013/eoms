@@ -10,6 +10,7 @@ import com.keboda.eomsback.produce.pojo.*;
 import com.keboda.eomsback.stock.mapper.TlfFileMapper;
 import com.keboda.eomsback.system.mapper.SmaFileMapper;
 import com.keboda.eomsback.system.pojo.SmaFile;
+import com.keboda.eomsback.utils.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,13 +58,13 @@ public class SfbServiceImpl implements ISfbService {
     }
 
     @Override
-    public Page<SfbFile> searchSfbList(SearchVo searchVo) {
-        return sfbFileMapper.searchSfbList(searchVo);
+    public Page<SfbFile> searchSfbListPageHelper(SearchVo searchVo) {
+        return sfbFileMapper.searchSfbListPageHelper(searchVo);
     }
 
     @Override
     @Transactional
-    public void modifyDate(SfbModify sfbModify) {
+    public void modifySfbDate(SfbModify sfbModify) {
 
         Date ddate = sfbModify.getDdate();
         //是否记账，记账了修改日期是否超过关帐日期
@@ -142,6 +143,14 @@ public class SfbServiceImpl implements ISfbService {
                 }
             }
 
+        }
+    }
+
+    @Override
+    @Transactional
+    public void closeSfb(SfbModify sfbModify) {
+        for (SfbFile sfb : sfbModify.getSfbArr()) {
+            sfbFileMapper.closeSfb(sfbModify.getCentre(),sfb.getSfb01(), DateUtils.parseDate(DateUtils.formatDate(new Date())));
         }
     }
 }

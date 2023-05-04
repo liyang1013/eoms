@@ -6,7 +6,7 @@ import com.keboda.eomsback.system.pojo.ZxFile;
 
 public interface ZxFileMapper {
 
-    Page<ZxFile> searchZxList(SearchVo searchVo);
+    Page<ZxFile> searchZxListPageHelper(SearchVo searchVo);
 
     ZxFile selectByKey(ZxFile zxFile);
 }

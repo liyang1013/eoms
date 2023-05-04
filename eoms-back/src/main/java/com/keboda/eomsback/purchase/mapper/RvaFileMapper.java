@@ -6,7 +6,7 @@ import com.keboda.eomsback.purchase.pojo.RvaFile;
 import org.apache.ibatis.annotations.Param;
 
 public interface RvaFileMapper {
-    Page<RvaFile> searchRvaList( SearchVo searchVo);
+    Page<RvaFile> searchRvaListPageHelper( SearchVo searchVo);
 
     void alterRva(RvaFile rvaFile);
 

@@ -18,10 +18,10 @@ public class GazController {
     @Autowired
     private IGazService iGazService;
 
-    @RequestMapping("/searchGazList")
-    public BaseResult searchGazList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchGazListPageHelper")
+    public BaseResult searchGazListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<GazFile> page = iGazService.searchGazList(searchVo);
+        Page<GazFile> page = iGazService.searchGazListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 }

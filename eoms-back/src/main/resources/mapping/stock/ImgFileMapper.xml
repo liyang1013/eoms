@@ -15,7 +15,7 @@
             </if>
         </where>
     </update>
-    <select id="searchImgList" resultType="com.keboda.eomsback.stock.pojo.ImgFile">
+    <select id="searchImgListPageHelper" resultType="com.keboda.eomsback.stock.pojo.ImgFile">
         select img01,ima02,img02,img03,img04,imd02,img09,img10,img23
         from ${centre}.img_file
                  left join ${centre}.imd_file on img02 = imd01

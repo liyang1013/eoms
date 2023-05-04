@@ -22,7 +22,7 @@ public class GazServiceImpl implements IGazService {
     }
 
     @Override
-    public Page<GazFile> searchGazList(SearchVo searchVo) {
-        return gazFileMapper.searchGazList(searchVo);
+    public Page<GazFile> searchGazListPageHelper(SearchVo searchVo) {
+        return gazFileMapper.searchGazListPageHelper(searchVo);
     }
 }

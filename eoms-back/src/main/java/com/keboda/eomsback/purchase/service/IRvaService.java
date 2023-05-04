@@ -8,7 +8,7 @@ import com.keboda.eomsback.purchase.pojo.RvbFile;
 import java.util.List;
 
 public interface IRvaService {
-    Page<RvaFile> searchRvaList(SearchVo searchVo);
+    Page<RvaFile> searchRvaListPageHelper(SearchVo searchVo);
 
     List<RvbFile> searchRvbList(SearchVo searchVo);
 

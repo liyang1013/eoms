@@ -106,14 +106,16 @@ export default {
       span{
         float: left;
         width: 33.3%;
-        text-align: center
+        text-align: center;
+        font-size: 14px;
       }
     }
     .span_50{
       span{
         float: left;
         width: 50%;
-        text-align: center
+        text-align: center;
+        font-size: 14px;
       }
     }
   }

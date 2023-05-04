@@ -18,10 +18,10 @@ public class ImgController {
     @Autowired
     private IImgService iImgService;
 
-    @RequestMapping("/searchImgList")
-    public BaseResult searchImgList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchImgListPageHelper")
+    public BaseResult searchImgListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<ImgFile> page = iImgService.searchImgList(searchVo);
+        Page<ImgFile> page = iImgService.searchImgListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 

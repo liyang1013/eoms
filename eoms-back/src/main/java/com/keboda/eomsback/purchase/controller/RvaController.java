@@ -21,10 +21,10 @@ public class RvaController {
     @Autowired
     private IRvaService iRvaService;
 
-    @RequestMapping("/searchRvaList")
-    public BaseResult searchRvaList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchRvaListPageHelper")
+    public BaseResult searchRvaListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<RvaFile> page = iRvaService.searchRvaList(searchVo);
+        Page<RvaFile> page = iRvaService.searchRvaListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 

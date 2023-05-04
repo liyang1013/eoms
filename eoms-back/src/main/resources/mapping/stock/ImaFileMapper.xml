@@ -15,7 +15,7 @@
         where img01 like '%${ima01}%' or ima02 like '%${ima01}%'
         order by img01,img02
     </select>
-    <select id="searchImaList" resultType="com.keboda.eomsback.stock.pojo.ImaFile">
+    <select id="searchImaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.ImaFile">
         select ima01,IMA02,ima021,ima08,ima1010,imz02
         from ${centre}.ima_file
         left join ${centre}.imz_file on imz01 = ima06

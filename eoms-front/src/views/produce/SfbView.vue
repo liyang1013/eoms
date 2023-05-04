@@ -14,7 +14,10 @@
         <el-date-picker type="date" placeholder="选择日期" v-model="sfb.enddate" value-format="yyyy-MM-dd"
                         style="width: 140px;"></el-date-picker>
       </el-form-item>
-      <el-button size="mini" type="primary" @click="searchSfb()" round>查询</el-button>
+      <el-form-item>
+        <el-button size="mini" type="primary" @click="searchSfb()" round>查询</el-button>
+        <el-button size="mini" type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
+      </el-form-item>
       <br>
       <el-form-item label="修改工单日期：">
         <el-date-picker type="date" placeholder="选择日期" v-model="temp.ddate" value-format="yyyy-MM-dd"
@@ -87,7 +90,7 @@ export default {
     searchSfb(val = 1) {
       this.table_loading = true;
       this.sfb.currentPage = val;
-      this.$http.post('/api/sfb/searchSfbList', this.sfb).then(res => {
+      this.$http.post('/api/sfb/searchSfbListPageHelper', this.sfb).then(res => {
         this.sfbArr = res.data.result;
         this.sfb.total = res.data.total;
       }).finally(() => this.table_loading = false)
@@ -112,11 +115,17 @@ export default {
       }
       this.temp.centre = this.sfb.centre
       this.modifyLoad = true;
-      this.$http.post('/api/sfb/modifyDate', this.temp).then().finally(() => this.modifyLoad = false)
-
+      this.$http.post('/api/sfb/modifySfbDate', this.temp).finally(() => this.modifyLoad = false)
+    },
+    closeSfb(){
+      if (this.temp.sfbArr.length === 0) {
+        this.$message.warning("请勾选要结案的工单");
+        return;
+      }
+      this.temp.centre = this.sfb.centre
+      this.$http.post('/api/sfb/closeSfb', this.temp)
     }
   }
-
 }
 </script>
 <style lang="sass" scoped>

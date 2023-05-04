@@ -17,8 +17,8 @@ public class ZxServiceImpl implements IZxService {
     private ZxFileMapper zxFileMapper;
 
     @Override
-    public Page<ZxFile> searchZxList(SearchVo searchVo) {
-        return zxFileMapper.searchZxList(searchVo);
+    public Page<ZxFile> searchZxListPageHelper(SearchVo searchVo) {
+        return zxFileMapper.searchZxListPageHelper(searchVo);
     }
 
     @Override

@@ -20,10 +20,10 @@ public class OperationController {
     @Autowired
     private IOperationService iOperationService;
 
-    @RequestMapping("/searchOperationList")
-    public BaseResult searchOperationList(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchOperationListPageHelper")
+    public BaseResult searchOperationListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<Operation> page = iOperationService.searchOperationList(searchVo);
+        Page<Operation> page = iOperationService.searchOperationListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 

@@ -23,8 +23,8 @@ public class OperationServiceImpl implements IOperationService {
     private OperationMapper operationMapper;
 
     @Override
-    public Page<Operation> searchOperationList(SearchVo searchVo) {
-        return operationMapper.searchOperationList(searchVo);
+    public Page<Operation> searchOperationListPageHelper(SearchVo searchVo) {
+        return operationMapper.searchOperationListPageHelper(searchVo);
     }
 
     @Override

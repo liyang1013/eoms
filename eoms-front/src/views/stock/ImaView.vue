@@ -76,7 +76,7 @@ export default {
     search(val) {
       this.ima.currentPage = val;
       this.table_loading = true;
-      this.$http.post('/api/ima/searchImaList', this.ima).then(res => {
+      this.$http.post('/api/ima/searchImaListPageHelper', this.ima).then(res => {
         this.imaList = res.data.result
         this.ima.total = res.data.total;
       }).finally(() => this.table_loading = false);

@@ -9,7 +9,6 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="primary" @click="reset" icon="el-icon-refresh-right" round>重置</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="用户基本资料: p_zx" type="success" :closable="false">
@@ -65,14 +64,10 @@ export default {
     search(val) {
       this.zx.currentPage = val;
       this.table_loading = true
-      this.$http.post('/api/zx/searchZxList', this.zx).then(res => {
+      this.$http.post('/api/zx/searchZxListPageHelper', this.zx).then(res => {
         this.zxList = res.data.result
         this.zx.total = res.data.total
       }).finally(() => this.table_loading = false);
-    },
-    reset() {
-      this.zx.centre = 'WCTZ';
-      this.zx.code_1 =  null
     },
     handleCurrentChange(val){
       this.search(val);

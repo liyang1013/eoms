@@ -43,8 +43,8 @@ public class ImaServiceImpl implements IImaService {
     }
 
     @Override
-    public Page<ImaFile> searchImaList(SearchVo searchVo) {
-        return imaFileMapper.searchImaList(searchVo);
+    public Page<ImaFile> searchImaListPageHelper(SearchVo searchVo) {
+        return imaFileMapper.searchImaListPageHelper(searchVo);
     }
 
     @Override
