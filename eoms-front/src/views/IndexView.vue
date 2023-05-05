@@ -40,7 +40,13 @@ export default {
 
   .box-card {
     padding: 0;
-  }
 
+    .content {
+      width: 100%;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
 }
 </style>
