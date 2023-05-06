@@ -3,17 +3,35 @@
 <mapper namespace="com.keboda.eomsback.flux.mapper.InvLotLocIdMapper">
 
     <select id="invLotLocIdListPageHelper" resultType="com.keboda.eomsback.flux.pojo.InvLotLocId">
-        select stock.customerid,inv.sku,inv.skudescr1,inv.skudescr2,stock.lotnum,stock.qty,stock.locationid,stock.traceid,
-        stock.qtyallocated,stock.qtyonhold,stock.grossWeight,stock.muid
-        from inv_Lot_Loc_Id stock
-        left join bas_sku inv on stock.sku = inv.sku and stock.customerid = inv.customerid
+        select a.customerId, a.locationId, a.lotnum, a.traceId,b.sku,b.skuDescr1 ,
+        b.skuDescr2 ,e.freightDescr1 as freightclass,
+        a.qty,a.grossweight,
+        a.qty - a.qtyAllocated - a.qtyRpOut - a.qtyMvOut - a.qtyOnHold  ASqtyAvailed,
+        d.lotAtt04,d.lotAtt05,d.lotAtt06,d.lotAtt07,d.lotAtt08
+        from  INV_LOT_LOC_ID a
+        LEFT  JOIN BAS_SKU b on a.customerId = b.customerId AND a.sku = b.sku
+        LEFT  JOIN BAS_CUSTOMERFREIGHT e  ON b.customerId = e.customerId AND e.freightCode = b.freightClass
+        LEFT JOIN INV_LOT_ATT d  ON d.lotNum = a.lotNum
         <where>
             <if test="centre != null and centre != '' ">
-                and stock.customerid = #{centre}
+                and a.customerid = #{centre}
             </if>
             <if test="code_1 != null and code_1 != '' ">
-                and inv.sku = #{code_1}
+                and  b.sku like '%${code_1}%'
+            </if>
+            <if test="code_2 != null and code_2 != '' ">
+                and d.lotAtt08 = #{code_2}
+            </if>
+            <if test="code_3 != null and code_3 != '' ">
+                and a.lotnum like '%${code_3}%'
             </if>
         </where>
+        order by a.customerid,a.locationId,a.sku
+    </select>
+    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.InvLotLocId">
+        select *,a.qty - a.qtyAllocated - a.qtyRpOut - a.qtyMvOut - a.qtyOnHold  ASqtyAvailed
+        from INV_LOT_LOC_ID a
+        left join INV_LOT_ATT d  ON d.lotNum = a.lotNum
+        where a.locationid = #{locationid} and a.lotnum = #{lotnum} and a.traceid = #{traceid}
     </select>
 </mapper>

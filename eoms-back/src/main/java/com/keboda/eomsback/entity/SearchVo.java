@@ -18,6 +18,8 @@ public class SearchVo {
 
     private String code_3;
 
+    private Boolean code_4;
+
     private String pmc;
 
     private String centre;

@@ -61,7 +61,7 @@ public class RvaServiceImpl implements IRvaService {
                 if(rvbFile.getRvb22() != null ) throw new RuntimeException("发票已生成不允许修改数量");
                 if(rvbFile.getRvb30().compareTo(BigDecimal.ZERO) != 0 ) throw new RuntimeException("入库单已审核不允许修改数量");
                 List<RvvFile> rvvFiles = rvvFileMapper.selectByRvb(rvb.getRvb01(),rvb.getRvb02(),rvb.getRvbplant(),1);
-                if(rvbFiles.size() > 1) throw new RuntimeException("对应入库单大于一张，请手动修改数量");
+                if(rvvFiles.size() > 1) throw new RuntimeException("对应入库单大于一张，请手动修改数量");
 
                 //入库单存在且没审核更新入库单数量
                 if(rvvFiles.size() != 0){

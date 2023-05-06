@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/invLotLocId")
 public class InvLotLocIdController {
@@ -23,5 +25,11 @@ public class InvLotLocIdController {
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
         Page<InvLotLocId> page = iInvLotLocIdService.invLotLocIdListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
+    }
+
+    @RequestMapping("/lock")
+    public BaseResult lock(@RequestBody List<InvLotLocId> invLotLocIdList, String status){
+        iInvLotLocIdService.lock(invLotLocIdList,status);
+        return BaseResult.success(status.equals("SD") ? "锁定成功" : "解锁成功");
     }
 }

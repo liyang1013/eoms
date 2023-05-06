@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.flux.mapper.DocAdjDetailsMapper">
+
+
+    <select id="checkQty" resultType="java.math.BigDecimal">
+        SELECT isnull(SUM(isnull(qty,0)-isnull(toQty,0)),0)
+        FROM DOC_ADJ_DETAILS
+        WHERE adjLineStatus &lt; '10' and locationid=#{locationid} AND lotNum=#{lotnum} AND traceId=#{lotnum}
+    </select>
+</mapper>

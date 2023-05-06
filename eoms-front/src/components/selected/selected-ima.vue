@@ -31,8 +31,8 @@ export default {
   },
   methods: {
     querySearchImaAsync(queryString, cb) {
-      if (this.centre) {
-        this.$http.post('/api/ima/searchImaList', {
+      if (this.centre && queryString) {
+        this.$http.post('/api/ima/searchImaListPageHelper', {
           centre: this.centre,
           code_1: queryString
         }).then(res => cb(res.data.result))

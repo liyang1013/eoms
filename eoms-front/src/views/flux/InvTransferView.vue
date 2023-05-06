@@ -7,6 +7,15 @@
       <el-form-item label="料件:" >
         <selectedIma v-model="stock.code_1" :centre="stock.centre"></selectedIma>
       </el-form-item>
+      <el-form-item label="批次号:" >
+        <el-input v-model="stock.code_3" clearable></el-input>
+      </el-form-item>
+      <el-form-item label="质量状态:">
+        <el-select v-model="stock.code_2"  placeholder="选择质量状态" clearable >
+          <el-option label="正常" value="ZC"></el-option>
+          <el-option label="锁定" value="SD"></el-option>
+        </el-select>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
@@ -14,28 +23,45 @@
 
     <el-table :data="stockList" border style="width: 100%" max-height="500px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
-      <el-table-column type="selection" width="60"></el-table-column>
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
       <el-table-column prop="customerid" label="货主" width="120">
       </el-table-column>
       <el-table-column prop="locationid" label="库位" width="120">
       </el-table-column>
-      <el-table-column prop="sku" label="料件编码" width="160">
+      <el-table-column prop="traceid" label="栈板码" width="120">
       </el-table-column>
-      <el-table-column prop="skudescr1" label="料件名称" width="220">
+      <el-table-column prop="sku" label="产品代码" width="160">
       </el-table-column>
-      <el-table-column prop="skudescr2" label="规格" width="160">
+      <el-table-column prop="lotnum" label="批次号" width="120">
       </el-table-column>
-      <el-table-column prop="lotnum" label="批次" width="120">
+      <el-table-column prop="skudescr1" label="产品描述(L)" width="220">
+      </el-table-column>
+      <el-table-column prop="skudescr2" label="产品描述(S)" width="240">
+      </el-table-column>
+      <el-table-column prop="freightclass" label="货物类型" width="90">
       </el-table-column>
       <el-table-column prop="qty" label="数量" width="120">
       </el-table-column>
+      <el-table-column prop="asqtyavailed" label="可用数" width="120">
+      </el-table-column>
       <el-table-column prop="grossweight" label="毛重" width="120">
       </el-table-column>
-      <el-table-column prop="traceid" label="跟踪号" width="120">
+      <el-table-column prop="lotatt04" label="批号" width="120">
       </el-table-column>
-      <el-table-column prop="muid" label="muid" width="120">
+      <el-table-column prop="lotatt05" label="ERP逻辑仓" width="90">
+      </el-table-column>
+      <el-table-column prop="lotatt06" label="码托高度" width="90">
+      </el-table-column>
+      <el-table-column prop="lotatt07" label="区域" width="90">
+      </el-table-column>
+      <el-table-column prop="lotatt08" label="质量状态" width="90">
+      </el-table-column>
+      <el-table-column  label="操作" width="160">
+        <template slot-scope="scope">
+          <el-button type="text" v-if="scope.row.lotatt08 === 'SD'" @click="lock(scope.row,'ZC')">解锁</el-button>
+          <el-button type="text" v-if="scope.row.lotatt08 === 'ZC'" @click="lock(scope.row,'SD')">锁定</el-button>
+        </template>
       </el-table-column>
     </el-table>
     <el-pagination background layout="total, sizes, prev, pager, next" :total="stock.total" style=" margin-top: 10px;"
@@ -57,6 +83,8 @@ export default {
       stock: {
         centre: null,
         code_1: null,
+        code_2: null,
+        code_3: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,
@@ -74,6 +102,11 @@ export default {
         this.stockList = res.data.result
         this.stock.total = res.data.total;
       }).finally(() => this.table_loading = false);
+    },
+    lock(row,status){
+      this.$http.post('/api/invLotLocId/lock?status='+status,[row]).then(res => {
+        if(res.data.status === 200) row.lotatt08 = status
+      })
     },
     handleCurrentChange(val) {
       this.search(val);
