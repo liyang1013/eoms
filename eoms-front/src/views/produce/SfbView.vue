@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form ref="form" :model="sfb" size="mini" :inline="true" class="demo-form-inline">
+    <el-form ref="form" :model="sfb" :inline="true" class="demo-form-inline">
       <el-form-item label="中心：">
         <selectedCentre v-model="sfb.centre"></selectedCentre>
       </el-form-item>
@@ -15,8 +15,8 @@
                         style="width: 140px;"></el-date-picker>
       </el-form-item>
       <el-form-item>
-        <el-button size="mini" type="primary" @click="searchSfb()" round>查询</el-button>
-        <el-button size="mini" type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
+        <el-button  type="primary" @click="searchSfb()" round>查询</el-button>
+        <el-button  type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
       <br>
       <el-form-item label="修改工单日期：">
@@ -26,7 +26,7 @@
 
         <el-switch v-model="temp.flag" active-text="改大" inactive-text="改小"></el-switch>
 
-        <el-button size="mini" type="danger" @click="modifyDate()" round style="margin-left: 10px;"
+        <el-button type="danger" @click="modifyDate()" round style="margin-left: 10px;"
                    :loading="modifyLoad">修改
         </el-button>
       </el-form-item>

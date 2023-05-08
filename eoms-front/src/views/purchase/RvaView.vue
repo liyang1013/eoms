@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :inline="true" :model="rva" class="demo-form-inline" size="mini">
+    <el-form :inline="true" :model="rva" class="demo-form-inline">
       <el-form-item label="中心:">
         <selectedCentre v-model="rva.centre"></selectedCentre>
       </el-form-item>
@@ -76,7 +76,7 @@
     <!-- 收货单明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1000px">
 
-      <el-form :inline="true" :model="rvab.rva" class="demo-form-inline" size="mini">
+      <el-form :inline="true" :model="rvab.rva" class="demo-form-inline">
         <el-form-item label="收货单号:">
           <el-input v-model="rvab.rva.rva01" placeholder="收货单号" :disabled="true"></el-input>
         </el-form-item>
@@ -98,7 +98,7 @@
             <el-input-number v-model="scope.row.rvb07" controls-position="right"
                              @change="scope.row.rvb88t = Math.round(scope.row.rvb07 * scope.row.rvb10t * 100)/100"
                              :min="0"
-                             :precision="2" :step="1" size="mini"></el-input-number>
+                             :precision="2" :step="1"></el-input-number>
           </template>
         </el-table-column>
         <el-table-column prop="rvb30" label="入库数量" width="90"></el-table-column>

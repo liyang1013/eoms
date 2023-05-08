@@ -74,7 +74,7 @@
 
     <el-dialog :visible.sync="dialogTableVisible" width="1000px">
 
-      <el-form :inline="true" :model="gaz" class="demo-form-inline" size="mini">
+      <el-form :inline="true" :model="gaz" class="demo-form-inline">
         <el-form-item label="作业:">
           <el-input v-model="gaz.code_1" placeholder="作业编号/名称" clearable ></el-input>
         </el-form-item>

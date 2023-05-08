@@ -53,6 +53,6 @@ export default {
 <style>
 
 .ima_input {
-  width: 300px;
+  width: 260px;
 }
 </style>

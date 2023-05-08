@@ -11,7 +11,7 @@ import '@/styles/base.scss'
 
 Vue.prototype.$http = http
 Vue.config.productionTip = false
-Vue.use(ElementUI,{ size: 'small'})
+Vue.use(ElementUI,{ size: 'mini'})
 
 for (var key in globalFilter) {
   Vue.filter(key, globalFilter[key])

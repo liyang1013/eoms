@@ -1,17 +1,20 @@
 <template>
   <div>
-    <el-form :inline="true" :model="stock" class="demo-form-inline" size="mini">
+    <el-form :inline="true" :model="stock" class="demo-form-inline">
       <el-form-item label="货主:">
         <selectedCentre v-model="stock.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:" >
         <selectedIma v-model="stock.code_1" :centre="stock.centre"></selectedIma>
       </el-form-item>
+      <el-form-item label="栈板码:" >
+        <el-input v-model="stock.code_4" clearable></el-input>
+      </el-form-item>
       <el-form-item label="批次号:" >
         <el-input v-model="stock.code_3" clearable></el-input>
       </el-form-item>
       <el-form-item label="质量状态:">
-        <el-select v-model="stock.code_2"  placeholder="选择质量状态" clearable >
+        <el-select v-model="stock.code_2"  placeholder="质量状态" clearable>
           <el-option label="正常" value="ZC"></el-option>
           <el-option label="锁定" value="SD"></el-option>
         </el-select>
@@ -21,7 +24,7 @@
       </el-form-item>
     </el-form>
 
-    <el-table :data="stockList" border style="width: 100%" max-height="500px" v-loading="table_loading"
+    <el-table :data="stockList" border style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
@@ -57,7 +60,7 @@
       </el-table-column>
       <el-table-column prop="lotatt08" label="质量状态" width="90">
       </el-table-column>
-      <el-table-column  label="操作" width="160">
+      <el-table-column  label="操作" width="120" fixed="right">
         <template slot-scope="scope">
           <el-button type="text" v-if="scope.row.lotatt08 === 'SD'" @click="lock(scope.row,'ZC')">解锁</el-button>
           <el-button type="text" v-if="scope.row.lotatt08 === 'ZC'" @click="lock(scope.row,'SD')">锁定</el-button>
@@ -85,6 +88,7 @@ export default {
         code_1: null,
         code_2: null,
         code_3: null,
+        code_4: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,

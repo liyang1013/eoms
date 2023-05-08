@@ -18,7 +18,9 @@ public class SearchVo {
 
     private String code_3;
 
-    private Boolean code_4;
+    private String code_4;
+
+    private String code_5;
 
     private String pmc;
 

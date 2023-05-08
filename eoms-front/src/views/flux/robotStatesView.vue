@@ -1,7 +1,7 @@
 <template>
   <el-row :gutter="10">
-    <el-col :span="8" v-for="item in status">
-      <el-card class="car">
+    <el-col :span="8" v-for="(item,index) in status" :key="index">
+      <el-card class="car" >
         <div slot="header">
           <p>
             设备编号: {{item.id}} &nbsp&nbsp

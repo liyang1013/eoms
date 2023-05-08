@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :inline="true" :model="img" class="demo-form-inline" size="mini">
+    <el-form :inline="true" :model="img" class="demo-form-inline">
       <el-form-item label="中心:">
         <selectedCentre v-model="img.centre"></selectedCentre>
       </el-form-item>
