@@ -90,7 +90,15 @@
     },
     {
       "name": "sale",
-      "children": [],
+      "children": [
+        {
+          "name": "wdi",
+          "meta": {
+            "icon": "el-icon-tickets",
+            "name": "拣货单"
+          }
+        }
+      ],
       "meta": {
         "icon": "el-icon-box",
         "name": "销售管理"

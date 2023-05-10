@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.TcWdjFileMapper">
+
+  <insert id="insertSelective" parameterType="com.keboda.eomsback.sale.pojo.TcWdjFile">
+    insert into TC_WDJ_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cdanhao != null">
+        CDANHAO,
+      </if>
+      <if test="cbarcodeno != null">
+        CBARCODENO,
+      </if>
+      <if test="cproduceno != null">
+        CPRODUCENO,
+      </if>
+      <if test="cdc != null">
+        CDC,
+      </if>
+      <if test="chuojiano != null">
+        CHUOJIANO,
+      </if>
+      <if test="iqty != null">
+        IQTY,
+      </if>
+      <if test="ickqty != null">
+        ICKQTY,
+      </if>
+      <if test="tcWdj20 != null">
+        TC_WDJ20,
+      </if>
+      <if test="tcWdj21 != null">
+        TC_WDJ21,
+      </if>
+      <if test="tcWdj200 != null">
+        TC_WDJ200,
+      </if>
+      <if test="cflag != null">
+        CFLAG,
+      </if>
+      <if test="tcWdj51 != null">
+        TC_WDJ51,
+      </if>
+      <if test="tcWdj52 != null">
+        TC_WDJ52,
+      </if>
+      <if test="tcWdj53 != null">
+        TC_WDJ53,
+      </if>
+      <if test="tcWdj54 != null">
+        TC_WDJ54,
+      </if>
+      <if test="cwhcode != null">
+        CWHCODE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cdanhao != null">
+        #{cdanhao,jdbcType=VARCHAR},
+      </if>
+      <if test="cbarcodeno != null">
+        #{cbarcodeno,jdbcType=VARCHAR},
+      </if>
+      <if test="cproduceno != null">
+        #{cproduceno,jdbcType=VARCHAR},
+      </if>
+      <if test="cdc != null">
+        #{cdc,jdbcType=VARCHAR},
+      </if>
+      <if test="chuojiano != null">
+        #{chuojiano,jdbcType=VARCHAR},
+      </if>
+      <if test="iqty != null">
+        #{iqty,jdbcType=DECIMAL},
+      </if>
+      <if test="ickqty != null">
+        #{ickqty,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWdj20 != null">
+        #{tcWdj20,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tcWdj21 != null">
+        #{tcWdj21,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdj200 != null">
+        #{tcWdj200,jdbcType=VARCHAR},
+      </if>
+      <if test="cflag != null">
+        #{cflag,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdj51 != null">
+        #{tcWdj51,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdj52 != null">
+        #{tcWdj52,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdj53 != null">
+        #{tcWdj53,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdj54 != null">
+        #{tcWdj54,jdbcType=VARCHAR},
+      </if>
+      <if test="cwhcode != null">
+        #{cwhcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

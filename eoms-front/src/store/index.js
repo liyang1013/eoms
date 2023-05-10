@@ -11,7 +11,8 @@ export default new Vuex.Store({
         crumbList: [],
         sidebarMenu: configJson.menu,
         currentMenu: 'home',
-        username: ''
+        username: '',
+        menuList: []
     },
     getters: {},
     mutations: {
@@ -24,9 +25,21 @@ export default new Vuex.Store({
         SET_CURRENT_MENU(state, currentMenu) {
             state.currentMenu = currentMenu
         },
-      SET_USERNAME(state, username) {
-        state.username = username
-      },
+        SET_USERNAME(state, username) {
+            state.username = username
+        },
+        addMenu(state, menu) {
+            let index = state.menuList.findIndex(item => {
+                if (item.name === menu.name) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            if (index === -1) {
+                state.menuList.push({name: menu.name, path: menu.path})
+            }
+        }
     },
     actions: {},
     modules: {}

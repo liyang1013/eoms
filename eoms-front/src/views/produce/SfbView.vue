@@ -19,7 +19,7 @@
         <el-button  type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
       <br>
-      <el-form-item label="修改工单日期：">
+      <el-form-item label="日期修正：">
         <el-date-picker type="date" placeholder="选择日期" v-model="temp.ddate" value-format="yyyy-MM-dd"
                         style="width: 140px;"></el-date-picker>
         &nbsp&nbsp

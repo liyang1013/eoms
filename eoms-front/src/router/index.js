@@ -19,6 +19,7 @@ const routes = [
   {
     path: '/',
     name: '/',
+    redirect: '/home',
     component: () => import('@/views/IndexView'),
     children: [
       {
@@ -81,6 +82,11 @@ const routes = [
         name: 'robotStates',
         component: () => import("@/views/flux/robotStatesView.vue")
       },
+      {
+        path: 'wdi',
+        name: 'wdi',
+        component: () => import("@/views/sale/WdiView.vue")
+      }
     ]
   }
 ]
@@ -109,6 +115,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(to => {
   store.commit('SET_CURRENT_MENU', to.name)
+  store.commit('addMenu', to)
 })
 
 export default router

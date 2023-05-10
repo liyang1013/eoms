@@ -34,8 +34,7 @@
       <el-timeline-item :type="product.sfp.length > 0 ? 'success' : ''" size="large">
         <div class="timeline-left">{{ product.sfp[0]?.sfp02 }}</div>
         <h4>发料(asfi510)</h4>
-        <el-table :data="product.sfp" stripe :header-cell-style="{ 'text-align': 'center' }"
-                  :cell-style="{ 'text-align': 'center' }">
+        <el-table :data="product.sfp" stripe>
           <el-table-column prop="sfp01" label="发料单号" width="120">
           </el-table-column>
           <el-table-column prop="tlf907" label="发料类型" width="120">
@@ -51,8 +50,7 @@
       <el-timeline-item :type="product.shb.length > 0 ? 'success' : ''" size="large">
         <div class="timeline-left">{{ product.shb[0]?.shb02 }}</div>
         <h4>报工(asft700)</h4>
-        <el-table :data="product.shb" stripe :header-cell-style="{ 'text-align': 'center' }"
-                  :cell-style="{ 'text-align': 'center' }">
+        <el-table :data="product.shb" stripe>
           <el-table-column prop="shb01" label="报工单号" width="120">
           </el-table-column>
           <el-table-column prop="shb02" label="开工日期" width="120">
@@ -66,8 +64,7 @@
       <el-timeline-item :type="product.qcf.length > 0 ? 'success' : ''" size="large">
         <div class="timeline-left">{{ product.qcf[0]?.qcf04 }}</div>
         <h4>FQC(aqct410)</h4>
-        <el-table :data="product.qcf" stripe :header-cell-style="{ 'text-align': 'center' }"
-                  :cell-style="{ 'text-align': 'center' }">
+        <el-table :data="product.qcf" stripe >
           <el-table-column prop="qcf01" label="FQC单号" width="120">
           </el-table-column>
           <el-table-column prop="qcf04" label="检验日期" width="120">
@@ -79,8 +76,7 @@
       <el-timeline-item :type="product.sfu.length > 0 ? 'success' : ''" size="large">
         <div class="timeline-left">{{ product.sfu[0]?.sfu14 }}</div>
         <h4>入库(asft620)</h4>
-        <el-table :data="product.sfu" stripe :header-cell-style="{ 'text-align': 'center' }"
-                  :cell-style="{ 'text-align': 'center' }">
+        <el-table :data="product.sfu" stripe >
           <el-table-column prop="sfu01" label="入库单号" width="120">
           </el-table-column>
           <el-table-column prop="tlf907" label="入库类型" width="120">

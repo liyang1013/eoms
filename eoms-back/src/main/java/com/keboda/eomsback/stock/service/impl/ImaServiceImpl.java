@@ -173,7 +173,7 @@ public class ImaServiceImpl implements IImaService {
                 if(!oblFile.getObl03().equals(obe01)){
                     oblFile.setCentre(centre);
                     oblFile.setObl03(obe01);
-                    oblFileMapper.insertSelective(oblFile);
+                    oblFileMapper.updateByPrimaryKeySelective(oblFile);
                 }
             }
         }

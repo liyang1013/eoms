@@ -27,7 +27,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.OblFile">
-    update OBL_FILE
+    update ${centre}.OBL_FILE
     <set>
       <if test="obl03 != null">
         OBL03 = #{obl03,jdbcType=VARCHAR},

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.TcWdiFileMapper">
+  <insert id="insertSelective" parameterType="com.keboda.eomsback.sale.pojo.TcWdiFile">
+    insert into ${centre}.TC_WDI_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cdanhao != null">
+        CDANHAO,
+      </if>
+      <if test="tcWdi20 != null">
+        TC_WDI20,
+      </if>
+      <if test="tcWdi21 != null">
+        TC_WDI21,
+      </if>
+      <if test="tcWdi200 != null">
+        TC_WDI200,
+      </if>
+      <if test="cflag != null">
+        CFLAG,
+      </if>
+      <if test="tcWdi51 != null">
+        TC_WDI51,
+      </if>
+      <if test="tcWdi52 != null">
+        TC_WDI52,
+      </if>
+      <if test="tcWdi53 != null">
+        TC_WDI53,
+      </if>
+      <if test="tcWdi54 != null">
+        TC_WDI54,
+      </if>
+      <if test="userno != null">
+        USERNO,
+      </if>
+      <if test="createdate != null">
+        CREATEDATE,
+      </if>
+      <if test="tcWdi55 != null">
+        TC_WDI55,
+      </if>
+      <if test="tcWdi56 != null">
+        TC_WDI56,
+      </if>
+      <if test="tcWdi57 != null">
+        TC_WDI57,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cdanhao != null">
+        #{cdanhao,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi20 != null">
+        #{tcWdi20,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tcWdi21 != null">
+        #{tcWdi21,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi200 != null">
+        #{tcWdi200,jdbcType=VARCHAR},
+      </if>
+      <if test="cflag != null">
+        #{cflag,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi51 != null">
+        #{tcWdi51,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi52 != null">
+        #{tcWdi52,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi53 != null">
+        #{tcWdi53,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi54 != null">
+        #{tcWdi54,jdbcType=VARCHAR},
+      </if>
+      <if test="userno != null">
+        #{userno,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tcWdi55 != null">
+        #{tcWdi55,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi56 != null">
+        #{tcWdi56,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWdi57 != null">
+        #{tcWdi57,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="searchWdiListPageHelper" resultType="com.keboda.eomsback.sale.pojo.TcWdiFile">
+    select *
+    from ${centre}.TC_WDI_FILE
+    <where>
+      <if test="code != null and code_1 != '' ">
+        and CDANHAO like '%${code_1}%'
+      </if>
+    </where>
+    order by TC_WDI20 desc,cdanhao
+  </select>
+</mapper>

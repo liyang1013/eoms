@@ -1,15 +1,10 @@
 <template>
   <div >
-    <h1>HOME</h1>
+    <h1 style="text-align: center">HOME PAGE</h1>
   </div>
 </template>
 
 <script>
-
-import sidebarNav from '@/components/sidebar-nav.vue'
-import TopAside from '@/components/main-content/top-aside'
-import {mapState} from 'vuex'
-
 export default {
   name: 'home',
 }
