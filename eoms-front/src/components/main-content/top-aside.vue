@@ -10,7 +10,7 @@
     <div class="aside__top--right">
       <div class="user-msg">
         <img class="user-img" src="@/image/avatar.jpg" alt="">&nbsp
-        <span class="user-name">{{ username }}</span>
+        <span class="user-name">{{ username() }}</span>
       </div>
     </div>
   </aside>
@@ -25,7 +25,6 @@ export default {
   },
   computed: {
     ...mapState(['isSidebarNavCollapse']),
-    ...mapState(['username']),
     ...mapState(['menuList']),
     ...mapState(['currentMenu'])
   },
@@ -39,6 +38,9 @@ export default {
     openMenu(path){
       this.$store.commit('SET_CURRENT_MENU',path)
       this.$router.push(path)
+    },
+    username(){
+      return localStorage.getItem('username')
     }
   },
 }

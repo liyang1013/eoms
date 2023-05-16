@@ -31,7 +31,7 @@ export default {
     login() {
       this.$http.post('/api/zx/login', this.zx).then(res => {
         localStorage.setItem('token', res.data.result.token);
-        this.$store.commit('SET_USERNAME', res.data.result.zx01)
+        localStorage.setItem('username', res.data.result.zx01);
         this.$router.push('/');
       })
     }
