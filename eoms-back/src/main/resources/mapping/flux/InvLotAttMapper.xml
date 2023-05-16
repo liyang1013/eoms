@@ -1,11 +1,326 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.flux.mapper.InvLotAttMapper">
+    <insert id="insertSelective">
+        insert into INV_LOT_ATT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="organizationid != null">
+                organizationid,
+            </if>
+            <if test="lotnum != null">
+                lotnum,
+            </if>
+            <if test="customerid != null">
+                customerid,
+            </if>
+            <if test="sku != null">
+                sku,
+            </if>
+            <if test="lotatt01 != null">
+                lotatt01,
+            </if>
+            <if test="lotatt02 != null">
+                lotatt02,
+            </if>
+            <if test="lotatt03 != null">
+                lotatt03,
+            </if>
+            <if test="lotatt04 != null">
+                lotatt04,
+            </if>
+            <if test="lotatt05 != null">
+                lotatt05,
+            </if>
+            <if test="lotatt06 != null">
+                lotatt06,
+            </if>
+            <if test="lotatt07 != null">
+                lotatt07,
+            </if>
+            <if test="lotatt08 != null">
+                lotatt08,
+            </if>
+            <if test="lotatt09 != null">
+                lotatt09,
+            </if>
+            <if test="lotatt10 != null">
+                lotatt10,
+            </if>
+            <if test="lotatt11 != null">
+                lotatt11,
+            </if>
+            <if test="lotatt12 != null">
+                lotatt12,
+            </if>
+            <if test="lotatt13 != null">
+                lotatt13,
+            </if>
+            <if test="lotatt14 != null">
+                lotatt14,
+            </if>
+            <if test="lotatt15 != null">
+                lotatt15,
+            </if>
+            <if test="lotatt16 != null">
+                lotatt16,
+            </if>
+            <if test="lotatt17 != null">
+                lotatt17,
+            </if>
+            <if test="lotatt18 != null">
+                lotatt18,
+            </if>
+            <if test="lotatt19 != null">
+                lotatt19,
+            </if>
+            <if test="lotatt20 != null">
+                lotatt20,
+            </if>
+            <if test="lotatt21 != null">
+                lotatt21,
+            </if>
+            <if test="lotatt22 != null">
+                lotatt22,
+            </if>
+            <if test="lotatt23 != null">
+                lotatt23,
+            </if>
+            <if test="lotatt24 != null">
+                lotatt24,
+            </if>
+            <if test="receivingtime != null">
+                receivingtime,
+            </if>
+            <if test="fileid != null">
+                fileid,
+            </if>
+            <if test="qcreportfilename != null">
+                qcreportfilename,
+            </if>
+            <if test="notetext != null">
+                notetext,
+            </if>
+            <if test="udf01 != null">
+                udf01,
+            </if>
+            <if test="udf02 != null">
+                udf02,
+            </if>
+            <if test="udf03 != null">
+                udf03,
+            </if>
+            <if test="udf04 != null">
+                udf04,
+            </if>
+            <if test="udf05 != null">
+                udf05,
+            </if>
+            <if test="udf06 != null">
+                udf06,
+            </if>
+            <if test="currentversion != null">
+                currentversion,
+            </if>
+            <if test="oprseqflag != null">
+                oprseqflag,
+            </if>
+            <if test="addwho != null">
+                addwho,
+            </if>
+            <if test="addtime != null">
+                addtime,
+            </if>
+            <if test="editwho != null">
+                editwho,
+            </if>
+            <if test="edittime != null">
+                edittime,
+            </if>
+            <if test="keylotnum != null">
+                keylotnum,
+            </if>
+            <if test="keylotatt != null">
+                keylotatt,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="organizationid != null">
+                #{organizationid},
+            </if>
+            <if test="lotnum != null">
+                #{lotnum},
+            </if>
+            <if test="customerid != null">
+                #{customerid},
+            </if>
+            <if test="sku != null">
+                #{sku},
+            </if>
+            <if test="lotatt01 != null">
+                #{lotatt01},
+            </if>
+            <if test="lotatt02 != null">
+                #{lotatt02},
+            </if>
+            <if test="lotatt03 != null">
+                #{lotatt03},
+            </if>
+            <if test="lotatt04 != null">
+                #{lotatt04},
+            </if>
+            <if test="lotatt05 != null">
+                #{lotatt05},
+            </if>
+            <if test="lotatt06 != null">
+                #{lotatt06},
+            </if>
+            <if test="lotatt07 != null">
+                #{lotatt07},
+            </if>
+            <if test="lotatt08 != null">
+                #{lotatt08},
+            </if>
+            <if test="lotatt09 != null">
+                #{lotatt09},
+            </if>
+            <if test="lotatt10 != null">
+                #{lotatt10},
+            </if>
+            <if test="lotatt11 != null">
+                #{lotatt11},
+            </if>
+            <if test="lotatt12 != null">
+                #{lotatt12},
+            </if>
+            <if test="lotatt13 != null">
+                #{lotatt13},
+            </if>
+            <if test="lotatt14 != null">
+                #{lotatt14},
+            </if>
+            <if test="lotatt15 != null">
+                #{lotatt15},
+            </if>
+            <if test="lotatt16 != null">
+                #{lotatt16},
+            </if>
+            <if test="lotatt17 != null">
+                #{lotatt17},
+            </if>
+            <if test="lotatt18 != null">
+                #{lotatt18},
+            </if>
+            <if test="lotatt19 != null">
+                #{lotatt19},
+            </if>
+            <if test="lotatt20 != null">
+                #{lotatt20},
+            </if>
+            <if test="lotatt21 != null">
+                #{lotatt21},
+            </if>
+            <if test="lotatt22 != null">
+                #{lotatt22},
+            </if>
+            <if test="lotatt23 != null">
+                #{lotatt23},
+            </if>
+            <if test="lotatt24 != null">
+                #{lotatt24},
+            </if>
+            <if test="receivingtime != null">
+                #{receivingtime},
+            </if>
+            <if test="fileid != null">
+                #{fileid},
+            </if>
+            <if test="qcreportfilename != null">
+                #{qcreportfilename},
+            </if>
+            <if test="notetext != null">
+                #{notetext},
+            </if>
+            <if test="udf01 != null">
+                #{udf01},
+            </if>
+            <if test="udf02 != null">
+                #{udf02},
+            </if>
+            <if test="udf03 != null">
+                #{udf03},
+            </if>
+            <if test="udf04 != null">
+                #{udf04},
+            </if>
+            <if test="udf05 != null">
+                #{udf05},
+            </if>
+            <if test="udf06 != null">
+                #{udf06},
+            </if>
+            <if test="currentversion != null">
+                #{currentversion},
+            </if>
+            <if test="oprseqflag != null">
+                #{oprseqflag},
+            </if>
+            <if test="addwho != null">
+                #{addwho},
+            </if>
+            <if test="addtime != null">
+                #{addtime},
+            </if>
+            <if test="editwho != null">
+                #{editwho},
+            </if>
+            <if test="edittime != null">
+                #{edittime},
+            </if>
+            <if test="keylotnum != null">
+                #{keylotnum},
+            </if>
+            <if test="keylotatt != null">
+                #{keylotatt},
+            </if>
+        </trim>
+    </insert>
 
-
-    <update id="lock">
-        update INV_LOT_ATT
-        set lotAtt08 = #{status}
+    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.InvLotAtt">
+        select *
+        from INV_LOT_ATT
         where lotnum = #{lotnum}
-    </update>
+    </select>
+    <select id="selectOtherStatus" resultType="com.keboda.eomsback.flux.pojo.InvLotAtt">
+        select *
+        from INV_LOT_ATT
+        <where>
+            <if test="organizationid != null">
+                and organizationid = #{organizationid}
+            </if>
+            <if test="customerid != null ">
+                and customerid = #{customerid}
+            </if>
+            <if test="sku != null ">
+                and sku = #{sku}
+            </if>
+            <if test="lotatt04 != null ">
+                and lotatt04 = #{lotatt04}
+            </if>
+            <if test="lotatt05 != null ">
+                and lotatt05 = #{lotatt05}
+            </if>
+            <if test="lotatt06 != null ">
+                and lotatt06 = #{lotatt06}
+            </if>
+            <if test="lotatt07 != null ">
+                and lotatt07 = #{lotatt07}
+            </if>
+            <if test="lotatt08 != null ">
+                and lotatt08 = #{lotatt08}
+            </if>
+            <if test="keylotnum != null">
+                and keylotnum = #{keylotnum}
+            </if>
+        </where>
+    </select>
 </mapper>

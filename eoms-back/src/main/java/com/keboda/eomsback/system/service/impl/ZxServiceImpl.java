@@ -31,7 +31,7 @@ public class ZxServiceImpl implements IZxService {
         }
         ZxFile login = zxFileMapper.selectByKey(zxFile);
         if(login == null) throw new RuntimeException("用户名或密码错误");
-        login.setToken(JwtTokenUtils.getToken(login.getZx01(),login.getZx10()));
+        login.setToken(JwtTokenUtils.getToken(login.getZx01(),"password"));
         return login;
     }
 }

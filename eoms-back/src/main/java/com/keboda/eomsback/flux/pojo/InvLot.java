@@ -7,17 +7,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-public class InvLotLocId implements Serializable {
+public class InvLot implements Serializable {
 
     private String organizationid;
 
     private String warehouseid;
 
-    private String locationid;
-
     private String lotnum;
-
-    private String traceid;
 
     private String customerid;
 
@@ -27,17 +23,9 @@ public class InvLotLocId implements Serializable {
 
     private BigDecimal qtyallocated;
 
-    private BigDecimal qtyrpin;
-
-    private BigDecimal qtyrpout;
-
-    private BigDecimal qtymvin;
-
-    private BigDecimal qtymvout;
+    private BigDecimal qtypreallocated;
 
     private BigDecimal qtyonhold;
-
-    private Integer onholdlocker;
 
     private BigDecimal grossweight;
 
@@ -46,12 +34,6 @@ public class InvLotLocId implements Serializable {
     private BigDecimal cubic;
 
     private BigDecimal price;
-
-    private BigDecimal qtypa;
-
-    private String qcstatus;
-
-    private Date lastmaintenancedate;
 
     private String notetext;
 
@@ -79,36 +61,5 @@ public class InvLotLocId implements Serializable {
 
     private Date edittime;
 
-    private Date inloctime;
-
-    private String muid;
-
-    private String skudescr1;
-
-    private String packdescr;
-
-    private String skudescr2;
-
-    private String packid;
-
-    private String freightclass;
-
-    private String packuom;
-
-    private BigDecimal asqtyavailed;
-
-    private String lotatt04;
-
-    private String lotatt05;
-
-    private String lotatt06;
-
-    private String lotatt07;
-
-    private String lotatt08;
-
-    private BigDecimal iqty;
-
     private static final long serialVersionUID = 1L;
-
 }

@@ -10,7 +10,7 @@
           <my-nav :menuList='v.children'></my-nav>
         </el-menu-item-group>
       </el-submenu>
-      <el-menu-item :key='v?.name' :index='v.name' @click='gotoRoute(v.name)' v-else>
+      <el-menu-item :key='v?.name' :index='v.name' @click='gotoRoute(v)' v-else>
         <i class="icon" v-if="v.meta && v.meta.icon" :class="v.meta.icon"></i>
         <span slot='title'>{{ v.meta.name }}</span>
       </el-menu-item>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import store from "@/store";
+
 export default {
   name: 'my-nav',
   props: {
@@ -31,8 +33,10 @@ export default {
     }
   },
   methods: {
-    gotoRoute(name) {
-      this.$router.push({ name })
+    gotoRoute(item) {
+      this.$router.push( item.name )
+      store.commit('SET_CURRENT_MENU', item.name)
+      store.commit('addMenu', {name: item.meta.name,path: item.name})
     }
   }
 }

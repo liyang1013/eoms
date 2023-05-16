@@ -10,4 +10,8 @@ public interface InvLotLocIdMapper {
     Page<InvLotLocId> invLotLocIdListPageHelper(SearchVo searchVo);
 
     InvLotLocId selectByKey(@Param("locationid") String locationid, @Param("lotnum") String lotnum, @Param("traceid") String traceid);
+
+    void updateQty(InvLotLocId invLotLocId);
+
+    void insertSelective(InvLotLocId inv);
 }

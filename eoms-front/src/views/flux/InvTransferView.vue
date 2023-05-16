@@ -1,6 +1,9 @@
 <template>
   <div>
     <el-form :inline="true" :model="stock" class="demo-form-inline">
+      <el-form-item style="float: right">
+        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="货主:">
         <selectedCentre v-model="stock.centre"></selectedCentre>
       </el-form-item>
@@ -13,18 +16,15 @@
       <el-form-item label="批次号:" >
         <el-input v-model="stock.code_3" clearable></el-input>
       </el-form-item>
-      <el-form-item label="质量状态:">
+      <el-form-item label="状态:">
         <el-select v-model="stock.code_2"  placeholder="质量状态" clearable>
           <el-option label="正常" value="ZC"></el-option>
           <el-option label="锁定" value="SD"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-      </el-form-item>
     </el-form>
 
-    <el-table :data="stockList" border style="width: 100%" max-height="450px" v-loading="table_loading"
+    <el-table :data="stockList" border stripe style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
@@ -59,6 +59,13 @@
       <el-table-column prop="lotatt07" label="区域" width="90">
       </el-table-column>
       <el-table-column prop="lotatt08" label="质量状态" width="90">
+      </el-table-column>
+      <el-table-column  label="操作数量" fixed="right" width="160">
+        <template slot-scope="scope">
+          <el-input-number v-model="scope.row.iqty" controls-position="right"
+                           :min="0" :max="scope.row.asqtyavailed"
+                           :precision="3" :step="1"></el-input-number>
+        </template>
       </el-table-column>
       <el-table-column  label="操作" width="120" fixed="right">
         <template slot-scope="scope">
@@ -109,7 +116,7 @@ export default {
     },
     lock(row,status){
       this.$http.post('/api/invLotLocId/lock?status='+status,[row]).then(res => {
-        if(res.data.status === 200) row.lotatt08 = status
+        if(res.data.status === 200) this.search(this.stock.currentPage);
       })
     },
     handleCurrentChange(val) {

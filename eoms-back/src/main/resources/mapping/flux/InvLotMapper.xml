@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.keboda.eomsback.flux.mapper.InvLotLocIdMapper">
+<mapper namespace="com.keboda.eomsback.flux.mapper.InvLotMapper">
     <insert id="insertSelective">
-        insert into INV_LOT_LOC_ID
+        insert into INV_LOT
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="organizationid != null">
                 organizationid,
@@ -10,14 +10,8 @@
             <if test="warehouseid != null">
                 warehouseid,
             </if>
-            <if test="locationid != null">
-                locationid,
-            </if>
             <if test="lotnum != null">
                 lotnum,
-            </if>
-            <if test="traceid != null">
-                traceid,
             </if>
             <if test="customerid != null">
                 customerid,
@@ -31,24 +25,14 @@
             <if test="qtyallocated != null">
                 qtyallocated,
             </if>
-            <if test="qtyrpin != null">
-                qtyrpin,
-            </if>
-            <if test="qtyrpout != null">
-                qtyrpout,
-            </if>
-            <if test="qtymvin != null">
-                qtymvin,
-            </if>
-            <if test="qtymvout != null">
-                qtymvout,
+
+            <if test="qtypreallocated != null">
+                qtypreallocated,
             </if>
             <if test="qtyonhold != null">
                 qtyonhold,
             </if>
-            <if test="onholdlocker != null">
-                onholdlocker,
-            </if>
+
             <if test="grossweight != null">
                 grossweight,
             </if>
@@ -61,15 +45,7 @@
             <if test="price != null">
                 price,
             </if>
-            <if test="qtypa != null">
-                qtypa,
-            </if>
-            <if test="qcstatus != null">
-                qcstatus,
-            </if>
-            <if test="lastmaintenancedate != null">
-                lastmaintenancedate,
-            </if>
+
             <if test="notetext != null">
                 notetext,
             </if>
@@ -91,6 +67,7 @@
             <if test="udf06 != null">
                 udf06,
             </if>
+
             <if test="currentversion != null">
                 currentversion,
             </if>
@@ -109,12 +86,6 @@
             <if test="edittime != null">
                 edittime,
             </if>
-            <if test="inloctime != null">
-                inloctime,
-            </if>
-            <if test="muid != null">
-                muid,
-            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="organizationid != null">
@@ -123,14 +94,8 @@
             <if test="warehouseid != null">
                 #{warehouseid},
             </if>
-            <if test="locationid != null">
-                #{locationid},
-            </if>
             <if test="lotnum != null">
                 #{lotnum},
-            </if>
-            <if test="traceid != null">
-                #{traceid},
             </if>
             <if test="customerid != null">
                 #{customerid},
@@ -144,23 +109,12 @@
             <if test="qtyallocated != null">
                 #{qtyallocated},
             </if>
-            <if test="qtyrpin != null">
-                #{qtyrpin},
-            </if>
-            <if test="qtyrpout != null">
-                #{qtyrpout},
-            </if>
-            <if test="qtymvin != null">
-                #{qtymvin},
-            </if>
-            <if test="qtymvout != null">
-                #{qtymvout},
+
+            <if test="qtypreallocated != null">
+                #{qtypreallocated},
             </if>
             <if test="qtyonhold != null">
                 #{qtyonhold},
-            </if>
-            <if test="onholdlocker != null">
-                #{onholdlocker},
             </if>
             <if test="grossweight != null">
                 #{grossweight},
@@ -173,15 +127,6 @@
             </if>
             <if test="price != null">
                 #{price},
-            </if>
-            <if test="qtypa != null">
-                #{qtypa},
-            </if>
-            <if test="qcstatus != null">
-                #{qcstatus},
-            </if>
-            <if test="lastmaintenancedate != null">
-                #{lastmaintenancedate},
             </if>
             <if test="notetext != null">
                 #{notetext},
@@ -222,54 +167,25 @@
             <if test="edittime != null">
                 #{edittime},
             </if>
-            <if test="inloctime != null">
-                #{inloctime},
-            </if>
-            <if test="muid != null">
-                #{muid},
-            </if>
         </trim>
-
     </insert>
+
     <update id="updateQty">
-        update INV_LOT_LOC_ID
-        set qty =  #{qty}, currentVersion = currentVersion + 1, grossWeight = #{grossweight},editwho = #{editwho},edittime = #{edittime}
-        where locationId = #{locationid} and lotnum = #{lotnum} and traceId = #{traceid}
-
+        update INV_LOT
+        set organizationId = t.organizationid, warehouseId = t.warehouseId, customerId = t.customerId , sku = t.sku,
+            qty = t.qty ,qtyAllocated = t.qtyAllocated, qtyPreAllocated = t.qtyAllocated,grossWeight = t.grossWeight,
+            currentVersion = a.currentVersion + 1,editWho = #{editwho},editTime = #{edittime}
+        from INV_LOT a
+        left join (
+            select organizationid,warehouseId,lotNum,customerId,sku,sum(qty) as qty ,sum(qtyAllocated) as qtyAllocated,sum(qtyOnHold)as qtyOnHold,sum(grossWeight) as grossWeight
+            from inv_lot_loc_id
+            group by organizationid,warehouseId,lotNum,customerId,sku
+        ) t on a.lotnum = t.lotnum
+        where a.lotNum = #{lotnum}
     </update>
-
-    <select id="invLotLocIdListPageHelper" resultType="com.keboda.eomsback.flux.pojo.InvLotLocId">
-        select a.customerId, a.locationId, a.lotnum, a.traceId,b.sku,b.skuDescr1 ,
-        b.skuDescr2 ,e.freightDescr1 as freightclass,
-        a.qty,a.grossweight,
-        a.qty - a.qtyAllocated - a.qtyRpOut - a.qtyMvOut - a.qtyOnHold  asqtyavailed,
-        d.lotAtt04,d.lotAtt05,d.lotAtt06,d.lotAtt07,d.lotAtt08, a.qty - a.qtyAllocated - a.qtyRpOut - a.qtyMvOut - a.qtyOnHold as iqty
-        from  INV_LOT_LOC_ID a
-        LEFT  JOIN BAS_SKU b on a.customerId = b.customerId AND a.sku = b.sku
-        LEFT  JOIN BAS_CUSTOMERFREIGHT e  ON b.customerId = e.customerId AND e.freightCode = b.freightClass
-        LEFT JOIN INV_LOT_ATT d  ON d.lotNum = a.lotNum
-        <where>
-            <if test="centre != null and centre != '' ">
-                and a.customerid = #{centre}
-            </if>
-            <if test="code_1 != null and code_1 != '' ">
-                and  b.sku like '%${code_1}%'
-            </if>
-            <if test="code_2 != null and code_2 != '' ">
-                and d.lotAtt08 = #{code_2}
-            </if>
-            <if test="code_3 != null and code_3 != '' ">
-                and a.lotnum like '%${code_3}%'
-            </if>
-            <if test="code_4 != null and code_4 != '' ">
-                and a.traceId like '%${code_4}%'
-            </if>
-        </where>
-        order by a.customerid,a.locationId,a.sku
-    </select>
-    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.InvLotLocId">
-        select *,qty - qtyAllocated - qtyRpOut - qtyMvOut - qtyOnHold  asqtyavailed
-        from INV_LOT_LOC_ID
-        where locationid = #{locationid} and lotnum = #{lotnum} and traceid = #{traceid}
+    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.InvLot">
+        select *
+        from INV_LOT
+        where lotnum = #{lotnum}
     </select>
 </mapper>

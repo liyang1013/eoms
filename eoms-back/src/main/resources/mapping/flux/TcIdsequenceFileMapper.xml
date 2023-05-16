@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.flux.mapper.TcIdsequenceFileMapper">
+
+    <update id="updateSequence">
+        update TC_IDSEQUENCE_FILE
+        set idsequence = isnull(idsequence, 0) + 1
+        where itype = #{itype}
+    </update>
+    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.TcIdsequenceFile">
+        select *
+        from TC_IDSEQUENCE_FILE
+        where itype = #{itype}
+    </select>
+</mapper>

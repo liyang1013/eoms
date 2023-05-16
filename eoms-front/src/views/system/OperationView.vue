@@ -10,9 +10,9 @@
       <el-form-item label="详情:">
         <el-input v-model="operation.code_3" placeholder="简介" clearable></el-input>
       </el-form-item>
-      <el-form-item>
+      <el-form-item style="float:right;">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="primary" icon="el-icon-plus" round @click="drawer = true">新增</el-button>
+        <el-button type="danger" icon="el-icon-plus" round @click="drawer = true">新增</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="作业录入: p_zz; 自定义报表: p_query" type="success" :closable="false">

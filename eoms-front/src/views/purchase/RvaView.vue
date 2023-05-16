@@ -1,6 +1,9 @@
 <template>
   <div>
     <el-form :inline="true" :model="rva" class="demo-form-inline">
+      <el-form-item style="float: right">
+        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="rva.centre"></selectedCentre>
       </el-form-item>
@@ -12,9 +15,6 @@
       </el-form-item>
       <el-form-item label="供应商:">
         <el-input v-model="rva.pmc" placeholder="供应商编码/简称" clearable></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300" type="success" :closable="false">

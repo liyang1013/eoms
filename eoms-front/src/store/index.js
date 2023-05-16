@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import configJson from '../static/config.json'
+import router from "@/router";
 
 Vue.use(Vuex)
 
@@ -10,7 +11,7 @@ export default new Vuex.Store({
         isSidebarNavCollapse: false,
         crumbList: [],
         sidebarMenu: configJson.menu,
-        currentMenu: 'home',
+        currentMenu:  'home',
         username: '',
         menuList: []
     },
@@ -36,9 +37,21 @@ export default new Vuex.Store({
                     return false;
                 }
             });
-            if (index === -1) {
+            if (index === -1 && menu.path !== 'home') {
                 state.menuList.push({name: menu.name, path: menu.path})
             }
+        },
+        deleteMenu(state, menu){
+            state.menuList.splice(state.menuList.indexOf(menu), 1);
+            let path = 'home'
+            if(state.menuList.length === 0 ){
+                state.currentMenu = 'home'
+            }
+            else{
+                path = state.menuList.at( state.menuList.length - 1).path
+                state.currentMenu = path
+            }
+            router.push(path);
         }
     },
     actions: {},

@@ -150,6 +150,13 @@
             "icon": "el-icon-upload2",
             "name": "数据导入"
           }
+        },
+        {
+          "name": "menu",
+          "meta": {
+            "icon": "el-icon-collection",
+            "name": "菜单管理"
+          }
         }
       ],
       "meta": {

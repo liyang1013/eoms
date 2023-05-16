@@ -1,15 +1,16 @@
 <template>
   <div>
     <el-form :inline="true" :model="ima" class="demo-form-inline">
+      <el-form-item style="float: right">
+        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="ima.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:">
         <selectedIma v-model="ima.code_1" :centre="ima.centre" ></selectedIma>
       </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-      </el-form-item>
+
     </el-form>
     <el-alert title="料件基本资料: aimi100; " type="success" :closable="false">
     </el-alert>

@@ -25,6 +25,4 @@ public class WdiController {
         return BaseResult.success(page,page.getTotal());
     }
 
-
-
 }

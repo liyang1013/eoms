@@ -3,8 +3,10 @@
         <span class="iconfont icon-nav toggleNavCollapse" :class="{ active: isSidebarNavCollapse }"
               @click="toggleNavCollapse">
         </span>
-    <!-- <el-tag closable :disable-transitions="false" type="info">首页</el-tag> -->
-
+    <el-tag key="home" @click="openMenu('home')" size="small" :effect="currentMenu === 'home' ? 'dark' : 'plain' ">首页</el-tag>
+    <el-tag :key="tag.path" @click="openMenu(tag.path)" size="small" v-for="tag in menuList" :closable="true" :disable-transitions='false' :effect="currentMenu === tag.path ? 'dark' : 'plain' " @close="handleClose(tag)">
+      {{tag.name}}
+    </el-tag>
     <div class="aside__top--right">
       <div class="user-msg">
         <img class="user-img" src="@/image/avatar.jpg" alt="">&nbsp
@@ -23,13 +25,22 @@ export default {
   },
   computed: {
     ...mapState(['isSidebarNavCollapse']),
-    ...mapState(['username'])
+    ...mapState(['username']),
+    ...mapState(['menuList']),
+    ...mapState(['currentMenu'])
   },
   methods: {
     toggleNavCollapse() {
       this.$store.commit('toggleNavCollapse')
+    },
+    handleClose(tag){
+      this.$store.commit('deleteMenu',tag);
+    },
+    openMenu(path){
+      this.$store.commit('SET_CURRENT_MENU',path)
+      this.$router.push(path)
     }
-  }
+  },
 }
 </script>
 
@@ -45,6 +56,10 @@ export default {
   background: #fff;
   z-index: 1000;
   transition: left 0.25s;
+
+  .el-tag {
+    margin-left: 10px;
+  }
 
   .toggleNavCollapse {
     display: inline-block;
@@ -74,7 +89,6 @@ export default {
       vertical-align: middle;
       margin-left: 10px;
       padding: 0 15px;
-
 
       &.user-msg {
         .user-img {

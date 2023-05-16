@@ -30,27 +30,27 @@ const routes = [
       {
         path: 'ima',
         name: 'ima',
-        component: () => import('@/views/stock/ImaView.vue')
+        component: () => import('@/views/stock/ImaView')
       },
       {
         path: 'workOrder',
         name: 'workOrder',
-        component: () => import('@/views/produce/ProduceView.vue')
+        component: () => import('@/views/produce/ProduceView')
       },
       {
         path: 'currStock',
         name: 'currStock',
-        component: () => import('@/views/stock/ImgView.vue')
+        component: () => import('@/views/stock/ImgView')
       },
       {
         path: 'workOrderEdit',
         name: 'workOrderEdit',
-        component: () => import('@/views/produce/SfbView.vue')
+        component: () => import('@/views/produce/SfbView')
       },
       {
         path: 'chatgpt',
         name: 'chatgpt',
-        component: () => import('@/views/lab/ChatGPTView.vue')
+        component: () => import('@/views/lab/ChatGPTView')
       },
       {
         path: 'rva',
@@ -60,32 +60,37 @@ const routes = [
       {
         path: 'invTransfer',
         name: 'invTransfer',
-        component: () => import("@/views/flux/InvTransferView.vue")
+        component: () => import("@/views/flux/InvTransferView")
       },
       {
         path: 'operation',
         name: 'operation',
-        component: () => import("@/views/system/OperationView.vue")
+        component: () => import("@/views/system/OperationView")
       },
       {
         path: 'import',
         name: 'import',
-        component: () => import("@/views/system/ImportView.vue")
+        component: () => import("@/views/system/ImportView")
       },
       {
         path: 'contacts',
         name: 'contacts',
-        component: () => import("@/views/system/ZxView.vue")
+        component: () => import("@/views/system/ZxView")
       },
       {
         path: 'robotStates',
         name: 'robotStates',
-        component: () => import("@/views/flux/robotStatesView.vue")
+        component: () => import("@/views/flux/robotStatesView")
       },
       {
         path: 'wdi',
         name: 'wdi',
-        component: () => import("@/views/sale/WdiView.vue")
+        component: () => import("@/views/sale/WdiView")
+      },
+      {
+        path: 'menu',
+        name: 'menu',
+        component: () => import("@/views/system/MenuView")
       }
     ]
   }
@@ -111,11 +116,6 @@ router.beforeEach((to, from, next) => {
     }
   }
   next();
-})
-
-router.afterEach(to => {
-  store.commit('SET_CURRENT_MENU', to.name)
-  store.commit('addMenu', to)
 })
 
 export default router

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {Message} from 'element-ui'
-import {BASE_PATH} from 'openai/dist/base'
+import router from "@/router";
 
 const http = axios.create({
     timeout: 1000 * 60,
@@ -13,7 +13,7 @@ const http = axios.create({
 http.interceptors.request.use(
     (request) => {
         request.headers.Token = localStorage.getItem('token')
-        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4='
+        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4=' //FLUX RCS验证信息
         return request
     }
 )
@@ -23,12 +23,18 @@ http.interceptors.request.use(
  */
 http.interceptors.response.use(
     response => {
-        if (response.data.status === 200 && response.data.message !== '成功') {
-            Message.info(response.data.message);
+        if (response.data.status === 200 ) {
+            if( response.data.message !== '成功') Message.info(response.data.message);
+            return Promise.resolve(response)
         } else if (response.data.status === 500) {
             Message.warning(response.data.message);
+            return Promise.reject(response)
+        }else if(response.data.status === 403){
+            Message.error(response.data.message);
+            localStorage.removeItem("token")
+            router.push({name: '/login'})
+            return Promise.reject(response)
         }
-        return Promise.resolve(response)
     },
     error => {
         Message.error(error);

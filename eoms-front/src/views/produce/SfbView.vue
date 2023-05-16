@@ -14,9 +14,8 @@
         <el-date-picker type="date" placeholder="选择日期" v-model="sfb.enddate" value-format="yyyy-MM-dd"
                         style="width: 140px;"></el-date-picker>
       </el-form-item>
-      <el-form-item>
+      <el-form-item style="float:right;">
         <el-button  type="primary" @click="searchSfb()" round>查询</el-button>
-        <el-button  type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
       <br>
       <el-form-item label="日期修正：">
@@ -29,6 +28,9 @@
         <el-button type="danger" @click="modifyDate()" round style="margin-left: 10px;"
                    :loading="modifyLoad">修改
         </el-button>
+      </el-form-item>
+      <el-form-item>
+        <el-button  type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
     </el-form>
 

@@ -10,9 +10,9 @@
       <el-form-item label="料件:">
         <selectedIma v-model="img.code_1" :centre="img.centre" ></selectedIma>
       </el-form-item>
-      <el-form-item>
+      <el-form-item style="float: right">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="primary"  icon="el-icon-set-up" @click="repairImg" round>现存量修复</el-button>
+        <el-button type="danger"  icon="el-icon-set-up" @click="repairImg" round>现存量修复</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="imgList" stripe border max-height="450px" v-loading="table_loading"

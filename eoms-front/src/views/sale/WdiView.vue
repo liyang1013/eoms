@@ -1,14 +1,14 @@
 <template>
   <div>
     <el-form :inline="true" :model="wdi" class="demo-form-inline">
+      <el-form-item style="float: right">
+        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="wdi.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="出库单号:">
         <el-input v-model="wdi.code_1" placeholder="出库单号" clearable></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
 

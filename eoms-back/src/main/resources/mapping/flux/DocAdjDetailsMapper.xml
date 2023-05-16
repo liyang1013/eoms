@@ -4,7 +4,7 @@
 
 
     <select id="checkQty" resultType="java.math.BigDecimal">
-        SELECT isnull(SUM(isnull(qty,0)-isnull(toQty,0)),0)
+        SELECT toQty
         FROM DOC_ADJ_DETAILS
         WHERE adjLineStatus &lt; '10' and locationid=#{locationid} AND lotNum=#{lotnum} AND traceId=#{lotnum}
     </select>
