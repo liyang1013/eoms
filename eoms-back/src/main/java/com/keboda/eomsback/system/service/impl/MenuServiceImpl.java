@@ -5,6 +5,7 @@ import com.keboda.eomsback.system.mapper.MenuMapper;
 import com.keboda.eomsback.system.pojo.Menu;
 import com.keboda.eomsback.system.service.IMenuService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,5 +26,11 @@ public class MenuServiceImpl implements IMenuService {
     @Override
     public List<Menu> getChildrenMenu(Integer pid) {
         return menuMapper.getMenuChildren(pid);
+    }
+
+    @Override
+    @Transactional
+    public void addMenu(Menu menu) {
+        menuMapper.insertSelective(menu);
     }
 }

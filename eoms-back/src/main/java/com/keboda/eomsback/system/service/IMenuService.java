@@ -10,4 +10,6 @@ public interface IMenuService {
     List<Menu> getAllMenu();
 
     List<Menu> getChildrenMenu(Integer pid);
+
+    void addMenu(Menu menu);
 }

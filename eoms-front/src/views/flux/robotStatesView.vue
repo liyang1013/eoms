@@ -74,17 +74,16 @@ export default {
   },
   methods: {
     timer(){
-      this.$http.post('http://172.17.200.154:8090/rest/robots/states',{params: {id: []}})
-          .then(res => this.status = res.data.data)
+      this.$http.post('http://172.17.200.154:8090/rest/robots/states',{params: {id: []}}).then(res => this.status = res.data.data)
     }
   },
-  created() {
-    setInterval(() => {
+  activated(){
+    this.start = setInterval(() => {
       this.timer()
-    }, 500)
+    }, 1000)
   },
-  beforeDestroy() {
-    clearInterval(this.timer);
+  deactivated(){
+    clearInterval(this.start)
   }
 }
 </script>

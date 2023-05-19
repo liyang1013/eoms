@@ -13,7 +13,7 @@ const http = axios.create({
 http.interceptors.request.use(
     (request) => {
         request.headers.Token = localStorage.getItem('token')
-        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4=' //FLUX RCS验证信息
+        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4='
         return request
     }
 )
@@ -34,7 +34,7 @@ http.interceptors.response.use(
             localStorage.removeItem("token")
             router.push({name: '/login'})
             return Promise.reject(response)
-        }
+        }else return Promise.resolve(response)
     },
     error => {
         Message.error(error);

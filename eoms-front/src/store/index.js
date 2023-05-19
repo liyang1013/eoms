@@ -1,17 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import configJson from '../static/config.json'
 import router from "@/router";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        centres: configJson.centre,
         isSidebarNavCollapse: false,
         crumbList: [],
-        sidebarMenu: configJson.menu,
-        currentMenu:  'home',
+        currentMenu: 'home',
         menuList: []
     },
     getters: {},

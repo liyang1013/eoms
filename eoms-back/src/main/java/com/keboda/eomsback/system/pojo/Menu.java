@@ -42,6 +42,9 @@ public class Menu implements Serializable {
     private Integer sort;
 
 
+    private String component;
+
+
     private List<Menu> children;
 
     private static final long serialVersionUID = 1L;

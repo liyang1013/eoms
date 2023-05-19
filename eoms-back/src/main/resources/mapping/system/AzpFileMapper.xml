@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.AzpFileMapper">
+
+
+  <select id="getAllCentre" resultType="com.keboda.eomsback.system.pojo.AzpFile">
+    select azp01, AZP02
+    from DS.AZP_FILE
+  </select>
+</mapper>

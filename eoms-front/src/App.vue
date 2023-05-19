@@ -9,6 +9,11 @@ export default {
   data() {
       return {}
   },
+  created() {
+    if (localStorage.getItem('token') !== null && window.location.href !== 'http://localhost/home')
+      this.$router.replace("/home")
+  }
+
 }
 </script>
 

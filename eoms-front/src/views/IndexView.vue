@@ -4,9 +4,9 @@
     <div class="main-container">
       <TopAside/>
       <el-card class="box-card" shadow="always">
-        <KeepAlive>
-          <router-view class="content"></router-view>
-        </KeepAlive>
+        <keep-alive :max="8">
+          <router-view class="content" ></router-view>
+        </keep-alive>
       </el-card>
     </div>
   </div>
