@@ -96,6 +96,6 @@ export function formatImaType(type){
     if(type === 'U') return '自制大宗料件';
     if(type === 'V') return '采购大宗料件';
     if(type === 'R') return '在制途料件';
-    if(type === 'Z') return '杂项料件 ';
+    if(type === 'Z') return '杂项料件';
     if(type === 'S') return '厂外加工料件';
 }

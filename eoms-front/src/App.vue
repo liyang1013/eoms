@@ -6,17 +6,18 @@
 
 <script>
 export default {
-  data() {
-      return {}
-  },
   created() {
-    if (localStorage.getItem('token') !== null && window.location.href !== 'http://localhost/home')
-      this.$router.replace("/home")
+    const token = localStorage.getItem('token');
+    let index = this.$router.options.routes.findIndex(item => {return item.path === '/'})
+    let children = this.$router.options.routes[index].children
+    let path = document.location.pathname
+    let flag = children.findIndex(item => {return '/'+item.path === path});
+    if(token && flag > 0){
+      this.$router.replace('home')
+    }
   }
-
 }
 </script>
-
 
 <style lang="scss">
 #app {
@@ -27,6 +28,4 @@ export default {
   background-color: rgb(240 242 245);
   height: 100vh;
 }
-
-
 </style>

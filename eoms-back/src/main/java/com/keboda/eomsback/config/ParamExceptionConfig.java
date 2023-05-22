@@ -2,6 +2,7 @@ package com.keboda.eomsback.config;
 
 
 import com.auth0.jwt.exceptions.AlgorithmMismatchException;
+import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.keboda.eomsback.entity.BaseResult;
@@ -33,7 +34,7 @@ public class ParamExceptionConfig {
         return BaseResult.fail("系统异常:"+e.getMessage());
     }
 
-    @ExceptionHandler({SignatureVerificationException.class,TokenExpiredException.class, AlgorithmMismatchException.class})
+    @ExceptionHandler({SignatureVerificationException.class,TokenExpiredException.class, AlgorithmMismatchException.class, JWTDecodeException.class})
     public BaseResult handleTokenException(Exception e) {
         e.printStackTrace();
         BaseResult fail =  BaseResult.fail("token验证错误:"+e.getMessage());

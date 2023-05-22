@@ -11,18 +11,14 @@
     </div>
   </div>
 </template>
-
 <script>
 
-import sidebarNav from '@/components/sidebar-nav.vue'
+import sidebarNav from '@/components/sidebar/sidebar-nav'
 import TopAside from '@/components/main-content/top-aside'
 import {mapState} from 'vuex'
 
 export default {
   name: 'index',
-  data() {
-    return {}
-  },
   computed: {
     ...mapState(['isSidebarNavCollapse'])
   },
@@ -34,13 +30,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .main-container {
   background-color: rgb(240 242 245);
-
   .box-card {
     padding: 0;
-
     .content {
       width: 100%;
       height: calc(100vh - 120px);

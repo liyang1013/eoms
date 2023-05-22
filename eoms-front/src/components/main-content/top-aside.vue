@@ -3,16 +3,16 @@
         <span class="iconfont icon-nav toggleNavCollapse" :class="{ active: isSidebarNavCollapse }"
               @click="toggleNavCollapse">
         </span>
-    <el-tag key="home" @click="openMenu('home')" size="small" :effect="currentMenu === 'home' ? 'dark' : 'plain' ">
+    <el-tag key="home" @click="openMenu('home')" size="small"  :effect="isCurrentMenu('home')">
       首页
     </el-tag>
     <el-tag :key="tag.path" @click="openMenu(tag.path)" size="small" v-for="tag in menuList" :closable="true"
-            :disable-transitions='false' :effect="currentMenu === tag.path ? 'dark' : 'plain' "
+            :disable-transitions='false' :effect="isCurrentMenu(tag.path)"
             @close="handleClose(tag)">
       {{ tag.name }}
     </el-tag>
     <div class="aside_top_right">
-      <el-dropdown trigger="click" size="medium" @command="handleCommand" placement="bottom-start">
+      <el-dropdown  size="medium" @command="handleCommand" placement="bottom-start">
         <el-avatar :src="avatar" :size="32"></el-avatar>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="exit" icon="el-icon-switch-button">退出登入</el-dropdown-item>
@@ -20,10 +20,8 @@
       </el-dropdown>
       <span class="userinfo">{{ username() }}</span>
     </div>
-
   </aside>
 </template>
-
 <script>
 import {mapState} from 'vuex'
 import avatar from '@/image/avatar.jpg'
@@ -55,10 +53,15 @@ export default {
     },
     handleCommand(command){
       switch (command){
-        case 'exit': localStorage.removeItem("username");localStorage.removeItem("token");this.$router.push('/login'); break
+        case 'exit': localStorage.removeItem("username");localStorage.removeItem("token");this.$router.push('login'); break
       }
+    },
+    isCurrentMenu(path){
+      let style;
+      this.currentMenu === path ? style = 'dark' : style = 'plain'
+      return style
     }
-  },
+  }
 }
 </script>
 
@@ -101,10 +104,8 @@ export default {
 
     ::v-deep .el-dropdown {
       height: 45px;
-
       .el-avatar {
         margin-top: 5px;
-
         img {
           width: 40px;
         }

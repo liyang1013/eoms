@@ -7,28 +7,31 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         isSidebarNavCollapse: false,
-        crumbList: [],
         currentMenu: 'home',
-        menuList: []
+        menuList: [],
+        staticRouterMap: [
+            'login',
+            'register',
+            '404',
+            '403',
+            '401'
+        ]
     },
-    getters: {},
+    getters: {
+        getStaticRouterMap(state){
+            return state.staticRouterMap;
+        }
+    },
     mutations: {
         toggleNavCollapse(state) {
             state.isSidebarNavCollapse = !state.isSidebarNavCollapse
-        },
-        setCrumbList(state, list) {
-            state.crumbList = list
         },
         SET_CURRENT_MENU(state, currentMenu) {
             state.currentMenu = currentMenu
         },
         addMenu(state, menu) {
             let index = state.menuList.findIndex(item => {
-                if (item.name === menu.name) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return item.name === menu.name;
             });
             if (index === -1 && menu.path !== 'home') {
                 state.menuList.push({name: menu.name, path: menu.path})

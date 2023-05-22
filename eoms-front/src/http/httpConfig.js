@@ -8,12 +8,12 @@ const http = axios.create({
 })
 
 /**
- * 请求发送前可以带上token信息，以后加用户权限可以用
+ * 请求发送前可以带上token信息
  */
 http.interceptors.request.use(
     (request) => {
         request.headers.Token = localStorage.getItem('token')
-        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4='
+        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4=' //flux rcs小车验证信息
         return request
     }
 )
@@ -23,22 +23,28 @@ http.interceptors.request.use(
  */
 http.interceptors.response.use(
     response => {
-        if (response.data.status === 200 ) {
-            if( response.data.message !== '成功') Message.info(response.data.message);
-            return Promise.resolve(response)
-        } else if (response.data.status === 500) {
-            Message.warning(response.data.message);
-            return Promise.reject(response)
-        }else if(response.data.status === 403){
+
+        if(response.data.status === 403) {//登入验证错误
             Message.error(response.data.message);
             localStorage.removeItem("token")
-            router.push({name: '/login'})
-            return Promise.reject(response)
-        }else return Promise.resolve(response)
+            router.push('/login')
+        }
+
+        if (response.data.status === 200 ) {
+            if( response.data.message !== '成功') Message.info(response.data.message);
+        }
+
+        if (response.data.status === 500) {
+            Message.warning(response.data.message);
+        }
+
+         return Promise.resolve(response)
     },
     error => {
+
         Message.error(error);
         return Promise.reject(error)
+
     }
 )
 

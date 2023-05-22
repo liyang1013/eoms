@@ -13,7 +13,7 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: '/login',
-    name: '/login',
+    name: 'login',
     component: () => import('@/views/LoginView'),
   },
   {
@@ -93,6 +93,11 @@ const routes = [
         component: () => import("@/views/system/MenuView")
       }
     ]
+  },
+  {
+    path: '*',
+    name: '404',
+    component: () => import("@/views/exception/404")
   }
 ]
 
@@ -102,18 +107,15 @@ const router = new VueRouter({
   routes
 })
 
+
 /**
  * 路由守护,没token就不允许进入
  */
 router.beforeEach((to, from, next) => {
-  if(to.name === '/login'){
-    if(localStorage.getItem('token')){
-      next({name: '/'})
-    }
-  }else {
-    if(!localStorage.getItem('token')){
-      next({name: '/login'})
-    }
+  const token = localStorage.getItem('token');
+  const staticRouterMap = store.getters.getStaticRouterMap;
+  if(staticRouterMap.indexOf(to.name) < 0){
+    if(!token) next({name: 'login'})
   }
   next();
 })
