@@ -13,20 +13,15 @@ export default {
   data() {
     return {
       isCollapse: true,
-      fullMenu: null
     }
   },
   computed: {
     ...mapState(['isSidebarNavCollapse']),
-    ...mapState(['currentMenu'])
+    ...mapState(['currentMenu']),
+    ...mapState(['fullMenu'])
   },
   components: {
     DynamicMenu
-  },
-  mounted() {
-    this.$http.get('/api/menu/getAllMenu').then(res => {
-      this.fullMenu = res.data.result
-    })
   }
 }
 </script>

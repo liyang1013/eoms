@@ -7,6 +7,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.keboda.eomsback.flux.pojo.RobotsStatusFile;
 import com.keboda.eomsback.flux.service.IRobotsStatusService;
+import com.keboda.eomsback.utils.WeChatPlusUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -42,11 +43,16 @@ public class RCSRobotsTimer {
                 put("params", id);
             }
         };
-        HttpResponse res = HttpRequest.post(URL)
-                .header("authorization", authorization)
-                .timeout(2000)
-                .body(JSONUtil.toJsonStr(sortedMap))
-                .execute();
+        HttpResponse res = null;
+        try {
+             res = HttpRequest.post(URL)
+                    .header("authorization", authorization)
+                    .timeout(2000)
+                    .body(JSONUtil.toJsonStr(sortedMap))
+                    .execute();
+        }catch (Exception e){
+            WeChatPlusUtils.sendMessage("JX2302304|JX2001001|JX1907006","RCS小车状态接口异常："+e.getMessage());
+        }
 
         if(res.getStatus() == 200){
             JSONObject jsonObject = new JSONObject(res.body());
@@ -83,6 +89,8 @@ public class RCSRobotsTimer {
                     iRobotsStatusService.updateByKeySelective(robotsStatusFile);
                 }
             }
+        }else{
+            WeChatPlusUtils.sendMessage("JX2302304|JX2001001|JX1907006","RCS小车状态接口异常状态:"+res.getStatus());
         }
     }
 }

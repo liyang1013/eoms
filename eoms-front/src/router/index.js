@@ -112,12 +112,15 @@ const router = new VueRouter({
  * 路由守护,没token就不允许进入
  */
 router.beforeEach((to, from, next) => {
+
   const token = localStorage.getItem('token');
   const staticRouterMap = store.getters.getStaticRouterMap;
   if(staticRouterMap.indexOf(to.name) < 0){
     if(!token) next({name: 'login'})
   }
+
   next();
+
 })
 
 export default router

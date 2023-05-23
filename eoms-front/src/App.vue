@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import store from "@/store";
+
 export default {
   created() {
     const token = localStorage.getItem('token');
@@ -13,7 +15,7 @@ export default {
     let path = document.location.pathname
     let flag = children.findIndex(item => {return '/'+item.path === path});
     if(token && flag > 0){
-      this.$router.replace('home')
+        this.$router.replace('home')
     }
   }
 }

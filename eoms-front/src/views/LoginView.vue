@@ -17,6 +17,8 @@
   </div>
 </template>
 <script>
+
+import store from "@/store";
 export default {
   name: 'login',
   data() {
@@ -30,9 +32,12 @@ export default {
   methods: {
     login() {
       this.$http.post('/api/zx/login', this.zx).then(res => {
-        localStorage.setItem('token', res.data.result.token);
-        localStorage.setItem('username', res.data.result.zx01);
-        this.$router.push('/');
+
+        if(res.data.status === 200){
+          localStorage.setItem('token', res.data.result.token);
+          localStorage.setItem('username', res.data.result.zx01);
+          this.$router.push('/home');
+        }
       })
     }
   }

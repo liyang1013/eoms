@@ -9,6 +9,7 @@ export default new Vuex.Store({
         isSidebarNavCollapse: false,
         currentMenu: 'home',
         menuList: [],
+        fullMenu: [],
         staticRouterMap: [
             'login',
             'register',
@@ -37,13 +38,15 @@ export default new Vuex.Store({
                 state.menuList.push({name: menu.name, path: menu.path})
             }
         },
+        setFullMenu(state,menuList){
+            state.fullMenu = menuList;
+        },
         deleteMenu(state, menu){
             state.menuList.splice(state.menuList.indexOf(menu), 1);
             let path = 'home'
             if(state.menuList.length === 0 ){
                 state.currentMenu = 'home'
-            }
-            else{
+            } else{
                 path = state.menuList.at( state.menuList.length - 1).path
                 state.currentMenu = path
             }
