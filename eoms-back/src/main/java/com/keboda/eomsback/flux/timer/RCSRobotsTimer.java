@@ -14,10 +14,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.security.MessageDigest;
+import java.util.*;
 
 @Configuration
 @EnableScheduling
@@ -26,6 +24,8 @@ public class RCSRobotsTimer {
     private static final String URL = "http://172.17.200.154:8090/rest/robots/states";
 
     private static final String authorization = "mrbase64 mrrest:YWRtaW4mYWRtaW4=";
+
+    private static final String sender = "JX2302304|JX2001001|JX1907006";
 
     @Autowired
     private IRobotsStatusService iRobotsStatusService;
@@ -51,7 +51,7 @@ public class RCSRobotsTimer {
                     .body(JSONUtil.toJsonStr(sortedMap))
                     .execute();
         }catch (Exception e){
-            WeChatPlusUtils.sendMessage("JX2302304|JX2001001|JX1907006","RCS小车状态接口异常："+e.getMessage());
+            WeChatPlusUtils.sendMessage(sender,"RCS小车状态接口异常："+e.getMessage());
         }
 
         if(res.getStatus() == 200){
@@ -90,7 +90,7 @@ public class RCSRobotsTimer {
                 }
             }
         }else{
-            WeChatPlusUtils.sendMessage("JX2302304|JX2001001|JX1907006","RCS小车状态接口异常状态:"+res.getStatus());
+            WeChatPlusUtils.sendMessage(sender,"RCS小车状态接口异常状态:"+res.getStatus());
         }
     }
 }

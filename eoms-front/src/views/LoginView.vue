@@ -36,7 +36,8 @@ export default {
         if(res.data.status === 200){
           localStorage.setItem('token', res.data.result.token);
           localStorage.setItem('username', res.data.result.zx01);
-          this.$router.push('/home');
+          this.$router.push('home');
+          store.commit('SET_CURRENT_MENU','home')
         }
       })
     }

@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Service
-@DS("flux")
+@DS("flux wms")
 public class InvLotServiceImpl implements IInvLotService {
 
     @Resource

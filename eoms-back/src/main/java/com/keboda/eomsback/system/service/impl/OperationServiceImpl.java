@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-@DS("slave")
+@DS("ly")
 public class OperationServiceImpl implements IOperationService {
 
     @Resource

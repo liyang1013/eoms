@@ -8,25 +8,34 @@ spring:
     time-zone: "GMT+8"
   datasource:
     dynamic:
-      primary: master
+      primary: tiptop
       strict: false
       datasource:
-        master:
+        tiptop:
           driver-class-name: oracle.jdbc.driver.OracleDriver
           url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
           username: wctz
           password: wctz
-        slave:
+        ly:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://172.17.171.23:3306/eoms?characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           password: root
-        flux:
+        flux wms:
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
           url: jdbc:sqlserver://172.17.200.156:1433;DatabaseName=WMS_PROD
           username: WMS_PROD
           password: WMS_PROD#@￥
-
+        flux wcs:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://172.17.200.153:3306/wcsdb?characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: fluxwcs123
+        flux rcs:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://172.17.200.154:3306/mr_rcs?characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: mr123
 mybatis:
   type-aliases-package: com.keboda.eomsback.*.pojo
   mapper-locations: classpath:mapping/*/*Mapper.xml
