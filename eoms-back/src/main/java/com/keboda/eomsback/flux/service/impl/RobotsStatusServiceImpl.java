@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 @Service
-@DS("flux wms")
+@DS("fluxWms")
 public class RobotsStatusServiceImpl implements IRobotsStatusService {
 
     @Resource

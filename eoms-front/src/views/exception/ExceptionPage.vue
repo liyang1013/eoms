@@ -6,9 +6,6 @@
     <div class="content">
       <h1>{{ config[type].title }}</h1>
       <div class="desc">{{ config[type].desc }}</div>
-      <div class="action">
-        <el-button type="text" @click="handleToHome">返回首页</el-button>
-      </div>
     </div>
   </div>
 </template>
@@ -31,7 +28,7 @@ export default {
   },
   methods: {
     handleToHome() {
-      this.$router.push({name: 'login'})
+      this.$router.push({name: '/'})
     }
   }
 }
@@ -39,9 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .exception {
-  padding-top: 120px;
   min-height: 500px;
-  height: 80%;
   align-items: center;
   text-align: center;
   .img {

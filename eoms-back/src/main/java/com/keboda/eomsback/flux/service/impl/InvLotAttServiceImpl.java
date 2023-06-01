@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-@DS("flux wms")
+@DS("fluxWms")
 public class InvLotAttServiceImpl implements IInvLotAttService {
 
     @Resource

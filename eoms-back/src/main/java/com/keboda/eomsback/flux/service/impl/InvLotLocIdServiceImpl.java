@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@DS("flux wms")
+@DS("fluxWms")
 public class InvLotLocIdServiceImpl implements IInvLotLocIdService {
 
     @Resource

@@ -6,20 +6,12 @@
     <el-tag key="home" @click="openMenu('home')" size="small"  :effect="isCurrentMenu('home')">
       首页
     </el-tag>
-    <el-tag :key="tag.path" @click="openMenu(tag.path)" size="small" v-for="tag in menuList" :closable="true"
+    <el-tag :key="tag.path" @click="openMenu(tag.path)" size="small" v-for="tag in activeMenuList" :closable="true"
             :disable-transitions='false' :effect="isCurrentMenu(tag.path)"
             @close="handleClose(tag)">
       {{ tag.name }}
     </el-tag>
-    <div class="aside_top_right">
-      <el-dropdown  size="medium" @command="handleCommand" placement="bottom-start">
-        <el-avatar :src="avatar" :size="32"></el-avatar>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="exit" icon="el-icon-switch-button">退出登入</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-      <span class="userinfo">{{ username() }}</span>
-    </div>
+
   </aside>
 </template>
 <script>
@@ -34,7 +26,7 @@ export default {
   },
   computed: {
     ...mapState(['isSidebarNavCollapse']),
-    ...mapState(['menuList']),
+    ...mapState(['activeMenuList']),
     ...mapState(['currentMenu'])
   },
   methods: {
@@ -47,14 +39,6 @@ export default {
     openMenu(path) {
       this.$store.commit('SET_CURRENT_MENU', path)
       this.$router.push(path)
-    },
-    username() {
-      return localStorage.getItem('username')
-    },
-    handleCommand(command){
-      switch (command){
-        case 'exit': localStorage.removeItem("username");localStorage.removeItem("token");this.$router.push('login'); break
-      }
     },
     isCurrentMenu(path){
       let style;
@@ -94,29 +78,6 @@ export default {
 
     &.active {
       transform: rotate(90deg);
-    }
-  }
-
-  .aside_top_right {
-    height: 45px;
-    float: right;
-    margin-right: 20px;
-
-    ::v-deep .el-dropdown {
-      height: 45px;
-      .el-avatar {
-        margin-top: 5px;
-        img {
-          width: 40px;
-        }
-      }
-    }
-
-    .userinfo {
-      line-height: 45px;
-      margin-left: 10px;
-      float: right;
-      display: block;
     }
   }
 }

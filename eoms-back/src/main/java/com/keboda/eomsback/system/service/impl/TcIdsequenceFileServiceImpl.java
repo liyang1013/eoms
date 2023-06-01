@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 @Service
-@DS("flux wms")
+@DS("fluxWms")
 public class TcIdsequenceFileServiceImpl implements ITcIdsequenceFileService{
 
     @Resource

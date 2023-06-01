@@ -8,21 +8,9 @@ export default new Vuex.Store({
     state: {
         isSidebarNavCollapse: false,
         currentMenu: 'home',
-        menuList: [],
-        fullMenu: [],
-        staticRouterMap: [
-            'login',
-            'register',
-            '404',
-            '403',
-            '401'
-        ]
+        activeMenuList: []
     },
-    getters: {
-        getStaticRouterMap(state){
-            return state.staticRouterMap;
-        }
-    },
+    getters: {},
     mutations: {
         toggleNavCollapse(state) {
             state.isSidebarNavCollapse = !state.isSidebarNavCollapse
@@ -31,23 +19,20 @@ export default new Vuex.Store({
             state.currentMenu = currentMenu
         },
         addMenu(state, menu) {
-            let index = state.menuList.findIndex(item => {
+            let index = state.activeMenuList.findIndex(item => {
                 return item.name === menu.name;
             });
             if (index === -1 && menu.path !== 'home') {
-                state.menuList.push({name: menu.name, path: menu.path})
+                state.activeMenuList.push({name: menu.name, path: menu.path})
             }
         },
-        setFullMenu(state,menuList){
-            state.fullMenu = menuList;
-        },
         deleteMenu(state, menu){
-            state.menuList.splice(state.menuList.indexOf(menu), 1);
+            state.activeMenuList.splice(state.activeMenuList.indexOf(menu), 1);
             let path = 'home'
-            if(state.menuList.length === 0 ){
+            if(state.activeMenuList.length === 0 ){
                 state.currentMenu = 'home'
             } else{
-                path = state.menuList.at( state.menuList.length - 1).path
+                path = state.activeMenuList.at( state.activeMenuList.length - 1).path
                 state.currentMenu = path
             }
             router.push(path);

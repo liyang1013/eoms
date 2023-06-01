@@ -18,9 +18,4 @@
     group by zx01,zx02,zx03,zw02,zx08,zx09,zx10,zx16,zx18
     order by zx01,zx02
   </select>
-  <select id="selectByKey" resultType="com.keboda.eomsback.system.pojo.ZxFile">
-    select zx01,zx02
-    from DS.ZX_FILE
-    where zx01 = #{zx01}
-  </select>
 </mapper>

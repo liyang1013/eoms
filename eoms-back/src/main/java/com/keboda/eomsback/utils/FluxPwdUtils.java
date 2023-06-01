@@ -12,16 +12,14 @@ public class FluxPwdUtils {
 
     private final static String password = "JX2302304";
 
-    private final static String passwordSalt = "ST1678338626440SR121112077108036030";
-
+    private final static String passwordSalt = "ST1683688929627";
 
     public static void MD5Signature() throws Exception{
 
-        String token = changeToAa(username) + "~" + password;
-        String orgin =  passwordSalt+"userPassword"+token+passwordSalt;
+        String token = passwordSalt+"userPassword"+changeToAa(username) + "~" + password+passwordSalt;
 
         MessageDigest md = MessageDigest.getInstance("MD5");
-        byte[] bytes = md.digest(orgin.getBytes(StandardCharsets.UTF_8));
+        byte[] bytes = md.digest(token.getBytes(StandardCharsets.UTF_8));
 
         StringBuilder hexString = new StringBuilder();
         String stmp;

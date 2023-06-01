@@ -25,10 +25,4 @@ public class ZxController {
         Page<ZxFile> page = iZxService.searchZxListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
-
-    @RequestMapping("/login")
-    public BaseResult login(@RequestBody ZxFile zxFile){
-        return BaseResult.success(iZxService.login(zxFile));
-    }
-
 }

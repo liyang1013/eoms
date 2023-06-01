@@ -12,26 +12,21 @@ spring:
       strict: false
       datasource:
         tiptop:
-          driver-class-name: oracle.jdbc.driver.OracleDriver
+          driver-class-name: oracle.jdbc.OracleDriver
           url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
           username: wctz
           password: wctz
-        ly:
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://172.17.171.23:3306/eoms?characterEncoding=UTF-8&serverTimezone=UTC
-          username: root
-          password: root
-        flux wms:
+        fluxWms:
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
           url: jdbc:sqlserver://172.17.200.156:1433;DatabaseName=WMS_PROD
           username: WMS_PROD
           password: WMS_PROD#@￥
-        flux wcs:
+        fluxWcs:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://172.17.200.153:3306/wcsdb?characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           password: fluxwcs123
-        flux rcs:
+        fluxRcs:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://172.17.200.154:3306/mr_rcs?characterEncoding=UTF-8&serverTimezone=UTC
           username: root
@@ -48,4 +43,7 @@ page helper:
   support-methods-arguments: true
   auto-runtime-dialect: true
 
-
+#自定义定时器动态执行
+timer:
+  rcsRobotsTimer:
+    corn: 0 0/5 * * * ?

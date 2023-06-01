@@ -33,7 +33,7 @@ public class RCSRobotsTimer {
     /**
      * 定时写入RCS小车状态
      */
-//    @Scheduled(cron = "0 0/5 * * * ?")
+    @Scheduled(cron = "${timer.rcsRobotsTimer.corn}")
     private void writersRobotsStatus(){
 
         SortedMap<Object, Object> sortedMap = new TreeMap<Object, Object>() {

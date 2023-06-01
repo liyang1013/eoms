@@ -1,22 +1,60 @@
 <template>
   <div id="app">
-    <router-view ></router-view>
+    <div :class="{ navCollapsed: isSidebarNavCollapse }">
+      <sidebarNav class="sidebar"/>
+      <div class="main-container">
+        <TopAside/>
+        <el-card class="box-card" shadow="always">
+          <keep-alive :max="8">
+            <router-view class="content"></router-view>
+          </keep-alive>
+        </el-card>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import store from "@/store";
+import sidebarNav from '@/components/sidebar/sidebar-nav'
+import TopAside from '@/components/main-content/top-aside'
+import {mapState} from 'vuex'
+import {menu} from "@/store/menu";
+import router from "@/router";
 
 export default {
-  created() {
-    const token = localStorage.getItem('token');
-    let index = this.$router.options.routes.findIndex(item => {return item.path === '/'})
-    let children = this.$router.options.routes[index].children
-    let path = document.location.pathname
-    let flag = children.findIndex(item => {return '/'+item.path === path});
-    if(token && flag > 0){
-        this.$router.replace('home')
+  name: 'app',
+  computed: {
+    ...mapState(['isSidebarNavCollapse']),
+  },
+  components: {
+    sidebarNav,
+    TopAside
+  },
+  methods: {
+    filterRoute(arr) {
+      let route = [];
+      arr.forEach(e => {
+        if (e.component !== null) {
+          route.push({...e})
+        } else if (e.children && e.children.length)
+          route = route.concat(this.filterRoute(e.children))
+      });
+      return route;
+    },
+    routesData(menuList) {
+      menuList.forEach(view => {
+        const temp = {
+          name: view.path,
+          path: '/'+view.path,
+          component: view.component
+        }
+        router.addRoute(temp)
+      })
     }
+  },
+  mounted() {
+    this.$router.push('/home')
+    this.routesData(this.filterRoute(menu))
   }
 }
 </script>
