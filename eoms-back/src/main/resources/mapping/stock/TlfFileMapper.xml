@@ -12,4 +12,9 @@
         set tlf10 = #{tlf10}, tlf18 = tlf18 + #{tlf18}
         where tlf026 = #{tlf026} and tlf027 = #{tlf027} and tlf036 = #{tlf036} and tlf037 = #{tlf037}
     </update>
+    <update id="updateGem">
+        update ${centre}.tlf_file
+        set tlf19 = #{tlf19}
+        where tlf026 = #{code} or tlf036 = #{code}
+    </update>
 </mapper>

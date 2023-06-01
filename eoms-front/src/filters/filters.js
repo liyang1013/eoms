@@ -80,7 +80,7 @@ export function formatSignoff(status){
 
 /**
  * 返回料件类型
- * @param {string}  
+ * @param {string} type
  * @returns 
  */
 export function formatImaType(type){
@@ -98,4 +98,28 @@ export function formatImaType(type){
     if(type === 'R') return '在制途料件';
     if(type === 'Z') return '杂项料件';
     if(type === 'S') return '厂外加工料件';
+}
+
+/**
+ * 返回杂项作业内容
+ * @param code
+ * @returns {string}
+ */
+export function formatInaType(code){
+    if(code === '1') return '库存杂项发料 aimt301';
+    if(code === '2') return 'WIP 杂项发料 aimt311';
+    if(code === '3') return '库存杂项收料 aimt302';
+    if(code === '4') return 'WIP 杂项收料 aimt312';
+    if(code === '5') return '库存杂项报废 aimt303';
+    if(code === '6') return 'WIP 杂项报废 aimt313';
+}
+
+/**
+ * 返回过账状态
+ * @param code
+ * @returns {string}
+ */
+export function formatPost(code){
+    if(code === 'Y') return '过账';
+    if(code === 'N') return '未过账'
 }

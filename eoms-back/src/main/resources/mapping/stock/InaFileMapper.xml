@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.InaFileMapper">
+
+  <insert id="insertSelective" keyColumn="INA01" keyProperty="ina01" parameterType="com.keboda.eomsback.stock.pojo.InaFile" useGeneratedKeys="true">
+    insert into ${centre}.INA_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ina00 != null">
+        INA00,
+      </if>
+      <if test="ina02 != null">
+        INA02,
+      </if>
+      <if test="ina03 != null">
+        INA03,
+      </if>
+      <if test="ina04 != null">
+        INA04,
+      </if>
+      <if test="ina05 != null">
+        INA05,
+      </if>
+      <if test="ina06 != null">
+        INA06,
+      </if>
+      <if test="ina07 != null">
+        INA07,
+      </if>
+      <if test="ina08 != null">
+        INA08,
+      </if>
+      <if test="ina09 != null">
+        INA09,
+      </if>
+      <if test="ina10 != null">
+        INA10,
+      </if>
+      <if test="inaprsw != null">
+        INAPRSW,
+      </if>
+      <if test="inapost != null">
+        INAPOST,
+      </if>
+      <if test="inauser != null">
+        INAUSER,
+      </if>
+      <if test="inagrup != null">
+        INAGRUP,
+      </if>
+      <if test="inamodu != null">
+        INAMODU,
+      </if>
+      <if test="inadate != null">
+        INADATE,
+      </if>
+      <if test="inamksg != null">
+        INAMKSG,
+      </if>
+      <if test="ina11 != null">
+        INA11,
+      </if>
+      <if test="ina1001 != null">
+        INA1001,
+      </if>
+      <if test="ina1003 != null">
+        INA1003,
+      </if>
+      <if test="ina1002 != null">
+        INA1002,
+      </if>
+      <if test="ina1004 != null">
+        INA1004,
+      </if>
+      <if test="ina1005 != null">
+        INA1005,
+      </if>
+      <if test="ina1006 != null">
+        INA1006,
+      </if>
+      <if test="ina1007 != null">
+        INA1007,
+      </if>
+      <if test="ina1008 != null">
+        INA1008,
+      </if>
+      <if test="ina1009 != null">
+        INA1009,
+      </if>
+      <if test="ina1010 != null">
+        INA1010,
+      </if>
+      <if test="ina1011 != null">
+        INA1011,
+      </if>
+      <if test="ina1012 != null">
+        INA1012,
+      </if>
+      <if test="ina1013 != null">
+        INA1013,
+      </if>
+      <if test="ina1014 != null">
+        INA1014,
+      </if>
+      <if test="ina1015 != null">
+        INA1015,
+      </if>
+      <if test="ina1016 != null">
+        INA1016,
+      </if>
+      <if test="ina1017 != null">
+        INA1017,
+      </if>
+      <if test="ina1018 != null">
+        INA1018,
+      </if>
+      <if test="ina1019 != null">
+        INA1019,
+      </if>
+      <if test="ina1020 != null">
+        INA1020,
+      </if>
+      <if test="ina1021 != null">
+        INA1021,
+      </if>
+      <if test="ina1022 != null">
+        INA1022,
+      </if>
+      <if test="ina1023 != null">
+        INA1023,
+      </if>
+      <if test="ina1024 != null">
+        INA1024,
+      </if>
+      <if test="ina1025 != null">
+        INA1025,
+      </if>
+      <if test="inaconf != null">
+        INACONF,
+      </if>
+      <if test="inaspc != null">
+        INASPC,
+      </if>
+      <if test="ina100 != null">
+        INA100,
+      </if>
+      <if test="ina101 != null">
+        INA101,
+      </if>
+      <if test="ina102 != null">
+        INA102,
+      </if>
+      <if test="inaud01 != null">
+        INAUD01,
+      </if>
+      <if test="inaud02 != null">
+        INAUD02,
+      </if>
+      <if test="inaud03 != null">
+        INAUD03,
+      </if>
+      <if test="inaud04 != null">
+        INAUD04,
+      </if>
+      <if test="inaud05 != null">
+        INAUD05,
+      </if>
+      <if test="inaud06 != null">
+        INAUD06,
+      </if>
+      <if test="inaud07 != null">
+        INAUD07,
+      </if>
+      <if test="inaud08 != null">
+        INAUD08,
+      </if>
+      <if test="inaud09 != null">
+        INAUD09,
+      </if>
+      <if test="inaud10 != null">
+        INAUD10,
+      </if>
+      <if test="inaud11 != null">
+        INAUD11,
+      </if>
+      <if test="inaud12 != null">
+        INAUD12,
+      </if>
+      <if test="inaud13 != null">
+        INAUD13,
+      </if>
+      <if test="inaud14 != null">
+        INAUD14,
+      </if>
+      <if test="inaud15 != null">
+        INAUD15,
+      </if>
+      <if test="ina103 != null">
+        INA103,
+      </if>
+      <if test="ina12 != null">
+        INA12,
+      </if>
+      <if test="inacond != null">
+        INACOND,
+      </if>
+      <if test="inacont != null">
+        INACONT,
+      </if>
+      <if test="inaconu != null">
+        INACONU,
+      </if>
+      <if test="inapos != null">
+        INAPOS,
+      </if>
+      <if test="inaplant != null">
+        INAPLANT,
+      </if>
+      <if test="inalegal != null">
+        INALEGAL,
+      </if>
+      <if test="inaoriu != null">
+        INAORIU,
+      </if>
+      <if test="inaorig != null">
+        INAORIG,
+      </if>
+      <if test="ina13 != null">
+        INA13,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ina00 != null">
+        #{ina00,jdbcType=VARCHAR},
+      </if>
+      <if test="ina02 != null">
+        #{ina02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina03 != null">
+        #{ina03,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina04 != null">
+        #{ina04,jdbcType=VARCHAR},
+      </if>
+      <if test="ina05 != null">
+        #{ina05,jdbcType=VARCHAR},
+      </if>
+      <if test="ina06 != null">
+        #{ina06,jdbcType=VARCHAR},
+      </if>
+      <if test="ina07 != null">
+        #{ina07,jdbcType=VARCHAR},
+      </if>
+      <if test="ina08 != null">
+        #{ina08,jdbcType=VARCHAR},
+      </if>
+      <if test="ina09 != null">
+        #{ina09,jdbcType=VARCHAR},
+      </if>
+      <if test="ina10 != null">
+        #{ina10,jdbcType=VARCHAR},
+      </if>
+      <if test="inaprsw != null">
+        #{inaprsw,jdbcType=DECIMAL},
+      </if>
+      <if test="inapost != null">
+        #{inapost,jdbcType=VARCHAR},
+      </if>
+      <if test="inauser != null">
+        #{inauser,jdbcType=VARCHAR},
+      </if>
+      <if test="inagrup != null">
+        #{inagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="inamodu != null">
+        #{inamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="inadate != null">
+        #{inadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inamksg != null">
+        #{inamksg,jdbcType=VARCHAR},
+      </if>
+      <if test="ina11 != null">
+        #{ina11,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1001 != null">
+        #{ina1001,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1003 != null">
+        #{ina1003,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1002 != null">
+        #{ina1002,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1004 != null">
+        #{ina1004,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1005 != null">
+        #{ina1005,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1006 != null">
+        #{ina1006,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1007 != null">
+        #{ina1007,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1008 != null">
+        #{ina1008,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1009 != null">
+        #{ina1009,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1010 != null">
+        #{ina1010,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1011 != null">
+        #{ina1011,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1012 != null">
+        #{ina1012,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1013 != null">
+        #{ina1013,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina1014 != null">
+        #{ina1014,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina1015 != null">
+        #{ina1015,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1016 != null">
+        #{ina1016,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1017 != null">
+        #{ina1017,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1018 != null">
+        #{ina1018,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1019 != null">
+        #{ina1019,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1020 != null">
+        #{ina1020,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1021 != null">
+        #{ina1021,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1022 != null">
+        #{ina1022,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1023 != null">
+        #{ina1023,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1024 != null">
+        #{ina1024,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1025 != null">
+        #{ina1025,jdbcType=VARCHAR},
+      </if>
+      <if test="inaconf != null">
+        #{inaconf,jdbcType=VARCHAR},
+      </if>
+      <if test="inaspc != null">
+        #{inaspc,jdbcType=VARCHAR},
+      </if>
+      <if test="ina100 != null">
+        #{ina100,jdbcType=VARCHAR},
+      </if>
+      <if test="ina101 != null">
+        #{ina101,jdbcType=VARCHAR},
+      </if>
+      <if test="ina102 != null">
+        #{ina102,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inaud01 != null">
+        #{inaud01,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud02 != null">
+        #{inaud02,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud03 != null">
+        #{inaud03,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud04 != null">
+        #{inaud04,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud05 != null">
+        #{inaud05,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud06 != null">
+        #{inaud06,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud07 != null">
+        #{inaud07,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud08 != null">
+        #{inaud08,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud09 != null">
+        #{inaud09,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud10 != null">
+        #{inaud10,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud11 != null">
+        #{inaud11,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud12 != null">
+        #{inaud12,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud13 != null">
+        #{inaud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inaud14 != null">
+        #{inaud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inaud15 != null">
+        #{inaud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina103 != null">
+        #{ina103,jdbcType=VARCHAR},
+      </if>
+      <if test="ina12 != null">
+        #{ina12,jdbcType=VARCHAR},
+      </if>
+      <if test="inacond != null">
+        #{inacond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inacont != null">
+        #{inacont,jdbcType=VARCHAR},
+      </if>
+      <if test="inaconu != null">
+        #{inaconu,jdbcType=VARCHAR},
+      </if>
+      <if test="inapos != null">
+        #{inapos,jdbcType=VARCHAR},
+      </if>
+      <if test="inaplant != null">
+        #{inaplant,jdbcType=VARCHAR},
+      </if>
+      <if test="inalegal != null">
+        #{inalegal,jdbcType=VARCHAR},
+      </if>
+      <if test="inaoriu != null">
+        #{inaoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="inaorig != null">
+        #{inaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="ina13 != null">
+        #{ina13,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.InaFile">
+    update ${centre}.INA_FILE
+    <set>
+      <if test="ina00 != null">
+        INA00 = #{ina00,jdbcType=VARCHAR},
+      </if>
+      <if test="ina02 != null">
+        INA02 = #{ina02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina03 != null">
+        INA03 = #{ina03,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina04 != null">
+        INA04 = #{ina04,jdbcType=VARCHAR},
+      </if>
+      <if test="ina05 != null">
+        INA05 = #{ina05,jdbcType=VARCHAR},
+      </if>
+      <if test="ina06 != null">
+        INA06 = #{ina06,jdbcType=VARCHAR},
+      </if>
+      <if test="ina07 != null">
+        INA07 = #{ina07,jdbcType=VARCHAR},
+      </if>
+      <if test="ina08 != null">
+        INA08 = #{ina08,jdbcType=VARCHAR},
+      </if>
+      <if test="ina09 != null">
+        INA09 = #{ina09,jdbcType=VARCHAR},
+      </if>
+      <if test="ina10 != null">
+        INA10 = #{ina10,jdbcType=VARCHAR},
+      </if>
+      <if test="inaprsw != null">
+        INAPRSW = #{inaprsw,jdbcType=DECIMAL},
+      </if>
+      <if test="inapost != null">
+        INAPOST = #{inapost,jdbcType=VARCHAR},
+      </if>
+      <if test="inauser != null">
+        INAUSER = #{inauser,jdbcType=VARCHAR},
+      </if>
+      <if test="inagrup != null">
+        INAGRUP = #{inagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="inamodu != null">
+        INAMODU = #{inamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="inadate != null">
+        INADATE = #{inadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inamksg != null">
+        INAMKSG = #{inamksg,jdbcType=VARCHAR},
+      </if>
+      <if test="ina11 != null">
+        INA11 = #{ina11,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1001 != null">
+        INA1001 = #{ina1001,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1003 != null">
+        INA1003 = #{ina1003,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1002 != null">
+        INA1002 = #{ina1002,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1004 != null">
+        INA1004 = #{ina1004,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1005 != null">
+        INA1005 = #{ina1005,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1006 != null">
+        INA1006 = #{ina1006,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1007 != null">
+        INA1007 = #{ina1007,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1008 != null">
+        INA1008 = #{ina1008,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1009 != null">
+        INA1009 = #{ina1009,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1010 != null">
+        INA1010 = #{ina1010,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1011 != null">
+        INA1011 = #{ina1011,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1012 != null">
+        INA1012 = #{ina1012,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1013 != null">
+        INA1013 = #{ina1013,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina1014 != null">
+        INA1014 = #{ina1014,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina1015 != null">
+        INA1015 = #{ina1015,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1016 != null">
+        INA1016 = #{ina1016,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1017 != null">
+        INA1017 = #{ina1017,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1018 != null">
+        INA1018 = #{ina1018,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1019 != null">
+        INA1019 = #{ina1019,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1020 != null">
+        INA1020 = #{ina1020,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1021 != null">
+        INA1021 = #{ina1021,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1022 != null">
+        INA1022 = #{ina1022,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1023 != null">
+        INA1023 = #{ina1023,jdbcType=VARCHAR},
+      </if>
+      <if test="ina1024 != null">
+        INA1024 = #{ina1024,jdbcType=DECIMAL},
+      </if>
+      <if test="ina1025 != null">
+        INA1025 = #{ina1025,jdbcType=VARCHAR},
+      </if>
+      <if test="inaconf != null">
+        INACONF = #{inaconf,jdbcType=VARCHAR},
+      </if>
+      <if test="inaspc != null">
+        INASPC = #{inaspc,jdbcType=VARCHAR},
+      </if>
+      <if test="ina100 != null">
+        INA100 = #{ina100,jdbcType=VARCHAR},
+      </if>
+      <if test="ina101 != null">
+        INA101 = #{ina101,jdbcType=VARCHAR},
+      </if>
+      <if test="ina102 != null">
+        INA102 = #{ina102,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inaud01 != null">
+        INAUD01 = #{inaud01,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud02 != null">
+        INAUD02 = #{inaud02,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud03 != null">
+        INAUD03 = #{inaud03,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud04 != null">
+        INAUD04 = #{inaud04,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud05 != null">
+        INAUD05 = #{inaud05,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud06 != null">
+        INAUD06 = #{inaud06,jdbcType=VARCHAR},
+      </if>
+      <if test="inaud07 != null">
+        INAUD07 = #{inaud07,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud08 != null">
+        INAUD08 = #{inaud08,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud09 != null">
+        INAUD09 = #{inaud09,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud10 != null">
+        INAUD10 = #{inaud10,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud11 != null">
+        INAUD11 = #{inaud11,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud12 != null">
+        INAUD12 = #{inaud12,jdbcType=DECIMAL},
+      </if>
+      <if test="inaud13 != null">
+        INAUD13 = #{inaud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inaud14 != null">
+        INAUD14 = #{inaud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inaud15 != null">
+        INAUD15 = #{inaud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ina103 != null">
+        INA103 = #{ina103,jdbcType=VARCHAR},
+      </if>
+      <if test="ina12 != null">
+        INA12 = #{ina12,jdbcType=VARCHAR},
+      </if>
+      <if test="inacond != null">
+        INACOND = #{inacond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inacont != null">
+        INACONT = #{inacont,jdbcType=VARCHAR},
+      </if>
+      <if test="inaconu != null">
+        INACONU = #{inaconu,jdbcType=VARCHAR},
+      </if>
+      <if test="inapos != null">
+        INAPOS = #{inapos,jdbcType=VARCHAR},
+      </if>
+      <if test="inaplant != null">
+        INAPLANT = #{inaplant,jdbcType=VARCHAR},
+      </if>
+      <if test="inalegal != null">
+        INALEGAL = #{inalegal,jdbcType=VARCHAR},
+      </if>
+      <if test="inaoriu != null">
+        INAORIU = #{inaoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="inaorig != null">
+        INAORIG = #{inaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="ina13 != null">
+        INA13 = #{ina13,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where INA01 = #{ina01,jdbcType=VARCHAR}
+  </update>
+  <update id="alterGem">
+    update ${centre}.ina_file
+    set ina04 = #{ina04}
+    where ina01 = #{ina01}
+  </update>
+  <select id="searchInaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
+    select ina00,ina01,ina02,ina03,ina04,ina06,inaconf,inapost,inaplant
+    from ${centre}.ina_file
+    <where>
+      <if test="code_1 != null and code_1 != '' ">
+        and ina01 like '%${code_1}%'
+      </if>
+    </where>
+    order by ina03,ina01
+  </select>
+
+</mapper>

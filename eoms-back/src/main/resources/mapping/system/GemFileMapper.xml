@@ -2,4 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.system.mapper.GemFileMapper">
 
+    <select id="searchGemList" resultType="com.keboda.eomsback.system.pojo.GemFile">
+        select gem01,gem02
+        from ${centre}.gem_file
+        <where>
+            <if test="code_1 != null and code_2 != '' ">
+                and (gem01 like '%${code_1}%' or gem02 like '%${code_1}%')
+            </if>
+            <if test="code_2 != null and code_2 != ''">
+                and gemacti = #{code_2}
+            </if>
+        </where>
+        order by gem01,gem02
+    </select>
 </mapper>

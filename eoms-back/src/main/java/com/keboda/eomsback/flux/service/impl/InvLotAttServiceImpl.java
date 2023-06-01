@@ -4,7 +4,7 @@ import com.baomidou.dynamic.datasource.annotation.DS;
 import com.keboda.eomsback.flux.mapper.InvLotAttMapper;
 import com.keboda.eomsback.flux.pojo.InvLotAtt;
 import com.keboda.eomsback.flux.service.IInvLotAttService;
-import com.keboda.eomsback.system.service.impl.ITcIdsequenceFileService;
+import com.keboda.eomsback.system.service.ITcIdsequenceFileService;
 import com.keboda.eomsback.utils.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

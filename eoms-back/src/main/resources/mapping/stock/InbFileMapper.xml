@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.InbFileMapper">
+
+  <insert id="insertSelective" keyColumn="INB01" keyProperty="inb01" parameterType="com.keboda.eomsback.stock.pojo.InbFile" useGeneratedKeys="true">
+    insert into INB_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="inb03 != null">
+        INB03,
+      </if>
+      <if test="inb04 != null">
+        INB04,
+      </if>
+      <if test="inb05 != null">
+        INB05,
+      </if>
+      <if test="inb06 != null">
+        INB06,
+      </if>
+      <if test="inb07 != null">
+        INB07,
+      </if>
+      <if test="inb08 != null">
+        INB08,
+      </if>
+      <if test="inb08Fac != null">
+        INB08_FAC,
+      </if>
+      <if test="inb09 != null">
+        INB09,
+      </if>
+      <if test="inb10 != null">
+        INB10,
+      </if>
+      <if test="inb11 != null">
+        INB11,
+      </if>
+      <if test="inb12 != null">
+        INB12,
+      </if>
+      <if test="inb13 != null">
+        INB13,
+      </if>
+      <if test="inb14 != null">
+        INB14,
+      </if>
+      <if test="inb15 != null">
+        INB15,
+      </if>
+      <if test="inb901 != null">
+        INB901,
+      </if>
+      <if test="inb902 != null">
+        INB902,
+      </if>
+      <if test="inb903 != null">
+        INB903,
+      </if>
+      <if test="inb904 != null">
+        INB904,
+      </if>
+      <if test="inb905 != null">
+        INB905,
+      </if>
+      <if test="inb906 != null">
+        INB906,
+      </if>
+      <if test="inb907 != null">
+        INB907,
+      </if>
+      <if test="inb908 != null">
+        INB908,
+      </if>
+      <if test="inb909 != null">
+        INB909,
+      </if>
+      <if test="inb910 != null">
+        INB910,
+      </if>
+      <if test="inb1001 != null">
+        INB1001,
+      </if>
+      <if test="inb1002 != null">
+        INB1002,
+      </if>
+      <if test="inb1003 != null">
+        INB1003,
+      </if>
+      <if test="inb1004 != null">
+        INB1004,
+      </if>
+      <if test="inb1005 != null">
+        INB1005,
+      </if>
+      <if test="inb1006 != null">
+        INB1006,
+      </if>
+      <if test="inb930 != null">
+        INB930,
+      </if>
+      <if test="inb911 != null">
+        INB911,
+      </if>
+      <if test="inb912 != null">
+        INB912,
+      </if>
+      <if test="inb41 != null">
+        INB41,
+      </if>
+      <if test="inb42 != null">
+        INB42,
+      </if>
+      <if test="inb43 != null">
+        INB43,
+      </if>
+      <if test="inbud01 != null">
+        INBUD01,
+      </if>
+      <if test="inbud02 != null">
+        INBUD02,
+      </if>
+      <if test="inbud03 != null">
+        INBUD03,
+      </if>
+      <if test="inbud04 != null">
+        INBUD04,
+      </if>
+      <if test="inbud05 != null">
+        INBUD05,
+      </if>
+      <if test="inbud06 != null">
+        INBUD06,
+      </if>
+      <if test="inbud07 != null">
+        INBUD07,
+      </if>
+      <if test="inbud08 != null">
+        INBUD08,
+      </if>
+      <if test="inbud09 != null">
+        INBUD09,
+      </if>
+      <if test="inbud10 != null">
+        INBUD10,
+      </if>
+      <if test="inbud11 != null">
+        INBUD11,
+      </if>
+      <if test="inbud12 != null">
+        INBUD12,
+      </if>
+      <if test="inbud13 != null">
+        INBUD13,
+      </if>
+      <if test="inbud14 != null">
+        INBUD14,
+      </if>
+      <if test="inbud15 != null">
+        INBUD15,
+      </if>
+      <if test="inb16 != null">
+        INB16,
+      </if>
+      <if test="inb922 != null">
+        INB922,
+      </if>
+      <if test="inb923 != null">
+        INB923,
+      </if>
+      <if test="inb924 != null">
+        INB924,
+      </if>
+      <if test="inb925 != null">
+        INB925,
+      </if>
+      <if test="inb926 != null">
+        INB926,
+      </if>
+      <if test="inb927 != null">
+        INB927,
+      </if>
+      <if test="inbplant != null">
+        INBPLANT,
+      </if>
+      <if test="inblegal != null">
+        INBLEGAL,
+      </if>
+      <if test="inb132 != null">
+        INB132,
+      </if>
+      <if test="inb133 != null">
+        INB133,
+      </if>
+      <if test="inb134 != null">
+        INB134,
+      </if>
+      <if test="inb135 != null">
+        INB135,
+      </if>
+      <if test="inb136 != null">
+        INB136,
+      </if>
+      <if test="inb137 != null">
+        INB137,
+      </if>
+      <if test="inb138 != null">
+        INB138,
+      </if>
+      <if test="inb46 != null">
+        INB46,
+      </if>
+      <if test="inb47 != null">
+        INB47,
+      </if>
+      <if test="inb44 != null">
+        INB44,
+      </if>
+      <if test="inb45 != null">
+        INB45,
+      </if>
+      <if test="inb48 != null">
+        INB48,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="inb03 != null">
+        #{inb03,jdbcType=DECIMAL},
+      </if>
+      <if test="inb04 != null">
+        #{inb04,jdbcType=VARCHAR},
+      </if>
+      <if test="inb05 != null">
+        #{inb05,jdbcType=VARCHAR},
+      </if>
+      <if test="inb06 != null">
+        #{inb06,jdbcType=VARCHAR},
+      </if>
+      <if test="inb07 != null">
+        #{inb07,jdbcType=VARCHAR},
+      </if>
+      <if test="inb08 != null">
+        #{inb08,jdbcType=VARCHAR},
+      </if>
+      <if test="inb08Fac != null">
+        #{inb08Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="inb09 != null">
+        #{inb09,jdbcType=DECIMAL},
+      </if>
+      <if test="inb10 != null">
+        #{inb10,jdbcType=VARCHAR},
+      </if>
+      <if test="inb11 != null">
+        #{inb11,jdbcType=VARCHAR},
+      </if>
+      <if test="inb12 != null">
+        #{inb12,jdbcType=VARCHAR},
+      </if>
+      <if test="inb13 != null">
+        #{inb13,jdbcType=DECIMAL},
+      </if>
+      <if test="inb14 != null">
+        #{inb14,jdbcType=DECIMAL},
+      </if>
+      <if test="inb15 != null">
+        #{inb15,jdbcType=VARCHAR},
+      </if>
+      <if test="inb901 != null">
+        #{inb901,jdbcType=VARCHAR},
+      </if>
+      <if test="inb902 != null">
+        #{inb902,jdbcType=VARCHAR},
+      </if>
+      <if test="inb903 != null">
+        #{inb903,jdbcType=DECIMAL},
+      </if>
+      <if test="inb904 != null">
+        #{inb904,jdbcType=DECIMAL},
+      </if>
+      <if test="inb905 != null">
+        #{inb905,jdbcType=VARCHAR},
+      </if>
+      <if test="inb906 != null">
+        #{inb906,jdbcType=DECIMAL},
+      </if>
+      <if test="inb907 != null">
+        #{inb907,jdbcType=DECIMAL},
+      </if>
+      <if test="inb908 != null">
+        #{inb908,jdbcType=DECIMAL},
+      </if>
+      <if test="inb909 != null">
+        #{inb909,jdbcType=DECIMAL},
+      </if>
+      <if test="inb910 != null">
+        #{inb910,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1001 != null">
+        #{inb1001,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1002 != null">
+        #{inb1002,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1003 != null">
+        #{inb1003,jdbcType=DECIMAL},
+      </if>
+      <if test="inb1004 != null">
+        #{inb1004,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1005 != null">
+        #{inb1005,jdbcType=DECIMAL},
+      </if>
+      <if test="inb1006 != null">
+        #{inb1006,jdbcType=DECIMAL},
+      </if>
+      <if test="inb930 != null">
+        #{inb930,jdbcType=VARCHAR},
+      </if>
+      <if test="inb911 != null">
+        #{inb911,jdbcType=VARCHAR},
+      </if>
+      <if test="inb912 != null">
+        #{inb912,jdbcType=DECIMAL},
+      </if>
+      <if test="inb41 != null">
+        #{inb41,jdbcType=VARCHAR},
+      </if>
+      <if test="inb42 != null">
+        #{inb42,jdbcType=VARCHAR},
+      </if>
+      <if test="inb43 != null">
+        #{inb43,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud01 != null">
+        #{inbud01,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud02 != null">
+        #{inbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud03 != null">
+        #{inbud03,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud04 != null">
+        #{inbud04,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud05 != null">
+        #{inbud05,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud06 != null">
+        #{inbud06,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud07 != null">
+        #{inbud07,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud08 != null">
+        #{inbud08,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud09 != null">
+        #{inbud09,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud10 != null">
+        #{inbud10,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud11 != null">
+        #{inbud11,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud12 != null">
+        #{inbud12,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud13 != null">
+        #{inbud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inbud14 != null">
+        #{inbud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inbud15 != null">
+        #{inbud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inb16 != null">
+        #{inb16,jdbcType=DECIMAL},
+      </if>
+      <if test="inb922 != null">
+        #{inb922,jdbcType=VARCHAR},
+      </if>
+      <if test="inb923 != null">
+        #{inb923,jdbcType=DECIMAL},
+      </if>
+      <if test="inb924 != null">
+        #{inb924,jdbcType=DECIMAL},
+      </if>
+      <if test="inb925 != null">
+        #{inb925,jdbcType=VARCHAR},
+      </if>
+      <if test="inb926 != null">
+        #{inb926,jdbcType=DECIMAL},
+      </if>
+      <if test="inb927 != null">
+        #{inb927,jdbcType=DECIMAL},
+      </if>
+      <if test="inbplant != null">
+        #{inbplant,jdbcType=VARCHAR},
+      </if>
+      <if test="inblegal != null">
+        #{inblegal,jdbcType=VARCHAR},
+      </if>
+      <if test="inb132 != null">
+        #{inb132,jdbcType=DECIMAL},
+      </if>
+      <if test="inb133 != null">
+        #{inb133,jdbcType=DECIMAL},
+      </if>
+      <if test="inb134 != null">
+        #{inb134,jdbcType=DECIMAL},
+      </if>
+      <if test="inb135 != null">
+        #{inb135,jdbcType=DECIMAL},
+      </if>
+      <if test="inb136 != null">
+        #{inb136,jdbcType=DECIMAL},
+      </if>
+      <if test="inb137 != null">
+        #{inb137,jdbcType=DECIMAL},
+      </if>
+      <if test="inb138 != null">
+        #{inb138,jdbcType=DECIMAL},
+      </if>
+      <if test="inb46 != null">
+        #{inb46,jdbcType=VARCHAR},
+      </if>
+      <if test="inb47 != null">
+        #{inb47,jdbcType=DECIMAL},
+      </if>
+      <if test="inb44 != null">
+        #{inb44,jdbcType=VARCHAR},
+      </if>
+      <if test="inb45 != null">
+        #{inb45,jdbcType=DECIMAL},
+      </if>
+      <if test="inb48 != null">
+        #{inb48,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.InbFile">
+    update INB_FILE
+    <set>
+      <if test="inb04 != null">
+        INB04 = #{inb04,jdbcType=VARCHAR},
+      </if>
+      <if test="inb05 != null">
+        INB05 = #{inb05,jdbcType=VARCHAR},
+      </if>
+      <if test="inb06 != null">
+        INB06 = #{inb06,jdbcType=VARCHAR},
+      </if>
+      <if test="inb07 != null">
+        INB07 = #{inb07,jdbcType=VARCHAR},
+      </if>
+      <if test="inb08 != null">
+        INB08 = #{inb08,jdbcType=VARCHAR},
+      </if>
+      <if test="inb08Fac != null">
+        INB08_FAC = #{inb08Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="inb09 != null">
+        INB09 = #{inb09,jdbcType=DECIMAL},
+      </if>
+      <if test="inb10 != null">
+        INB10 = #{inb10,jdbcType=VARCHAR},
+      </if>
+      <if test="inb11 != null">
+        INB11 = #{inb11,jdbcType=VARCHAR},
+      </if>
+      <if test="inb12 != null">
+        INB12 = #{inb12,jdbcType=VARCHAR},
+      </if>
+      <if test="inb13 != null">
+        INB13 = #{inb13,jdbcType=DECIMAL},
+      </if>
+      <if test="inb14 != null">
+        INB14 = #{inb14,jdbcType=DECIMAL},
+      </if>
+      <if test="inb15 != null">
+        INB15 = #{inb15,jdbcType=VARCHAR},
+      </if>
+      <if test="inb901 != null">
+        INB901 = #{inb901,jdbcType=VARCHAR},
+      </if>
+      <if test="inb902 != null">
+        INB902 = #{inb902,jdbcType=VARCHAR},
+      </if>
+      <if test="inb903 != null">
+        INB903 = #{inb903,jdbcType=DECIMAL},
+      </if>
+      <if test="inb904 != null">
+        INB904 = #{inb904,jdbcType=DECIMAL},
+      </if>
+      <if test="inb905 != null">
+        INB905 = #{inb905,jdbcType=VARCHAR},
+      </if>
+      <if test="inb906 != null">
+        INB906 = #{inb906,jdbcType=DECIMAL},
+      </if>
+      <if test="inb907 != null">
+        INB907 = #{inb907,jdbcType=DECIMAL},
+      </if>
+      <if test="inb908 != null">
+        INB908 = #{inb908,jdbcType=DECIMAL},
+      </if>
+      <if test="inb909 != null">
+        INB909 = #{inb909,jdbcType=DECIMAL},
+      </if>
+      <if test="inb910 != null">
+        INB910 = #{inb910,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1001 != null">
+        INB1001 = #{inb1001,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1002 != null">
+        INB1002 = #{inb1002,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1003 != null">
+        INB1003 = #{inb1003,jdbcType=DECIMAL},
+      </if>
+      <if test="inb1004 != null">
+        INB1004 = #{inb1004,jdbcType=VARCHAR},
+      </if>
+      <if test="inb1005 != null">
+        INB1005 = #{inb1005,jdbcType=DECIMAL},
+      </if>
+      <if test="inb1006 != null">
+        INB1006 = #{inb1006,jdbcType=DECIMAL},
+      </if>
+      <if test="inb930 != null">
+        INB930 = #{inb930,jdbcType=VARCHAR},
+      </if>
+      <if test="inb911 != null">
+        INB911 = #{inb911,jdbcType=VARCHAR},
+      </if>
+      <if test="inb912 != null">
+        INB912 = #{inb912,jdbcType=DECIMAL},
+      </if>
+      <if test="inb41 != null">
+        INB41 = #{inb41,jdbcType=VARCHAR},
+      </if>
+      <if test="inb42 != null">
+        INB42 = #{inb42,jdbcType=VARCHAR},
+      </if>
+      <if test="inb43 != null">
+        INB43 = #{inb43,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud01 != null">
+        INBUD01 = #{inbud01,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud02 != null">
+        INBUD02 = #{inbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud03 != null">
+        INBUD03 = #{inbud03,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud04 != null">
+        INBUD04 = #{inbud04,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud05 != null">
+        INBUD05 = #{inbud05,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud06 != null">
+        INBUD06 = #{inbud06,jdbcType=VARCHAR},
+      </if>
+      <if test="inbud07 != null">
+        INBUD07 = #{inbud07,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud08 != null">
+        INBUD08 = #{inbud08,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud09 != null">
+        INBUD09 = #{inbud09,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud10 != null">
+        INBUD10 = #{inbud10,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud11 != null">
+        INBUD11 = #{inbud11,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud12 != null">
+        INBUD12 = #{inbud12,jdbcType=DECIMAL},
+      </if>
+      <if test="inbud13 != null">
+        INBUD13 = #{inbud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inbud14 != null">
+        INBUD14 = #{inbud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inbud15 != null">
+        INBUD15 = #{inbud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inb16 != null">
+        INB16 = #{inb16,jdbcType=DECIMAL},
+      </if>
+      <if test="inb922 != null">
+        INB922 = #{inb922,jdbcType=VARCHAR},
+      </if>
+      <if test="inb923 != null">
+        INB923 = #{inb923,jdbcType=DECIMAL},
+      </if>
+      <if test="inb924 != null">
+        INB924 = #{inb924,jdbcType=DECIMAL},
+      </if>
+      <if test="inb925 != null">
+        INB925 = #{inb925,jdbcType=VARCHAR},
+      </if>
+      <if test="inb926 != null">
+        INB926 = #{inb926,jdbcType=DECIMAL},
+      </if>
+      <if test="inb927 != null">
+        INB927 = #{inb927,jdbcType=DECIMAL},
+      </if>
+      <if test="inbplant != null">
+        INBPLANT = #{inbplant,jdbcType=VARCHAR},
+      </if>
+      <if test="inblegal != null">
+        INBLEGAL = #{inblegal,jdbcType=VARCHAR},
+      </if>
+      <if test="inb132 != null">
+        INB132 = #{inb132,jdbcType=DECIMAL},
+      </if>
+      <if test="inb133 != null">
+        INB133 = #{inb133,jdbcType=DECIMAL},
+      </if>
+      <if test="inb134 != null">
+        INB134 = #{inb134,jdbcType=DECIMAL},
+      </if>
+      <if test="inb135 != null">
+        INB135 = #{inb135,jdbcType=DECIMAL},
+      </if>
+      <if test="inb136 != null">
+        INB136 = #{inb136,jdbcType=DECIMAL},
+      </if>
+      <if test="inb137 != null">
+        INB137 = #{inb137,jdbcType=DECIMAL},
+      </if>
+      <if test="inb138 != null">
+        INB138 = #{inb138,jdbcType=DECIMAL},
+      </if>
+      <if test="inb46 != null">
+        INB46 = #{inb46,jdbcType=VARCHAR},
+      </if>
+      <if test="inb47 != null">
+        INB47 = #{inb47,jdbcType=DECIMAL},
+      </if>
+      <if test="inb44 != null">
+        INB44 = #{inb44,jdbcType=VARCHAR},
+      </if>
+      <if test="inb45 != null">
+        INB45 = #{inb45,jdbcType=DECIMAL},
+      </if>
+      <if test="inb48 != null">
+        INB48 = #{inb48,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where INB01 = #{inb01,jdbcType=VARCHAR}
+      and INB03 = #{inb03,jdbcType=DECIMAL}
+  </update>
+    <select id="searchInbList" resultType="com.keboda.eomsback.stock.pojo.InbFile">
+        select *
+        from ${centre}.inb_file
+        where inb01 = #{code_1}
+        order by inb03
+    </select>
+
+</mapper>

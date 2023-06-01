@@ -1,4 +1,4 @@
-package com.keboda.eomsback.system.service.impl;
+package com.keboda.eomsback.system.service;
 
 import com.keboda.eomsback.flux.pojo.InvLotAtt;
 

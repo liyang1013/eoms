@@ -3,6 +3,7 @@ package com.keboda.eomsback.system.service.impl;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.keboda.eomsback.flux.mapper.TcIdsequenceFileMapper;
 import com.keboda.eomsback.flux.pojo.TcIdsequenceFile;
+import com.keboda.eomsback.system.service.ITcIdsequenceFileService;
 import com.keboda.eomsback.utils.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,7 @@ import java.util.Date;
 
 @Service
 @DS("fluxWms")
-public class TcIdsequenceFileServiceImpl implements ITcIdsequenceFileService{
+public class TcIdsequenceFileServiceImpl implements ITcIdsequenceFileService {
 
     @Resource
     private TcIdsequenceFileMapper tcIdsequenceFileMapper;

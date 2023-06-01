@@ -10,7 +10,6 @@
       <el-form-item label="料件:">
         <selectedIma v-model="ima.code_1" :centre="ima.centre" ></selectedIma>
       </el-form-item>
-
     </el-form>
     <el-alert title="料件基本资料: aimi100; " type="success" :closable="false">
     </el-alert>
