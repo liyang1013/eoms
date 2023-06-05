@@ -22,4 +22,8 @@ public class GemController {
         return BaseResult.success(iGemService.searchGemList(searchVo));
     }
 
+    @PostMapping("/searchGemByKey")
+    public BaseResult searchGemByKey(@RequestBody SearchVo searchVo){
+        return BaseResult.success(iGemService.searchGemByKey(searchVo));
+    }
 }

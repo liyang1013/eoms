@@ -10,7 +10,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class InbFile extends InbFileKey implements Serializable {
+public class InbFile extends InbFileKey implements Serializable{
     private String inb04;
 
     private String inb05;

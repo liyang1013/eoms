@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.PjbFileMapper">
+  <insert id="insertSelective" keyColumn="PJB01" keyProperty="pjb01" parameterType="com.keboda.eomsback.system.pojo.PjbFile" useGeneratedKeys="true">
+    insert into PJB_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pjb02 != null">
+        PJB02,
+      </if>
+      <if test="pjb03 != null">
+        PJB03,
+      </if>
+      <if test="pjb04 != null">
+        PJB04,
+      </if>
+      <if test="pjb05 != null">
+        PJB05,
+      </if>
+      <if test="pjb06 != null">
+        PJB06,
+      </if>
+      <if test="pjb07 != null">
+        PJB07,
+      </if>
+      <if test="pjb08 != null">
+        PJB08,
+      </if>
+      <if test="pjb09 != null">
+        PJB09,
+      </if>
+      <if test="pjb10 != null">
+        PJB10,
+      </if>
+      <if test="pjb11 != null">
+        PJB11,
+      </if>
+      <if test="pjb12 != null">
+        PJB12,
+      </if>
+      <if test="pjb13 != null">
+        PJB13,
+      </if>
+      <if test="pjb14 != null">
+        PJB14,
+      </if>
+      <if test="pjb15 != null">
+        PJB15,
+      </if>
+      <if test="pjb16 != null">
+        PJB16,
+      </if>
+      <if test="pjb17 != null">
+        PJB17,
+      </if>
+      <if test="pjb18 != null">
+        PJB18,
+      </if>
+      <if test="pjb19 != null">
+        PJB19,
+      </if>
+      <if test="pjb20 != null">
+        PJB20,
+      </if>
+      <if test="pjb21 != null">
+        PJB21,
+      </if>
+      <if test="pjb22 != null">
+        PJB22,
+      </if>
+      <if test="pjb23 != null">
+        PJB23,
+      </if>
+      <if test="pjb24 != null">
+        PJB24,
+      </if>
+      <if test="pjb25 != null">
+        PJB25,
+      </if>
+      <if test="pjbacti != null">
+        PJBACTI,
+      </if>
+      <if test="pjbdate != null">
+        PJBDATE,
+      </if>
+      <if test="pjbgrup != null">
+        PJBGRUP,
+      </if>
+      <if test="pjbmodu != null">
+        PJBMODU,
+      </if>
+      <if test="pjbuser != null">
+        PJBUSER,
+      </if>
+      <if test="pjboriu != null">
+        PJBORIU,
+      </if>
+      <if test="pjborig != null">
+        PJBORIG,
+      </if>
+      <if test="pjbud01 != null">
+        PJBUD01,
+      </if>
+      <if test="pjbud02 != null">
+        PJBUD02,
+      </if>
+      <if test="pjbud03 != null">
+        PJBUD03,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pjb02 != null">
+        #{pjb02,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb03 != null">
+        #{pjb03,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb04 != null">
+        #{pjb04,jdbcType=DECIMAL},
+      </if>
+      <if test="pjb05 != null">
+        #{pjb05,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb06 != null">
+        #{pjb06,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb07 != null">
+        #{pjb07,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb08 != null">
+        #{pjb08,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb09 != null">
+        #{pjb09,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb10 != null">
+        #{pjb10,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb11 != null">
+        #{pjb11,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb12 != null">
+        #{pjb12,jdbcType=DECIMAL},
+      </if>
+      <if test="pjb13 != null">
+        #{pjb13,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb14 != null">
+        #{pjb14,jdbcType=DECIMAL},
+      </if>
+      <if test="pjb15 != null">
+        #{pjb15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb16 != null">
+        #{pjb16,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb17 != null">
+        #{pjb17,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb18 != null">
+        #{pjb18,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb19 != null">
+        #{pjb19,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb20 != null">
+        #{pjb20,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb21 != null">
+        #{pjb21,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb22 != null">
+        #{pjb22,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb23 != null">
+        #{pjb23,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb24 != null">
+        #{pjb24,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb25 != null">
+        #{pjb25,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbacti != null">
+        #{pjbacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbdate != null">
+        #{pjbdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjbgrup != null">
+        #{pjbgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbmodu != null">
+        #{pjbmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbuser != null">
+        #{pjbuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pjboriu != null">
+        #{pjboriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pjborig != null">
+        #{pjborig,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbud01 != null">
+        #{pjbud01,jdbcType=DECIMAL},
+      </if>
+      <if test="pjbud02 != null">
+        #{pjbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbud03 != null">
+        #{pjbud03,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.PjbFile">
+    update PJB_FILE
+    <set>
+      <if test="pjb03 != null">
+        PJB03 = #{pjb03,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb04 != null">
+        PJB04 = #{pjb04,jdbcType=DECIMAL},
+      </if>
+      <if test="pjb05 != null">
+        PJB05 = #{pjb05,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb06 != null">
+        PJB06 = #{pjb06,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb07 != null">
+        PJB07 = #{pjb07,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb08 != null">
+        PJB08 = #{pjb08,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb09 != null">
+        PJB09 = #{pjb09,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb10 != null">
+        PJB10 = #{pjb10,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb11 != null">
+        PJB11 = #{pjb11,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb12 != null">
+        PJB12 = #{pjb12,jdbcType=DECIMAL},
+      </if>
+      <if test="pjb13 != null">
+        PJB13 = #{pjb13,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb14 != null">
+        PJB14 = #{pjb14,jdbcType=DECIMAL},
+      </if>
+      <if test="pjb15 != null">
+        PJB15 = #{pjb15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb16 != null">
+        PJB16 = #{pjb16,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb17 != null">
+        PJB17 = #{pjb17,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb18 != null">
+        PJB18 = #{pjb18,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb19 != null">
+        PJB19 = #{pjb19,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb20 != null">
+        PJB20 = #{pjb20,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb21 != null">
+        PJB21 = #{pjb21,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb22 != null">
+        PJB22 = #{pjb22,jdbcType=VARCHAR},
+      </if>
+      <if test="pjb23 != null">
+        PJB23 = #{pjb23,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb24 != null">
+        PJB24 = #{pjb24,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjb25 != null">
+        PJB25 = #{pjb25,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbacti != null">
+        PJBACTI = #{pjbacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbdate != null">
+        PJBDATE = #{pjbdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pjbgrup != null">
+        PJBGRUP = #{pjbgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbmodu != null">
+        PJBMODU = #{pjbmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbuser != null">
+        PJBUSER = #{pjbuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pjboriu != null">
+        PJBORIU = #{pjboriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pjborig != null">
+        PJBORIG = #{pjborig,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbud01 != null">
+        PJBUD01 = #{pjbud01,jdbcType=DECIMAL},
+      </if>
+      <if test="pjbud02 != null">
+        PJBUD02 = #{pjbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pjbud03 != null">
+        PJBUD03 = #{pjbud03,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PJB01 = #{pjb01,jdbcType=VARCHAR}
+      and PJB02 = #{pjb02,jdbcType=VARCHAR}
+  </update>
+    <select id="searchPjbByKey" resultType="com.keboda.eomsback.system.pojo.PjbFile">
+        select pjb02, pjb03
+        from ${centre}.PJB_file
+        <where>
+          pjb01 = #{code_1} and pjb02 = #{code_2}
+          <if test="code_3 != null and code_3 != '' ">
+            and pjbacti = #{code_3}
+          </if>
+        </where>
+    </select>
+  <select id="searchPjbList" resultType="com.keboda.eomsback.system.pojo.PjbFile">
+      select pjb02, pjb03
+      from ${centre}.PJB_file
+      <where>
+          pjb01 = #{code_1}
+          <if test="code_2 != null and code_2 != ''">
+            and ( lower(pjb02) like lower('%${code_2}%') or  lower(pjb03) like lower('%${code_2}%'))
+          </if>
+          <if test="code_3 != null and code_3 != '' ">
+              and pjbacti = #{code_3}
+          </if>
+      </where>
+  </select>
+</mapper>

@@ -17,7 +17,12 @@ public class AzpServiceImpl implements IAzpService {
 
 
     @Override
-    public List<AzpFile> getAllCentre() {
-        return azpFileMapper.getAllCentre();
+    public List<AzpFile> searchAzpList(String azp01) {
+        return azpFileMapper.searchAzpList(azp01);
+    }
+
+    @Override
+    public AzpFile searchAzpByKey(String azp01) {
+        return azpFileMapper.searchAzpByKey(azp01);
     }
 }

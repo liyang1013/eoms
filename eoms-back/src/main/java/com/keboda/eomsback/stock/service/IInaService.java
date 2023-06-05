@@ -13,4 +13,10 @@ public interface IInaService {
     void alterGem(InaFile inaFile);
 
     List<InbFile> searchInbList(SearchVo searchVo);
+
+    void alterAzf(InbFile inbFile);
+
+    void alterPja(InaFile inaFile);
+
+    void alterPjb(InbFile inbFile);
 }

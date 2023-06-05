@@ -3,8 +3,18 @@
 <mapper namespace="com.keboda.eomsback.system.mapper.AzpFileMapper">
 
 
-  <select id="getAllCentre" resultType="com.keboda.eomsback.system.pojo.AzpFile">
+  <select id="searchAzpList" resultType="com.keboda.eomsback.system.pojo.AzpFile">
     select azp01, AZP02
     from DS.AZP_FILE
+    <where>
+      <if test="azp01 != null and azp01 != '' ">
+        and lower(azp01) like lower('%${azp01}%') or  lower(azp02) like lower('%${azp01}%')
+      </if>
+    </where>
+  </select>
+  <select id="searchAzpByKey" resultType="com.keboda.eomsback.system.pojo.AzpFile">
+    select azp01, AZP02
+    from DS.AZP_FILE
+    where azp01 = #{azp01}
   </select>
 </mapper>

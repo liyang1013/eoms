@@ -7,12 +7,22 @@
         from ${centre}.gem_file
         <where>
             <if test="code_1 != null and code_2 != '' ">
-                and (gem01 like '%${code_1}%' or gem02 like '%${code_1}%')
+                and ( lower(gem01) like lower('%${code_1}%') or lower(gem02) like lower('%${code_1}%'))
             </if>
             <if test="code_2 != null and code_2 != ''">
                 and gemacti = #{code_2}
             </if>
         </where>
         order by gem01,gem02
+    </select>
+    <select id="searchGemByKey" resultType="com.keboda.eomsback.system.pojo.GemFile">
+        select gem01,gem02
+        from ${centre}.gem_file
+        <where>
+            gem01 = #{code_1}
+            <if test="code_2 != null and code_2 != ''">
+                and gemacti = #{code_2}
+            </if>
+        </where>
     </select>
 </mapper>

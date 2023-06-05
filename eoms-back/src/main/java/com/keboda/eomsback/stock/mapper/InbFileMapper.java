@@ -1,6 +1,7 @@
 package com.keboda.eomsback.stock.mapper;
 
 import com.keboda.eomsback.entity.SearchVo;
+import com.keboda.eomsback.stock.pojo.InaFile;
 import com.keboda.eomsback.stock.pojo.InbFile;
 import com.keboda.eomsback.stock.pojo.InbFileKey;
 
@@ -12,4 +13,10 @@ public interface InbFileMapper {
     int updateByPrimaryKeySelective(InbFile record);
 
     List<InbFile> searchInbList(SearchVo searchVo);
+
+    void alterAzf(InbFile inbFile);
+
+    void alterPja(InaFile inaFile);
+
+    void alterPjb(InbFile inbFile);
 }

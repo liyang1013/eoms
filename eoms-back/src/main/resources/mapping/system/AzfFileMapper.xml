@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.AzfFileMapper">
+  <insert id="insertSelective" keyColumn="AZF01" keyProperty="azf01" parameterType="com.keboda.eomsback.system.pojo.AzfFile" useGeneratedKeys="true">
+    insert into AZF_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="azf02 != null">
+        AZF02,
+      </if>
+      <if test="azf03 != null">
+        AZF03,
+      </if>
+      <if test="azf04 != null">
+        AZF04,
+      </if>
+      <if test="azfacti != null">
+        AZFACTI,
+      </if>
+      <if test="azfuser != null">
+        AZFUSER,
+      </if>
+      <if test="azfgrup != null">
+        AZFGRUP,
+      </if>
+      <if test="azfmodu != null">
+        AZFMODU,
+      </if>
+      <if test="azfdate != null">
+        AZFDATE,
+      </if>
+      <if test="azf05 != null">
+        AZF05,
+      </if>
+      <if test="azf06 != null">
+        AZF06,
+      </if>
+      <if test="azf07 != null">
+        AZF07,
+      </if>
+      <if test="azf08 != null">
+        AZF08,
+      </if>
+      <if test="azf051 != null">
+        AZF051,
+      </if>
+      <if test="azf09 != null">
+        AZF09,
+      </if>
+      <if test="azf10 != null">
+        AZF10,
+      </if>
+      <if test="azf11 != null">
+        AZF11,
+      </if>
+      <if test="azf12 != null">
+        AZF12,
+      </if>
+      <if test="azf13 != null">
+        AZF13,
+      </if>
+      <if test="azf14 != null">
+        AZF14,
+      </if>
+      <if test="azf15 != null">
+        AZF15,
+      </if>
+      <if test="azf16 != null">
+        AZF16,
+      </if>
+      <if test="azf17 != null">
+        AZF17,
+      </if>
+      <if test="azf18 != null">
+        AZF18,
+      </if>
+      <if test="azf19 != null">
+        AZF19,
+      </if>
+      <if test="azfpos != null">
+        AZFPOS,
+      </if>
+      <if test="azforig != null">
+        AZFORIG,
+      </if>
+      <if test="azforiu != null">
+        AZFORIU,
+      </if>
+      <if test="azf071 != null">
+        AZF071,
+      </if>
+      <if test="azf141 != null">
+        AZF141,
+      </if>
+      <if test="azf20 != null">
+        AZF20,
+      </if>
+      <if test="azf201 != null">
+        AZF201,
+      </if>
+      <if test="azf21 != null">
+        AZF21,
+      </if>
+      <if test="azf211 != null">
+        AZF211,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="azf02 != null">
+        #{azf02,jdbcType=VARCHAR},
+      </if>
+      <if test="azf03 != null">
+        #{azf03,jdbcType=VARCHAR},
+      </if>
+      <if test="azf04 != null">
+        #{azf04,jdbcType=DECIMAL},
+      </if>
+      <if test="azfacti != null">
+        #{azfacti,jdbcType=VARCHAR},
+      </if>
+      <if test="azfuser != null">
+        #{azfuser,jdbcType=VARCHAR},
+      </if>
+      <if test="azfgrup != null">
+        #{azfgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="azfmodu != null">
+        #{azfmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="azfdate != null">
+        #{azfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="azf05 != null">
+        #{azf05,jdbcType=VARCHAR},
+      </if>
+      <if test="azf06 != null">
+        #{azf06,jdbcType=DECIMAL},
+      </if>
+      <if test="azf07 != null">
+        #{azf07,jdbcType=VARCHAR},
+      </if>
+      <if test="azf08 != null">
+        #{azf08,jdbcType=VARCHAR},
+      </if>
+      <if test="azf051 != null">
+        #{azf051,jdbcType=VARCHAR},
+      </if>
+      <if test="azf09 != null">
+        #{azf09,jdbcType=VARCHAR},
+      </if>
+      <if test="azf10 != null">
+        #{azf10,jdbcType=VARCHAR},
+      </if>
+      <if test="azf11 != null">
+        #{azf11,jdbcType=VARCHAR},
+      </if>
+      <if test="azf12 != null">
+        #{azf12,jdbcType=VARCHAR},
+      </if>
+      <if test="azf13 != null">
+        #{azf13,jdbcType=VARCHAR},
+      </if>
+      <if test="azf14 != null">
+        #{azf14,jdbcType=VARCHAR},
+      </if>
+      <if test="azf15 != null">
+        #{azf15,jdbcType=VARCHAR},
+      </if>
+      <if test="azf16 != null">
+        #{azf16,jdbcType=VARCHAR},
+      </if>
+      <if test="azf17 != null">
+        #{azf17,jdbcType=VARCHAR},
+      </if>
+      <if test="azf18 != null">
+        #{azf18,jdbcType=VARCHAR},
+      </if>
+      <if test="azf19 != null">
+        #{azf19,jdbcType=VARCHAR},
+      </if>
+      <if test="azfpos != null">
+        #{azfpos,jdbcType=VARCHAR},
+      </if>
+      <if test="azforig != null">
+        #{azforig,jdbcType=VARCHAR},
+      </if>
+      <if test="azforiu != null">
+        #{azforiu,jdbcType=VARCHAR},
+      </if>
+      <if test="azf071 != null">
+        #{azf071,jdbcType=VARCHAR},
+      </if>
+      <if test="azf141 != null">
+        #{azf141,jdbcType=VARCHAR},
+      </if>
+      <if test="azf20 != null">
+        #{azf20,jdbcType=VARCHAR},
+      </if>
+      <if test="azf201 != null">
+        #{azf201,jdbcType=VARCHAR},
+      </if>
+      <if test="azf21 != null">
+        #{azf21,jdbcType=VARCHAR},
+      </if>
+      <if test="azf211 != null">
+        #{azf211,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.AzfFile">
+    update AZF_FILE
+    <set>
+      <if test="azf03 != null">
+        AZF03 = #{azf03,jdbcType=VARCHAR},
+      </if>
+      <if test="azf04 != null">
+        AZF04 = #{azf04,jdbcType=DECIMAL},
+      </if>
+      <if test="azfacti != null">
+        AZFACTI = #{azfacti,jdbcType=VARCHAR},
+      </if>
+      <if test="azfuser != null">
+        AZFUSER = #{azfuser,jdbcType=VARCHAR},
+      </if>
+      <if test="azfgrup != null">
+        AZFGRUP = #{azfgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="azfmodu != null">
+        AZFMODU = #{azfmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="azfdate != null">
+        AZFDATE = #{azfdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="azf05 != null">
+        AZF05 = #{azf05,jdbcType=VARCHAR},
+      </if>
+      <if test="azf06 != null">
+        AZF06 = #{azf06,jdbcType=DECIMAL},
+      </if>
+      <if test="azf07 != null">
+        AZF07 = #{azf07,jdbcType=VARCHAR},
+      </if>
+      <if test="azf08 != null">
+        AZF08 = #{azf08,jdbcType=VARCHAR},
+      </if>
+      <if test="azf051 != null">
+        AZF051 = #{azf051,jdbcType=VARCHAR},
+      </if>
+      <if test="azf09 != null">
+        AZF09 = #{azf09,jdbcType=VARCHAR},
+      </if>
+      <if test="azf10 != null">
+        AZF10 = #{azf10,jdbcType=VARCHAR},
+      </if>
+      <if test="azf11 != null">
+        AZF11 = #{azf11,jdbcType=VARCHAR},
+      </if>
+      <if test="azf12 != null">
+        AZF12 = #{azf12,jdbcType=VARCHAR},
+      </if>
+      <if test="azf13 != null">
+        AZF13 = #{azf13,jdbcType=VARCHAR},
+      </if>
+      <if test="azf14 != null">
+        AZF14 = #{azf14,jdbcType=VARCHAR},
+      </if>
+      <if test="azf15 != null">
+        AZF15 = #{azf15,jdbcType=VARCHAR},
+      </if>
+      <if test="azf16 != null">
+        AZF16 = #{azf16,jdbcType=VARCHAR},
+      </if>
+      <if test="azf17 != null">
+        AZF17 = #{azf17,jdbcType=VARCHAR},
+      </if>
+      <if test="azf18 != null">
+        AZF18 = #{azf18,jdbcType=VARCHAR},
+      </if>
+      <if test="azf19 != null">
+        AZF19 = #{azf19,jdbcType=VARCHAR},
+      </if>
+      <if test="azfpos != null">
+        AZFPOS = #{azfpos,jdbcType=VARCHAR},
+      </if>
+      <if test="azforig != null">
+        AZFORIG = #{azforig,jdbcType=VARCHAR},
+      </if>
+      <if test="azforiu != null">
+        AZFORIU = #{azforiu,jdbcType=VARCHAR},
+      </if>
+      <if test="azf071 != null">
+        AZF071 = #{azf071,jdbcType=VARCHAR},
+      </if>
+      <if test="azf141 != null">
+        AZF141 = #{azf141,jdbcType=VARCHAR},
+      </if>
+      <if test="azf20 != null">
+        AZF20 = #{azf20,jdbcType=VARCHAR},
+      </if>
+      <if test="azf201 != null">
+        AZF201 = #{azf201,jdbcType=VARCHAR},
+      </if>
+      <if test="azf21 != null">
+        AZF21 = #{azf21,jdbcType=VARCHAR},
+      </if>
+      <if test="azf211 != null">
+        AZF211 = #{azf211,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where AZF01 = #{azf01,jdbcType=VARCHAR}
+      and AZF02 = #{azf02,jdbcType=VARCHAR}
+  </update>
+  <select id="searchAzfList" resultType="com.keboda.eomsback.system.pojo.AzfFile">
+      select azf01,azf03
+      from ${centre}.azf_file
+      <where>
+        <if test="code_1 != null and code_1 != ''">
+          and lower(azf01) like lower('%${code_1}%') or lower(azf03)  like lower('%${code_1}%')
+        </if>
+        <if test="code_2 != null and code_2 != ''">
+          and AZFACTI = #{code_2}
+        </if>
+        <if test="code_3 != null and code_3 != ''">
+          and azf02 = #{code_3}
+        </if>
+        <if test="code_4 != null and code_4 != ''">
+          and azf09 = #{code_4}
+        </if>
+      </where>
+  </select>
+  <select id="searchAzfByKey" resultType="com.keboda.eomsback.system.pojo.AzfFile">
+    select azf01,azf03
+    from ${centre}.azf_file
+    <where>
+        azf01 = #{code_1}
+      <if test="code_2 != null and code_2 != ''">
+        and AZFACTI = #{code_2}
+      </if>
+      <if test="code_3 != null and code_3 != ''">
+        and azf02 = #{code_3}
+      </if>
+      <if test="code_4 != null and code_4 != ''">
+        and azf09 = #{code_4}
+      </if>
+    </where>
+  </select>
+</mapper>

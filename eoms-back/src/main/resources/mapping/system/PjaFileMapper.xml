@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.PjaFileMapper">
+    <insert id="insertSelective" keyColumn="PJA01" keyProperty="pja01"
+            parameterType="com.keboda.eomsback.system.pojo.PjaFile" useGeneratedKeys="true">
+        insert into PJA_FILE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pja02 != null">
+                PJA02,
+            </if>
+            <if test="pja03 != null">
+                PJA03,
+            </if>
+            <if test="pja04 != null">
+                PJA04,
+            </if>
+            <if test="pja05 != null">
+                PJA05,
+            </if>
+            <if test="pja06 != null">
+                PJA06,
+            </if>
+            <if test="pja07 != null">
+                PJA07,
+            </if>
+            <if test="pja08 != null">
+                PJA08,
+            </if>
+            <if test="pja09 != null">
+                PJA09,
+            </if>
+            <if test="pja091 != null">
+                PJA091,
+            </if>
+            <if test="pja092 != null">
+                PJA092,
+            </if>
+            <if test="pja093 != null">
+                PJA093,
+            </if>
+            <if test="pja094 != null">
+                PJA094,
+            </if>
+            <if test="pja10 != null">
+                PJA10,
+            </if>
+            <if test="pja11 != null">
+                PJA11,
+            </if>
+            <if test="pja12 != null">
+                PJA12,
+            </if>
+            <if test="pja13 != null">
+                PJA13,
+            </if>
+            <if test="pja14 != null">
+                PJA14,
+            </if>
+            <if test="pja15 != null">
+                PJA15,
+            </if>
+            <if test="pja16 != null">
+                PJA16,
+            </if>
+            <if test="pja17 != null">
+                PJA17,
+            </if>
+            <if test="pja18 != null">
+                PJA18,
+            </if>
+            <if test="pja19 != null">
+                PJA19,
+            </if>
+            <if test="pja20 != null">
+                PJA20,
+            </if>
+            <if test="pja21 != null">
+                PJA21,
+            </if>
+            <if test="pja22 != null">
+                PJA22,
+            </if>
+            <if test="pja23 != null">
+                PJA23,
+            </if>
+            <if test="pja24 != null">
+                PJA24,
+            </if>
+            <if test="pja25 != null">
+                PJA25,
+            </if>
+            <if test="pja26 != null">
+                PJA26,
+            </if>
+            <if test="pja27 != null">
+                PJA27,
+            </if>
+            <if test="pja28 != null">
+                PJA28,
+            </if>
+            <if test="pja29 != null">
+                PJA29,
+            </if>
+            <if test="pja30 != null">
+                PJA30,
+            </if>
+            <if test="pjaacti != null">
+                PJAACTI,
+            </if>
+            <if test="pjaclose != null">
+                PJACLOSE,
+            </if>
+            <if test="pjaconf != null">
+                PJACONF,
+            </if>
+            <if test="pjadate != null">
+                PJADATE,
+            </if>
+            <if test="pjagrup != null">
+                PJAGRUP,
+            </if>
+            <if test="pjamodu != null">
+                PJAMODU,
+            </if>
+            <if test="pjauser != null">
+                PJAUSER,
+            </if>
+            <if test="pja31 != null">
+                PJA31,
+            </if>
+            <if test="pja32 != null">
+                PJA32,
+            </if>
+            <if test="pja33 != null">
+                PJA33,
+            </if>
+            <if test="pja34 != null">
+                PJA34,
+            </if>
+            <if test="pjaud01 != null">
+                PJAUD01,
+            </if>
+            <if test="pjaud02 != null">
+                PJAUD02,
+            </if>
+            <if test="pjaud03 != null">
+                PJAUD03,
+            </if>
+            <if test="pjaud04 != null">
+                PJAUD04,
+            </if>
+            <if test="pjaud05 != null">
+                PJAUD05,
+            </if>
+            <if test="pjaud06 != null">
+                PJAUD06,
+            </if>
+            <if test="pjaud07 != null">
+                PJAUD07,
+            </if>
+            <if test="pjaud08 != null">
+                PJAUD08,
+            </if>
+            <if test="pjaud09 != null">
+                PJAUD09,
+            </if>
+            <if test="pjaud10 != null">
+                PJAUD10,
+            </if>
+            <if test="pjaud11 != null">
+                PJAUD11,
+            </if>
+            <if test="pjaud12 != null">
+                PJAUD12,
+            </if>
+            <if test="pjaud13 != null">
+                PJAUD13,
+            </if>
+            <if test="pjaud14 != null">
+                PJAUD14,
+            </if>
+            <if test="pjaud15 != null">
+                PJAUD15,
+            </if>
+            <if test="pjaoriu != null">
+                PJAORIU,
+            </if>
+            <if test="pjaorig != null">
+                PJAORIG,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pja02 != null">
+                #{pja02,jdbcType=VARCHAR},
+            </if>
+            <if test="pja03 != null">
+                #{pja03,jdbcType=VARCHAR},
+            </if>
+            <if test="pja04 != null">
+                #{pja04,jdbcType=VARCHAR},
+            </if>
+            <if test="pja05 != null">
+                #{pja05,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja06 != null">
+                #{pja06,jdbcType=VARCHAR},
+            </if>
+            <if test="pja07 != null">
+                #{pja07,jdbcType=VARCHAR},
+            </if>
+            <if test="pja08 != null">
+                #{pja08,jdbcType=VARCHAR},
+            </if>
+            <if test="pja09 != null">
+                #{pja09,jdbcType=VARCHAR},
+            </if>
+            <if test="pja091 != null">
+                #{pja091,jdbcType=VARCHAR},
+            </if>
+            <if test="pja092 != null">
+                #{pja092,jdbcType=VARCHAR},
+            </if>
+            <if test="pja093 != null">
+                #{pja093,jdbcType=VARCHAR},
+            </if>
+            <if test="pja094 != null">
+                #{pja094,jdbcType=VARCHAR},
+            </if>
+            <if test="pja10 != null">
+                #{pja10,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja11 != null">
+                #{pja11,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja12 != null">
+                #{pja12,jdbcType=VARCHAR},
+            </if>
+            <if test="pja13 != null">
+                #{pja13,jdbcType=DECIMAL},
+            </if>
+            <if test="pja14 != null">
+                #{pja14,jdbcType=VARCHAR},
+            </if>
+            <if test="pja15 != null">
+                #{pja15,jdbcType=DECIMAL},
+            </if>
+            <if test="pja16 != null">
+                #{pja16,jdbcType=DECIMAL},
+            </if>
+            <if test="pja17 != null">
+                #{pja17,jdbcType=VARCHAR},
+            </if>
+            <if test="pja18 != null">
+                #{pja18,jdbcType=VARCHAR},
+            </if>
+            <if test="pja19 != null">
+                #{pja19,jdbcType=VARCHAR},
+            </if>
+            <if test="pja20 != null">
+                #{pja20,jdbcType=VARCHAR},
+            </if>
+            <if test="pja21 != null">
+                #{pja21,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja22 != null">
+                #{pja22,jdbcType=DECIMAL},
+            </if>
+            <if test="pja23 != null">
+                #{pja23,jdbcType=DECIMAL},
+            </if>
+            <if test="pja24 != null">
+                #{pja24,jdbcType=DECIMAL},
+            </if>
+            <if test="pja25 != null">
+                #{pja25,jdbcType=VARCHAR},
+            </if>
+            <if test="pja26 != null">
+                #{pja26,jdbcType=VARCHAR},
+            </if>
+            <if test="pja27 != null">
+                #{pja27,jdbcType=VARCHAR},
+            </if>
+            <if test="pja28 != null">
+                #{pja28,jdbcType=VARCHAR},
+            </if>
+            <if test="pja29 != null">
+                #{pja29,jdbcType=VARCHAR},
+            </if>
+            <if test="pja30 != null">
+                #{pja30,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaacti != null">
+                #{pjaacti,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaclose != null">
+                #{pjaclose,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaconf != null">
+                #{pjaconf,jdbcType=VARCHAR},
+            </if>
+            <if test="pjadate != null">
+                #{pjadate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjagrup != null">
+                #{pjagrup,jdbcType=VARCHAR},
+            </if>
+            <if test="pjamodu != null">
+                #{pjamodu,jdbcType=VARCHAR},
+            </if>
+            <if test="pjauser != null">
+                #{pjauser,jdbcType=VARCHAR},
+            </if>
+            <if test="pja31 != null">
+                #{pja31,jdbcType=VARCHAR},
+            </if>
+            <if test="pja32 != null">
+                #{pja32,jdbcType=DECIMAL},
+            </if>
+            <if test="pja33 != null">
+                #{pja33,jdbcType=DECIMAL},
+            </if>
+            <if test="pja34 != null">
+                #{pja34,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud01 != null">
+                #{pjaud01,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud02 != null">
+                #{pjaud02,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud03 != null">
+                #{pjaud03,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud04 != null">
+                #{pjaud04,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud05 != null">
+                #{pjaud05,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud06 != null">
+                #{pjaud06,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud07 != null">
+                #{pjaud07,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud08 != null">
+                #{pjaud08,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud09 != null">
+                #{pjaud09,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud10 != null">
+                #{pjaud10,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud11 != null">
+                #{pjaud11,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud12 != null">
+                #{pjaud12,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud13 != null">
+                #{pjaud13,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjaud14 != null">
+                #{pjaud14,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjaud15 != null">
+                #{pjaud15,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjaoriu != null">
+                #{pjaoriu,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaorig != null">
+                #{pjaorig,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.PjaFile">
+        update PJA_FILE
+        <set>
+            <if test="pja02 != null">
+                PJA02 = #{pja02,jdbcType=VARCHAR},
+            </if>
+            <if test="pja03 != null">
+                PJA03 = #{pja03,jdbcType=VARCHAR},
+            </if>
+            <if test="pja04 != null">
+                PJA04 = #{pja04,jdbcType=VARCHAR},
+            </if>
+            <if test="pja05 != null">
+                PJA05 = #{pja05,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja06 != null">
+                PJA06 = #{pja06,jdbcType=VARCHAR},
+            </if>
+            <if test="pja07 != null">
+                PJA07 = #{pja07,jdbcType=VARCHAR},
+            </if>
+            <if test="pja08 != null">
+                PJA08 = #{pja08,jdbcType=VARCHAR},
+            </if>
+            <if test="pja09 != null">
+                PJA09 = #{pja09,jdbcType=VARCHAR},
+            </if>
+            <if test="pja091 != null">
+                PJA091 = #{pja091,jdbcType=VARCHAR},
+            </if>
+            <if test="pja092 != null">
+                PJA092 = #{pja092,jdbcType=VARCHAR},
+            </if>
+            <if test="pja093 != null">
+                PJA093 = #{pja093,jdbcType=VARCHAR},
+            </if>
+            <if test="pja094 != null">
+                PJA094 = #{pja094,jdbcType=VARCHAR},
+            </if>
+            <if test="pja10 != null">
+                PJA10 = #{pja10,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja11 != null">
+                PJA11 = #{pja11,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja12 != null">
+                PJA12 = #{pja12,jdbcType=VARCHAR},
+            </if>
+            <if test="pja13 != null">
+                PJA13 = #{pja13,jdbcType=DECIMAL},
+            </if>
+            <if test="pja14 != null">
+                PJA14 = #{pja14,jdbcType=VARCHAR},
+            </if>
+            <if test="pja15 != null">
+                PJA15 = #{pja15,jdbcType=DECIMAL},
+            </if>
+            <if test="pja16 != null">
+                PJA16 = #{pja16,jdbcType=DECIMAL},
+            </if>
+            <if test="pja17 != null">
+                PJA17 = #{pja17,jdbcType=VARCHAR},
+            </if>
+            <if test="pja18 != null">
+                PJA18 = #{pja18,jdbcType=VARCHAR},
+            </if>
+            <if test="pja19 != null">
+                PJA19 = #{pja19,jdbcType=VARCHAR},
+            </if>
+            <if test="pja20 != null">
+                PJA20 = #{pja20,jdbcType=VARCHAR},
+            </if>
+            <if test="pja21 != null">
+                PJA21 = #{pja21,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pja22 != null">
+                PJA22 = #{pja22,jdbcType=DECIMAL},
+            </if>
+            <if test="pja23 != null">
+                PJA23 = #{pja23,jdbcType=DECIMAL},
+            </if>
+            <if test="pja24 != null">
+                PJA24 = #{pja24,jdbcType=DECIMAL},
+            </if>
+            <if test="pja25 != null">
+                PJA25 = #{pja25,jdbcType=VARCHAR},
+            </if>
+            <if test="pja26 != null">
+                PJA26 = #{pja26,jdbcType=VARCHAR},
+            </if>
+            <if test="pja27 != null">
+                PJA27 = #{pja27,jdbcType=VARCHAR},
+            </if>
+            <if test="pja28 != null">
+                PJA28 = #{pja28,jdbcType=VARCHAR},
+            </if>
+            <if test="pja29 != null">
+                PJA29 = #{pja29,jdbcType=VARCHAR},
+            </if>
+            <if test="pja30 != null">
+                PJA30 = #{pja30,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaacti != null">
+                PJAACTI = #{pjaacti,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaclose != null">
+                PJACLOSE = #{pjaclose,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaconf != null">
+                PJACONF = #{pjaconf,jdbcType=VARCHAR},
+            </if>
+            <if test="pjadate != null">
+                PJADATE = #{pjadate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjagrup != null">
+                PJAGRUP = #{pjagrup,jdbcType=VARCHAR},
+            </if>
+            <if test="pjamodu != null">
+                PJAMODU = #{pjamodu,jdbcType=VARCHAR},
+            </if>
+            <if test="pjauser != null">
+                PJAUSER = #{pjauser,jdbcType=VARCHAR},
+            </if>
+            <if test="pja31 != null">
+                PJA31 = #{pja31,jdbcType=VARCHAR},
+            </if>
+            <if test="pja32 != null">
+                PJA32 = #{pja32,jdbcType=DECIMAL},
+            </if>
+            <if test="pja33 != null">
+                PJA33 = #{pja33,jdbcType=DECIMAL},
+            </if>
+            <if test="pja34 != null">
+                PJA34 = #{pja34,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud01 != null">
+                PJAUD01 = #{pjaud01,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud02 != null">
+                PJAUD02 = #{pjaud02,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud03 != null">
+                PJAUD03 = #{pjaud03,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud04 != null">
+                PJAUD04 = #{pjaud04,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud05 != null">
+                PJAUD05 = #{pjaud05,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud06 != null">
+                PJAUD06 = #{pjaud06,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaud07 != null">
+                PJAUD07 = #{pjaud07,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud08 != null">
+                PJAUD08 = #{pjaud08,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud09 != null">
+                PJAUD09 = #{pjaud09,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud10 != null">
+                PJAUD10 = #{pjaud10,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud11 != null">
+                PJAUD11 = #{pjaud11,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud12 != null">
+                PJAUD12 = #{pjaud12,jdbcType=DECIMAL},
+            </if>
+            <if test="pjaud13 != null">
+                PJAUD13 = #{pjaud13,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjaud14 != null">
+                PJAUD14 = #{pjaud14,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjaud15 != null">
+                PJAUD15 = #{pjaud15,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pjaoriu != null">
+                PJAORIU = #{pjaoriu,jdbcType=VARCHAR},
+            </if>
+            <if test="pjaorig != null">
+                PJAORIG = #{pjaorig,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where PJA01 = #{pja01,jdbcType=VARCHAR}
+    </update>
+    <select id="searchPjaList" resultType="com.keboda.eomsback.system.pojo.PjaFile">
+        select pja01,pja02
+        from ${centre}.pja_file
+        <where>
+                ROWNUM &lt; 20
+            <if test="code_1 != null and code != ''">
+                and ( lower(pja01) like lower('%${code_1}%') or lower(pja02) like lower('%${code_1}%') )
+            </if>
+            <if test="code_2 != null and code_2 != ''">
+                and PJACONF = #{code_2}
+            </if>
+            <if test="code_3 != null and code_3 != '' ">
+                and pjaacti = #{code_3}
+            </if>
+        </where>
+    </select>
+    <select id="searchPjaByKey" resultType="com.keboda.eomsback.system.pojo.PjaFile">
+        select pja01,pja02
+        from ${centre}.pja_file
+        <where>
+            pja01 = #{code_1}
+            <if test="code_2 != null and code_2 != ''">
+                and PJACONF = #{code_2}
+            </if>
+            <if test="code_3 != null and code_3 != '' ">
+                and pjaacti = #{code_3}
+            </if>
+        </where>
+    </select>
+</mapper>

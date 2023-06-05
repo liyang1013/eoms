@@ -8,4 +8,6 @@ import java.util.List;
 public interface GemFileMapper {
 
     List<GemFile> searchGemList(SearchVo searchVo);
+
+    GemFile searchGemByKey(SearchVo searchVo);
 }

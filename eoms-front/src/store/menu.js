@@ -135,13 +135,6 @@ export const menu = [
                 children: []
             }
         ]
-    },
-    {
-        path: 'chatgpt',
-        name: 'ChatGPT',
-        icon: 'el-icon-chat-line-square',
-        component: () => import('@/views/lab/ChatGPTView'),
-        children: []
     }
 ]
 

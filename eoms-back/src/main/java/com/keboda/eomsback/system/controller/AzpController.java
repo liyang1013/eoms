@@ -14,8 +14,13 @@ public class AzpController {
     @Autowired
     private IAzpService iAzpService;
 
-    @GetMapping("/getAllCentre")
-    public BaseResult getAllCentre(){
-        return BaseResult.success(iAzpService.getAllCentre());
+    @GetMapping("/searchAzpList")
+    public BaseResult searchAzpList(String azp01){
+        return BaseResult.success(iAzpService.searchAzpList(azp01));
+    }
+
+    @GetMapping("/searchAzpByKey")
+    public BaseResult searchAzpByKey(String azp01){
+        return BaseResult.success(iAzpService.searchAzpByKey(azp01));
     }
 }

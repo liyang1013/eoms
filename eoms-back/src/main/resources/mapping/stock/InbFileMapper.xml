@@ -661,9 +661,26 @@
     where INB01 = #{inb01,jdbcType=VARCHAR}
       and INB03 = #{inb03,jdbcType=DECIMAL}
   </update>
-    <select id="searchInbList" resultType="com.keboda.eomsback.stock.pojo.InbFile">
-        select *
+  <update id="alterAzf">
+      update ${centre}.inb_file
+      set inb15 = #{inb15}
+      where inb01 = #{inb01} and inb03 = #{inb03}
+  </update>
+  <update id="alterPja">
+    update ${centre}.inb_file
+    set inb41 = #{ina06}
+    where inb01 = #{ina01}
+  </update>
+  <update id="alterPjb">
+    update ${centre}.inb_file
+    set inb42 = #{inb42}
+    where inb01 = #{inb01} and inb03 = #{inb03}
+  </update>
+  <select id="searchInbList" resultType="com.keboda.eomsback.stock.pojo.InbFile">
+        select inb01,inb03,inb04,inb05,inb15,inb16,inb08,inb09,inbplant centre ,imd02,ima02,ima021,inb41,inb42
         from ${centre}.inb_file
+        left join ${centre}.imd_file on imd01 = inb05
+        left join ${centre}.ima_file on ima01 = inb04
         where inb01 = #{code_1}
         order by inb03
     </select>

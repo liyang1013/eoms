@@ -67,5 +67,17 @@ export default {
   color: #2c3e50;
   background-color: rgb(240 242 245);
   height: 100vh;
+  .main-container {
+    background-color: rgb(240 242 245);
+    .box-card {
+      padding: 0;
+      .content {
+        width: 100%;
+        height: calc(100vh - 120px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
+  }
 }
 </style>

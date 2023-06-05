@@ -12,4 +12,6 @@ public interface InaFileMapper {
     Page<InaFile> searchInaListPageHelper(SearchVo searchVo);
 
     void alterGem(InaFile inaFile);
+
+    void alterPja(InaFile inaFile);
 }

@@ -686,8 +686,13 @@
     set ina04 = #{ina04}
     where ina01 = #{ina01}
   </update>
-  <select id="searchInaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
-    select ina00,ina01,ina02,ina03,ina04,ina06,inaconf,inapost,inaplant
+    <update id="alterPja">
+      update ${centre}.ina_file
+      set ina06 = #{ina06}
+      where ina01 = #{ina01}
+    </update>
+    <select id="searchInaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
+    select ina00,ina01,ina02,ina03,ina04,ina06,inaconf,inapost,inaplant as centre
     from ${centre}.ina_file
     <where>
       <if test="code_1 != null and code_1 != '' ">

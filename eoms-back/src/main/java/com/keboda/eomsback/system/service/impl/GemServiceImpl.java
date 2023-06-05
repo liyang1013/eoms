@@ -19,4 +19,9 @@ public class GemServiceImpl implements IGemService {
     public List<GemFile> searchGemList(SearchVo searchVo) {
         return gemFileMapper.searchGemList(searchVo);
     }
+
+    @Override
+    public GemFile searchGemByKey(SearchVo searchVo) {
+        return gemFileMapper.searchGemByKey(searchVo);
+    }
 }

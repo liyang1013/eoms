@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface IAzpService {
 
-    List<AzpFile> getAllCentre();
+    List<AzpFile> searchAzpList(String azp01);
+
+    AzpFile searchAzpByKey(String azp01);
 }

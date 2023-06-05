@@ -17,4 +17,19 @@
         set tlf19 = #{tlf19}
         where tlf026 = #{code} or tlf036 = #{code}
     </update>
+    <update id="alterAzf">
+        update ${centre}.tlf_file
+        set tlf14 = #{tlf14}
+        where ( tlf026 = #{code} or tlf036 = #{code} ) and tlf037 = #{tlf037}
+    </update>
+    <update id="alterPja">
+        update ${centre}.tlf_file
+        set tlf20 = #{tlf20}
+        where  tlf026 = #{code} or tlf036 = #{code}
+    </update>
+    <update id="alterPjb">
+        update ${centre}.tlf_file
+        set tlf41 = #{tlf41}
+        where  ( tlf026 = #{code} or tlf036 = #{code} ) and tlf037 = #{tlf037}
+    </update>
 </mapper>

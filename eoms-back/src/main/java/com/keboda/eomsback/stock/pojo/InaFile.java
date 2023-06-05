@@ -3,6 +3,8 @@ package com.keboda.eomsback.stock.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -10,7 +12,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class InaFile implements Serializable {
+public class InaFile extends CommonField implements Serializable {
     private String ina01;
 
     private String ina00;
@@ -160,8 +162,6 @@ public class InaFile implements Serializable {
     private String inaorig;
 
     private String ina13;
-
-    private String centre;
 
     private static final long serialVersionUID = 1L;
 }

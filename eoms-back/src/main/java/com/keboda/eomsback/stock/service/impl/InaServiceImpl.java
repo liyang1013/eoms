@@ -41,4 +41,26 @@ public class InaServiceImpl implements IInaService {
     public List<InbFile> searchInbList(SearchVo searchVo) {
         return inbFileMapper.searchInbList(searchVo);
     }
+
+    @Override
+    @Transactional
+    public void alterAzf(InbFile inbFile) {
+        inbFileMapper.alterAzf(inbFile);
+        tlfFileMapper.alterAzf(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(),inbFile.getInb15());
+    }
+
+    @Override
+    @Transactional
+    public void alterPja(InaFile inaFile) {
+        inaFileMapper.alterPja(inaFile);
+        inbFileMapper.alterPja(inaFile);
+        tlfFileMapper.alterPja(inaFile.getCentre(),inaFile.getIna01(),inaFile.getIna06());
+    }
+
+    @Override
+    @Transactional
+    public void alterPjb(InbFile inbFile) {
+        inbFileMapper.alterPjb(inbFile);
+        tlfFileMapper.alterPjb(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(),inbFile.getInb42());
+    }
 }
