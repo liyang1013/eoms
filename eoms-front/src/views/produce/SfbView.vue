@@ -1,36 +1,23 @@
 <template>
   <div>
     <el-form ref="form" :model="sfb" :inline="true" class="demo-form-inline">
-      <el-form-item label="中心：">
-        <selectedCentre v-model="sfb.centre"></selectedCentre>
+      <el-form-item label="中心:">
+        <selectedCentre v-model="sfb.centre" key="sfb"></selectedCentre>
       </el-form-item>
-      <el-form-item label="工单号：">
+      <el-form-item label="工单号:">
         <el-input v-model="sfb.code_1" style="width: 160px;"></el-input>
       </el-form-item>
-      <el-form-item label="开单日期:">
-        <el-date-picker type="date" placeholder="选择日期" v-model="sfb.startdate" value-format="yyyy-MM-dd"
-                        style="width: 140px;"></el-date-picker>
-        <span> - </span>
-        <el-date-picker type="date" placeholder="选择日期" v-model="sfb.enddate" value-format="yyyy-MM-dd"
-                        style="width: 140px;"></el-date-picker>
+      <el-form-item label="日期修正:">
+        <el-date-picker type="date" placeholder="选择日期" v-model="temp.ddate" value-format="yyyy-MM-dd" style="width: 140px;"></el-date-picker>
+        &nbsp;&nbsp;
+        <el-switch v-model="temp.flag" active-text="改大" inactive-text="改小"></el-switch>
       </el-form-item>
       <el-form-item style="float:right;">
-        <el-button  type="primary" @click="searchSfb()" round>查询</el-button>
-      </el-form-item>
-      <br>
-      <el-form-item label="日期修正：">
-        <el-date-picker type="date" placeholder="选择日期" v-model="temp.ddate" value-format="yyyy-MM-dd"
-                        style="width: 140px;"></el-date-picker>
-        &nbsp&nbsp
-
-        <el-switch v-model="temp.flag" active-text="改大" inactive-text="改小"></el-switch>
-
         <el-button type="danger" @click="modifyDate()" round style="margin-left: 10px;"
                    :loading="modifyLoad">修改
         </el-button>
-      </el-form-item>
-      <el-form-item>
         <el-button  type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
+        <el-button  type="primary" @click="searchSfb()" round>查询</el-button>
       </el-form-item>
     </el-form>
 
@@ -67,8 +54,6 @@ export default {
       sfb: {
         centre: 'WCTZ',
         code_1: '',
-        startdate: null,
-        enddate: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,

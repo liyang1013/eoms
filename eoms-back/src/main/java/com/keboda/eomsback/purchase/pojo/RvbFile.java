@@ -167,11 +167,5 @@ public class RvbFile extends RvbFileKey implements Serializable {
 
     private String rvb919;
 
-    /**
-     * 料件规格
-     */
-    private String ima021;
-
-
     private static final long serialVersionUID = 1L;
 }

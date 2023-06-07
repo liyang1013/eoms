@@ -5,16 +5,10 @@
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
-        <selectedCentre v-model="rva.centre"></selectedCentre>
+        <selectedCentre v-model="rva.centre" key="rva"></selectedCentre>
       </el-form-item>
       <el-form-item label="收货单号:">
         <el-input v-model="rva.code_1" placeholder="收货单号" clearable></el-input>
-      </el-form-item>
-      <el-form-item label="采购单号:">
-        <el-input v-model="rva.code_2" placeholder="采购单号" clearable></el-input>
-      </el-form-item>
-      <el-form-item label="供应商:">
-        <el-input v-model="rva.pmc" placeholder="供应商编码/简称" clearable></el-input>
       </el-form-item>
     </el-form>
     <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300" type="success" :closable="false">
@@ -83,9 +77,6 @@
         <el-form-item label="审核状态:">
           <selectedConf v-model="rvab.rva.rvaconf" :key="rvab.rva.rva01" @change="alterRva"></selectedConf>
         </el-form-item>
-        <el-form-item>
-          <el-button type="primary" icon="el-icon-refresh-right" round @click="resetrva">刷新</el-button>
-        </el-form-item>
       </el-form>
       <el-table :data="rvab.rvbList" border max-height="300px">
         <el-table-column prop="rvb02" label="项次" width="60"></el-table-column>
@@ -124,8 +115,6 @@ export default {
     return {
       rva: {
         code_1: null,
-        code_2: null,
-        pmc: null,
         centre: 'WCTZ',
         currentPage: 1,
         sizes: [20, 50, 100, 500],
@@ -158,26 +147,12 @@ export default {
     searchRvbList(row) {
       this.dialogTableVisible = true;
       this.rvab.rva = {...row};
-      this.$http.post('/api/rva/searchRvbList', {code_1: row.rva01, centre: row.rvaplant}).then(res => {
+      this.$http.post('/api/rva/searchRvbList', {code_1: row.rva01, centre: row.centre}).then(res => {
         this.rvab.rvbList = res.data.result;
       })
     },
-    resetrva() {
-      // this.rvaList.find(e => {
-      //   if (e.rva01 === this.rvab.rva.rva01) {
-      //     this.rvab.rva = {...e}
-      //     return
-      //   }
-      // })
-      this.$http.post('/api/rva/searchRvbList', {
-        code_1: this.rvab.rva.rva01,
-        centre: this.rvab.rva.rvaplant
-      }).then(res => {
-        this.rvab.rvbList = res.data.result
-      })
-    },
     alterRva(val) {
-      this.$http.post('/api/rva/alterRva', {rva01: this.rvab.rva.rva01, rvaplant: this.rvab.rva.rvaplant, rvaconf: val})
+      this.$http.post('/api/rva/alterRva', {rva01: this.rvab.rva.rva01, centre: this.rvab.rva.centre, rvaconf: val})
     },
     alterRvb() {
       this.$http.post('/api/rva/alterRvb', this.rvab.rvbList)

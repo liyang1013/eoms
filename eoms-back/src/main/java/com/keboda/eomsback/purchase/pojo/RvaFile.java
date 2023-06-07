@@ -3,6 +3,8 @@ package com.keboda.eomsback.purchase.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -10,7 +12,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class RvaFile implements Serializable {
+public class RvaFile extends CommonField implements Serializable {
     private String rva01;
 
     private String rva02;
@@ -146,16 +148,6 @@ public class RvaFile implements Serializable {
     private String rvacont;
 
     private String rva34;
-
-    /**
-     * 供应商
-     */
-    private String pmc03;
-
-    /**
-     * 人员
-     */
-    private String gen02;
 
     private static final long serialVersionUID = 1L;
 }

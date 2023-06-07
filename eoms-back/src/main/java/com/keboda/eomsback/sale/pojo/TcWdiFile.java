@@ -2,6 +2,8 @@ package com.keboda.eomsback.sale.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -9,7 +11,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class TcWdiFile implements Serializable {
+public class TcWdiFile extends CommonField implements Serializable {
     private String cdanhao;
 
     private Date tcWdi20;

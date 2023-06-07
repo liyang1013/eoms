@@ -1,6 +1,8 @@
 package com.keboda.eomsback.purchase.pojo;
 
 import java.io.Serializable;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -8,7 +10,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class RvbFileKey implements Serializable {
+public class RvbFileKey extends CommonField implements Serializable {
     private String rvb01;
 
     private Integer rvb02;

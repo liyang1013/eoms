@@ -18,9 +18,16 @@
       <el-table-column prop="cdanhao" label="出库单号" width="160"></el-table-column>
       <el-table-column prop="tcWdi20" label="制单日期" width="120"></el-table-column>
       <el-table-column prop="tcWdi21" label="制单人" width="120"></el-table-column>
-      <el-table-column prop="tcWdi53" label="拣货方式" width="120"></el-table-column>
-      <el-table-column prop="tcWdi200" label="状态" width="120"></el-table-column>
-      <el-table-column prop="tcWdi54" label="拣货状态" width="120"></el-table-column>
+      <el-table-column prop="tcWdi53" label="拣货方式" width="120">
+        <template slot-scope="scope">
+          {{scope.row.tcWdi53 | pickType}}
+        </template>
+      </el-table-column>
+      <el-table-column prop="tcWdi54" label="拣货状态" width="120">
+        <template slot-scope="scope">
+          {{scope.row.tcWdi54 | formatWdi54}}
+        </template>
+      </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">
           <el-button @click="searchWdjList(scope.row)" type="text">查看</el-button>
@@ -35,23 +42,22 @@
     <!-- 收货单明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1000px">
       <el-table :data="wdjList" border max-height="300px">
-        <el-table-column prop="rvb02" label="项次" width="60"></el-table-column>
-        <el-table-column prop="rvb04" label="出库单号" width="120"></el-table-column>
-        <el-table-column prop="rvb05" label="制单日期" width="120"></el-table-column>
-        <el-table-column prop="rvb051" label="制单人" width="200"></el-table-column>
-        <el-table-column prop="ima021" label="客户编码" width="240"></el-table-column>
-        <el-table-column prop="rvb07" label="客户简称" width="160"></el-table-column>
-        <el-table-column prop="rvb30" label="仓库" width="90"></el-table-column>
-        <el-table-column prop="rvb90" label="任务数" width="90"></el-table-column>
-        <el-table-column prop="rvb10t" label="出库数" width="120"></el-table-column>
-        <el-table-column prop="rvb88t" label="待出库数量" width="120"></el-table-column>
-        <el-table-column prop="rvb10t" label="状态" width="120"></el-table-column>
-        <el-table-column prop="rvb88t" label="拣货状态" width="120"></el-table-column>
+        <el-table-column prop="cbarcodeno" label="栈板码" width="120"></el-table-column>
+        <el-table-column prop="cproduceno" label="品号" width="120"></el-table-column>
+        <el-table-column prop="cwhcode" label="仓库" width="120"></el-table-column>
+        <el-table-column prop="chuojiano" label="库位" width="120"></el-table-column>
+        <el-table-column prop="iqty" label="数量" width="160"></el-table-column>
+        <el-table-column prop="ickqty" label="出库数量" width="160"></el-table-column>
+        <el-table-column prop="fickqty" label="flux出库数量" width="160"></el-table-column>
+        <el-table-column prop="cdc" label="生产日期" width="120"></el-table-column>
+        <el-table-column prop="tcWdj21" label="操作人" width="120"></el-table-column>
+        <el-table-column prop="tcWdj20" label="操作时间" width="120"></el-table-column>
+        <el-table-column fixed="right" label="操作" width="90">
+          <template slot-scope="scope">
+            <el-button @click="repair(scope.row)" type="text">修复</el-button>
+          </template>
+        </el-table-column>
       </el-table>
-      <el-divider></el-divider>
-      <div style="text-align: right;">
-        <el-button type="primary" round @click="alterRvb">保存</el-button>
-      </div>
     </el-dialog>
   </div>
 </template>
@@ -59,6 +65,7 @@
 <script>
 import selectedCentre from '@/components/selected/selected-centre.vue';
 import selectedConf from '@/components/selected/selected-conf.vue';
+import {pickType} from "@/filters/filters";
 
 export default {
   name: 'wdi',
@@ -93,21 +100,12 @@ export default {
     },
     searchWdjList(row) {
       this.dialogTableVisible = true;
-      this.rvab.rva = {...row};
-      this.$http.post('/api/wdi/searchWdjList', {code_1: row.rva01, centre: row.rvaplant}).then(res => {
-        this.rvab.rvbList = res.data.result;
+      this.$http.post('/api/wdi/searchWdjList', {code_1: row.cdanhao, centre: row.centre}).then(res => {
+        this.wdjList = res.data.result;
       })
     },
-    resetrva() {
-      this.$http.post('/api/rva/searchRvbList', {
-        code_1: this.rvab.rva.rva01,
-        centre: this.rvab.rva.rvaplant
-      }).then(res => {
-        this.rvab.rvbList = res.data.result
-      })
-    },
-    alterRvb() {
-      this.$http.post('/api/wdi/alterRvb', this.wdjList)
+    repair(row) {
+      this.$http.post('/api/wdi/repairWdj', row)
     },
     handleCurrentChange(val) {
       this.search(val);
@@ -122,17 +120,4 @@ export default {
 
 <style lang="scss" scoped>
 
-::v-deep .el-dialog {
-  .el-dialog__header {
-    padding: 5px !important;
-  }
-
-  .el-dialog__body {
-    padding: 15px 20px !important;
-  }
-
-  .el-divider {
-    margin: 10px 0 !important;
-  }
-}
 </style>

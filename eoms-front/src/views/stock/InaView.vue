@@ -5,7 +5,7 @@
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
-        <selectedCentre v-model="ina.centre" :key="ina"></selectedCentre>
+        <selectedCentre v-model="ina.centre" key="ina"></selectedCentre>
       </el-form-item>
       <el-form-item label="杂项单号:">
         <el-input v-model="ina.code_1" placeholder="单号" clearable></el-input>

@@ -93,10 +93,10 @@
     </trim>
   </insert>
   <select id="searchWdiListPageHelper" resultType="com.keboda.eomsback.sale.pojo.TcWdiFile">
-    select *
+    select cdanhao,tc_wdi20,tc_wdi21,nvl(tc_wdi53,0) tc_wdi53,nvl(tc_wdi54,0) tc_wdi54,#{centre} as centre
     from ${centre}.TC_WDI_FILE
     <where>
-      <if test="code != null and code_1 != '' ">
+      <if test="code_1 != null and code_1 != '' ">
         and CDANHAO like '%${code_1}%'
       </if>
     </where>

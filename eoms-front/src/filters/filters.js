@@ -123,3 +123,17 @@ export function formatPost(code){
     if(code === 'Y') return '过账';
     if(code === 'N') return '未过账'
 }
+
+export function pickType(code){
+    if(code === '0') return 'FIFO 拣货';
+    if(code === '1') return '指定托盘拣货';
+    if(code === '2') return '分批拣货';
+}
+
+export function formatWdi54(code){
+    if(code === '0') return '未下发';
+    if(code === '1') return 'WMS 已下发';
+    if(code === '2') return 'FLUX WMS 已分配';
+    if(code === '3') return '已出库';
+}
+

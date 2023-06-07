@@ -1,12 +1,12 @@
 <template>
   <div class="page">
-    <el-autocomplete placeholder="请输入工单单号" v-model="sfb01" :fetch-suggestions="querySearchAsync"
+    <el-autocomplete size="small" placeholder="请输入工单单号" v-model="sfb01" :fetch-suggestions="querySearchAsync"
                      @select="handleSelect">
       <template slot-scope="{ item }">
         <span style="float: left">{{ item.sfb01 }}</span>
         <span style="float: right; color: #8492a6; font-size: 13px">{{ item.ima02 }}</span>
       </template>
-      <selectedCentre v-model="centre" slot="prepend" class="centre_select"></selectedCentre>
+      <selectedCentre v-model="centre" slot="prepend" class="centre_select" key="produce"></selectedCentre>
       <el-button slot="append" icon="el-icon-search" @click="search" :loading="search_loading">搜索</el-button>
     </el-autocomplete>
 
@@ -120,7 +120,6 @@ export default {
       this.search_loading = true;
       this.$http.get('/api/sfb/sfbProcess?sfb01=' + this.sfb01 + '&centre=' + this.centre)
           .then(res => this.product = res.data.status === 200 ? res.data.result : []).finally(() => this.search_loading = false)
-
     },
     handleSelect(val) {
       this.sfb01 = val.sfb01;
@@ -131,7 +130,6 @@ export default {
         this.$http.get('/api/sfb/sfb01Arr?queryStr=' + queryStr + '&centre=' + this.centre).then(res => cb(res.data.result))
       }
     }
-
   }
 }
 </script>
