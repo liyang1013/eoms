@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.GfeFileMapper">
+  <insert id="insertSelective" keyColumn="GFE01" keyProperty="gfe01" parameterType="com.keboda.eomsback.system.pojo.GfeFile" useGeneratedKeys="true">
+    insert into GFE_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gfe02 != null">
+        GFE02,
+      </if>
+      <if test="gfe03 != null">
+        GFE03,
+      </if>
+      <if test="gfeacti != null">
+        GFEACTI,
+      </if>
+      <if test="gfeuser != null">
+        GFEUSER,
+      </if>
+      <if test="gfegrup != null">
+        GFEGRUP,
+      </if>
+      <if test="gfemodu != null">
+        GFEMODU,
+      </if>
+      <if test="gfedate != null">
+        GFEDATE,
+      </if>
+      <if test="gfepos != null">
+        GFEPOS,
+      </if>
+      <if test="gfeorig != null">
+        GFEORIG,
+      </if>
+      <if test="gfeoriu != null">
+        GFEORIU,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gfe02 != null">
+        #{gfe02,jdbcType=VARCHAR},
+      </if>
+      <if test="gfe03 != null">
+        #{gfe03,jdbcType=DECIMAL},
+      </if>
+      <if test="gfeacti != null">
+        #{gfeacti,jdbcType=VARCHAR},
+      </if>
+      <if test="gfeuser != null">
+        #{gfeuser,jdbcType=VARCHAR},
+      </if>
+      <if test="gfegrup != null">
+        #{gfegrup,jdbcType=VARCHAR},
+      </if>
+      <if test="gfemodu != null">
+        #{gfemodu,jdbcType=VARCHAR},
+      </if>
+      <if test="gfedate != null">
+        #{gfedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gfepos != null">
+        #{gfepos,jdbcType=VARCHAR},
+      </if>
+      <if test="gfeorig != null">
+        #{gfeorig,jdbcType=VARCHAR},
+      </if>
+      <if test="gfeoriu != null">
+        #{gfeoriu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.GfeFile">
+    update GFE_FILE
+    <set>
+      <if test="gfe02 != null">
+        GFE02 = #{gfe02,jdbcType=VARCHAR},
+      </if>
+      <if test="gfe03 != null">
+        GFE03 = #{gfe03,jdbcType=DECIMAL},
+      </if>
+      <if test="gfeacti != null">
+        GFEACTI = #{gfeacti,jdbcType=VARCHAR},
+      </if>
+      <if test="gfeuser != null">
+        GFEUSER = #{gfeuser,jdbcType=VARCHAR},
+      </if>
+      <if test="gfegrup != null">
+        GFEGRUP = #{gfegrup,jdbcType=VARCHAR},
+      </if>
+      <if test="gfemodu != null">
+        GFEMODU = #{gfemodu,jdbcType=VARCHAR},
+      </if>
+      <if test="gfedate != null">
+        GFEDATE = #{gfedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gfepos != null">
+        GFEPOS = #{gfepos,jdbcType=VARCHAR},
+      </if>
+      <if test="gfeorig != null">
+        GFEORIG = #{gfeorig,jdbcType=VARCHAR},
+      </if>
+      <if test="gfeoriu != null">
+        GFEORIU = #{gfeoriu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where GFE01 = #{gfe01,jdbcType=VARCHAR}
+  </update>
+  <select id="searchGfeByKey" resultType="com.keboda.eomsback.system.pojo.GfeFile">
+      select gfe01,gfe02
+      from ${centre}.gfe_file
+      <where>
+          gfe01 = #{code_1}
+          <if test="code_2 != null and code_2 != '' ">
+              and gfeacti= #{code_2}
+          </if>
+      </where>
+  </select>
+  <select id="searchGfeList" resultType="com.keboda.eomsback.system.pojo.GfeFile">
+    select gfe01, gfe02
+    from ${centre}.gfe_file
+    <where>
+        <if test="code_1 != null and code_1 != '' ">
+          and lower(gfe01) like lower('%${code_1}%')
+        </if>
+      <if test="code_2 != null and code_2 != '' ">
+        and gfeacti= #{code_2}
+      </if>
+    </where>
+  </select>
+</mapper>

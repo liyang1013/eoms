@@ -17,7 +17,7 @@
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
-      <el-table-column prop="zx08" label="中心">
+      <el-table-column prop="zx08" label="最近中心">
       </el-table-column>
       <el-table-column prop="zx04" label="权限">
       </el-table-column>

@@ -5,7 +5,7 @@
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
-        <selectedCentre v-model="ima.centre"></selectedCentre>
+        <selectedCentre v-model="ima.centre" key="ima"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:">
         <selectedIma v-model="ima.code_1" :centre="ima.centre" ></selectedIma>
@@ -35,6 +35,13 @@
           {{ scope.row.ima1010 | formatSignoff }}
         </template>
       </el-table-column>
+
+      <el-table-column prop="ima25" label="单位" width="160">
+        <template slot-scope="scope">
+          <selected-gfe v-model="scope.row.ima25" :centre="scope.row.centre" :key="scope.row.ima01" @change="alterGfe($event,scope.row)"></selected-gfe>
+        </template>
+      </el-table-column>
+
       <el-table-column fixed="right" label="操作" width="90">
         <template>
           <el-button type="text">查看</el-button>
@@ -49,8 +56,9 @@
 </template>
 
 <script>
-import selectedCentre from '@/components/selected/selected-centre.vue';
-import selectedIma from "@/components/selected/selected-ima.vue";
+import selectedCentre from '@/components/selected/selected-centre';
+import selectedIma from "@/components/selected/selected-ima";
+import selectedGfe from "@/components/selected/selected-gfe";
 
 export default {
   name: 'ima',
@@ -70,7 +78,8 @@ export default {
   },
   components: {
     selectedCentre,
-    selectedIma
+    selectedIma,
+    selectedGfe
   },
   methods: {
     search(val) {
@@ -81,6 +90,9 @@ export default {
         this.ima.total = res.data.total;
       }).finally(() => this.table_loading = false);
 
+    },
+    alterGfe(gfe01,row){
+      this.$http.post('/api/ima/alterGfe',{ima01: row.ima01,ima25:gfe01,centre: row.centre})
     },
     handleCurrentChange(val) {
       this.search(val);

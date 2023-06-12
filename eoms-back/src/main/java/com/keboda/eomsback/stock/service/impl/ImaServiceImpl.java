@@ -178,4 +178,10 @@ public class ImaServiceImpl implements IImaService {
             }
         }
     }
+
+    @Override
+    @Transactional
+    public void alterGfe(ImaFile imaFile) {
+        imaFileMapper.alterGfe(imaFile);
+    }
 }

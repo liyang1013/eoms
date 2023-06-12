@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.keboda.eomsback.entity.CommonField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
  * @author
  */
 @Data
-public class ImaFile implements Serializable {
+public class ImaFile extends CommonField implements Serializable {
     private String ima01;
 
     private String ima02;

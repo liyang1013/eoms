@@ -21,4 +21,6 @@ public interface ImaFileMapper {
     ImaFile selectByKey(@Param("centre") String centre, @Param("ima01") String ima01);
 
     int updateByPrimaryKeySelective(ImaFile record);
+
+    void alterGfe(ImaFile imaFile);
 }

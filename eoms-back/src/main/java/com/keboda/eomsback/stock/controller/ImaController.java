@@ -7,6 +7,7 @@ import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.stock.service.IImaService;
 import com.keboda.eomsback.entity.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,5 +39,11 @@ public class ImaController {
     public BaseResult imaPackage( MultipartFile file, String centre) throws IOException {
         iImaService.imaPackage(file,centre);
         return BaseResult.success("产品包装批量维护成功");
+    }
+
+    @PostMapping("/alterGfe")
+    public BaseResult alterGfe(@RequestBody ImaFile imaFile){
+        iImaService.alterGfe(imaFile);
+        return BaseResult.success("修改单位成功");
     }
 }

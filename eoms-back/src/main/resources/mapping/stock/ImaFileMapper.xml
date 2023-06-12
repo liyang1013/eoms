@@ -16,7 +16,7 @@
         order by img01,img02
     </select>
     <select id="searchImaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.ImaFile">
-        select ima01,IMA02,ima021,ima08,ima1010,imz02
+        select ima01,IMA02,ima021,ima08,ima1010,imz02,#{centre} centre,ima25
         from ${centre}.ima_file
         left join ${centre}.imz_file on imz01 = ima06
         <where>
@@ -1258,5 +1258,16 @@
             </if>
         </set>
         where IMA01 = #{ima01,jdbcType=VARCHAR}
+    </update>
+    <update id="alterGfe">
+        update ${centre}.ima_file
+        set IMA25  = #{ima25},
+            IMA31  = #{ima25},
+            IMA44  = #{ima25},
+            IMA55  = #{ima25},
+            IMA63  = #{ima25},
+            IMA86  = #{ima25},
+            IMA908 = #{ima25}
+        where ima01 = #{ima01}
     </update>
 </mapper>
