@@ -1,4 +1,4 @@
-package com.keboda.eomsback.flux.timer;
+package com.keboda.eomsback.timer;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;

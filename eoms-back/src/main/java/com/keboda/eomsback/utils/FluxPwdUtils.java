@@ -10,9 +10,9 @@ public class FluxPwdUtils {
 
     private final static String username = "JX2302304";
 
-    private final static String password = "JX2302304";
+    private final static String password = "123";
 
-    private final static String passwordSalt = "ST1683688929627";
+    private final static String passwordSalt = "ST1686874190256";
 
     public static void MD5Signature() throws Exception{
 
@@ -61,5 +61,9 @@ public class FluxPwdUtils {
             newStrValue = new String(newStrValueChars);
         }
         return newStrValue;
+    }
+
+    public static void main(String[] args) throws Exception {
+        FluxPwdUtils.MD5Signature();
     }
 }

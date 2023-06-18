@@ -3,7 +3,7 @@ export const menu = [
         name: '首页',
         path: 'home',
         icon: 'el-icon-s-platform',
-        component: () => import('@/views/HomeView')
+        component: () => import('@/views/HomeView.vue')
     },
     {
         path: 'purchase',
@@ -12,10 +12,16 @@ export const menu = [
         component: null,
         children: [
             {
+                path: 'pmi',
+                name: '核价单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/purchase/PmiView')
+            },
+            {
                 path: 'rva',
                 name: '收货单',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/purchase/RvaView')
+                component: () => import('@/views/purchase/RvaView.vue')
             }
         ]
     },
@@ -29,14 +35,14 @@ export const menu = [
                 path: 'workOrder',
                 name: '工单日期查询',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/produce/ProduceView'),
+                component: () => import('@/views/produce/ProduceView.vue'),
                 children: []
             },
             {
                 path: 'workOrderEdit',
                 name: '工单',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/produce/SfbView'),
+                component: () => import('@/views/produce/SfbView.vue'),
                 children: []
             }
         ]
@@ -51,7 +57,7 @@ export const menu = [
                 path: 'wdi',
                 name: '拣货单',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/sale/WdiView'),
+                component: () => import('@/views/sale/WdiView.vue'),
                 children: []
             }
         ]
@@ -66,21 +72,21 @@ export const menu = [
                 path: 'ima',
                 name: '料件信息',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/ImaView'),
+                component: () => import('@/views/stock/ImaView.vue'),
                 children: []
             },
             {
                 path: 'currStock',
                 name: '现存量查询',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/ImgView'),
+                component: () => import('@/views/stock/ImgView.vue'),
                 children: []
             },
             {
                 path: 'ina',
                 name: '库存杂项异动',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/InaView'),
+                component: () => import('@/views/stock/InaView.vue'),
                 children: []
             }
         ]
@@ -95,7 +101,7 @@ export const menu = [
                 path: 'contacts',
                 name: '人员档案',
                 icon: 'el-icon-user-solid',
-                component: () => import('@/views/system/ZxView'),
+                component: () => import('@/views/system/ZxView.vue'),
                 children: []
             },
             {
@@ -109,7 +115,7 @@ export const menu = [
                 path: 'import',
                 name: '数据导入',
                 icon: 'el-icon-upload2',
-                component: () => import('@/views/system/ImportView'),
+                component: () => import('@/views/system/ImportView.vue'),
                 children: []
             }
         ]
@@ -124,14 +130,21 @@ export const menu = [
                 path: 'robotStates',
                 name: 'RCS小车状态',
                 icon: 'el-icon-truck',
-                component: () => import('@/views/flux/robotStatesView'),
+                component: () => import('@/views/flux/robotStatesView.vue'),
                 children: []
             },
             {
                 path: 'invTransfer',
                 name: 'WMS库存控制',
                 icon: 'el-icon-unlock',
-                component: () => import('@/views/flux/InvTransferView'),
+                component: () => import('@/views/flux/InvTransferView.vue'),
+                children: []
+            },
+            {
+                path: 'taskAnalysis',
+                name: 'WCS任务分析',
+                icon: 'el-icon-time',
+                component: () => import('@/views/flux/TaskAnalysis'),
                 children: []
             }
         ]

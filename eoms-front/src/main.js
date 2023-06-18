@@ -8,10 +8,12 @@ import './styles/index.scss'
 import http from './http/httpConfig'
 import * as globalFilter from './filters/filters'
 import '@/styles/base.scss'
+import VCharts from 'v-charts'
 
 Vue.prototype.$http = http
 Vue.config.productionTip = false
 Vue.use(ElementUI,{ size: 'mini'})
+Vue.use(VCharts)
 
 for (var key in globalFilter) {
   Vue.filter(key, globalFilter[key])

@@ -691,6 +691,10 @@
       set ina06 = #{ina06}
       where ina01 = #{ina01}
     </update>
+    <delete id="InvalidDocumentDelete">
+      delete ${centre}.ina_file
+      where  ina02 &lt;=sysdate  AND inaconf !='X' and ina01 not in (select  distinct inb01 from inb_file)
+    </delete>
     <select id="searchInaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
     select ina00,ina01,ina02,ina03,ina04,ina06,inaconf,inapost,inaplant as centre
     from ${centre}.ina_file

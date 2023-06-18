@@ -19,6 +19,10 @@
         </set>
         where sfp01 =#{sfp.sfp01}
     </update>
+    <delete id="InvalidDocumentDelete">
+        delete ${centre}.sfp_file
+        where  sfp02 &lt;= sysdate and sfpconf in ('N','Y') AND SFP04 ='N' and sfp01 not in (select  distinct SFS01 from SFS_FILE)
+    </delete>
 
     <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.SfpFile">
       select sfp01 , sfp02 ,  sfp03 , tlf06,case when tlf907 = 1 then '退料' else '发料' end as tlf907

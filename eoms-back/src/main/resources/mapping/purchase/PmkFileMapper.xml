@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmkFileMapper">
+  <insert id="insertSelective" keyColumn="PMK01" keyProperty="pmk01" parameterType="com.keboda.eomsback.purchase.pojo.PmkFile" useGeneratedKeys="true">
+    insert into PMK_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmk02 != null">
+        PMK02,
+      </if>
+      <if test="pmk03 != null">
+        PMK03,
+      </if>
+      <if test="pmk04 != null">
+        PMK04,
+      </if>
+      <if test="pmk05 != null">
+        PMK05,
+      </if>
+      <if test="pmk06 != null">
+        PMK06,
+      </if>
+      <if test="pmk07 != null">
+        PMK07,
+      </if>
+      <if test="pmk08 != null">
+        PMK08,
+      </if>
+      <if test="pmk09 != null">
+        PMK09,
+      </if>
+      <if test="pmk10 != null">
+        PMK10,
+      </if>
+      <if test="pmk11 != null">
+        PMK11,
+      </if>
+      <if test="pmk12 != null">
+        PMK12,
+      </if>
+      <if test="pmk13 != null">
+        PMK13,
+      </if>
+      <if test="pmk14 != null">
+        PMK14,
+      </if>
+      <if test="pmk15 != null">
+        PMK15,
+      </if>
+      <if test="pmk16 != null">
+        PMK16,
+      </if>
+      <if test="pmk17 != null">
+        PMK17,
+      </if>
+      <if test="pmk18 != null">
+        PMK18,
+      </if>
+      <if test="pmk20 != null">
+        PMK20,
+      </if>
+      <if test="pmk21 != null">
+        PMK21,
+      </if>
+      <if test="pmk22 != null">
+        PMK22,
+      </if>
+      <if test="pmk25 != null">
+        PMK25,
+      </if>
+      <if test="pmk26 != null">
+        PMK26,
+      </if>
+      <if test="pmk27 != null">
+        PMK27,
+      </if>
+      <if test="pmk28 != null">
+        PMK28,
+      </if>
+      <if test="pmk29 != null">
+        PMK29,
+      </if>
+      <if test="pmk30 != null">
+        PMK30,
+      </if>
+      <if test="pmk31 != null">
+        PMK31,
+      </if>
+      <if test="pmk32 != null">
+        PMK32,
+      </if>
+      <if test="pmk40 != null">
+        PMK40,
+      </if>
+      <if test="pmk401 != null">
+        PMK401,
+      </if>
+      <if test="pmk41 != null">
+        PMK41,
+      </if>
+      <if test="pmk42 != null">
+        PMK42,
+      </if>
+      <if test="pmk43 != null">
+        PMK43,
+      </if>
+      <if test="pmk45 != null">
+        PMK45,
+      </if>
+      <if test="pmkprsw != null">
+        PMKPRSW,
+      </if>
+      <if test="pmkprno != null">
+        PMKPRNO,
+      </if>
+      <if test="pmkprdt != null">
+        PMKPRDT,
+      </if>
+      <if test="pmkmksg != null">
+        PMKMKSG,
+      </if>
+      <if test="pmksign != null">
+        PMKSIGN,
+      </if>
+      <if test="pmkdays != null">
+        PMKDAYS,
+      </if>
+      <if test="pmkprit != null">
+        PMKPRIT,
+      </if>
+      <if test="pmksseq != null">
+        PMKSSEQ,
+      </if>
+      <if test="pmksmax != null">
+        PMKSMAX,
+      </if>
+      <if test="pmkacti != null">
+        PMKACTI,
+      </if>
+      <if test="pmkuser != null">
+        PMKUSER,
+      </if>
+      <if test="pmkgrup != null">
+        PMKGRUP,
+      </if>
+      <if test="pmkmodu != null">
+        PMKMODU,
+      </if>
+      <if test="pmkdate != null">
+        PMKDATE,
+      </if>
+      <if test="pmkud01 != null">
+        PMKUD01,
+      </if>
+      <if test="pmkud02 != null">
+        PMKUD02,
+      </if>
+      <if test="pmkud03 != null">
+        PMKUD03,
+      </if>
+      <if test="pmkud04 != null">
+        PMKUD04,
+      </if>
+      <if test="pmkud05 != null">
+        PMKUD05,
+      </if>
+      <if test="pmkud06 != null">
+        PMKUD06,
+      </if>
+      <if test="pmkud07 != null">
+        PMKUD07,
+      </if>
+      <if test="pmkud08 != null">
+        PMKUD08,
+      </if>
+      <if test="pmkud09 != null">
+        PMKUD09,
+      </if>
+      <if test="pmkud10 != null">
+        PMKUD10,
+      </if>
+      <if test="pmkud11 != null">
+        PMKUD11,
+      </if>
+      <if test="pmkud12 != null">
+        PMKUD12,
+      </if>
+      <if test="pmkud13 != null">
+        PMKUD13,
+      </if>
+      <if test="pmkud14 != null">
+        PMKUD14,
+      </if>
+      <if test="pmkud15 != null">
+        PMKUD15,
+      </if>
+      <if test="pmk46 != null">
+        PMK46,
+      </if>
+      <if test="pmk47 != null">
+        PMK47,
+      </if>
+      <if test="pmk48 != null">
+        PMK48,
+      </if>
+      <if test="pmkcond != null">
+        PMKCOND,
+      </if>
+      <if test="pmkconu != null">
+        PMKCONU,
+      </if>
+      <if test="pmkcrat != null">
+        PMKCRAT,
+      </if>
+      <if test="pmkcont != null">
+        PMKCONT,
+      </if>
+      <if test="pmkplant != null">
+        PMKPLANT,
+      </if>
+      <if test="pmklegal != null">
+        PMKLEGAL,
+      </if>
+      <if test="pmkoriu != null">
+        PMKORIU,
+      </if>
+      <if test="pmkorig != null">
+        PMKORIG,
+      </if>
+      <if test="pmk49 != null">
+        PMK49,
+      </if>
+      <if test="pmk50 != null">
+        PMK50,
+      </if>
+      <if test="pmk51 != null">
+        PMK51,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmk02 != null">
+        #{pmk02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk03 != null">
+        #{pmk03,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk04 != null">
+        #{pmk04,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmk05 != null">
+        #{pmk05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk06 != null">
+        #{pmk06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk07 != null">
+        #{pmk07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk08 != null">
+        #{pmk08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk09 != null">
+        #{pmk09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk10 != null">
+        #{pmk10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk11 != null">
+        #{pmk11,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk12 != null">
+        #{pmk12,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk13 != null">
+        #{pmk13,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk14 != null">
+        #{pmk14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk15 != null">
+        #{pmk15,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk16 != null">
+        #{pmk16,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk17 != null">
+        #{pmk17,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk18 != null">
+        #{pmk18,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk20 != null">
+        #{pmk20,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk21 != null">
+        #{pmk21,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk22 != null">
+        #{pmk22,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk25 != null">
+        #{pmk25,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk26 != null">
+        #{pmk26,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk27 != null">
+        #{pmk27,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmk28 != null">
+        #{pmk28,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk29 != null">
+        #{pmk29,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk30 != null">
+        #{pmk30,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk31 != null">
+        #{pmk31,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk32 != null">
+        #{pmk32,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk40 != null">
+        #{pmk40,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk401 != null">
+        #{pmk401,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk41 != null">
+        #{pmk41,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk42 != null">
+        #{pmk42,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk43 != null">
+        #{pmk43,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk45 != null">
+        #{pmk45,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkprsw != null">
+        #{pmkprsw,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkprno != null">
+        #{pmkprno,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkprdt != null">
+        #{pmkprdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkmksg != null">
+        #{pmkmksg,jdbcType=VARCHAR},
+      </if>
+      <if test="pmksign != null">
+        #{pmksign,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkdays != null">
+        #{pmkdays,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkprit != null">
+        #{pmkprit,jdbcType=DECIMAL},
+      </if>
+      <if test="pmksseq != null">
+        #{pmksseq,jdbcType=DECIMAL},
+      </if>
+      <if test="pmksmax != null">
+        #{pmksmax,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkacti != null">
+        #{pmkacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkuser != null">
+        #{pmkuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkgrup != null">
+        #{pmkgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkmodu != null">
+        #{pmkmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkdate != null">
+        #{pmkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkud01 != null">
+        #{pmkud01,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud02 != null">
+        #{pmkud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud03 != null">
+        #{pmkud03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud04 != null">
+        #{pmkud04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud05 != null">
+        #{pmkud05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud06 != null">
+        #{pmkud06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud07 != null">
+        #{pmkud07,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud08 != null">
+        #{pmkud08,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud09 != null">
+        #{pmkud09,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud10 != null">
+        #{pmkud10,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud11 != null">
+        #{pmkud11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud12 != null">
+        #{pmkud12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud13 != null">
+        #{pmkud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkud14 != null">
+        #{pmkud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkud15 != null">
+        #{pmkud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmk46 != null">
+        #{pmk46,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk47 != null">
+        #{pmk47,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk48 != null">
+        #{pmk48,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkcond != null">
+        #{pmkcond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkconu != null">
+        #{pmkconu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkcrat != null">
+        #{pmkcrat,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkcont != null">
+        #{pmkcont,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkplant != null">
+        #{pmkplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmklegal != null">
+        #{pmklegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkoriu != null">
+        #{pmkoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkorig != null">
+        #{pmkorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk49 != null">
+        #{pmk49,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk50 != null">
+        #{pmk50,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk51 != null">
+        #{pmk51,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmkFile">
+    update PMK_FILE
+    <set>
+      <if test="pmk02 != null">
+        PMK02 = #{pmk02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk03 != null">
+        PMK03 = #{pmk03,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk04 != null">
+        PMK04 = #{pmk04,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmk05 != null">
+        PMK05 = #{pmk05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk06 != null">
+        PMK06 = #{pmk06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk07 != null">
+        PMK07 = #{pmk07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk08 != null">
+        PMK08 = #{pmk08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk09 != null">
+        PMK09 = #{pmk09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk10 != null">
+        PMK10 = #{pmk10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk11 != null">
+        PMK11 = #{pmk11,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk12 != null">
+        PMK12 = #{pmk12,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk13 != null">
+        PMK13 = #{pmk13,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk14 != null">
+        PMK14 = #{pmk14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk15 != null">
+        PMK15 = #{pmk15,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk16 != null">
+        PMK16 = #{pmk16,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk17 != null">
+        PMK17 = #{pmk17,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk18 != null">
+        PMK18 = #{pmk18,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk20 != null">
+        PMK20 = #{pmk20,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk21 != null">
+        PMK21 = #{pmk21,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk22 != null">
+        PMK22 = #{pmk22,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk25 != null">
+        PMK25 = #{pmk25,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk26 != null">
+        PMK26 = #{pmk26,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk27 != null">
+        PMK27 = #{pmk27,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmk28 != null">
+        PMK28 = #{pmk28,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk29 != null">
+        PMK29 = #{pmk29,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk30 != null">
+        PMK30 = #{pmk30,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk31 != null">
+        PMK31 = #{pmk31,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk32 != null">
+        PMK32 = #{pmk32,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk40 != null">
+        PMK40 = #{pmk40,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk401 != null">
+        PMK401 = #{pmk401,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk41 != null">
+        PMK41 = #{pmk41,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk42 != null">
+        PMK42 = #{pmk42,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk43 != null">
+        PMK43 = #{pmk43,jdbcType=DECIMAL},
+      </if>
+      <if test="pmk45 != null">
+        PMK45 = #{pmk45,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkprsw != null">
+        PMKPRSW = #{pmkprsw,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkprno != null">
+        PMKPRNO = #{pmkprno,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkprdt != null">
+        PMKPRDT = #{pmkprdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkmksg != null">
+        PMKMKSG = #{pmkmksg,jdbcType=VARCHAR},
+      </if>
+      <if test="pmksign != null">
+        PMKSIGN = #{pmksign,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkdays != null">
+        PMKDAYS = #{pmkdays,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkprit != null">
+        PMKPRIT = #{pmkprit,jdbcType=DECIMAL},
+      </if>
+      <if test="pmksseq != null">
+        PMKSSEQ = #{pmksseq,jdbcType=DECIMAL},
+      </if>
+      <if test="pmksmax != null">
+        PMKSMAX = #{pmksmax,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkacti != null">
+        PMKACTI = #{pmkacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkuser != null">
+        PMKUSER = #{pmkuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkgrup != null">
+        PMKGRUP = #{pmkgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkmodu != null">
+        PMKMODU = #{pmkmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkdate != null">
+        PMKDATE = #{pmkdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkud01 != null">
+        PMKUD01 = #{pmkud01,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud02 != null">
+        PMKUD02 = #{pmkud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud03 != null">
+        PMKUD03 = #{pmkud03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud04 != null">
+        PMKUD04 = #{pmkud04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud05 != null">
+        PMKUD05 = #{pmkud05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud06 != null">
+        PMKUD06 = #{pmkud06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkud07 != null">
+        PMKUD07 = #{pmkud07,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud08 != null">
+        PMKUD08 = #{pmkud08,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud09 != null">
+        PMKUD09 = #{pmkud09,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud10 != null">
+        PMKUD10 = #{pmkud10,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud11 != null">
+        PMKUD11 = #{pmkud11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud12 != null">
+        PMKUD12 = #{pmkud12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmkud13 != null">
+        PMKUD13 = #{pmkud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkud14 != null">
+        PMKUD14 = #{pmkud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkud15 != null">
+        PMKUD15 = #{pmkud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmk46 != null">
+        PMK46 = #{pmk46,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk47 != null">
+        PMK47 = #{pmk47,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk48 != null">
+        PMK48 = #{pmk48,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkcond != null">
+        PMKCOND = #{pmkcond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkconu != null">
+        PMKCONU = #{pmkconu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkcrat != null">
+        PMKCRAT = #{pmkcrat,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmkcont != null">
+        PMKCONT = #{pmkcont,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkplant != null">
+        PMKPLANT = #{pmkplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmklegal != null">
+        PMKLEGAL = #{pmklegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkoriu != null">
+        PMKORIU = #{pmkoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmkorig != null">
+        PMKORIG = #{pmkorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk49 != null">
+        PMK49 = #{pmk49,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk50 != null">
+        PMK50 = #{pmk50,jdbcType=VARCHAR},
+      </if>
+      <if test="pmk51 != null">
+        PMK51 = #{pmk51,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMK01 = #{pmk01,jdbcType=VARCHAR}
+  </update>
+  <delete id="InvalidDocumentDelete">
+    delete ${centre}.pmk_file
+    where  pmk04 &lt;= sysdate AND pmk18 !='X'and pmk01 not in (select  distinct pml01 from pml_file)
+  </delete>
+</mapper>

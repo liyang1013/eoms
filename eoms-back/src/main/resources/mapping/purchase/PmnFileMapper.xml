@@ -1025,5 +1025,9 @@
     set pmn50 = pmn50 + #{pmn50}
     where pmn01 = #{pmn01} and pmn02 = #{pmn02}
   </update>
+    <delete id="InvalidDocumentDelete">
+      delete ${centre}.pmm_file
+      where   pmm04 &lt;= sysdate AND pmm18 !='X'and pmm01 not in (select  distinct pmn01 from pmn_file)
+    </delete>
 
 </mapper>

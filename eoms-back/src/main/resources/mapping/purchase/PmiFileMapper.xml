@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmiFileMapper">
+  <insert id="insertSelective" keyColumn="PMI01" keyProperty="pmi01" parameterType="com.keboda.eomsback.purchase.pojo.PmiFile" useGeneratedKeys="true">
+    insert into PMI_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmi02 != null">
+        PMI02,
+      </if>
+      <if test="pmi03 != null">
+        PMI03,
+      </if>
+      <if test="pmi04 != null">
+        PMI04,
+      </if>
+      <if test="pmi05 != null">
+        PMI05,
+      </if>
+      <if test="pmi06 != null">
+        PMI06,
+      </if>
+      <if test="pmi07 != null">
+        PMI07,
+      </if>
+      <if test="pmiconf != null">
+        PMICONF,
+      </if>
+      <if test="pmiacti != null">
+        PMIACTI,
+      </if>
+      <if test="pmiuser != null">
+        PMIUSER,
+      </if>
+      <if test="pmigrup != null">
+        PMIGRUP,
+      </if>
+      <if test="pmimodu != null">
+        PMIMODU,
+      </if>
+      <if test="pmidate != null">
+        PMIDATE,
+      </if>
+      <if test="pmi08 != null">
+        PMI08,
+      </if>
+      <if test="pmi081 != null">
+        PMI081,
+      </if>
+      <if test="pmi09 != null">
+        PMI09,
+      </if>
+      <if test="pmi10 != null">
+        PMI10,
+      </if>
+      <if test="pmiplant != null">
+        PMIPLANT,
+      </if>
+      <if test="pmilegal != null">
+        PMILEGAL,
+      </if>
+      <if test="pmioriu != null">
+        PMIORIU,
+      </if>
+      <if test="pmiorig != null">
+        PMIORIG,
+      </if>
+      <if test="taPmiud01 != null">
+        TA_PMIUD01,
+      </if>
+      <if test="taPmiud02 != null">
+        TA_PMIUD02,
+      </if>
+      <if test="taPmiud03 != null">
+        TA_PMIUD03,
+      </if>
+      <if test="taPmiud04 != null">
+        TA_PMIUD04,
+      </if>
+      <if test="taPmiud05 != null">
+        TA_PMIUD05,
+      </if>
+      <if test="taPmiud06 != null">
+        TA_PMIUD06,
+      </if>
+      <if test="taPmiud07 != null">
+        TA_PMIUD07,
+      </if>
+      <if test="taPmiud08 != null">
+        TA_PMIUD08,
+      </if>
+      <if test="taPmiud09 != null">
+        TA_PMIUD09,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmi02 != null">
+        #{pmi02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmi03 != null">
+        #{pmi03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi04 != null">
+        #{pmi04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi05 != null">
+        #{pmi05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi06 != null">
+        #{pmi06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi07 != null">
+        #{pmi07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiconf != null">
+        #{pmiconf,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiacti != null">
+        #{pmiacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiuser != null">
+        #{pmiuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmigrup != null">
+        #{pmigrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmimodu != null">
+        #{pmimodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmidate != null">
+        #{pmidate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmi08 != null">
+        #{pmi08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi081 != null">
+        #{pmi081,jdbcType=DECIMAL},
+      </if>
+      <if test="pmi09 != null">
+        #{pmi09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi10 != null">
+        #{pmi10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiplant != null">
+        #{pmiplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmilegal != null">
+        #{pmilegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pmioriu != null">
+        #{pmioriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiorig != null">
+        #{pmiorig,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud01 != null">
+        #{taPmiud01,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud02 != null">
+        #{taPmiud02,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud03 != null">
+        #{taPmiud03,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud04 != null">
+        #{taPmiud04,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud05 != null">
+        #{taPmiud05,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taPmiud06 != null">
+        #{taPmiud06,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud07 != null">
+        #{taPmiud07,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud08 != null">
+        #{taPmiud08,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud09 != null">
+        #{taPmiud09,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmiFile">
+    update PMI_FILE
+    <set>
+      <if test="pmi02 != null">
+        PMI02 = #{pmi02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmi03 != null">
+        PMI03 = #{pmi03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi04 != null">
+        PMI04 = #{pmi04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi05 != null">
+        PMI05 = #{pmi05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi06 != null">
+        PMI06 = #{pmi06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi07 != null">
+        PMI07 = #{pmi07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiconf != null">
+        PMICONF = #{pmiconf,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiacti != null">
+        PMIACTI = #{pmiacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiuser != null">
+        PMIUSER = #{pmiuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmigrup != null">
+        PMIGRUP = #{pmigrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmimodu != null">
+        PMIMODU = #{pmimodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmidate != null">
+        PMIDATE = #{pmidate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmi08 != null">
+        PMI08 = #{pmi08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi081 != null">
+        PMI081 = #{pmi081,jdbcType=DECIMAL},
+      </if>
+      <if test="pmi09 != null">
+        PMI09 = #{pmi09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmi10 != null">
+        PMI10 = #{pmi10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiplant != null">
+        PMIPLANT = #{pmiplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmilegal != null">
+        PMILEGAL = #{pmilegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pmioriu != null">
+        PMIORIU = #{pmioriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmiorig != null">
+        PMIORIG = #{pmiorig,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud01 != null">
+        TA_PMIUD01 = #{taPmiud01,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud02 != null">
+        TA_PMIUD02 = #{taPmiud02,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud03 != null">
+        TA_PMIUD03 = #{taPmiud03,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud04 != null">
+        TA_PMIUD04 = #{taPmiud04,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud05 != null">
+        TA_PMIUD05 = #{taPmiud05,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taPmiud06 != null">
+        TA_PMIUD06 = #{taPmiud06,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud07 != null">
+        TA_PMIUD07 = #{taPmiud07,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud08 != null">
+        TA_PMIUD08 = #{taPmiud08,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmiud09 != null">
+        TA_PMIUD09 = #{taPmiud09,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMI01 = #{pmi01,jdbcType=VARCHAR}
+  </update>
+</mapper>

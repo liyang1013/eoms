@@ -47,3 +47,5 @@ page helper:
 timer:
   rcsRobotsTimer:
     corn: 0 0/5 * * * ?
+  InvalidDocumentDeleteTimer:
+    corn: 0 59 23 1 * ?

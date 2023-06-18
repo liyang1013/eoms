@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.ImmFileMapper">
+  <insert id="insertSelective" keyColumn="IMM01" keyProperty="imm01" parameterType="com.keboda.eomsback.stock.pojo.ImmFile" useGeneratedKeys="true">
+    insert into IMM_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imm02 != null">
+        IMM02,
+      </if>
+      <if test="imm03 != null">
+        IMM03,
+      </if>
+      <if test="imm04 != null">
+        IMM04,
+      </if>
+      <if test="immdays != null">
+        IMMDAYS,
+      </if>
+      <if test="immprit != null">
+        IMMPRIT,
+      </if>
+      <if test="imm05 != null">
+        IMM05,
+      </if>
+      <if test="imm06 != null">
+        IMM06,
+      </if>
+      <if test="imm07 != null">
+        IMM07,
+      </if>
+      <if test="imm08 != null">
+        IMM08,
+      </if>
+      <if test="imm09 != null">
+        IMM09,
+      </if>
+      <if test="imm10 != null">
+        IMM10,
+      </if>
+      <if test="imm11 != null">
+        IMM11,
+      </if>
+      <if test="imm12 != null">
+        IMM12,
+      </if>
+      <if test="imm13 != null">
+        IMM13,
+      </if>
+      <if test="immacti != null">
+        IMMACTI,
+      </if>
+      <if test="immuser != null">
+        IMMUSER,
+      </if>
+      <if test="immgrup != null">
+        IMMGRUP,
+      </if>
+      <if test="immmodu != null">
+        IMMMODU,
+      </if>
+      <if test="immdate != null">
+        IMMDATE,
+      </if>
+      <if test="immconf != null">
+        IMMCONF,
+      </if>
+      <if test="imm14 != null">
+        IMM14,
+      </if>
+      <if test="immspc != null">
+        IMMSPC,
+      </if>
+      <if test="immud01 != null">
+        IMMUD01,
+      </if>
+      <if test="immud02 != null">
+        IMMUD02,
+      </if>
+      <if test="immud03 != null">
+        IMMUD03,
+      </if>
+      <if test="immud04 != null">
+        IMMUD04,
+      </if>
+      <if test="immud05 != null">
+        IMMUD05,
+      </if>
+      <if test="immud06 != null">
+        IMMUD06,
+      </if>
+      <if test="immud07 != null">
+        IMMUD07,
+      </if>
+      <if test="immud08 != null">
+        IMMUD08,
+      </if>
+      <if test="immud09 != null">
+        IMMUD09,
+      </if>
+      <if test="immud10 != null">
+        IMMUD10,
+      </if>
+      <if test="immud11 != null">
+        IMMUD11,
+      </if>
+      <if test="immud12 != null">
+        IMMUD12,
+      </if>
+      <if test="immud13 != null">
+        IMMUD13,
+      </if>
+      <if test="immud14 != null">
+        IMMUD14,
+      </if>
+      <if test="immud15 != null">
+        IMMUD15,
+      </if>
+      <if test="immplant != null">
+        IMMPLANT,
+      </if>
+      <if test="immlegal != null">
+        IMMLEGAL,
+      </if>
+      <if test="immoriu != null">
+        IMMORIU,
+      </if>
+      <if test="immorig != null">
+        IMMORIG,
+      </if>
+      <if test="imm15 != null">
+        IMM15,
+      </if>
+      <if test="imm16 != null">
+        IMM16,
+      </if>
+      <if test="immmksg != null">
+        IMMMKSG,
+      </if>
+      <if test="imm17 != null">
+        IMM17,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imm02 != null">
+        #{imm02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imm03 != null">
+        #{imm03,jdbcType=VARCHAR},
+      </if>
+      <if test="imm04 != null">
+        #{imm04,jdbcType=VARCHAR},
+      </if>
+      <if test="immdays != null">
+        #{immdays,jdbcType=DECIMAL},
+      </if>
+      <if test="immprit != null">
+        #{immprit,jdbcType=DECIMAL},
+      </if>
+      <if test="imm05 != null">
+        #{imm05,jdbcType=DECIMAL},
+      </if>
+      <if test="imm06 != null">
+        #{imm06,jdbcType=DECIMAL},
+      </if>
+      <if test="imm07 != null">
+        #{imm07,jdbcType=DECIMAL},
+      </if>
+      <if test="imm08 != null">
+        #{imm08,jdbcType=VARCHAR},
+      </if>
+      <if test="imm09 != null">
+        #{imm09,jdbcType=VARCHAR},
+      </if>
+      <if test="imm10 != null">
+        #{imm10,jdbcType=VARCHAR},
+      </if>
+      <if test="imm11 != null">
+        #{imm11,jdbcType=VARCHAR},
+      </if>
+      <if test="imm12 != null">
+        #{imm12,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imm13 != null">
+        #{imm13,jdbcType=VARCHAR},
+      </if>
+      <if test="immacti != null">
+        #{immacti,jdbcType=VARCHAR},
+      </if>
+      <if test="immuser != null">
+        #{immuser,jdbcType=VARCHAR},
+      </if>
+      <if test="immgrup != null">
+        #{immgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="immmodu != null">
+        #{immmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="immdate != null">
+        #{immdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immconf != null">
+        #{immconf,jdbcType=VARCHAR},
+      </if>
+      <if test="imm14 != null">
+        #{imm14,jdbcType=VARCHAR},
+      </if>
+      <if test="immspc != null">
+        #{immspc,jdbcType=VARCHAR},
+      </if>
+      <if test="immud01 != null">
+        #{immud01,jdbcType=VARCHAR},
+      </if>
+      <if test="immud02 != null">
+        #{immud02,jdbcType=VARCHAR},
+      </if>
+      <if test="immud03 != null">
+        #{immud03,jdbcType=VARCHAR},
+      </if>
+      <if test="immud04 != null">
+        #{immud04,jdbcType=VARCHAR},
+      </if>
+      <if test="immud05 != null">
+        #{immud05,jdbcType=VARCHAR},
+      </if>
+      <if test="immud06 != null">
+        #{immud06,jdbcType=VARCHAR},
+      </if>
+      <if test="immud07 != null">
+        #{immud07,jdbcType=DECIMAL},
+      </if>
+      <if test="immud08 != null">
+        #{immud08,jdbcType=DECIMAL},
+      </if>
+      <if test="immud09 != null">
+        #{immud09,jdbcType=DECIMAL},
+      </if>
+      <if test="immud10 != null">
+        #{immud10,jdbcType=DECIMAL},
+      </if>
+      <if test="immud11 != null">
+        #{immud11,jdbcType=DECIMAL},
+      </if>
+      <if test="immud12 != null">
+        #{immud12,jdbcType=DECIMAL},
+      </if>
+      <if test="immud13 != null">
+        #{immud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immud14 != null">
+        #{immud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immud15 != null">
+        #{immud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immplant != null">
+        #{immplant,jdbcType=VARCHAR},
+      </if>
+      <if test="immlegal != null">
+        #{immlegal,jdbcType=VARCHAR},
+      </if>
+      <if test="immoriu != null">
+        #{immoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="immorig != null">
+        #{immorig,jdbcType=VARCHAR},
+      </if>
+      <if test="imm15 != null">
+        #{imm15,jdbcType=VARCHAR},
+      </if>
+      <if test="imm16 != null">
+        #{imm16,jdbcType=VARCHAR},
+      </if>
+      <if test="immmksg != null">
+        #{immmksg,jdbcType=VARCHAR},
+      </if>
+      <if test="imm17 != null">
+        #{imm17,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.ImmFile">
+    update IMM_FILE
+    <set>
+      <if test="imm02 != null">
+        IMM02 = #{imm02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imm03 != null">
+        IMM03 = #{imm03,jdbcType=VARCHAR},
+      </if>
+      <if test="imm04 != null">
+        IMM04 = #{imm04,jdbcType=VARCHAR},
+      </if>
+      <if test="immdays != null">
+        IMMDAYS = #{immdays,jdbcType=DECIMAL},
+      </if>
+      <if test="immprit != null">
+        IMMPRIT = #{immprit,jdbcType=DECIMAL},
+      </if>
+      <if test="imm05 != null">
+        IMM05 = #{imm05,jdbcType=DECIMAL},
+      </if>
+      <if test="imm06 != null">
+        IMM06 = #{imm06,jdbcType=DECIMAL},
+      </if>
+      <if test="imm07 != null">
+        IMM07 = #{imm07,jdbcType=DECIMAL},
+      </if>
+      <if test="imm08 != null">
+        IMM08 = #{imm08,jdbcType=VARCHAR},
+      </if>
+      <if test="imm09 != null">
+        IMM09 = #{imm09,jdbcType=VARCHAR},
+      </if>
+      <if test="imm10 != null">
+        IMM10 = #{imm10,jdbcType=VARCHAR},
+      </if>
+      <if test="imm11 != null">
+        IMM11 = #{imm11,jdbcType=VARCHAR},
+      </if>
+      <if test="imm12 != null">
+        IMM12 = #{imm12,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imm13 != null">
+        IMM13 = #{imm13,jdbcType=VARCHAR},
+      </if>
+      <if test="immacti != null">
+        IMMACTI = #{immacti,jdbcType=VARCHAR},
+      </if>
+      <if test="immuser != null">
+        IMMUSER = #{immuser,jdbcType=VARCHAR},
+      </if>
+      <if test="immgrup != null">
+        IMMGRUP = #{immgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="immmodu != null">
+        IMMMODU = #{immmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="immdate != null">
+        IMMDATE = #{immdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immconf != null">
+        IMMCONF = #{immconf,jdbcType=VARCHAR},
+      </if>
+      <if test="imm14 != null">
+        IMM14 = #{imm14,jdbcType=VARCHAR},
+      </if>
+      <if test="immspc != null">
+        IMMSPC = #{immspc,jdbcType=VARCHAR},
+      </if>
+      <if test="immud01 != null">
+        IMMUD01 = #{immud01,jdbcType=VARCHAR},
+      </if>
+      <if test="immud02 != null">
+        IMMUD02 = #{immud02,jdbcType=VARCHAR},
+      </if>
+      <if test="immud03 != null">
+        IMMUD03 = #{immud03,jdbcType=VARCHAR},
+      </if>
+      <if test="immud04 != null">
+        IMMUD04 = #{immud04,jdbcType=VARCHAR},
+      </if>
+      <if test="immud05 != null">
+        IMMUD05 = #{immud05,jdbcType=VARCHAR},
+      </if>
+      <if test="immud06 != null">
+        IMMUD06 = #{immud06,jdbcType=VARCHAR},
+      </if>
+      <if test="immud07 != null">
+        IMMUD07 = #{immud07,jdbcType=DECIMAL},
+      </if>
+      <if test="immud08 != null">
+        IMMUD08 = #{immud08,jdbcType=DECIMAL},
+      </if>
+      <if test="immud09 != null">
+        IMMUD09 = #{immud09,jdbcType=DECIMAL},
+      </if>
+      <if test="immud10 != null">
+        IMMUD10 = #{immud10,jdbcType=DECIMAL},
+      </if>
+      <if test="immud11 != null">
+        IMMUD11 = #{immud11,jdbcType=DECIMAL},
+      </if>
+      <if test="immud12 != null">
+        IMMUD12 = #{immud12,jdbcType=DECIMAL},
+      </if>
+      <if test="immud13 != null">
+        IMMUD13 = #{immud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immud14 != null">
+        IMMUD14 = #{immud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immud15 != null">
+        IMMUD15 = #{immud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="immplant != null">
+        IMMPLANT = #{immplant,jdbcType=VARCHAR},
+      </if>
+      <if test="immlegal != null">
+        IMMLEGAL = #{immlegal,jdbcType=VARCHAR},
+      </if>
+      <if test="immoriu != null">
+        IMMORIU = #{immoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="immorig != null">
+        IMMORIG = #{immorig,jdbcType=VARCHAR},
+      </if>
+      <if test="imm15 != null">
+        IMM15 = #{imm15,jdbcType=VARCHAR},
+      </if>
+      <if test="imm16 != null">
+        IMM16 = #{imm16,jdbcType=VARCHAR},
+      </if>
+      <if test="immmksg != null">
+        IMMMKSG = #{immmksg,jdbcType=VARCHAR},
+      </if>
+      <if test="imm17 != null">
+        IMM17 = #{imm17,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where IMM01 = #{imm01,jdbcType=VARCHAR}
+  </update>
+  <delete id="InvalidDocumentDelete">
+    delete ${centre}.imm_file
+    where imm02 &lt;=sysdate AND immconf !='X' and imm01 not in (select  distinct imn01 from imn_file)
+  </delete>
+</mapper>

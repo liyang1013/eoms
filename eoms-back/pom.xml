@@ -27,14 +27,9 @@
             <version>2.1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.github.s7connector</groupId>
-            <artifactId>s7connector</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.dathlin</groupId>
-            <artifactId>HslCommunication</artifactId>
-            <version>3.1.1</version>
+            <groupId>com.ly</groupId>
+            <artifactId>comskt</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>com.oracle</groupId>

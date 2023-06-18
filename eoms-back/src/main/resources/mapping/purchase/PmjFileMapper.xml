@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmjFileMapper">
+  <insert id="insertSelective" keyColumn="PMJ01" keyProperty="pmj01" parameterType="com.keboda.eomsback.purchase.pojo.PmjFile" useGeneratedKeys="true">
+    insert into PMJ_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmj02 != null">
+        PMJ02,
+      </if>
+      <if test="pmj10 != null">
+        PMJ10,
+      </if>
+      <if test="pmj12 != null">
+        PMJ12,
+      </if>
+      <if test="pmj13 != null">
+        PMJ13,
+      </if>
+      <if test="pmj03 != null">
+        PMJ03,
+      </if>
+      <if test="pmj031 != null">
+        PMJ031,
+      </if>
+      <if test="pmj032 != null">
+        PMJ032,
+      </if>
+      <if test="pmj04 != null">
+        PMJ04,
+      </if>
+      <if test="pmj05 != null">
+        PMJ05,
+      </if>
+      <if test="pmj06 != null">
+        PMJ06,
+      </if>
+      <if test="pmj07 != null">
+        PMJ07,
+      </if>
+      <if test="pmj08 != null">
+        PMJ08,
+      </if>
+      <if test="pmj09 != null">
+        PMJ09,
+      </if>
+      <if test="pmj06t != null">
+        PMJ06T,
+      </if>
+      <if test="pmj07t != null">
+        PMJ07T,
+      </if>
+      <if test="pmj11 != null">
+        PMJ11,
+      </if>
+      <if test="pmjplant != null">
+        PMJPLANT,
+      </if>
+      <if test="pmjlegal != null">
+        PMJLEGAL,
+      </if>
+      <if test="pmj14 != null">
+        PMJ14,
+      </if>
+      <if test="pmjicd14 != null">
+        PMJICD14,
+      </if>
+      <if test="pmj091 != null">
+        PMJ091,
+      </if>
+      <if test="taPmjud01 != null">
+        TA_PMJUD01,
+      </if>
+      <if test="taPmjud02 != null">
+        TA_PMJUD02,
+      </if>
+      <if test="taPmjud03 != null">
+        TA_PMJUD03,
+      </if>
+      <if test="taPmjud04 != null">
+        TA_PMJUD04,
+      </if>
+      <if test="taPmjud05 != null">
+        TA_PMJUD05,
+      </if>
+      <if test="taPmj01 != null">
+        TA_PMJ01,
+      </if>
+      <if test="taPmj02 != null">
+        TA_PMJ02,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmj02 != null">
+        #{pmj02,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj10 != null">
+        #{pmj10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj12 != null">
+        #{pmj12,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj13 != null">
+        #{pmj13,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj03 != null">
+        #{pmj03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj031 != null">
+        #{pmj031,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj032 != null">
+        #{pmj032,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj04 != null">
+        #{pmj04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj05 != null">
+        #{pmj05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj06 != null">
+        #{pmj06,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj07 != null">
+        #{pmj07,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj08 != null">
+        #{pmj08,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmj09 != null">
+        #{pmj09,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmj06t != null">
+        #{pmj06t,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj07t != null">
+        #{pmj07t,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj11 != null">
+        #{pmj11,jdbcType=VARCHAR},
+      </if>
+      <if test="pmjplant != null">
+        #{pmjplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmjlegal != null">
+        #{pmjlegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj14 != null">
+        #{pmj14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmjicd14 != null">
+        #{pmjicd14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj091 != null">
+        #{pmj091,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taPmjud01 != null">
+        #{taPmjud01,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud02 != null">
+        #{taPmjud02,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud03 != null">
+        #{taPmjud03,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud04 != null">
+        #{taPmjud04,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud05 != null">
+        #{taPmjud05,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taPmj01 != null">
+        #{taPmj01,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmj02 != null">
+        #{taPmj02,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmjFile">
+    update PMJ_FILE
+    <set>
+      <if test="pmj03 != null">
+        PMJ03 = #{pmj03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj031 != null">
+        PMJ031 = #{pmj031,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj032 != null">
+        PMJ032 = #{pmj032,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj04 != null">
+        PMJ04 = #{pmj04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj05 != null">
+        PMJ05 = #{pmj05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj06 != null">
+        PMJ06 = #{pmj06,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj07 != null">
+        PMJ07 = #{pmj07,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj08 != null">
+        PMJ08 = #{pmj08,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmj09 != null">
+        PMJ09 = #{pmj09,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmj06t != null">
+        PMJ06T = #{pmj06t,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj07t != null">
+        PMJ07T = #{pmj07t,jdbcType=DECIMAL},
+      </if>
+      <if test="pmj11 != null">
+        PMJ11 = #{pmj11,jdbcType=VARCHAR},
+      </if>
+      <if test="pmjplant != null">
+        PMJPLANT = #{pmjplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmjlegal != null">
+        PMJLEGAL = #{pmjlegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj14 != null">
+        PMJ14 = #{pmj14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmjicd14 != null">
+        PMJICD14 = #{pmjicd14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmj091 != null">
+        PMJ091 = #{pmj091,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taPmjud01 != null">
+        TA_PMJUD01 = #{taPmjud01,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud02 != null">
+        TA_PMJUD02 = #{taPmjud02,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud03 != null">
+        TA_PMJUD03 = #{taPmjud03,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud04 != null">
+        TA_PMJUD04 = #{taPmjud04,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmjud05 != null">
+        TA_PMJUD05 = #{taPmjud05,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taPmj01 != null">
+        TA_PMJ01 = #{taPmj01,jdbcType=VARCHAR},
+      </if>
+      <if test="taPmj02 != null">
+        TA_PMJ02 = #{taPmj02,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMJ01 = #{pmj01,jdbcType=VARCHAR}
+      and PMJ02 = #{pmj02,jdbcType=DECIMAL}
+      and PMJ10 = #{pmj10,jdbcType=VARCHAR}
+      and PMJ12 = #{pmj12,jdbcType=VARCHAR}
+      and PMJ13 = #{pmj13,jdbcType=VARCHAR}
+  </update>
+</mapper>

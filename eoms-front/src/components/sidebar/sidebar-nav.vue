@@ -8,7 +8,7 @@
 <script>
 import DynamicMenu from './dynamic-menu.vue'
 import {mapState} from 'vuex'
-import {menu} from '@/store/menu'
+import {menu} from '@/router/menu'
 
 export default {
   data() {
