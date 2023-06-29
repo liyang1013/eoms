@@ -1,6 +1,8 @@
 package com.keboda.eomsback.purchase.pojo;
 
 import java.io.Serializable;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -8,7 +10,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class PmjFileKey implements Serializable {
+public class PmjFileKey extends CommonField implements Serializable {
     private String pmj01;
 
     private Integer pmj02;

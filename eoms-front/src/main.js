@@ -9,6 +9,7 @@ import http from './http/httpConfig'
 import * as globalFilter from './filters/filters'
 import '@/styles/base.scss'
 import VCharts from 'v-charts'
+import 'v-charts/lib/style.css'
 
 Vue.prototype.$http = http
 Vue.config.productionTip = false
@@ -18,6 +19,8 @@ Vue.use(VCharts)
 for (var key in globalFilter) {
   Vue.filter(key, globalFilter[key])
 }
+
+Vue._watchers = Vue.prototype._watchers = []
 
 new Vue({
   router,

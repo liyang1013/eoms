@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.SmyFileMapper">
+
+  <insert id="insertSelective" keyColumn="SMYSLIP" keyProperty="smyslip" parameterType="com.keboda.eomsback.system.pojo.SmyFile" useGeneratedKeys="true">
+    insert into SMY_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="smydesc != null">
+        SMYDESC,
+      </if>
+      <if test="smyauno != null">
+        SMYAUNO,
+      </if>
+      <if test="smymxno != null">
+        SMYMXNO,
+      </if>
+      <if test="smysys != null">
+        SMYSYS,
+      </if>
+      <if test="smykind != null">
+        SMYKIND,
+      </if>
+      <if test="smyapr != null">
+        SMYAPR,
+      </if>
+      <if test="smyatsg != null">
+        SMYATSG,
+      </if>
+      <if test="smysign != null">
+        SMYSIGN,
+      </if>
+      <if test="smydays != null">
+        SMYDAYS,
+      </if>
+      <if test="smyprit != null">
+        SMYPRIT,
+      </if>
+      <if test="smyprint != null">
+        SMYPRINT,
+      </if>
+      <if test="smydmy1 != null">
+        SMYDMY1,
+      </if>
+      <if test="smydmy2 != null">
+        SMYDMY2,
+      </if>
+      <if test="smydmy3 != null">
+        SMYDMY3,
+      </if>
+      <if test="smydmy4 != null">
+        SMYDMY4,
+      </if>
+      <if test="smydmy5 != null">
+        SMYDMY5,
+      </if>
+      <if test="smyware != null">
+        SMYWARE,
+      </if>
+      <if test="smy51 != null">
+        SMY51,
+      </if>
+      <if test="smy52 != null">
+        SMY52,
+      </if>
+      <if test="smy53 != null">
+        SMY53,
+      </if>
+      <if test="smy54 != null">
+        SMY54,
+      </if>
+      <if test="smy55 != null">
+        SMY55,
+      </if>
+      <if test="smy56 != null">
+        SMY56,
+      </if>
+      <if test="smy57 != null">
+        SMY57,
+      </if>
+      <if test="smy58 != null">
+        SMY58,
+      </if>
+      <if test="smy59 != null">
+        SMY59,
+      </if>
+      <if test="smy60 != null">
+        SMY60,
+      </if>
+      <if test="smymemo1 != null">
+        SMYMEMO1,
+      </if>
+      <if test="smymemo2 != null">
+        SMYMEMO2,
+      </if>
+      <if test="smymemo3 != null">
+        SMYMEMO3,
+      </if>
+      <if test="smyacti != null">
+        SMYACTI,
+      </if>
+      <if test="smyuser != null">
+        SMYUSER,
+      </if>
+      <if test="smygrup != null">
+        SMYGRUP,
+      </if>
+      <if test="smymodu != null">
+        SMYMODU,
+      </if>
+      <if test="smydate != null">
+        SMYDATE,
+      </if>
+      <if test="smy61 != null">
+        SMY61,
+      </if>
+      <if test="smy62 != null">
+        SMY62,
+      </if>
+      <if test="smy63 != null">
+        SMY63,
+      </if>
+      <if test="smy64 != null">
+        SMY64,
+      </if>
+      <if test="smy65 != null">
+        SMY65,
+      </if>
+      <if test="smy69 != null">
+        SMY69,
+      </if>
+      <if test="smy70 != null">
+        SMY70,
+      </if>
+      <if test="smy71 != null">
+        SMY71,
+      </if>
+      <if test="smy67 != null">
+        SMY67,
+      </if>
+      <if test="smy68 != null">
+        SMY68,
+      </if>
+      <if test="smy72 != null">
+        SMY72,
+      </if>
+      <if test="smyoriu != null">
+        SMYORIU,
+      </if>
+      <if test="smyorig != null">
+        SMYORIG,
+      </if>
+      <if test="smy73 != null">
+        SMY73,
+      </if>
+      <if test="smy74 != null">
+        SMY74,
+      </if>
+      <if test="smy75 != null">
+        SMY75,
+      </if>
+      <if test="smy76 != null">
+        SMY76,
+      </if>
+      <if test="smy77 != null">
+        SMY77,
+      </if>
+      <if test="smy78 != null">
+        SMY78,
+      </if>
+      <if test="smy79 != null">
+        SMY79,
+      </if>
+      <if test="smyud01 != null">
+        SMYUD01,
+      </if>
+      <if test="smyud02 != null">
+        SMYUD02,
+      </if>
+      <if test="smyud03 != null">
+        SMYUD03,
+      </if>
+      <if test="smyud04 != null">
+        SMYUD04,
+      </if>
+      <if test="smyud05 != null">
+        SMYUD05,
+      </if>
+      <if test="smyud06 != null">
+        SMYUD06,
+      </if>
+      <if test="smyud07 != null">
+        SMYUD07,
+      </if>
+      <if test="smyud08 != null">
+        SMYUD08,
+      </if>
+      <if test="smyud09 != null">
+        SMYUD09,
+      </if>
+      <if test="smyud10 != null">
+        SMYUD10,
+      </if>
+      <if test="smyud11 != null">
+        SMYUD11,
+      </if>
+      <if test="smyud12 != null">
+        SMYUD12,
+      </if>
+      <if test="smyud13 != null">
+        SMYUD13,
+      </if>
+      <if test="smyud14 != null">
+        SMYUD14,
+      </if>
+      <if test="smyud15 != null">
+        SMYUD15,
+      </if>
+      <if test="smy80 != null">
+        SMY80,
+      </if>
+      <if test="taSmy210 != null">
+        TA_SMY210,
+      </if>
+      <if test="taSmy211 != null">
+        TA_SMY211,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="smydesc != null">
+        #{smydesc,jdbcType=VARCHAR},
+      </if>
+      <if test="smyauno != null">
+        #{smyauno,jdbcType=VARCHAR},
+      </if>
+      <if test="smymxno != null">
+        #{smymxno,jdbcType=VARCHAR},
+      </if>
+      <if test="smysys != null">
+        #{smysys,jdbcType=VARCHAR},
+      </if>
+      <if test="smykind != null">
+        #{smykind,jdbcType=VARCHAR},
+      </if>
+      <if test="smyapr != null">
+        #{smyapr,jdbcType=VARCHAR},
+      </if>
+      <if test="smyatsg != null">
+        #{smyatsg,jdbcType=VARCHAR},
+      </if>
+      <if test="smysign != null">
+        #{smysign,jdbcType=VARCHAR},
+      </if>
+      <if test="smydays != null">
+        #{smydays,jdbcType=DECIMAL},
+      </if>
+      <if test="smyprit != null">
+        #{smyprit,jdbcType=DECIMAL},
+      </if>
+      <if test="smyprint != null">
+        #{smyprint,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy1 != null">
+        #{smydmy1,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy2 != null">
+        #{smydmy2,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy3 != null">
+        #{smydmy3,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy4 != null">
+        #{smydmy4,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy5 != null">
+        #{smydmy5,jdbcType=VARCHAR},
+      </if>
+      <if test="smyware != null">
+        #{smyware,jdbcType=VARCHAR},
+      </if>
+      <if test="smy51 != null">
+        #{smy51,jdbcType=VARCHAR},
+      </if>
+      <if test="smy52 != null">
+        #{smy52,jdbcType=VARCHAR},
+      </if>
+      <if test="smy53 != null">
+        #{smy53,jdbcType=VARCHAR},
+      </if>
+      <if test="smy54 != null">
+        #{smy54,jdbcType=VARCHAR},
+      </if>
+      <if test="smy55 != null">
+        #{smy55,jdbcType=VARCHAR},
+      </if>
+      <if test="smy56 != null">
+        #{smy56,jdbcType=VARCHAR},
+      </if>
+      <if test="smy57 != null">
+        #{smy57,jdbcType=VARCHAR},
+      </if>
+      <if test="smy58 != null">
+        #{smy58,jdbcType=VARCHAR},
+      </if>
+      <if test="smy59 != null">
+        #{smy59,jdbcType=VARCHAR},
+      </if>
+      <if test="smy60 != null">
+        #{smy60,jdbcType=VARCHAR},
+      </if>
+      <if test="smymemo1 != null">
+        #{smymemo1,jdbcType=VARCHAR},
+      </if>
+      <if test="smymemo2 != null">
+        #{smymemo2,jdbcType=VARCHAR},
+      </if>
+      <if test="smymemo3 != null">
+        #{smymemo3,jdbcType=VARCHAR},
+      </if>
+      <if test="smyacti != null">
+        #{smyacti,jdbcType=VARCHAR},
+      </if>
+      <if test="smyuser != null">
+        #{smyuser,jdbcType=VARCHAR},
+      </if>
+      <if test="smygrup != null">
+        #{smygrup,jdbcType=VARCHAR},
+      </if>
+      <if test="smymodu != null">
+        #{smymodu,jdbcType=VARCHAR},
+      </if>
+      <if test="smydate != null">
+        #{smydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smy61 != null">
+        #{smy61,jdbcType=VARCHAR},
+      </if>
+      <if test="smy62 != null">
+        #{smy62,jdbcType=VARCHAR},
+      </if>
+      <if test="smy63 != null">
+        #{smy63,jdbcType=VARCHAR},
+      </if>
+      <if test="smy64 != null">
+        #{smy64,jdbcType=VARCHAR},
+      </if>
+      <if test="smy65 != null">
+        #{smy65,jdbcType=VARCHAR},
+      </if>
+      <if test="smy69 != null">
+        #{smy69,jdbcType=VARCHAR},
+      </if>
+      <if test="smy70 != null">
+        #{smy70,jdbcType=VARCHAR},
+      </if>
+      <if test="smy71 != null">
+        #{smy71,jdbcType=VARCHAR},
+      </if>
+      <if test="smy67 != null">
+        #{smy67,jdbcType=VARCHAR},
+      </if>
+      <if test="smy68 != null">
+        #{smy68,jdbcType=VARCHAR},
+      </if>
+      <if test="smy72 != null">
+        #{smy72,jdbcType=VARCHAR},
+      </if>
+      <if test="smyoriu != null">
+        #{smyoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="smyorig != null">
+        #{smyorig,jdbcType=VARCHAR},
+      </if>
+      <if test="smy73 != null">
+        #{smy73,jdbcType=VARCHAR},
+      </if>
+      <if test="smy74 != null">
+        #{smy74,jdbcType=VARCHAR},
+      </if>
+      <if test="smy75 != null">
+        #{smy75,jdbcType=VARCHAR},
+      </if>
+      <if test="smy76 != null">
+        #{smy76,jdbcType=VARCHAR},
+      </if>
+      <if test="smy77 != null">
+        #{smy77,jdbcType=VARCHAR},
+      </if>
+      <if test="smy78 != null">
+        #{smy78,jdbcType=VARCHAR},
+      </if>
+      <if test="smy79 != null">
+        #{smy79,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud01 != null">
+        #{smyud01,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud02 != null">
+        #{smyud02,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud03 != null">
+        #{smyud03,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud04 != null">
+        #{smyud04,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud05 != null">
+        #{smyud05,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud06 != null">
+        #{smyud06,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud07 != null">
+        #{smyud07,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud08 != null">
+        #{smyud08,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud09 != null">
+        #{smyud09,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud10 != null">
+        #{smyud10,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud11 != null">
+        #{smyud11,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud12 != null">
+        #{smyud12,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud13 != null">
+        #{smyud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smyud14 != null">
+        #{smyud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smyud15 != null">
+        #{smyud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smy80 != null">
+        #{smy80,jdbcType=VARCHAR},
+      </if>
+      <if test="taSmy210 != null">
+        #{taSmy210,jdbcType=VARCHAR},
+      </if>
+      <if test="taSmy211 != null">
+        #{taSmy211,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.SmyFile">
+    update SMY_FILE
+    <set>
+      <if test="smydesc != null">
+        SMYDESC = #{smydesc,jdbcType=VARCHAR},
+      </if>
+      <if test="smyauno != null">
+        SMYAUNO = #{smyauno,jdbcType=VARCHAR},
+      </if>
+      <if test="smymxno != null">
+        SMYMXNO = #{smymxno,jdbcType=VARCHAR},
+      </if>
+      <if test="smysys != null">
+        SMYSYS = #{smysys,jdbcType=VARCHAR},
+      </if>
+      <if test="smykind != null">
+        SMYKIND = #{smykind,jdbcType=VARCHAR},
+      </if>
+      <if test="smyapr != null">
+        SMYAPR = #{smyapr,jdbcType=VARCHAR},
+      </if>
+      <if test="smyatsg != null">
+        SMYATSG = #{smyatsg,jdbcType=VARCHAR},
+      </if>
+      <if test="smysign != null">
+        SMYSIGN = #{smysign,jdbcType=VARCHAR},
+      </if>
+      <if test="smydays != null">
+        SMYDAYS = #{smydays,jdbcType=DECIMAL},
+      </if>
+      <if test="smyprit != null">
+        SMYPRIT = #{smyprit,jdbcType=DECIMAL},
+      </if>
+      <if test="smyprint != null">
+        SMYPRINT = #{smyprint,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy1 != null">
+        SMYDMY1 = #{smydmy1,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy2 != null">
+        SMYDMY2 = #{smydmy2,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy3 != null">
+        SMYDMY3 = #{smydmy3,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy4 != null">
+        SMYDMY4 = #{smydmy4,jdbcType=VARCHAR},
+      </if>
+      <if test="smydmy5 != null">
+        SMYDMY5 = #{smydmy5,jdbcType=VARCHAR},
+      </if>
+      <if test="smyware != null">
+        SMYWARE = #{smyware,jdbcType=VARCHAR},
+      </if>
+      <if test="smy51 != null">
+        SMY51 = #{smy51,jdbcType=VARCHAR},
+      </if>
+      <if test="smy52 != null">
+        SMY52 = #{smy52,jdbcType=VARCHAR},
+      </if>
+      <if test="smy53 != null">
+        SMY53 = #{smy53,jdbcType=VARCHAR},
+      </if>
+      <if test="smy54 != null">
+        SMY54 = #{smy54,jdbcType=VARCHAR},
+      </if>
+      <if test="smy55 != null">
+        SMY55 = #{smy55,jdbcType=VARCHAR},
+      </if>
+      <if test="smy56 != null">
+        SMY56 = #{smy56,jdbcType=VARCHAR},
+      </if>
+      <if test="smy57 != null">
+        SMY57 = #{smy57,jdbcType=VARCHAR},
+      </if>
+      <if test="smy58 != null">
+        SMY58 = #{smy58,jdbcType=VARCHAR},
+      </if>
+      <if test="smy59 != null">
+        SMY59 = #{smy59,jdbcType=VARCHAR},
+      </if>
+      <if test="smy60 != null">
+        SMY60 = #{smy60,jdbcType=VARCHAR},
+      </if>
+      <if test="smymemo1 != null">
+        SMYMEMO1 = #{smymemo1,jdbcType=VARCHAR},
+      </if>
+      <if test="smymemo2 != null">
+        SMYMEMO2 = #{smymemo2,jdbcType=VARCHAR},
+      </if>
+      <if test="smymemo3 != null">
+        SMYMEMO3 = #{smymemo3,jdbcType=VARCHAR},
+      </if>
+      <if test="smyacti != null">
+        SMYACTI = #{smyacti,jdbcType=VARCHAR},
+      </if>
+      <if test="smyuser != null">
+        SMYUSER = #{smyuser,jdbcType=VARCHAR},
+      </if>
+      <if test="smygrup != null">
+        SMYGRUP = #{smygrup,jdbcType=VARCHAR},
+      </if>
+      <if test="smymodu != null">
+        SMYMODU = #{smymodu,jdbcType=VARCHAR},
+      </if>
+      <if test="smydate != null">
+        SMYDATE = #{smydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smy61 != null">
+        SMY61 = #{smy61,jdbcType=VARCHAR},
+      </if>
+      <if test="smy62 != null">
+        SMY62 = #{smy62,jdbcType=VARCHAR},
+      </if>
+      <if test="smy63 != null">
+        SMY63 = #{smy63,jdbcType=VARCHAR},
+      </if>
+      <if test="smy64 != null">
+        SMY64 = #{smy64,jdbcType=VARCHAR},
+      </if>
+      <if test="smy65 != null">
+        SMY65 = #{smy65,jdbcType=VARCHAR},
+      </if>
+      <if test="smy69 != null">
+        SMY69 = #{smy69,jdbcType=VARCHAR},
+      </if>
+      <if test="smy70 != null">
+        SMY70 = #{smy70,jdbcType=VARCHAR},
+      </if>
+      <if test="smy71 != null">
+        SMY71 = #{smy71,jdbcType=VARCHAR},
+      </if>
+      <if test="smy67 != null">
+        SMY67 = #{smy67,jdbcType=VARCHAR},
+      </if>
+      <if test="smy68 != null">
+        SMY68 = #{smy68,jdbcType=VARCHAR},
+      </if>
+      <if test="smy72 != null">
+        SMY72 = #{smy72,jdbcType=VARCHAR},
+      </if>
+      <if test="smyoriu != null">
+        SMYORIU = #{smyoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="smyorig != null">
+        SMYORIG = #{smyorig,jdbcType=VARCHAR},
+      </if>
+      <if test="smy73 != null">
+        SMY73 = #{smy73,jdbcType=VARCHAR},
+      </if>
+      <if test="smy74 != null">
+        SMY74 = #{smy74,jdbcType=VARCHAR},
+      </if>
+      <if test="smy75 != null">
+        SMY75 = #{smy75,jdbcType=VARCHAR},
+      </if>
+      <if test="smy76 != null">
+        SMY76 = #{smy76,jdbcType=VARCHAR},
+      </if>
+      <if test="smy77 != null">
+        SMY77 = #{smy77,jdbcType=VARCHAR},
+      </if>
+      <if test="smy78 != null">
+        SMY78 = #{smy78,jdbcType=VARCHAR},
+      </if>
+      <if test="smy79 != null">
+        SMY79 = #{smy79,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud01 != null">
+        SMYUD01 = #{smyud01,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud02 != null">
+        SMYUD02 = #{smyud02,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud03 != null">
+        SMYUD03 = #{smyud03,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud04 != null">
+        SMYUD04 = #{smyud04,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud05 != null">
+        SMYUD05 = #{smyud05,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud06 != null">
+        SMYUD06 = #{smyud06,jdbcType=VARCHAR},
+      </if>
+      <if test="smyud07 != null">
+        SMYUD07 = #{smyud07,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud08 != null">
+        SMYUD08 = #{smyud08,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud09 != null">
+        SMYUD09 = #{smyud09,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud10 != null">
+        SMYUD10 = #{smyud10,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud11 != null">
+        SMYUD11 = #{smyud11,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud12 != null">
+        SMYUD12 = #{smyud12,jdbcType=DECIMAL},
+      </if>
+      <if test="smyud13 != null">
+        SMYUD13 = #{smyud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smyud14 != null">
+        SMYUD14 = #{smyud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smyud15 != null">
+        SMYUD15 = #{smyud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smy80 != null">
+        SMY80 = #{smy80,jdbcType=VARCHAR},
+      </if>
+      <if test="taSmy210 != null">
+        TA_SMY210 = #{taSmy210,jdbcType=VARCHAR},
+      </if>
+      <if test="taSmy211 != null">
+        TA_SMY211 = #{taSmy211,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SMYSLIP = #{smyslip,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

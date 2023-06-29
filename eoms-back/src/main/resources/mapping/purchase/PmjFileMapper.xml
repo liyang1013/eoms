@@ -258,4 +258,10 @@
       and PMJ12 = #{pmj12,jdbcType=VARCHAR}
       and PMJ13 = #{pmj13,jdbcType=VARCHAR}
   </update>
+    <select id="searchPmjList" resultType="com.keboda.eomsback.purchase.pojo.PmjFile">
+        select pmj02,pmj03,pmj031,pmj032,ima44,pmj07,pmj07t,pmj09,pmj091
+        FROM ${centre}.PMJ_FILE
+        left join  ${centre}.ima_file on pmj03 = ima01
+        where pmj01 = #{code}
+    </select>
 </mapper>

@@ -14,8 +14,8 @@ spring:
         tiptop:
           driver-class-name: oracle.jdbc.OracleDriver
           url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
-          username: wctz
-          password: wctz
+          username: ds
+          password: ds
         fluxWms:
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
           url: jdbc:sqlserver://172.17.200.156:1433;DatabaseName=WMS_PROD

@@ -142,7 +142,7 @@ export const menu = [
             },
             {
                 path: 'taskAnalysis',
-                name: 'WCS任务分析',
+                name: 'FLUX任务时间分析',
                 icon: 'el-icon-time',
                 component: () => import('@/views/flux/TaskAnalysis'),
                 children: []

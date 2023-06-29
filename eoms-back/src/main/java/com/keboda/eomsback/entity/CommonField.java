@@ -27,6 +27,11 @@ public class CommonField {
      */
     private String ima021;
 
+    /**
+     * 采购单位
+     */
+    private String ima44;
+
 
     /**
      * 供应商
@@ -37,6 +42,11 @@ public class CommonField {
      * 人员
      */
     private String gen02;
+
+    /**
+     * 单别
+     */
+    private String smydesc;
 
 
     /**
