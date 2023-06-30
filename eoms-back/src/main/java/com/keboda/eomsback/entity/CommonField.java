@@ -48,6 +48,10 @@ public class CommonField {
      */
     private String smydesc;
 
+    private String gee04;
+
+    private String gee05;
+
 
     /**
      * 自定义flux出库数量

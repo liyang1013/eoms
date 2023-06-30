@@ -673,8 +673,9 @@
     where SMYSLIP = #{smyslip,jdbcType=VARCHAR}
   </update>
   <select id="searchSmyListPageHelper" resultType="com.keboda.eomsback.system.pojo.SmyFile">
-      select smyslip,smydesc,smyauno,smymxno,smysys,smykind,smydmy1,smydmy2,smyacti,smy72,ta_smy211
-    from ${centre}.smy_file
+      select smyslip,smydesc,smyauno,smymxno,smysys,smykind,smydmy1,smydmy2,smyacti,smy72,ta_smy211,gee04,gee05
+        from ${centre}.smy_file
+        left  join gee_file on upper(gee01) = upper(smysys) and upper(gee02) = upper(smykind) and gee03 = '2'
       <where>
         <if test="code != null and code != '' ">
           and ( lower(smyslip) like lower('%${code}%') or smydesc like lower('%${code}%')  )

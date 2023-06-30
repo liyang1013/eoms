@@ -5,7 +5,7 @@
         <selectedCentre v-model="searchVo.centre" ></selectedCentre>
       </el-form-item>
       <el-form-item label="单别:">
-        <el-input v-model="searchVo.code" placeholder="员工姓名\编码" clearable></el-input>
+        <el-input v-model="searchVo.code" placeholder="单别" clearable></el-input>
       </el-form-item>
       <el-form-item style="float:right;">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -23,7 +23,7 @@
       </el-table-column>
       <el-table-column prop="smysys" label="系统别">
       </el-table-column>
-      <el-table-column prop="smykind" label="单据性质">
+      <el-table-column prop="gee05" label="单据性质">
       </el-table-column>
       <el-table-column prop="smydmy1" label="成本中心">
       </el-table-column>
