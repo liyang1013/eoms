@@ -26,6 +26,11 @@ public class SearchVo {
 
     private String centre;
 
+    /**
+     * 有效性默认Y
+     */
+    private String acti = "Y";
+
     private Date startdate;
 
     private Date enddate;

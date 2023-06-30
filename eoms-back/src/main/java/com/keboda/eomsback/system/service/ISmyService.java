@@ -1,14 +1,10 @@
-package com.keboda.eomsback.system.mapper;
+package com.keboda.eomsback.system.service;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.system.pojo.SmyFile;
 
-public interface SmyFileMapper {
-
-    int insertSelective(SmyFile record);
-
-    int updateByPrimaryKeySelective(SmyFile record);
+public interface ISmyService {
 
     Page<SmyFile> searchSmyListPageHelper(SearchVo searchVo);
 }

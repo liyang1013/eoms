@@ -112,6 +112,13 @@ export const menu = [
                 children: []
             },
             {
+                path: 'smy',
+                name: '单别档案',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/system/SmyView.vue'),
+                children: []
+            },
+            {
                 path: 'import',
                 name: '数据导入',
                 icon: 'el-icon-upload2',

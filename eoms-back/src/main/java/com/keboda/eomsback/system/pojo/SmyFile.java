@@ -3,6 +3,8 @@ package com.keboda.eomsback.system.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -10,7 +12,7 @@ import lombok.Data;
  * @author 
  */
 @Data
-public class SmyFile implements Serializable {
+public class SmyFile extends CommonField implements Serializable {
     private String smyslip;
 
     private String smydesc;

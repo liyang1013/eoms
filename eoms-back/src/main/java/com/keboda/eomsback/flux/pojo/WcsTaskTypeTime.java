@@ -5,11 +5,7 @@ import lombok.Data;
 @Data
 public class WcsTaskTypeTime {
 
-    private String taskType;
+    private String locationId;
 
-    private Double taskNum;
-
-    private Double taskTime;
-
-    private Double avgTime;
+    private String zoneId;
 }

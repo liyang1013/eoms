@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IEchartsWcsService {
 
-    List<ChartsCommonVo> wcsTaskTypeTime(String type);
+    List<ChartsCommonVo> wcsTaskTypeTime();
 }

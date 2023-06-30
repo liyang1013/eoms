@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.flux.mapper.LocationMapper">
+
+    <select id="aa" resultType="com.keboda.eomsback.flux.pojo.WcsTaskTypeTime">
+        select locationId,right(zoneId,2) zoneId
+        from BAS_LOCATION
+        where right(zoneId,2)  in ('A1','B1','C1','A2','B2','C2')
+    </select>
+</mapper>
