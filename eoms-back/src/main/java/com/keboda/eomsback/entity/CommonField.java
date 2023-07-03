@@ -39,6 +39,21 @@ public class CommonField {
     private String pmc03;
 
     /**
+     * 供应商分类
+     */
+    private String pmy02;
+
+    /**
+     * 付款方式
+     */
+    private String pma02;
+
+    /**
+     * 价格条件
+     */
+    private String pnz02;
+
+    /**
      * 人员
      */
     private String gen02;
@@ -48,7 +63,7 @@ public class CommonField {
      */
     private String smydesc;
 
-    private String gee04;
+    private String gee06;
 
     private String gee05;
 

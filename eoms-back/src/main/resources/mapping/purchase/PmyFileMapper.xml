@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmyFileMapper">
+
+  <insert id="insertSelective" keyColumn="PMY01" keyProperty="pmy01" parameterType="com.keboda.eomsback.purchase.pojo.PmyFile" useGeneratedKeys="true">
+    insert into PMY_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmy02 != null">
+        PMY02,
+      </if>
+      <if test="pmy03 != null">
+        PMY03,
+      </if>
+      <if test="pmy04 != null">
+        PMY04,
+      </if>
+      <if test="pmy05 != null">
+        PMY05,
+      </if>
+      <if test="pmy06 != null">
+        PMY06,
+      </if>
+      <if test="pmy07 != null">
+        PMY07,
+      </if>
+      <if test="pmy08 != null">
+        PMY08,
+      </if>
+      <if test="pmy09 != null">
+        PMY09,
+      </if>
+      <if test="pmy10 != null">
+        PMY10,
+      </if>
+      <if test="pmyacti != null">
+        PMYACTI,
+      </if>
+      <if test="pmyuser != null">
+        PMYUSER,
+      </if>
+      <if test="pmygrup != null">
+        PMYGRUP,
+      </if>
+      <if test="pmymodu != null">
+        PMYMODU,
+      </if>
+      <if test="pmydate != null">
+        PMYDATE,
+      </if>
+      <if test="pmyorig != null">
+        PMYORIG,
+      </if>
+      <if test="pmyoriu != null">
+        PMYORIU,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmy02 != null">
+        #{pmy02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy03 != null">
+        #{pmy03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy04 != null">
+        #{pmy04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy05 != null">
+        #{pmy05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy06 != null">
+        #{pmy06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy07 != null">
+        #{pmy07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy08 != null">
+        #{pmy08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy09 != null">
+        #{pmy09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy10 != null">
+        #{pmy10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmyacti != null">
+        #{pmyacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmyuser != null">
+        #{pmyuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmygrup != null">
+        #{pmygrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmymodu != null">
+        #{pmymodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmydate != null">
+        #{pmydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmyorig != null">
+        #{pmyorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmyoriu != null">
+        #{pmyoriu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmyFile">
+    update PMY_FILE
+    <set>
+      <if test="pmy02 != null">
+        PMY02 = #{pmy02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy03 != null">
+        PMY03 = #{pmy03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy04 != null">
+        PMY04 = #{pmy04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy05 != null">
+        PMY05 = #{pmy05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy06 != null">
+        PMY06 = #{pmy06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy07 != null">
+        PMY07 = #{pmy07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy08 != null">
+        PMY08 = #{pmy08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy09 != null">
+        PMY09 = #{pmy09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmy10 != null">
+        PMY10 = #{pmy10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmyacti != null">
+        PMYACTI = #{pmyacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmyuser != null">
+        PMYUSER = #{pmyuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmygrup != null">
+        PMYGRUP = #{pmygrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmymodu != null">
+        PMYMODU = #{pmymodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmydate != null">
+        PMYDATE = #{pmydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmyorig != null">
+        PMYORIG = #{pmyorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmyoriu != null">
+        PMYORIU = #{pmyoriu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMY01 = #{pmy01,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

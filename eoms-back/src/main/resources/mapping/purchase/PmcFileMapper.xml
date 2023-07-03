@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmcFileMapper">
+  <insert id="insertSelective" keyColumn="PMC01" keyProperty="pmc01" parameterType="com.keboda.eomsback.purchase.pojo.PmcFile" useGeneratedKeys="true">
+    insert into PMC_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmc02 != null">
+        PMC02,
+      </if>
+      <if test="pmc03 != null">
+        PMC03,
+      </if>
+      <if test="pmc04 != null">
+        PMC04,
+      </if>
+      <if test="pmc05 != null">
+        PMC05,
+      </if>
+      <if test="pmc06 != null">
+        PMC06,
+      </if>
+      <if test="pmc07 != null">
+        PMC07,
+      </if>
+      <if test="pmc081 != null">
+        PMC081,
+      </if>
+      <if test="pmc082 != null">
+        PMC082,
+      </if>
+      <if test="pmc091 != null">
+        PMC091,
+      </if>
+      <if test="pmc092 != null">
+        PMC092,
+      </if>
+      <if test="pmc093 != null">
+        PMC093,
+      </if>
+      <if test="pmc094 != null">
+        PMC094,
+      </if>
+      <if test="pmc095 != null">
+        PMC095,
+      </if>
+      <if test="pmc10 != null">
+        PMC10,
+      </if>
+      <if test="pmc11 != null">
+        PMC11,
+      </if>
+      <if test="pmc12 != null">
+        PMC12,
+      </if>
+      <if test="pmc13 != null">
+        PMC13,
+      </if>
+      <if test="pmc14 != null">
+        PMC14,
+      </if>
+      <if test="pmc15 != null">
+        PMC15,
+      </if>
+      <if test="pmc16 != null">
+        PMC16,
+      </if>
+      <if test="pmc17 != null">
+        PMC17,
+      </if>
+      <if test="pmc18 != null">
+        PMC18,
+      </if>
+      <if test="pmc19 != null">
+        PMC19,
+      </if>
+      <if test="pmc20 != null">
+        PMC20,
+      </if>
+      <if test="pmc21 != null">
+        PMC21,
+      </if>
+      <if test="pmc22 != null">
+        PMC22,
+      </if>
+      <if test="pmc23 != null">
+        PMC23,
+      </if>
+      <if test="pmc24 != null">
+        PMC24,
+      </if>
+      <if test="pmc25 != null">
+        PMC25,
+      </if>
+      <if test="pmc26 != null">
+        PMC26,
+      </if>
+      <if test="pmc27 != null">
+        PMC27,
+      </if>
+      <if test="pmc28 != null">
+        PMC28,
+      </if>
+      <if test="pmc30 != null">
+        PMC30,
+      </if>
+      <if test="pmc40 != null">
+        PMC40,
+      </if>
+      <if test="pmc41 != null">
+        PMC41,
+      </if>
+      <if test="pmc42 != null">
+        PMC42,
+      </if>
+      <if test="pmc43 != null">
+        PMC43,
+      </if>
+      <if test="pmc44 != null">
+        PMC44,
+      </if>
+      <if test="pmc45 != null">
+        PMC45,
+      </if>
+      <if test="pmc46 != null">
+        PMC46,
+      </if>
+      <if test="pmc47 != null">
+        PMC47,
+      </if>
+      <if test="pmc48 != null">
+        PMC48,
+      </if>
+      <if test="pmc49 != null">
+        PMC49,
+      </if>
+      <if test="pmc50 != null">
+        PMC50,
+      </if>
+      <if test="pmc51 != null">
+        PMC51,
+      </if>
+      <if test="pmc52 != null">
+        PMC52,
+      </if>
+      <if test="pmc53 != null">
+        PMC53,
+      </if>
+      <if test="pmc54 != null">
+        PMC54,
+      </if>
+      <if test="pmc55 != null">
+        PMC55,
+      </if>
+      <if test="pmc56 != null">
+        PMC56,
+      </if>
+      <if test="pmc901 != null">
+        PMC901,
+      </if>
+      <if test="pmc902 != null">
+        PMC902,
+      </if>
+      <if test="pmc903 != null">
+        PMC903,
+      </if>
+      <if test="pmc904 != null">
+        PMC904,
+      </if>
+      <if test="pmc905 != null">
+        PMC905,
+      </if>
+      <if test="pmc906 != null">
+        PMC906,
+      </if>
+      <if test="pmc907 != null">
+        PMC907,
+      </if>
+      <if test="pmc908 != null">
+        PMC908,
+      </if>
+      <if test="pmc909 != null">
+        PMC909,
+      </if>
+      <if test="pmc910 != null">
+        PMC910,
+      </if>
+      <if test="pmc911 != null">
+        PMC911,
+      </if>
+      <if test="pmcacti != null">
+        PMCACTI,
+      </if>
+      <if test="pmcuser != null">
+        PMCUSER,
+      </if>
+      <if test="pmcgrup != null">
+        PMCGRUP,
+      </if>
+      <if test="pmcmodu != null">
+        PMCMODU,
+      </if>
+      <if test="pmcdate != null">
+        PMCDATE,
+      </if>
+      <if test="pmcud01 != null">
+        PMCUD01,
+      </if>
+      <if test="pmcud02 != null">
+        PMCUD02,
+      </if>
+      <if test="pmcud03 != null">
+        PMCUD03,
+      </if>
+      <if test="pmcud04 != null">
+        PMCUD04,
+      </if>
+      <if test="pmcud05 != null">
+        PMCUD05,
+      </if>
+      <if test="pmcud06 != null">
+        PMCUD06,
+      </if>
+      <if test="pmcud07 != null">
+        PMCUD07,
+      </if>
+      <if test="pmcud08 != null">
+        PMCUD08,
+      </if>
+      <if test="pmcud09 != null">
+        PMCUD09,
+      </if>
+      <if test="pmcud10 != null">
+        PMCUD10,
+      </if>
+      <if test="pmcud11 != null">
+        PMCUD11,
+      </if>
+      <if test="pmcud12 != null">
+        PMCUD12,
+      </if>
+      <if test="pmcud13 != null">
+        PMCUD13,
+      </if>
+      <if test="pmcud14 != null">
+        PMCUD14,
+      </if>
+      <if test="pmcud15 != null">
+        PMCUD15,
+      </if>
+      <if test="pmc912 != null">
+        PMC912,
+      </if>
+      <if test="pmc1912 != null">
+        PMC1912,
+      </if>
+      <if test="pmc1913 != null">
+        PMC1913,
+      </if>
+      <if test="pmc1914 != null">
+        PMC1914,
+      </if>
+      <if test="pmc1915 != null">
+        PMC1915,
+      </if>
+      <if test="pmc1916 != null">
+        PMC1916,
+      </if>
+      <if test="pmc1917 != null">
+        PMC1917,
+      </if>
+      <if test="pmc1918 != null">
+        PMC1918,
+      </if>
+      <if test="pmc1919 != null">
+        PMC1919,
+      </if>
+      <if test="pmc1920 != null">
+        PMC1920,
+      </if>
+      <if test="pmc1921 != null">
+        PMC1921,
+      </if>
+      <if test="pmc913 != null">
+        PMC913,
+      </if>
+      <if test="pmc281 != null">
+        PMC281,
+      </if>
+      <if test="pmc914 != null">
+        PMC914,
+      </if>
+      <if test="pmc915 != null">
+        PMC915,
+      </if>
+      <if test="pmc916 != null">
+        PMC916,
+      </if>
+      <if test="pmc917 != null">
+        PMC917,
+      </if>
+      <if test="pmc918 != null">
+        PMC918,
+      </if>
+      <if test="pmc919 != null">
+        PMC919,
+      </if>
+      <if test="pmc920 != null">
+        PMC920,
+      </if>
+      <if test="pmc921 != null">
+        PMC921,
+      </if>
+      <if test="pmc922 != null">
+        PMC922,
+      </if>
+      <if test="pmc923 != null">
+        PMC923,
+      </if>
+      <if test="pmc57 != null">
+        PMC57,
+      </if>
+      <if test="pmc58 != null">
+        PMC58,
+      </if>
+      <if test="pmc59 != null">
+        PMC59,
+      </if>
+      <if test="pmc60 != null">
+        PMC60,
+      </if>
+      <if test="pmc930 != null">
+        PMC930,
+      </if>
+      <if test="pmccrat != null">
+        PMCCRAT,
+      </if>
+      <if test="pmcoriu != null">
+        PMCORIU,
+      </if>
+      <if test="pmcorig != null">
+        PMCORIG,
+      </if>
+      <if test="pmc29 != null">
+        PMC29,
+      </if>
+      <if test="pmc61 != null">
+        PMC61,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmc02 != null">
+        #{pmc02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc03 != null">
+        #{pmc03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc04 != null">
+        #{pmc04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc05 != null">
+        #{pmc05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc06 != null">
+        #{pmc06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc07 != null">
+        #{pmc07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc081 != null">
+        #{pmc081,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc082 != null">
+        #{pmc082,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc091 != null">
+        #{pmc091,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc092 != null">
+        #{pmc092,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc093 != null">
+        #{pmc093,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc094 != null">
+        #{pmc094,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc095 != null">
+        #{pmc095,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc10 != null">
+        #{pmc10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc11 != null">
+        #{pmc11,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc12 != null">
+        #{pmc12,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc13 != null">
+        #{pmc13,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc14 != null">
+        #{pmc14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc15 != null">
+        #{pmc15,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc16 != null">
+        #{pmc16,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc17 != null">
+        #{pmc17,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc18 != null">
+        #{pmc18,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc19 != null">
+        #{pmc19,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc20 != null">
+        #{pmc20,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc21 != null">
+        #{pmc21,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc22 != null">
+        #{pmc22,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc23 != null">
+        #{pmc23,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc24 != null">
+        #{pmc24,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc25 != null">
+        #{pmc25,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc26 != null">
+        #{pmc26,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc27 != null">
+        #{pmc27,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc28 != null">
+        #{pmc28,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc30 != null">
+        #{pmc30,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc40 != null">
+        #{pmc40,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc41 != null">
+        #{pmc41,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc42 != null">
+        #{pmc42,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc43 != null">
+        #{pmc43,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc44 != null">
+        #{pmc44,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc45 != null">
+        #{pmc45,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc46 != null">
+        #{pmc46,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc47 != null">
+        #{pmc47,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc48 != null">
+        #{pmc48,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc49 != null">
+        #{pmc49,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc50 != null">
+        #{pmc50,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc51 != null">
+        #{pmc51,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc52 != null">
+        #{pmc52,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc53 != null">
+        #{pmc53,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc54 != null">
+        #{pmc54,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc55 != null">
+        #{pmc55,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc56 != null">
+        #{pmc56,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc901 != null">
+        #{pmc901,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc902 != null">
+        #{pmc902,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc903 != null">
+        #{pmc903,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc904 != null">
+        #{pmc904,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc905 != null">
+        #{pmc905,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc906 != null">
+        #{pmc906,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc907 != null">
+        #{pmc907,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc908 != null">
+        #{pmc908,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc909 != null">
+        #{pmc909,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc910 != null">
+        #{pmc910,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc911 != null">
+        #{pmc911,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcacti != null">
+        #{pmcacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcuser != null">
+        #{pmcuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcgrup != null">
+        #{pmcgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcmodu != null">
+        #{pmcmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcdate != null">
+        #{pmcdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcud01 != null">
+        #{pmcud01,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud02 != null">
+        #{pmcud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud03 != null">
+        #{pmcud03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud04 != null">
+        #{pmcud04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud05 != null">
+        #{pmcud05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud06 != null">
+        #{pmcud06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud07 != null">
+        #{pmcud07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud08 != null">
+        #{pmcud08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud09 != null">
+        #{pmcud09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud10 != null">
+        #{pmcud10,jdbcType=DECIMAL},
+      </if>
+      <if test="pmcud11 != null">
+        #{pmcud11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmcud12 != null">
+        #{pmcud12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmcud13 != null">
+        #{pmcud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcud14 != null">
+        #{pmcud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcud15 != null">
+        #{pmcud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc912 != null">
+        #{pmc912,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1912 != null">
+        #{pmc1912,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1913 != null">
+        #{pmc1913,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1914 != null">
+        #{pmc1914,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1915 != null">
+        #{pmc1915,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1916 != null">
+        #{pmc1916,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1917 != null">
+        #{pmc1917,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1918 != null">
+        #{pmc1918,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc1919 != null">
+        #{pmc1919,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1920 != null">
+        #{pmc1920,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1921 != null">
+        #{pmc1921,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc913 != null">
+        #{pmc913,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc281 != null">
+        #{pmc281,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc914 != null">
+        #{pmc914,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc915 != null">
+        #{pmc915,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc916 != null">
+        #{pmc916,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc917 != null">
+        #{pmc917,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc918 != null">
+        #{pmc918,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc919 != null">
+        #{pmc919,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc920 != null">
+        #{pmc920,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc921 != null">
+        #{pmc921,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc922 != null">
+        #{pmc922,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc923 != null">
+        #{pmc923,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc57 != null">
+        #{pmc57,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc58 != null">
+        #{pmc58,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc59 != null">
+        #{pmc59,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc60 != null">
+        #{pmc60,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc930 != null">
+        #{pmc930,jdbcType=VARCHAR},
+      </if>
+      <if test="pmccrat != null">
+        #{pmccrat,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcoriu != null">
+        #{pmcoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcorig != null">
+        #{pmcorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc29 != null">
+        #{pmc29,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc61 != null">
+        #{pmc61,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmcFile">
+    update PMC_FILE
+    <set>
+      <if test="pmc02 != null">
+        PMC02 = #{pmc02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc03 != null">
+        PMC03 = #{pmc03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc04 != null">
+        PMC04 = #{pmc04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc05 != null">
+        PMC05 = #{pmc05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc06 != null">
+        PMC06 = #{pmc06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc07 != null">
+        PMC07 = #{pmc07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc081 != null">
+        PMC081 = #{pmc081,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc082 != null">
+        PMC082 = #{pmc082,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc091 != null">
+        PMC091 = #{pmc091,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc092 != null">
+        PMC092 = #{pmc092,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc093 != null">
+        PMC093 = #{pmc093,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc094 != null">
+        PMC094 = #{pmc094,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc095 != null">
+        PMC095 = #{pmc095,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc10 != null">
+        PMC10 = #{pmc10,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc11 != null">
+        PMC11 = #{pmc11,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc12 != null">
+        PMC12 = #{pmc12,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc13 != null">
+        PMC13 = #{pmc13,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc14 != null">
+        PMC14 = #{pmc14,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc15 != null">
+        PMC15 = #{pmc15,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc16 != null">
+        PMC16 = #{pmc16,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc17 != null">
+        PMC17 = #{pmc17,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc18 != null">
+        PMC18 = #{pmc18,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc19 != null">
+        PMC19 = #{pmc19,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc20 != null">
+        PMC20 = #{pmc20,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc21 != null">
+        PMC21 = #{pmc21,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc22 != null">
+        PMC22 = #{pmc22,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc23 != null">
+        PMC23 = #{pmc23,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc24 != null">
+        PMC24 = #{pmc24,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc25 != null">
+        PMC25 = #{pmc25,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc26 != null">
+        PMC26 = #{pmc26,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc27 != null">
+        PMC27 = #{pmc27,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc28 != null">
+        PMC28 = #{pmc28,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc30 != null">
+        PMC30 = #{pmc30,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc40 != null">
+        PMC40 = #{pmc40,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc41 != null">
+        PMC41 = #{pmc41,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc42 != null">
+        PMC42 = #{pmc42,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc43 != null">
+        PMC43 = #{pmc43,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc44 != null">
+        PMC44 = #{pmc44,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc45 != null">
+        PMC45 = #{pmc45,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc46 != null">
+        PMC46 = #{pmc46,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc47 != null">
+        PMC47 = #{pmc47,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc48 != null">
+        PMC48 = #{pmc48,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc49 != null">
+        PMC49 = #{pmc49,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc50 != null">
+        PMC50 = #{pmc50,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc51 != null">
+        PMC51 = #{pmc51,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc52 != null">
+        PMC52 = #{pmc52,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc53 != null">
+        PMC53 = #{pmc53,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc54 != null">
+        PMC54 = #{pmc54,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc55 != null">
+        PMC55 = #{pmc55,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc56 != null">
+        PMC56 = #{pmc56,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc901 != null">
+        PMC901 = #{pmc901,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc902 != null">
+        PMC902 = #{pmc902,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc903 != null">
+        PMC903 = #{pmc903,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc904 != null">
+        PMC904 = #{pmc904,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc905 != null">
+        PMC905 = #{pmc905,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc906 != null">
+        PMC906 = #{pmc906,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc907 != null">
+        PMC907 = #{pmc907,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc908 != null">
+        PMC908 = #{pmc908,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc909 != null">
+        PMC909 = #{pmc909,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc910 != null">
+        PMC910 = #{pmc910,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc911 != null">
+        PMC911 = #{pmc911,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcacti != null">
+        PMCACTI = #{pmcacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcuser != null">
+        PMCUSER = #{pmcuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcgrup != null">
+        PMCGRUP = #{pmcgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcmodu != null">
+        PMCMODU = #{pmcmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcdate != null">
+        PMCDATE = #{pmcdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcud01 != null">
+        PMCUD01 = #{pmcud01,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud02 != null">
+        PMCUD02 = #{pmcud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud03 != null">
+        PMCUD03 = #{pmcud03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud04 != null">
+        PMCUD04 = #{pmcud04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud05 != null">
+        PMCUD05 = #{pmcud05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud06 != null">
+        PMCUD06 = #{pmcud06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud07 != null">
+        PMCUD07 = #{pmcud07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud08 != null">
+        PMCUD08 = #{pmcud08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud09 != null">
+        PMCUD09 = #{pmcud09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcud10 != null">
+        PMCUD10 = #{pmcud10,jdbcType=DECIMAL},
+      </if>
+      <if test="pmcud11 != null">
+        PMCUD11 = #{pmcud11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmcud12 != null">
+        PMCUD12 = #{pmcud12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmcud13 != null">
+        PMCUD13 = #{pmcud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcud14 != null">
+        PMCUD14 = #{pmcud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcud15 != null">
+        PMCUD15 = #{pmcud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmc912 != null">
+        PMC912 = #{pmc912,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1912 != null">
+        PMC1912 = #{pmc1912,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1913 != null">
+        PMC1913 = #{pmc1913,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1914 != null">
+        PMC1914 = #{pmc1914,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1915 != null">
+        PMC1915 = #{pmc1915,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1916 != null">
+        PMC1916 = #{pmc1916,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1917 != null">
+        PMC1917 = #{pmc1917,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1918 != null">
+        PMC1918 = #{pmc1918,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc1919 != null">
+        PMC1919 = #{pmc1919,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1920 != null">
+        PMC1920 = #{pmc1920,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc1921 != null">
+        PMC1921 = #{pmc1921,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc913 != null">
+        PMC913 = #{pmc913,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc281 != null">
+        PMC281 = #{pmc281,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc914 != null">
+        PMC914 = #{pmc914,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc915 != null">
+        PMC915 = #{pmc915,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc916 != null">
+        PMC916 = #{pmc916,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc917 != null">
+        PMC917 = #{pmc917,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc918 != null">
+        PMC918 = #{pmc918,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc919 != null">
+        PMC919 = #{pmc919,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc920 != null">
+        PMC920 = #{pmc920,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc921 != null">
+        PMC921 = #{pmc921,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc922 != null">
+        PMC922 = #{pmc922,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc923 != null">
+        PMC923 = #{pmc923,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc57 != null">
+        PMC57 = #{pmc57,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc58 != null">
+        PMC58 = #{pmc58,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc59 != null">
+        PMC59 = #{pmc59,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc60 != null">
+        PMC60 = #{pmc60,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc930 != null">
+        PMC930 = #{pmc930,jdbcType=VARCHAR},
+      </if>
+      <if test="pmccrat != null">
+        PMCCRAT = #{pmccrat,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmcoriu != null">
+        PMCORIU = #{pmcoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmcorig != null">
+        PMCORIG = #{pmcorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmc29 != null">
+        PMC29 = #{pmc29,jdbcType=DECIMAL},
+      </if>
+      <if test="pmc61 != null">
+        PMC61 = #{pmc61,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMC01 = #{pmc01,jdbcType=VARCHAR}
+  </update>
+
+  <select id="searchPmcListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmcFile">
+    select pmc01,pmc02,pmy02,pmc03,pmc05,pmc17,pma02,pmc22,pmc24,pmc47,pmc49, pnz02,pmc081,pmcacti
+    from ${centre}.pmc_file
+    left join ${centre}.pmy_file on pmy01 = pmc02
+    left join ${centre}.pma_file on pma01 = pmc17
+    left join ${centre}.pnz_file on pnz01 = pmc49
+    <where>
+      <if test="code != null and code != '' ">
+        and ( lower(pmc01) like lower('%${code}%') or lower(pmc03) like lower('%${code}%') )
+      </if>
+      <if test="acti != null and acti != '' ">
+        and pmcacti = #{acti}
+      </if>
+    </where>
+  </select>
+
+</mapper>

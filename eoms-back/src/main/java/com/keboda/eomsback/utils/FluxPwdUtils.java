@@ -12,7 +12,7 @@ public class FluxPwdUtils {
 
     private final static String password = "123";
 
-    private final static String passwordSalt = "ST1686874190256";
+    private final static String passwordSalt = "ST1678338626440SR121112077108036030";
 
     public static void MD5Signature() throws Exception{
 

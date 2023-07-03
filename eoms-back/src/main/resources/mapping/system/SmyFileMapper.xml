@@ -673,7 +673,7 @@
     where SMYSLIP = #{smyslip,jdbcType=VARCHAR}
   </update>
   <select id="searchSmyListPageHelper" resultType="com.keboda.eomsback.system.pojo.SmyFile">
-      select smyslip,smydesc,smyauno,smymxno,smysys,smykind,smydmy1,smydmy2,smyacti,smy72,ta_smy211,gee04,gee05
+      select smyslip,smydesc,smyauno,smymxno,smysys,smykind,smydmy1,smydmy2,smyacti,smy72,ta_smy211,gee05,gee06
         from ${centre}.smy_file
         left  join gee_file on upper(gee01) = upper(smysys) and upper(gee02) = upper(smykind) and gee03 = '2'
       <where>

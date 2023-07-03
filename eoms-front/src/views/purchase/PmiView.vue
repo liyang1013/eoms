@@ -54,8 +54,8 @@
     <!-- 明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1200px" >
       <el-form label-position="left" label-width="80px" :model="documents.master">
-        <el-row>
-          <el-col :span="7" :offset="1">
+        <el-row >
+          <el-col :span="7" >
             <el-form-item label="核价单号:">
               <span style="float: left;">{{ documents.master.pmi01 }}</span>
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.smydesc }}</span>

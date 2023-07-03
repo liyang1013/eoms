@@ -17,7 +17,7 @@ import java.util.List;
 @EnableScheduling
 public class InvalidDocumentDeleteTimer {
 
-    private final static String[] Centres = {"WCTZ"}; //{"ZJKBDJD","ZJKBDDZ","ADAS","JXKEAO","zjzbzx","jxkss"}
+    private final static String[] Centres =  {"ZJKBDJD","ZJKBDDZ","ADAS","JXKEAO","ZJZBZX","JXKSS"};
 
     @Resource
     private PmnFileMapper pmnFileMapper;
