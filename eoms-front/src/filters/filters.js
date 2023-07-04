@@ -172,4 +172,11 @@ export function formatPma11(code){
 
 }
 
+export function formatApproval(code){
+    if(code === '0') return '已核准';
+    if(code === '1') return '核准中';
+    if(code === '2') return '未核准';
+}
+
+
 

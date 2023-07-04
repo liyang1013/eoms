@@ -12,16 +12,22 @@ export const menu = [
         component: null,
         children: [
             {
+                path: 'pma',
+                    name: '付款方式',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/purchase/PmaView')
+            },
+            {
                 path: 'pmy',
                 name: '供应商档案',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/purchase/PmcView')
             },
             {
-                path: 'pma',
-                name: '付款方式',
+                path: 'pmh',
+                name: '供应商价格',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/purchase/PmaView')
+                component: () => import('@/views/purchase/PmhView')
             },
             {
                 path: 'pmi',

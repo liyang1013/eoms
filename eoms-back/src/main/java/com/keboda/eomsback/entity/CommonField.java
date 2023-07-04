@@ -28,6 +28,11 @@ public class CommonField {
     private String ima021;
 
     /**
+     * 库存单位
+     */
+    private String ima25;
+
+    /**
      * 采购单位
      */
     private String ima44;

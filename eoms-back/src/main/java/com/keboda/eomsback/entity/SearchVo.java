@@ -22,18 +22,25 @@ public class SearchVo {
 
     private String code_5;
 
+    /**
+     * 供应商
+     */
     private String pmc;
 
+    /**
+     * 料件
+     */
+    private String ima;
+
+    /**
+     * 中心
+     */
     private String centre;
 
     /**
      * 有效性默认Y
      */
     private String acti = "Y";
-
-    private Date startdate;
-
-    private Date enddate;
 
     private Integer currentPage = 1;
 

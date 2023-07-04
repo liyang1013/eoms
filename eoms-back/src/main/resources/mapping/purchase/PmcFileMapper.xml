@@ -1048,8 +1048,8 @@
     left join ${centre}.pma_file on pma01 = pmc17
     left join ${centre}.pnz_file on pnz01 = pmc49
     <where>
-      <if test="code != null and code != '' ">
-        and ( lower(pmc01) like lower('%${code}%') or lower(pmc03) like lower('%${code}%') )
+      <if test="pmc != null and pmc != '' ">
+        and ( lower(pmc01) like lower('%${pmc}%') or lower(pmc03) like lower('%${pmc}%') )
       </if>
       <if test="acti != null and acti != '' ">
         and pmcacti = #{acti}

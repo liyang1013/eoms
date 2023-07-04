@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmhFileMapper">
+
+  <insert id="insertSelective" keyColumn="PMH01" keyProperty="pmh01" parameterType="com.keboda.eomsback.purchase.pojo.PmhFile" useGeneratedKeys="true">
+    insert into PMH_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmh02 != null">
+        PMH02,
+      </if>
+      <if test="pmh13 != null">
+        PMH13,
+      </if>
+      <if test="pmh21 != null">
+        PMH21,
+      </if>
+      <if test="pmh22 != null">
+        PMH22,
+      </if>
+      <if test="pmh23 != null">
+        PMH23,
+      </if>
+      <if test="pmh03 != null">
+        PMH03,
+      </if>
+      <if test="pmh04 != null">
+        PMH04,
+      </if>
+      <if test="pmh05 != null">
+        PMH05,
+      </if>
+      <if test="pmh06 != null">
+        PMH06,
+      </if>
+      <if test="pmh07 != null">
+        PMH07,
+      </if>
+      <if test="pmh08 != null">
+        PMH08,
+      </if>
+      <if test="pmh09 != null">
+        PMH09,
+      </if>
+      <if test="pmh10 != null">
+        PMH10,
+      </if>
+      <if test="pmh11 != null">
+        PMH11,
+      </if>
+      <if test="pmh12 != null">
+        PMH12,
+      </if>
+      <if test="pmh14 != null">
+        PMH14,
+      </if>
+      <if test="pmh15 != null">
+        PMH15,
+      </if>
+      <if test="pmh16 != null">
+        PMH16,
+      </if>
+      <if test="pmhacti != null">
+        PMHACTI,
+      </if>
+      <if test="pmhuser != null">
+        PMHUSER,
+      </if>
+      <if test="pmhgrup != null">
+        PMHGRUP,
+      </if>
+      <if test="pmhmodu != null">
+        PMHMODU,
+      </if>
+      <if test="pmhdate != null">
+        PMHDATE,
+      </if>
+      <if test="pmh17 != null">
+        PMH17,
+      </if>
+      <if test="pmh18 != null">
+        PMH18,
+      </if>
+      <if test="pmh19 != null">
+        PMH19,
+      </if>
+      <if test="pmh20 != null">
+        PMH20,
+      </if>
+      <if test="pmh24 != null">
+        PMH24,
+      </if>
+      <if test="pmhorig != null">
+        PMHORIG,
+      </if>
+      <if test="pmhoriu != null">
+        PMHORIU,
+      </if>
+      <if test="pmh25 != null">
+        PMH25,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmh02 != null">
+        #{pmh02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh13 != null">
+        #{pmh13,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh21 != null">
+        #{pmh21,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh22 != null">
+        #{pmh22,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh23 != null">
+        #{pmh23,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh03 != null">
+        #{pmh03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh04 != null">
+        #{pmh04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh05 != null">
+        #{pmh05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh06 != null">
+        #{pmh06,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmh07 != null">
+        #{pmh07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh08 != null">
+        #{pmh08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh09 != null">
+        #{pmh09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh10 != null">
+        #{pmh10,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmh11 != null">
+        #{pmh11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh12 != null">
+        #{pmh12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh14 != null">
+        #{pmh14,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh15 != null">
+        #{pmh15,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh16 != null">
+        #{pmh16,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhacti != null">
+        #{pmhacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhuser != null">
+        #{pmhuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhgrup != null">
+        #{pmhgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhmodu != null">
+        #{pmhmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhdate != null">
+        #{pmhdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmh17 != null">
+        #{pmh17,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh18 != null">
+        #{pmh18,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh19 != null">
+        #{pmh19,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh20 != null">
+        #{pmh20,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh24 != null">
+        #{pmh24,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhorig != null">
+        #{pmhorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhoriu != null">
+        #{pmhoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh25 != null">
+        #{pmh25,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmhFile">
+    update PMH_FILE
+    <set>
+      <if test="pmh03 != null">
+        PMH03 = #{pmh03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh04 != null">
+        PMH04 = #{pmh04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh05 != null">
+        PMH05 = #{pmh05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh06 != null">
+        PMH06 = #{pmh06,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmh07 != null">
+        PMH07 = #{pmh07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh08 != null">
+        PMH08 = #{pmh08,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh09 != null">
+        PMH09 = #{pmh09,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh10 != null">
+        PMH10 = #{pmh10,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmh11 != null">
+        PMH11 = #{pmh11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh12 != null">
+        PMH12 = #{pmh12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh14 != null">
+        PMH14 = #{pmh14,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh15 != null">
+        PMH15 = #{pmh15,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh16 != null">
+        PMH16 = #{pmh16,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhacti != null">
+        PMHACTI = #{pmhacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhuser != null">
+        PMHUSER = #{pmhuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhgrup != null">
+        PMHGRUP = #{pmhgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhmodu != null">
+        PMHMODU = #{pmhmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhdate != null">
+        PMHDATE = #{pmhdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmh17 != null">
+        PMH17 = #{pmh17,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh18 != null">
+        PMH18 = #{pmh18,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh19 != null">
+        PMH19 = #{pmh19,jdbcType=DECIMAL},
+      </if>
+      <if test="pmh20 != null">
+        PMH20 = #{pmh20,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh24 != null">
+        PMH24 = #{pmh24,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhorig != null">
+        PMHORIG = #{pmhorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmhoriu != null">
+        PMHORIU = #{pmhoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmh25 != null">
+        PMH25 = #{pmh25,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMH01 = #{pmh01,jdbcType=VARCHAR}
+      and PMH02 = #{pmh02,jdbcType=VARCHAR}
+      and PMH13 = #{pmh13,jdbcType=VARCHAR}
+      and PMH21 = #{pmh21,jdbcType=VARCHAR}
+      and PMH22 = #{pmh22,jdbcType=VARCHAR}
+      and PMH23 = #{pmh23,jdbcType=VARCHAR}
+  </update>
+  <select id="searchPmhListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmhFile">
+    select pmh01,ima02,ima021,pmh02,pmh03,pmc03,pmh05,pmh06,pmh13,pmh14,pmh17,pmh18,pmh12,pmh19,ima25,ima44
+    from ${centre}.pmh_file
+    left join ${centre}.ima_file on ima01 = pmh01
+    left join ${centre}.pmc_file on pmc01 = pmh02
+    <where>
+        <if test="ima != null and ima != '' ">
+          and ( lower(pmh01) like lower('%${ima}%') or  lower(ima02) like lower('%${ima}%')  )
+        </if>
+      <if test="pmc != null and pmc != '' ">
+        and ( lower(pmh02) like lower('%${pmc}%') or lower(pmc02) like lower('%${pmc}%') )
+      </if>
+      <if test="acti != null and acti != '' ">
+        and pmhacti = #{acti}
+      </if>
+    </where>
+  </select>
+</mapper>
