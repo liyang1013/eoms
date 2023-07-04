@@ -7,30 +7,45 @@
       <el-form-item label="生效状态:">
         <selected-acti v-model="searchVo.acti"></selected-acti>
       </el-form-item>
-      <el-form-item label="供应商:">
-        <el-input v-model="searchVo.code" placeholder="供应商编码/名称" clearable></el-input>
+      <el-form-item label="付款方式:">
+        <el-input v-model="searchVo.code" placeholder="付款方式" clearable></el-input>
       </el-form-item>
       <el-form-item style="float:right;">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
-    <el-alert title="供应商分类档案: apmi106; 供应商档案: apmi600" type="success" :closable="false">
+    <el-alert title="付款方式: apmi100; 多账期: apmi101" type="success" :closable="false">
     </el-alert>
     <el-table :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
-      <el-table-column prop="pmc01" label="供应商编码">
+      <el-table-column prop="pma01" label="付款条件">
       </el-table-column>
-      <el-table-column prop="pmc03" label="供应商名称">
+      <el-table-column prop="pma11" label="类型">
+        <template slot-scope="scope">
+          {{scope.row.pma03 | formatPma11}}
+        </template>
       </el-table-column>
-      <el-table-column prop="pmy02" label="供应商分类">
+      <el-table-column prop="pma02" label="说明">
       </el-table-column>
-      <el-table-column prop="pmc22" label="币种">
+      <el-table-column prop="pma03" label="付款日起算基准">
+        <template slot-scope="scope">
+          {{scope.row.pma03 | formatPma}}
+        </template>
       </el-table-column>
-      <el-table-column prop="pma02" label="付款方式">
+      <el-table-column prop="pma09" label="加月数">
       </el-table-column>
-      <el-table-column prop="pnz02" label="价格条件">
+      <el-table-column prop="pma08" label="加天数">
+      </el-table-column>
+      <el-table-column prop="pma12" label="票据日起算基准">
+        <template slot-scope="scope">
+          {{scope.row.pma12 | formatPma}}
+        </template>
+      </el-table-column>
+      <el-table-column prop="pma13" label="加月数">
+      </el-table-column>
+      <el-table-column prop="pma10" label="加天数">
       </el-table-column>
     </el-table>
     <el-pagination background layout="total, sizes, prev, pager, next" :total="searchVo.total" style=" margin-top: 10px;"
@@ -44,9 +59,10 @@
 
 import selectedCentre from '@/components/selected/selected-centre.vue';
 import selectedActi from "@/components/selected/selected-acti.vue";
+import {formatPma, formatPma11} from "@/filters/filters";
 
 export default {
-  name: "pmc",
+  name: "pma",
   data() {
     return {
       searchVo: {
@@ -70,7 +86,7 @@ export default {
     search(val) {
       this.searchVo.currentPage = val;
       this.tableLoading = true
-      this.$http.post('/api/pmc/searchPmcListPageHelper', this.searchVo).then(res => {
+      this.$http.post('/api/pma/searchPmaListPageHelper', this.searchVo).then(res => {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total
       }).finally(() => this.tableLoading = false);
@@ -85,6 +101,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

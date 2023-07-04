@@ -18,6 +18,12 @@ export const menu = [
                 component: () => import('@/views/purchase/PmcView')
             },
             {
+                path: 'pma',
+                name: '付款方式',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/purchase/PmaView')
+            },
+            {
                 path: 'pmi',
                 name: '核价单',
                 icon: 'el-icon-tickets',

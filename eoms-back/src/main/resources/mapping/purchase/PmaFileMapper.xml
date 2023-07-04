@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmaFileMapper">
+
+  <insert id="insertSelective" keyColumn="PMA01" keyProperty="pma01" parameterType="com.keboda.eomsback.purchase.pojo.PmaFile" useGeneratedKeys="true">
+    insert into PMA_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pma02 != null">
+        PMA02,
+      </if>
+      <if test="pma03 != null">
+        PMA03,
+      </if>
+      <if test="pma04 != null">
+        PMA04,
+      </if>
+      <if test="pma05 != null">
+        PMA05,
+      </if>
+      <if test="pma06 != null">
+        PMA06,
+      </if>
+      <if test="pma07 != null">
+        PMA07,
+      </if>
+      <if test="pma08 != null">
+        PMA08,
+      </if>
+      <if test="pma09 != null">
+        PMA09,
+      </if>
+      <if test="pma10 != null">
+        PMA10,
+      </if>
+      <if test="pma11 != null">
+        PMA11,
+      </if>
+      <if test="pma12 != null">
+        PMA12,
+      </if>
+      <if test="pma13 != null">
+        PMA13,
+      </if>
+      <if test="pmaacti != null">
+        PMAACTI,
+      </if>
+      <if test="pmauser != null">
+        PMAUSER,
+      </if>
+      <if test="pmagrup != null">
+        PMAGRUP,
+      </if>
+      <if test="pmamodu != null">
+        PMAMODU,
+      </if>
+      <if test="pmadate != null">
+        PMADATE,
+      </if>
+      <if test="pmaorig != null">
+        PMAORIG,
+      </if>
+      <if test="pmaoriu != null">
+        PMAORIU,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pma02 != null">
+        #{pma02,jdbcType=VARCHAR},
+      </if>
+      <if test="pma03 != null">
+        #{pma03,jdbcType=VARCHAR},
+      </if>
+      <if test="pma04 != null">
+        #{pma04,jdbcType=DECIMAL},
+      </if>
+      <if test="pma05 != null">
+        #{pma05,jdbcType=DECIMAL},
+      </if>
+      <if test="pma06 != null">
+        #{pma06,jdbcType=DECIMAL},
+      </if>
+      <if test="pma07 != null">
+        #{pma07,jdbcType=DECIMAL},
+      </if>
+      <if test="pma08 != null">
+        #{pma08,jdbcType=DECIMAL},
+      </if>
+      <if test="pma09 != null">
+        #{pma09,jdbcType=DECIMAL},
+      </if>
+      <if test="pma10 != null">
+        #{pma10,jdbcType=DECIMAL},
+      </if>
+      <if test="pma11 != null">
+        #{pma11,jdbcType=VARCHAR},
+      </if>
+      <if test="pma12 != null">
+        #{pma12,jdbcType=VARCHAR},
+      </if>
+      <if test="pma13 != null">
+        #{pma13,jdbcType=DECIMAL},
+      </if>
+      <if test="pmaacti != null">
+        #{pmaacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmauser != null">
+        #{pmauser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmagrup != null">
+        #{pmagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmamodu != null">
+        #{pmamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmadate != null">
+        #{pmadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmaorig != null">
+        #{pmaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmaoriu != null">
+        #{pmaoriu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmaFile">
+    update PMA_FILE
+    <set>
+      <if test="pma02 != null">
+        PMA02 = #{pma02,jdbcType=VARCHAR},
+      </if>
+      <if test="pma03 != null">
+        PMA03 = #{pma03,jdbcType=VARCHAR},
+      </if>
+      <if test="pma04 != null">
+        PMA04 = #{pma04,jdbcType=DECIMAL},
+      </if>
+      <if test="pma05 != null">
+        PMA05 = #{pma05,jdbcType=DECIMAL},
+      </if>
+      <if test="pma06 != null">
+        PMA06 = #{pma06,jdbcType=DECIMAL},
+      </if>
+      <if test="pma07 != null">
+        PMA07 = #{pma07,jdbcType=DECIMAL},
+      </if>
+      <if test="pma08 != null">
+        PMA08 = #{pma08,jdbcType=DECIMAL},
+      </if>
+      <if test="pma09 != null">
+        PMA09 = #{pma09,jdbcType=DECIMAL},
+      </if>
+      <if test="pma10 != null">
+        PMA10 = #{pma10,jdbcType=DECIMAL},
+      </if>
+      <if test="pma11 != null">
+        PMA11 = #{pma11,jdbcType=VARCHAR},
+      </if>
+      <if test="pma12 != null">
+        PMA12 = #{pma12,jdbcType=VARCHAR},
+      </if>
+      <if test="pma13 != null">
+        PMA13 = #{pma13,jdbcType=DECIMAL},
+      </if>
+      <if test="pmaacti != null">
+        PMAACTI = #{pmaacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmauser != null">
+        PMAUSER = #{pmauser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmagrup != null">
+        PMAGRUP = #{pmagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmamodu != null">
+        PMAMODU = #{pmamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmadate != null">
+        PMADATE = #{pmadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmaorig != null">
+        PMAORIG = #{pmaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmaoriu != null">
+        PMAORIU = #{pmaoriu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMA01 = #{pma01,jdbcType=VARCHAR}
+  </update>
+  <select id="searchPmaListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmaFile">
+    select pma01,pma02,pma03,pma08,pma09,pma10,pma11,pma12,pma13
+    from ${centre}.pma_file
+    <where>
+      <if test="code != null and code != '' ">
+        and (lower(pma01) like lower('%${code}%')   or lower(pma02) like lower('%${code}%') )
+      </if>
+      <if test="acti != null and acti != '' ">
+        and pmaacti = #{acti}
+      </if>
+    </where>
+  </select>
+
+</mapper>

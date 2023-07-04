@@ -109,7 +109,6 @@
 <script>
 import selectedCentre from '@/components/selected/selected-centre.vue';
 import selectedConf from '@/components/selected/selected-conf.vue';
-import {formatSignoff} from "@/filters/filters";
 
 export default {
   name: 'pmi',

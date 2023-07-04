@@ -277,14 +277,17 @@
   </update>
     <select id="searchPmiListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmiFile">
         select pmi01,pmi02,pmi03,pmc03,pmi04,pmi06,pmi07,pmi08,pmi081,pmi09,gen02,pmiconf,smydesc,#{centre} centre
-      from ${centre}.pmi_file
-            left join ${centre}.smy_file on smyslip = SUBSTR(pmi01,0,4)
-            left join ${centre}.pmc_file on pmc01 = pmi03
-            left join ${centre}.gen_file on gen01 = pmi09
-      <where>
-          <if test="code != null and code != '' ">
-            and lower(pmi01) like lower('%${code}%')
-          </if>
+        from ${centre}.pmi_file
+        left join ${centre}.smy_file on smyslip = SUBSTR(pmi01,0,4)
+        left join ${centre}.pmc_file on pmc01 = pmi03
+        left join ${centre}.gen_file on gen01 = pmi09
+        <where>
+            <if test="code != null and code != '' ">
+                and lower(pmi01) like lower('%${code}%')
+            </if>
+            <if test="acti != null and acti != '' ">
+                and pmiacti = #{acti}
+            </if>
         </where>
     </select>
 </mapper>

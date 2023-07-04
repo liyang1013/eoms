@@ -137,3 +137,39 @@ export function formatWdi54(code){
     if(code === '3') return '已出库';
 }
 
+/**
+ * 账款日起算基准
+ * @param code
+ * @returns {string}
+ */
+export function formatPma(code){
+
+    if(code === '1') return '进货日';
+    if(code === '2') return '发票日';
+    if(code === '3') return '帐款日';
+    if(code === '4') return '进货日次月初';
+    if(code === '5') return '发票日次月初';
+    if(code === '6') return '帐款日次月初';
+    if(code === '7') return '应付款日';
+    if(code === '8') return '应付款日次月初';
+
+}
+
+/**
+ * 付款类型
+ * @param code
+ * @returns {string}
+ */
+export function formatPma11(code){
+
+    if(code === '1') return '支票';
+    if(code === '2') return '转帐';
+    if(code === '3') return 'L/C';
+    if(code === '4') return 'OA';
+    if(code === '6') return 'DA';
+    if(code === '7') return 'DP';
+    if(code === '8') return 'LLC';
+
+}
+
+

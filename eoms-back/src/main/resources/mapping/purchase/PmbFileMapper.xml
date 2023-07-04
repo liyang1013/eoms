@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmbFileMapper">
+  <insert id="insertSelective" keyColumn="PMB01" keyProperty="pmb01" parameterType="com.keboda.eomsback.purchase.pojo.PmbFile" useGeneratedKeys="true">
+    insert into PMB_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pmb03 != null">
+        PMB03,
+      </if>
+      <if test="pmb02 != null">
+        PMB02,
+      </if>
+      <if test="pmb04 != null">
+        PMB04,
+      </if>
+      <if test="pmb05 != null">
+        PMB05,
+      </if>
+      <if test="pmb06 != null">
+        PMB06,
+      </if>
+      <if test="pmb07 != null">
+        PMB07,
+      </if>
+      <if test="pmbacti != null">
+        PMBACTI,
+      </if>
+      <if test="pmbuser != null">
+        PMBUSER,
+      </if>
+      <if test="pmbgrup != null">
+        PMBGRUP,
+      </if>
+      <if test="pmbmodu != null">
+        PMBMODU,
+      </if>
+      <if test="pmbdate != null">
+        PMBDATE,
+      </if>
+      <if test="pmborig != null">
+        PMBORIG,
+      </if>
+      <if test="pmboriu != null">
+        PMBORIU,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pmb03 != null">
+        #{pmb03,jdbcType=DECIMAL},
+      </if>
+      <if test="pmb02 != null">
+        #{pmb02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmb04 != null">
+        #{pmb04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmb05 != null">
+        #{pmb05,jdbcType=DECIMAL},
+      </if>
+      <if test="pmb06 != null">
+        #{pmb06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmb07 != null">
+        #{pmb07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbacti != null">
+        #{pmbacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbuser != null">
+        #{pmbuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbgrup != null">
+        #{pmbgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbmodu != null">
+        #{pmbmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbdate != null">
+        #{pmbdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmborig != null">
+        #{pmborig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmboriu != null">
+        #{pmboriu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmbFile">
+    update PMB_FILE
+    <set>
+      <if test="pmb02 != null">
+        PMB02 = #{pmb02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmb04 != null">
+        PMB04 = #{pmb04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmb05 != null">
+        PMB05 = #{pmb05,jdbcType=DECIMAL},
+      </if>
+      <if test="pmb06 != null">
+        PMB06 = #{pmb06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmb07 != null">
+        PMB07 = #{pmb07,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbacti != null">
+        PMBACTI = #{pmbacti,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbuser != null">
+        PMBUSER = #{pmbuser,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbgrup != null">
+        PMBGRUP = #{pmbgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbmodu != null">
+        PMBMODU = #{pmbmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="pmbdate != null">
+        PMBDATE = #{pmbdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmborig != null">
+        PMBORIG = #{pmborig,jdbcType=VARCHAR},
+      </if>
+      <if test="pmboriu != null">
+        PMBORIU = #{pmboriu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PMB01 = #{pmb01,jdbcType=VARCHAR}
+      and PMB03 = #{pmb03,jdbcType=DECIMAL}
+  </update>
+
+</mapper>
