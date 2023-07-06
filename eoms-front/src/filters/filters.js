@@ -46,6 +46,7 @@ export function formatNature(nature){
     if(nature === 'SUB') return nature += ':委外加工';
     if(nature === 'TRI') return nature += ':多角贸易';
     if(nature === 'TAP') return nature += ':多角贸易代采买';
+    if(nature === 'BKR') return nature += '无交期性'
     
 }
 
@@ -67,22 +68,27 @@ export function formatConfirmationStatus(status){
  * @returns 
  */
 export function formatSignoff(status){
-    
+
+    if(status === 'X') return '计划订单转入';
     if(status === '0') return '开立';
     if(status === '1') return '已核准';
+    if(status === '2') return '转成采购单';
+    if(status === '6') return '结案';
+    if(status === '7') return '结案-结长';
+    if(status === '8') return '结案-结短';
     if(status === '9') return '作废';
     if(status === 'S') return '送签中';
     if(status === 'R') return '送签退回';
     if(status === 'W') return '抽单';
-   
+
 }
 
 
 /**
- * 返回料件类型
- * @param {string} type
- * @returns 
- */
+* 返回料件类型
+* @param {string} type
+* @returns
+*/
 export function formatImaType(type){
 
     if(type === 'C') return  '规格组件';

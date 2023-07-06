@@ -1,5 +1,5 @@
 <template>
-  <aside class="aside__top">
+  <aside class="aside_top">
         <span class="iconfont icon-nav toggleNavCollapse" :class="{ active: isSidebarNavCollapse }"
               @click="toggleNavCollapse">
         </span>
@@ -11,7 +11,6 @@
             @close="handleClose(tag)">
       {{ tag.name }}
     </el-tag>
-
   </aside>
 </template>
 <script>
@@ -50,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.aside__top {
+.aside_top {
   border-bottom: 1px solid #e5e5e5;
   height: 45px;
   line-height: 45px;

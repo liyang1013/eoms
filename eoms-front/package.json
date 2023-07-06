@@ -13,6 +13,7 @@
     "chatgpt": "^5.1.2",
     "core-js": "^3.8.3",
     "echarts": "4.9.0",
+    "element-resize-detector": "^1.2.4",
     "element-ui": "^2.15.13",
     "v-charts": "^1.19.0",
     "vue": "^2.6.14",

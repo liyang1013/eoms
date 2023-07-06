@@ -49,12 +49,12 @@
             sfb28 = 3,
             sfb38 = (select sma53 from ${centre}.sma_file),
             sfb36 = (select max(sfp03)
-                     from SFP_FILE
-                         left join SFQ_FILE on sfq01  = sfp01
+                     from ${centre}.SFP_FILE
+                         left join ${centre}.SFQ_FILE on sfq01  = sfp01
                      where sfq02  = #{sfb01}),
             sfb37 = (select max(sfp03)
-                     from SFP_FILE
-                              left join SFQ_FILE on sfq01  = sfp01
+                     from ${centre}.SFP_FILE
+                              left join ${centre}.SFQ_FILE on sfq01  = sfp01
                      where sfq02  = #{sfb01})
         where sfb01 = #{sfb01}
     </update>
@@ -78,12 +78,6 @@
     <where>
       <if test="code_1 != null and code_1 != ''">
         and sfb01 like '%${code_1}%'
-      </if>
-      <if test="startdate != null">
-        and sfb81 > to_date(#{startdate},'yyyy-mm-dd')
-      </if>
-      <if test="enddate != null">
-        and sfb81  <![CDATA[<]]> to_date(#{enddate},'yyyy-mm-dd')
       </if>
     </where>
     order by sfb81,sfb01

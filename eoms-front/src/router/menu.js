@@ -36,6 +36,12 @@ export const menu = [
                 component: () => import('@/views/purchase/PmiView')
             },
             {
+                path: 'pmk',
+                name: '请购单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/purchase/PmkView')
+            },
+            {
                 path: 'rva',
                 name: '收货单',
                 icon: 'el-icon-tickets',

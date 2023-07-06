@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.purchase.mapper.PmlFileMapper">
+
+  <insert id="insertSelective" keyColumn="PML01" keyProperty="pml01" parameterType="com.keboda.eomsback.purchase.pojo.PmlFile" useGeneratedKeys="true">
+    insert into PML_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pml02 != null">
+        PML02,
+      </if>
+      <if test="pml011 != null">
+        PML011,
+      </if>
+      <if test="pml03 != null">
+        PML03,
+      </if>
+      <if test="pml04 != null">
+        PML04,
+      </if>
+      <if test="pml041 != null">
+        PML041,
+      </if>
+      <if test="pml05 != null">
+        PML05,
+      </if>
+      <if test="pml06 != null">
+        PML06,
+      </if>
+      <if test="pml07 != null">
+        PML07,
+      </if>
+      <if test="pml08 != null">
+        PML08,
+      </if>
+      <if test="pml09 != null">
+        PML09,
+      </if>
+      <if test="pml10 != null">
+        PML10,
+      </if>
+      <if test="pml11 != null">
+        PML11,
+      </if>
+      <if test="pml12 != null">
+        PML12,
+      </if>
+      <if test="pml121 != null">
+        PML121,
+      </if>
+      <if test="pml122 != null">
+        PML122,
+      </if>
+      <if test="pml123 != null">
+        PML123,
+      </if>
+      <if test="pml13 != null">
+        PML13,
+      </if>
+      <if test="pml14 != null">
+        PML14,
+      </if>
+      <if test="pml15 != null">
+        PML15,
+      </if>
+      <if test="pml16 != null">
+        PML16,
+      </if>
+      <if test="pml18 != null">
+        PML18,
+      </if>
+      <if test="pml20 != null">
+        PML20,
+      </if>
+      <if test="pml21 != null">
+        PML21,
+      </if>
+      <if test="pml23 != null">
+        PML23,
+      </if>
+      <if test="pml30 != null">
+        PML30,
+      </if>
+      <if test="pml31 != null">
+        PML31,
+      </if>
+      <if test="pml32 != null">
+        PML32,
+      </if>
+      <if test="pml33 != null">
+        PML33,
+      </if>
+      <if test="pml34 != null">
+        PML34,
+      </if>
+      <if test="pml35 != null">
+        PML35,
+      </if>
+      <if test="pml38 != null">
+        PML38,
+      </if>
+      <if test="pml40 != null">
+        PML40,
+      </if>
+      <if test="pml41 != null">
+        PML41,
+      </if>
+      <if test="pml42 != null">
+        PML42,
+      </if>
+      <if test="pml43 != null">
+        PML43,
+      </if>
+      <if test="pml431 != null">
+        PML431,
+      </if>
+      <if test="pml44 != null">
+        PML44,
+      </if>
+      <if test="pml45 != null">
+        PML45,
+      </if>
+      <if test="pml46 != null">
+        PML46,
+      </if>
+      <if test="pml66 != null">
+        PML66,
+      </if>
+      <if test="pml67 != null">
+        PML67,
+      </if>
+      <if test="pml80 != null">
+        PML80,
+      </if>
+      <if test="pml81 != null">
+        PML81,
+      </if>
+      <if test="pml82 != null">
+        PML82,
+      </if>
+      <if test="pml83 != null">
+        PML83,
+      </if>
+      <if test="pml84 != null">
+        PML84,
+      </if>
+      <if test="pml85 != null">
+        PML85,
+      </if>
+      <if test="pml86 != null">
+        PML86,
+      </if>
+      <if test="pml87 != null">
+        PML87,
+      </if>
+      <if test="pml88 != null">
+        PML88,
+      </if>
+      <if test="pml88t != null">
+        PML88T,
+      </if>
+      <if test="pml31t != null">
+        PML31T,
+      </if>
+      <if test="pml190 != null">
+        PML190,
+      </if>
+      <if test="pml191 != null">
+        PML191,
+      </if>
+      <if test="pml192 != null">
+        PML192,
+      </if>
+      <if test="pml930 != null">
+        PML930,
+      </if>
+      <if test="pml24 != null">
+        PML24,
+      </if>
+      <if test="pml25 != null">
+        PML25,
+      </if>
+      <if test="pml401 != null">
+        PML401,
+      </if>
+      <if test="pml90 != null">
+        PML90,
+      </if>
+      <if test="pmlud01 != null">
+        PMLUD01,
+      </if>
+      <if test="pmlud02 != null">
+        PMLUD02,
+      </if>
+      <if test="pmlud03 != null">
+        PMLUD03,
+      </if>
+      <if test="pmlud04 != null">
+        PMLUD04,
+      </if>
+      <if test="pmlud05 != null">
+        PMLUD05,
+      </if>
+      <if test="pmlud06 != null">
+        PMLUD06,
+      </if>
+      <if test="pmlud07 != null">
+        PMLUD07,
+      </if>
+      <if test="pmlud08 != null">
+        PMLUD08,
+      </if>
+      <if test="pmlud09 != null">
+        PMLUD09,
+      </if>
+      <if test="pmlud10 != null">
+        PMLUD10,
+      </if>
+      <if test="pmlud11 != null">
+        PMLUD11,
+      </if>
+      <if test="pmlud12 != null">
+        PMLUD12,
+      </if>
+      <if test="pmlud13 != null">
+        PMLUD13,
+      </if>
+      <if test="pmlud14 != null">
+        PMLUD14,
+      </if>
+      <if test="pmlud15 != null">
+        PMLUD15,
+      </if>
+      <if test="pml91 != null">
+        PML91,
+      </if>
+      <if test="pml47 != null">
+        PML47,
+      </if>
+      <if test="pml48 != null">
+        PML48,
+      </if>
+      <if test="pml49 != null">
+        PML49,
+      </if>
+      <if test="pml50 != null">
+        PML50,
+      </if>
+      <if test="pml51 != null">
+        PML51,
+      </if>
+      <if test="pml52 != null">
+        PML52,
+      </if>
+      <if test="pml53 != null">
+        PML53,
+      </if>
+      <if test="pml54 != null">
+        PML54,
+      </if>
+      <if test="pml55 != null">
+        PML55,
+      </if>
+      <if test="pml56 != null">
+        PML56,
+      </if>
+      <if test="pmlplant != null">
+        PMLPLANT,
+      </if>
+      <if test="pmllegal != null">
+        PMLLEGAL,
+      </if>
+      <if test="pml92 != null">
+        PML92,
+      </if>
+      <if test="pml93 != null">
+        PML93,
+      </if>
+      <if test="pml919 != null">
+        PML919,
+      </if>
+      <if test="pml57 != null">
+        PML57,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pml02 != null">
+        #{pml02,jdbcType=DECIMAL},
+      </if>
+      <if test="pml011 != null">
+        #{pml011,jdbcType=VARCHAR},
+      </if>
+      <if test="pml03 != null">
+        #{pml03,jdbcType=VARCHAR},
+      </if>
+      <if test="pml04 != null">
+        #{pml04,jdbcType=VARCHAR},
+      </if>
+      <if test="pml041 != null">
+        #{pml041,jdbcType=VARCHAR},
+      </if>
+      <if test="pml05 != null">
+        #{pml05,jdbcType=VARCHAR},
+      </if>
+      <if test="pml06 != null">
+        #{pml06,jdbcType=VARCHAR},
+      </if>
+      <if test="pml07 != null">
+        #{pml07,jdbcType=VARCHAR},
+      </if>
+      <if test="pml08 != null">
+        #{pml08,jdbcType=VARCHAR},
+      </if>
+      <if test="pml09 != null">
+        #{pml09,jdbcType=DECIMAL},
+      </if>
+      <if test="pml10 != null">
+        #{pml10,jdbcType=VARCHAR},
+      </if>
+      <if test="pml11 != null">
+        #{pml11,jdbcType=VARCHAR},
+      </if>
+      <if test="pml12 != null">
+        #{pml12,jdbcType=VARCHAR},
+      </if>
+      <if test="pml121 != null">
+        #{pml121,jdbcType=VARCHAR},
+      </if>
+      <if test="pml122 != null">
+        #{pml122,jdbcType=VARCHAR},
+      </if>
+      <if test="pml123 != null">
+        #{pml123,jdbcType=VARCHAR},
+      </if>
+      <if test="pml13 != null">
+        #{pml13,jdbcType=DECIMAL},
+      </if>
+      <if test="pml14 != null">
+        #{pml14,jdbcType=VARCHAR},
+      </if>
+      <if test="pml15 != null">
+        #{pml15,jdbcType=VARCHAR},
+      </if>
+      <if test="pml16 != null">
+        #{pml16,jdbcType=VARCHAR},
+      </if>
+      <if test="pml18 != null">
+        #{pml18,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml20 != null">
+        #{pml20,jdbcType=DECIMAL},
+      </if>
+      <if test="pml21 != null">
+        #{pml21,jdbcType=DECIMAL},
+      </if>
+      <if test="pml23 != null">
+        #{pml23,jdbcType=VARCHAR},
+      </if>
+      <if test="pml30 != null">
+        #{pml30,jdbcType=DECIMAL},
+      </if>
+      <if test="pml31 != null">
+        #{pml31,jdbcType=DECIMAL},
+      </if>
+      <if test="pml32 != null">
+        #{pml32,jdbcType=DECIMAL},
+      </if>
+      <if test="pml33 != null">
+        #{pml33,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml34 != null">
+        #{pml34,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml35 != null">
+        #{pml35,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml38 != null">
+        #{pml38,jdbcType=VARCHAR},
+      </if>
+      <if test="pml40 != null">
+        #{pml40,jdbcType=VARCHAR},
+      </if>
+      <if test="pml41 != null">
+        #{pml41,jdbcType=VARCHAR},
+      </if>
+      <if test="pml42 != null">
+        #{pml42,jdbcType=VARCHAR},
+      </if>
+      <if test="pml43 != null">
+        #{pml43,jdbcType=DECIMAL},
+      </if>
+      <if test="pml431 != null">
+        #{pml431,jdbcType=DECIMAL},
+      </if>
+      <if test="pml44 != null">
+        #{pml44,jdbcType=DECIMAL},
+      </if>
+      <if test="pml45 != null">
+        #{pml45,jdbcType=VARCHAR},
+      </if>
+      <if test="pml46 != null">
+        #{pml46,jdbcType=VARCHAR},
+      </if>
+      <if test="pml66 != null">
+        #{pml66,jdbcType=VARCHAR},
+      </if>
+      <if test="pml67 != null">
+        #{pml67,jdbcType=VARCHAR},
+      </if>
+      <if test="pml80 != null">
+        #{pml80,jdbcType=VARCHAR},
+      </if>
+      <if test="pml81 != null">
+        #{pml81,jdbcType=DECIMAL},
+      </if>
+      <if test="pml82 != null">
+        #{pml82,jdbcType=DECIMAL},
+      </if>
+      <if test="pml83 != null">
+        #{pml83,jdbcType=VARCHAR},
+      </if>
+      <if test="pml84 != null">
+        #{pml84,jdbcType=DECIMAL},
+      </if>
+      <if test="pml85 != null">
+        #{pml85,jdbcType=DECIMAL},
+      </if>
+      <if test="pml86 != null">
+        #{pml86,jdbcType=VARCHAR},
+      </if>
+      <if test="pml87 != null">
+        #{pml87,jdbcType=DECIMAL},
+      </if>
+      <if test="pml88 != null">
+        #{pml88,jdbcType=DECIMAL},
+      </if>
+      <if test="pml88t != null">
+        #{pml88t,jdbcType=DECIMAL},
+      </if>
+      <if test="pml31t != null">
+        #{pml31t,jdbcType=DECIMAL},
+      </if>
+      <if test="pml190 != null">
+        #{pml190,jdbcType=VARCHAR},
+      </if>
+      <if test="pml191 != null">
+        #{pml191,jdbcType=VARCHAR},
+      </if>
+      <if test="pml192 != null">
+        #{pml192,jdbcType=VARCHAR},
+      </if>
+      <if test="pml930 != null">
+        #{pml930,jdbcType=VARCHAR},
+      </if>
+      <if test="pml24 != null">
+        #{pml24,jdbcType=VARCHAR},
+      </if>
+      <if test="pml25 != null">
+        #{pml25,jdbcType=DECIMAL},
+      </if>
+      <if test="pml401 != null">
+        #{pml401,jdbcType=VARCHAR},
+      </if>
+      <if test="pml90 != null">
+        #{pml90,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud01 != null">
+        #{pmlud01,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud02 != null">
+        #{pmlud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud03 != null">
+        #{pmlud03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud04 != null">
+        #{pmlud04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud05 != null">
+        #{pmlud05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud06 != null">
+        #{pmlud06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud07 != null">
+        #{pmlud07,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud08 != null">
+        #{pmlud08,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud09 != null">
+        #{pmlud09,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud10 != null">
+        #{pmlud10,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud11 != null">
+        #{pmlud11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud12 != null">
+        #{pmlud12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud13 != null">
+        #{pmlud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmlud14 != null">
+        #{pmlud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmlud15 != null">
+        #{pmlud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml91 != null">
+        #{pml91,jdbcType=VARCHAR},
+      </if>
+      <if test="pml47 != null">
+        #{pml47,jdbcType=VARCHAR},
+      </if>
+      <if test="pml48 != null">
+        #{pml48,jdbcType=VARCHAR},
+      </if>
+      <if test="pml49 != null">
+        #{pml49,jdbcType=VARCHAR},
+      </if>
+      <if test="pml50 != null">
+        #{pml50,jdbcType=VARCHAR},
+      </if>
+      <if test="pml51 != null">
+        #{pml51,jdbcType=VARCHAR},
+      </if>
+      <if test="pml52 != null">
+        #{pml52,jdbcType=VARCHAR},
+      </if>
+      <if test="pml53 != null">
+        #{pml53,jdbcType=DECIMAL},
+      </if>
+      <if test="pml54 != null">
+        #{pml54,jdbcType=VARCHAR},
+      </if>
+      <if test="pml55 != null">
+        #{pml55,jdbcType=VARCHAR},
+      </if>
+      <if test="pml56 != null">
+        #{pml56,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlplant != null">
+        #{pmlplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmllegal != null">
+        #{pmllegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pml92 != null">
+        #{pml92,jdbcType=VARCHAR},
+      </if>
+      <if test="pml93 != null">
+        #{pml93,jdbcType=VARCHAR},
+      </if>
+      <if test="pml919 != null">
+        #{pml919,jdbcType=VARCHAR},
+      </if>
+      <if test="pml57 != null">
+        #{pml57,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmlFile">
+    update PML_FILE
+    <set>
+      <if test="pml011 != null">
+        PML011 = #{pml011,jdbcType=VARCHAR},
+      </if>
+      <if test="pml03 != null">
+        PML03 = #{pml03,jdbcType=VARCHAR},
+      </if>
+      <if test="pml04 != null">
+        PML04 = #{pml04,jdbcType=VARCHAR},
+      </if>
+      <if test="pml041 != null">
+        PML041 = #{pml041,jdbcType=VARCHAR},
+      </if>
+      <if test="pml05 != null">
+        PML05 = #{pml05,jdbcType=VARCHAR},
+      </if>
+      <if test="pml06 != null">
+        PML06 = #{pml06,jdbcType=VARCHAR},
+      </if>
+      <if test="pml07 != null">
+        PML07 = #{pml07,jdbcType=VARCHAR},
+      </if>
+      <if test="pml08 != null">
+        PML08 = #{pml08,jdbcType=VARCHAR},
+      </if>
+      <if test="pml09 != null">
+        PML09 = #{pml09,jdbcType=DECIMAL},
+      </if>
+      <if test="pml10 != null">
+        PML10 = #{pml10,jdbcType=VARCHAR},
+      </if>
+      <if test="pml11 != null">
+        PML11 = #{pml11,jdbcType=VARCHAR},
+      </if>
+      <if test="pml12 != null">
+        PML12 = #{pml12,jdbcType=VARCHAR},
+      </if>
+      <if test="pml121 != null">
+        PML121 = #{pml121,jdbcType=VARCHAR},
+      </if>
+      <if test="pml122 != null">
+        PML122 = #{pml122,jdbcType=VARCHAR},
+      </if>
+      <if test="pml123 != null">
+        PML123 = #{pml123,jdbcType=VARCHAR},
+      </if>
+      <if test="pml13 != null">
+        PML13 = #{pml13,jdbcType=DECIMAL},
+      </if>
+      <if test="pml14 != null">
+        PML14 = #{pml14,jdbcType=VARCHAR},
+      </if>
+      <if test="pml15 != null">
+        PML15 = #{pml15,jdbcType=VARCHAR},
+      </if>
+      <if test="pml16 != null">
+        PML16 = #{pml16,jdbcType=VARCHAR},
+      </if>
+      <if test="pml18 != null">
+        PML18 = #{pml18,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml20 != null">
+        PML20 = #{pml20,jdbcType=DECIMAL},
+      </if>
+      <if test="pml21 != null">
+        PML21 = #{pml21,jdbcType=DECIMAL},
+      </if>
+      <if test="pml23 != null">
+        PML23 = #{pml23,jdbcType=VARCHAR},
+      </if>
+      <if test="pml30 != null">
+        PML30 = #{pml30,jdbcType=DECIMAL},
+      </if>
+      <if test="pml31 != null">
+        PML31 = #{pml31,jdbcType=DECIMAL},
+      </if>
+      <if test="pml32 != null">
+        PML32 = #{pml32,jdbcType=DECIMAL},
+      </if>
+      <if test="pml33 != null">
+        PML33 = #{pml33,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml34 != null">
+        PML34 = #{pml34,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml35 != null">
+        PML35 = #{pml35,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml38 != null">
+        PML38 = #{pml38,jdbcType=VARCHAR},
+      </if>
+      <if test="pml40 != null">
+        PML40 = #{pml40,jdbcType=VARCHAR},
+      </if>
+      <if test="pml41 != null">
+        PML41 = #{pml41,jdbcType=VARCHAR},
+      </if>
+      <if test="pml42 != null">
+        PML42 = #{pml42,jdbcType=VARCHAR},
+      </if>
+      <if test="pml43 != null">
+        PML43 = #{pml43,jdbcType=DECIMAL},
+      </if>
+      <if test="pml431 != null">
+        PML431 = #{pml431,jdbcType=DECIMAL},
+      </if>
+      <if test="pml44 != null">
+        PML44 = #{pml44,jdbcType=DECIMAL},
+      </if>
+      <if test="pml45 != null">
+        PML45 = #{pml45,jdbcType=VARCHAR},
+      </if>
+      <if test="pml46 != null">
+        PML46 = #{pml46,jdbcType=VARCHAR},
+      </if>
+      <if test="pml66 != null">
+        PML66 = #{pml66,jdbcType=VARCHAR},
+      </if>
+      <if test="pml67 != null">
+        PML67 = #{pml67,jdbcType=VARCHAR},
+      </if>
+      <if test="pml80 != null">
+        PML80 = #{pml80,jdbcType=VARCHAR},
+      </if>
+      <if test="pml81 != null">
+        PML81 = #{pml81,jdbcType=DECIMAL},
+      </if>
+      <if test="pml82 != null">
+        PML82 = #{pml82,jdbcType=DECIMAL},
+      </if>
+      <if test="pml83 != null">
+        PML83 = #{pml83,jdbcType=VARCHAR},
+      </if>
+      <if test="pml84 != null">
+        PML84 = #{pml84,jdbcType=DECIMAL},
+      </if>
+      <if test="pml85 != null">
+        PML85 = #{pml85,jdbcType=DECIMAL},
+      </if>
+      <if test="pml86 != null">
+        PML86 = #{pml86,jdbcType=VARCHAR},
+      </if>
+      <if test="pml87 != null">
+        PML87 = #{pml87,jdbcType=DECIMAL},
+      </if>
+      <if test="pml88 != null">
+        PML88 = #{pml88,jdbcType=DECIMAL},
+      </if>
+      <if test="pml88t != null">
+        PML88T = #{pml88t,jdbcType=DECIMAL},
+      </if>
+      <if test="pml31t != null">
+        PML31T = #{pml31t,jdbcType=DECIMAL},
+      </if>
+      <if test="pml190 != null">
+        PML190 = #{pml190,jdbcType=VARCHAR},
+      </if>
+      <if test="pml191 != null">
+        PML191 = #{pml191,jdbcType=VARCHAR},
+      </if>
+      <if test="pml192 != null">
+        PML192 = #{pml192,jdbcType=VARCHAR},
+      </if>
+      <if test="pml930 != null">
+        PML930 = #{pml930,jdbcType=VARCHAR},
+      </if>
+      <if test="pml24 != null">
+        PML24 = #{pml24,jdbcType=VARCHAR},
+      </if>
+      <if test="pml25 != null">
+        PML25 = #{pml25,jdbcType=DECIMAL},
+      </if>
+      <if test="pml401 != null">
+        PML401 = #{pml401,jdbcType=VARCHAR},
+      </if>
+      <if test="pml90 != null">
+        PML90 = #{pml90,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud01 != null">
+        PMLUD01 = #{pmlud01,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud02 != null">
+        PMLUD02 = #{pmlud02,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud03 != null">
+        PMLUD03 = #{pmlud03,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud04 != null">
+        PMLUD04 = #{pmlud04,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud05 != null">
+        PMLUD05 = #{pmlud05,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud06 != null">
+        PMLUD06 = #{pmlud06,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlud07 != null">
+        PMLUD07 = #{pmlud07,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud08 != null">
+        PMLUD08 = #{pmlud08,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud09 != null">
+        PMLUD09 = #{pmlud09,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud10 != null">
+        PMLUD10 = #{pmlud10,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud11 != null">
+        PMLUD11 = #{pmlud11,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud12 != null">
+        PMLUD12 = #{pmlud12,jdbcType=DECIMAL},
+      </if>
+      <if test="pmlud13 != null">
+        PMLUD13 = #{pmlud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmlud14 != null">
+        PMLUD14 = #{pmlud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pmlud15 != null">
+        PMLUD15 = #{pmlud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pml91 != null">
+        PML91 = #{pml91,jdbcType=VARCHAR},
+      </if>
+      <if test="pml47 != null">
+        PML47 = #{pml47,jdbcType=VARCHAR},
+      </if>
+      <if test="pml48 != null">
+        PML48 = #{pml48,jdbcType=VARCHAR},
+      </if>
+      <if test="pml49 != null">
+        PML49 = #{pml49,jdbcType=VARCHAR},
+      </if>
+      <if test="pml50 != null">
+        PML50 = #{pml50,jdbcType=VARCHAR},
+      </if>
+      <if test="pml51 != null">
+        PML51 = #{pml51,jdbcType=VARCHAR},
+      </if>
+      <if test="pml52 != null">
+        PML52 = #{pml52,jdbcType=VARCHAR},
+      </if>
+      <if test="pml53 != null">
+        PML53 = #{pml53,jdbcType=DECIMAL},
+      </if>
+      <if test="pml54 != null">
+        PML54 = #{pml54,jdbcType=VARCHAR},
+      </if>
+      <if test="pml55 != null">
+        PML55 = #{pml55,jdbcType=VARCHAR},
+      </if>
+      <if test="pml56 != null">
+        PML56 = #{pml56,jdbcType=VARCHAR},
+      </if>
+      <if test="pmlplant != null">
+        PMLPLANT = #{pmlplant,jdbcType=VARCHAR},
+      </if>
+      <if test="pmllegal != null">
+        PMLLEGAL = #{pmllegal,jdbcType=VARCHAR},
+      </if>
+      <if test="pml92 != null">
+        PML92 = #{pml92,jdbcType=VARCHAR},
+      </if>
+      <if test="pml93 != null">
+        PML93 = #{pml93,jdbcType=VARCHAR},
+      </if>
+      <if test="pml919 != null">
+        PML919 = #{pml919,jdbcType=VARCHAR},
+      </if>
+      <if test="pml57 != null">
+        PML57 = #{pml57,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PML01 = #{pml01,jdbcType=VARCHAR}
+      and PML02 = #{pml02,jdbcType=DECIMAL}
+  </update>
+    <select id="searchPmlList" resultType="com.keboda.eomsback.purchase.pojo.PmlFile">
+      select pml02,pml04,pml041,ima021,pml07,pml20,pml21,pml35,pml34,pml33,pml40,pml16,pml57
+        from ${centre}.pml_file
+        left join ${centre}.ima_file on ima01 = pml04
+        where pml01 = #{code}
+        order by pml02
+    </select>
+
+</mapper>

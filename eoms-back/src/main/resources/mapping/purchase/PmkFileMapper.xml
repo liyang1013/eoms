@@ -709,6 +709,18 @@
   </update>
   <delete id="InvalidDocumentDelete">
     delete ${centre}.pmk_file
-    where  pmk04 &lt;= sysdate AND pmk18 !='X'and pmk01 not in (select  distinct pml01 from pml_file)
+    where  pmk04 &lt;= sysdate AND pmk18 !='X'and pmk01 not in (select  distinct pml01 from ${centre}.pml_file)
   </delete>
+    <select id="searchPmkListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmkFile">
+        select pmk01,pmk02,pmk04,pmk12,gen02,pmk13,gem02,pmk18,pmk25,#{centre} centre,smydesc
+        from ${centre}.pmk_file
+      left join ${centre}.smy_file on smyslip = SUBSTR(pmk01,0,4)
+        left join ${centre}.gen_file on gen01 = pmk12
+        left join ${centre}.gem_file on gem01 = pmk13
+        <where>
+            <if test="code != null and code != '' ">
+                and lower(pmk01) like lower('%${code}%')
+            </if>
+        </where>
+    </select>
 </mapper>

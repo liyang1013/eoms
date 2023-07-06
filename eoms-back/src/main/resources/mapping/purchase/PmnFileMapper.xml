@@ -1027,7 +1027,7 @@
   </update>
     <delete id="InvalidDocumentDelete">
       delete ${centre}.pmm_file
-      where   pmm04 &lt;= sysdate AND pmm18 !='X'and pmm01 not in (select  distinct pmn01 from pmn_file)
+      where   pmm04 &lt;= sysdate AND pmm18 !='X'and pmm01 not in (select  distinct pmn01 from ${centre}.pmn_file)
     </delete>
 
 </mapper>

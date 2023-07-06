@@ -59,6 +59,11 @@ public class CommonField {
     private String pnz02;
 
     /**
+     * 部门
+     */
+    private String gem02;
+
+    /**
      * 人员
      */
     private String gen02;

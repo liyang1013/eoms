@@ -21,7 +21,7 @@
     </update>
     <delete id="InvalidDocumentDelete">
         delete ${centre}.sfp_file
-        where  sfp02 &lt;= sysdate and sfpconf in ('N','Y') AND SFP04 ='N' and sfp01 not in (select  distinct SFS01 from SFS_FILE)
+        where  sfp02 &lt;= sysdate and sfpconf in ('N','Y') AND SFP04 ='N' and sfp01 not in (select  distinct SFS01 from ${centre}.SFS_FILE)
     </delete>
 
     <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.SfpFile">

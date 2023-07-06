@@ -421,6 +421,6 @@
   </update>
   <delete id="InvalidDocumentDelete">
     delete ${centre}.imm_file
-    where imm02 &lt;=sysdate AND immconf !='X' and imm01 not in (select  distinct imn01 from imn_file)
+    where imm02 &lt;=sysdate AND immconf !='X' and imm01 not in (select  distinct imn01 from ${centre}.imn_file)
   </delete>
 </mapper>
