@@ -7,6 +7,9 @@
       <el-form-item label="单别:">
         <el-input v-model="searchVo.code" placeholder="单别" clearable></el-input>
       </el-form-item>
+      <el-form-item label="生效状态:">
+        <selected-acti v-model="searchVo.acti"></selected-acti>
+      </el-form-item>
       <el-form-item style="float:right;">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
@@ -42,6 +45,7 @@
 <script>
 
 import selectedCentre from '@/components/selected/selected-centre.vue';
+import SelectedActi from "@/components/selected/selected-acti.vue";
 
 export default {
   name: "smy",
@@ -50,6 +54,7 @@ export default {
       searchVo: {
         centre: 'WCTZ',
         code: null,
+        acti: 'Y',
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,
@@ -60,6 +65,7 @@ export default {
     }
   },
   components: {
+    SelectedActi,
     selectedCentre
   },
   methods: {

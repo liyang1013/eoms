@@ -31,6 +31,11 @@ spring:
           url: jdbc:mysql://172.17.200.154:3306/mr_rcs?characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           password: mr123
+        nas:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://172.17.168.89:3306/eoms?characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
 mybatis:
   type-aliases-package: com.keboda.eomsback.*.pojo
   mapper-locations: classpath:mapping/*/*Mapper.xml

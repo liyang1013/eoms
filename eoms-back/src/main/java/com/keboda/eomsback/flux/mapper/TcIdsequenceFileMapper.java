@@ -1,6 +1,5 @@
 package com.keboda.eomsback.flux.mapper;
 
-import com.keboda.eomsback.flux.pojo.InvLotAtt;
 import com.keboda.eomsback.flux.pojo.TcIdsequenceFile;
 import org.apache.ibatis.annotations.Param;
 

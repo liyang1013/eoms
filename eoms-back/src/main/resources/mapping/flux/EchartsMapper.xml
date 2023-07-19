@@ -3,10 +3,4 @@
 <mapper namespace="com.keboda.eomsback.flux.mapper.EchartsMapper">
 
 
-    <select id="wcsTaskTypeTime" resultType="com.keboda.eomsback.flux.pojo.WcsTaskTypeTime">
-        select taskType, count(1) taskNum,sum( TIMESTAMPDIFF( SECOND,addTime, completionTime)) taskTime, sum( TIMESTAMPDIFF( SECOND,addTime, completionTime))/count(1) avgTime
-        from ebm_conveyortask
-        where status = 99
-        group by taskType;
-    </select>
 </mapper>

@@ -51,7 +51,7 @@ public class RCSRobotsTimer {
                     .body(JSONUtil.toJsonStr(sortedMap))
                     .execute();
         }catch (Exception e){
-            WeChatPlusUtils.sendMessage(sender,"RCS小车状态接口异常："+e.getMessage());
+            WeChatPlusUtils.sendMessage(sender,"获取RCS小车状态接口异常："+e.getMessage());
         }
 
         if(res.getStatus() == 200){
@@ -90,7 +90,7 @@ public class RCSRobotsTimer {
                 }
             }
         }else{
-            WeChatPlusUtils.sendMessage(sender,"RCS小车状态接口异常状态:"+res.getStatus());
+            WeChatPlusUtils.sendMessage(sender,"读取RCS小车状态接口异常:"+res.getStatus());
         }
     }
 }

@@ -14,9 +14,6 @@ import lombok.NoArgsConstructor;
  * @author 
  */
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class PmnFile extends PmnFileKey implements Serializable {
     private String pmn011;
 

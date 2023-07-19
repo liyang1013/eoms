@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 /**
- * flux系密码修改工具,得到加密字符串覆盖数据库
+ * flux系密码修改工具,得到加密字符串手动覆盖数据库
  */
 public class FluxPwdUtils {
 
@@ -14,7 +14,7 @@ public class FluxPwdUtils {
 
     private final static String passwordSalt = "ST1678338626440SR121112077108036030";
 
-    public static void MD5Signature() throws Exception{
+    public static String MD5Signature() throws Exception{
 
         String token = passwordSalt+"userPassword"+changeToAa(username) + "~" + password+passwordSalt;
 
@@ -33,7 +33,7 @@ public class FluxPwdUtils {
             }
         }
 
-        System.out.println(hexString.toString().toUpperCase());
+        return hexString.toString().toUpperCase();
     }
 
     public static String changeToAa(String strValue) {
@@ -61,9 +61,5 @@ public class FluxPwdUtils {
             newStrValue = new String(newStrValueChars);
         }
         return newStrValue;
-    }
-
-    public static void main(String[] args) throws Exception {
-        FluxPwdUtils.MD5Signature();
     }
 }

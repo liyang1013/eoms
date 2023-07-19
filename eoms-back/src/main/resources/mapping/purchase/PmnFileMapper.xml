@@ -1,1033 +1,1042 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.purchase.mapper.PmnFileMapper">
-  <insert id="insertSelective" keyColumn="PMN01" keyProperty="pmn01" parameterType="com.keboda.eomsback.purchase.pojo.PmnFile" useGeneratedKeys="true">
-    insert into PMN_FILE
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="pmn02 != null">
-        PMN02,
-      </if>
-      <if test="pmn011 != null">
-        PMN011,
-      </if>
-      <if test="pmn03 != null">
-        PMN03,
-      </if>
-      <if test="pmn04 != null">
-        PMN04,
-      </if>
-      <if test="pmn041 != null">
-        PMN041,
-      </if>
-      <if test="pmn05 != null">
-        PMN05,
-      </if>
-      <if test="pmn06 != null">
-        PMN06,
-      </if>
-      <if test="pmn07 != null">
-        PMN07,
-      </if>
-      <if test="pmn08 != null">
-        PMN08,
-      </if>
-      <if test="pmn09 != null">
-        PMN09,
-      </if>
-      <if test="pmn10 != null">
-        PMN10,
-      </if>
-      <if test="pmn11 != null">
-        PMN11,
-      </if>
-      <if test="pmn121 != null">
-        PMN121,
-      </if>
-      <if test="pmn122 != null">
-        PMN122,
-      </if>
-      <if test="pmn123 != null">
-        PMN123,
-      </if>
-      <if test="pmn13 != null">
-        PMN13,
-      </if>
-      <if test="pmn14 != null">
-        PMN14,
-      </if>
-      <if test="pmn15 != null">
-        PMN15,
-      </if>
-      <if test="pmn16 != null">
-        PMN16,
-      </if>
-      <if test="pmn18 != null">
-        PMN18,
-      </if>
-      <if test="pmn20 != null">
-        PMN20,
-      </if>
-      <if test="pmn23 != null">
-        PMN23,
-      </if>
-      <if test="pmn24 != null">
-        PMN24,
-      </if>
-      <if test="pmn25 != null">
-        PMN25,
-      </if>
-      <if test="pmn30 != null">
-        PMN30,
-      </if>
-      <if test="pmn31 != null">
-        PMN31,
-      </if>
-      <if test="pmn31t != null">
-        PMN31T,
-      </if>
-      <if test="pmn32 != null">
-        PMN32,
-      </if>
-      <if test="pmn33 != null">
-        PMN33,
-      </if>
-      <if test="pmn34 != null">
-        PMN34,
-      </if>
-      <if test="pmn35 != null">
-        PMN35,
-      </if>
-      <if test="pmn36 != null">
-        PMN36,
-      </if>
-      <if test="pmn37 != null">
-        PMN37,
-      </if>
-      <if test="pmn38 != null">
-        PMN38,
-      </if>
-      <if test="pmn40 != null">
-        PMN40,
-      </if>
-      <if test="pmn41 != null">
-        PMN41,
-      </if>
-      <if test="pmn42 != null">
-        PMN42,
-      </if>
-      <if test="pmn43 != null">
-        PMN43,
-      </if>
-      <if test="pmn431 != null">
-        PMN431,
-      </if>
-      <if test="pmn44 != null">
-        PMN44,
-      </if>
-      <if test="pmn45 != null">
-        PMN45,
-      </if>
-      <if test="pmn46 != null">
-        PMN46,
-      </if>
-      <if test="pmn50 != null">
-        PMN50,
-      </if>
-      <if test="pmn51 != null">
-        PMN51,
-      </if>
-      <if test="pmn52 != null">
-        PMN52,
-      </if>
-      <if test="pmn53 != null">
-        PMN53,
-      </if>
-      <if test="pmn54 != null">
-        PMN54,
-      </if>
-      <if test="pmn55 != null">
-        PMN55,
-      </if>
-      <if test="pmn56 != null">
-        PMN56,
-      </if>
-      <if test="pmn57 != null">
-        PMN57,
-      </if>
-      <if test="pmn58 != null">
-        PMN58,
-      </if>
-      <if test="pmn59 != null">
-        PMN59,
-      </if>
-      <if test="pmn60 != null">
-        PMN60,
-      </if>
-      <if test="pmn61 != null">
-        PMN61,
-      </if>
-      <if test="pmn62 != null">
-        PMN62,
-      </if>
-      <if test="pmn63 != null">
-        PMN63,
-      </if>
-      <if test="pmn64 != null">
-        PMN64,
-      </if>
-      <if test="pmn65 != null">
-        PMN65,
-      </if>
-      <if test="pmn66 != null">
-        PMN66,
-      </if>
-      <if test="pmn67 != null">
-        PMN67,
-      </if>
-      <if test="pmn68 != null">
-        PMN68,
-      </if>
-      <if test="pmn69 != null">
-        PMN69,
-      </if>
-      <if test="pmn70 != null">
-        PMN70,
-      </if>
-      <if test="pmn71 != null">
-        PMN71,
-      </if>
-      <if test="pmn80 != null">
-        PMN80,
-      </if>
-      <if test="pmn81 != null">
-        PMN81,
-      </if>
-      <if test="pmn82 != null">
-        PMN82,
-      </if>
-      <if test="pmn83 != null">
-        PMN83,
-      </if>
-      <if test="pmn84 != null">
-        PMN84,
-      </if>
-      <if test="pmn85 != null">
-        PMN85,
-      </if>
-      <if test="pmn86 != null">
-        PMN86,
-      </if>
-      <if test="pmn87 != null">
-        PMN87,
-      </if>
-      <if test="pmn88 != null">
-        PMN88,
-      </if>
-      <if test="pmn88t != null">
-        PMN88T,
-      </if>
-      <if test="pmn930 != null">
-        PMN930,
-      </if>
-      <if test="pmn401 != null">
-        PMN401,
-      </if>
-      <if test="pmn90 != null">
-        PMN90,
-      </if>
-      <if test="pmn94 != null">
-        PMN94,
-      </if>
-      <if test="pmn95 != null">
-        PMN95,
-      </if>
-      <if test="pmn96 != null">
-        PMN96,
-      </if>
-      <if test="pmn97 != null">
-        PMN97,
-      </if>
-      <if test="pmn98 != null">
-        PMN98,
-      </if>
-      <if test="pmn91 != null">
-        PMN91,
-      </if>
-      <if test="pmnud01 != null">
-        PMNUD01,
-      </if>
-      <if test="pmnud02 != null">
-        PMNUD02,
-      </if>
-      <if test="pmnud03 != null">
-        PMNUD03,
-      </if>
-      <if test="pmnud04 != null">
-        PMNUD04,
-      </if>
-      <if test="pmnud05 != null">
-        PMNUD05,
-      </if>
-      <if test="pmnud06 != null">
-        PMNUD06,
-      </if>
-      <if test="pmnud07 != null">
-        PMNUD07,
-      </if>
-      <if test="pmnud08 != null">
-        PMNUD08,
-      </if>
-      <if test="pmnud09 != null">
-        PMNUD09,
-      </if>
-      <if test="pmnud10 != null">
-        PMNUD10,
-      </if>
-      <if test="pmnud11 != null">
-        PMNUD11,
-      </if>
-      <if test="pmnud12 != null">
-        PMNUD12,
-      </if>
-      <if test="pmnud13 != null">
-        PMNUD13,
-      </if>
-      <if test="pmnud14 != null">
-        PMNUD14,
-      </if>
-      <if test="pmnud15 != null">
-        PMNUD15,
-      </if>
-      <if test="pmn89 != null">
-        PMN89,
-      </if>
-      <if test="pmn72 != null">
-        PMN72,
-      </if>
-      <if test="pmn73 != null">
-        PMN73,
-      </if>
-      <if test="pmn74 != null">
-        PMN74,
-      </if>
-      <if test="pmn75 != null">
-        PMN75,
-      </if>
-      <if test="pmn76 != null">
-        PMN76,
-      </if>
-      <if test="pmn77 != null">
-        PMN77,
-      </if>
-      <if test="pmnplant != null">
-        PMNPLANT,
-      </if>
-      <if test="pmnlegal != null">
-        PMNLEGAL,
-      </if>
-      <if test="pmn012 != null">
-        PMN012,
-      </if>
-      <if test="pmn919 != null">
-        PMN919,
-      </if>
-      <if test="pmn99 != null">
-        PMN99,
-      </if>
-      <if test="pmn78 != null">
-        PMN78,
-      </if>
-      <if test="pmn100 != null">
-        PMN100,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="pmn02 != null">
-        #{pmn02,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn011 != null">
-        #{pmn011,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn03 != null">
-        #{pmn03,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn04 != null">
-        #{pmn04,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn041 != null">
-        #{pmn041,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn05 != null">
-        #{pmn05,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn06 != null">
-        #{pmn06,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn07 != null">
-        #{pmn07,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn08 != null">
-        #{pmn08,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn09 != null">
-        #{pmn09,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn10 != null">
-        #{pmn10,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn11 != null">
-        #{pmn11,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn121 != null">
-        #{pmn121,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn122 != null">
-        #{pmn122,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn123 != null">
-        #{pmn123,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn13 != null">
-        #{pmn13,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn14 != null">
-        #{pmn14,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn15 != null">
-        #{pmn15,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn16 != null">
-        #{pmn16,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn18 != null">
-        #{pmn18,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn20 != null">
-        #{pmn20,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn23 != null">
-        #{pmn23,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn24 != null">
-        #{pmn24,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn25 != null">
-        #{pmn25,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn30 != null">
-        #{pmn30,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn31 != null">
-        #{pmn31,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn31t != null">
-        #{pmn31t,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn32 != null">
-        #{pmn32,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn33 != null">
-        #{pmn33,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn34 != null">
-        #{pmn34,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn35 != null">
-        #{pmn35,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn36 != null">
-        #{pmn36,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn37 != null">
-        #{pmn37,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn38 != null">
-        #{pmn38,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn40 != null">
-        #{pmn40,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn41 != null">
-        #{pmn41,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn42 != null">
-        #{pmn42,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn43 != null">
-        #{pmn43,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn431 != null">
-        #{pmn431,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn44 != null">
-        #{pmn44,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn45 != null">
-        #{pmn45,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn46 != null">
-        #{pmn46,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn50 != null">
-        #{pmn50,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn51 != null">
-        #{pmn51,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn52 != null">
-        #{pmn52,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn53 != null">
-        #{pmn53,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn54 != null">
-        #{pmn54,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn55 != null">
-        #{pmn55,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn56 != null">
-        #{pmn56,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn57 != null">
-        #{pmn57,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn58 != null">
-        #{pmn58,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn59 != null">
-        #{pmn59,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn60 != null">
-        #{pmn60,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn61 != null">
-        #{pmn61,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn62 != null">
-        #{pmn62,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn63 != null">
-        #{pmn63,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn64 != null">
-        #{pmn64,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn65 != null">
-        #{pmn65,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn66 != null">
-        #{pmn66,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn67 != null">
-        #{pmn67,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn68 != null">
-        #{pmn68,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn69 != null">
-        #{pmn69,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn70 != null">
-        #{pmn70,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn71 != null">
-        #{pmn71,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn80 != null">
-        #{pmn80,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn81 != null">
-        #{pmn81,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn82 != null">
-        #{pmn82,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn83 != null">
-        #{pmn83,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn84 != null">
-        #{pmn84,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn85 != null">
-        #{pmn85,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn86 != null">
-        #{pmn86,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn87 != null">
-        #{pmn87,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn88 != null">
-        #{pmn88,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn88t != null">
-        #{pmn88t,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn930 != null">
-        #{pmn930,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn401 != null">
-        #{pmn401,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn90 != null">
-        #{pmn90,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn94 != null">
-        #{pmn94,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn95 != null">
-        #{pmn95,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn96 != null">
-        #{pmn96,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn97 != null">
-        #{pmn97,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn98 != null">
-        #{pmn98,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn91 != null">
-        #{pmn91,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud01 != null">
-        #{pmnud01,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud02 != null">
-        #{pmnud02,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud03 != null">
-        #{pmnud03,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud04 != null">
-        #{pmnud04,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud05 != null">
-        #{pmnud05,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud06 != null">
-        #{pmnud06,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud07 != null">
-        #{pmnud07,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud08 != null">
-        #{pmnud08,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud09 != null">
-        #{pmnud09,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud10 != null">
-        #{pmnud10,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud11 != null">
-        #{pmnud11,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud12 != null">
-        #{pmnud12,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud13 != null">
-        #{pmnud13,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmnud14 != null">
-        #{pmnud14,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmnud15 != null">
-        #{pmnud15,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn89 != null">
-        #{pmn89,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn72 != null">
-        #{pmn72,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn73 != null">
-        #{pmn73,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn74 != null">
-        #{pmn74,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn75 != null">
-        #{pmn75,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn76 != null">
-        #{pmn76,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn77 != null">
-        #{pmn77,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnplant != null">
-        #{pmnplant,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnlegal != null">
-        #{pmnlegal,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn012 != null">
-        #{pmn012,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn919 != null">
-        #{pmn919,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn99 != null">
-        #{pmn99,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn78 != null">
-        #{pmn78,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn100 != null">
-        #{pmn100,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmnFile">
-    update PMN_FILE
-    <set>
-      <if test="pmn011 != null">
-        PMN011 = #{pmn011,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn03 != null">
-        PMN03 = #{pmn03,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn04 != null">
-        PMN04 = #{pmn04,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn041 != null">
-        PMN041 = #{pmn041,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn05 != null">
-        PMN05 = #{pmn05,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn06 != null">
-        PMN06 = #{pmn06,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn07 != null">
-        PMN07 = #{pmn07,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn08 != null">
-        PMN08 = #{pmn08,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn09 != null">
-        PMN09 = #{pmn09,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn10 != null">
-        PMN10 = #{pmn10,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn11 != null">
-        PMN11 = #{pmn11,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn121 != null">
-        PMN121 = #{pmn121,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn122 != null">
-        PMN122 = #{pmn122,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn123 != null">
-        PMN123 = #{pmn123,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn13 != null">
-        PMN13 = #{pmn13,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn14 != null">
-        PMN14 = #{pmn14,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn15 != null">
-        PMN15 = #{pmn15,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn16 != null">
-        PMN16 = #{pmn16,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn18 != null">
-        PMN18 = #{pmn18,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn20 != null">
-        PMN20 = #{pmn20,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn23 != null">
-        PMN23 = #{pmn23,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn24 != null">
-        PMN24 = #{pmn24,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn25 != null">
-        PMN25 = #{pmn25,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn30 != null">
-        PMN30 = #{pmn30,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn31 != null">
-        PMN31 = #{pmn31,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn31t != null">
-        PMN31T = #{pmn31t,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn32 != null">
-        PMN32 = #{pmn32,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn33 != null">
-        PMN33 = #{pmn33,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn34 != null">
-        PMN34 = #{pmn34,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn35 != null">
-        PMN35 = #{pmn35,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn36 != null">
-        PMN36 = #{pmn36,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn37 != null">
-        PMN37 = #{pmn37,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn38 != null">
-        PMN38 = #{pmn38,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn40 != null">
-        PMN40 = #{pmn40,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn41 != null">
-        PMN41 = #{pmn41,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn42 != null">
-        PMN42 = #{pmn42,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn43 != null">
-        PMN43 = #{pmn43,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn431 != null">
-        PMN431 = #{pmn431,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn44 != null">
-        PMN44 = #{pmn44,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn45 != null">
-        PMN45 = #{pmn45,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn46 != null">
-        PMN46 = #{pmn46,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn50 != null">
-        PMN50 = #{pmn50,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn51 != null">
-        PMN51 = #{pmn51,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn52 != null">
-        PMN52 = #{pmn52,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn53 != null">
-        PMN53 = #{pmn53,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn54 != null">
-        PMN54 = #{pmn54,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn55 != null">
-        PMN55 = #{pmn55,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn56 != null">
-        PMN56 = #{pmn56,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn57 != null">
-        PMN57 = #{pmn57,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn58 != null">
-        PMN58 = #{pmn58,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn59 != null">
-        PMN59 = #{pmn59,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn60 != null">
-        PMN60 = #{pmn60,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn61 != null">
-        PMN61 = #{pmn61,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn62 != null">
-        PMN62 = #{pmn62,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn63 != null">
-        PMN63 = #{pmn63,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn64 != null">
-        PMN64 = #{pmn64,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn65 != null">
-        PMN65 = #{pmn65,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn66 != null">
-        PMN66 = #{pmn66,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn67 != null">
-        PMN67 = #{pmn67,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn68 != null">
-        PMN68 = #{pmn68,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn69 != null">
-        PMN69 = #{pmn69,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn70 != null">
-        PMN70 = #{pmn70,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn71 != null">
-        PMN71 = #{pmn71,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn80 != null">
-        PMN80 = #{pmn80,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn81 != null">
-        PMN81 = #{pmn81,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn82 != null">
-        PMN82 = #{pmn82,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn83 != null">
-        PMN83 = #{pmn83,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn84 != null">
-        PMN84 = #{pmn84,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn85 != null">
-        PMN85 = #{pmn85,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn86 != null">
-        PMN86 = #{pmn86,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn87 != null">
-        PMN87 = #{pmn87,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn88 != null">
-        PMN88 = #{pmn88,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn88t != null">
-        PMN88T = #{pmn88t,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn930 != null">
-        PMN930 = #{pmn930,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn401 != null">
-        PMN401 = #{pmn401,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn90 != null">
-        PMN90 = #{pmn90,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn94 != null">
-        PMN94 = #{pmn94,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn95 != null">
-        PMN95 = #{pmn95,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn96 != null">
-        PMN96 = #{pmn96,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn97 != null">
-        PMN97 = #{pmn97,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn98 != null">
-        PMN98 = #{pmn98,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn91 != null">
-        PMN91 = #{pmn91,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud01 != null">
-        PMNUD01 = #{pmnud01,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud02 != null">
-        PMNUD02 = #{pmnud02,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud03 != null">
-        PMNUD03 = #{pmnud03,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud04 != null">
-        PMNUD04 = #{pmnud04,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud05 != null">
-        PMNUD05 = #{pmnud05,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud06 != null">
-        PMNUD06 = #{pmnud06,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnud07 != null">
-        PMNUD07 = #{pmnud07,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud08 != null">
-        PMNUD08 = #{pmnud08,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud09 != null">
-        PMNUD09 = #{pmnud09,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud10 != null">
-        PMNUD10 = #{pmnud10,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud11 != null">
-        PMNUD11 = #{pmnud11,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud12 != null">
-        PMNUD12 = #{pmnud12,jdbcType=DECIMAL},
-      </if>
-      <if test="pmnud13 != null">
-        PMNUD13 = #{pmnud13,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmnud14 != null">
-        PMNUD14 = #{pmnud14,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmnud15 != null">
-        PMNUD15 = #{pmnud15,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmn89 != null">
-        PMN89 = #{pmn89,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn72 != null">
-        PMN72 = #{pmn72,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn73 != null">
-        PMN73 = #{pmn73,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn74 != null">
-        PMN74 = #{pmn74,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn75 != null">
-        PMN75 = #{pmn75,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn76 != null">
-        PMN76 = #{pmn76,jdbcType=DECIMAL},
-      </if>
-      <if test="pmn77 != null">
-        PMN77 = #{pmn77,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnplant != null">
-        PMNPLANT = #{pmnplant,jdbcType=VARCHAR},
-      </if>
-      <if test="pmnlegal != null">
-        PMNLEGAL = #{pmnlegal,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn012 != null">
-        PMN012 = #{pmn012,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn919 != null">
-        PMN919 = #{pmn919,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn99 != null">
-        PMN99 = #{pmn99,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn78 != null">
-        PMN78 = #{pmn78,jdbcType=VARCHAR},
-      </if>
-      <if test="pmn100 != null">
-        PMN100 = #{pmn100,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where PMN01 = #{pmn01,jdbcType=VARCHAR}
-      and PMN02 = #{pmn02,jdbcType=DECIMAL}
-  </update>
-  <update id="updatePmn50">
-    update ${centre}.pmn_file
-    set pmn50 = pmn50 + #{pmn50}
-    where pmn01 = #{pmn01} and pmn02 = #{pmn02}
-  </update>
+    <insert id="insertSelective" keyColumn="PMN01" keyProperty="pmn01"
+            parameterType="com.keboda.eomsback.purchase.pojo.PmnFile" useGeneratedKeys="true">
+        insert into PMN_FILE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pmn02 != null">
+                PMN02,
+            </if>
+            <if test="pmn011 != null">
+                PMN011,
+            </if>
+            <if test="pmn03 != null">
+                PMN03,
+            </if>
+            <if test="pmn04 != null">
+                PMN04,
+            </if>
+            <if test="pmn041 != null">
+                PMN041,
+            </if>
+            <if test="pmn05 != null">
+                PMN05,
+            </if>
+            <if test="pmn06 != null">
+                PMN06,
+            </if>
+            <if test="pmn07 != null">
+                PMN07,
+            </if>
+            <if test="pmn08 != null">
+                PMN08,
+            </if>
+            <if test="pmn09 != null">
+                PMN09,
+            </if>
+            <if test="pmn10 != null">
+                PMN10,
+            </if>
+            <if test="pmn11 != null">
+                PMN11,
+            </if>
+            <if test="pmn121 != null">
+                PMN121,
+            </if>
+            <if test="pmn122 != null">
+                PMN122,
+            </if>
+            <if test="pmn123 != null">
+                PMN123,
+            </if>
+            <if test="pmn13 != null">
+                PMN13,
+            </if>
+            <if test="pmn14 != null">
+                PMN14,
+            </if>
+            <if test="pmn15 != null">
+                PMN15,
+            </if>
+            <if test="pmn16 != null">
+                PMN16,
+            </if>
+            <if test="pmn18 != null">
+                PMN18,
+            </if>
+            <if test="pmn20 != null">
+                PMN20,
+            </if>
+            <if test="pmn23 != null">
+                PMN23,
+            </if>
+            <if test="pmn24 != null">
+                PMN24,
+            </if>
+            <if test="pmn25 != null">
+                PMN25,
+            </if>
+            <if test="pmn30 != null">
+                PMN30,
+            </if>
+            <if test="pmn31 != null">
+                PMN31,
+            </if>
+            <if test="pmn31t != null">
+                PMN31T,
+            </if>
+            <if test="pmn32 != null">
+                PMN32,
+            </if>
+            <if test="pmn33 != null">
+                PMN33,
+            </if>
+            <if test="pmn34 != null">
+                PMN34,
+            </if>
+            <if test="pmn35 != null">
+                PMN35,
+            </if>
+            <if test="pmn36 != null">
+                PMN36,
+            </if>
+            <if test="pmn37 != null">
+                PMN37,
+            </if>
+            <if test="pmn38 != null">
+                PMN38,
+            </if>
+            <if test="pmn40 != null">
+                PMN40,
+            </if>
+            <if test="pmn41 != null">
+                PMN41,
+            </if>
+            <if test="pmn42 != null">
+                PMN42,
+            </if>
+            <if test="pmn43 != null">
+                PMN43,
+            </if>
+            <if test="pmn431 != null">
+                PMN431,
+            </if>
+            <if test="pmn44 != null">
+                PMN44,
+            </if>
+            <if test="pmn45 != null">
+                PMN45,
+            </if>
+            <if test="pmn46 != null">
+                PMN46,
+            </if>
+            <if test="pmn50 != null">
+                PMN50,
+            </if>
+            <if test="pmn51 != null">
+                PMN51,
+            </if>
+            <if test="pmn52 != null">
+                PMN52,
+            </if>
+            <if test="pmn53 != null">
+                PMN53,
+            </if>
+            <if test="pmn54 != null">
+                PMN54,
+            </if>
+            <if test="pmn55 != null">
+                PMN55,
+            </if>
+            <if test="pmn56 != null">
+                PMN56,
+            </if>
+            <if test="pmn57 != null">
+                PMN57,
+            </if>
+            <if test="pmn58 != null">
+                PMN58,
+            </if>
+            <if test="pmn59 != null">
+                PMN59,
+            </if>
+            <if test="pmn60 != null">
+                PMN60,
+            </if>
+            <if test="pmn61 != null">
+                PMN61,
+            </if>
+            <if test="pmn62 != null">
+                PMN62,
+            </if>
+            <if test="pmn63 != null">
+                PMN63,
+            </if>
+            <if test="pmn64 != null">
+                PMN64,
+            </if>
+            <if test="pmn65 != null">
+                PMN65,
+            </if>
+            <if test="pmn66 != null">
+                PMN66,
+            </if>
+            <if test="pmn67 != null">
+                PMN67,
+            </if>
+            <if test="pmn68 != null">
+                PMN68,
+            </if>
+            <if test="pmn69 != null">
+                PMN69,
+            </if>
+            <if test="pmn70 != null">
+                PMN70,
+            </if>
+            <if test="pmn71 != null">
+                PMN71,
+            </if>
+            <if test="pmn80 != null">
+                PMN80,
+            </if>
+            <if test="pmn81 != null">
+                PMN81,
+            </if>
+            <if test="pmn82 != null">
+                PMN82,
+            </if>
+            <if test="pmn83 != null">
+                PMN83,
+            </if>
+            <if test="pmn84 != null">
+                PMN84,
+            </if>
+            <if test="pmn85 != null">
+                PMN85,
+            </if>
+            <if test="pmn86 != null">
+                PMN86,
+            </if>
+            <if test="pmn87 != null">
+                PMN87,
+            </if>
+            <if test="pmn88 != null">
+                PMN88,
+            </if>
+            <if test="pmn88t != null">
+                PMN88T,
+            </if>
+            <if test="pmn930 != null">
+                PMN930,
+            </if>
+            <if test="pmn401 != null">
+                PMN401,
+            </if>
+            <if test="pmn90 != null">
+                PMN90,
+            </if>
+            <if test="pmn94 != null">
+                PMN94,
+            </if>
+            <if test="pmn95 != null">
+                PMN95,
+            </if>
+            <if test="pmn96 != null">
+                PMN96,
+            </if>
+            <if test="pmn97 != null">
+                PMN97,
+            </if>
+            <if test="pmn98 != null">
+                PMN98,
+            </if>
+            <if test="pmn91 != null">
+                PMN91,
+            </if>
+            <if test="pmnud01 != null">
+                PMNUD01,
+            </if>
+            <if test="pmnud02 != null">
+                PMNUD02,
+            </if>
+            <if test="pmnud03 != null">
+                PMNUD03,
+            </if>
+            <if test="pmnud04 != null">
+                PMNUD04,
+            </if>
+            <if test="pmnud05 != null">
+                PMNUD05,
+            </if>
+            <if test="pmnud06 != null">
+                PMNUD06,
+            </if>
+            <if test="pmnud07 != null">
+                PMNUD07,
+            </if>
+            <if test="pmnud08 != null">
+                PMNUD08,
+            </if>
+            <if test="pmnud09 != null">
+                PMNUD09,
+            </if>
+            <if test="pmnud10 != null">
+                PMNUD10,
+            </if>
+            <if test="pmnud11 != null">
+                PMNUD11,
+            </if>
+            <if test="pmnud12 != null">
+                PMNUD12,
+            </if>
+            <if test="pmnud13 != null">
+                PMNUD13,
+            </if>
+            <if test="pmnud14 != null">
+                PMNUD14,
+            </if>
+            <if test="pmnud15 != null">
+                PMNUD15,
+            </if>
+            <if test="pmn89 != null">
+                PMN89,
+            </if>
+            <if test="pmn72 != null">
+                PMN72,
+            </if>
+            <if test="pmn73 != null">
+                PMN73,
+            </if>
+            <if test="pmn74 != null">
+                PMN74,
+            </if>
+            <if test="pmn75 != null">
+                PMN75,
+            </if>
+            <if test="pmn76 != null">
+                PMN76,
+            </if>
+            <if test="pmn77 != null">
+                PMN77,
+            </if>
+            <if test="pmnplant != null">
+                PMNPLANT,
+            </if>
+            <if test="pmnlegal != null">
+                PMNLEGAL,
+            </if>
+            <if test="pmn012 != null">
+                PMN012,
+            </if>
+            <if test="pmn919 != null">
+                PMN919,
+            </if>
+            <if test="pmn99 != null">
+                PMN99,
+            </if>
+            <if test="pmn78 != null">
+                PMN78,
+            </if>
+            <if test="pmn100 != null">
+                PMN100,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pmn02 != null">
+                #{pmn02,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn011 != null">
+                #{pmn011,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn03 != null">
+                #{pmn03,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn04 != null">
+                #{pmn04,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn041 != null">
+                #{pmn041,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn05 != null">
+                #{pmn05,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn06 != null">
+                #{pmn06,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn07 != null">
+                #{pmn07,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn08 != null">
+                #{pmn08,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn09 != null">
+                #{pmn09,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn10 != null">
+                #{pmn10,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn11 != null">
+                #{pmn11,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn121 != null">
+                #{pmn121,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn122 != null">
+                #{pmn122,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn123 != null">
+                #{pmn123,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn13 != null">
+                #{pmn13,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn14 != null">
+                #{pmn14,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn15 != null">
+                #{pmn15,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn16 != null">
+                #{pmn16,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn18 != null">
+                #{pmn18,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn20 != null">
+                #{pmn20,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn23 != null">
+                #{pmn23,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn24 != null">
+                #{pmn24,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn25 != null">
+                #{pmn25,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn30 != null">
+                #{pmn30,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn31 != null">
+                #{pmn31,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn31t != null">
+                #{pmn31t,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn32 != null">
+                #{pmn32,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn33 != null">
+                #{pmn33,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn34 != null">
+                #{pmn34,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn35 != null">
+                #{pmn35,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn36 != null">
+                #{pmn36,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn37 != null">
+                #{pmn37,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn38 != null">
+                #{pmn38,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn40 != null">
+                #{pmn40,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn41 != null">
+                #{pmn41,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn42 != null">
+                #{pmn42,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn43 != null">
+                #{pmn43,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn431 != null">
+                #{pmn431,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn44 != null">
+                #{pmn44,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn45 != null">
+                #{pmn45,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn46 != null">
+                #{pmn46,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn50 != null">
+                #{pmn50,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn51 != null">
+                #{pmn51,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn52 != null">
+                #{pmn52,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn53 != null">
+                #{pmn53,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn54 != null">
+                #{pmn54,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn55 != null">
+                #{pmn55,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn56 != null">
+                #{pmn56,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn57 != null">
+                #{pmn57,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn58 != null">
+                #{pmn58,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn59 != null">
+                #{pmn59,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn60 != null">
+                #{pmn60,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn61 != null">
+                #{pmn61,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn62 != null">
+                #{pmn62,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn63 != null">
+                #{pmn63,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn64 != null">
+                #{pmn64,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn65 != null">
+                #{pmn65,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn66 != null">
+                #{pmn66,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn67 != null">
+                #{pmn67,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn68 != null">
+                #{pmn68,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn69 != null">
+                #{pmn69,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn70 != null">
+                #{pmn70,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn71 != null">
+                #{pmn71,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn80 != null">
+                #{pmn80,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn81 != null">
+                #{pmn81,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn82 != null">
+                #{pmn82,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn83 != null">
+                #{pmn83,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn84 != null">
+                #{pmn84,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn85 != null">
+                #{pmn85,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn86 != null">
+                #{pmn86,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn87 != null">
+                #{pmn87,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn88 != null">
+                #{pmn88,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn88t != null">
+                #{pmn88t,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn930 != null">
+                #{pmn930,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn401 != null">
+                #{pmn401,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn90 != null">
+                #{pmn90,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn94 != null">
+                #{pmn94,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn95 != null">
+                #{pmn95,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn96 != null">
+                #{pmn96,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn97 != null">
+                #{pmn97,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn98 != null">
+                #{pmn98,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn91 != null">
+                #{pmn91,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud01 != null">
+                #{pmnud01,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud02 != null">
+                #{pmnud02,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud03 != null">
+                #{pmnud03,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud04 != null">
+                #{pmnud04,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud05 != null">
+                #{pmnud05,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud06 != null">
+                #{pmnud06,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud07 != null">
+                #{pmnud07,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud08 != null">
+                #{pmnud08,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud09 != null">
+                #{pmnud09,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud10 != null">
+                #{pmnud10,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud11 != null">
+                #{pmnud11,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud12 != null">
+                #{pmnud12,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud13 != null">
+                #{pmnud13,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmnud14 != null">
+                #{pmnud14,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmnud15 != null">
+                #{pmnud15,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn89 != null">
+                #{pmn89,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn72 != null">
+                #{pmn72,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn73 != null">
+                #{pmn73,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn74 != null">
+                #{pmn74,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn75 != null">
+                #{pmn75,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn76 != null">
+                #{pmn76,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn77 != null">
+                #{pmn77,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnplant != null">
+                #{pmnplant,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnlegal != null">
+                #{pmnlegal,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn012 != null">
+                #{pmn012,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn919 != null">
+                #{pmn919,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn99 != null">
+                #{pmn99,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn78 != null">
+                #{pmn78,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn100 != null">
+                #{pmn100,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmnFile">
+        update PMN_FILE
+        <set>
+            <if test="pmn011 != null">
+                PMN011 = #{pmn011,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn03 != null">
+                PMN03 = #{pmn03,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn04 != null">
+                PMN04 = #{pmn04,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn041 != null">
+                PMN041 = #{pmn041,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn05 != null">
+                PMN05 = #{pmn05,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn06 != null">
+                PMN06 = #{pmn06,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn07 != null">
+                PMN07 = #{pmn07,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn08 != null">
+                PMN08 = #{pmn08,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn09 != null">
+                PMN09 = #{pmn09,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn10 != null">
+                PMN10 = #{pmn10,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn11 != null">
+                PMN11 = #{pmn11,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn121 != null">
+                PMN121 = #{pmn121,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn122 != null">
+                PMN122 = #{pmn122,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn123 != null">
+                PMN123 = #{pmn123,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn13 != null">
+                PMN13 = #{pmn13,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn14 != null">
+                PMN14 = #{pmn14,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn15 != null">
+                PMN15 = #{pmn15,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn16 != null">
+                PMN16 = #{pmn16,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn18 != null">
+                PMN18 = #{pmn18,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn20 != null">
+                PMN20 = #{pmn20,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn23 != null">
+                PMN23 = #{pmn23,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn24 != null">
+                PMN24 = #{pmn24,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn25 != null">
+                PMN25 = #{pmn25,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn30 != null">
+                PMN30 = #{pmn30,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn31 != null">
+                PMN31 = #{pmn31,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn31t != null">
+                PMN31T = #{pmn31t,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn32 != null">
+                PMN32 = #{pmn32,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn33 != null">
+                PMN33 = #{pmn33,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn34 != null">
+                PMN34 = #{pmn34,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn35 != null">
+                PMN35 = #{pmn35,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn36 != null">
+                PMN36 = #{pmn36,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn37 != null">
+                PMN37 = #{pmn37,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn38 != null">
+                PMN38 = #{pmn38,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn40 != null">
+                PMN40 = #{pmn40,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn41 != null">
+                PMN41 = #{pmn41,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn42 != null">
+                PMN42 = #{pmn42,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn43 != null">
+                PMN43 = #{pmn43,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn431 != null">
+                PMN431 = #{pmn431,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn44 != null">
+                PMN44 = #{pmn44,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn45 != null">
+                PMN45 = #{pmn45,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn46 != null">
+                PMN46 = #{pmn46,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn50 != null">
+                PMN50 = #{pmn50,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn51 != null">
+                PMN51 = #{pmn51,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn52 != null">
+                PMN52 = #{pmn52,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn53 != null">
+                PMN53 = #{pmn53,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn54 != null">
+                PMN54 = #{pmn54,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn55 != null">
+                PMN55 = #{pmn55,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn56 != null">
+                PMN56 = #{pmn56,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn57 != null">
+                PMN57 = #{pmn57,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn58 != null">
+                PMN58 = #{pmn58,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn59 != null">
+                PMN59 = #{pmn59,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn60 != null">
+                PMN60 = #{pmn60,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn61 != null">
+                PMN61 = #{pmn61,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn62 != null">
+                PMN62 = #{pmn62,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn63 != null">
+                PMN63 = #{pmn63,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn64 != null">
+                PMN64 = #{pmn64,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn65 != null">
+                PMN65 = #{pmn65,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn66 != null">
+                PMN66 = #{pmn66,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn67 != null">
+                PMN67 = #{pmn67,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn68 != null">
+                PMN68 = #{pmn68,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn69 != null">
+                PMN69 = #{pmn69,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn70 != null">
+                PMN70 = #{pmn70,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn71 != null">
+                PMN71 = #{pmn71,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn80 != null">
+                PMN80 = #{pmn80,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn81 != null">
+                PMN81 = #{pmn81,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn82 != null">
+                PMN82 = #{pmn82,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn83 != null">
+                PMN83 = #{pmn83,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn84 != null">
+                PMN84 = #{pmn84,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn85 != null">
+                PMN85 = #{pmn85,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn86 != null">
+                PMN86 = #{pmn86,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn87 != null">
+                PMN87 = #{pmn87,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn88 != null">
+                PMN88 = #{pmn88,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn88t != null">
+                PMN88T = #{pmn88t,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn930 != null">
+                PMN930 = #{pmn930,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn401 != null">
+                PMN401 = #{pmn401,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn90 != null">
+                PMN90 = #{pmn90,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn94 != null">
+                PMN94 = #{pmn94,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn95 != null">
+                PMN95 = #{pmn95,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn96 != null">
+                PMN96 = #{pmn96,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn97 != null">
+                PMN97 = #{pmn97,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn98 != null">
+                PMN98 = #{pmn98,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn91 != null">
+                PMN91 = #{pmn91,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud01 != null">
+                PMNUD01 = #{pmnud01,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud02 != null">
+                PMNUD02 = #{pmnud02,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud03 != null">
+                PMNUD03 = #{pmnud03,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud04 != null">
+                PMNUD04 = #{pmnud04,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud05 != null">
+                PMNUD05 = #{pmnud05,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud06 != null">
+                PMNUD06 = #{pmnud06,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnud07 != null">
+                PMNUD07 = #{pmnud07,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud08 != null">
+                PMNUD08 = #{pmnud08,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud09 != null">
+                PMNUD09 = #{pmnud09,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud10 != null">
+                PMNUD10 = #{pmnud10,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud11 != null">
+                PMNUD11 = #{pmnud11,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud12 != null">
+                PMNUD12 = #{pmnud12,jdbcType=DECIMAL},
+            </if>
+            <if test="pmnud13 != null">
+                PMNUD13 = #{pmnud13,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmnud14 != null">
+                PMNUD14 = #{pmnud14,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmnud15 != null">
+                PMNUD15 = #{pmnud15,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pmn89 != null">
+                PMN89 = #{pmn89,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn72 != null">
+                PMN72 = #{pmn72,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn73 != null">
+                PMN73 = #{pmn73,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn74 != null">
+                PMN74 = #{pmn74,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn75 != null">
+                PMN75 = #{pmn75,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn76 != null">
+                PMN76 = #{pmn76,jdbcType=DECIMAL},
+            </if>
+            <if test="pmn77 != null">
+                PMN77 = #{pmn77,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnplant != null">
+                PMNPLANT = #{pmnplant,jdbcType=VARCHAR},
+            </if>
+            <if test="pmnlegal != null">
+                PMNLEGAL = #{pmnlegal,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn012 != null">
+                PMN012 = #{pmn012,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn919 != null">
+                PMN919 = #{pmn919,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn99 != null">
+                PMN99 = #{pmn99,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn78 != null">
+                PMN78 = #{pmn78,jdbcType=VARCHAR},
+            </if>
+            <if test="pmn100 != null">
+                PMN100 = #{pmn100,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where PMN01 = #{pmn01,jdbcType=VARCHAR}
+        and PMN02 = #{pmn02,jdbcType=DECIMAL}
+    </update>
+    <update id="updatePmn50">
+        update ${centre}.pmn_file
+        set pmn50 = pmn50 + #{pmn50}
+        where pmn01 = #{pmn01}
+          and pmn02 = #{pmn02}
+    </update>
     <delete id="InvalidDocumentDelete">
-      delete ${centre}.pmm_file
-      where   pmm04 &lt;= sysdate AND pmm18 !='X'and pmm01 not in (select  distinct pmn01 from ${centre}.pmn_file)
+        delete ${centre}.pmm_file
+        where pmm04 &lt;= sysdate
+          AND pmm18 != 'X'
+          and pmm01 not in (select distinct pmn01 from ${centre}.pmn_file)
     </delete>
+    <select id="searchPmnList" resultType="com.keboda.eomsback.purchase.pojo.PmnFile">
+        select *
+        from ${centre}.pmn_file
+        where pmn01 = #{code}
+    </select>
 
 </mapper>

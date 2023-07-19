@@ -13,7 +13,7 @@ export const menu = [
         children: [
             {
                 path: 'pma',
-                    name: '付款方式',
+                name: '付款方式',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/purchase/PmaView')
             },
@@ -42,10 +42,22 @@ export const menu = [
                 component: () => import('@/views/purchase/PmkView')
             },
             {
+                path: 'pmm',
+                name: '采购单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/purchase/PmmView')
+            },
+            {
                 path: 'rva',
                 name: '收货单',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/purchase/RvaView')
+            },
+            {
+                path: 'rvu',
+                name: '入库单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/purchase/RvuView')
             }
         ]
     },
@@ -169,13 +181,6 @@ export const menu = [
                 name: 'WMS库存控制',
                 icon: 'el-icon-unlock',
                 component: () => import('@/views/flux/InvTransferView'),
-                children: []
-            },
-            {
-                path: 'taskAnalysis',
-                name: 'FLUX任务时间分析',
-                icon: 'el-icon-time',
-                component: () => import('@/views/flux/TaskAnalysis'),
                 children: []
             }
         ]

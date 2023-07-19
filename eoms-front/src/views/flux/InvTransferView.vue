@@ -125,12 +125,12 @@ export default {
     handleSizeChange(val) {
       this.stock.size = val;
       this.search(1);
-    }
+    },
   },
   components: {
     selectedCentre,
     selectedIma
-  },
+  }
 }
 </script>
 

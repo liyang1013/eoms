@@ -27,11 +27,6 @@
             <version>2.1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.ly</groupId>
-            <artifactId>comskt</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>11.2.0.3</version>
@@ -43,20 +38,14 @@
             <version>8.0.16</version>
         </dependency>
         <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>8.4.0.jre8</version>
-        </dependency>
-        <!-- JWT依赖 -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>

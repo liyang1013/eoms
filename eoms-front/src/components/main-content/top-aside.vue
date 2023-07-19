@@ -1,16 +1,24 @@
 <template>
-  <aside class="aside_top">
+  <aside class="aside__top" ref="asideTop" style="white-space:nowrap;">
         <span class="iconfont icon-nav toggleNavCollapse" :class="{ active: isSidebarNavCollapse }"
               @click="toggleNavCollapse">
         </span>
-    <el-tag key="home" @click="openMenu('home')" size="small"  :effect="isCurrentMenu('home')">
-      首页
-    </el-tag>
-    <el-tag :key="tag.path" @click="openMenu(tag.path)" size="small" v-for="tag in activeMenuList" :closable="true"
-            :disable-transitions='false' :effect="isCurrentMenu(tag.path)"
-            @close="handleClose(tag)">
-      {{ tag.name }}
-    </el-tag>
+    <div style="display: inline-block;">
+      <div class="tags" style="position: relative;  transition: .3s; display: inline; left: 0px">
+        <el-tag key="home" @click="openMenu('home')" size="small" :effect="isCurrentMenu('home')">
+          首页
+        </el-tag>
+        <el-tag :key="tag.path" @click="openMenu(tag.path)" size="small" v-for="(tag,index) in activeMenuList" :closable="true"
+                :disable-transitions='true' :effect="isCurrentMenu(tag.path)"
+                @close="handleClose(tag)"
+                v-show="index < maxTagNum">
+          {{ tag.name }}
+        </el-tag>
+        <el-tag v-if="activeMenuList.length > maxTagNum">
+          + {{activeMenuList.length - maxTagNum}}
+        </el-tag>
+      </div>
+    </div>
   </aside>
 </template>
 <script>
@@ -18,9 +26,12 @@ import {mapState} from 'vuex'
 import avatar from '@/image/avatar.jpg'
 
 export default {
+  name: 'aside',
   data() {
     return {
-      avatar: avatar
+      avatar: avatar,
+      tagCount: 1,
+      maxTagNum: 8
     }
   },
   computed: {
@@ -34,22 +45,27 @@ export default {
     },
     handleClose(tag) {
       this.$store.commit('deleteMenu', tag);
+
     },
     openMenu(path) {
       this.$store.commit('SET_CURRENT_MENU', path)
-      this.$router.push(path)
+      this.$router.push(path);
     },
-    isCurrentMenu(path){
+    isCurrentMenu(path) {
       let style;
       this.currentMenu === path ? style = 'dark' : style = 'plain'
       return style
     }
+  },
+  mounted() {
+    let tagsWidth = this.$refs.asideTop.offsetWidth - 100;
+    this.maxTagNum = (tagsWidth/100).toFixed(0)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.aside_top {
+.aside__top {
   border-bottom: 1px solid #e5e5e5;
   height: 45px;
   line-height: 45px;

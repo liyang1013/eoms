@@ -896,5 +896,17 @@
     </set>
     where PMM01 = #{pmm01,jdbcType=VARCHAR}
   </update>
+    <select id="searchPmmListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmmFile">
+        select pmm01,pmm02,pmm03,pmm04,pmm09,pmm12,pmm13,pmm15,pmm18,pmm20,pmm21,pmm22,pmm25,pmm41,pmm43,pmm909,pmmud01,pmmud02,#{centre} centre
+        from ${centre}.pmm_file
+        <where>
+            <if test="code != null and code != '' ">
+                and lower(pmm01) like lower('%${code}%')
+            </if>
+          <if test="acti != null and acti != '' ">
+            and pmmacti = #{acti}
+          </if>
+        </where>
+    </select>
 
 </mapper>
