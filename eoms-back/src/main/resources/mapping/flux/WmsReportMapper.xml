@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.flux.mapper.WmsReportMapper">
+
+
+    <select id="jobDataIN" resultType="com.keboda.eomsback.report.pojo.JobDataVo">
+        select customerDescr1 centre,asnReference1 code,skuDescr cinvname,sku cinvcode ,time ddate,qty,codeDescr status
+        from tc_v_intast
+    </select>
+    <select id="jobDataOUT" resultType="com.keboda.eomsback.report.pojo.JobDataVo">
+        select customerDescr1 centre ,soReference1 code ,skuDescr cinvname ,sku cinvcode,
+              traceid,
+               palletstatus ,taskqty qty,codeDescr status,IO,udf02,udf01
+        from tc_v_outtast
+        where  UDF01+udf02+'_'+IO = #{floor}
+    </select>
+</mapper>

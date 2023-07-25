@@ -96,23 +96,6 @@ export default {
 
 }
 
-var arr = [];
-var oAjax = new XMLHttpRequest();
-oAjax.open("GET",'http://127.0.0.1:18080/echarts/wcsTaskTypeTime',true);
-oAjax.send();
-oAjax.onreadystatechange=function(){
-  if(oAjax.readyState==4){
-    if(oAjax.status==200){
-      var json = JSON.parse(oAjax.responseText);
-      arr = json.result;
-    }else{
-      if(fnfiled){
-        fnField(oAjax.status);
-      }
-    }
-  }
-}
-
 </script>
 
 <style lang="scss" scoped>
