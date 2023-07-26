@@ -897,8 +897,14 @@
     where PMM01 = #{pmm01,jdbcType=VARCHAR}
   </update>
     <select id="searchPmmListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.PmmFile">
-        select pmm01,pmm02,pmm03,pmm04,pmm09,pmm12,pmm13,pmm15,pmm18,pmm20,pmm21,pmm22,pmm25,pmm41,pmm43,pmm909,pmmud01,pmmud02,#{centre} centre
+        select pmm01,smydesc,pmm02,pmm03,pmm04,pmm09,pmc03,pmm12,gen02,pmm13,gem02,pmm15,pmm18,pmm20,pma02,pmm21,pmm22,pmm25,pmm41,pnz02,pmm43,pmm909,pmmud01,pmmud02,#{centre} centre
         from ${centre}.pmm_file
+        left join ${centre}.gen_file on gen01 = pmm12
+        left join ${centre}.pmc_file on pmc01 = pmm09
+        left join ${centre}.gem_file on gem01 = pmm13
+        left join ${centre}.smy_file on smyslip = SUBSTR(pmm01,0,4)
+        left join  ${centre}.pma_file on pma01 = pmm20
+        left join  ${centre}.pnz_file on pnz01 = pmm41
         <where>
             <if test="code != null and code != '' ">
                 and lower(pmm01) like lower('%${code}%')

@@ -36,13 +36,13 @@ export default {
   methods: {
     remoteMethod(str){
       if(  this.pjb01 && str){
-        this.$http.post('api/pjb/searchPjbList',{centre: this.centre,code_1: this.pjb01,code_2: str,code_3: 'Y'}).then(res => this.pjb = res.data.result)
+        this.$http.post('/api/pjb/searchPjbList',{centre: this.centre,code_1: this.pjb01,code_2: str,code_3: 'Y'}).then(res => this.pjb = res.data.result)
       }
     }
   },
   created() {
     if( this.pjb01 && this.pjb02 ){
-      this.$http.post('api/pjb/searchPjbByKey',{centre: this.centre,code_1: this.pjb01,code_2: this.pjb02,code_3: 'Y'}).then(res => this.pjb.push(res.data.result))
+      this.$http.post('/api/pjb/searchPjbByKey',{centre: this.centre,code_1: this.pjb01,code_2: this.pjb02,code_3: 'Y'}).then(res => this.pjb.push(res.data.result))
     }
   }
 }

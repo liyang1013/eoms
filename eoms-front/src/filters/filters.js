@@ -21,7 +21,7 @@ export function formatTime(date) {
 }
 
 /**
- * 全局单据状态格式化返回 
+ * 单据审核状态
  */
 export function formatStatus(conf){
     
@@ -34,7 +34,7 @@ export function formatStatus(conf){
 }
 
 /**
- * 返回采购性质类型
+ * 采购性质类型
  * @param {string} nature 
  * @returns 
  */
@@ -51,19 +51,27 @@ export function formatNature(nature){
 }
 
 /**
- * 返回确认状态
+ * 确认状态
  * @param {string} status 
  * @returns 
  */
 export function formatConfirmationStatus(status){
-   
     if(status === 'N') return  '未确认';
     if(status === 'Y') return  '确认';
-   
 }
 
 /**
- * 返回签核状况
+ * 过账状态
+ * @param code
+ * @returns {string}
+ */
+export function formatPost(code){
+    if(code === 'Y') return '过账';
+    if(code === 'N') return '未过账'
+}
+
+/**
+ * 采购签核状况
  * @param {string} status 
  * @returns 
  */
@@ -72,7 +80,7 @@ export function formatSignoff(status){
     if(status === 'X') return '计划订单转入';
     if(status === '0') return '开立';
     if(status === '1') return '已核准';
-    if(status === '2') return '转成采购单';
+    if(status === '2') return '转成/发出采购单';
     if(status === '6') return '结案';
     if(status === '7') return '结案-结长';
     if(status === '8') return '结案-结短';
@@ -85,13 +93,13 @@ export function formatSignoff(status){
 
 
 /**
-* 返回料件类型
+* 料件类型
 * @param {string} type
 * @returns
 */
 export function formatImaType(type){
 
-    if(type === 'C') return  '规格组件';
+    if(type === 'C') return '规格组件';
     if(type === 'T') return '最后规格料件';
     if(type === 'D') return '特性料件';
     if(type === 'A') return '族群料件';
@@ -107,7 +115,7 @@ export function formatImaType(type){
 }
 
 /**
- * 返回杂项作业内容
+ * 杂项作业内容
  * @param code
  * @returns {string}
  */
@@ -118,16 +126,6 @@ export function formatInaType(code){
     if(code === '4') return 'WIP 杂项收料 aimt312';
     if(code === '5') return '库存杂项报废 aimt303';
     if(code === '6') return 'WIP 杂项报废 aimt313';
-}
-
-/**
- * 返回过账状态
- * @param code
- * @returns {string}
- */
-export function formatPost(code){
-    if(code === 'Y') return '过账';
-    if(code === 'N') return '未过账'
 }
 
 export function pickType(code){

@@ -1,7 +1,5 @@
 <template>
-  <div>
     <el-calendar v-model="nowDate" ></el-calendar>
-  </div>
 </template>
 
 <script>

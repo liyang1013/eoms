@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     remoteMethod(str){
-      this.$http.get('api/azp/searchAzpList?azp01='+str).then(res => this.centres = res.data.result)
+      this.$http.get('/api/azp/searchAzpList?azp01='+str).then(res => this.centres = res.data.result)
     }
   },
   props: {
@@ -33,7 +33,7 @@ export default {
   },
   beforeMount() {
     if(this.centre){
-      this.$http.get('api/azp/searchAzpByKey?azp01='+this.centre).then(res => this.centres.push(res.data.result))
+      this.$http.get('/api/azp/searchAzpByKey?azp01='+this.centre).then(res => this.centres.push(res.data.result))
     }
   }
 }

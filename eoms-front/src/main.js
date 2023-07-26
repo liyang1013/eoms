@@ -13,6 +13,7 @@ import 'v-charts/lib/style.css'
 
 Vue.prototype.$http = http
 Vue.config.productionTip = false
+ElementUI.TableColumn.props.showOverflowTooltip ={type:Boolean, default: true}
 Vue.use(ElementUI,{ size: 'mini'})
 Vue.use(VCharts)
 

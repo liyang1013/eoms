@@ -1034,8 +1034,9 @@
           and pmm01 not in (select distinct pmn01 from ${centre}.pmn_file)
     </delete>
     <select id="searchPmnList" resultType="com.keboda.eomsback.purchase.pojo.PmnFile">
-        select *
+        select pmn02,pmn04,pmn041,ima021,pmn07,pmn16,pmn20,pmn31,pmn31t,pmn88,pmn88t
         from ${centre}.pmn_file
+        left join ${centre}.ima_file on ima01 = pmn04
         where pmn01 = #{code}
     </select>
 

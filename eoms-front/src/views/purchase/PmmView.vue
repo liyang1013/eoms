@@ -26,21 +26,18 @@
       </el-table-column>
       <el-table-column prop="pmm04" label="采购日期" width="120">
       </el-table-column>
-      <el-table-column prop="gen02" label="采购员" width="90">
+      <el-table-column prop="gem02" label="部门" width="120">
+      </el-table-column>
+      <el-table-column prop="gen02" label="采购员" width="120">
       </el-table-column>
       <el-table-column label="审核状态" width="90">
         <template slot-scope="scope">
-          {{ scope.row.pmmconf | formatStatus }}
+          {{ scope.row.pmm18 | formatStatus }}
         </template>
       </el-table-column>
-      <el-table-column prop="pmc03" label="供应商" width="160">
+      <el-table-column prop="pmc03" label="供应商" width="180">
       </el-table-column>
-      <el-table-column prop="pmm43" label="税率" width="90">
-        <template slot-scope="scope">
-          {{ scope.row.pmm43 + '%' }}
-        </template>
-      </el-table-column>
-      <el-table-column prop="pmmud01" label="备注" width="160">
+      <el-table-column prop="pmmud01" label="备注" width="120">
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">
@@ -59,59 +56,79 @@
       <el-form label-position="left" label-width="80px" :model="documents.master">
         <el-row >
           <el-col :span="7" >
-            <el-form-item label="核价单号:">
-              <span style="float: left;">{{ documents.master.pmn01 }}</span>
+            <el-form-item label="采购单号:">
+              <span style="float: left;">{{ documents.master.pmm01 }}</span>
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.smydesc }}</span>
             </el-form-item>
-            <el-form-item label="核价时间:">
-              {{ documents.master.pmn02 }}
+            <el-form-item label="采购性质:">
+              {{ documents.master.pmm02 | formatNature}}
             </el-form-item>
-            <el-form-item label="备注:">
-              {{documents.master.pmn04}}
+            <el-form-item label="付款方式:">
+              <span style="float: left;">{{ documents.master.pmm20 }}</span>
+              <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{documents.master.pma02 }}</span>
+            </el-form-item>
+            <el-form-item label="价格条件:">
+              <span style="float: left;">{{ documents.master.pmm41 }}</span>
+              <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{documents.master.pnz02 }}</span>
             </el-form-item>
           </el-col>
           <el-col :span="7"  :offset="1">
             <el-form-item label="申请人:">
-              <span style="float: left;">{{ documents.master.pmm09 }}</span>
+              <span style="float: left;">{{ documents.master.pmm12 }}</span>
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.gen02 }}</span>
             </el-form-item>
             <el-form-item label="供应商:">
-              <span style="float: left;">{{ documents.master.pmm03 }}</span>
+              <span style="float: left;">{{ documents.master.pmm09 }}</span>
               <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.pmc03 }}</span>
             </el-form-item>
             <el-form-item label="税种:">
-              <span style="float: left;">{{ documents.master.pmm08 }}</span>
-              <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{documents.master.pmm081 + '%' }}</span>
+              <span style="float: left;">{{ documents.master.pmm21 }}</span>
+              <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{documents.master.pmm43 + '%' }}</span>
+            </el-form-item>
+            <el-form-item label="税种:">
+              {{ documents.master.pmm22 }}
             </el-form-item>
           </el-col>
           <el-col :span="7" :offset="1">
+            <el-form-item label="核价时间:">
+              {{ documents.master.pmm04 }}
+            </el-form-item>
             <el-form-item label="审核状态:">
-              {{ documents.master.pmmconf | formatStatus }}
+              {{ documents.master.pmm18 | formatStatus }}
             </el-form-item>
             <el-form-item label="状况码:">
-              {{ documents.master.pmm06 | formatSignoff }}
+              {{ documents.master.pmm25 | formatSignoff }}
+            </el-form-item>
+            <el-form-item label="备注:">
+              {{documents.master.pmmud01}}
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
       <el-table :data="documents.slave" border max-height="300px">
         <el-table-column prop="pmn02" label="项次" width="60"></el-table-column>
-        <el-table-column prop="pmn03" label="料件编号" width="120"></el-table-column>
-        <el-table-column prop="pmn031" label="料件名称" width="189"></el-table-column>
-        <el-table-column prop="pmn032" label="规格" width="190"></el-table-column>
-        <el-table-column prop="ima44" label="单位" width="120"></el-table-column>
-        <el-table-column prop="pmn07" label="未税单价" width="120"></el-table-column>
-        <el-table-column prop="pmn07t" label="含税单价" width="120"></el-table-column>
-        <el-table-column prop="pmn09" label="生效日期" width="120"></el-table-column>
-        <el-table-column prop="pmn091" label="失效日期" width="120"></el-table-column>
+        <el-table-column label="状况码" width="120">
+          <template slot-scope="scope">
+            {{ scope.row.pmn16 | formatSignoff}}
+          </template>
+        </el-table-column>
+        <el-table-column prop="pmn04" label="料件编号" width="120"></el-table-column>
+        <el-table-column prop="pmn041" label="料件名称" width="180"></el-table-column>
+        <el-table-column prop="ima021" label="规格" width="120"></el-table-column>
+        <el-table-column prop="pmn07" label="单位" width="120"></el-table-column>
+        <el-table-column prop="pmn20" label="采购量" width="120"></el-table-column>
+        <el-table-column prop="pmn31" label="未税单价" width="120"></el-table-column>
+        <el-table-column prop="pmn31t" label="含税单价" width="120"></el-table-column>
+        <el-table-column prop="pmn88" label="未税金额" width="120"></el-table-column>
+        <el-table-column prop="pmn88t" label="含税金额" width="120"></el-table-column>
       </el-table>
     </el-dialog>
   </div>
 </template>
 
 <script>
-import selectedCentre from '@/components/selected/selected-centre.vue';
-import selectedConf from '@/components/selected/selected-conf.vue';
+import selectedCentre from '@/components/selected/selected-centre';
+import selectedConf from '@/components/selected/selected-conf';
 
 export default {
   name: 'pmm',
