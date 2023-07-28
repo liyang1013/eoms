@@ -2,7 +2,7 @@
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline" >
       <el-form-item label="中心:">
-        <selectedCentre v-model="searchVo.centre" ></selectedCentre>
+        <selectedCentre v-model="searchVo.centre" key="pmh"></selectedCentre>
       </el-form-item>
       <el-form-item label="生效状态:">
         <selected-acti v-model="searchVo.acti"></selected-acti>
@@ -23,11 +23,11 @@
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
-      <el-table-column prop="pmh01" label="料件编码" width="140">
+      <el-table-column prop="pmh01" label="料件编码" width="160">
       </el-table-column>
-      <el-table-column prop="ima02" label="料件名称" width="180">
+      <el-table-column prop="ima02" label="料件名称" width="160">
       </el-table-column>
-      <el-table-column prop="ima021" label="料件规格" width="180">
+      <el-table-column prop="ima021" label="料件规格" width="160">
       </el-table-column>
       <el-table-column prop="pmh02" label="供应商编码" width="120">
       </el-table-column>

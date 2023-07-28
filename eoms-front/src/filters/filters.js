@@ -56,7 +56,7 @@ export function formatNature(nature){
  * @returns 
  */
 export function formatConfirmationStatus(status){
-    if(status === 'N') return  '未确认';
+    if(!status || status === 'N') return  '未确认';
     if(status === 'Y') return  '确认';
 }
 

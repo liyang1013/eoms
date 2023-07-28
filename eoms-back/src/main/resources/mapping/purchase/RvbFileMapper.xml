@@ -8,10 +8,12 @@
     </update>
 
     <select id="searchRvbList" resultType="com.keboda.eomsback.purchase.pojo.RvbFile">
-        select ima021,rvb01,rvb02,rvb05,rvb051,rvb90,rvb04,rvb03,rvb07,rvb10t,rvb88t,rvbplant centre,rvb30
+        select rvb01,rvb02,rvb03,rvb04,rvb05,rvb051,ima021,rvb07,rvb10t,rvb22,rvb29,rvb30,rvb88t,rvb90,#{centre} centre,pmn20,pmn50,pmn55,imd02
         from ${centre}.rvb_file
         left join ${centre}.ima_file on ima01 = rvb05
-        where rvb01 = #{code_1}
+        left join ${centre}.pmn_file on pmn01 = rvb04 and pmn02 = rvb03
+        left join ${centre}.imd_file on imd01 = rvb36
+        where rvb01 = #{code}
         order by rvb02
     </select>
     <select id="selectByKey" resultType="com.keboda.eomsback.purchase.pojo.RvbFile">

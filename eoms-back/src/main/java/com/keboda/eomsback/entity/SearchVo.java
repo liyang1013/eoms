@@ -12,16 +12,6 @@ public class SearchVo {
 
     private String code;
 
-    private String code_1;
-
-    private String code_2;
-
-    private String code_3;
-
-    private String code_4;
-
-    private String code_5;
-
     /**
      * 供应商
      */
@@ -31,6 +21,12 @@ public class SearchVo {
      * 料件
      */
     private String ima;
+
+
+    /**
+     * 仓库
+     */
+    private String imd;
 
     /**
      * 中心

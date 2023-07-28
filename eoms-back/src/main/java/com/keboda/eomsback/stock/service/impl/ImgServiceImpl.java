@@ -37,19 +37,19 @@ public class ImgServiceImpl implements IImgService {
     @Transactional
     public void repairImg(SearchVo searchVo) {
         if(searchVo.getCentre() == null || searchVo.getCentre().trim().isEmpty()) throw new RuntimeException("中心不能为空");
-        if(searchVo.getCode_2() == null || searchVo.getCode_2().trim().isEmpty()) throw new RuntimeException("仓库不能为空");
-        ImdFile imdFile = imdFileMapper.selectByKey(searchVo.getCentre(),searchVo.getCode_2());
-        ImaFile imaFile = imaFileMapper.selectByKey(searchVo.getCentre(),searchVo.getCode_1());
+        if(searchVo.getImd() == null || searchVo.getImd().trim().isEmpty()) throw new RuntimeException("仓库不能为空");
+        ImdFile imdFile = imdFileMapper.selectByKey(searchVo.getCentre(),searchVo.getImd());
+        ImaFile imaFile = imaFileMapper.selectByKey(searchVo.getCentre(),searchVo.getIma());
         if(imaFile == null) throw new RuntimeException("料件编码不存在,请输入完整的料件编码");
 
-        ImgFile imgFile = imgFileMapper.selectByKey(searchVo.getCentre(),searchVo.getCode_2(),imaFile.getIma01());
+        ImgFile imgFile = imgFileMapper.selectByKey(searchVo.getCentre(),searchVo.getImd(),imaFile.getIma01());
         if(imgFile == null){
             imgFile = new ImgFile();
             imgFile.setCentre(searchVo.getCentre());
             imgFile.setImgplant(searchVo.getCentre());
             imgFile.setImglegal(searchVo.getCentre());
             imgFile.setImg01(imaFile.getIma01());
-            imgFile.setImg02(searchVo.getCode_2());
+            imgFile.setImg02(searchVo.getImd());
             imgFile.setImg03(" ");
             imgFile.setImg04(" ");
             imgFile.setImg09(imaFile.getIma25());

@@ -2,7 +2,7 @@
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline" >
       <el-form-item label="中心:">
-        <selectedCentre v-model="searchVo.centre" ></selectedCentre>
+        <selectedCentre v-model="searchVo.centre" key="pma"></selectedCentre>
       </el-form-item>
       <el-form-item label="生效状态:">
         <selected-acti v-model="searchVo.acti"></selected-acti>

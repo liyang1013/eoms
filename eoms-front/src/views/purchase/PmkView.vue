@@ -5,7 +5,7 @@
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
-        <selectedCentre v-model="searchVo.centre" key="pmi"></selectedCentre>
+        <selectedCentre v-model="searchVo.centre" key="pmk"></selectedCentre>
       </el-form-item>
       <el-form-item label="请购单号:">
         <el-input v-model="searchVo.code" placeholder="请购单号" clearable></el-input>
@@ -55,7 +55,7 @@
 
     <!-- 明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1200px" >
-      <el-form label-position="left" label-width="80px" :model="documents.master">
+      <el-form label-position="left" :model="documents.master">
         <el-row >
           <el-col :span="7" >
             <el-form-item label="请购单号:">
@@ -92,8 +92,8 @@
       <el-table :data="documents.slave" border max-height="300px">
         <el-table-column prop="pml02" label="项次" width="60"></el-table-column>
         <el-table-column prop="pml04" label="料件编号" width="120"></el-table-column>
-        <el-table-column prop="pml041" label="料件名称" width="189"></el-table-column>
-        <el-table-column prop="ima021" label="规格" width="190"></el-table-column>
+        <el-table-column prop="pml041" label="料件名称" width="160"></el-table-column>
+        <el-table-column prop="ima021" label="规格" width="160"></el-table-column>
         <el-table-column prop="pml07" label="单位" width="120"></el-table-column>
         <el-table-column prop="pml20" label="请购量" width="120"></el-table-column>
         <el-table-column prop="pml21" label="转采购量" width="120"></el-table-column>

@@ -5,7 +5,7 @@
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
-        <selectedCentre v-model="searchVo.centre" key="pmi"></selectedCentre>
+        <selectedCentre v-model="searchVo.centre" key="pmm"></selectedCentre>
       </el-form-item>
       <el-form-item label="采购单号:">
         <el-input v-model="searchVo.code" placeholder="采购单号" clearable></el-input>
@@ -26,6 +26,8 @@
       </el-table-column>
       <el-table-column prop="pmm04" label="采购日期" width="120">
       </el-table-column>
+      <el-table-column prop="pmc03" label="供应商" width="160">
+      </el-table-column>
       <el-table-column prop="gem02" label="部门" width="120">
       </el-table-column>
       <el-table-column prop="gen02" label="采购员" width="120">
@@ -34,8 +36,6 @@
         <template slot-scope="scope">
           {{ scope.row.pmm18 | formatStatus }}
         </template>
-      </el-table-column>
-      <el-table-column prop="pmc03" label="供应商" width="180">
       </el-table-column>
       <el-table-column prop="pmmud01" label="备注" width="120">
       </el-table-column>
@@ -53,7 +53,7 @@
 
     <!-- 明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1200px" >
-      <el-form label-position="left" label-width="80px" :model="documents.master">
+      <el-form label-position="left" :model="documents.master">
         <el-row >
           <el-col :span="7" >
             <el-form-item label="采购单号:">
@@ -113,7 +113,7 @@
           </template>
         </el-table-column>
         <el-table-column prop="pmn04" label="料件编号" width="120"></el-table-column>
-        <el-table-column prop="pmn041" label="料件名称" width="180"></el-table-column>
+        <el-table-column prop="pmn041" label="料件名称" width="160"></el-table-column>
         <el-table-column prop="ima021" label="规格" width="120"></el-table-column>
         <el-table-column prop="pmn07" label="单位" width="120"></el-table-column>
         <el-table-column prop="pmn20" label="采购量" width="120"></el-table-column>

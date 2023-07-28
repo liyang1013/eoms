@@ -19,22 +19,20 @@
       </el-table-column>
       <el-table-column prop="pmi01" label="核价单号" width="160">
       </el-table-column>
-      <el-table-column prop="smydesc" label="单别" width="120">
-      </el-table-column>
-      <el-table-column prop="gen02" label="申请人" width="90">
-      </el-table-column>
       <el-table-column prop="pmi02" label="核价日期" width="120">
+      </el-table-column>
+      <el-table-column prop="pmc03" label="供应商" width="160">
+      </el-table-column>
+      <el-table-column prop="gen02" label="申请人" width="120">
+      </el-table-column>
+      <el-table-column prop="pmi081" label="税率" width="120">
+        <template slot-scope="scope">
+          {{ scope.row.pmi081 + '%' }}
+        </template>
       </el-table-column>
       <el-table-column label="审核状态" width="90">
         <template slot-scope="scope">
           {{ scope.row.pmiconf | formatStatus }}
-        </template>
-      </el-table-column>
-      <el-table-column prop="pmc03" label="供应商" width="160">
-      </el-table-column>
-      <el-table-column prop="pmi081" label="税率" width="90">
-        <template slot-scope="scope">
-          {{ scope.row.pmi081 + '%' }}
         </template>
       </el-table-column>
       <el-table-column prop="pmi04" label="备注" width="160">
@@ -53,7 +51,7 @@
 
     <!-- 明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1200px" >
-      <el-form label-position="left" label-width="80px" :model="documents.master">
+      <el-form label-position="left" :model="documents.master">
         <el-row >
           <el-col :span="7" >
             <el-form-item label="核价单号:">
@@ -94,8 +92,8 @@
       <el-table :data="documents.slave" border max-height="300px">
         <el-table-column prop="pmj02" label="项次" width="60"></el-table-column>
         <el-table-column prop="pmj03" label="料件编号" width="120"></el-table-column>
-        <el-table-column prop="pmj031" label="料件名称" width="189"></el-table-column>
-        <el-table-column prop="pmj032" label="规格" width="190"></el-table-column>
+        <el-table-column prop="pmj031" label="料件名称" width="160"></el-table-column>
+        <el-table-column prop="pmj032" label="规格" width="160"></el-table-column>
         <el-table-column prop="ima44" label="单位" width="120"></el-table-column>
         <el-table-column prop="pmj07" label="未税单价" width="120"></el-table-column>
         <el-table-column prop="pmj07t" label="含税单价" width="120"></el-table-column>
