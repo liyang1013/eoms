@@ -6,11 +6,11 @@
         select gem01,gem02
         from ${centre}.gem_file
         <where>
-            <if test="code_1 != null and code_2 != '' ">
-                and ( lower(gem01) like lower('%${code_1}%') or lower(gem02) like lower('%${code_1}%'))
+            <if test="gem != null and gem != '' ">
+                and ( lower(gem01) like lower('%${gem}%') or lower(gem02) like lower('%${gem}%'))
             </if>
-            <if test="code_2 != null and code_2 != ''">
-                and gemacti = #{code_2}
+            <if test="acti != null and acti != ''">
+                and gemacti = #{acti}
             </if>
         </where>
         order by gem01,gem02
@@ -19,9 +19,9 @@
         select gem01,gem02
         from ${centre}.gem_file
         <where>
-            gem01 = #{code_1}
-            <if test="code_2 != null and code_2 != ''">
-                and gemacti = #{code_2}
+            gem01 = #{gem}
+            <if test="acti != null and acti != ''">
+                and gemacti = #{acti}
             </if>
         </where>
     </select>

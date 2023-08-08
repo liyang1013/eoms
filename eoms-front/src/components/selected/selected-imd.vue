@@ -36,7 +36,7 @@ export default {
       }
     },
     remoteMethod(query){
-      this.$http.post('/api/imd/searchImdList',{centre: this.centre,code_1: query}).then(res => this.imdList = res.data.result)
+      this.$http.post('/api/imd/searchImdList',{centre: this.centre,imd: query}).then(res => this.imdList = res.data.result)
     },
   }
 }

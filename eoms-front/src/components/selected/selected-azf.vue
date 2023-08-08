@@ -39,13 +39,13 @@ export default {
   methods: {
     remoteMethod(str){
       if(str){
-        this.$http.post('/api/azf/searchAzfList',{centre: this.centre,code_1: str,code_2: 'Y',code_3: this.azf02,code_4: this.azf09}).then(res => this.azf = res.data.result)
+        this.$http.post('/api/azf/searchAzfList',{centre: this.centre,azf: str,acti: 'Y',azf02: this.azf02,azf09: this.azf09}).then(res => this.azf = res.data.result)
       }
     }
   },
   created() {
     if(this.azf01){
-      this.$http.post('/api/azf/searchAzfByKey',{centre: this.centre,code_1: this.azf01,code_2: 'Y',code_3: this.azf02,code_4: this.azf09}).then(res => this.azf.push(res.data.result))
+      this.$http.post('/api/azf/searchAzfByKey',{centre: this.centre,azf: this.azf01,acti: 'Y',azf02: this.azf02,azf09: this.azf09}).then(res => this.azf.push(res.data.result))
     }
   }
 }

@@ -33,13 +33,13 @@ export default {
   methods: {
     remoteMethod(str){
       if(str){
-        this.$http.post('/api/gem/searchGemList',{centre: this.centre,code_1: str,code_2: 'Y'}).then(res => this.gem = res.data.result)
+        this.$http.post('/api/gem/searchGemList',{centre: this.centre,gem: str,acti: 'Y'}).then(res => this.gem = res.data.result)
       }
     }
   },
   beforeMount() {
     if(this.gem01){
-      this.$http.post('/api/gem/searchGemByKey',{centre: this.centre,code_1: this.gem01,code_2: 'Y'}).then(res => this.gem.push(res.data.result))
+      this.$http.post('/api/gem/searchGemByKey',{centre: this.centre,gem: this.gem01,acti: 'Y'}).then(res => this.gem.push(res.data.result))
     }
   }
 }

@@ -21,11 +21,11 @@
                  left join ${centre}.imd_file on img02 = imd01
                  left join ${centre}.ima_file on ima01 = img01
         <where>
-            <if test="code_1 != null and code_1 != '' " >
-                and ( img01 like '%${code_1}%' or ima02 like '%${code_1}%' )
+            <if test="ima != null and ima != '' " >
+                and ( lower(img01) like lower('%${ima}%') or lower(ima02) like lower('%${ima}%'))
             </if>
-            <if test="code_2 != null and code_2 != '' " >
-                and img02 = #{code_2}
+            <if test="imd != null and imd != '' " >
+                and lower(img02) = lower(#{imd})
             </if>
         </where>
         order by img01,img02

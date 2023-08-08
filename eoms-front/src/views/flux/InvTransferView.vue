@@ -8,7 +8,7 @@
         <selectedCentre v-model="stock.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:" >
-        <selectedIma v-model="stock.code_1" :centre="stock.centre"></selectedIma>
+        <selectedIma v-model="stock.ima" :centre="stock.centre"></selectedIma>
       </el-form-item>
       <el-form-item label="栈板码:" >
         <el-input v-model="stock.code_4" clearable></el-input>
@@ -92,7 +92,7 @@ export default {
     return {
       stock: {
         centre: null,
-        code_1: null,
+        ima: null,
         code_2: null,
         code_3: null,
         code_4: null,

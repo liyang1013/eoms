@@ -313,17 +313,17 @@
       select azf01,azf03
       from ${centre}.azf_file
       <where>
-        <if test="code_1 != null and code_1 != ''">
-          and lower(azf01) like lower('%${code_1}%') or lower(azf03)  like lower('%${code_1}%')
+        <if test="azf != null and azf != ''">
+          and lower(azf01) like lower('%${azf}%') or lower(azf03)  like lower('%${azf}%')
         </if>
-        <if test="code_2 != null and code_2 != ''">
-          and AZFACTI = #{code_2}
+        <if test="acti != null and acti != ''">
+          and AZFACTI = #{acti}
         </if>
-        <if test="code_3 != null and code_3 != ''">
-          and azf02 = #{code_3}
+        <if test="azf02 != null and azf02 != ''">
+          and azf02 = #{azf02}
         </if>
-        <if test="code_4 != null and code_4 != ''">
-          and azf09 = #{code_4}
+        <if test="azf09 != null and azf09 != ''">
+          and azf09 = #{azf09}
         </if>
       </where>
   </select>
@@ -331,15 +331,15 @@
     select azf01,azf03
     from ${centre}.azf_file
     <where>
-        azf01 = #{code_1}
-      <if test="code_2 != null and code_2 != ''">
-        and AZFACTI = #{code_2}
+        azf01 = #{azf}
+      <if test="acti != null and acti != ''">
+        and AZFACTI = #{acti}
       </if>
-      <if test="code_3 != null and code_3 != ''">
-        and azf02 = #{code_3}
+      <if test="azf02 != null and azf02 != ''">
+        and azf02 = #{azf02}
       </if>
-      <if test="code_4 != null and code_4 != ''">
-        and azf09 = #{code_4}
+      <if test="azf09 != null and azf09 != ''">
+        and azf09 = #{azf09}
       </if>
     </where>
   </select>

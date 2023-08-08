@@ -1,9 +1,11 @@
 package com.keboda.eomsback.purchase.mapper;
 
+import com.github.pagehelper.Page;
+import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.purchase.pojo.RvuFile;
 import org.apache.ibatis.annotations.Param;
 
 public interface RvuFileMapper {
 
-    RvuFile selectByKey(@Param("rvu01") String rvv01, @Param("centre") String rvvplant);
+    Page<RvuFile> searchRvuListPageHelper(SearchVo searchVo);
 }

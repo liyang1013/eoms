@@ -182,5 +182,11 @@ export function formatApproval(code){
     if(code === '2') return '未核准';
 }
 
+export function formatChangeType(code){
+    if(code === '1') return '入库';
+    if(code === '2') return '验退';
+    if(code === '3') return '仓退';
+}
+
 
 

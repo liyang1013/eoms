@@ -8,7 +8,7 @@
         <selectedCentre v-model="ima.centre" key="ima"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:">
-        <selectedIma v-model="ima.code_1" :centre="ima.centre" ></selectedIma>
+        <selectedIma v-model="ima.ima" :centre="ima.centre" ></selectedIma>
       </el-form-item>
     </el-form>
     <el-alert title="料件基本资料: aimi100; " type="success" :closable="false">
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       ima: {
-        code_1: null,
+        ima: null,
         centre: 'WCTZ',
         currentPage: 1,
         sizes: [20, 50, 100, 500],

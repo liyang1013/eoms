@@ -114,6 +114,6 @@
       select a.cdanhao,a.cbarcodeno,a.cproduceno,a.cwhcode,a.chuojiano,a.iqty,a.ickqty,a.cdc,a.tc_Wdj21,a.tc_Wdj20,b.fickqty,#{centre} as centre
       from ${centre}.tc_wdj_file a
              left join ( select  CBARCODENO,CDANHAO,CPRODUCENO,sum(ickqty) as fickqty from  ${centre}.tc_wdja_file group by  CBARCODENO,CDANHAO,CPRODUCENO )b on  a.CDANHAO = b.CDANHAO and a.CPRODUCENO = b.CPRODUCENO and a.CBARCODENO = b.CBARCODENO
-      where a.cdanhao = #{code_1}
+      where a.cdanhao = #{code}
     </select>
 </mapper>

@@ -2,10 +2,10 @@
   <div>
     <el-form :inline="true" :model="gaz" class="demo-form-inline">
       <el-form-item label="作业:">
-        <el-input v-model="gaz.code_1" placeholder="作业编号/名称" clearable ></el-input>
+        <el-input v-model="gaz.gaz" placeholder="作业编号/名称" clearable ></el-input>
       </el-form-item>
       <el-form-item label="目的:">
-        <el-input v-model="gaz.code_2" placeholder="作业目的" clearable ></el-input>
+        <el-input v-model="gaz.gaz04" placeholder="作业目的" clearable ></el-input>
       </el-form-item>
       <el-form-item style="float: right">
         <el-button type="primary"  icon="el-icon-search" @click="search(1)" round>查询</el-button>
@@ -36,8 +36,8 @@ export default {
   data() {
     return {
       gaz:{
-        code_1: null,
-        code_2: null,
+        gaz: null,
+        gaz04: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,

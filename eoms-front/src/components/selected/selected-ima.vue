@@ -34,7 +34,7 @@ export default {
       if (this.centre && queryString) {
         this.$http.post('/api/ima/searchImaListPageHelper', {
           centre: this.centre,
-          code_1: queryString
+          ima: queryString
         }).then(res => cb(res.data.result))
       }
     },

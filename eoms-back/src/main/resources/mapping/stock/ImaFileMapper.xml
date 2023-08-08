@@ -20,8 +20,8 @@
         from ${centre}.ima_file
         left join ${centre}.imz_file on imz01 = ima06
         <where>
-            <if test="code_1 != null and code_1 != '' ">
-                and ( ima01 like '%${code_1}%' or ima02 like '%${code_1}%' )
+            <if test="ima != null and ima != '' ">
+                and ( ima01 like '%${ima}%' or ima02 like '%${ima}%' )
             </if>
         </where>
         order by ima01

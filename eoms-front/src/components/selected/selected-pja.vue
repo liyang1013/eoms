@@ -33,13 +33,13 @@ export default {
   methods: {
     remoteMethod(str){
       if(str){
-        this.$http.post('/api/pja/searchPjaList',{centre: this.centre,code_1: str,code_2: 'Y',code_3: 'Y'}).then(res => this.pja = res.data.result)
+        this.$http.post('/api/pja/searchPjaList',{centre: this.centre,pja: str,acti: 'Y',conf: 'Y'}).then(res => this.pja = res.data.result)
       }
     }
   },
   created() {
     if(this.pja01){
-      this.$http.post('/api/pja/searchPjaByKey',{centre: this.centre,code_1: this.pja01,code_2: 'Y',code_3: 'Y'}).then(res => this.pja.push(res.data.result))
+      this.$http.post('/api/pja/searchPjaByKey',{centre: this.centre,pja: this.pja01,acti: 'Y',conf: 'Y'}).then(res => this.pja.push(res.data.result))
     }
   }
 }

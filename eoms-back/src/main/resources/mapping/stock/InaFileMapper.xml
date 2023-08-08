@@ -699,8 +699,8 @@
     select ina00,ina01,ina02,ina03,ina04,ina06,inaconf,inapost,inaplant as centre
     from ${centre}.ina_file
     <where>
-      <if test="code_1 != null and code_1 != '' ">
-        and ina01 like '%${code_1}%'
+      <if test="code != null and code != '' ">
+        and lower(ina01) like lower('%${code}%')
       </if>
     </where>
     order by ina03,ina01

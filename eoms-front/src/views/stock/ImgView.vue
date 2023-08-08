@@ -5,10 +5,10 @@
         <selectedCentre v-model="img.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="仓库:">
-        <selectedImd v-model="img.code_2" :centre="img.centre"></selectedImd>
+        <selectedImd v-model="img.imd" :centre="img.centre"></selectedImd>
       </el-form-item>
       <el-form-item label="料件:">
-        <selectedIma v-model="img.code_1" :centre="img.centre" ></selectedIma>
+        <selectedIma v-model="img.ima" :centre="img.centre" ></selectedIma>
       </el-form-item>
       <el-form-item style="float: right">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -54,8 +54,8 @@ export default {
   data() {
     return {
       img: {
-        code_1: null,
-        code_2: null,
+        ima: null,
+        imd: null,
         centre: 'WCTZ',
         currentPage: 1,
         sizes: [20, 50, 100, 500],

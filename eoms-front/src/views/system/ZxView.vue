@@ -5,7 +5,7 @@
         <selectedCentre v-model="zx.centre" ></selectedCentre>
       </el-form-item>
       <el-form-item label="姓名:">
-        <el-input v-model="zx.code_1" placeholder="员工姓名\编码" clearable></el-input>
+        <el-input v-model="zx.zx" placeholder="员工姓名\编码" clearable></el-input>
       </el-form-item>
       <el-form-item style="float:right;">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -47,7 +47,7 @@ export default {
     return {
       zx: {
         centre: null,
-        code_1: null,
+        zx: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,

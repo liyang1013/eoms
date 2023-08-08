@@ -8,7 +8,7 @@
         <selectedCentre v-model="ina.centre" key="ina"></selectedCentre>
       </el-form-item>
       <el-form-item label="杂项单号:">
-        <el-input v-model="ina.code_1" placeholder="单号" clearable></el-input>
+        <el-input v-model="ina.code" placeholder="单号" clearable></el-input>
       </el-form-item>
     </el-form>
     <el-table :data="inaList" border style="width: 100%" max-height="500px" v-loading="table_loading"
@@ -92,7 +92,7 @@ export default {
   data() {
     return {
       ina: {
-        code_1: null,
+        code: null,
         centre: 'WCTZ',
         currentPage: 1,
         sizes: [20, 50, 100, 500],
@@ -124,7 +124,7 @@ export default {
     },
     searchInbList(row) {
       this.dialogTableVisible = true;
-      this.$http.post('/api/ina/searchInbList', {code_1: row.ina01, centre: row.centre}).then(res => {
+      this.$http.post('/api/ina/searchInbList', {code: row.ina01, centre: row.centre}).then(res => {
         this.inbList = res.data.result;
       })
     },

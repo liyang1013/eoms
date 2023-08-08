@@ -8,7 +8,7 @@
         <selectedCentre v-model="wdi.centre"></selectedCentre>
       </el-form-item>
       <el-form-item label="出库单号:">
-        <el-input v-model="wdi.code_1" placeholder="出库单号" clearable></el-input>
+        <el-input v-model="wdi.code" placeholder="出库单号" clearable></el-input>
       </el-form-item>
     </el-form>
 
@@ -72,7 +72,7 @@ export default {
   data() {
     return {
       wdi: {
-        code_1: null,
+        code: null,
         centre: 'WCTZ',
         currentPage: 1,
         sizes: [20, 50, 100, 500],
@@ -100,7 +100,7 @@ export default {
     },
     searchWdjList(row) {
       this.dialogTableVisible = true;
-      this.$http.post('/api/wdi/searchWdjList', {code_1: row.cdanhao, centre: row.centre}).then(res => {
+      this.$http.post('/api/wdi/searchWdjList', {code: row.cdanhao, centre: row.centre}).then(res => {
         this.wdjList = res.data.result;
       })
     },

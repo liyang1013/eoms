@@ -11,7 +11,7 @@
         <el-input v-model="searchVo.code" placeholder="收货单号" clearable></el-input>
       </el-form-item>
     </el-form>
-    <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300" type="success"
+    <el-alert title="采购收货: apmt110; JIT收货: apmt111; 委外收货: apmt200; 多角贸易采购收货: apmt300; IQC质量记录作业: aqct110;" type="success"
               :closable="false">
     </el-alert>
     <el-table :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"

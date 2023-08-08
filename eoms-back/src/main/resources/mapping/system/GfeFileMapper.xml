@@ -108,9 +108,9 @@
       select gfe01,gfe02
       from ${centre}.gfe_file
       <where>
-          gfe01 = #{code_1}
-          <if test="code_2 != null and code_2 != '' ">
-              and gfeacti= #{code_2}
+          gfe01 = #{gfe}
+          <if test="acti != null and acti != '' ">
+              and gfeacti= #{acti}
           </if>
       </where>
   </select>
@@ -118,11 +118,11 @@
     select gfe01, gfe02
     from ${centre}.gfe_file
     <where>
-        <if test="code_1 != null and code_1 != '' ">
-          and lower(gfe01) like lower('%${code_1}%')
+        <if test="gfe != null and gfe != '' ">
+          and lower(gfe) like lower('%${gfe}%')
         </if>
-      <if test="code_2 != null and code_2 != '' ">
-        and gfeacti= #{code_2}
+      <if test="acti != null and acti != '' ">
+        and gfeacti= #{acti}
       </if>
     </where>
   </select>

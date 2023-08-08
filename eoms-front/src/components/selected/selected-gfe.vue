@@ -33,13 +33,13 @@ export default {
   methods: {
     remoteMethod(str){
       if(str){
-        this.$http.post('/api/gfe/searchGfeList',{centre: this.centre,code_1: str,code_2: 'Y'}).then(res => this.gfe = res.data.result)
+        this.$http.post('/api/gfe/searchGfeList',{centre: this.centre,gfe: str,acti: 'Y'}).then(res => this.gfe = res.data.result)
       }
     }
   },
   created() {
     if(this.gfe01){
-      this.$http.post('/api/gfe/searchGfeByKey',{centre: this.centre,code_1: this.gfe01,code_2: 'Y'}).then(res => this.gfe.push(res.data.result))
+      this.$http.post('/api/gfe/searchGfeByKey',{centre: this.centre,gfe: this.gfe01,acti: 'Y'}).then(res => this.gfe.push(res.data.result))
     }
   }
 }

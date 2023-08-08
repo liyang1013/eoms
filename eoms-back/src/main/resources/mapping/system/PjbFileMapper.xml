@@ -322,9 +322,9 @@
         select pjb02, pjb03
         from ${centre}.PJB_file
         <where>
-          pjb01 = #{code_1} and pjb02 = #{code_2}
-          <if test="code_3 != null and code_3 != '' ">
-            and pjbacti = #{code_3}
+          pjb01 = #{pja} and pjb02 = #{pjb}
+          <if test="acti != null and acti != '' ">
+            and pjbacti = #{acti}
           </if>
         </where>
     </select>
@@ -332,12 +332,12 @@
       select pjb02, pjb03
       from ${centre}.PJB_file
       <where>
-          pjb01 = #{code_1}
-          <if test="code_2 != null and code_2 != ''">
-            and ( lower(pjb02) like lower('%${code_2}%') or  lower(pjb03) like lower('%${code_2}%'))
+          pjb01 = #{pja}
+          <if test="pjb != null and pjb != ''">
+            and ( lower(pjb02) like lower('%${pjb}%') or  lower(pjb03) like lower('%${pjb}%'))
           </if>
-          <if test="code_3 != null and code_3 != '' ">
-              and pjbacti = #{code_3}
+          <if test="acti != null and acti != '' ">
+              and pjbacti = #{acti}
           </if>
       </where>
   </select>

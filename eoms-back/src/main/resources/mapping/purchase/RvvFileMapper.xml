@@ -7,9 +7,12 @@
     where rvv01 = #{rvv01} and rvv02 = #{rvv02}
   </update>
 
-  <select id="selectByRvb" resultType="com.keboda.eomsback.purchase.pojo.RvvFile">
-    select *
-    from ${centre}.rvv_file
-    where rvv04 = #{rvb01} and rvv05 = #{rvb02} and rvv03 = #{rvv03}
-  </select>
+    <select id="searchRvvList" resultType="com.keboda.eomsback.purchase.pojo.RvvFile">
+      select rvv02,rvv17,rvv25,rvv31,rvv031,rvv32,imd02,ima021,rvv35,rvv36,rvv37,rvv38,rvv38t,rvv39,rvv39t
+      from ${centre}.rvv_file
+      left join ${centre}.ima_file on ima01 = rvv31
+      left join ${centre}.imd_file on imd01 = rvv32
+      where rvv01 = #{code}
+        order by rvv02
+    </select>
 </mapper>

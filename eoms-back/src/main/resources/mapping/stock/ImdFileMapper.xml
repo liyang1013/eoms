@@ -3,11 +3,11 @@
 <mapper namespace="com.keboda.eomsback.stock.mapper.ImdFileMapper">
 
   <select id="searchImdList" resultType="com.keboda.eomsback.stock.pojo.ImdFile">
-    select imd01,IMD02
+    select imd01,imd02
     from ${centre}.imd_file
     <where>
-      <if test="code_1 != null and code != '' ">
-        and ( imd01 like '%${code_1}%' or imd02 like '%${code_1}%'  )
+      <if test="imd != null and imd != '' ">
+        and ( lower(imd01) like lower('%${imd}%') or lower(imd02) like lower('%${imd}%'))
       </if>
     </where>
     order by imd01,imd02

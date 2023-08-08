@@ -47,11 +47,11 @@
       from DS.GAZ_FILE
       <where>
           gaz02 = 2
-          <if test="code_1 != null and code_1 != ''">
-              and (gaz01 like '%${code_1}%' or gaz03 like '%${code_1}%')
+          <if test="gaz != null and gaz != ''">
+              and (lower(gaz01) like lower('%${gaz}%') or lower(gaz03) like lower('%${gaz}%'))
           </if>
-          <if test="code_2 != null and code_2 != ''">
-              and gaz04 like '%${code_2}%'
+          <if test="gaz04 != null and gaz04 != ''">
+              and lower(gaz04) like lower('%${gaz04}%')
           </if>
       </where>
       order by gaz01,gaz03

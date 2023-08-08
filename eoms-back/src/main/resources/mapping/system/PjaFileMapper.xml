@@ -569,14 +569,14 @@
         from ${centre}.pja_file
         <where>
                 ROWNUM &lt; 20
-            <if test="code_1 != null and code != ''">
-                and ( lower(pja01) like lower('%${code_1}%') or lower(pja02) like lower('%${code_1}%') )
+            <if test="pja != null and pja != ''">
+                and ( lower(pja01) like lower('%${pja}%') or lower(pja02) like lower('%${pja}%') )
             </if>
-            <if test="code_2 != null and code_2 != ''">
-                and PJACONF = #{code_2}
+            <if test="conf != null and conf != ''">
+                and PJACONF = #{conf}
             </if>
-            <if test="code_3 != null and code_3 != '' ">
-                and pjaacti = #{code_3}
+            <if test="acti != null and acti != '' ">
+                and pjaacti = #{acti}
             </if>
         </where>
     </select>
@@ -584,12 +584,12 @@
         select pja01,pja02
         from ${centre}.pja_file
         <where>
-            pja01 = #{code_1}
-            <if test="code_2 != null and code_2 != ''">
-                and PJACONF = #{code_2}
+            pja01 = #{pja}
+            <if test="conf != null and conf != ''">
+                and PJACONF = #{conf}
             </if>
-            <if test="code_3 != null and code_3 != '' ">
-                and pjaacti = #{code_3}
+            <if test="acti != null and acti != '' ">
+                and pjaacti = #{acti}
             </if>
         </where>
     </select>
