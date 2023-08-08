@@ -8,6 +8,7 @@ import com.keboda.eomsback.purchase.pojo.PmmFile;
 import com.keboda.eomsback.purchase.pojo.PmnFile;
 import com.keboda.eomsback.purchase.service.IPmmService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,5 +29,14 @@ public class PmmServiceImpl implements IPmmService {
     @Override
     public List<PmnFile> searchPmnList(SearchVo searchVo) {
         return pmnFileMapper.searchPmnList(searchVo);
+    }
+
+    @Override
+    @Transactional
+    public void closeOut(List<PmmFile> pmmFileList) {
+        for (PmmFile pmmFile : pmmFileList) {
+            pmmFileMapper.closeOut(pmmFile.getCentre(),pmmFile.getPmm01());
+            pmnFileMapper.closeOut(pmmFile.getCentre(),pmmFile.getPmm01());
+        }
     }
 }

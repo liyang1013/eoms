@@ -43,7 +43,7 @@
       </set>
       where sfb01 =#{sfb.sfb01}
   </update>
-    <update id="closeSfb">
+    <update id="closeOut">
         update ${centre}.SFB_FILE
         set sfb04 = 8,
             sfb28 = 3,
@@ -76,8 +76,8 @@
     left join ${centre}.ima_file on ima01 = sfb05
     left join ${centre}.gem_file on gem01 =sfb98
     <where>
-      <if test="code_1 != null and code_1 != ''">
-        and sfb01 like '%${code_1}%'
+      <if test="code != null and code != ''">
+        and lower(sfb01) like lower('%${code}%')
       </if>
     </where>
     order by sfb81,sfb01

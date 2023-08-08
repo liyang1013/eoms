@@ -48,9 +48,9 @@ public class SfbController {
         return BaseResult.success("修改工单日期成功");
     }
 
-    @RequestMapping("/closeSfb")
-    public BaseResult closeSfb(@RequestBody SfbModify sfbModify){
-        iSfbService.closeSfb(sfbModify);
+    @RequestMapping("/closeOut")
+    public BaseResult closeOut(@RequestBody SfbModify sfbModify){
+        iSfbService.closeOut(sfbModify);
         return BaseResult.success("工单结案成功");
     }
 }

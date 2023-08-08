@@ -148,9 +148,9 @@ public class SfbServiceImpl implements ISfbService {
 
     @Override
     @Transactional
-    public void closeSfb(SfbModify sfbModify) {
+    public void closeOut(SfbModify sfbModify) {
         for (SfbFile sfb : sfbModify.getSfbArr()) {
-            sfbFileMapper.closeSfb(sfbModify.getCentre(),sfb.getSfb01(), DateUtils.parseDate(DateUtils.formatDate(new Date())));
+            sfbFileMapper.closeOut(sfbModify.getCentre(),sfb.getSfb01(), DateUtils.parseDate(DateUtils.formatDate(new Date())));
         }
     }
 }

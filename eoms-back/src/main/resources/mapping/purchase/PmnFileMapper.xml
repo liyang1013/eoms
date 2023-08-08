@@ -1027,12 +1027,11 @@
         where pmn01 = #{pmn01}
           and pmn02 = #{pmn02}
     </update>
-    <delete id="InvalidDocumentDelete">
-        delete ${centre}.pmm_file
-        where pmm04 &lt;= sysdate
-          AND pmm18 != 'X'
-          and pmm01 not in (select distinct pmn01 from ${centre}.pmn_file)
-    </delete>
+    <update id="closeOut">
+        update ${centre}.pmn_file
+        set pmn16 = 8
+        where pmn01 = #{pmn01}
+    </update>
     <select id="searchPmnList" resultType="com.keboda.eomsback.purchase.pojo.PmnFile">
         select pmn02,pmn04,pmn041,ima021,pmn07,pmn16,pmn20,pmn31,pmn31t,pmn88,pmn88t
         from ${centre}.pmn_file

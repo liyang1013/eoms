@@ -5,19 +5,20 @@
         <selectedCentre v-model="sfb.centre" key="sfb"></selectedCentre>
       </el-form-item>
       <el-form-item label="工单号:">
-        <el-input v-model="sfb.code_1" style="width: 160px;"></el-input>
+        <el-input v-model="sfb.code" style="width: 160px;"></el-input>
       </el-form-item>
       <el-form-item label="日期修正:">
         <el-date-picker type="date" placeholder="选择日期" v-model="temp.ddate" value-format="yyyy-MM-dd" style="width: 140px;"></el-date-picker>
         &nbsp;&nbsp;
         <el-switch v-model="temp.flag" active-text="改大" inactive-text="改小"></el-switch>
       </el-form-item>
+
       <el-form-item style="float:right;">
+        <el-button  type="primary" @click="searchSfb()" round>查询</el-button>
         <el-button type="danger" @click="modifyDate()" round style="margin-left: 10px;"
                    :loading="modifyLoad">修改
         </el-button>
-        <el-button  type="danger" @click="closeSfb" round style="margin-left: 10px;">结案</el-button>
-        <el-button  type="primary" @click="searchSfb()" round>查询</el-button>
+        <el-button  type="danger" @click="closeOut" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
     </el-form>
 
@@ -53,7 +54,7 @@ export default {
     return {
       sfb: {
         centre: 'WCTZ',
-        code_1: '',
+        code: '',
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,
@@ -104,13 +105,13 @@ export default {
       this.modifyLoad = true;
       this.$http.post('/api/sfb/modifySfbDate', this.temp).finally(() => this.modifyLoad = false)
     },
-    closeSfb(){
+    closeOut(){
       if (this.temp.sfbArr.length === 0) {
         this.$message.warning("请勾选要结案的工单");
         return;
       }
       this.temp.centre = this.sfb.centre
-      this.$http.post('/api/sfb/closeSfb', this.temp)
+      this.$http.post('/api/sfb/closeOut', this.temp)
     }
   }
 }

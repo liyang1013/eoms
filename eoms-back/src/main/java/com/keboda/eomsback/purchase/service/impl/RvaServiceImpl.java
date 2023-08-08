@@ -72,8 +72,8 @@ public class RvaServiceImpl implements IRvaService {
                 if(rvaFile == null) throw new RuntimeException("单号:"+rvb.getRvb01()+"在中心:"+rvb.getRvbplant()+"中查找不到对应收货单");
                 //收货单审核，更新异动表和采购订单收货数量
                 if( rvaFile.getRvaconf().equals("Y")){
-                    pmnFileMapper.updatePmn50(rvb.getRvbplant(),rvbFile.getRvb04(),rvbFile.getRvb03(),rvb.getRvb07().subtract(rvbFile.getRvb07()));
-                    tlfFileMapper.updateQty(rvb.getRvbplant(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),BigDecimal.ZERO);
+                    pmnFileMapper.updatePmn50(rvb.getCentre(),rvbFile.getRvb04(),rvbFile.getRvb03(),rvb.getRvb07().subtract(rvbFile.getRvb07()));
+                    tlfFileMapper.updateQty(rvb.getCentre(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),BigDecimal.ZERO);
                 }
                 //更新收货单表
                 rvbFileMapper.updateQty(rvb.getCentre(),rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07());

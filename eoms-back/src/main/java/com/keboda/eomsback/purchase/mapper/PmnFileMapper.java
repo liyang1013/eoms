@@ -16,7 +16,7 @@ public interface PmnFileMapper {
 
     void updatePmn50(@Param("centre") String centre, @Param("pmn01") String pmn01, @Param("pmn02") Integer pmn02, @Param("pmn50") BigDecimal pmn50);
 
-    void InvalidDocumentDelete(@Param("centre") String centre);
-
     List<PmnFile> searchPmnList(SearchVo searchVo);
+
+    void closeOut(@Param("centre") String centre, @Param("pmn01") String pmn01);
 }

@@ -17,5 +17,5 @@ public interface ISfbService {
 
     void modifySfbDate(SfbModify sfbModify);
 
-    void closeSfb(SfbModify sfbModify);
+    void closeOut(SfbModify sfbModify);
 }

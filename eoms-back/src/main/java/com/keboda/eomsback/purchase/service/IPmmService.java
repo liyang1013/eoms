@@ -11,5 +11,7 @@ public interface IPmmService {
     Page<PmmFile> searchPmmListPageHelper(SearchVo searchVo);
 
     List<PmnFile> searchPmnList(SearchVo searchVo);
+
+    void closeOut(List<PmmFile> pmmFileList);
 }
 

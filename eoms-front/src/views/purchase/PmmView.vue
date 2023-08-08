@@ -3,6 +3,7 @@
     <el-form :inline="true" :model="searchVo" class="demo-form-inline">
       <el-form-item style="float: right">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button  type="danger" @click="closeOut" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="pmm"></selectedCentre>
@@ -14,7 +15,9 @@
     <el-alert title="一般采购: apmt540; MRO采购: cpmt540; 委外采购: cpmt590; 采购变更: apmt910; MRO采购变更: cpmt910;采购结案: apmp551; 采购结案还原: apmp552;" type="success" :closable="false">
     </el-alert>
     <el-table :data="documentList" border max-height="450px" v-loading="tableLoading"
-              element-loading-spinner="el-icon-loading">
+              element-loading-spinner="el-icon-loading"
+              @selection-change="handleSelectionChange">
+      <el-table-column type="selection" width="55"></el-table-column>
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
       <el-table-column prop="pmm01" label="采购单号" width="160">
@@ -143,6 +146,7 @@ export default {
         total: 0
       },
       documentList: [],
+      selectedDocumentList: [],
       documents: {
         master: {},
         slave: []
@@ -172,13 +176,23 @@ export default {
         this.documents.slave = res.data.result;
       })
     },
+    closeOut(){
+      if (this.selectedDocumentList.length === 0) {
+        this.$message.warning("请勾选要结案的单据");
+        return;
+      }
+      this.$http.post('/api/pmm/closeOut', this.selectedDocumentList)
+    },
     handleCurrentChange(val) {
       this.search(val);
     },
     handleSizeChange(val) {
       this.searchVo.size = val;
       this.search(1);
-    }
+    },
+    handleSelectionChange(rows) {
+      this.selectedDocumentList = rows;
+    },
   }
 }
 </script>

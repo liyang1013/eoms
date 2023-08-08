@@ -26,7 +26,7 @@ import {mapState} from 'vuex'
 import avatar from '@/image/avatar.jpg'
 
 export default {
-  name: 'aside',
+  name: 'topAside',
   data() {
     return {
       avatar: avatar,
