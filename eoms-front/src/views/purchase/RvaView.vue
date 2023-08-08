@@ -106,7 +106,7 @@
           </el-col>
         </el-row>
       </el-form>
-      <el-table :data="documents.slave" border max-height="300px">
+      <el-table :data="documents.slave" border max-height="270px">
         <el-table-column prop="rvb02" label="项次" width="60"></el-table-column>
         <el-table-column prop="rvb04" label="采购订单号" width="120"></el-table-column>
         <el-table-column prop="rvb03" label="采购项次" width="90"></el-table-column>
@@ -127,8 +127,7 @@
         <el-table-column prop="rvb10t" label="含税单价" width="120"></el-table-column>
         <el-table-column prop="rvb88t" label="含税金额" width="120"></el-table-column>
       </el-table>
-      <el-divider></el-divider>
-      <div style="text-align: right;">
+      <div style="text-align: right;margin-top: 10px">
         <el-button type="primary" round @click="alterRvb">保存</el-button>
       </div>
     </el-dialog>
@@ -210,7 +209,7 @@ export default {
   }
 
   .el-dialog__body {
-    padding: 20px !important;
+    padding: 20px 20px 10px 20px!important;
   }
 }
 </style>

@@ -17,7 +17,7 @@
     <el-table :data="documentList" border max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading"
               @selection-change="handleSelectionChange">
-      <el-table-column type="selection" width="55"></el-table-column>
+      <el-table-column type="selection" width="60"></el-table-column>
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
       <el-table-column prop="pmm01" label="采购单号" width="160">
@@ -39,8 +39,6 @@
         <template slot-scope="scope">
           {{ scope.row.pmm18 | formatStatus }}
         </template>
-      </el-table-column>
-      <el-table-column prop="pmmud01" label="备注" width="120">
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">

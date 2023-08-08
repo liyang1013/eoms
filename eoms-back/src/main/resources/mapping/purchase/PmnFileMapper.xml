@@ -1024,8 +1024,7 @@
     <update id="updatePmn50">
         update ${centre}.pmn_file
         set pmn50 = pmn50 + #{pmn50}
-        where pmn01 = #{pmn01}
-          and pmn02 = #{pmn02}
+        where pmn01 = #{pmn01} and pmn02 = #{pmn02}
     </update>
     <update id="closeOut">
         update ${centre}.pmn_file
