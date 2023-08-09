@@ -30,7 +30,7 @@ public enum SiemensPLC {
 
     private final SiemensS7Net s7Net;
 
-    private SiemensPLC(String ip, SiemensPLCS PlcModel) {
+    SiemensPLC(String ip, SiemensPLCS PlcModel) {
         this.s7Net = new SiemensS7Net(PlcModel,ip);
     }
 

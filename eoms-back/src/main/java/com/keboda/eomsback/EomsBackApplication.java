@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.math.BigDecimal;
 
 @SpringBootApplication
+@EnableScheduling
 @MapperScan("com.keboda.eomsback.*.mapper")
 @EnableTransactionManagement
 public class EomsBackApplication {

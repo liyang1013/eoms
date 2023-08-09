@@ -48,9 +48,15 @@ page helper:
   support-methods-arguments: true
   auto-runtime-dialect: true
 
+logging:
+  level:
+    com.keboda.eomsback.* : DEBUG
+
 #自定义定时器动态执行
 timer:
   rcsRobotsTimer:
-    corn: 0 0/5 * * * ?
+    corn: 0/5 0/1 * * * ?
   InvalidDocumentDeleteTimer:
     corn: 0 59 23 1 * ?
+  checkRCSStatus:
+    corn: 0 0/10 * * * ?

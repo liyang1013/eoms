@@ -12,4 +12,10 @@ import lombok.NoArgsConstructor;
 public class Car {
 
     private Byte id;
+
+    private String plcitem;
+
+    private Integer floor;
+
+    private String taskid;
 }

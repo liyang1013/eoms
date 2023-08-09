@@ -8,12 +8,12 @@ import com.keboda.eomsback.stock.mapper.InaFileMapper;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
-@Configuration
-@EnableScheduling
-public class InvalidDocumentDeleteTimer {
+@Component
+public class TiptopTimer {
 
     private final static String[] Centres =  {"WCTZ"};//{"ZJKBDJD","ZJKBDDZ","ADAS","JXKEAO","ZJZBZX","JXKSS"};
 

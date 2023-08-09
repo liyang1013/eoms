@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     timer(){
-      this.$http.post('http://172.17.200.154:8090/rest/robots/states',{params: {id: []}}).then(res => this.status = res.data.data)
+      this.$http.post('http://172.17.200.154:8090/rest/robots/states',{params: {id: []}}).then(res => this.status = res.data.data);
     }
   },
   activated(){
