@@ -5,7 +5,7 @@
         <selectedCentre v-model="searchVo.centre" key="pma"></selectedCentre>
       </el-form-item>
       <el-form-item label="生效状态:">
-        <selected-acti v-model="searchVo.acti"></selected-acti>
+        <selected-acti v-model="searchVo.acti" key="pma"></selected-acti>
       </el-form-item>
       <el-form-item label="付款方式:">
         <el-input v-model="searchVo.code" placeholder="付款方式" clearable></el-input>

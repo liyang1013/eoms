@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.beans.Transient;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -73,6 +72,5 @@ public class ImgServiceImpl implements IImgService {
             imgFile.setImg37(DateUtils.parseDate(DateUtils.formatDate(new Date())));
             imgFileMapper.insertSelective(imgFile);
         }else throw new RuntimeException("库存记录已存在不需要修复");
-
     }
 }

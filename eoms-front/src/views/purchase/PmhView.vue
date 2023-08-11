@@ -5,7 +5,7 @@
         <selectedCentre v-model="searchVo.centre" key="pmh"></selectedCentre>
       </el-form-item>
       <el-form-item label="生效状态:">
-        <selected-acti v-model="searchVo.acti"></selected-acti>
+        <selected-acti v-model="searchVo.acti" key="pmh"></selected-acti>
       </el-form-item>
       <el-form-item label="料件:">
         <el-input v-model="searchVo.ima" placeholder="料件编码/名称" clearable></el-input>

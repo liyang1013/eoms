@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.TcWiaFileMapper">
+
+  <insert id="insertSelective" keyColumn="CBARCODENO" keyProperty="cbarcodeno" parameterType="com.keboda.eomsback.stock.pojo.TcWiaFile" useGeneratedKeys="true">
+    insert into TC_WIA_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cboxid != null">
+        CBOXID,
+      </if>
+      <if test="cpalletno != null">
+        CPALLETNO,
+      </if>
+      <if test="cproduceno != null">
+        CPRODUCENO,
+      </if>
+      <if test="cproducename != null">
+        CPRODUCENAME,
+      </if>
+      <if test="cguige != null">
+        CGUIGE,
+      </if>
+      <if test="cwhcode != null">
+        CWHCODE,
+      </if>
+      <if test="chuojiano != null">
+        CHUOJIANO,
+      </if>
+      <if test="cgys != null">
+        CGYS,
+      </if>
+      <if test="iqty != null">
+        IQTY,
+      </if>
+      <if test="iqtySl != null">
+        IQTY_SL,
+      </if>
+      <if test="iqtyRk != null">
+        IQTY_RK,
+      </if>
+      <if test="iqtyJh != null">
+        IQTY_JH,
+      </if>
+      <if test="iqtyCk != null">
+        IQTY_CK,
+      </if>
+      <if test="cdc != null">
+        CDC,
+      </if>
+      <if test="iycdays != null">
+        IYCDAYS,
+      </if>
+      <if test="clotno != null">
+        CLOTNO,
+      </if>
+      <if test="lockflag != null">
+        LOCKFLAG,
+      </if>
+      <if test="tcWia106 != null">
+        TC_WIA106,
+      </if>
+      <if test="tcWia20 != null">
+        TC_WIA20,
+      </if>
+      <if test="tcWia21 != null">
+        TC_WIA21,
+      </if>
+      <if test="tcWia51 != null">
+        TC_WIA51,
+      </if>
+      <if test="tcWia52 != null">
+        TC_WIA52,
+      </if>
+      <if test="tcWia53 != null">
+        TC_WIA53,
+      </if>
+      <if test="tcWia54 != null">
+        TC_WIA54,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="tcWia55 != null">
+        TC_WIA55,
+      </if>
+      <if test="tcWia56 != null">
+        TC_WIA56,
+      </if>
+      <if test="tcWia57 != null">
+        TC_WIA57,
+      </if>
+      <if test="tcWia58 != null">
+        TC_WIA58,
+      </if>
+      <if test="tcWia59 != null">
+        TC_WIA59,
+      </if>
+      <if test="tcWia60 != null">
+        TC_WIA60,
+      </if>
+      <if test="tcWia22 != null">
+        TC_WIA22,
+      </if>
+      <if test="tcWia23 != null">
+        TC_WIA23,
+      </if>
+      <if test="tcWia24 != null">
+        TC_WIA24,
+      </if>
+      <if test="tcWia25 != null">
+        TC_WIA25,
+      </if>
+      <if test="tcWia26 != null">
+        TC_WIA26,
+      </if>
+      <if test="tcWia27 != null">
+        TC_WIA27,
+      </if>
+      <if test="tcWia28 != null">
+        TC_WIA28,
+      </if>
+      <if test="tcWia29 != null">
+        TC_WIA29,
+      </if>
+      <if test="tcWia30 != null">
+        TC_WIA30,
+      </if>
+      <if test="tcWia31 != null">
+        TC_WIA31,
+      </if>
+      <if test="tcWia32 != null">
+        TC_WIA32,
+      </if>
+      <if test="tcWia33 != null">
+        TC_WIA33,
+      </if>
+      <if test="tcWia34 != null">
+        TC_WIA34,
+      </if>
+      <if test="tcWia35 != null">
+        TC_WIA35,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cboxid != null">
+        #{cboxid,jdbcType=VARCHAR},
+      </if>
+      <if test="cpalletno != null">
+        #{cpalletno,jdbcType=VARCHAR},
+      </if>
+      <if test="cproduceno != null">
+        #{cproduceno,jdbcType=VARCHAR},
+      </if>
+      <if test="cproducename != null">
+        #{cproducename,jdbcType=VARCHAR},
+      </if>
+      <if test="cguige != null">
+        #{cguige,jdbcType=VARCHAR},
+      </if>
+      <if test="cwhcode != null">
+        #{cwhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="chuojiano != null">
+        #{chuojiano,jdbcType=VARCHAR},
+      </if>
+      <if test="cgys != null">
+        #{cgys,jdbcType=VARCHAR},
+      </if>
+      <if test="iqty != null">
+        #{iqty,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtySl != null">
+        #{iqtySl,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtyRk != null">
+        #{iqtyRk,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtyJh != null">
+        #{iqtyJh,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtyCk != null">
+        #{iqtyCk,jdbcType=DECIMAL},
+      </if>
+      <if test="cdc != null">
+        #{cdc,jdbcType=VARCHAR},
+      </if>
+      <if test="iycdays != null">
+        #{iycdays,jdbcType=DECIMAL},
+      </if>
+      <if test="clotno != null">
+        #{clotno,jdbcType=VARCHAR},
+      </if>
+      <if test="lockflag != null">
+        #{lockflag,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia106 != null">
+        #{tcWia106,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia20 != null">
+        #{tcWia20,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tcWia21 != null">
+        #{tcWia21,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia51 != null">
+        #{tcWia51,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia52 != null">
+        #{tcWia52,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia53 != null">
+        #{tcWia53,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia54 != null">
+        #{tcWia54,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia55 != null">
+        #{tcWia55,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia56 != null">
+        #{tcWia56,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia57 != null">
+        #{tcWia57,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia58 != null">
+        #{tcWia58,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia59 != null">
+        #{tcWia59,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia60 != null">
+        #{tcWia60,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia22 != null">
+        #{tcWia22,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia23 != null">
+        #{tcWia23,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia24 != null">
+        #{tcWia24,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia25 != null">
+        #{tcWia25,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia26 != null">
+        #{tcWia26,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia27 != null">
+        #{tcWia27,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia28 != null">
+        #{tcWia28,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia29 != null">
+        #{tcWia29,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWia30 != null">
+        #{tcWia30,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWia31 != null">
+        #{tcWia31,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWia32 != null">
+        #{tcWia32,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia33 != null">
+        #{tcWia33,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia34 != null">
+        #{tcWia34,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia35 != null">
+        #{tcWia35,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.TcWiaFile">
+    update TC_WIA_FILE
+    <set>
+      <if test="cboxid != null">
+        CBOXID = #{cboxid,jdbcType=VARCHAR},
+      </if>
+      <if test="cpalletno != null">
+        CPALLETNO = #{cpalletno,jdbcType=VARCHAR},
+      </if>
+      <if test="cproduceno != null">
+        CPRODUCENO = #{cproduceno,jdbcType=VARCHAR},
+      </if>
+      <if test="cproducename != null">
+        CPRODUCENAME = #{cproducename,jdbcType=VARCHAR},
+      </if>
+      <if test="cguige != null">
+        CGUIGE = #{cguige,jdbcType=VARCHAR},
+      </if>
+      <if test="cwhcode != null">
+        CWHCODE = #{cwhcode,jdbcType=VARCHAR},
+      </if>
+      <if test="chuojiano != null">
+        CHUOJIANO = #{chuojiano,jdbcType=VARCHAR},
+      </if>
+      <if test="cgys != null">
+        CGYS = #{cgys,jdbcType=VARCHAR},
+      </if>
+      <if test="iqty != null">
+        IQTY = #{iqty,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtySl != null">
+        IQTY_SL = #{iqtySl,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtyRk != null">
+        IQTY_RK = #{iqtyRk,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtyJh != null">
+        IQTY_JH = #{iqtyJh,jdbcType=DECIMAL},
+      </if>
+      <if test="iqtyCk != null">
+        IQTY_CK = #{iqtyCk,jdbcType=DECIMAL},
+      </if>
+      <if test="cdc != null">
+        CDC = #{cdc,jdbcType=VARCHAR},
+      </if>
+      <if test="iycdays != null">
+        IYCDAYS = #{iycdays,jdbcType=DECIMAL},
+      </if>
+      <if test="clotno != null">
+        CLOTNO = #{clotno,jdbcType=VARCHAR},
+      </if>
+      <if test="lockflag != null">
+        LOCKFLAG = #{lockflag,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia106 != null">
+        TC_WIA106 = #{tcWia106,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia20 != null">
+        TC_WIA20 = #{tcWia20,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tcWia21 != null">
+        TC_WIA21 = #{tcWia21,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia51 != null">
+        TC_WIA51 = #{tcWia51,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia52 != null">
+        TC_WIA52 = #{tcWia52,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia53 != null">
+        TC_WIA53 = #{tcWia53,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia54 != null">
+        TC_WIA54 = #{tcWia54,jdbcType=DECIMAL},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia55 != null">
+        TC_WIA55 = #{tcWia55,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia56 != null">
+        TC_WIA56 = #{tcWia56,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia57 != null">
+        TC_WIA57 = #{tcWia57,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia58 != null">
+        TC_WIA58 = #{tcWia58,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia59 != null">
+        TC_WIA59 = #{tcWia59,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia60 != null">
+        TC_WIA60 = #{tcWia60,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia22 != null">
+        TC_WIA22 = #{tcWia22,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia23 != null">
+        TC_WIA23 = #{tcWia23,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia24 != null">
+        TC_WIA24 = #{tcWia24,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia25 != null">
+        TC_WIA25 = #{tcWia25,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia26 != null">
+        TC_WIA26 = #{tcWia26,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia27 != null">
+        TC_WIA27 = #{tcWia27,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia28 != null">
+        TC_WIA28 = #{tcWia28,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia29 != null">
+        TC_WIA29 = #{tcWia29,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWia30 != null">
+        TC_WIA30 = #{tcWia30,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWia31 != null">
+        TC_WIA31 = #{tcWia31,jdbcType=DECIMAL},
+      </if>
+      <if test="tcWia32 != null">
+        TC_WIA32 = #{tcWia32,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia33 != null">
+        TC_WIA33 = #{tcWia33,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia34 != null">
+        TC_WIA34 = #{tcWia34,jdbcType=VARCHAR},
+      </if>
+      <if test="tcWia35 != null">
+        TC_WIA35 = #{tcWia35,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CBARCODENO = #{cbarcodeno,jdbcType=VARCHAR}
+  </update>
+  <select id="searchStockGapPageHelper" resultType="com.keboda.eomsback.stock.pojo.TcWiaFile">
+      SELECT a.CBARCODENO, CASE WHEN CRTYPE = 'I' THEN nvl(sum(a.IQTY),0) ELSE 0 - nvl(sum(a.IQTY),0) END iqty,
+      a.CPRODUCENO,ima02 cproducename,a.CWHCODE,CRTYPE, CASE WHEN CRTYPE = 'I' THEN nvl(iqty_rk,0) ELSE 0 - nvl(iqty_ck,0) END qty,imd02,
+      CASE WHEN CRTYPE = 'I' THEN nvl(sum(a.IQTY),0) - nvl(iqty_rk,0) ELSE  nvl(iqty_ck,0) - nvl(sum(a.IQTY),0) END gapqty
+      FROM
+      (SELECT CPRODUCENO,CBARCODENO,IQTY,'O' CRTYPE, CWHCODE
+      FROM ${centre}.TC_WDD_FILE
+      UNION ALL
+      SELECT CPRODUCENO,CBARCODENO,IQTY,'I' CRTYPE,CWHCODE
+      FROM ${centre}.TC_WDB_FILE
+      ) a
+      LEFT JOIN ${centre}.TC_WIA_FILE b ON a.CBARCODENO = b.CBARCODENO
+      LEFT JOIN ${centre}.IMA_FILE ON a.CPRODUCENO = IMA01
+      LEFT JOIN ${centre}.imd_file ON imd01 = a.CWHCODE
+      <where>
+          <if test="code != null and code != '' ">
+              and lower(a.CBARCODENO) like lower('%${code}%')
+          </if>
+          <if test="ima != null and ima != '' ">
+              and a.CPRODUCENO = #{ima}
+          </if>
+          <if test="imd != null and imd != '' ">
+              and a.CWHCODE = #{imd}
+          </if>
+      </where>
+      GROUP BY a.CBARCODENO,a.CPRODUCENO,a.CWHCODE,CRTYPE,iqty_rk,iqty_ck,imd02,ima02
+  </select>
+
+</mapper>

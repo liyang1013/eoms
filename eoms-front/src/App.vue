@@ -65,7 +65,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background-color: rgb(240 242 245);
+  background-color: rgb(240, 243, 245);
   height: 100vh;
   .main-container {
     background-color: rgb(240 242 245);

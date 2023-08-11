@@ -2,13 +2,13 @@
   <div>
     <el-form :inline="true" :model="img" class="demo-form-inline">
       <el-form-item label="中心:">
-        <selectedCentre v-model="img.centre"></selectedCentre>
+        <selectedCentre v-model="img.centre" key="img"></selectedCentre>
       </el-form-item>
       <el-form-item label="仓库:">
-        <selectedImd v-model="img.imd" :centre="img.centre"></selectedImd>
+        <selectedImd v-model="img.imd" :centre="img.centre" key="img"></selectedImd>
       </el-form-item>
       <el-form-item label="料件:">
-        <selectedIma v-model="img.ima" :centre="img.centre" ></selectedIma>
+        <selectedIma v-model="img.ima" :centre="img.centre" key="img"></selectedIma>
       </el-form-item>
       <el-form-item style="float: right">
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
@@ -80,10 +80,6 @@ export default {
     },
     repairImg(){
       this.$http.post('/api/img/repairImg',this.img);
-    },
-    handleSelect(val) {
-      this.ima01 = val.ima01;
-      this.search();
     },
     handleCurrentChange(val) {
       this.search(val);

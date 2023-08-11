@@ -71,15 +71,13 @@ export const menu = [
                 path: 'workOrder',
                 name: '工单日期查询',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/produce/ProduceView'),
-                children: []
+                component: () => import('@/views/produce/ProduceView')
             },
             {
                 path: 'workOrderEdit',
                 name: '工单',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/produce/SfbView'),
-                children: []
+                component: () => import('@/views/produce/SfbView')
             }
         ]
     },
@@ -93,8 +91,7 @@ export const menu = [
                 path: 'wdi',
                 name: '拣货单',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/sale/WdiView'),
-                children: []
+                component: () => import('@/views/sale/WdiView')
             }
         ]
     },
@@ -108,22 +105,31 @@ export const menu = [
                 path: 'ima',
                 name: '料件信息',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/ImaView'),
-                children: []
+                component: () => import('@/views/stock/ImaView')
             },
             {
                 path: 'currStock',
                 name: '现存量查询',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/ImgView'),
-                children: []
+                component: () => import('@/views/stock/ImgView')
+            },
+            {
+                path: 'stockGap',
+                name: '条码出入库差异',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/stock/barcodeStockGapView')
+            },
+            {
+                path: 'ewStockGap',
+                name: 'EW库存差异',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/stock/ewStockGap')
             },
             {
                 path: 'ina',
                 name: '库存杂项异动',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/InaView'),
-                children: []
+                component: () => import('@/views/stock/InaView')
             }
         ]
     },
@@ -137,29 +143,25 @@ export const menu = [
                 path: 'contacts',
                 name: '人员档案',
                 icon: 'el-icon-user-solid',
-                component: () => import('@/views/system/ZxView'),
-                children: []
+                component: () => import('@/views/system/ZxView')
             },
             {
                 path: 'operation',
                 name: '作业档案',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/system/GazView'),
-                children: []
+                component: () => import('@/views/system/GazView')
             },
             {
                 path: 'smy',
                 name: '单别档案',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/system/SmyView'),
-                children: []
+                component: () => import('@/views/system/SmyView')
             },
             {
                 path: 'import',
                 name: '数据导入',
                 icon: 'el-icon-upload2',
-                component: () => import('@/views/system/ImportView'),
-                children: []
+                component: () => import('@/views/system/ImportView')
             }
         ]
     },
@@ -173,15 +175,13 @@ export const menu = [
                 path: 'robotStates',
                 name: 'RCS小车状态',
                 icon: 'el-icon-truck',
-                component: () => import('@/views/flux/robotStatesView'),
-                children: []
+                component: () => import('@/views/flux/robotStatesView')
             },
             {
                 path: 'invTransfer',
                 name: 'WMS库存控制',
                 icon: 'el-icon-unlock',
-                component: () => import('@/views/flux/InvTransferView'),
-                children: []
+                component: () => import('@/views/flux/InvTransferView')
             }
         ]
     }

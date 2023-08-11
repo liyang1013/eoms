@@ -5,7 +5,7 @@
         <selectedCentre v-model="searchVo.centre" key="pmc"></selectedCentre>
       </el-form-item>
       <el-form-item label="生效状态:">
-        <selected-acti v-model="searchVo.acti"></selected-acti>
+        <selected-acti v-model="searchVo.acti" key="pmc"></selected-acti>
       </el-form-item>
       <el-form-item label="供应商:">
         <el-input v-model="searchVo.pmc" placeholder="供应商编码/名称" clearable></el-input>
