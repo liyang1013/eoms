@@ -115,15 +115,9 @@ export const menu = [
             },
             {
                 path: 'stockGap',
-                name: '条码出入库差异',
-                icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/barcodeStockGapView')
-            },
-            {
-                path: 'ewStockGap',
                 name: 'EW库存差异',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/ewStockGap')
+                component: () => import('@/views/stock/stockGap')
             },
             {
                 path: 'ina',
