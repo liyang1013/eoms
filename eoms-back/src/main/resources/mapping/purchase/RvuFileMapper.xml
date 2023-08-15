@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.purchase.mapper.RvuFileMapper">
+    <update id="alterRvuDate">
+        update ${centre}.rvu_file
+        set rvu03 = #{rvu03},rvucond = #{rvu03}
+        where rvu01 = #{rvu01}
+    </update>
 
     <select id="searchRvuListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.RvuFile">
         select rvu00,rvu01,rvu02,rvu03,rvu04,rvu05 pmc03,rvu06 ,gem02,rvu07,rvu08,gen02,rvu17,rvucond,rvuconf,#{centre} centre,smydesc

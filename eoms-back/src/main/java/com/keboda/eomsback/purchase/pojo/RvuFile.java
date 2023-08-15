@@ -1,11 +1,11 @@
 package com.keboda.eomsback.purchase.pojo;
 
+import com.keboda.eomsback.entity.CommonField;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.keboda.eomsback.entity.CommonField;
-import lombok.Data;
 
 /**
  * RVU_FILE

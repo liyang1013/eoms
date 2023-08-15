@@ -8,6 +8,7 @@ import com.keboda.eomsback.produce.service.ISfbService;
 import com.keboda.eomsback.produce.mapper.*;
 import com.keboda.eomsback.produce.pojo.*;
 import com.keboda.eomsback.stock.mapper.TlfFileMapper;
+import com.keboda.eomsback.stock.service.ITlfService;
 import com.keboda.eomsback.system.mapper.SmaFileMapper;
 import com.keboda.eomsback.system.pojo.SmaFile;
 import com.keboda.eomsback.utils.DateUtils;
@@ -35,6 +36,8 @@ public class SfbServiceImpl implements ISfbService {
     private SmaFileMapper smaFileMapper;
     @Resource
     private TlfFileMapper tlfFileMapper;
+    @Resource
+    private ITlfService iTlfService;
 
     /*
      查询工单单号,每次100条

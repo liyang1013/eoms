@@ -2,13 +2,13 @@ package com.keboda.eomsback.purchase.service.impl;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
-import com.keboda.eomsback.purchase.mapper.*;
+import com.keboda.eomsback.purchase.mapper.PmnFileMapper;
+import com.keboda.eomsback.purchase.mapper.RvaFileMapper;
+import com.keboda.eomsback.purchase.mapper.RvbFileMapper;
 import com.keboda.eomsback.purchase.pojo.RvaFile;
 import com.keboda.eomsback.purchase.pojo.RvbFile;
-import com.keboda.eomsback.purchase.pojo.RvvFile;
 import com.keboda.eomsback.purchase.service.IRvaService;
-import com.keboda.eomsback.stock.mapper.ImgFileMapper;
-import com.keboda.eomsback.stock.mapper.TlfFileMapper;
+import com.keboda.eomsback.stock.service.ITlfService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,9 +24,9 @@ public class RvaServiceImpl implements IRvaService {
     @Resource
     private RvbFileMapper rvbFileMapper;
     @Resource
-    private TlfFileMapper tlfFileMapper;
-    @Resource
     private PmnFileMapper pmnFileMapper;
+    @Resource
+    private ITlfService iTlfService;
 
     @Override
     public Page<RvaFile> searchRvaListPageHelper(SearchVo searchVo) {
@@ -66,7 +66,7 @@ public class RvaServiceImpl implements IRvaService {
                     pmnFileMapper.updatePmn50(rvb.getCentre(),rvbFile.getRvb04(),rvbFile.getRvb03(),rvb.getRvb07().subtract(rvbFile.getRvb07()));
                 }
                 //更新收货异动表
-                tlfFileMapper.updateQty(rvb.getCentre(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),BigDecimal.ZERO);
+                iTlfService.alterQty(rvb.getCentre(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),BigDecimal.ZERO);
                 //更新收货单表
                 rvbFileMapper.updateQty(rvb.getCentre(),rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07());
             }

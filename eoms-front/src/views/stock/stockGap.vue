@@ -4,9 +4,6 @@
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="stockgap"></selectedCentre>
       </el-form-item>
-      <el-form-item label="条码号:">
-          <el-input v-model="searchVo.code" placeholder="条码号" ></el-input>
-      </el-form-item>
       <el-form-item label="仓库:">
         <selectedImd v-model="searchVo.imd" :centre="searchVo.centre" key="stockgap"></selectedImd>
       </el-form-item>
@@ -21,7 +18,7 @@
     <el-table :data="documentList" border max-height="500px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading" :row-style="tableRowClassName"
               show-summary :summary-method="getSummaries">
-      <el-table-column prop="cbarcodeno" label="条码">
+      <el-table-column prop="cdanhao" label="单号">
       </el-table-column>
       <el-table-column prop="cproduceno" label="品号">
       </el-table-column>
@@ -33,7 +30,7 @@
       </el-table-column>
       <el-table-column prop="iqty" label="单据数量">
       </el-table-column>
-      <el-table-column prop="qty" label="条码数量">
+      <el-table-column prop="qty" label="异动数量">
       </el-table-column>
       <el-table-column prop="gapqty" label="差异">
       </el-table-column>
@@ -78,11 +75,11 @@ export default {
     search(val) {
       this.searchVo.currentPage = val;
       this.tableLoading = true;
-      this.$http.post('/api/barcode/searchStockGapPageHelper', this.searchVo)
+      this.$http.post('/api/tlf/searchEWStockGapPageHelper', this.searchVo)
           .then(res => {this.documentList = res.data.result; this.searchVo.total = res.data.total;}).finally(() => this.tableLoading = false)
     },
     tableRowClassName({row, rowIndex}) {
-        if(row.gapqty !== 0) return {"background": "#f56c6c82 !important"}
+      if(row.gapqty !== 0) return {"background": "#f56c6c82 !important"}
     },
     getSummaries(param) {
       const { columns, data } = param;
@@ -111,7 +108,16 @@ export default {
       return sums;
     },
     toExcel(){
-
+      this.$http.post('/api/tlf/EWStockGapToExcel', this.searchVo).then(res => {
+        const data = res.data;
+        let url = window.URL.createObjectURL(new Blob([data]));
+        let link = document.createElement('a');
+        link.style.display = 'none';
+        link.href = url;
+        link.setAttribute('download', '任务结果处理.xlsx');
+        document.body.appendChild(link);
+        link.click();
+      })
     },
     handleCurrentChange(val) {
       this.search(val);
@@ -121,7 +127,12 @@ export default {
       this.search(1);
     },
   }
-
 }
 
 </script>
+<style scoped>
+::v-deep .el-table tbody tr:hover>td {
+  background-color: red !important;
+  color: #FFFFFF;
+}
+</style>

@@ -8,4 +8,6 @@ import org.apache.ibatis.annotations.Param;
 public interface RvuFileMapper {
 
     Page<RvuFile> searchRvuListPageHelper(SearchVo searchVo);
+
+    void alterRvuDate(RvuFile rvuFile);
 }

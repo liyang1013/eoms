@@ -11,4 +11,6 @@ public interface IRvuService {
     Page<RvuFile> searchRvuListPageHelper(SearchVo searchVo);
 
     List<RvvFile> searchRvvList(SearchVo searchVo);
+
+    void alterRvuDate(RvuFile rvuFile);
 }

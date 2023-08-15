@@ -108,6 +108,7 @@ public class RCSTimer {
         boolean isReachable = SocketCheckUtils.isReachable("172.17.200.154", 8090);
         if (!isReachable) {
             WeChatPlusUtils.sendMessage(sender, "RCS端口 172.17.200.154:8090 无法连接");
+            return;
         }
 
         SortedMap<Object, Object> sortedMap = new TreeMap<Object, Object>() {

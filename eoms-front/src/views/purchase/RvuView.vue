@@ -7,7 +7,7 @@
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="rvu"></selectedCentre>
       </el-form-item>
-      <el-form-item label="采购入库单号:">
+      <el-form-item label="入库单号:">
         <el-input v-model="searchVo.code" placeholder="入库单号" clearable></el-input>
       </el-form-item>
     </el-form>
@@ -71,7 +71,7 @@
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.smydesc }}</span>
             </el-form-item>
             <el-form-item label="入库日期:">
-              {{ documents.master.rvu03}}
+              <el-date-picker type="date" placeholder="选择日期" v-model="documents.master.rvu03" value-format="yyyy-MM-dd" style="width: 140px;" @change="alterRvuDate(documents.master)"></el-date-picker>
             </el-form-item>
             <el-form-item label="采购性质:">
               {{ documents.master.rvu08 | formatNature }}
@@ -163,6 +163,9 @@ export default {
       this.$http.post('/api/rvu/searchRvvList', {code: row.rvu01, centre: row.centre}).then(res => {
         this.documents.slave = res.data.result;
       })
+    },
+    alterRvuDate(master){
+      this.$http.post('/api/rvu/alterRvuDate', master)
     },
     handleCurrentChange(val) {
       this.search(val);

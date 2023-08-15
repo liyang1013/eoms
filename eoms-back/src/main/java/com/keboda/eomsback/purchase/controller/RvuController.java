@@ -10,6 +10,7 @@ import com.keboda.eomsback.purchase.pojo.RvuFile;
 import com.keboda.eomsback.purchase.pojo.RvvFile;
 import com.keboda.eomsback.purchase.service.IRvuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,5 +36,11 @@ public class RvuController {
     public BaseResult searchRvvList(@RequestBody SearchVo searchVo){
         List<RvvFile> list = iRvuService.searchRvvList(searchVo);
         return BaseResult.success(list);
+    }
+
+    @PostMapping("/alterRvuDate")
+    public BaseResult alterRvuDate(@RequestBody RvuFile rvuFile){
+        iRvuService.alterRvuDate(rvuFile);
+        return BaseResult.success("入库异动日期修改成功");
     }
 }

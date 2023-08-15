@@ -420,32 +420,5 @@
     </set>
     where CBARCODENO = #{cbarcodeno,jdbcType=VARCHAR}
   </update>
-  <select id="searchStockGapPageHelper" resultType="com.keboda.eomsback.stock.pojo.TcWiaFile">
-      SELECT a.CBARCODENO, CASE WHEN CRTYPE = 'I' THEN nvl(sum(a.IQTY),0) ELSE 0 - nvl(sum(a.IQTY),0) END iqty,
-      a.CPRODUCENO,ima02 cproducename,a.CWHCODE,CRTYPE, CASE WHEN CRTYPE = 'I' THEN nvl(iqty_rk,0) ELSE 0 - nvl(iqty_ck,0) END qty,imd02,
-      CASE WHEN CRTYPE = 'I' THEN nvl(sum(a.IQTY),0) - nvl(iqty_rk,0) ELSE  nvl(iqty_ck,0) - nvl(sum(a.IQTY),0) END gapqty
-      FROM
-      (SELECT CPRODUCENO,CBARCODENO,IQTY,'O' CRTYPE, CWHCODE
-      FROM ${centre}.TC_WDD_FILE
-      UNION ALL
-      SELECT CPRODUCENO,CBARCODENO,IQTY,'I' CRTYPE,CWHCODE
-      FROM ${centre}.TC_WDB_FILE
-      ) a
-      LEFT JOIN ${centre}.TC_WIA_FILE b ON a.CBARCODENO = b.CBARCODENO
-      LEFT JOIN ${centre}.IMA_FILE ON a.CPRODUCENO = IMA01
-      LEFT JOIN ${centre}.imd_file ON imd01 = a.CWHCODE
-      <where>
-          <if test="code != null and code != '' ">
-              and lower(a.CBARCODENO) like lower('%${code}%')
-          </if>
-          <if test="ima != null and ima != '' ">
-              and a.CPRODUCENO = #{ima}
-          </if>
-          <if test="imd != null and imd != '' ">
-              and a.CWHCODE = #{imd}
-          </if>
-      </where>
-      GROUP BY a.CBARCODENO,a.CPRODUCENO,a.CWHCODE,CRTYPE,iqty_rk,iqty_ck,imd02,ima02
-  </select>
 
 </mapper>
