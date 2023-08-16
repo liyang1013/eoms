@@ -98,7 +98,7 @@
           <el-col :span="7" :offset="1">
             <el-form-item label="审核状态:">
               <selectedConf v-model="documents.master.rvaconf" :key="documents.master.rva01"
-                            @change="alterRva"></selectedConf>
+                            @change="alterRvaConf"></selectedConf>
             </el-form-item>
             <el-form-item label="状况码:">
               {{ documents.master.rva32 | formatSignoff }}
@@ -180,15 +180,15 @@ export default {
         this.documents.slave = res.data.result;
       })
     },
-    alterRva(val) {
-      this.$http.post('/api/rva/alterRva', {
+    alterRvaConf(val) {
+      this.$http.post('/api/rva/alterRvaConf', {
         rva01: this.documents.master.rva01,
         centre: this.documents.master.centre,
         rvaconf: val
       })
     },
     alterRvb() {
-      this.$http.post('/api/rva/alterRvb', this.documents.slave)
+      this.$http.post('/api/rva/alterRvbQty', this.documents.slave)
     },
     handleCurrentChange(val) {
       this.search(val);

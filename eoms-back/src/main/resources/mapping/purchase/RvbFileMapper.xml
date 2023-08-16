@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.purchase.mapper.RvbFileMapper">
-    <update id="updateQty">
+    <update id="alterRvbQty">
         update ${centre}.rvb_file
         set rvb07 = #{rvb07},rvb33 = #{rvb07},rvb87 = #{rvb07},rvb88 = round( rvb10 * #{rvb07},2 ),rvb88t = round(rvb10t * #{rvb07},2)
         where rvb01 = #{rvb01} and rvb02 = #{rvb02}

@@ -17,7 +17,7 @@
     </el-form>
     <el-table :data="documentList" border max-height="500px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading" :row-style="tableRowClassName"
-              show-summary :summary-method="getSummaries">
+              show-summary :summary-method="getSummaries" ref="tableToExcel">
       <el-table-column prop="cdanhao" label="单号">
       </el-table-column>
       <el-table-column prop="cproduceno" label="品号">
@@ -47,6 +47,7 @@
 import selectedCentre from '@/components/selected/selected-centre.vue'
 import selectedImd from "@/components/selected/selected-imd.vue";
 import selectedIma from "@/components/selected/selected-ima.vue";
+import { useExcel } from "@/script/excel";
 
 export default {
   name: 'stockGap',
@@ -108,16 +109,8 @@ export default {
       return sums;
     },
     toExcel(){
-      this.$http.post('/api/tlf/EWStockGapToExcel', this.searchVo).then(res => {
-        const data = res.data;
-        let url = window.URL.createObjectURL(new Blob([data]));
-        let link = document.createElement('a');
-        link.style.display = 'none';
-        link.href = url;
-        link.setAttribute('download', '任务结果处理.xlsx');
-        document.body.appendChild(link);
-        link.click();
-      })
+      const table = this.$refs["tableToExcel"].$el;
+      useExcel(table,'EW库存差异');
     },
     handleCurrentChange(val) {
       this.search(val);

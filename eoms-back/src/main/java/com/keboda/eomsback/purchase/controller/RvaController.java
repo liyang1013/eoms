@@ -34,15 +34,15 @@ public class RvaController {
         return BaseResult.success(list);
     }
 
-    @RequestMapping("/alterRva")
-    public BaseResult alterRva(@RequestBody RvaFile rvaFile){
-        iRvaService.alterRva(rvaFile);
+    @RequestMapping("/alterRvaConf")
+    public BaseResult alterRvaConf(@RequestBody RvaFile rvaFile){
+        iRvaService.alterRvaConf(rvaFile);
         return BaseResult.success("修改成功");
     }
 
-    @RequestMapping("/alterRvb")
-    public BaseResult alterRva(@RequestBody List<RvbFile> rvbFiles){
-        iRvaService.alterRvb(rvbFiles);
+    @RequestMapping("/alterRvbQty")
+    public BaseResult alterRvbQty(@RequestBody List<RvbFile> rvbFiles){
+        iRvaService.alterRvbQty(rvbFiles);
         return BaseResult.success("修改成功");
     }
 

@@ -44,13 +44,13 @@ public class RvaServiceImpl implements IRvaService {
      */
     @Override
     @Transactional
-    public void alterRva(RvaFile rvaFile) {
-        rvaFileMapper.alterRva(rvaFile);
+    public void alterRvaConf(RvaFile rvaFile) {
+        rvaFileMapper.alterRvaConf(rvaFile);
     }
 
     @Override
     @Transactional
-    public void alterRvb(List<RvbFile> rvbFiles) {
+    public void alterRvbQty(List<RvbFile> rvbFiles) {
         for (RvbFile rvb : rvbFiles) {
             RvbFile rvbFile = rvbFileMapper.selectByKey(rvb.getRvb01(),rvb.getRvb02(),rvb.getCentre());
             if(rvbFile == null) throw new RuntimeException("单号:"+rvb.getRvb01()+"在中心:"+rvb.getCentre()+"中查找不到对应收货单明细");
@@ -68,7 +68,7 @@ public class RvaServiceImpl implements IRvaService {
                 //更新收货异动表
                 iTlfService.alterQty(rvb.getCentre(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),BigDecimal.ZERO);
                 //更新收货单表
-                rvbFileMapper.updateQty(rvb.getCentre(),rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07());
+                rvbFileMapper.alterRvbQty(rvb.getCentre(),rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07());
             }
         }
     }

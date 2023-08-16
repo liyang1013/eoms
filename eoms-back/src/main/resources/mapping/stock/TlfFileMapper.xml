@@ -70,37 +70,4 @@
         </where>
         GROUP BY CPRODUCENO,CDANHAO,tlf10,CRTYPE,CWHCODE,imd02,ima02
     </select>
-    <select id="searchEWStockGap" resultType="com.keboda.eomsback.stock.pojo.EWStockGap">
-        SELECT CPRODUCENO,ima02 cproducename,CDANHAO,nvl(sum(IQTY),0) iqty, nvl(tlf10,0) qty,CRTYPE, CWHCODE,imd02,(nvl(sum(IQTY),0) -  nvl(tlf10,0)) gapqty
-        FROM
-        (
-        SELECT CPRODUCENO,CDANHAO,0 - IQTY iqty,0 - tlf10 tlf10,'O' CRTYPE,CWHCODE
-        FROM ${centre}.TC_WDD_FILE
-        LEFT JOIN ( SELECT TLF01,tlf907,tlf021,tlf026,tlf036,sum(tlf10) tlf10
-        FROM ${centre}.TLF_FILE
-        GROUP BY TLF01,tlf907,tlf026,tlf036,tlf021 ) ON TLF01 = CPRODUCENO and tlf907 = -1 AND tlf021 = CWHCODE AND tlf026 = CDANHAO
-        UNION ALL
-
-        SELECT CPRODUCENO,CDANHAO,IQTY,tlf10,'I' CRTYPE,CWHCODE
-        FROM ${centre}.TC_WDB_FILE
-        LEFT JOIN ( SELECT TLF01,tlf907,tlf031,tlf026,tlf036,sum(tlf10) tlf10
-        FROM ${centre}.TLF_FILE
-        GROUP BY TLF01,tlf907,tlf026,tlf036,tlf031
-        ) ON TLF01 = CPRODUCENO AND tlf907 = 1 AND tlf031 = CWHCODE  AND tlf036 = CDANHAO
-        ) a
-        LEFT JOIN ${centre}.IMA_FILE ON a.CPRODUCENO = IMA01
-        LEFT JOIN ${centre}.imd_file ON imd01 = a.CWHCODE
-        <where>
-            <if test="code != null and code != '' ">
-                and lower(a.CDANHAO) like lower('%${code}%')
-            </if>
-            <if test="ima != null and ima != '' ">
-                and a.CPRODUCENO = #{ima}
-            </if>
-            <if test="imd != null and imd != '' ">
-                and a.CWHCODE = #{imd}
-            </if>
-        </where>
-        GROUP BY CPRODUCENO,CDANHAO,tlf10,CRTYPE,CWHCODE,imd02,ima02
-    </select>
 </mapper>

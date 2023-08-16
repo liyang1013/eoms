@@ -80,6 +80,8 @@ public class SearchVo {
 
     private String conf = "Y";
 
+    private Boolean flag;
+
     private Integer currentPage = 1;
 
     private Integer size = 20;

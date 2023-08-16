@@ -25,7 +25,5 @@ public interface TlfFileMapper {
 
     Page<EWStockGap> searchEWStockGapPageHelper(SearchVo searchVo);
 
-    List<EWStockGap> searchEWStockGap(SearchVo searchVo);
-
     void alterDate(@Param("centre") String centre, @Param("tlf026") String tlf026, @Param("tlf036") String tlf036, @Param("ddate") Date ddate, @Param("tlf907") String tlf907);
 }

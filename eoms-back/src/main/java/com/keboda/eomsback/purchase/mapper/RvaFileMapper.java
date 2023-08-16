@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 public interface RvaFileMapper {
     Page<RvaFile> searchRvaListPageHelper( SearchVo searchVo);
 
-    void alterRva(RvaFile rvaFile);
+    void alterRvaConf(RvaFile rvaFile);
 
     RvaFile selectByKey(@Param("rva01") String rva01, @Param("centre") String centre);
 }

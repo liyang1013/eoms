@@ -12,7 +12,7 @@ public interface IRvaService {
 
     List<RvbFile> searchRvbList(SearchVo searchVo);
 
-    void alterRva(RvaFile rvaFile);
+    void alterRvaConf(RvaFile rvaFile);
 
-    void alterRvb(List<RvbFile> rvbFiles);
+    void alterRvbQty(List<RvbFile> rvbFiles);
 }

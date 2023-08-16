@@ -25,12 +25,6 @@ public class TlfServiceImpl implements ITlfService {
         return tlfFileMapper.searchEWStockGapPageHelper(searchVo);
     }
 
-    @Override
-    public List<EWStockGap> EWStockGapToExcel(SearchVo searchVo, HttpServletResponse response) {
-
-        return tlfFileMapper.searchEWStockGap(searchVo);
-    }
-
     /**
      * 批量更新异动日期
      *

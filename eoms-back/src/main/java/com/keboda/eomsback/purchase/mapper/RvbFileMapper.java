@@ -13,5 +13,5 @@ public interface RvbFileMapper {
 
     RvbFile selectByKey(@Param("rvb01") String rvb01, @Param("rvb02") Integer rvb02,@Param("centre") String centre);
 
-    void updateQty(@Param("centre") String centre, @Param("rvb01") String rvb01, @Param("rvb02") Integer rvb02, @Param("rvb07") BigDecimal rvb07);
+    void alterRvbQty(@Param("centre") String centre, @Param("rvb01") String rvb01, @Param("rvb02") Integer rvb02, @Param("rvb07") BigDecimal rvb07);
 }
