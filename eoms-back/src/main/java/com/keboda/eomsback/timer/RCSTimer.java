@@ -6,19 +6,18 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.keboda.eomsback.flux.pojo.RobotsStatusFile;
-import com.keboda.eomsback.flux.service.IConveyorMonitoringService;
 import com.keboda.eomsback.flux.service.IRobotsStatusService;
-import com.keboda.eomsback.plc.pojo.Car;
 import com.keboda.eomsback.utils.SocketCheckUtils;
 import com.keboda.eomsback.utils.WeChatPlusUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 @Component
 public class RCSTimer {
@@ -31,9 +30,6 @@ public class RCSTimer {
 
     @Autowired
     private IRobotsStatusService iRobotsStatusService;
-
-    @Autowired
-    private IConveyorMonitoringService iConveyorMonitoringService;
 
     /**
      * 定时写入RCS小车状态
@@ -84,11 +80,6 @@ public class RCSTimer {
                 robotsStatusFile.setUpdatetime(new Date());
 
                 RobotsStatusFile robotsStatus = iRobotsStatusService.selectByKey(robotsStatusFile.getId());
-
-                String taskid = (String) car.get("taskId");
-                Car c = Car.builder().plcitem("SXC" + robotsStatusFile.getId()).floor(robotsStatusFile.getFloorid()).taskid(taskid).build();
-                iConveyorMonitoringService.readCarinfo(c);
-
 
                 if (robotsStatus == null) {
                     iRobotsStatusService.insertByKeySelective(robotsStatusFile);

@@ -111,5 +111,7 @@ public class SfuFile implements Serializable {
 
     private String tlf907;
 
+    private BigDecimal sfv09;
+
     private static final long serialVersionUID = 1L;
 }

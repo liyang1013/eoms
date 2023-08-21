@@ -55,6 +55,8 @@ logging:
 #自定义定时器动态执行
 timer:
   rcsRobotsTimer:
+    corn: 0 0/1 * * * ?
+  wcsRobotsTimer:
     corn: 0/5 0/1 * * * ?
   InvalidDocumentDeleteTimer:
     corn: 0 59 23 1 * ?

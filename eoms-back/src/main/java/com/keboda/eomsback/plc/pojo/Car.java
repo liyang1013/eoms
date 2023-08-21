@@ -15,7 +15,5 @@ public class Car {
 
     private String plcitem;
 
-    private Integer floor;
-
-    private String taskid;
+    private Short floor;
 }

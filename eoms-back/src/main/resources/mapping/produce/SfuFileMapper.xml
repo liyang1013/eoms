@@ -20,13 +20,13 @@
         where sfu01 =#{sfu.sfu01}
     </update>
 
-    <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.SfuFile">
-        select sfu01, sfu14, sfu02, tlf06,case when sfu00 = 1 then '入库' when sfu00 = 2 then '退库' else  '入库' end as tlf907
+    <select id="searchSfuList" resultType="com.keboda.eomsback.produce.pojo.SfuFile">
+        select sfu01, sfu14, sfu02, tlf06,case when sfu00 = 1 then '入库' when sfu00 = 2 then '退库' else  '入库' end as tlf907,sfv09
         from ${centre}.sfu_file
                  left join ${centre}.sfv_file on sfu01 = sfv01
                  left join ${centre}.tlf_file on tlf62 =   sfv11 and  ( tlf026 =sfu01 or  tlf036 = sfu01) and tlf01 = sfv04
-        where sfv11 = #{sfb01}
-        group by sfu01, sfu14, sfu02, tlf06,sfu00
+        where sfv11 = #{code}
+        group by sfu01, sfu14, sfu02, tlf06,sfu00,sfv09
         order by sfu14
     </select>
 </mapper>

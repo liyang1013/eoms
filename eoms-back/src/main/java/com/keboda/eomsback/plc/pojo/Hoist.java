@@ -12,4 +12,10 @@ import lombok.NoArgsConstructor;
 public class Hoist {
 
     private Integer id;
+
+    private String plcitem;
+
+    private Short floor;
+
+    private Integer taskno;
 }

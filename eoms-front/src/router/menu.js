@@ -68,13 +68,13 @@ export const menu = [
         component: null,
         children: [
             {
-                path: 'workOrder',
-                name: '工单日期查询',
+                path: 'sfbStatus',
+                name: '工单状况',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/produce/ProduceView')
+                component: () => import('@/views/produce/sfbStatusView')
             },
             {
-                path: 'workOrderEdit',
+                path: 'sfb',
                 name: '工单',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/produce/SfbView')
@@ -114,10 +114,10 @@ export const menu = [
                 component: () => import('@/views/stock/ImgView')
             },
             {
-                path: 'stockGap',
+                path: 'EWStockGap',
                 name: 'EW库存差异',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/stock/stockGap')
+                component: () => import('@/views/stock/EWStockGapView')
             },
             {
                 path: 'ina',

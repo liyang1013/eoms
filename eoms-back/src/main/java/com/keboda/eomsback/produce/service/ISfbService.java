@@ -4,14 +4,14 @@ import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
-import com.keboda.eomsback.produce.pojo.vo.SfbProcessVo;
+import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
 
 import java.util.List;
 
 public interface ISfbService {
-    List<SfbFile> sfb01Arr(String queryStr, String centre);
+    List<SfbFile> searchSfbList(SearchVo searchVo);
 
-    SfbProcessVo sfbProcess(String sfb01, String centre) throws RuntimeException;
+    SfbStatusVo searchSfbStatus(SearchVo searchVo) throws RuntimeException;
 
     Page<SfbFile> searchSfbListPageHelper(SearchVo searchVo);
 

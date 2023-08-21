@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 public interface SfbFileMapper {
-    List<SfbFile> sfb01Arr(@Param("queryStr") String queryStr, @Param("centre") String centre);
+    List<SfbFile> searchSfbList(SearchVo searchVo);
 
-    SfbFile selectDateByCode(@Param("sfb01") String sfb01, @Param("centre") String centre);
+    SfbFile searchSfb(SearchVo searchVo);
 
     Page<SfbFile> searchSfbListPageHelper(SearchVo searchVo);
 

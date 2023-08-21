@@ -50,7 +50,7 @@ import selectedIma from "@/components/selected/selected-ima.vue";
 import { useExcel } from "@/script/excel";
 
 export default {
-  name: 'stockGap',
+  name: 'EWStockGap',
   data() {
     return {
       searchVo: {

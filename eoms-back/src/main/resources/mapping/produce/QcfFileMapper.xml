@@ -20,10 +20,10 @@
         where qcf01 =#{qcf.qcf01}
     </update>
 
-    <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.QcfFile">
-      select qcf01 , qcf04 ,qcf15
+    <select id="searchQcfList" resultType="com.keboda.eomsback.produce.pojo.QcfFile">
+      select qcf01 , qcf04 ,qcf15,qcf22,qcf091
       from ${centre}.qcf_file
-      where qcf02 = #{sfb01}
+      where qcf02 = #{code}
       order by qcf04
     </select>
 

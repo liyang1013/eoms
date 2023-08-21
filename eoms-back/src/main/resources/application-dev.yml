@@ -57,6 +57,8 @@ logging:
 timer:
   rcsRobotsTimer:
     corn: 0 59 23 * * ?
+  wcsRobotsTimer:
+    corn: 0 59 23 * * ?
   InvalidDocumentDeleteTimer:
     corn: 0 59 23 1 * ?
   checkRCSStatus:

@@ -107,5 +107,7 @@ public class SfpFile implements Serializable {
 
     private String tlf907;
 
+    private BigDecimal sfq03;
+
     private static final long serialVersionUID = 1L;
 }

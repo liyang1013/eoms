@@ -25,6 +25,7 @@ export default {
   name: 'app',
   computed: {
     ...mapState(['isSidebarNavCollapse']),
+    ...mapState(['activeMenuList'])
   },
   components: {
     sidebarNav,
@@ -53,7 +54,9 @@ export default {
     }
   },
   mounted() {
-    this.$router.push('/home')
+    if(this.activeMenuList.length === 0){
+      this.$router.push('/home')
+    }
     this.routesData(this.filterRoute(menu))
   }
 }

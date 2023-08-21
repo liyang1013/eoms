@@ -26,10 +26,10 @@
         where shb01 =#{shb.shb01}
     </update>
 
-    <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.ShbFile">
-      select shb01 ,shb02 , shb03 , shb32
+    <select id="searchShbList" resultType="com.keboda.eomsback.produce.pojo.ShbFile">
+      select shb01 ,shb02 , shb03 , shb32,shb111
       from ${centre}.shb_file
-      where shb05 = #{sfb01}
+      where shb05 = #{code}
       order by  shb02
     </select>
 </mapper>

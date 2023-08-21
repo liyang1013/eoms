@@ -3,9 +3,14 @@
 <mapper namespace="com.keboda.eomsback.flux.mapper.ConveyorMonitoringMapper">
 
 
-    <update id="readCarinfo">
+    <update id="writerCarinfo">
         update CM_CONVEYORMONITORING
-        set udf01 = #{floor}, udf02 = #{taskid}
+        set udf01 = #{floor}
+        where plcitem = #{plcitem}
+    </update>
+    <update id="readHoistinfo">
+        update CM_CONVEYORMONITORING
+        set udf01 = #{floor}, udf02 = #{taskno}
         where plcitem = #{plcitem}
     </update>
 </mapper>

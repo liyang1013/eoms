@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class SfbProcessVo {
+public class SfbStatusVo {
 
     private SfbFile sfb;
 

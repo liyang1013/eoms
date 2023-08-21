@@ -59,16 +59,16 @@
         where sfb01 = #{sfb01}
     </update>
 
-    <select id="sfb01Arr" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
+    <select id="searchSfbList" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
     select SFB01 ,IMA02
     from ${centre}.SFB_FILE
     left join ${centre}.IMA_FILE on sfb05 = ima01
-    where ROWNUM  <![CDATA[<]]> 51 and SFB01 like '%${queryStr}%'
+    where ROWNUM  <![CDATA[<]]> 51 and lower(SFB01) like lower('%${code}%')
   </select>
-  <select id="selectDateByCode" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
-    select sfb01 , sfb04 ,sfb81 ,sfb13 ,sfb15, sfb25 ,sfb36 ,sfb38
+  <select id="searchSfb" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
+    select sfb01 , sfb04 ,sfb08,sfb081,sfb09,sfb11,sfb12,sfb81 ,sfb13 ,sfb15, sfb25 ,sfb36 ,sfb38
     from ${centre}.sfb_file
-    where sfb01 = #{sfb01}
+    where sfb01 = #{code}
   </select>
   <select id="searchSfbListPageHelper" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
     select sfb01,sfb81,sfb05, ima02 ,sfb04,sfb98, gem02

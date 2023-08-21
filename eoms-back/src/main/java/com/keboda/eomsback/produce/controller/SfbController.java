@@ -5,7 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
-import com.keboda.eomsback.produce.pojo.vo.SfbProcessVo;
+import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
 import com.keboda.eomsback.produce.service.ISfbService;
 import com.keboda.eomsback.entity.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +22,16 @@ public class SfbController {
     @Autowired
     private ISfbService iSfbService;
 
-    @RequestMapping("/sfb01Arr")
-    public BaseResult sfb01Arr(String queryStr,String centre){
-        List<SfbFile> asf01_arr = iSfbService.sfb01Arr(queryStr,centre);
-        return BaseResult.success(asf01_arr);
+    @RequestMapping("/searchSfbList")
+    public BaseResult searchSfbList(@RequestBody SearchVo searchVo){
+        List<SfbFile> list = iSfbService.searchSfbList(searchVo);
+        return BaseResult.success(list);
     }
 
-    @RequestMapping("/sfbProcess")
-    public BaseResult sfbProcess(String sfb01,String centre){
-        SfbProcessVo sfbProcessVo = iSfbService.sfbProcess(sfb01,centre);
-        return BaseResult.success(sfbProcessVo);
+    @RequestMapping("/searchSfbStatus")
+    public BaseResult searchSfbStatus(@RequestBody SearchVo searchVo){
+        SfbStatusVo sfbStatus = iSfbService.searchSfbStatus(searchVo);
+        return BaseResult.success(sfbStatus);
     }
 
     @RequestMapping("/searchSfbListPageHelper")

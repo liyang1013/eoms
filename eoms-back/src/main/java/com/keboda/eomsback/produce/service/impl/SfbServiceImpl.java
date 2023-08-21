@@ -3,7 +3,7 @@ package com.keboda.eomsback.produce.service.impl;
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
-import com.keboda.eomsback.produce.pojo.vo.SfbProcessVo;
+import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
 import com.keboda.eomsback.produce.service.ISfbService;
 import com.keboda.eomsback.produce.mapper.*;
 import com.keboda.eomsback.produce.pojo.*;
@@ -43,21 +43,21 @@ public class SfbServiceImpl implements ISfbService {
      查询工单单号,每次100条
      */
     @Override
-    public List<SfbFile> sfb01Arr(String queryStr, String centre) {
-        return sfbFileMapper.sfb01Arr(queryStr, centre);
+    public List<SfbFile> searchSfbList(SearchVo searchVo) {
+        return sfbFileMapper.searchSfbList(searchVo);
     }
 
     @Override
-    public SfbProcessVo sfbProcess(String sfb01, String centre) throws RuntimeException {
+    public SfbStatusVo searchSfbStatus(SearchVo searchVo) throws RuntimeException {
 
-        SfbFile sfb = sfbFileMapper.selectDateByCode(sfb01, centre);
+        SfbFile sfb = sfbFileMapper.searchSfb(searchVo);
         if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
-        List<SfpFile> sfp = sfpFileMapper.selectDateByCode(sfb01, centre);
-        List<ShbFile> shb = shbFileMapper.selectDateByCode(sfb01, centre);
-        List<QcfFile> qcf = qcfFileMapper.selectDateByCode(sfb01, centre);
-        List<SfuFile> sfu = sfuFileMapper.selectDateByCode(sfb01, centre);
+        List<SfpFile> sfp = sfpFileMapper.searchSfpList(searchVo);
+        List<ShbFile> shb = shbFileMapper.searchShbList(searchVo);
+        List<QcfFile> qcf = qcfFileMapper.searchQcfList(searchVo);
+        List<SfuFile> sfu = sfuFileMapper.searchSfuList(searchVo);
 
-        return SfbProcessVo.builder().sfb(sfb).sfp(sfp).shb(shb).qcf(qcf).sfu(sfu).build();
+        return SfbStatusVo.builder().sfb(sfb).sfp(sfp).shb(shb).qcf(qcf).sfu(sfu).build();
     }
 
     @Override
@@ -77,7 +77,10 @@ public class SfbServiceImpl implements ISfbService {
 
         for (SfbFile sfbFile : sfbModify.getSfbArr()) {
 
-            SfbFile sfb = sfbFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
+            SearchVo searchVo = new SearchVo();
+            searchVo.setCentre(sfbModify.getCentre());
+            searchVo.setCode(sfbFile.getSfb01());
+            SfbFile sfb = sfbFileMapper.searchSfb(searchVo);
             if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
 
             //工单日期修改
@@ -90,7 +93,7 @@ public class SfbServiceImpl implements ISfbService {
             ) sfbFileMapper.updateDate(sfb, sfbModify.getCentre(), ddate, sfbModify.getFlag());
 
             //发料日期修改
-            List<SfpFile> sfpArr = sfpFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
+            List<SfpFile> sfpArr = sfpFileMapper.searchSfpList(searchVo);
             if (sfpArr.size() > 0) {
                 for (SfpFile sfp : sfpArr) {
                     if ((sfp.getSfp02() != null && (sfbModify.getFlag() ? sfp.getSfp02().compareTo(ddate) < 0 : sfp.getSfp02().compareTo(ddate) > 0))
@@ -106,7 +109,7 @@ public class SfbServiceImpl implements ISfbService {
             }
 
             //报工日期修改
-            List<ShbFile> shbArr = shbFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
+            List<ShbFile> shbArr = shbFileMapper.searchShbList(searchVo);
             if (shbArr.size() > 0) {
                 for (ShbFile shb : shbArr) {
                     if ((shb.getShb02() != null && (sfbModify.getFlag() ?  shb.getShb02().compareTo(ddate) < 0 : shb.getShb02().compareTo(ddate) > 0))
@@ -119,7 +122,7 @@ public class SfbServiceImpl implements ISfbService {
             }
 
             // FQC日期修改
-            List<QcfFile> qcfArr = qcfFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
+            List<QcfFile> qcfArr = qcfFileMapper.searchQcfList(searchVo);
             if (qcfArr.size() > 0) {
                 for (QcfFile qcf : qcfArr) {
                     if ((qcf.getQcf04() != null && (sfbModify.getFlag() ? qcf.getQcf04().compareTo(ddate) < 0 : qcf.getQcf04().compareTo(ddate) > 0))
@@ -131,7 +134,7 @@ public class SfbServiceImpl implements ISfbService {
             }
 
             //入库日期修改
-            List<SfuFile> sfuArr = sfuFileMapper.selectDateByCode(sfbFile.getSfb01(), sfbModify.getCentre());
+            List<SfuFile> sfuArr = sfuFileMapper.searchSfuList(searchVo);
             if (sfuArr.size() > 0) {
                 for (SfuFile sfu : sfuArr) {
                     if ((sfu.getSfu02() != null && (sfbModify.getFlag() ? sfu.getSfu02().compareTo(ddate) < 0 : sfu.getSfu02().compareTo(ddate) > 0))
