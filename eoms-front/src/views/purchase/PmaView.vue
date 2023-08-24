@@ -11,7 +11,7 @@
         <el-input v-model="searchVo.code" placeholder="付款方式" clearable></el-input>
       </el-form-item>
       <el-form-item style="float:right;">
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="付款方式: apmi100; 多账期: apmi101" type="success" :closable="false">
@@ -82,7 +82,7 @@ export default {
     selectedActi
   },
   methods: {
-    search(val) {
+    search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true
       this.$http.post('/api/pma/searchPmaListPageHelper', this.searchVo).then(res => {

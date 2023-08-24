@@ -113,7 +113,7 @@
 import selectedCentre from '@/components/selected/selected-centre.vue'
 
 export default {
-  name: 'produceView',
+  name: 'sfbStatus',
   data() {
     return {
       searchVo: {

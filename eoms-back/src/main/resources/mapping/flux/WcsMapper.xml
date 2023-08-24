@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.flux.mapper.WcsMapper">
+
+    <select id="taskTimePageHelper" resultType="com.keboda.eomsback.flux.pojo.TaskTime">
+        select taskid,
+        DATE_FORMAT(addTime, '%Y-%m-%d') ddate,
+        concat(carid, '号小车') carid,
+        case
+        when taskType = 'ASRS_IN' then '入库'
+        when taskType = 'ASRS_MOVE' then '移动'
+        when taskType = 'ASRS_OUT' then '出库'
+        when taskType = 'ASRS_PICK' then '拣选'
+        when taskType = 'CAR_HC' then '换层'
+        end tasktype,
+        case
+        when wmsTaskType = 'OT' then '指定下架'
+        when wmsTaskType = 'PA' then '入库上架'
+        when wmsTaskType = 'PI' then '母托盘入库'
+        when wmsTaskType = 'PK' then '出库下架'
+        when wmsTaskType = 'PO' then '母托盘出库'
+        when wmsTaskType = 'PT' then '指定上架'
+        when wmsTaskType = 'RT' then '回库'
+        when wmsTaskType = 'RZ' then '回中转库位'
+        when wmsTaskType = 'TI' then '移入'
+        when wmsTaskType = 'TO' then '移出'
+        end wmsTaskType
+        from (select taskid, addTime, udf03 carid, taskType, wmsTaskType, status
+        from ebm_conveyortask_his
+
+        union all
+
+        select taskid, addTime, udf03 carid, taskType, wmsTaskType, status
+        from ebm_conveyortask) temp
+        <where>
+            status = '99'
+            <if test="carid != null and carid.size > 0">
+                and carid in
+                <foreach item="item" collection="carid" separator="," open="(" close=")" index="">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="taskid != null and taskid != '' ">
+                and lower(taskid) like lower('%${taskid}%')
+            </if>
+            <if test="tasktype != null and tasktype.size > 0">
+                and tasktype in
+                <foreach item="item" collection="tasktype" separator="," open="(" close=")" index="">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="wmstasktype != null and wmstasktype.size > 0">
+                and wmstasktype in
+                <foreach item="item" collection="wmstasktype" separator="," open="(" close=")" index="">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="startdate != null ">
+                and DATE_FORMAT(addTime, '%Y-%m-%d %H:%i:%s') >=  DATE_FORMAT(#{startdate}, '%Y-%m-%d %H:%i:%s')
+            </if>
+            <if test="enddate != null ">
+                and DATE_FORMAT(addTime, '%Y-%m-%d %H:%i:%s') &lt;=  DATE_FORMAT(#{enddate}, '%Y-%m-%d %H:%i:%s')
+            </if>
+        </where>
+    </select>
+</mapper>

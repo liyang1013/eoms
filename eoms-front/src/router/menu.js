@@ -68,16 +68,40 @@ export const menu = [
         component: null,
         children: [
             {
-                path: 'sfbStatus',
-                name: '工单状况',
-                icon: 'el-icon-tickets',
-                component: () => import('@/views/produce/sfbStatusView')
-            },
-            {
                 path: 'sfb',
                 name: '工单',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/produce/SfbView')
+            },
+            {
+                path: 'sfp',
+                name: '发料单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/produce/SfpView')
+            },
+            {
+                path: 'shb',
+                name: '报工单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/produce/ShbView')
+            },
+            {
+                path: 'qcf',
+                name: 'FQC',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/produce/QcfView')
+            },
+            {
+                path: 'sfu',
+                name: '完工入库单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/produce/SfuView')
+            },
+            {
+                path: 'sfbStatus',
+                name: '工单状况',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/produce/SfbStatusView.vue')
             }
         ]
     },
@@ -176,6 +200,12 @@ export const menu = [
                 name: 'WMS库存控制',
                 icon: 'el-icon-unlock',
                 component: () => import('@/views/flux/InvTransferView')
+            },
+            {
+                path: 'taskTime',
+                name: '任务时间分析',
+                icon: 'el-icon-s-data',
+                component: () => import('@/views/flux/TaskTime')
             }
         ]
     }

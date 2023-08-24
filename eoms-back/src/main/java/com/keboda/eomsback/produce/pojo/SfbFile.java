@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author
  */
 @Data
-public class SfbFile implements Serializable {
+public class SfbFile extends CommonField implements Serializable {
     private String sfb01;
 
     private Integer sfb02;
@@ -231,20 +232,6 @@ public class SfbFile implements Serializable {
     private String sfb919;
 
     private String sfb89;
-    /*
-     *品名
-     */
-    private String ima02;
-    /*
-     *FQC审核日期
-     */
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date qcf15;
 
-    /**
-     * 部门名称
-     */
-    private String gem02;
     private static final long serialVersionUID = 1L;
 }

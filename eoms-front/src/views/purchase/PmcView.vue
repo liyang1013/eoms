@@ -11,7 +11,7 @@
         <el-input v-model="searchVo.pmc" placeholder="供应商编码/名称" clearable></el-input>
       </el-form-item>
       <el-form-item style="float:right;">
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="供应商分类档案: apmi106; 供应商档案: apmi600; 采购价格条件: apmi110" type="success" :closable="false">
@@ -67,7 +67,7 @@ export default {
     selectedActi
   },
   methods: {
-    search(val) {
+    search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true
       this.$http.post('/api/pmc/searchPmcListPageHelper', this.searchVo).then(res => {

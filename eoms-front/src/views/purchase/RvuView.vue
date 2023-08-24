@@ -2,7 +2,7 @@
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline">
       <el-form-item style="float: right">
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="rvu"></selectedCentre>
@@ -148,7 +148,7 @@ export default {
     selectedConf
   },
   methods: {
-    search(val) {
+    search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true;
       this.$http.post('/api/rvu/searchRvuListPageHelper', this.searchVo).then(res => {

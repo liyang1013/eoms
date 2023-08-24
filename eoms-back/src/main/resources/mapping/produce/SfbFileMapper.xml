@@ -63,7 +63,7 @@
     select SFB01 ,IMA02
     from ${centre}.SFB_FILE
     left join ${centre}.IMA_FILE on sfb05 = ima01
-    where ROWNUM  <![CDATA[<]]> 51 and lower(SFB01) like lower('%${code}%')
+    where ROWNUM  &lt; 51 and lower(SFB01) like lower('%${code}%')
   </select>
   <select id="searchSfb" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
     select sfb01 , sfb04 ,sfb08,sfb081,sfb09,sfb11,sfb12,sfb81 ,sfb13 ,sfb15, sfb25 ,sfb36 ,sfb38
@@ -71,14 +71,22 @@
     where sfb01 = #{code}
   </select>
   <select id="searchSfbListPageHelper" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
-    select sfb01,sfb81,sfb05, ima02 ,sfb04,sfb98, gem02
+    select sfb01,sfb02,sfb06,smydesc,sfb81,sfb05,sfb43,sfb44, gen02, sfb87,ima02 ,sfb04,sfb08,sfb081,sfb09,sfb12,sfb98, sfb102,gem02, #{centre} centre
     from ${centre}.sfb_file
+    left join ${centre}.smy_file on smyslip = SUBSTR(sfb01,0,4)
     left join ${centre}.ima_file on ima01 = sfb05
     left join ${centre}.gem_file on gem01 =sfb98
+    left join ${centre}.gen_file on gen01 = sfb44
     <where>
       <if test="code != null and code != ''">
         and lower(sfb01) like lower('%${code}%')
       </if>
+        <if test="startdate != null ">
+            and  sfb81 >= #{startdate}
+        </if>
+        <if test="enddate != null ">
+            and  sfb81 &lt;= #{enddate}
+        </if>
     </where>
     order by sfb81,sfb01
   </select>

@@ -3,9 +3,6 @@ server:
   port: 8080
 # DataSource
 spring:
-  jackson:
-    date-format: "yyyy-MM-dd"
-    time-zone: "GMT+8"
   datasource:
     dynamic:
       primary: tiptop
@@ -28,7 +25,7 @@ spring:
           password: fluxwcs123
         fluxRcs:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://172.17.200.154:3306/mr_rcs?characterEncoding=UTF-8&serverTimezone=UTC
+          url: jdbc:mysql://172.17.200.154:3306/mr_rcs2?characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           password: mr123
         nas:

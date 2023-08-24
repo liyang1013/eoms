@@ -17,7 +17,7 @@ const router = new VueRouter({
         redirect: {
             name: '/home'
         }
-    }
+    },
 })
 
 /**

@@ -17,7 +17,7 @@ ElementUI.TableColumn.props.showOverflowTooltip ={type:Boolean, default: true}
 Vue.use(ElementUI,{ size: 'mini'})
 Vue.use(VCharts)
 
-for (var key in globalFilter) {
+for (const key in globalFilter) {
   Vue.filter(key, globalFilter[key])
 }
 
