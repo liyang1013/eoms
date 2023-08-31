@@ -25,6 +25,8 @@ public class SfbServiceImpl implements ISfbService {
     @Resource
     private SfbFileMapper sfbFileMapper;
     @Resource
+    private SfaFileMapper sfaFileMapper;
+    @Resource
     private SfpFileMapper sfpFileMapper;
     @Resource
     private ShbFileMapper shbFileMapper;
@@ -158,5 +160,10 @@ public class SfbServiceImpl implements ISfbService {
         for (SfbFile sfb : sfbModify.getSfbArr()) {
             sfbFileMapper.closeOut(sfbModify.getCentre(),sfb.getSfb01(), DateUtils.parseDate(DateUtils.formatDate(new Date())));
         }
+    }
+
+    @Override
+    public List<SfaFile> searchSfaList(SearchVo searchVo) {
+        return sfaFileMapper.searchSfaList(searchVo);
     }
 }

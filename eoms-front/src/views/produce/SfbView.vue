@@ -39,8 +39,6 @@
       </el-table-column>
       <el-table-column prop="gem02" label="成本中心" width="120">
       </el-table-column>
-      <el-table-column prop="sfb102" label="产线" width="120">
-      </el-table-column>
       <el-table-column prop="gen02" label="申请人" width="120">
       </el-table-column>
       <el-table-column prop="ima02" label="物料" width="160">
@@ -63,6 +61,85 @@
                    @size-change="handleSizeChange" :page-sizes="searchVo.sizes"
                    :current-page.sync="searchVo.currentPage" :page-size="searchVo.size">
     </el-pagination>
+
+    <el-dialog :visible.sync="dialogTableVisible" width="1200px">
+      <el-form label-position="left"  :model="documents.master">
+        <el-row >
+          <el-col :span="7" >
+            <el-form-item label="工单号:">
+              <span style="float: left;">{{ documents.master.sfb01 }}</span>
+              <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.smydesc }}</span>
+            </el-form-item>
+            <el-form-item label="成本中心:">
+              <span style="float: left;">{{ documents.master.sfb98 }}</span>
+              <span style="margin-left: 10px; color: #8492a6; font-size: 13px"> {{ documents.master.gem02 }}</span>
+            </el-form-item>
+            <el-form-item label="产品:">
+              <span style="float: left;">{{ documents.master.sfb05 }}</span>
+              <span style="margin-left: 10px; color: #8492a6; font-size: 13px"> {{ documents.master.ima02 }}</span>
+            </el-form-item>
+            <el-form-item label="产线:">
+              {{documents.master.sfb102}}
+            </el-form-item>
+            <el-form-item label="工艺编号:">
+              {{documents.master.sfb06}}
+            </el-form-item>
+          </el-col>
+          <el-col :span="7"  :offset="1">
+            <el-form-item label="工单类型:">
+              {{documents.master.sfb02 | formatSfb02}}
+            </el-form-item>
+            <el-form-item label="开单日期:">
+              {{ documents.master.sfb81 }}
+            </el-form-item>
+            <el-form-item label="人员:">
+              <span style="float: left;">{{ documents.master.sfb44 }}</span>
+              <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.gen02 }}</span>
+            </el-form-item>
+            <el-form-item label="审核状态:">
+              {{ documents.master.sfb87 | formatStatus }}
+            </el-form-item>
+            <el-form-item label="状况码:">
+              {{ documents.master.sfb04 | formatSfb04 }}
+            </el-form-item>
+
+          </el-col>
+          <el-col :span="7" :offset="1">
+            <el-form-item label="生产数量:">
+              {{documents.master.sfb08}}
+            </el-form-item>
+            <el-form-item label="已发数量:">
+              {{documents.master.sfb081}}
+            </el-form-item>
+            <el-form-item label="完工数量:">
+              {{documents.master.sfb09}}
+            </el-form-item>
+            <el-form-item label="报废数量:">
+              {{documents.master.sfb12}}
+            </el-form-item>
+          </el-col>
+        </el-row>
+      </el-form>
+      <el-table :data="documents.slave" border max-height="250px">
+        <el-table-column prop="sfa27" label="BOM料号" width="120"></el-table-column>
+        <el-table-column prop="sfa26" label="替代码" width="120">
+          <template slot-scope="scope">
+            {{scope.row.sfa26  | formatSfa26}}
+          </template>
+        </el-table-column>
+        <el-table-column prop="sfa03" label="发料料号" width="120"></el-table-column>
+        <el-table-column prop="ima02" label="品名" width="160"></el-table-column>
+        <el-table-column prop="sfa12" label="单位" width="120"></el-table-column>
+        <el-table-column prop="sfa05" label="应发数量" width="120"></el-table-column>
+        <el-table-column prop="sfa06" label="已发数量" width="120"></el-table-column>
+        <el-table-column  label="欠料" width="120">
+          <template slot-scope="scope">
+            {{scope.row.sfa05 - scope.row.sfa06}}
+          </template>
+        </el-table-column>
+        <el-table-column prop="imd02" label="仓库" width="120"></el-table-column>
+      </el-table>
+    </el-dialog>
   </div>
 </template>
 
@@ -90,7 +167,8 @@ export default {
         master: {},
         slave: []
       },
-      tableLoading: false
+      tableLoading: false,
+      dialogTableVisible: false
     }
   },
   components: {
@@ -105,8 +183,12 @@ export default {
         this.searchVo.total = res.data.total;
       }).finally(() => this.tableLoading = false)
     },
-    searchSfaList() {
-
+    searchSfaList(row) {
+      this.dialogTableVisible = true;
+      this.documents.master = {...row};
+      this.$http.post('/api/sfb/searchSfaList', {code: row.sfb01, centre: row.centre}).then(res => {
+        this.documents.slave = res.data.result;
+      })
     },
     handleCurrentChange(val) {
       this.search(val);
@@ -141,6 +223,14 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+::v-deep .el-dialog {
+  .el-dialog__header {
+    padding: 10px !important;
+  }
 
+  .el-dialog__body {
+    padding: 20px!important;
+  }
+}
 </style>

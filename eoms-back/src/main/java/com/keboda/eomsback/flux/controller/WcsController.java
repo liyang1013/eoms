@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RestController
 @RequestMapping("/wcs")
 public class WcsController {
@@ -22,6 +24,13 @@ public class WcsController {
 
     @RequestMapping("/taskTimePageHelper")
     public BaseResult taskTimePageHelper(@RequestBody TaskTimeVo vo){
+        PageHelper.startPage(vo.getCurrentPage(),vo.getSize());
+        Page<TaskTime> page = iWcsService.taskTimePageHelper(vo);
+        return BaseResult.success(page,page.getTotal());
+    }
+
+    @RequestMapping("/taskTimeToExcel")
+    public BaseResult taskTimeToExcel(@RequestBody TaskTimeVo vo, HttpServletResponse response){
         PageHelper.startPage(vo.getCurrentPage(),vo.getSize());
         Page<TaskTime> page = iWcsService.taskTimePageHelper(vo);
         return BaseResult.success(page,page.getTotal());

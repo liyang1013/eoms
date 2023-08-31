@@ -4,7 +4,7 @@ module.exports = defineConfig({
   lintOnSave: false, //忽略lint检测
   //请求代理
   devServer: {
-    open: true, 
+    open: true,
     host: "localhost",
     port: "80",
     https: false,

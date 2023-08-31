@@ -3,7 +3,10 @@ package com.keboda.eomsback.purchase.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * PMH_FILE
@@ -17,6 +20,8 @@ public class PmhFile extends PmhFileKey implements Serializable {
 
     private String pmh05;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pmh06;
 
     private String pmh07;

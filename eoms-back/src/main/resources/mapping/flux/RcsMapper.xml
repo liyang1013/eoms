@@ -2,12 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.flux.mapper.RcsMapper">
 
-    <select id="taskTimeByTaskid" resultType="com.keboda.eomsback.flux.pojo.TaskTime">
-        select task_id taskid,concat(task_time,'s') tasktime ,DATE_FORMAT(create_time, '%Y-%m-%d %H:%i:%s')  startdate ,DATE_FORMAT(update_time, '%Y-%m-%d %H:%i:%s') enddate
-        from taskView
-        where task_id in
-        <foreach item="item" collection="taskid" separator="," open="(" close=")" index="">
-            #{item}
-        </foreach>
-    </select>
 </mapper>

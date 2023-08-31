@@ -9,15 +9,44 @@ VueRouter.prototype.push = function push(location) {
     return originalPush.call(this, location).catch((err) => err)
 }
 
+const routes = [
+    {
+        path: '/',
+        redirect: {
+            name: '403'
+        }
+    },
+    {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/report/ReportIndex')
+    },
+    {
+        path: '/eoms',
+        name: 'eoms',
+        component: () => import('@/views/Eoms')
+    },
+    {
+        path: '*',
+        name: '404',
+        component: () => import('@/views/exception/404')
+    },
+    {
+        path: '/403',
+        name: '403',
+        component: () => import('@/views/exception/403')
+    },
+    {
+        path: '/500',
+        name: '500',
+        component: () => import('@/views/exception/500')
+    }
+]
+
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
-    route: {
-        path: '/',
-        redirect: {
-            name: '/home'
-        }
-    },
+    routes
 })
 
 /**

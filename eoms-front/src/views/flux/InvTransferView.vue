@@ -1,30 +1,30 @@
 <template>
   <div>
-    <el-form :inline="true" :model="stock" class="demo-form-inline">
+    <el-form :inline="true" :model="searchVo" class="demo-form-inline">
       <el-form-item style="float: right">
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="货主:">
-        <selectedCentre v-model="stock.centre"></selectedCentre>
+        <selectedCentre v-model="searchVo.centre" key="invtransfer"></selectedCentre>
       </el-form-item>
       <el-form-item label="料件:" >
-        <selectedIma v-model="stock.ima" :centre="stock.centre"></selectedIma>
+        <selectedIma v-model="searchVo.ima" :centre="searchVo.centre" key="invtransfer"></selectedIma>
       </el-form-item>
       <el-form-item label="栈板码:" >
-        <el-input v-model="stock.code_4" clearable></el-input>
+        <el-input v-model="searchVo.pallet" clearable></el-input>
       </el-form-item>
       <el-form-item label="批次号:" >
-        <el-input v-model="stock.code_3" clearable></el-input>
+        <el-input v-model="searchVo.batch" clearable></el-input>
       </el-form-item>
       <el-form-item label="状态:">
-        <el-select v-model="stock.code_2"  placeholder="质量状态" clearable>
+        <el-select v-model="searchVo.status"  placeholder="质量状态" clearable>
           <el-option label="正常" value="ZC"></el-option>
           <el-option label="锁定" value="SD"></el-option>
         </el-select>
       </el-form-item>
     </el-form>
 
-    <el-table :data="stockList" border stripe style="width: 100%" max-height="450px" v-loading="table_loading"
+    <el-table :data="documentList" border stripe style="width: 100%" max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60">
       </el-table-column>
@@ -74,9 +74,9 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-pagination background layout="total, sizes, prev, pager, next" :total="stock.total" style=" margin-top: 10px;"
-                   @current-change="handleCurrentChange" @size-change="handleSizeChange" :page-sizes="stock.sizes"
-                   :current-page.sync="stock.currentPage" :page-size="stock.size">
+    <el-pagination background layout="total, sizes, prev, pager, next" :total="searchVo.total" style=" margin-top: 10px;"
+                   @current-change="handleCurrentChange" @size-change="handleSizeChange" :page-sizes="searchVo.sizes"
+                   :current-page.sync="searchVo.currentPage" :page-size="searchVo.size">
     </el-pagination>
   </div>
 </template>
@@ -90,40 +90,40 @@ export default {
   name: "invTransfer",
   data() {
     return {
-      stock: {
+      searchVo: {
         centre: null,
         ima: null,
-        code_2: null,
-        code_3: null,
-        code_4: null,
+        status: null,
+        batch: null,
+        pallet: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],
         size: 20,
         total: 0
       },
-      stockList: [],
-      table_loading: false
+      documentList: [],
+      tableLoading: false
     }
   },
   methods: {
-    search(val){
-      this.stock.currentPage = val;
-      this.table_loading = true;
-      this.$http.post('/api/invLotLocId/invLotLocIdListPageHelper', this.stock).then(res => {
-        this.stockList = res.data.result
-        this.stock.total = res.data.total;
-      }).finally(() => this.table_loading = false);
+    search(val = 1){
+      this.searchVo.currentPage = val;
+      this.tableLoading = true;
+      this.$http.post('/api/invLotLocId/invLotLocIdListPageHelper', this.searchVo).then(res => {
+        this.documentList = res.data.result
+        this.searchVo.total = res.data.total;
+      }).finally(() => this.tableLoading = false);
     },
     lock(row,status){
       this.$http.post('/api/invLotLocId/lock?status='+status,[row]).then(res => {
-        if(res.data.status === 200) this.search(this.stock.currentPage);
+        if(res.data.status === 200) this.search(this.searchVo.currentPage);
       })
     },
     handleCurrentChange(val) {
       this.search(val);
     },
     handleSizeChange(val) {
-      this.stock.size = val;
+      this.searchVo.size = val;
       this.search(1);
     },
   },
@@ -133,7 +133,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>

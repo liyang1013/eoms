@@ -255,14 +255,14 @@
             <if test="ima != null and ima != '' ">
                 and  b.sku like '%${ima}%'
             </if>
-            <if test="code_2 != null and code_2 != '' ">
-                and d.lotAtt08 = #{code_2}
+            <if test="status != null and status != '' ">
+                and d.lotAtt08 = #{status}
             </if>
-            <if test="code_3 != null and code_3 != '' ">
-                and a.lotnum like '%${code_3}%'
+            <if test="batch != null and batch != '' ">
+                and a.lotnum like '%${batch}%'
             </if>
-            <if test="code_4 != null and code_4 != '' ">
-                and a.traceId like '%${code_4}%'
+            <if test="pallet != null and pallet != '' ">
+                and a.traceId like '%${pallet}%'
             </if>
         </where>
         order by a.customerid,a.locationId,a.sku

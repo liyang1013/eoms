@@ -11,7 +11,7 @@ const http = axios.create({
  */
 http.interceptors.request.use(
     (request) => {
-        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4=' //flux rcs小车验证信息
+        request.headers.authorization = 'mrbase64 mrrest:YWRtaW4mYWRtaW4=' //flux rcs验证信息
         return request
     }
 )

@@ -2,4 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.produce.mapper.SfaFileMapper">
 
+    <select id="searchSfaList" resultType="com.keboda.eomsback.produce.pojo.SfaFile">
+        select sfa27,sfa26,sfa28,sfa03, ima02,sfa12,sfa16,sfa161,sfa05,sfa065,sfa06,sfa062,sfa063,sfa30,imd02
+        from ${centre}.sfa_file
+        left join ${centre}.ima_file on ima01 = sfa03
+        left join ${centre}.imd_file on imd01 = sfa30
+        where sfa01 = #{code}
+    </select>
 </mapper>

@@ -3,9 +3,10 @@
 <mapper namespace="com.keboda.eomsback.flux.mapper.WcsMapper">
 
     <select id="taskTimePageHelper" resultType="com.keboda.eomsback.flux.pojo.TaskTime">
-        select taskid,
-        DATE_FORMAT(addTime, '%Y-%m-%d') ddate,
-        concat(carid, '号小车') carid,
+
+        select a.taskid,
+        DATE_FORMAT(a.addTime, '%Y-%m-%d') ddate,
+        concat(udf03, '号小车') carid,
         case
         when taskType = 'ASRS_IN' then '入库'
         when taskType = 'ASRS_MOVE' then '移动'
@@ -24,42 +25,47 @@
         when wmsTaskType = 'RZ' then '回中转库位'
         when wmsTaskType = 'TI' then '移入'
         when wmsTaskType = 'TO' then '移出'
-        end wmsTaskType
-        from (select taskid, addTime, udf03 carid, taskType, wmsTaskType, status
-        from ebm_conveyortask_his
-
-        union all
-
-        select taskid, addTime, udf03 carid, taskType, wmsTaskType, status
-        from ebm_conveyortask) temp
+        end wmsTaskType,
+        startdate,enddate,concat(tasktime,'s') tasktime
+        from ebm_conveyortask a
+        left join (SELECT
+        min( ADDTIME ) startdate,
+        max( ADDTIME ) enddate,
+        timestampdiff( SECOND, min(ADDTIME),max(ADDTIME)) tasktime,
+        LEFT ( SUBSTR( sendMsg, LOCATE( "\"taskId\":\"", sendMsg ) + 10, 30 ),LOCATE( "\"", SUBSTR( sendMsg, LOCATE( "\"taskId\":\"", sendMsg ) + 10, 30 )) - 1) taskId
+        FROM CIM_COMMUNICATION_LOG
+        WHERE
+        LOCATE( "\"taskId\":\"", sendMsg ) != 0 and sender = 'RCS' and receiver = 'WCS'
+        GROUP BY
+        taskid ) b on a.taskId = b.taskId
         <where>
             status = '99'
             <if test="carid != null and carid.size > 0">
-                and carid in
+                and udf03 in
                 <foreach item="item" collection="carid" separator="," open="(" close=")" index="">
                     #{item}
                 </foreach>
             </if>
             <if test="taskid != null and taskid != '' ">
-                and lower(taskid) like lower('%${taskid}%')
+                and lower(a.taskid) like lower('%${taskid}%')
             </if>
             <if test="tasktype != null and tasktype.size > 0">
-                and tasktype in
+                and taskType in
                 <foreach item="item" collection="tasktype" separator="," open="(" close=")" index="">
                     #{item}
                 </foreach>
             </if>
             <if test="wmstasktype != null and wmstasktype.size > 0">
-                and wmstasktype in
+                and wmsTaskType in
                 <foreach item="item" collection="wmstasktype" separator="," open="(" close=")" index="">
                     #{item}
                 </foreach>
             </if>
             <if test="startdate != null ">
-                and DATE_FORMAT(addTime, '%Y-%m-%d %H:%i:%s') >=  DATE_FORMAT(#{startdate}, '%Y-%m-%d %H:%i:%s')
+                and DATE_FORMAT(addTime, '%Y-%m-%d %H:%i:%s') >= DATE_FORMAT(#{startdate}, '%Y-%m-%d %H:%i:%s')
             </if>
             <if test="enddate != null ">
-                and DATE_FORMAT(addTime, '%Y-%m-%d %H:%i:%s') &lt;=  DATE_FORMAT(#{enddate}, '%Y-%m-%d %H:%i:%s')
+                and DATE_FORMAT(addTime, '%Y-%m-%d %H:%i:%s') &lt;= DATE_FORMAT(#{enddate}, '%Y-%m-%d %H:%i:%s')
             </if>
         </where>
     </select>

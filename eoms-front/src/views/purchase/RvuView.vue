@@ -60,7 +60,7 @@
                    :current-page.sync="searchVo.currentPage" :page-size="searchVo.size">
     </el-pagination>
 
-    <!-- 收货单明细 -->
+    <!-- 明细 -->
     <el-dialog :visible.sync="dialogTableVisible" width="1200px">
 
       <el-form label-position="left"  :model="documents.master">

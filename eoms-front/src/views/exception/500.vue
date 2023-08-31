@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import ExceptionPage from './ExceptionPage.vue'
+import ExceptionPage from '@/views/exception/ExceptionPage'
 
   export default {
     components: {
@@ -11,7 +11,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-</style>

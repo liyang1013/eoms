@@ -1,3 +1,4 @@
+
 //数字转字符串
 function formatNumber(n) {
     const str = n.toString()
@@ -210,6 +211,19 @@ export function formatChangeType(code) {
     if (code === '1') return '入库';
     if (code === '2') return '验退';
     if (code === '3') return '仓退';
+}
+
+export function formatSfa26(code){
+    if (code === '0') return code + ':不可被取替代';
+    if (code === '1') return code + ':新料, 有旧料可取代';
+    if (code === '2') return code + ':主料, 有副料可替代';
+    if (code === '3') return code + ':新料, 已经被取代';
+    if (code === '4') return code + ':主料, 已经被替代';
+    if (code === '5') return code + ':主料, 可做SET替代';
+    if (code === '6') return code + ':主料, 已做SET替代';
+    if (code === 'U') return code + ':旧料(取代料件)';
+    if (code === 'S') return code + ':副料(替代料件)';
+    if (code === 'T') return code + ':SET替代料';
 }
 
 

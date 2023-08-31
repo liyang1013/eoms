@@ -25,20 +25,16 @@ export default {
     return {
       config: types
     }
-  },
-  methods: {
-    handleToHome() {
-      this.$router.push({name: '/'})
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .exception {
-  min-height: 500px;
+  min-height: 100vh;
   align-items: center;
   text-align: center;
+  padding-top: 100px;
   .img {
     display: inline-block;
     padding-right: 52px;

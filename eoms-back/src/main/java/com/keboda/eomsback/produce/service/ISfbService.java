@@ -2,6 +2,7 @@ package com.keboda.eomsback.produce.service;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
+import com.keboda.eomsback.produce.pojo.SfaFile;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
 import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
@@ -18,4 +19,6 @@ public interface ISfbService {
     void modifySfbDate(SfbModify sfbModify);
 
     void closeOut(SfbModify sfbModify);
+
+    List<SfaFile> searchSfaList(SearchVo searchVo);
 }

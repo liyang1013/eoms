@@ -3,7 +3,10 @@ package com.keboda.eomsback.purchase.pojo;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * PMJ_FILE
@@ -27,6 +30,8 @@ public class PmjFile extends PmjFileKey implements Serializable {
 
     private Date pmj08;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pmj09;
 
     private BigDecimal pmj06t;
@@ -43,6 +48,8 @@ public class PmjFile extends PmjFileKey implements Serializable {
 
     private String pmjicd14;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pmj091;
 
     private String taPmjud01;

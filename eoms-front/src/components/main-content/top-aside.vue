@@ -23,13 +23,11 @@
 </template>
 <script>
 import {mapState} from 'vuex'
-import avatar from '@/image/avatar.jpg'
 
 export default {
   name: 'topAside',
   data() {
     return {
-      avatar: avatar,
       tagCount: 1,
       maxTagNum: 8
     }

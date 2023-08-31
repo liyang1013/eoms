@@ -1,7 +1,9 @@
 package com.keboda.eomsback.purchase.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -19,6 +21,8 @@ public class RvuFile extends CommonField implements Serializable {
 
     private String rvu02;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rvu03;
 
     private String rvu04;

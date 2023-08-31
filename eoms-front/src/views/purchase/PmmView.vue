@@ -91,7 +91,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="7" :offset="1">
-            <el-form-item label="核价时间:">
+            <el-form-item label="采购日期:">
               {{ documents.master.pmm04 }}
             </el-form-item>
             <el-form-item label="审核状态:">

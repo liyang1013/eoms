@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * RVA_FILE
@@ -23,6 +25,8 @@ public class RvaFile extends CommonField implements Serializable {
 
     private String rva05;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rva06;
 
     private String rva07;
@@ -97,8 +101,12 @@ public class RvaFile extends CommonField implements Serializable {
 
     private Long rvaud12;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rvaud13;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rvaud14;
 
     private Date rvaud15;

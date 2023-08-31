@@ -1,6 +1,8 @@
 package com.keboda.eomsback.produce.pojo;
 
 import java.io.Serializable;
+
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
 /**
@@ -9,7 +11,7 @@ import lombok.Data;
  * @author
  */
 @Data
-public class SfaFileKey implements Serializable {
+public class SfaFileKey extends CommonField implements Serializable {
     private String sfa01;
 
     private String sfa03;

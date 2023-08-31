@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * PMK_FILE
@@ -19,6 +21,8 @@ public class PmkFile extends CommonField implements Serializable {
 
     private Integer pmk03;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pmk04;
 
     private String pmk05;
