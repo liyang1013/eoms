@@ -1,7 +1,7 @@
 <template>
   <div class="exception">
     <div class="img">
-      <img :src="config[type].img"/>
+      <img :src="config[type].img" @click="moes"/>
     </div>
     <div class="content">
       <h1>{{ config[type].title }}</h1>
@@ -24,6 +24,11 @@ export default {
   data() {
     return {
       config: types
+    }
+  },
+  methods: {
+    moes(){
+      this.$router.push('/eoms')
     }
   }
 }
