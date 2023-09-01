@@ -1,6 +1,10 @@
 <template>
   <div>
     <el-form ref="form" :model="searchVo" :inline="true" class="demo-form-inline">
+      <el-form-item style="float:right;">
+        <el-button type="primary" @click="search()" round>查询</el-button>
+        <el-button type="danger" @click="closeOut" round style="margin-left: 10px;">结案</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="sfb"></selectedCentre>
       </el-form-item>
@@ -14,10 +18,6 @@
         <el-date-picker v-model="searchVo.enddate" format="yyyy年MM月dd日" value-format="yyyy-MM-dd"
                         placeholder="选择结束日期" style="width: 160px">
         </el-date-picker>
-      </el-form-item>
-      <el-form-item style="float:right;">
-        <el-button type="primary" @click="search()" round>查询</el-button>
-        <el-button type="danger" @click="closeOut" round style="margin-left: 10px;">结案</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="工单维护: asfi301; 工单状况: asfq301; 工单逐张结案: asfp400; 工单批结案: asfp401;" type="success" :closable="false">
@@ -213,12 +213,11 @@ export default {
     //   this.$http.post('/api/sfb/modifySfbDate', this.temp).finally(() => this.modifyLoad = false)
     // },
     closeOut() {
-      // if (this.temp.sfbArr.length === 0) {
-      //   this.$message.warning("请勾选要结案的工单");
-      //   return;
-      // }
-      // this.temp.centre = this.searchVo.centre
-      // this.$http.post('/api/sfb/closeOut', this.temp)
+      if (this.selectedDocumentList.length === 0) {
+        this.$message.warning("请勾选要结案的工单");
+        return;
+      }
+      this.$http.post('/api/sfb/closeOut', this.selectedDocumentList)
     }
   }
 }

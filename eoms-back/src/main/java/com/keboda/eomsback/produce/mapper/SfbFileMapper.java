@@ -17,5 +17,5 @@ public interface SfbFileMapper {
 
     void updateDate(@Param("sfb") SfbFile sfb, @Param("centre") String centre, @Param("ddate") Date ddate,@Param("flag") Boolean flag);
 
-    void closeOut(@Param("centre") String centre, @Param("sfb01") String sfb01, @Param("ddate") Date parseDate);
+    void closeOut(@Param("centre") String centre, @Param("sfb01") String sfb01);
 }

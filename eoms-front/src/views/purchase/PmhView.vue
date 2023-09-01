@@ -1,6 +1,9 @@
 <template>
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline" >
+      <el-form-item style="float:right;">
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="pmh"></selectedCentre>
       </el-form-item>
@@ -12,9 +15,6 @@
       </el-form-item>
       <el-form-item label="供应商:">
         <el-input v-model="searchVo.pmc" placeholder="供应商编码/名称" clearable></el-input>
-      </el-form-item>
-      <el-form-item style="float:right;">
-        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="料件/供应商: apmi254; 供应商/料件: apmi258; 委外料件/供应商: apmi264; 供应商/委外料件: apmi268" type="success" :closable="false">

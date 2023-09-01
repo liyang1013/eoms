@@ -2,7 +2,7 @@
   <div>
     <el-form :inline="true" :model="ima" class="demo-form-inline">
       <el-form-item style="float: right">
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="ima.centre" key="ima"></selectedCentre>
@@ -82,7 +82,7 @@ export default {
     selectedGfe
   },
   methods: {
-    search(val) {
+    search(val = 1) {
       this.ima.currentPage = val;
       this.table_loading = true;
       this.$http.post('/api/ima/searchImaListPageHelper', this.ima).then(res => {

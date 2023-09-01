@@ -47,7 +47,6 @@
         update ${centre}.SFB_FILE
         set sfb04 = 8,
             sfb28 = 3,
-            sfb38 = (select sma53 from ${centre}.sma_file),
             sfb36 = (select max(sfp03)
                      from ${centre}.SFP_FILE
                          left join ${centre}.SFQ_FILE on sfq01  = sfp01

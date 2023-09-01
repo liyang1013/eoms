@@ -55,6 +55,9 @@ public class SfbServiceImpl implements ISfbService {
         SfbFile sfb = sfbFileMapper.searchSfb(searchVo);
         if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
         List<SfpFile> sfp = sfpFileMapper.searchSfpList(searchVo);
+
+
+
         List<ShbFile> shb = shbFileMapper.searchShbList(searchVo);
         List<QcfFile> qcf = qcfFileMapper.searchQcfList(searchVo);
         List<SfuFile> sfu = sfuFileMapper.searchSfuList(searchVo);
@@ -156,9 +159,9 @@ public class SfbServiceImpl implements ISfbService {
 
     @Override
     @Transactional
-    public void closeOut(SfbModify sfbModify) {
-        for (SfbFile sfb : sfbModify.getSfbArr()) {
-            sfbFileMapper.closeOut(sfbModify.getCentre(),sfb.getSfb01(), DateUtils.parseDate(DateUtils.formatDate(new Date())));
+    public void closeOut(List<SfbFile> sfbFiles) {
+        for (SfbFile sfb : sfbFiles) {
+            sfbFileMapper.closeOut(sfb.getCentre(),sfb.getSfb01() );
         }
     }
 

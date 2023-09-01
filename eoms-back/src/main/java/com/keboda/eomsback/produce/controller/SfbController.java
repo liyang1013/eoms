@@ -57,8 +57,8 @@ public class SfbController {
     }
 
     @RequestMapping("/closeOut")
-    public BaseResult closeOut(@RequestBody SfbModify sfbModify){
-        iSfbService.closeOut(sfbModify);
+    public BaseResult closeOut(@RequestBody List<SfbFile> sfbFiles){
+        iSfbService.closeOut(sfbFiles);
         return BaseResult.success("工单结案成功");
     }
 }

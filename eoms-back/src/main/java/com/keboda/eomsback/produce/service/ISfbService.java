@@ -18,7 +18,7 @@ public interface ISfbService {
 
     void modifySfbDate(SfbModify sfbModify);
 
-    void closeOut(SfbModify sfbModify);
+    void closeOut(List<SfbFile> sfbFiles);
 
     List<SfaFile> searchSfaList(SearchVo searchVo);
 }

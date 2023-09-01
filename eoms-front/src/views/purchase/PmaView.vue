@@ -1,6 +1,9 @@
 <template>
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline" >
+      <el-form-item style="float:right;">
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="pma"></selectedCentre>
       </el-form-item>
@@ -9,9 +12,6 @@
       </el-form-item>
       <el-form-item label="付款方式:">
         <el-input v-model="searchVo.code" placeholder="付款方式" clearable></el-input>
-      </el-form-item>
-      <el-form-item style="float:right;">
-        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
     <el-alert title="付款方式: apmi100; 多账期: apmi101" type="success" :closable="false">

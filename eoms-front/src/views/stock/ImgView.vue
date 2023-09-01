@@ -1,6 +1,10 @@
 <template>
   <div>
     <el-form :inline="true" :model="img" class="demo-form-inline">
+      <el-form-item style="float: right">
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
+        <el-button type="danger"  icon="el-icon-set-up" @click="repairImg" round>现存量修复</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="img.centre" key="img"></selectedCentre>
       </el-form-item>
@@ -9,10 +13,6 @@
       </el-form-item>
       <el-form-item label="料件:">
         <selectedIma v-model="img.ima" :centre="img.centre" key="img"></selectedIma>
-      </el-form-item>
-      <el-form-item style="float: right">
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
-        <el-button type="danger"  icon="el-icon-set-up" @click="repairImg" round>现存量修复</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="imgList" stripe border max-height="450px" v-loading="table_loading"
@@ -72,7 +72,7 @@ export default {
     selectedIma
   },
   methods: {
-    search(val) {
+    search(val = 1) {
       this.img.currentPage = val;
       this.table_loading = true;
       this.$http.post('/api/img/searchImgListPageHelper', this.img)

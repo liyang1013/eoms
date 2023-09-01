@@ -1,6 +1,10 @@
 <template>
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline">
+      <el-form-item style="float: right">
+        <el-button type="success" icon="el-icon-printer" @click="toExcel" round>导出</el-button>
+        <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
+      </el-form-item>
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="stockgap"></selectedCentre>
       </el-form-item>
@@ -9,10 +13,6 @@
       </el-form-item>
       <el-form-item label="料件:">
         <selectedIma v-model="searchVo.ima" :centre="searchVo.centre" key="stockgap"></selectedIma>
-      </el-form-item>
-      <el-form-item style="float: right">
-        <el-button type="success" icon="el-icon-printer" @click="toExcel" round>导出</el-button>
-        <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
     <el-table :data="documentList" border max-height="500px" v-loading="tableLoading"
@@ -73,7 +73,7 @@ export default {
     selectedIma
   },
   methods: {
-    search(val) {
+    search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true;
       this.$http.post('/api/tlf/searchEWStockGapPageHelper', this.searchVo)
