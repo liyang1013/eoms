@@ -16,8 +16,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class SfbServiceImpl implements ISfbService {
@@ -55,9 +57,6 @@ public class SfbServiceImpl implements ISfbService {
         SfbFile sfb = sfbFileMapper.searchSfb(searchVo);
         if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
         List<SfpFile> sfp = sfpFileMapper.searchSfpList(searchVo);
-
-
-
         List<ShbFile> shb = shbFileMapper.searchShbList(searchVo);
         List<QcfFile> qcf = qcfFileMapper.searchQcfList(searchVo);
         List<SfuFile> sfu = sfuFileMapper.searchSfuList(searchVo);
@@ -76,14 +75,15 @@ public class SfbServiceImpl implements ISfbService {
 
         Date ddate = sfbModify.getDdate();
         //是否记账，记账了修改日期是否超过关帐日期
-        SmaFile sma = smaFileMapper.select(sfbModify.getCentre());
-        if (sma.getSma53().compareTo(ddate) > 0)
-            throw new RuntimeException("修改日期成本已关帐,请重新设置关帐日期asmp620");
 
         for (SfbFile sfbFile : sfbModify.getSfbArr()) {
 
+            SmaFile sma = smaFileMapper.select(sfbFile.getCentre());
+            if (sma.getSma53().compareTo(ddate) > 0)
+                throw new RuntimeException("修改日期成本已关帐,请重新设置关帐日期asmp620");
+
             SearchVo searchVo = new SearchVo();
-            searchVo.setCentre(sfbModify.getCentre());
+            searchVo.setCentre(sfbFile.getCentre());
             searchVo.setCode(sfbFile.getSfb01());
             SfbFile sfb = sfbFileMapper.searchSfb(searchVo);
             if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
@@ -95,7 +95,7 @@ public class SfbServiceImpl implements ISfbService {
                     || (sfb.getSfb25() != null && (sfbModify.getFlag() ? sfb.getSfb25().compareTo(ddate) < 0 : sfb.getSfb25().compareTo(ddate) > 0))
                     || (sfb.getSfb36() != null && (sfbModify.getFlag() ? sfb.getSfb36().compareTo(ddate) < 0 : sfb.getSfb36().compareTo(ddate) > 0))
                     || (sfb.getSfb38() != null && (sfbModify.getFlag() ? sfb.getSfb38().compareTo(ddate) < 0 : sfb.getSfb38().compareTo(ddate) > 0))
-            ) sfbFileMapper.updateDate(sfb, sfbModify.getCentre(), ddate, sfbModify.getFlag());
+            ) sfbFileMapper.updateDate(sfb, sfbFile.getCentre(), ddate, sfbModify.getFlag());
 
             //发料日期修改
             List<SfpFile> sfpArr = sfpFileMapper.searchSfpList(searchVo);
@@ -104,11 +104,11 @@ public class SfbServiceImpl implements ISfbService {
                     if ((sfp.getSfp02() != null && (sfbModify.getFlag() ? sfp.getSfp02().compareTo(ddate) < 0 : sfp.getSfp02().compareTo(ddate) > 0))
                             || (sfp.getSfp03() != null && (sfbModify.getFlag() ?  sfp.getSfp03().compareTo(ddate) < 0 : sfp.getSfp03().compareTo(ddate) > 0))
                     ) {
-                        sfpFileMapper.updateDate(sfp, sfbModify.getCentre(), ddate, sfbModify.getFlag());
+                        sfpFileMapper.updateDate(sfp, sfbFile.getCentre(), ddate, sfbModify.getFlag());
                     }
                     //发料异动记录
                     if (sfp.getTlf06() != null && ((sfbModify.getFlag() ? sfp.getTlf06().compareTo(ddate) < 0 : sfp.getTlf06().compareTo(ddate) > 0))) {
-                        tlfFileMapper.updateDate(sfb.getSfb01(), sfp.getSfp01(), sfbModify.getCentre(), ddate);//只修改了发料单
+                        tlfFileMapper.updateDate(sfb.getSfb01(), sfp.getSfp01(), sfbFile.getCentre(), ddate);//只修改了发料单
                     }
                 }
             }
@@ -121,7 +121,7 @@ public class SfbServiceImpl implements ISfbService {
                             || (shb.getShb03() != null && (sfbModify.getFlag() ? shb.getShb03().compareTo(ddate) < 0 : shb.getShb03().compareTo(ddate) > 0))
                             || (shb.getShb32() != null && (sfbModify.getFlag() ? shb.getShb32().compareTo(ddate) < 0 : shb.getShb32().compareTo(ddate) > 0))
                     ) {
-                        shbFileMapper.updateDate(shb, sfbModify.getCentre(), ddate, sfbModify.getFlag());
+                        shbFileMapper.updateDate(shb, sfbFile.getCentre(), ddate, sfbModify.getFlag());
                     }
                 }
             }
@@ -133,7 +133,7 @@ public class SfbServiceImpl implements ISfbService {
                     if ((qcf.getQcf04() != null && (sfbModify.getFlag() ? qcf.getQcf04().compareTo(ddate) < 0 : qcf.getQcf04().compareTo(ddate) > 0))
                             || (qcf.getQcf15() != null && (sfbModify.getFlag() ? qcf.getQcf15().compareTo(ddate) < 0 : qcf.getQcf15().compareTo(ddate) > 0))
                     ) {
-                        qcfFileMapper.updateDate(qcf, sfbModify.getCentre(), ddate, sfbModify.getFlag());
+                        qcfFileMapper.updateDate(qcf, sfbFile.getCentre(), ddate, sfbModify.getFlag());
                     }
                 }
             }
@@ -145,11 +145,11 @@ public class SfbServiceImpl implements ISfbService {
                     if ((sfu.getSfu02() != null && (sfbModify.getFlag() ? sfu.getSfu02().compareTo(ddate) < 0 : sfu.getSfu02().compareTo(ddate) > 0))
                             || (sfu.getSfu14() != null && (sfbModify.getFlag() ? sfu.getSfu14().compareTo(ddate) < 0 : sfu.getSfu14().compareTo(ddate) > 0))
                     ) {
-                        sfuFileMapper.updateDate(sfu, sfbModify.getCentre(), ddate, sfbModify.getFlag());
+                        sfuFileMapper.updateDate(sfu, sfbFile.getCentre(), ddate, sfbModify.getFlag());
                     }
                     //入库异动记录
                     if (sfu.getTlf06() != null && (sfbModify.getFlag() ? sfu.getTlf06().compareTo(ddate) < 0 : sfu.getTlf06().compareTo(ddate) > 0)) {
-                        tlfFileMapper.updateDate(sfb.getSfb01(), sfu.getSfu01(), sfbModify.getCentre(), ddate);
+                        tlfFileMapper.updateDate(sfb.getSfb01(), sfu.getSfu01(), sfbFile.getCentre(), ddate);
                     }
                 }
             }

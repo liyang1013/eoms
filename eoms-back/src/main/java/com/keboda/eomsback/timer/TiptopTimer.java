@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 @Component
 public class TiptopTimer {
 
-    private final static String[] Centres =  {"WCTZ"};//{"ZJKBDJD","ZJKBDDZ","ADAS","JXKEAO","ZJZBZX","JXKSS"};
+    private final static String[] Centres =  {"WCTZ","ZJKBDJD","ZJKBDDZ","ADAS","JXKEAO","ZJZBZX","JXKSS"};
 
     @Resource
     private PmmFileMapper pmmFileMapper;

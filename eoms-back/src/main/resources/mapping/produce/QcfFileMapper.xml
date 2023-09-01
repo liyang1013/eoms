@@ -5,10 +5,10 @@
         update ${centre}.qcf_file
         <set>
             <if test="qcf.qcf04 != null and qcf.qcf04 &lt; ddate and flag">
-                sfp04 = #{ddate},
+                qcf04 = #{ddate},
             </if>
             <if test="qcf.qcf04 != null and qcf.qcf04 > ddate and !flag">
-                sfp04 = #{ddate},
+                qcf04 = #{ddate},
             </if>
             <if test="qcf.qcf15 != null and qcf.qcf15 &lt; ddate and flag">
                 qcf15 = #{ddate},

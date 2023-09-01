@@ -19,6 +19,16 @@
                         placeholder="选择结束日期" style="width: 160px">
         </el-date-picker>
       </el-form-item>
+
+      <el-form-item label="日期修正:">
+        <el-date-picker type="date" placeholder="选择日期" v-model="sfbModify.ddate" value-format="yyyy-MM-dd" style="width: 140px;"></el-date-picker>
+        &nbsp;&nbsp;
+        <el-switch v-model="sfbModify.flag" active-text="改大" inactive-text="改小"></el-switch>
+      </el-form-item>
+      <el-form-item style="float: right">
+        <el-button type="danger" @click="modifyDate()" round style="margin-left: 10px;">修改
+        </el-button>
+      </el-form-item>
     </el-form>
     <el-alert title="工单维护: asfi301; 工单状况: asfq301; 工单逐张结案: asfp400; 工单批结案: asfp401;" type="success" :closable="false">
     </el-alert>
@@ -161,6 +171,12 @@ export default {
         size: 20,
         total: 0
       },
+      sfbModify: {
+        sfbArr: [],
+        ddate: null,
+        centre: '',
+        flag: false
+      },
       documentList: [],
       selectedDocumentList: [],
       documents: {
@@ -200,18 +216,17 @@ export default {
     handleSelectionChange(rows) {
       this.selectedDocumentList = rows;
     },
-    // modifyDate() {
-    //   if (this.temp.sfbArr.length === 0) {
-    //     this.$message.warning("请勾选要修改的工单");
-    //     return
-    //   } else if (this.temp.ddate === null) {
-    //     this.$message.warning("请选择要修改的日期");
-    //     return
-    //   }
-    //   this.temp.centre = this.searchVo.centre
-    //   this.modifyLoad = true;
-    //   this.$http.post('/api/sfb/modifySfbDate', this.temp).finally(() => this.modifyLoad = false)
-    // },
+    modifyDate() {
+      if (this.selectedDocumentList.length === 0) {
+        this.$message.warning("请勾选要修改日期的工单");
+        return
+      } else if (this.sfbModify.ddate === null) {
+        this.$message.warning("请选择要修改的日期");
+        return
+      }
+      this.sfbModify.sfbArr = this.selectedDocumentList;
+      this.$http.post('/api/sfb/modifySfbDate', this.sfbModify)
+    },
     closeOut() {
       if (this.selectedDocumentList.length === 0) {
         this.$message.warning("请勾选要结案的工单");
