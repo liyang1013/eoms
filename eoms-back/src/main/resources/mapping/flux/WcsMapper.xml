@@ -69,4 +69,15 @@
             </if>
         </where>
     </select>
+
+    <update id="writerCarinfo">
+        update CM_CONVEYORMONITORING
+        set udf01 = #{floor}
+        where plcitem = #{plcitem}
+    </update>
+    <update id="readHoistinfo">
+        update CM_CONVEYORMONITORING
+        set udf01 = #{floor}, udf02 = #{taskno}
+        where plcitem = #{plcitem}
+    </update>
 </mapper>

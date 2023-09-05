@@ -109,13 +109,13 @@ export default {
     search(val = 1){
       this.searchVo.currentPage = val;
       this.tableLoading = true;
-      this.$http.post('/api/invLotLocId/invLotLocIdListPageHelper', this.searchVo).then(res => {
+      this.$http.post('/api/wms/invLotLocIdListPageHelper', this.searchVo).then(res => {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total;
       }).finally(() => this.tableLoading = false);
     },
     lock(row,status){
-      this.$http.post('/api/invLotLocId/lock?status='+status,[row]).then(res => {
+      this.$http.post('/api/wms/lock?status='+status,[row]).then(res => {
         if(res.data.status === 200) this.search(this.searchVo.currentPage);
       })
     },

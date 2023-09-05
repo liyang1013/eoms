@@ -6,9 +6,7 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.keboda.eomsback.flux.pojo.RobotsStatusFile;
-import com.keboda.eomsback.flux.service.IRobotsStatusService;
-import com.keboda.eomsback.utils.SocketCheckUtils;
-import com.keboda.eomsback.utils.WeChatPlusUtils;
+import com.keboda.eomsback.flux.service.IWmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -20,25 +18,24 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 @Component
-public class RCSTimer {
+public class WmsTimer {
 
     private static final String URL = "http://172.17.200.154:8090/rest/robots/states";
 
     private static final String authorization = "mrbase64 mrrest:YWRtaW4mYWRtaW4=";
 
-    private static final String sender = "JX2302304|JX2001001|JX1907006";
-
     @Autowired
-    private IRobotsStatusService iRobotsStatusService;
+    private IWmsService iWmsService;
 
     /**
-     * 定时写入RCS小车状态
+     * 定时获取RCS小车状态接口信息，写入FLUX WMS库
      */
-    @Scheduled(cron = "${timer.rcsRobotsTimer.corn}")
-    private void writersRobotsStatus() {
+    @Scheduled(cron = "${timer.getRobotsStatus.corn}")
+    private void getRobotsStatus() {
 
         SortedMap<Object, Object> sortedMap = new TreeMap<Object, Object>() {
             private static final long serialVersionUID = 1L;
+
             {
                 ArrayList<Integer> id = new ArrayList<>();
                 put("params", id);
@@ -50,7 +47,6 @@ public class RCSTimer {
                 .timeout(2000)
                 .body(JSONUtil.toJsonStr(sortedMap))
                 .execute();
-
 
         if (res != null && res.getStatus() == 200) {
             JSONObject jsonObject = new JSONObject(res.body());
@@ -79,50 +75,14 @@ public class RCSTimer {
                 robotsStatusFile.setOnline((Boolean) car.get("online"));
                 robotsStatusFile.setUpdatetime(new Date());
 
-                RobotsStatusFile robotsStatus = iRobotsStatusService.selectByKey(robotsStatusFile.getId());
+                RobotsStatusFile robotsStatus = iWmsService.selectByKey(robotsStatusFile.getId());
 
                 if (robotsStatus == null) {
-                    iRobotsStatusService.insertByKeySelective(robotsStatusFile);
+                    iWmsService.insertByKeySelective(robotsStatusFile);
                 } else {
-                    iRobotsStatusService.updateByKeySelective(robotsStatusFile);
+                    iWmsService.updateByKeySelective(robotsStatusFile);
                 }
             }
-        }
-    }
-
-    /**
-     * 检查RCS可用性，并发送提醒
-     */
-    @Scheduled(cron = "${timer.checkRCSStatus.corn}")
-    private void checkRCSStatus() {
-
-        boolean isReachable = SocketCheckUtils.isReachable("172.17.200.154", 8090);
-        if (!isReachable) {
-            WeChatPlusUtils.sendMessage(sender, "RCS端口 172.17.200.154:8090 无法连接");
-            return;
-        }
-
-        SortedMap<Object, Object> sortedMap = new TreeMap<Object, Object>() {
-            private static final long serialVersionUID = 1L;
-
-            {
-                ArrayList<Integer> id = new ArrayList<>();
-                put("params", id);
-            }
-        };
-        HttpResponse res = null;
-        try {
-            res = HttpRequest.post(URL)
-                    .header("authorization", authorization)
-                    .timeout(2000)
-                    .body(JSONUtil.toJsonStr(sortedMap))
-                    .execute();
-        } catch (Exception e) {
-            WeChatPlusUtils.sendMessage(sender, "RCS接口 172.17.200.154:8090/rest/robots/states 异常: " + e.getMessage());
-            return;
-        }
-        if (res.getStatus() != 200) {
-            WeChatPlusUtils.sendMessage(sender, "RCS接口 172.17.200.154:8090/rest/robots/states 异常: " + res.getStatus());
         }
     }
 }

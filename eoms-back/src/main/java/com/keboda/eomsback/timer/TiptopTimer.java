@@ -29,8 +29,11 @@ public class TiptopTimer {
     private ImmFileMapper immFileMapper;
 
 
-    @Scheduled(cron = "${timer.InvalidDocumentDeleteTimer.corn}")
-    private void InvalidDocumentDelete() {
+    /**
+     * 每月1号自动删除空白单身的单据
+     */
+    @Scheduled(cron = "${timer.invalidDocumentDelete.corn}")
+    private void invalidDocumentDelete() {
 
         for (String centre : Centres) {
             pmkFileMapper.InvalidDocumentDelete(centre);

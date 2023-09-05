@@ -7,7 +7,10 @@ import com.keboda.eomsback.flux.mapper.WcsMapper;
 import com.keboda.eomsback.flux.pojo.TaskTime;
 import com.keboda.eomsback.flux.service.IRcsService;
 import com.keboda.eomsback.flux.service.IWcsService;
+import com.keboda.eomsback.plc.pojo.Car;
+import com.keboda.eomsback.plc.pojo.Hoist;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -23,5 +26,17 @@ public class WcsServiceImpl implements IWcsService {
     @Override
     public Page<TaskTime> taskTimePageHelper(TaskTimeVo vo) {
         return wcsMapper.taskTimePageHelper(vo);
+    }
+
+    @Override
+    @Transactional
+    public void writerCarinfo(Car car) {
+        wcsMapper.writerCarinfo(car);
+    }
+
+    @Override
+    @Transactional
+    public void readHoistinfo(Hoist hoist) {
+        wcsMapper.readHoistinfo(hoist);
     }
 }

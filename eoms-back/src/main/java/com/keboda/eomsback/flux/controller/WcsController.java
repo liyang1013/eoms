@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/wcs")
 public class WcsController {
 
-
     @Autowired
     private IWcsService iWcsService;
 
