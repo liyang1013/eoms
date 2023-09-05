@@ -32,7 +32,7 @@
     </el-form>
     <el-alert title="工单维护: asfi301; 工单状况: asfq301; 工单逐张结案: asfp400; 工单批结案: asfp401;" type="success" :closable="false">
     </el-alert>
-    <el-table :data="documentList" stripe border max-height="450px" v-loading="tableLoading"
+    <el-table :data="documentList" stripe border max-height="400px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading"
               @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="60"></el-table-column>
@@ -81,8 +81,7 @@
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.smydesc }}</span>
             </el-form-item>
             <el-form-item label="成本中心:">
-              <span style="float: left;">{{ documents.master.sfb98 }}</span>
-              <span style="margin-left: 10px; color: #8492a6; font-size: 13px"> {{ documents.master.gem02 }}</span>
+              <selected-gem v-model=" documents.master.sfb98" :centre="documents.master.centre" :key="documents.master.sfb01"  @change="alterGem($event,documents.master)"></selected-gem>
             </el-form-item>
             <el-form-item label="产品:">
               <span style="float: left;">{{ documents.master.sfb05 }}</span>
@@ -127,6 +126,10 @@
             <el-form-item label="报废数量:">
               {{documents.master.sfb12}}
             </el-form-item>
+            <el-form-item label="FQC:">
+              <el-checkbox v-model="documents.master.sfb94" :checked="documents.master.sfb94 === 'Y'" true-label="Y" false-label="N" :key="documents.master.sfb01"  @change="isFQC($event,documents.master)"></el-checkbox>
+            </el-form-item>
+
           </el-col>
         </el-row>
       </el-form>
@@ -156,6 +159,7 @@
 <script>
 import selectedCentre from '@/components/selected/selected-centre'
 import {formatSfb02} from "@/filters/filters";
+import SelectedGem from "@/components/selected/selected-gem.vue";
 
 export default {
   name: 'sfb',
@@ -188,6 +192,7 @@ export default {
     }
   },
   components: {
+    SelectedGem,
     selectedCentre
   },
   methods: {
@@ -205,6 +210,12 @@ export default {
       this.$http.post('/api/sfb/searchSfaList', {code: row.sfb01, centre: row.centre}).then(res => {
         this.documents.slave = res.data.result;
       })
+    },
+    alterGem(gem01,row){
+      this.$http.post('/api/sfb/alterGem',{sfb98: gem01,sfb01: row.sfb01,centre: row.centre})
+    },
+    isFQC(fqc,row){
+      this.$http.post('/api/sfb/isFQC',row)
     },
     handleCurrentChange(val) {
       this.search(val);

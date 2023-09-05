@@ -7,7 +7,7 @@
         <span style="float: right; color: #8492a6; font-size: 13px">{{ item.ima02 }}</span>
       </template>
       <selectedCentre v-model="searchVo.centre" slot="prepend" class="centre_select" key="produce"></selectedCentre>
-      <el-button slot="append" icon="el-icon-search" @click="search" :loading="search_loading">搜索</el-button>
+      <el-button slot="append" icon="el-icon-search" @click="search" >搜索</el-button>
     </el-autocomplete>
 
     <el-timeline>
@@ -130,8 +130,7 @@ export default {
         shb: [],
         qcf: [],
         sfu: []
-      },
-      search_loading: false
+      }
     }
   },
   components: {
@@ -139,9 +138,8 @@ export default {
   },
   methods: {
     search() {
-      this.search_loading = true;
       this.$http.post('/api/sfb/searchSfbStatus',this.searchVo)
-          .then(res => this.product = res.data.status === 200 ? res.data.result : []).finally(() => this.search_loading = false)
+          .then(res => this.product = res.data.status === 200 ? res.data.result : [])
     },
     handleSelect(val) {
       this.searchVo.code = val.sfb01;

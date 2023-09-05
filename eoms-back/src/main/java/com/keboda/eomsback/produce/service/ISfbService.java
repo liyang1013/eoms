@@ -21,4 +21,8 @@ public interface ISfbService {
     void closeOut(List<SfbFile> sfbFiles);
 
     List<SfaFile> searchSfaList(SearchVo searchVo);
+
+    void alterGem(SfbFile sfbFile);
+
+    void isFQC(SfbFile sfbFile);
 }

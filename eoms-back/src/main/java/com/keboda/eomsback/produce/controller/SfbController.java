@@ -55,6 +55,17 @@ public class SfbController {
         return BaseResult.success("修改工单日期成功");
     }
 
+    @RequestMapping("/alterGem")
+    public BaseResult alterGem(@RequestBody SfbFile sfbFile){
+        iSfbService.alterGem(sfbFile);
+        return BaseResult.success("成本中心修改成功");
+    }
+
+    @RequestMapping("/isFQC")
+    public BaseResult isFQC(@RequestBody SfbFile sfbFile){
+        iSfbService.isFQC(sfbFile);
+        return BaseResult.success("FQC修改成功");
+    }
     @RequestMapping("/closeOut")
     public BaseResult closeOut(@RequestBody List<SfbFile> sfbFiles){
         iSfbService.closeOut(sfbFiles);

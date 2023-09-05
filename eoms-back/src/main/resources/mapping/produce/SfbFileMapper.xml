@@ -57,6 +57,16 @@
                      where sfq02  = #{sfb01})
         where sfb01 = #{sfb01}
     </update>
+    <update id="alterGem">
+        update ${centre}.sfb_file
+        set sfb98 = #{sfb98}
+        where sfb01 = #{sfb01}
+    </update>
+    <update id="isFQC">
+        update ${centre}.sfb_file
+        set sfb94 = #{sfb94}
+        where sfb01 = #{sfb01}
+    </update>
 
     <select id="searchSfbList" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
     select SFB01 ,IMA02
@@ -70,7 +80,7 @@
     where sfb01 = #{code}
   </select>
   <select id="searchSfbListPageHelper" resultType="com.keboda.eomsback.produce.pojo.SfbFile">
-    select sfb01,sfb02,sfb06,smydesc,sfb81,sfb05,sfb43,sfb44, gen02, sfb87,ima02 ,sfb04,sfb08,sfb081,sfb09,sfb12,sfb98, sfb102,gem02, #{centre} centre
+    select sfb01,sfb02,sfb06,smydesc,sfb81,sfb05,sfb43,sfb44, gen02, sfb87,ima02 ,sfb04,sfb08,sfb081,sfb09,sfb12,sfb98, sfb102,gem02,sfb94, #{centre} centre
     from ${centre}.sfb_file
     left join ${centre}.smy_file on smyslip = SUBSTR(sfb01,0,4)
     left join ${centre}.ima_file on ima01 = sfb05

@@ -2,24 +2,21 @@ package com.keboda.eomsback.produce.service.impl;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
+import com.keboda.eomsback.produce.mapper.*;
+import com.keboda.eomsback.produce.pojo.*;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
 import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
 import com.keboda.eomsback.produce.service.ISfbService;
-import com.keboda.eomsback.produce.mapper.*;
-import com.keboda.eomsback.produce.pojo.*;
 import com.keboda.eomsback.stock.mapper.TlfFileMapper;
 import com.keboda.eomsback.stock.service.ITlfService;
 import com.keboda.eomsback.system.mapper.SmaFileMapper;
 import com.keboda.eomsback.system.pojo.SmaFile;
-import com.keboda.eomsback.utils.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class SfbServiceImpl implements ISfbService {
@@ -168,5 +165,17 @@ public class SfbServiceImpl implements ISfbService {
     @Override
     public List<SfaFile> searchSfaList(SearchVo searchVo) {
         return sfaFileMapper.searchSfaList(searchVo);
+    }
+
+    @Override
+    @Transactional
+    public void alterGem(SfbFile sfbFile) {
+        sfbFileMapper.alterGem(sfbFile);
+    }
+
+    @Override
+    @Transactional
+    public void isFQC(SfbFile sfbFile) {
+        sfbFileMapper.isFQC(sfbFile);
     }
 }
