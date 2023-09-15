@@ -77,7 +77,7 @@
             </el-form-item>
             <el-form-item label="部门:">
               <span style="float: left;">{{ documents.master.sfp07 }}</span>
-              <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.pmc03 }}</span>
+              <span style="margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.gem02 }}</span>
             </el-form-item>
             <el-form-item label="申请人:">
               <span style="float: left;">{{ documents.master.sfp16 }}</span>
@@ -86,34 +86,23 @@
           </el-col>
           <el-col :span="7" :offset="1">
             <el-form-item label="审核状态:">
-              <selectedConf v-model="documents.master.sfpconf" :key="documents.master.sfp01"></selectedConf>
+              <selectedConf v-model="documents.master.sfpconf" :key="documents.master.sfp01" @change="alterSfpConf"></selectedConf>
             </el-form-item>
             <el-form-item label="状况码:">
-              {{ documents.master.rva32 | formatSignoff }}
+              {{ documents.master.sfp15 | formatSignoff }}
             </el-form-item>
           </el-col>
         </el-row>
       </el-form>
-      <el-table :data="documents.slave" border max-height="270px">
-        <el-table-column prop="rvb02" label="项次" width="60"></el-table-column>
-        <el-table-column prop="rvb04" label="采购订单号" width="120"></el-table-column>
-        <el-table-column prop="rvb03" label="采购项次" width="90"></el-table-column>
-        <el-table-column prop="rvb05" label="料件编号" width="120"></el-table-column>
-        <el-table-column prop="rvb051" label="料件名称" width="160"></el-table-column>
-        <el-table-column prop="ima021" label="规格" width="160"></el-table-column>
-        <el-table-column prop="imd02" label="仓库" width="120"></el-table-column>
-        <el-table-column prop="rvb07" label="数量" width="160">
-          <template slot-scope="scope">
-            <el-input-number v-model="scope.row.rvb07" controls-position="right"
-                             @change="scope.row.rvb88t = Math.round(scope.row.rvb07 * scope.row.rvb10t * 100)/100"
-                             :min="0"
-                             :precision="2" :step="1"></el-input-number>
-          </template>
-        </el-table-column>
-        <el-table-column prop="rvb30" label="入库数量" width="90"></el-table-column>
-        <el-table-column prop="rvb90" label="单位" width="90"></el-table-column>
-        <el-table-column prop="rvb10t" label="含税单价" width="120"></el-table-column>
-        <el-table-column prop="rvb88t" label="含税金额" width="120"></el-table-column>
+      <el-table :data="documents.slave" border max-height="300px">
+        <el-table-column prop="sfs02" label="项次" width="60"></el-table-column>
+        <el-table-column prop="sfs03" label="工单号" width="120"></el-table-column>
+        <el-table-column prop="sfs04" label="发料料号" width="120"></el-table-column>
+        <el-table-column prop="ima02" label="品名" width="160"></el-table-column>
+        <el-table-column prop="sfs06" label="单位" width="120"></el-table-column>
+        <el-table-column prop="sfs07" label="仓库" width="120"></el-table-column>
+        <el-table-column prop="imd02" label="仓库名称" width="120"></el-table-column>
+        <el-table-column prop="sfs05" label="发料量" width="120"></el-table-column>
       </el-table>
     </el-dialog>
   </div>
@@ -164,6 +153,13 @@ export default {
       this.documents.master = {...row};
       this.$http.post('/api/sfp/searchSfseList', {code: row.sfp01, centre: row.centre}).then(res => {
         this.documents.slave = res.data.result;
+      })
+    },
+    alterSfpConf(val) {
+      this.$http.post('/api/sfp/alterSfpConf', {
+        sfp01: this.documents.master.sfp01,
+        centre: this.documents.master.centre,
+        sfpconf: val
       })
     },
     handleCurrentChange(val) {

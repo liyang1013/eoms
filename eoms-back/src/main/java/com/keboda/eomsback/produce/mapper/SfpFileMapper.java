@@ -16,4 +16,6 @@ public interface SfpFileMapper {
     void InvalidDocumentDelete(@Param("centre")String centre);
 
     Page<SfpFile> searchSfpListPageHelper(SearchVo searchVo);
+
+    void alterSfpConf(SfpFile sfpFile);
 }

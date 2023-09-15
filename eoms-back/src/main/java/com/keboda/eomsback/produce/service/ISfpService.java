@@ -11,5 +11,7 @@ public interface ISfpService {
     Page<SfpFile> searchSfpListPageHelper(SearchVo searchVo);
 
     List<SfsFile> searchSfseList(SearchVo searchVo);
+
+    void alterSfpConf(SfpFile sfpFile);
 }
 

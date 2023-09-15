@@ -428,8 +428,25 @@
       and SFS02 = #{sfs02,jdbcType=DECIMAL}
   </update>
   <select id="searchSfseList" resultType="com.keboda.eomsback.produce.pojo.SfsFile">
-      select *
-      from ${centre}.sfs_file
-      where sfs01 = #{code}
+    select sfs02,
+           sfs03,
+           sfs04,
+           ima02,
+           sfs05,
+           sfs06,
+           sfs07,
+           imd02
+    from (select sfs02, sfs03, sfs04, sfs05, sfs06, sfs07
+          from ${centre}.sfs_file
+          where sfs01 = #{code}
+
+          union all
+
+          select sfe28, sfe01, sfe07, sfe16, sfe17, sfe08
+          from ${centre}.SFE_FILE
+          where sfe02 = #{code})
+           left join ${centre}.IMA_FILE on ima01 = sfs04
+           left join ${centre}.IMD_FILE on imd01 = SFS07
+    order by sfs02
   </select>
 </mapper>
