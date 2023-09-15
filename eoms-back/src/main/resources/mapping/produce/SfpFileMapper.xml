@@ -25,14 +25,26 @@
     </delete>
 
     <select id="searchSfpList" resultType="com.keboda.eomsback.produce.pojo.SfpFile">
-      select sfp01 , sfp02 ,  sfp03 ,nvl(sfq03,0) sfq03, tlf06,case when tlf907 = 1 then '退料' else '发料' end as tlf907
+      select sfp01 , sfp02 ,  sfp03 ,nvl(sfq03,0) sfq03, tlf06,case when sfp06 in ('1','2','3','4')  then '发料' else '退料' end as tlf907
       from ${centre}.sfp_file
       left join ${centre}.sfq_file on sfp01= sfq01
       left join ${centre}.SFS_FILE on sfp01 = sfs01
       left join ${centre}.Sfe_file on sfe02 = sfp01
       left join ${centre}.tlf_file on tlf62 = nvl(sfe01,sfs03) and tlf01 = nvl(sfe07,sfs04) and ( tlf026 = sfp01 or tlf036= sfp01 )
       where sfe01 =  #{code} or sfs03 = #{code}
-      group by sfp01,sfp02,sfp03,tlf06,tlf907,sfq03
+      group by sfp01,sfp02,sfp03,tlf06,sfp06,sfq03
       order by sfp02
+    </select>
+    <select id="searchSfpListPageHelper" resultType="com.keboda.eomsback.produce.pojo.SfpFile">
+        select sfp01,sfp02,sfp03,sfp06,sfp07,sfp15,sfp16,sfpconf,#{centre} centre,gem02,gen02,smydesc
+        from ${centre}.sfp_file
+        left join ${centre}.smy_file on smyslip = SUBSTR(sfp01,0,4)
+        left join ${centre}.gem_file on gem01 =sfp07
+        left join ${centre}.gen_file on gen01 = sfp16
+        <where>
+            <if test="code != null and code != ''">
+                and lower(sfp01) like lower('%${code}%')
+            </if>
+        </where>
     </select>
 </mapper>

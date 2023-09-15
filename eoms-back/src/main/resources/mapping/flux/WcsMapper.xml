@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.flux.mapper.WcsMapper">
 
-    <select id="taskTimePageHelper" resultType="com.keboda.eomsback.flux.pojo.TaskTime">
+    <select id="taskTimePageHelper" resultType="com.keboda.eomsback.flux.pojo.RobotsTaskTime">
 
         select a.taskid,
         DATE_FORMAT(a.addTime, '%Y-%m-%d') ddate,
@@ -75,7 +75,7 @@
         set udf01 = #{floor}
         where plcitem = #{plcitem}
     </update>
-    <update id="readHoistinfo">
+    <update id="writerHoistinfo">
         update CM_CONVEYORMONITORING
         set udf01 = #{floor}, udf02 = #{taskno}
         where plcitem = #{plcitem}

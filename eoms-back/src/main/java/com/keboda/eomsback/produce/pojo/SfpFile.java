@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,7 +14,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author
  */
 @Data
-public class SfpFile implements Serializable {
+public class SfpFile extends CommonField implements Serializable {
     private String sfp01;
     @JsonFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")

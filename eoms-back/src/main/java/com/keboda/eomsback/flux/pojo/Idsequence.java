@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class TcIdsequenceFile implements Serializable {
+public class Idsequence implements Serializable {
 
     private String itype;
 

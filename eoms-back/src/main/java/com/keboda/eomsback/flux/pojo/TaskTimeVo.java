@@ -1,4 +1,4 @@
-package com.keboda.eomsback.entity;
+package com.keboda.eomsback.flux.pojo;
 
 import lombok.Data;
 

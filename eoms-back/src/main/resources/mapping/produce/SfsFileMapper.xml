@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.produce.mapper.SfsFileMapper">
+
+  <insert id="insertSelective" keyColumn="SFS01" keyProperty="sfs01" parameterType="com.keboda.eomsback.produce.pojo.SfsFile" useGeneratedKeys="true">
+    insert into SFS_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sfs02 != null">
+        SFS02,
+      </if>
+      <if test="sfs03 != null">
+        SFS03,
+      </if>
+      <if test="sfs04 != null">
+        SFS04,
+      </if>
+      <if test="sfs05 != null">
+        SFS05,
+      </if>
+      <if test="sfs06 != null">
+        SFS06,
+      </if>
+      <if test="sfs07 != null">
+        SFS07,
+      </if>
+      <if test="sfs08 != null">
+        SFS08,
+      </if>
+      <if test="sfs09 != null">
+        SFS09,
+      </if>
+      <if test="sfs10 != null">
+        SFS10,
+      </if>
+      <if test="sfs21 != null">
+        SFS21,
+      </if>
+      <if test="sfs22 != null">
+        SFS22,
+      </if>
+      <if test="sfs23 != null">
+        SFS23,
+      </if>
+      <if test="sfs24 != null">
+        SFS24,
+      </if>
+      <if test="sfs25 != null">
+        SFS25,
+      </if>
+      <if test="sfs26 != null">
+        SFS26,
+      </if>
+      <if test="sfs27 != null">
+        SFS27,
+      </if>
+      <if test="sfs28 != null">
+        SFS28,
+      </if>
+      <if test="sfs30 != null">
+        SFS30,
+      </if>
+      <if test="sfs31 != null">
+        SFS31,
+      </if>
+      <if test="sfs32 != null">
+        SFS32,
+      </if>
+      <if test="sfs33 != null">
+        SFS33,
+      </if>
+      <if test="sfs34 != null">
+        SFS34,
+      </if>
+      <if test="sfs35 != null">
+        SFS35,
+      </if>
+      <if test="sfs930 != null">
+        SFS930,
+      </if>
+      <if test="sfsud01 != null">
+        SFSUD01,
+      </if>
+      <if test="sfsud02 != null">
+        SFSUD02,
+      </if>
+      <if test="sfsud03 != null">
+        SFSUD03,
+      </if>
+      <if test="sfsud04 != null">
+        SFSUD04,
+      </if>
+      <if test="sfsud05 != null">
+        SFSUD05,
+      </if>
+      <if test="sfsud06 != null">
+        SFSUD06,
+      </if>
+      <if test="sfsud07 != null">
+        SFSUD07,
+      </if>
+      <if test="sfsud08 != null">
+        SFSUD08,
+      </if>
+      <if test="sfsud09 != null">
+        SFSUD09,
+      </if>
+      <if test="sfsud10 != null">
+        SFSUD10,
+      </if>
+      <if test="sfsud11 != null">
+        SFSUD11,
+      </if>
+      <if test="sfsud12 != null">
+        SFSUD12,
+      </if>
+      <if test="sfsud13 != null">
+        SFSUD13,
+      </if>
+      <if test="sfsud14 != null">
+        SFSUD14,
+      </if>
+      <if test="sfsud15 != null">
+        SFSUD15,
+      </if>
+      <if test="sfs36 != null">
+        SFS36,
+      </if>
+      <if test="sfsplant != null">
+        SFSPLANT,
+      </if>
+      <if test="sfslegal != null">
+        SFSLEGAL,
+      </if>
+      <if test="sfs012 != null">
+        SFS012,
+      </if>
+      <if test="sfs013 != null">
+        SFS013,
+      </if>
+      <if test="sfs014 != null">
+        SFS014,
+      </if>
+      <if test="sfs37 != null">
+        SFS37,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sfs02 != null">
+        #{sfs02,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs03 != null">
+        #{sfs03,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs04 != null">
+        #{sfs04,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs05 != null">
+        #{sfs05,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs06 != null">
+        #{sfs06,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs07 != null">
+        #{sfs07,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs08 != null">
+        #{sfs08,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs09 != null">
+        #{sfs09,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs10 != null">
+        #{sfs10,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs21 != null">
+        #{sfs21,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs22 != null">
+        #{sfs22,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs23 != null">
+        #{sfs23,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs24 != null">
+        #{sfs24,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs25 != null">
+        #{sfs25,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs26 != null">
+        #{sfs26,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs27 != null">
+        #{sfs27,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs28 != null">
+        #{sfs28,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs30 != null">
+        #{sfs30,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs31 != null">
+        #{sfs31,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs32 != null">
+        #{sfs32,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs33 != null">
+        #{sfs33,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs34 != null">
+        #{sfs34,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs35 != null">
+        #{sfs35,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs930 != null">
+        #{sfs930,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud01 != null">
+        #{sfsud01,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud02 != null">
+        #{sfsud02,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud03 != null">
+        #{sfsud03,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud04 != null">
+        #{sfsud04,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud05 != null">
+        #{sfsud05,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud06 != null">
+        #{sfsud06,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud07 != null">
+        #{sfsud07,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud08 != null">
+        #{sfsud08,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud09 != null">
+        #{sfsud09,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud10 != null">
+        #{sfsud10,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud11 != null">
+        #{sfsud11,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud12 != null">
+        #{sfsud12,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud13 != null">
+        #{sfsud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfsud14 != null">
+        #{sfsud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfsud15 != null">
+        #{sfsud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfs36 != null">
+        #{sfs36,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsplant != null">
+        #{sfsplant,jdbcType=VARCHAR},
+      </if>
+      <if test="sfslegal != null">
+        #{sfslegal,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs012 != null">
+        #{sfs012,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs013 != null">
+        #{sfs013,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs014 != null">
+        #{sfs014,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs37 != null">
+        #{sfs37,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.produce.pojo.SfsFile">
+    update SFS_FILE
+    <set>
+      <if test="sfs03 != null">
+        SFS03 = #{sfs03,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs04 != null">
+        SFS04 = #{sfs04,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs05 != null">
+        SFS05 = #{sfs05,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs06 != null">
+        SFS06 = #{sfs06,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs07 != null">
+        SFS07 = #{sfs07,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs08 != null">
+        SFS08 = #{sfs08,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs09 != null">
+        SFS09 = #{sfs09,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs10 != null">
+        SFS10 = #{sfs10,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs21 != null">
+        SFS21 = #{sfs21,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs22 != null">
+        SFS22 = #{sfs22,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs23 != null">
+        SFS23 = #{sfs23,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs24 != null">
+        SFS24 = #{sfs24,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs25 != null">
+        SFS25 = #{sfs25,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs26 != null">
+        SFS26 = #{sfs26,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs27 != null">
+        SFS27 = #{sfs27,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs28 != null">
+        SFS28 = #{sfs28,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs30 != null">
+        SFS30 = #{sfs30,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs31 != null">
+        SFS31 = #{sfs31,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs32 != null">
+        SFS32 = #{sfs32,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs33 != null">
+        SFS33 = #{sfs33,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs34 != null">
+        SFS34 = #{sfs34,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs35 != null">
+        SFS35 = #{sfs35,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs930 != null">
+        SFS930 = #{sfs930,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud01 != null">
+        SFSUD01 = #{sfsud01,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud02 != null">
+        SFSUD02 = #{sfsud02,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud03 != null">
+        SFSUD03 = #{sfsud03,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud04 != null">
+        SFSUD04 = #{sfsud04,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud05 != null">
+        SFSUD05 = #{sfsud05,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud06 != null">
+        SFSUD06 = #{sfsud06,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsud07 != null">
+        SFSUD07 = #{sfsud07,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud08 != null">
+        SFSUD08 = #{sfsud08,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud09 != null">
+        SFSUD09 = #{sfsud09,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud10 != null">
+        SFSUD10 = #{sfsud10,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud11 != null">
+        SFSUD11 = #{sfsud11,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud12 != null">
+        SFSUD12 = #{sfsud12,jdbcType=DECIMAL},
+      </if>
+      <if test="sfsud13 != null">
+        SFSUD13 = #{sfsud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfsud14 != null">
+        SFSUD14 = #{sfsud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfsud15 != null">
+        SFSUD15 = #{sfsud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfs36 != null">
+        SFS36 = #{sfs36,jdbcType=VARCHAR},
+      </if>
+      <if test="sfsplant != null">
+        SFSPLANT = #{sfsplant,jdbcType=VARCHAR},
+      </if>
+      <if test="sfslegal != null">
+        SFSLEGAL = #{sfslegal,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs012 != null">
+        SFS012 = #{sfs012,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs013 != null">
+        SFS013 = #{sfs013,jdbcType=DECIMAL},
+      </if>
+      <if test="sfs014 != null">
+        SFS014 = #{sfs014,jdbcType=VARCHAR},
+      </if>
+      <if test="sfs37 != null">
+        SFS37 = #{sfs37,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SFS01 = #{sfs01,jdbcType=VARCHAR}
+      and SFS02 = #{sfs02,jdbcType=DECIMAL}
+  </update>
+  <select id="searchSfseList" resultType="com.keboda.eomsback.produce.pojo.SfsFile">
+      select *
+      from ${centre}.sfs_file
+      where sfs01 = #{code}
+  </select>
+</mapper>

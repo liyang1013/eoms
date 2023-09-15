@@ -105,7 +105,7 @@
         set idsequence = isnull(idsequence, 0) + 1
         where itype = #{itype}
     </update>
-    <select id="selectIdsequenceByKey" resultType="com.keboda.eomsback.flux.pojo.TcIdsequenceFile">
+    <select id="selectIdsequenceByKey" resultType="com.keboda.eomsback.flux.pojo.Idsequence">
         select *
         from TC_IDSEQUENCE_FILE
         where itype = #{itype}
@@ -834,7 +834,7 @@
 
     </update>
 
-    <insert id="insertByKeySelective">
+    <insert id="insertRobotsStatusSelective">
         insert into TC_ROBOTS_STATUS_FILE
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -937,7 +937,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByKeySelective">
+    <update id="updateRobotsStatusSelective">
         update TC_ROBOTS_STATUS_FILE
         <set>
             <if test="ip != null">
@@ -989,7 +989,7 @@
         where id = #{id}
     </update>
 
-    <select id="selectByKey" resultType="com.keboda.eomsback.flux.pojo.RobotsStatusFile">
+    <select id="selectRobotsStatusByKey" resultType="com.keboda.eomsback.flux.pojo.RobotsStatus">
         select *
         from TC_ROBOTS_STATUS_FILE
         where id = #{id}

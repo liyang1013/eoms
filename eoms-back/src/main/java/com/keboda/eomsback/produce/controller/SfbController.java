@@ -38,8 +38,8 @@ public class SfbController {
     @RequestMapping("/searchSfbListPageHelper")
     public BaseResult searchSfbListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<SfbFile> sfbFilePage = iSfbService.searchSfbListPageHelper(searchVo);
-        return BaseResult.success(sfbFilePage,sfbFilePage.getTotal());
+        Page<SfbFile> page = iSfbService.searchSfbListPageHelper(searchVo);
+        return BaseResult.success(page,page.getTotal());
 
     }
 

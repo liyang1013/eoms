@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -53,10 +54,66 @@ public class SfbServiceImpl implements ISfbService {
 
         SfbFile sfb = sfbFileMapper.searchSfb(searchVo);
         if (sfb == null) throw new RuntimeException("查询不到对应工单信息");
+
         List<SfpFile> sfp = sfpFileMapper.searchSfpList(searchVo);
+        if(sfp.size() > 0){
+            BigDecimal sfpqty = BigDecimal.ZERO;
+            for (SfpFile file : sfp) {
+                if(file.getTlf907().equals("发料")){
+                    sfpqty = sfpqty.add(file.getSfq03());
+                }else{
+                    sfpqty = sfpqty.subtract(file.getSfq03());
+                }
+            }
+            SfpFile sum = new SfpFile();
+            sum.setSfp01("合计");
+            sum.setSfq03(sfpqty);
+            sfp.add(sum);
+        }
+
         List<ShbFile> shb = shbFileMapper.searchShbList(searchVo);
+
+        if(shb.size() > 0){
+            BigDecimal shbqty = BigDecimal.ZERO;
+            for (ShbFile file : shb) {
+                shbqty = shbqty.add(file.getShb111());
+            }
+            ShbFile sum = new ShbFile();
+            sum.setShb01("合计");
+            sum.setShb111(shbqty);
+            shb.add(sum);
+        }
+
         List<QcfFile> qcf = qcfFileMapper.searchQcfList(searchVo);
+        if(qcf.size() > 0){
+            BigDecimal qty1 = BigDecimal.ZERO;
+            BigDecimal qty2 = BigDecimal.ZERO;
+            for (QcfFile file : qcf) {
+                qty1 = qty1.add(file.getQcf22());
+                qty2 = qty2.add(file.getQcf091());
+            }
+            QcfFile sum = new QcfFile();
+            sum.setQcf01("合计");
+            sum.setQcf22(qty1);
+            sum.setQcf091(qty2);
+            qcf.add(sum);
+        }
+
         List<SfuFile> sfu = sfuFileMapper.searchSfuList(searchVo);
+        if(sfu.size() > 0){
+            BigDecimal qty = BigDecimal.ZERO;
+            for (SfuFile file : sfu) {
+                if(file.getTlf907().equals("入库")){
+                    qty = qty.add(file.getSfv09());
+                }else{
+                    qty = qty.subtract(file.getSfv09());
+                }
+            }
+            SfuFile sum = new SfuFile();
+            sum.setSfu01("合计");
+            sum.setSfv09(qty);
+            sfu.add(sum);
+        }
 
         return SfbStatusVo.builder().sfb(sfb).sfp(sfp).shb(shb).qcf(qcf).sfu(sfu).build();
     }

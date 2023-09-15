@@ -26,20 +26,20 @@ public class WmsServiceImpl implements IWmsService {
     private WmsMapper wmsMapper;
 
     @Override
-    public RobotsStatusFile selectByKey(Integer id) {
-        return wmsMapper.selectByKey(id);
+    public RobotsStatus selectRobotsStatusByKey(Integer id) {
+        return wmsMapper.selectRobotsStatusByKey(id);
     }
 
     @Override
     @Transactional
-    public void insertByKeySelective(RobotsStatusFile robotsStatusFile) {
-        wmsMapper.insertByKeySelective(robotsStatusFile);
+    public void insertRobotsStatusSelective(RobotsStatus robotsStatus) {
+        wmsMapper.insertRobotsStatusSelective(robotsStatus);
     }
 
     @Override
     @Transactional
-    public void updateByKeySelective(RobotsStatusFile robotsStatusFile) {
-        wmsMapper.updateByKeySelective(robotsStatusFile);
+    public void updateRobotsStatusSelective(RobotsStatus robotsStatus) {
+        wmsMapper.updateRobotsStatusSelective(robotsStatus);
     }
 
     @Override
@@ -47,6 +47,11 @@ public class WmsServiceImpl implements IWmsService {
         return wmsMapper.invLotLocIdListPageHelper(searchVo);
     }
 
+    /**
+     * 库存锁定/解锁
+     * @param invLotLocIdList
+     * @param status
+     */
     @Override
     @Transactional
     public void lock(List<InvLotLocId> invLotLocIdList, String status) {
@@ -150,7 +155,7 @@ public class WmsServiceImpl implements IWmsService {
 
     private String getCode(String itype) {
 
-        TcIdsequenceFile seq = wmsMapper.selectIdsequenceByKey(itype);
+        Idsequence seq = wmsMapper.selectIdsequenceByKey(itype);
         Integer sequence = Integer.valueOf(seq.getIdsequence());
         sequence += 1;
         StringBuilder sb = new StringBuilder();

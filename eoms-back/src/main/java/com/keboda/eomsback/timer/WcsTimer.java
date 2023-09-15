@@ -34,7 +34,7 @@ public class WcsTimer {
                 Short floor = ReadHoistUtils.getFloor(plc.getSiemensS7Net());//楼层
                 Integer taskNo = ReadHoistUtils.getTaskNo(plc.getSiemensS7Net());//getTaskNo
                 Hoist hoist = Hoist.builder().plcitem(plc.name().replace("Hoist", "TSJ")).taskno(taskNo).floor(floor).build();
-                iWcsService.readHoistinfo(hoist);
+                iWcsService.writerHoistinfo(hoist);
             }
         }
     }

@@ -3,17 +3,17 @@ package com.keboda.eomsback.flux.service;
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.flux.pojo.InvLotLocId;
-import com.keboda.eomsback.flux.pojo.RobotsStatusFile;
+import com.keboda.eomsback.flux.pojo.RobotsStatus;
 
 import java.util.List;
 
 public interface IWmsService {
 
-    RobotsStatusFile selectByKey(Integer id);
+    RobotsStatus selectRobotsStatusByKey(Integer id);
 
-    void insertByKeySelective(RobotsStatusFile robotsStatusFile);
+    void insertRobotsStatusSelective(RobotsStatus robotsStatus);
 
-    void updateByKeySelective(RobotsStatusFile robotsStatusFile);
+    void updateRobotsStatusSelective(RobotsStatus robotsStatus);
 
     Page<InvLotLocId> invLotLocIdListPageHelper(SearchVo searchVo);
 

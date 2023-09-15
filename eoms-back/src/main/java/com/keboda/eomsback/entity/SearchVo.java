@@ -25,6 +25,7 @@ public class SearchVo {
     private String gem;
 
     private String gaz;
+
     private String gaz04;
 
     private String azf;

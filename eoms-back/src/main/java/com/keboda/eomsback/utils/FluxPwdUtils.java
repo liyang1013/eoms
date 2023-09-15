@@ -10,9 +10,9 @@ public class FluxPwdUtils {
 
     private final static String username = "JX2302304";
 
-    private final static String password = "123";
+    private final static String password = "123456789";
 
-    private final static String passwordSalt = "ST1678338626440SR121112077108036030";
+    private final static String passwordSalt = "ST1693902153464SR125120095072037007";
 
     public static String MD5Signature() throws Exception{
 
@@ -24,8 +24,8 @@ public class FluxPwdUtils {
         StringBuilder hexString = new StringBuilder();
         String stmp;
 
-        for(int n = 0; n < bytes.length; ++n) {
-            stmp = Integer.toHexString(bytes[n] & 255);
+        for (byte aByte : bytes) {
+            stmp = Integer.toHexString(aByte & 255);
             if (stmp.length() == 1) {
                 hexString.append("0").append(stmp);
             } else {

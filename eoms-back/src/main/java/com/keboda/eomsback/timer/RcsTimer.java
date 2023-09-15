@@ -3,7 +3,7 @@ package com.keboda.eomsback.timer;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.json.JSONUtil;
-import com.keboda.eomsback.utils.SocketCheckUtils;
+import com.keboda.eomsback.utils.SocketUtils;
 import com.keboda.eomsback.utils.WeChatPlusUtils;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -28,7 +28,7 @@ public class RcsTimer {
     @Scheduled(cron = "${timer.checkRcsStatus.corn}")
     private void checkRCSStatus() {
 
-        boolean isReachable = SocketCheckUtils.isReachable("172.17.200.154", 8090);
+        boolean isReachable = SocketUtils.isReachable("172.17.200.154", 8090);
         if (!isReachable) {
             WeChatPlusUtils.sendMessage(sender, "无法访问 RCS端口 172.17.200.154:8090");
             return;

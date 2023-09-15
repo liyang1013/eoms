@@ -5,7 +5,7 @@ import cn.hutool.http.HttpResponse;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.keboda.eomsback.flux.pojo.RobotsStatusFile;
+import com.keboda.eomsback.flux.pojo.RobotsStatus;
 import com.keboda.eomsback.flux.service.IWmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -57,7 +57,7 @@ public class WmsTimer {
                 JSONObject postion = new JSONObject(car.get("position"));
                 JSONObject target = new JSONObject(car.get("target"));
 
-                RobotsStatusFile robotsStatusFile = new RobotsStatusFile();
+                RobotsStatus robotsStatusFile = new RobotsStatus();
                 robotsStatusFile.setId((Integer) car.get("id"));
                 robotsStatusFile.setIp((String) car.get("ip"));
                 robotsStatusFile.setAgvtype((String) car.get("agvType"));
@@ -75,12 +75,12 @@ public class WmsTimer {
                 robotsStatusFile.setOnline((Boolean) car.get("online"));
                 robotsStatusFile.setUpdatetime(new Date());
 
-                RobotsStatusFile robotsStatus = iWmsService.selectByKey(robotsStatusFile.getId());
+                RobotsStatus robotsStatus = iWmsService.selectRobotsStatusByKey(robotsStatusFile.getId());
 
                 if (robotsStatus == null) {
-                    iWmsService.insertByKeySelective(robotsStatusFile);
+                    iWmsService.insertRobotsStatusSelective(robotsStatusFile);
                 } else {
-                    iWmsService.updateByKeySelective(robotsStatusFile);
+                    iWmsService.updateRobotsStatusSelective(robotsStatusFile);
                 }
             }
         }

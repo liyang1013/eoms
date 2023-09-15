@@ -226,5 +226,18 @@ export function formatSfa26(code){
     if (code === 'T') return code + ':SET替代料';
 }
 
+export function formatSfp06(code){
+    if (code === '1') return code + ':成套发料';
+    if (code === '2') return code + ':超领';
+    if (code === '3') return code + ':补料';
+    if (code === '4') return code + ':耗材领';
+    if (code === '6') return code + ':成套退料';
+    if (code === '7') return code + ':超领退';
+    if (code === '8') return code + ':一般退';
+    if (code === '9') return code + ':耗材退';
+    if (code === 'A') return code + ':重复性生产发料';
+    if (code === 'B') return code + ':重复性生产退料';
+    if (code === 'C') return code + ':重复性生产领料';
+}
 
 

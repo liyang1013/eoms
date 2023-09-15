@@ -21,7 +21,7 @@ public interface WmsMapper {
 
     InvLotAtt selectOtherStatus(InvLotAtt origin);
 
-    TcIdsequenceFile selectIdsequenceByKey(@Param("itype") String itype);
+    Idsequence selectIdsequenceByKey(@Param("itype") String itype);
 
     void updateSequence(@Param("itype") String itype);
 
@@ -37,9 +37,9 @@ public interface WmsMapper {
 
     void insertInvLotLocIdSelective(InvLotLocId inv);
 
-    RobotsStatusFile selectByKey(@Param("id") Integer id);
+    RobotsStatus selectRobotsStatusByKey(@Param("id") Integer id);
 
-    void insertByKeySelective(RobotsStatusFile robotsStatusFile);
+    void insertRobotsStatusSelective(RobotsStatus robotsStatus);
 
-    void updateByKeySelective(RobotsStatusFile robotsStatusFile);
+    void updateRobotsStatusSelective(RobotsStatus robotsStatus);
 }
