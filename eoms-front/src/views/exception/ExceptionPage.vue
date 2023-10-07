@@ -1,7 +1,7 @@
 <template>
   <div class="exception">
     <div class="img">
-      <img :src="config[type].img" @click="moes"/>
+      <img :src="config[type].img" />
     </div>
     <div class="content">
       <h1>{{ config[type].title }}</h1>

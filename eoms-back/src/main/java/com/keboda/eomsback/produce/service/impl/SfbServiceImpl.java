@@ -1,5 +1,7 @@
 package com.keboda.eomsback.produce.service.impl;
 
+import cn.hutool.poi.excel.ExcelReader;
+import cn.hutool.poi.excel.ExcelUtil;
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.mapper.*;
@@ -13,11 +15,14 @@ import com.keboda.eomsback.system.mapper.SmaFileMapper;
 import com.keboda.eomsback.system.pojo.SmaFile;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SfbServiceImpl implements ISfbService {
@@ -234,5 +239,23 @@ public class SfbServiceImpl implements ISfbService {
     @Transactional
     public void isFQC(SfbFile sfbFile) {
         sfbFileMapper.isFQC(sfbFile);
+    }
+
+    @Override
+    @Transactional
+    public void alterCostCenter(MultipartFile file, String centre) throws IOException {
+        ExcelReader reader = ExcelUtil.getReader(file.getInputStream());
+        List<Map<String, Object>> read = reader.readAll();
+        for (Map<String, Object> map : read) {
+
+            String sfb01 = map.get("工单编号").toString();
+            String sfb98 = map.get("成本中心").toString();
+
+            SfbFile sfb = new SfbFile();
+            sfb.setCentre(centre);
+            sfb.setSfb01(sfb01);
+            sfb.setSfb98(sfb98);
+            sfbFileMapper.alterGem(sfb);
+        }
     }
 }

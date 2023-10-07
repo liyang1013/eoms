@@ -10,7 +10,7 @@ spring:
       datasource:
         tiptop:
           driver-class-name: oracle.jdbc.OracleDriver
-          url: jdbc:oracle:thin:@172.16.200.40:1521/topprod
+          url: jdbc:oracle:thin:@172.17.199.56:1521/topprod
           username: ds
           password: ds
         fluxWms:

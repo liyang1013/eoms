@@ -19,7 +19,14 @@ const routes = [
     {
         path: '/report',
         name: 'report',
-        component: () => import('@/views/report/ReportIndex')
+        component: () => import('@/views/report/ReportIndex'),
+        children: [
+            {
+                path: 'carMap',
+                name: 'carMap',
+                component: () => import('@/views/report/CarMapView.vue')
+            }
+        ]
     },
     {
         path: '/eoms',

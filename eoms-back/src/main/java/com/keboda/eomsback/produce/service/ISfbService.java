@@ -6,7 +6,9 @@ import com.keboda.eomsback.produce.pojo.SfaFile;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import com.keboda.eomsback.produce.pojo.vo.SfbModify;
 import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface ISfbService {
@@ -25,4 +27,6 @@ public interface ISfbService {
     void alterGem(SfbFile sfbFile);
 
     void isFQC(SfbFile sfbFile);
+
+    void alterCostCenter(MultipartFile file, String centre) throws IOException;
 }

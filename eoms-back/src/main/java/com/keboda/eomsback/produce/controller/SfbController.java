@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -70,5 +72,11 @@ public class SfbController {
     public BaseResult closeOut(@RequestBody List<SfbFile> sfbFiles){
         iSfbService.closeOut(sfbFiles);
         return BaseResult.success("工单结案成功");
+    }
+
+    @RequestMapping("/alterCostCenter")
+    public BaseResult alterCostCenter(MultipartFile file, String centre) throws IOException {
+        iSfbService.alterCostCenter(file,centre);
+        return BaseResult.success("工单批量修改成本中心成功");
     }
 }

@@ -8,6 +8,9 @@
       <el-card style="background-color: rgba(255,255,255,0);float: left;border:none" shadow="never">
         <baseUpload url="/api/ima/imaPackage" title="产品包装批量维护" :centre="centre" href="/static/产品包装导入模板.xlsx"></baseUpload>
       </el-card>
+      <el-card style="background-color: rgba(255,255,255,0);float: left;border:none" shadow="never">
+        <baseUpload url="/api/sfb/alterCostCenter" title="工单成本中心批量维护" :centre="centre" href="/static/工单成本中心导入模板.xlsx"></baseUpload>
+      </el-card>
     </el-alert>
   </div>
 </template>

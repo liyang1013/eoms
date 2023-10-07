@@ -11,7 +11,7 @@
         <el-input v-model="searchVo.code" placeholder="收货单号" clearable></el-input>
       </el-form-item>
     </el-form>
-    <el-alert title="工单发料: asfi510; 工单成套发料: asfi511; 工单超领发料: asfi512; 工单欠料补料: asfi513; 工单退料: asfi520; " type="success" :closable="false">
+    <el-alert title="工单发料: asfi510; 工单成套发料: asfi511; 工单超领发料: asfi512; 工单欠料补料: asfi513; 工单退料: asfi520; 工单成套退料: asfi526; 工单超领退料: asfi527; 工单一般退料: asfi528;" type="success" :closable="false">
     </el-alert>
     <el-table :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading">

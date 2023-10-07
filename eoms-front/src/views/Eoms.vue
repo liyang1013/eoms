@@ -61,6 +61,7 @@ export default {
 
 <style scoped lang="scss">
 .main-container {
+  height: 100vh;
   background-color: rgb(240 242 245);
   .box-card {
     padding: 0;

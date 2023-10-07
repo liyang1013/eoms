@@ -5,7 +5,7 @@ module.exports = defineConfig({
   //请求代理
   devServer: {
     open: true,
-    host: "localhost",
+    // host: "localhost",
     port: "80",
     https: false,
     hot: "only", 
