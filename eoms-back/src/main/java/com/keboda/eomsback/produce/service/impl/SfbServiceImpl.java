@@ -1,5 +1,7 @@
 package com.keboda.eomsback.produce.service.impl;
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.file.FileAppender;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.github.pagehelper.Page;
@@ -19,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -44,8 +47,6 @@ public class SfbServiceImpl implements ISfbService {
     private SmaFileMapper smaFileMapper;
     @Resource
     private TlfFileMapper tlfFileMapper;
-    @Resource
-    private ITlfService iTlfService;
 
     /*
      查询工单单号,每次100条
@@ -135,6 +136,9 @@ public class SfbServiceImpl implements ISfbService {
 
         Date ddate = DateUtils.parseDate( DateUtils.formatDate(sfbModify.getDdate()));
 
+        File file = FileUtil.file("C:/PerfLogs/eoms-modifySfbDate.log");
+        FileAppender appender = new FileAppender(file, 16, true);
+
         //是否记账，记账了修改日期是否超过关帐日期
 
         for (SfbFile sfbFile : sfbModify.getSfbArr()) {
@@ -215,7 +219,9 @@ public class SfbServiceImpl implements ISfbService {
                 }
             }
 
+            appender.append(sfbFile.getCentre()+ ": " + sfbFile.getSfb01()+ "; " + "ddate: " + DateUtils.formatDateTime(new Date()) + "; modifyDate: " + DateUtils.formatDate(ddate) );
         }
+        appender.flush();
     }
 
     @Override
