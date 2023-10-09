@@ -1270,4 +1270,9 @@
             IMA908 = #{ima25}
         where ima01 = #{ima01}
     </update>
+    <update id="imaClass">
+        update ${centre}.ima_file
+        set ima131  = '9999'
+        where ima01 = #{ima01}
+    </update>
 </mapper>

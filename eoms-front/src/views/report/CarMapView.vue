@@ -1,6 +1,6 @@
 <template>
   <div class="carMap">
-    <mapCanvas1 :position="map" :floor="floor + 1"></mapCanvas1>
+    <mapCanvas :position="map" :floor="floor + 1"></mapCanvas>
   </div>
 </template>
 

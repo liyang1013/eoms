@@ -41,6 +41,12 @@ public class ImaController {
         return BaseResult.success("产品包装批量维护成功");
     }
 
+    @RequestMapping("/imaClass")
+    public BaseResult imaClass( MultipartFile file, String centre) throws IOException {
+        iImaService.imaClass(file,centre);
+        return BaseResult.success("产品分类编码批量写入成功");
+    }
+
     @PostMapping("/alterGfe")
     public BaseResult alterGfe(@RequestBody ImaFile imaFile){
         iImaService.alterGfe(imaFile);

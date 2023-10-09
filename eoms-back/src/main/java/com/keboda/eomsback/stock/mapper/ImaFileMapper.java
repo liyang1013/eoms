@@ -23,4 +23,6 @@ public interface ImaFileMapper {
     int updateByPrimaryKeySelective(ImaFile record);
 
     void alterGfe(ImaFile imaFile);
+
+    void imaClass(ImaFile imaFile);
 }

@@ -2,13 +2,16 @@
   <div>
     <selected-centre v-model="centre" style="margin-bottom: 10px"></selected-centre>
     <el-alert type="success" class="tip_alert" :closable="false">
-     <el-card style="background-color: rgba(255,255,255,0);float: left;border:none" shadow="never">
+     <el-card class="upload_card"  shadow="never">
        <baseUpload url="/api/ima/alterStockParameter" title="料件库存参数信息批量修改" :centre="centre" href="/static/料件库存信息导入模板.xlsx"></baseUpload>
      </el-card>
-      <el-card style="background-color: rgba(255,255,255,0);float: left;border:none" shadow="never">
+      <el-card class="upload_card" shadow="never">
         <baseUpload url="/api/ima/imaPackage" title="产品包装批量维护" :centre="centre" href="/static/产品包装导入模板.xlsx"></baseUpload>
       </el-card>
-      <el-card style="background-color: rgba(255,255,255,0);float: left;border:none" shadow="never">
+      <el-card class="upload_card" shadow="never">
+        <baseUpload url="/api/ima/imaClass" title="产品分类编码批量写入" :centre="centre" href="/static/产品分类编码批量写入模板.xlsx"></baseUpload>
+      </el-card>
+      <el-card class="upload_card" shadow="never">
         <baseUpload url="/api/sfb/alterCostCenter" title="工单成本中心批量维护" :centre="centre" href="/static/工单成本中心导入模板.xlsx"></baseUpload>
       </el-card>
     </el-alert>
@@ -40,6 +43,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.upload_card{
+  background-color: rgba(255,255,255,0);
+  float: left;
+  border:none;
+}
 </style>

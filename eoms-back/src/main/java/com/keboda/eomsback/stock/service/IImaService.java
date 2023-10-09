@@ -20,4 +20,6 @@ public interface IImaService {
     void imaPackage(MultipartFile file, String centre) throws IOException;
 
     void alterGfe(ImaFile imaFile);
+
+    void imaClass(MultipartFile file, String centre) throws IOException;
 }

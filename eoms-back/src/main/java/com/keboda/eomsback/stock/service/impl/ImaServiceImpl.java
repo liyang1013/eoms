@@ -184,4 +184,17 @@ public class ImaServiceImpl implements IImaService {
     public void alterGfe(ImaFile imaFile) {
         imaFileMapper.alterGfe(imaFile);
     }
+
+    @Override
+    @Transactional
+    public void imaClass(MultipartFile file, String centre) throws IOException {
+        ExcelReader reader = ExcelUtil.getReader(file.getInputStream());
+        List<Map<String, Object>> read = reader.readAll();
+        for (Map<String, Object> map : read) {
+            ImaFile imaFile = new ImaFile();
+            imaFile.setCentre(centre);
+            imaFile.setIma01(map.get("料件").toString());
+            imaFileMapper.imaClass(imaFile);
+        }
+    }
 }
