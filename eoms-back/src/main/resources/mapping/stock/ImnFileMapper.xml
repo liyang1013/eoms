@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.stock.mapper.ImnFileMapper">
+
+  <insert id="insertSelective" keyColumn="IMN01" keyProperty="imn01" parameterType="com.keboda.eomsback.stock.pojo.ImnFile" useGeneratedKeys="true">
+    insert into IMN_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imn02 != null">
+        IMN02,
+      </if>
+      <if test="imn03 != null">
+        IMN03,
+      </if>
+      <if test="imn041 != null">
+        IMN041,
+      </if>
+      <if test="imn04 != null">
+        IMN04,
+      </if>
+      <if test="imn05 != null">
+        IMN05,
+      </if>
+      <if test="imn06 != null">
+        IMN06,
+      </if>
+      <if test="imn07 != null">
+        IMN07,
+      </if>
+      <if test="imn08 != null">
+        IMN08,
+      </if>
+      <if test="imn09 != null">
+        IMN09,
+      </if>
+      <if test="imn091 != null">
+        IMN091,
+      </if>
+      <if test="imn092 != null">
+        IMN092,
+      </if>
+      <if test="imn10 != null">
+        IMN10,
+      </if>
+      <if test="imn11 != null">
+        IMN11,
+      </if>
+      <if test="imn12 != null">
+        IMN12,
+      </if>
+      <if test="imn13 != null">
+        IMN13,
+      </if>
+      <if test="imn14 != null">
+        IMN14,
+      </if>
+      <if test="imn151 != null">
+        IMN151,
+      </if>
+      <if test="imn15 != null">
+        IMN15,
+      </if>
+      <if test="imn16 != null">
+        IMN16,
+      </if>
+      <if test="imn17 != null">
+        IMN17,
+      </if>
+      <if test="imn18 != null">
+        IMN18,
+      </if>
+      <if test="imn19 != null">
+        IMN19,
+      </if>
+      <if test="imn20 != null">
+        IMN20,
+      </if>
+      <if test="imn201 != null">
+        IMN201,
+      </if>
+      <if test="imn202 != null">
+        IMN202,
+      </if>
+      <if test="imn21 != null">
+        IMN21,
+      </if>
+      <if test="imn22 != null">
+        IMN22,
+      </if>
+      <if test="imn23 != null">
+        IMN23,
+      </if>
+      <if test="imn24 != null">
+        IMN24,
+      </if>
+      <if test="imn25 != null">
+        IMN25,
+      </if>
+      <if test="imn26 != null">
+        IMN26,
+      </if>
+      <if test="imn27 != null">
+        IMN27,
+      </if>
+      <if test="imn28 != null">
+        IMN28,
+      </if>
+      <if test="imn30 != null">
+        IMN30,
+      </if>
+      <if test="imn31 != null">
+        IMN31,
+      </if>
+      <if test="imn32 != null">
+        IMN32,
+      </if>
+      <if test="imn33 != null">
+        IMN33,
+      </if>
+      <if test="imn34 != null">
+        IMN34,
+      </if>
+      <if test="imn35 != null">
+        IMN35,
+      </if>
+      <if test="imn40 != null">
+        IMN40,
+      </if>
+      <if test="imn41 != null">
+        IMN41,
+      </if>
+      <if test="imn42 != null">
+        IMN42,
+      </if>
+      <if test="imn43 != null">
+        IMN43,
+      </if>
+      <if test="imn44 != null">
+        IMN44,
+      </if>
+      <if test="imn45 != null">
+        IMN45,
+      </if>
+      <if test="imn51 != null">
+        IMN51,
+      </if>
+      <if test="imn52 != null">
+        IMN52,
+      </if>
+      <if test="imn29 != null">
+        IMN29,
+      </if>
+      <if test="imn9301 != null">
+        IMN9301,
+      </if>
+      <if test="imn9302 != null">
+        IMN9302,
+      </if>
+      <if test="imnud01 != null">
+        IMNUD01,
+      </if>
+      <if test="imnud02 != null">
+        IMNUD02,
+      </if>
+      <if test="imnud03 != null">
+        IMNUD03,
+      </if>
+      <if test="imnud04 != null">
+        IMNUD04,
+      </if>
+      <if test="imnud05 != null">
+        IMNUD05,
+      </if>
+      <if test="imnud06 != null">
+        IMNUD06,
+      </if>
+      <if test="imnud07 != null">
+        IMNUD07,
+      </if>
+      <if test="imnud08 != null">
+        IMNUD08,
+      </if>
+      <if test="imnud09 != null">
+        IMNUD09,
+      </if>
+      <if test="imnud10 != null">
+        IMNUD10,
+      </if>
+      <if test="imnud11 != null">
+        IMNUD11,
+      </if>
+      <if test="imnud12 != null">
+        IMNUD12,
+      </if>
+      <if test="imnud13 != null">
+        IMNUD13,
+      </if>
+      <if test="imnud14 != null">
+        IMNUD14,
+      </if>
+      <if test="imnud15 != null">
+        IMNUD15,
+      </if>
+      <if test="imnplant != null">
+        IMNPLANT,
+      </if>
+      <if test="imnlegal != null">
+        IMNLEGAL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imn02 != null">
+        #{imn02,jdbcType=DECIMAL},
+      </if>
+      <if test="imn03 != null">
+        #{imn03,jdbcType=VARCHAR},
+      </if>
+      <if test="imn041 != null">
+        #{imn041,jdbcType=VARCHAR},
+      </if>
+      <if test="imn04 != null">
+        #{imn04,jdbcType=VARCHAR},
+      </if>
+      <if test="imn05 != null">
+        #{imn05,jdbcType=VARCHAR},
+      </if>
+      <if test="imn06 != null">
+        #{imn06,jdbcType=VARCHAR},
+      </if>
+      <if test="imn07 != null">
+        #{imn07,jdbcType=VARCHAR},
+      </if>
+      <if test="imn08 != null">
+        #{imn08,jdbcType=VARCHAR},
+      </if>
+      <if test="imn09 != null">
+        #{imn09,jdbcType=VARCHAR},
+      </if>
+      <if test="imn091 != null">
+        #{imn091,jdbcType=DECIMAL},
+      </if>
+      <if test="imn092 != null">
+        #{imn092,jdbcType=DECIMAL},
+      </if>
+      <if test="imn10 != null">
+        #{imn10,jdbcType=DECIMAL},
+      </if>
+      <if test="imn11 != null">
+        #{imn11,jdbcType=DECIMAL},
+      </if>
+      <if test="imn12 != null">
+        #{imn12,jdbcType=VARCHAR},
+      </if>
+      <if test="imn13 != null">
+        #{imn13,jdbcType=VARCHAR},
+      </if>
+      <if test="imn14 != null">
+        #{imn14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imn151 != null">
+        #{imn151,jdbcType=VARCHAR},
+      </if>
+      <if test="imn15 != null">
+        #{imn15,jdbcType=VARCHAR},
+      </if>
+      <if test="imn16 != null">
+        #{imn16,jdbcType=VARCHAR},
+      </if>
+      <if test="imn17 != null">
+        #{imn17,jdbcType=VARCHAR},
+      </if>
+      <if test="imn18 != null">
+        #{imn18,jdbcType=VARCHAR},
+      </if>
+      <if test="imn19 != null">
+        #{imn19,jdbcType=VARCHAR},
+      </if>
+      <if test="imn20 != null">
+        #{imn20,jdbcType=VARCHAR},
+      </if>
+      <if test="imn201 != null">
+        #{imn201,jdbcType=VARCHAR},
+      </if>
+      <if test="imn202 != null">
+        #{imn202,jdbcType=VARCHAR},
+      </if>
+      <if test="imn21 != null">
+        #{imn21,jdbcType=DECIMAL},
+      </if>
+      <if test="imn22 != null">
+        #{imn22,jdbcType=DECIMAL},
+      </if>
+      <if test="imn23 != null">
+        #{imn23,jdbcType=DECIMAL},
+      </if>
+      <if test="imn24 != null">
+        #{imn24,jdbcType=VARCHAR},
+      </if>
+      <if test="imn25 != null">
+        #{imn25,jdbcType=VARCHAR},
+      </if>
+      <if test="imn26 != null">
+        #{imn26,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imn27 != null">
+        #{imn27,jdbcType=VARCHAR},
+      </if>
+      <if test="imn28 != null">
+        #{imn28,jdbcType=VARCHAR},
+      </if>
+      <if test="imn30 != null">
+        #{imn30,jdbcType=VARCHAR},
+      </if>
+      <if test="imn31 != null">
+        #{imn31,jdbcType=DECIMAL},
+      </if>
+      <if test="imn32 != null">
+        #{imn32,jdbcType=DECIMAL},
+      </if>
+      <if test="imn33 != null">
+        #{imn33,jdbcType=VARCHAR},
+      </if>
+      <if test="imn34 != null">
+        #{imn34,jdbcType=DECIMAL},
+      </if>
+      <if test="imn35 != null">
+        #{imn35,jdbcType=DECIMAL},
+      </if>
+      <if test="imn40 != null">
+        #{imn40,jdbcType=VARCHAR},
+      </if>
+      <if test="imn41 != null">
+        #{imn41,jdbcType=DECIMAL},
+      </if>
+      <if test="imn42 != null">
+        #{imn42,jdbcType=DECIMAL},
+      </if>
+      <if test="imn43 != null">
+        #{imn43,jdbcType=VARCHAR},
+      </if>
+      <if test="imn44 != null">
+        #{imn44,jdbcType=DECIMAL},
+      </if>
+      <if test="imn45 != null">
+        #{imn45,jdbcType=DECIMAL},
+      </if>
+      <if test="imn51 != null">
+        #{imn51,jdbcType=DECIMAL},
+      </if>
+      <if test="imn52 != null">
+        #{imn52,jdbcType=DECIMAL},
+      </if>
+      <if test="imn29 != null">
+        #{imn29,jdbcType=VARCHAR},
+      </if>
+      <if test="imn9301 != null">
+        #{imn9301,jdbcType=VARCHAR},
+      </if>
+      <if test="imn9302 != null">
+        #{imn9302,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud01 != null">
+        #{imnud01,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud02 != null">
+        #{imnud02,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud03 != null">
+        #{imnud03,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud04 != null">
+        #{imnud04,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud05 != null">
+        #{imnud05,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud06 != null">
+        #{imnud06,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud07 != null">
+        #{imnud07,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud08 != null">
+        #{imnud08,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud09 != null">
+        #{imnud09,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud10 != null">
+        #{imnud10,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud11 != null">
+        #{imnud11,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud12 != null">
+        #{imnud12,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud13 != null">
+        #{imnud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imnud14 != null">
+        #{imnud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imnud15 != null">
+        #{imnud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imnplant != null">
+        #{imnplant,jdbcType=VARCHAR},
+      </if>
+      <if test="imnlegal != null">
+        #{imnlegal,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.stock.pojo.ImnFile">
+    update IMN_FILE
+    <set>
+      <if test="imn03 != null">
+        IMN03 = #{imn03,jdbcType=VARCHAR},
+      </if>
+      <if test="imn041 != null">
+        IMN041 = #{imn041,jdbcType=VARCHAR},
+      </if>
+      <if test="imn04 != null">
+        IMN04 = #{imn04,jdbcType=VARCHAR},
+      </if>
+      <if test="imn05 != null">
+        IMN05 = #{imn05,jdbcType=VARCHAR},
+      </if>
+      <if test="imn06 != null">
+        IMN06 = #{imn06,jdbcType=VARCHAR},
+      </if>
+      <if test="imn07 != null">
+        IMN07 = #{imn07,jdbcType=VARCHAR},
+      </if>
+      <if test="imn08 != null">
+        IMN08 = #{imn08,jdbcType=VARCHAR},
+      </if>
+      <if test="imn09 != null">
+        IMN09 = #{imn09,jdbcType=VARCHAR},
+      </if>
+      <if test="imn091 != null">
+        IMN091 = #{imn091,jdbcType=DECIMAL},
+      </if>
+      <if test="imn092 != null">
+        IMN092 = #{imn092,jdbcType=DECIMAL},
+      </if>
+      <if test="imn10 != null">
+        IMN10 = #{imn10,jdbcType=DECIMAL},
+      </if>
+      <if test="imn11 != null">
+        IMN11 = #{imn11,jdbcType=DECIMAL},
+      </if>
+      <if test="imn12 != null">
+        IMN12 = #{imn12,jdbcType=VARCHAR},
+      </if>
+      <if test="imn13 != null">
+        IMN13 = #{imn13,jdbcType=VARCHAR},
+      </if>
+      <if test="imn14 != null">
+        IMN14 = #{imn14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imn151 != null">
+        IMN151 = #{imn151,jdbcType=VARCHAR},
+      </if>
+      <if test="imn15 != null">
+        IMN15 = #{imn15,jdbcType=VARCHAR},
+      </if>
+      <if test="imn16 != null">
+        IMN16 = #{imn16,jdbcType=VARCHAR},
+      </if>
+      <if test="imn17 != null">
+        IMN17 = #{imn17,jdbcType=VARCHAR},
+      </if>
+      <if test="imn18 != null">
+        IMN18 = #{imn18,jdbcType=VARCHAR},
+      </if>
+      <if test="imn19 != null">
+        IMN19 = #{imn19,jdbcType=VARCHAR},
+      </if>
+      <if test="imn20 != null">
+        IMN20 = #{imn20,jdbcType=VARCHAR},
+      </if>
+      <if test="imn201 != null">
+        IMN201 = #{imn201,jdbcType=VARCHAR},
+      </if>
+      <if test="imn202 != null">
+        IMN202 = #{imn202,jdbcType=VARCHAR},
+      </if>
+      <if test="imn21 != null">
+        IMN21 = #{imn21,jdbcType=DECIMAL},
+      </if>
+      <if test="imn22 != null">
+        IMN22 = #{imn22,jdbcType=DECIMAL},
+      </if>
+      <if test="imn23 != null">
+        IMN23 = #{imn23,jdbcType=DECIMAL},
+      </if>
+      <if test="imn24 != null">
+        IMN24 = #{imn24,jdbcType=VARCHAR},
+      </if>
+      <if test="imn25 != null">
+        IMN25 = #{imn25,jdbcType=VARCHAR},
+      </if>
+      <if test="imn26 != null">
+        IMN26 = #{imn26,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imn27 != null">
+        IMN27 = #{imn27,jdbcType=VARCHAR},
+      </if>
+      <if test="imn28 != null">
+        IMN28 = #{imn28,jdbcType=VARCHAR},
+      </if>
+      <if test="imn30 != null">
+        IMN30 = #{imn30,jdbcType=VARCHAR},
+      </if>
+      <if test="imn31 != null">
+        IMN31 = #{imn31,jdbcType=DECIMAL},
+      </if>
+      <if test="imn32 != null">
+        IMN32 = #{imn32,jdbcType=DECIMAL},
+      </if>
+      <if test="imn33 != null">
+        IMN33 = #{imn33,jdbcType=VARCHAR},
+      </if>
+      <if test="imn34 != null">
+        IMN34 = #{imn34,jdbcType=DECIMAL},
+      </if>
+      <if test="imn35 != null">
+        IMN35 = #{imn35,jdbcType=DECIMAL},
+      </if>
+      <if test="imn40 != null">
+        IMN40 = #{imn40,jdbcType=VARCHAR},
+      </if>
+      <if test="imn41 != null">
+        IMN41 = #{imn41,jdbcType=DECIMAL},
+      </if>
+      <if test="imn42 != null">
+        IMN42 = #{imn42,jdbcType=DECIMAL},
+      </if>
+      <if test="imn43 != null">
+        IMN43 = #{imn43,jdbcType=VARCHAR},
+      </if>
+      <if test="imn44 != null">
+        IMN44 = #{imn44,jdbcType=DECIMAL},
+      </if>
+      <if test="imn45 != null">
+        IMN45 = #{imn45,jdbcType=DECIMAL},
+      </if>
+      <if test="imn51 != null">
+        IMN51 = #{imn51,jdbcType=DECIMAL},
+      </if>
+      <if test="imn52 != null">
+        IMN52 = #{imn52,jdbcType=DECIMAL},
+      </if>
+      <if test="imn29 != null">
+        IMN29 = #{imn29,jdbcType=VARCHAR},
+      </if>
+      <if test="imn9301 != null">
+        IMN9301 = #{imn9301,jdbcType=VARCHAR},
+      </if>
+      <if test="imn9302 != null">
+        IMN9302 = #{imn9302,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud01 != null">
+        IMNUD01 = #{imnud01,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud02 != null">
+        IMNUD02 = #{imnud02,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud03 != null">
+        IMNUD03 = #{imnud03,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud04 != null">
+        IMNUD04 = #{imnud04,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud05 != null">
+        IMNUD05 = #{imnud05,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud06 != null">
+        IMNUD06 = #{imnud06,jdbcType=VARCHAR},
+      </if>
+      <if test="imnud07 != null">
+        IMNUD07 = #{imnud07,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud08 != null">
+        IMNUD08 = #{imnud08,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud09 != null">
+        IMNUD09 = #{imnud09,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud10 != null">
+        IMNUD10 = #{imnud10,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud11 != null">
+        IMNUD11 = #{imnud11,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud12 != null">
+        IMNUD12 = #{imnud12,jdbcType=DECIMAL},
+      </if>
+      <if test="imnud13 != null">
+        IMNUD13 = #{imnud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imnud14 != null">
+        IMNUD14 = #{imnud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imnud15 != null">
+        IMNUD15 = #{imnud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imnplant != null">
+        IMNPLANT = #{imnplant,jdbcType=VARCHAR},
+      </if>
+      <if test="imnlegal != null">
+        IMNLEGAL = #{imnlegal,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where IMN01 = #{imn01,jdbcType=VARCHAR}
+      and IMN02 = #{imn02,jdbcType=DECIMAL}
+  </update>
+
+</mapper>

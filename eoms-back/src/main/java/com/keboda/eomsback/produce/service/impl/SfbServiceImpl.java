@@ -13,6 +13,7 @@ import com.keboda.eomsback.stock.mapper.TlfFileMapper;
 import com.keboda.eomsback.stock.service.ITlfService;
 import com.keboda.eomsback.system.mapper.SmaFileMapper;
 import com.keboda.eomsback.system.pojo.SmaFile;
+import com.keboda.eomsback.utils.DateUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -132,7 +133,8 @@ public class SfbServiceImpl implements ISfbService {
     @Transactional
     public void modifySfbDate(SfbModify sfbModify) {
 
-        Date ddate = sfbModify.getDdate();
+        Date ddate = DateUtils.parseDate( DateUtils.formatDate(sfbModify.getDdate()));
+
         //是否记账，记账了修改日期是否超过关帐日期
 
         for (SfbFile sfbFile : sfbModify.getSfbArr()) {

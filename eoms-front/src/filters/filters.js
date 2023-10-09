@@ -121,12 +121,12 @@ export function formatImaType(type) {
  * @returns {string}
  */
 export function formatInaType(code) {
-    if (code === '1') return '库存杂项发料 aimt301';
-    if (code === '2') return 'WIP 杂项发料 aimt311';
-    if (code === '3') return '库存杂项收料 aimt302';
-    if (code === '4') return 'WIP 杂项收料 aimt312';
-    if (code === '5') return '库存杂项报废 aimt303';
-    if (code === '6') return 'WIP 杂项报废 aimt313';
+    if (code === '1') return '库存杂项发料';
+    if (code === '2') return 'WIP 杂项发料';
+    if (code === '3') return '库存杂项收料';
+    if (code === '4') return 'WIP 杂项收料';
+    if (code === '5') return '库存杂项报废';
+    if (code === '6') return 'WIP 杂项报废';
 }
 
 export function pickType(code) {

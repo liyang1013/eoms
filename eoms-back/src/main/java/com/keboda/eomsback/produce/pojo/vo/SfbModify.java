@@ -1,7 +1,9 @@
 package com.keboda.eomsback.produce.pojo.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
@@ -11,6 +13,8 @@ public class SfbModify {
 
     private String centre;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ddate;
 
     private Boolean flag;

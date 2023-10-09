@@ -11,7 +11,9 @@
         <el-input v-model="ina.code" placeholder="单号" clearable></el-input>
       </el-form-item>
     </el-form>
-    <el-table :data="inaList" border style="width: 100%" max-height="500px" v-loading="table_loading"
+    <el-alert title="库存杂项发料 aimt301; WIP 杂项发料 aimt311; 库存杂项收料 aimt302; WIP 杂项收料 aimt312; 库存杂项报废 aimt303; WIP 杂项报废 aimt313" type="success" :closable="false">
+    </el-alert>
+    <el-table :data="inaList" border style="width: 100%" max-height="450px" v-loading="table_loading"
               element-loading-spinner="el-icon-loading">
       <el-table-column type="index" label="序号" width="60"></el-table-column>
       <el-table-column  label="单据类型" width="200">
