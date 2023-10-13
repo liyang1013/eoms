@@ -16,11 +16,13 @@ import com.keboda.eomsback.stock.service.ITlfService;
 import com.keboda.eomsback.system.mapper.SmaFileMapper;
 import com.keboda.eomsback.system.pojo.SmaFile;
 import com.keboda.eomsback.utils.DateUtils;
+import com.keboda.eomsback.utils.IPUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -132,7 +134,7 @@ public class SfbServiceImpl implements ISfbService {
 
     @Override
     @Transactional
-    public void modifySfbDate(SfbModify sfbModify) {
+    public void modifySfbDate(SfbModify sfbModify, HttpServletRequest request) {
 
         Date ddate = DateUtils.parseDate( DateUtils.formatDate(sfbModify.getDdate()));
 
@@ -219,7 +221,7 @@ public class SfbServiceImpl implements ISfbService {
                 }
             }
 
-            appender.append(sfbFile.getCentre()+ ": " + sfbFile.getSfb01()+ "; " + "ddate: " + DateUtils.formatDateTime(new Date()) + "; modifyDate: " + DateUtils.formatDate(ddate) );
+            appender.append(sfbFile.getCentre()+ ": " + sfbFile.getSfb01()+ "; " + "ddate: " + DateUtils.formatDateTime(new Date()) + "; modifyDate: " + DateUtils.formatDate(ddate) +"; IP: " + IPUtils.getIpAddr(request));
         }
         appender.flush();
     }

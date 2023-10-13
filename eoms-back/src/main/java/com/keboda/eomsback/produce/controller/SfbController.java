@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
@@ -52,8 +53,8 @@ public class SfbController {
     }
 
     @RequestMapping("/modifySfbDate")
-    public BaseResult modifySfbDate(@RequestBody SfbModify sfbModify){
-        iSfbService.modifySfbDate(sfbModify);
+    public BaseResult modifySfbDate(@RequestBody SfbModify sfbModify, HttpServletRequest request){
+        iSfbService.modifySfbDate(sfbModify,request);
         return BaseResult.success("修改工单日期成功");
     }
 

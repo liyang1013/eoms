@@ -8,6 +8,7 @@ import com.keboda.eomsback.produce.pojo.vo.SfbModify;
 import com.keboda.eomsback.produce.pojo.vo.SfbStatusVo;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public interface ISfbService {
 
     Page<SfbFile> searchSfbListPageHelper(SearchVo searchVo);
 
-    void modifySfbDate(SfbModify sfbModify);
+    void modifySfbDate(SfbModify sfbModify, HttpServletRequest request);
 
     void closeOut(List<SfbFile> sfbFiles);
 
