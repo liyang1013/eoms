@@ -11,7 +11,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * PMM_FILE
- * @author 
+ *
+ * @author
  */
 @Data
 public class PmmFile extends CommonField implements Serializable {
@@ -21,7 +22,8 @@ public class PmmFile extends CommonField implements Serializable {
 
     private Integer pmm03;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pmm04;
 

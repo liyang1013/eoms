@@ -13,7 +13,8 @@ public class SfbModify {
 
     private String centre;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ddate;
 

@@ -12,6 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 /**
  * 工单表体
  * SFB_FILE
+ *
  * @author
  */
 @Data
@@ -49,12 +50,14 @@ public class SfbFile extends CommonField implements Serializable {
     private BigDecimal sfb121;
 
     private BigDecimal sfb122;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfb13;
 
     private String sfb14;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfb15;
 
@@ -79,7 +82,8 @@ public class SfbFile extends CommonField implements Serializable {
     private String sfb23;
 
     private String sfb24;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfb25;
 
@@ -106,12 +110,14 @@ public class SfbFile extends CommonField implements Serializable {
     private BigDecimal sfb34;
 
     private String sfb35;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfb36;
 
     private Date sfb37;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfb38;
 
@@ -123,7 +129,8 @@ public class SfbFile extends CommonField implements Serializable {
 
     private Integer sfb42;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfb81;
 

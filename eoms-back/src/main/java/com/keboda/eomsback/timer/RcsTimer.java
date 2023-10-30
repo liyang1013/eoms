@@ -30,7 +30,7 @@ public class RcsTimer {
         boolean front = SocketUtils.isReachable("172.17.200.154", 8081);
 
         if (!(mysql && back && front)) {
-            StringBuilder sb  = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.append("未检测到RCS（172.17.200.154）服务运行: ");
             sb.append("mysql(3306): ").append(mysql ? " 运行中" : " 未运行").append("\n");
             sb.append("back(8090): ").append(back ? " 运行中" : " 未运行").append("\n");
@@ -43,7 +43,7 @@ public class RcsTimer {
                 if (plc.name().contains("Car")) {//小车
 
                     Byte id = ReadCarUtils.getSxcId(plc.getSiemensS7Net());
-                    sb.append("Car").append(id).append(": ").append(id != -1 ? "在线": "离线").append("\n");
+                    sb.append("Car").append(id).append("(").append(plc.getSiemensS7Net().getIpAddress()).append(")").append(": ").append(id != -1 ? "在线" : "离线").append("\n");
                 }
             }
             WeChatPlusUtils.sendMessage(sender, sb.toString());

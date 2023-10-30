@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * SFU_FILE
+ *
  * @author
  */
 @Data
@@ -17,7 +18,8 @@ public class SfuFile implements Serializable {
     private String sfu01;
 
     private String sfu00;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfu02;
 
@@ -84,7 +86,8 @@ public class SfuFile implements Serializable {
     private Date sfuud14;
 
     private Date sfuud15;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfu14;
 
@@ -105,7 +108,8 @@ public class SfuFile implements Serializable {
     /**
      * 异动扣账日期
      */
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tlf06;
 

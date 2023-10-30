@@ -10,17 +10,20 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * SHB_FILE
+ *
  * @author
  */
 @Data
 public class ShbFile implements Serializable {
     private String shb01;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date shb02;
 
     private String shb021;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date shb03;
 
@@ -147,7 +150,8 @@ public class ShbFile implements Serializable {
     private String shb30;
 
     private String shb31;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date shb32;
 

@@ -11,7 +11,8 @@ import java.util.Date;
 
 /**
  * RVU_FILE
- * @author 
+ *
+ * @author
  */
 @Data
 public class RvuFile extends CommonField implements Serializable {
@@ -21,7 +22,8 @@ public class RvuFile extends CommonField implements Serializable {
 
     private String rvu02;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rvu03;
 

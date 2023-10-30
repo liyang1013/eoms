@@ -10,7 +10,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * PMH_FILE
- * @author 
+ *
+ * @author
  */
 @Data
 public class PmhFile extends PmhFileKey implements Serializable {
@@ -20,7 +21,8 @@ public class PmhFile extends PmhFileKey implements Serializable {
 
     private String pmh05;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pmh06;
 

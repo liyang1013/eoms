@@ -11,7 +11,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * RVA_FILE
- * @author 
+ *
+ * @author
  */
 @Data
 public class RvaFile extends CommonField implements Serializable {
@@ -25,7 +26,8 @@ public class RvaFile extends CommonField implements Serializable {
 
     private String rva05;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rva06;
 
@@ -101,11 +103,13 @@ public class RvaFile extends CommonField implements Serializable {
 
     private Long rvaud12;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rvaud13;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date rvaud14;
 

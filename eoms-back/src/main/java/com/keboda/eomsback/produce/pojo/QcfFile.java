@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * QCF_FILE
+ *
  * @author
  */
 @Data
@@ -23,7 +24,8 @@ public class QcfFile implements Serializable {
     private String qcf021;
 
     private String qcf03;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date qcf04;
 
@@ -60,7 +62,8 @@ public class QcfFile implements Serializable {
     private String qcf13;
 
     private String qcf14;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date qcf15;
 

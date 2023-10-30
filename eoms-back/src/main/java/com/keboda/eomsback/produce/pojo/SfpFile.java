@@ -11,15 +11,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * SFP_FILE
+ *
  * @author
  */
 @Data
 public class SfpFile extends CommonField implements Serializable {
     private String sfp01;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfp02;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sfp03;
 
@@ -102,7 +105,8 @@ public class SfpFile extends CommonField implements Serializable {
     /**
      * 异动日期
      */
-    @JsonFormat(pattern = "yyyy-MM-dd")
+
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tlf06;
 
