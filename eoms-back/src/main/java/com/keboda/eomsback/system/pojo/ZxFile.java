@@ -2,7 +2,10 @@ package com.keboda.eomsback.system.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * ZX_FILE
@@ -54,6 +57,7 @@ public class ZxFile implements Serializable {
 
     private Integer zx17;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date zx18;
 
     private String zx19;

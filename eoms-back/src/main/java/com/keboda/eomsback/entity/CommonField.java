@@ -12,6 +12,10 @@ public class CommonField {
      */
     private String centre;
 
+    private String zx02;
+
+    private String zw02;
+
     /**
      * 仓库
      */
@@ -58,6 +62,7 @@ public class CommonField {
      */
     private String pnz02;
 
+    private String gem01;
     /**
      * 部门
      */

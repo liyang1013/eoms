@@ -56,6 +56,6 @@ timer:
   getPlcInfo:
     corn: 0/5 0/1 * * * ?
   invalidDocumentDelete:
-    corn: 0 0 6 1 * ?
+    corn:  0 0 12 * * ?
   checkRcsStatus:
     corn: 0 0/5 * * * ?

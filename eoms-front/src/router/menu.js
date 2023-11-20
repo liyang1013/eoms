@@ -164,6 +164,12 @@ export const menu = [
                 component: () => import('@/views/system/ZxView')
             },
             {
+                path: 'zxw',
+                name: '权限档案',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/system/ZxwView')
+            },
+            {
                 path: 'operation',
                 name: '作业档案',
                 icon: 'el-icon-tickets',

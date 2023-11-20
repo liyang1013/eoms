@@ -59,7 +59,7 @@
     </update>
     <update id="alterGem">
         update ${centre}.sfb_file
-        set sfb98 = #{sfb98}
+        set sfb98 = #{sfb98}, sfb82  = #{sfb98}
         where sfb01 = #{sfb01}
     </update>
     <update id="isFQC">

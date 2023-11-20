@@ -13,6 +13,11 @@ spring:
           url: jdbc:oracle:thin:@172.17.199.56:1521/topprod
           username: ds
           password: ds
+        oa:
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://172.16.199.34:1433;DatabaseName=ecology9
+          username: sa
+          password: oaadmin+123
         fluxWms:
           driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
           url: jdbc:sqlserver://172.17.200.156:1433;DatabaseName=WMS_PROD

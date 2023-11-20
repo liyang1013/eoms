@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.ZxwFileMapper">
+
+  <insert id="insertSelective" keyColumn="ZXW01" keyProperty="zxw01" parameterType="com.keboda.eomsback.system.pojo.ZxwFile" useGeneratedKeys="true">
+    insert into ZXW_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zxw02 != null">
+        ZXW02,
+      </if>
+      <if test="zxw03 != null">
+        ZXW03,
+      </if>
+      <if test="zxw04 != null">
+        ZXW04,
+      </if>
+      <if test="zxw05 != null">
+        ZXW05,
+      </if>
+      <if test="zxw06 != null">
+        ZXW06,
+      </if>
+      <if test="zxw07 != null">
+        ZXW07,
+      </if>
+      <if test="zxw08 != null">
+        ZXW08,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zxw02 != null">
+        #{zxw02,jdbcType=DECIMAL},
+      </if>
+      <if test="zxw03 != null">
+        #{zxw03,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw04 != null">
+        #{zxw04,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw05 != null">
+        #{zxw05,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw06 != null">
+        #{zxw06,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw07 != null">
+        #{zxw07,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw08 != null">
+        #{zxw08,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.system.pojo.ZxwFile">
+    update ZXW_FILE
+    <set>
+      <if test="zxw03 != null">
+        ZXW03 = #{zxw03,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw04 != null">
+        ZXW04 = #{zxw04,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw05 != null">
+        ZXW05 = #{zxw05,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw06 != null">
+        ZXW06 = #{zxw06,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw07 != null">
+        ZXW07 = #{zxw07,jdbcType=VARCHAR},
+      </if>
+      <if test="zxw08 != null">
+        ZXW08 = #{zxw08,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ZXW01 = #{zxw01,jdbcType=VARCHAR}
+      and ZXW02 = #{zxw02,jdbcType=DECIMAL}
+  </update>
+  <select id="searchZxwListPageHelper" resultType="com.keboda.eomsback.system.pojo.ZxwFile">
+    select zx01 zxw01,
+    zx02 ,
+    LISTAGG(zw01, ', ') WITHIN GROUP (ORDER BY zw01) zxw04,
+    LISTAGG(zw02, ', ') WITHIN GROUP (ORDER BY zw02) zw02,
+    zxy03,
+    azp02,
+    zx03 gem01,
+    gem02
+    from ZX_FILE
+    left join  ${centre}.GEM_FILE on gem01 = zx03
+    left join ZXW_FILE on zxw01 = zx01 and zxw03 = 1
+    left join ZW_FILE on zw01 = nvl(zxw04, zx04)
+    left join (select zxy01,
+    LISTAGG(zxy03, ', ') WITHIN GROUP (ORDER BY zxy01)            zxy03,
+    LISTAGG(nvl(azp02, zx08), ', ') WITHIN GROUP (ORDER BY zxy01) azp02
+    from ZXY_FILE
+    left join AZP_FILE on azp01 = zxy03
+    left join ZX_FILE on zx01 = zxy01
+    group by zxy01) on zxy01 = zx01
+    <where>
+      and zxacti = 'Y' and zx18 is null
+      <if test="code != null and code != '' ">
+        and ( lower(zx01) like lower('%${code}%') or  lower(zx02) like lower('%${code}%') )
+      </if>
+    </where>
+    group by zx01, zx02, zxy03,azp02,zx03,gem02
+  </select>
+  <select id="authorityReview" resultType="com.keboda.eomsback.system.pojo.Authority">
+    select ZW01,ZW02,ZY02,GAZ03,zy03,
+           case when gae01 is not null then 'Y' else 'N' end                                           includeAmount,
+           case when instr(zy03, 'insert') + instr(zy03, 'add') > 0 then 'Y' else 'N' end              includeAdd,
+           case when instr(zy03, 'query') + instr(zy03, 'qry') > 0 then 'Y' else 'N' end               includeQuery,
+           case when instr(zy03, 'mod') > 0 then 'Y' else 'N' end                                      includeModify,
+           case when instr(zy03, 'del') > 0 then 'Y' else 'N' end                                      includeDelete,
+           case when instr(zy03, 'conf') > 0 then 'Y' else 'N' end                                     includeConfirm,
+           case when instr(zy03, 'undo_confirm') + instr(zy03, 'notconfirm') > 0 then 'Y' else 'N' end includeUndoConfirm,
+           case when instr(zy03, 'release') > 0 then 'Y' else 'N' end                                  includeRelease,
+           case when instr(zy03, 'unrelease') + instr(zy03, 'bom_reduction') > 0 then 'Y' else 'N' end includeUnRelease,
+           case
+               when instr(zy03, 'blank') + instr(zy03, 'viod') + instr(zy03, 'invalid_invoice') + instr(zy03, 'volid') + instr(zy03, 'feizhi') > 0 then 'Y' else 'N'
+            end includeBlank,
+           case when instr(zy03, 'post') > 0 then 'Y' else 'N' end                                     includePost,
+           case when instr(zy03, 'undo_post') > 0 then 'Y' else 'N' end                                includeUndoPost,
+           case when instr(zy03, 'excel') > 0 then 'Y' else 'N' end                                    includeInvoiceexport,
+           case
+             when instr(zy03, 'print') + instr(zy03, 'output') + instr(zy03, 'prt') > 0 then 'Y' else 'N'
+          end includePrint
+    from ZW_FILE
+           LEFT JOIN zy_file ON ZY01 = ZW01
+           LEFT join gaz_file on gaz01 = zy02 and gaz02 = 2
+           left join (select GAE01
+                      from (SELECT GAE01, GAE04
+                            FROM GAE_FILE
+                            where GAE03 = '2'
+                            UNION ALL
+                            SELECT ZAI01, ZAL05
+                            FROM ZAI_FILE
+                                   LEFT JOIN ZAL_FILE ON ZAI01 = ZAL01
+                            WHERE ZAL03 = '2')
+                      where gae04 like '%金额%' or gae04 like '%单价%' or gae04 like '%账款%' or gae04 like '%余额%'
+                         or gae04 like '%异动成本%' or gae04 like '%人工%' or gae04 like '%制费%'
+                      group by GAE01) on gae01 = zy02
+    where zw01 in (${power})
+  </select>
+  <select id="searchDepartmentByWorkCode" resultType="com.keboda.eomsback.system.pojo.Department">
+    select zx01,
+           zx02,
+           LISTAGG(zw01, ',') WITHIN GROUP (ORDER BY zw01) zw01,
+           LISTAGG(zw02, ',') WITHIN GROUP (ORDER BY zw02) zw02,
+           zxy03,
+           azp02
+    from jxkss.ZX_FILE
+           left join jxkeao.GEM_FILE on gem01 = zx03
+           left join jxkeao.ZXW_FILE on zxw01 = zx01 and zxw03 = 1
+           left join jxkeao.ZW_FILE on zw01 = nvl(zxw04, zx04)
+           left join (select zxy01,
+                             LISTAGG(zxy03, ',') WITHIN GROUP (ORDER BY zxy01)            zxy03,
+                             LISTAGG(nvl(azp02, zx08), ',') WITHIN GROUP (ORDER BY zxy01) azp02
+                      from jxkeao.ZXY_FILE
+                             left join jxkeao.AZP_FILE on azp01 = zxy03
+                             left join jxkeao.ZX_FILE on zx01 = zxy01
+                      group by zxy01) on zxy01 = zx01
+    where zxacti = 'Y' and zx18 is null and zx01 in (${workcode})
+    group by zx01, zx02, zxy03,azp02
+  </select>
+
+</mapper>

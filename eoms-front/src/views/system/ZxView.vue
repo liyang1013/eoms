@@ -39,7 +39,7 @@
 
 <script>
 
-import selectedCentre from '@/components/selected/selected-centre.vue';
+import selectedCentre from '@/components/selected/selected-centre';
 
 export default {
   name: "zx",
