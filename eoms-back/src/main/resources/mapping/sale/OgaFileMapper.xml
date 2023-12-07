@@ -1,0 +1,1465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.OgaFileMapper">
+
+  <insert id="insertSelective" keyColumn="OGA01" keyProperty="oga01" parameterType="com.keboda.eomsback.sale.pojo.OgaFile" useGeneratedKeys="true">
+    insert into OGA_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oga00 != null">
+        OGA00,
+      </if>
+      <if test="oga011 != null">
+        OGA011,
+      </if>
+      <if test="oga02 != null">
+        OGA02,
+      </if>
+      <if test="oga021 != null">
+        OGA021,
+      </if>
+      <if test="oga022 != null">
+        OGA022,
+      </if>
+      <if test="oga03 != null">
+        OGA03,
+      </if>
+      <if test="oga032 != null">
+        OGA032,
+      </if>
+      <if test="oga033 != null">
+        OGA033,
+      </if>
+      <if test="oga04 != null">
+        OGA04,
+      </if>
+      <if test="oga044 != null">
+        OGA044,
+      </if>
+      <if test="oga05 != null">
+        OGA05,
+      </if>
+      <if test="oga06 != null">
+        OGA06,
+      </if>
+      <if test="oga07 != null">
+        OGA07,
+      </if>
+      <if test="oga08 != null">
+        OGA08,
+      </if>
+      <if test="oga09 != null">
+        OGA09,
+      </if>
+      <if test="oga10 != null">
+        OGA10,
+      </if>
+      <if test="oga11 != null">
+        OGA11,
+      </if>
+      <if test="oga12 != null">
+        OGA12,
+      </if>
+      <if test="oga13 != null">
+        OGA13,
+      </if>
+      <if test="oga14 != null">
+        OGA14,
+      </if>
+      <if test="oga15 != null">
+        OGA15,
+      </if>
+      <if test="oga16 != null">
+        OGA16,
+      </if>
+      <if test="oga161 != null">
+        OGA161,
+      </if>
+      <if test="oga162 != null">
+        OGA162,
+      </if>
+      <if test="oga163 != null">
+        OGA163,
+      </if>
+      <if test="oga17 != null">
+        OGA17,
+      </if>
+      <if test="oga18 != null">
+        OGA18,
+      </if>
+      <if test="oga19 != null">
+        OGA19,
+      </if>
+      <if test="oga20 != null">
+        OGA20,
+      </if>
+      <if test="oga21 != null">
+        OGA21,
+      </if>
+      <if test="oga211 != null">
+        OGA211,
+      </if>
+      <if test="oga212 != null">
+        OGA212,
+      </if>
+      <if test="oga213 != null">
+        OGA213,
+      </if>
+      <if test="oga23 != null">
+        OGA23,
+      </if>
+      <if test="oga24 != null">
+        OGA24,
+      </if>
+      <if test="oga25 != null">
+        OGA25,
+      </if>
+      <if test="oga26 != null">
+        OGA26,
+      </if>
+      <if test="oga27 != null">
+        OGA27,
+      </if>
+      <if test="oga28 != null">
+        OGA28,
+      </if>
+      <if test="oga29 != null">
+        OGA29,
+      </if>
+      <if test="oga30 != null">
+        OGA30,
+      </if>
+      <if test="oga31 != null">
+        OGA31,
+      </if>
+      <if test="oga32 != null">
+        OGA32,
+      </if>
+      <if test="oga33 != null">
+        OGA33,
+      </if>
+      <if test="oga34 != null">
+        OGA34,
+      </if>
+      <if test="oga35 != null">
+        OGA35,
+      </if>
+      <if test="oga36 != null">
+        OGA36,
+      </if>
+      <if test="oga37 != null">
+        OGA37,
+      </if>
+      <if test="oga38 != null">
+        OGA38,
+      </if>
+      <if test="oga39 != null">
+        OGA39,
+      </if>
+      <if test="oga40 != null">
+        OGA40,
+      </if>
+      <if test="oga41 != null">
+        OGA41,
+      </if>
+      <if test="oga42 != null">
+        OGA42,
+      </if>
+      <if test="oga43 != null">
+        OGA43,
+      </if>
+      <if test="oga44 != null">
+        OGA44,
+      </if>
+      <if test="oga45 != null">
+        OGA45,
+      </if>
+      <if test="oga46 != null">
+        OGA46,
+      </if>
+      <if test="oga47 != null">
+        OGA47,
+      </if>
+      <if test="oga48 != null">
+        OGA48,
+      </if>
+      <if test="oga49 != null">
+        OGA49,
+      </if>
+      <if test="oga50 != null">
+        OGA50,
+      </if>
+      <if test="oga501 != null">
+        OGA501,
+      </if>
+      <if test="oga51 != null">
+        OGA51,
+      </if>
+      <if test="oga511 != null">
+        OGA511,
+      </if>
+      <if test="oga52 != null">
+        OGA52,
+      </if>
+      <if test="oga53 != null">
+        OGA53,
+      </if>
+      <if test="oga54 != null">
+        OGA54,
+      </if>
+      <if test="oga99 != null">
+        OGA99,
+      </if>
+      <if test="oga901 != null">
+        OGA901,
+      </if>
+      <if test="oga902 != null">
+        OGA902,
+      </if>
+      <if test="oga903 != null">
+        OGA903,
+      </if>
+      <if test="oga904 != null">
+        OGA904,
+      </if>
+      <if test="oga905 != null">
+        OGA905,
+      </if>
+      <if test="oga906 != null">
+        OGA906,
+      </if>
+      <if test="oga907 != null">
+        OGA907,
+      </if>
+      <if test="oga908 != null">
+        OGA908,
+      </if>
+      <if test="oga909 != null">
+        OGA909,
+      </if>
+      <if test="oga910 != null">
+        OGA910,
+      </if>
+      <if test="oga911 != null">
+        OGA911,
+      </if>
+      <if test="ogaconf != null">
+        OGACONF,
+      </if>
+      <if test="ogapost != null">
+        OGAPOST,
+      </if>
+      <if test="ogaprsw != null">
+        OGAPRSW,
+      </if>
+      <if test="ogauser != null">
+        OGAUSER,
+      </if>
+      <if test="ogagrup != null">
+        OGAGRUP,
+      </if>
+      <if test="ogamodu != null">
+        OGAMODU,
+      </if>
+      <if test="ogadate != null">
+        OGADATE,
+      </if>
+      <if test="oga55 != null">
+        OGA55,
+      </if>
+      <if test="ogamksg != null">
+        OGAMKSG,
+      </if>
+      <if test="oga65 != null">
+        OGA65,
+      </if>
+      <if test="oga66 != null">
+        OGA66,
+      </if>
+      <if test="oga67 != null">
+        OGA67,
+      </if>
+      <if test="oga1001 != null">
+        OGA1001,
+      </if>
+      <if test="oga1002 != null">
+        OGA1002,
+      </if>
+      <if test="oga1003 != null">
+        OGA1003,
+      </if>
+      <if test="oga1004 != null">
+        OGA1004,
+      </if>
+      <if test="oga1005 != null">
+        OGA1005,
+      </if>
+      <if test="oga1006 != null">
+        OGA1006,
+      </if>
+      <if test="oga1007 != null">
+        OGA1007,
+      </if>
+      <if test="oga1008 != null">
+        OGA1008,
+      </if>
+      <if test="oga1009 != null">
+        OGA1009,
+      </if>
+      <if test="oga1010 != null">
+        OGA1010,
+      </if>
+      <if test="oga1011 != null">
+        OGA1011,
+      </if>
+      <if test="oga1012 != null">
+        OGA1012,
+      </if>
+      <if test="oga1013 != null">
+        OGA1013,
+      </if>
+      <if test="oga1014 != null">
+        OGA1014,
+      </if>
+      <if test="oga1015 != null">
+        OGA1015,
+      </if>
+      <if test="oga1016 != null">
+        OGA1016,
+      </if>
+      <if test="oga68 != null">
+        OGA68,
+      </if>
+      <if test="ogaspc != null">
+        OGASPC,
+      </if>
+      <if test="oga69 != null">
+        OGA69,
+      </if>
+      <if test="oga912 != null">
+        OGA912,
+      </if>
+      <if test="oga913 != null">
+        OGA913,
+      </if>
+      <if test="oga914 != null">
+        OGA914,
+      </if>
+      <if test="oga70 != null">
+        OGA70,
+      </if>
+      <if test="ogaud01 != null">
+        OGAUD01,
+      </if>
+      <if test="ogaud02 != null">
+        OGAUD02,
+      </if>
+      <if test="ogaud03 != null">
+        OGAUD03,
+      </if>
+      <if test="ogaud04 != null">
+        OGAUD04,
+      </if>
+      <if test="ogaud05 != null">
+        OGAUD05,
+      </if>
+      <if test="ogaud06 != null">
+        OGAUD06,
+      </if>
+      <if test="ogaud07 != null">
+        OGAUD07,
+      </if>
+      <if test="ogaud08 != null">
+        OGAUD08,
+      </if>
+      <if test="ogaud09 != null">
+        OGAUD09,
+      </if>
+      <if test="ogaud10 != null">
+        OGAUD10,
+      </if>
+      <if test="ogaud11 != null">
+        OGAUD11,
+      </if>
+      <if test="ogaud12 != null">
+        OGAUD12,
+      </if>
+      <if test="ogaud13 != null">
+        OGAUD13,
+      </if>
+      <if test="ogaud14 != null">
+        OGAUD14,
+      </if>
+      <if test="ogaud15 != null">
+        OGAUD15,
+      </if>
+      <if test="oga83 != null">
+        OGA83,
+      </if>
+      <if test="oga84 != null">
+        OGA84,
+      </if>
+      <if test="oga85 != null">
+        OGA85,
+      </if>
+      <if test="oga86 != null">
+        OGA86,
+      </if>
+      <if test="oga87 != null">
+        OGA87,
+      </if>
+      <if test="oga88 != null">
+        OGA88,
+      </if>
+      <if test="oga89 != null">
+        OGA89,
+      </if>
+      <if test="oga90 != null">
+        OGA90,
+      </if>
+      <if test="oga91 != null">
+        OGA91,
+      </if>
+      <if test="oga92 != null">
+        OGA92,
+      </if>
+      <if test="oga93 != null">
+        OGA93,
+      </if>
+      <if test="oga94 != null">
+        OGA94,
+      </if>
+      <if test="oga95 != null">
+        OGA95,
+      </if>
+      <if test="oga96 != null">
+        OGA96,
+      </if>
+      <if test="oga97 != null">
+        OGA97,
+      </if>
+      <if test="ogacond != null">
+        OGACOND,
+      </if>
+      <if test="ogaconu != null">
+        OGACONU,
+      </if>
+      <if test="ogaplant != null">
+        OGAPLANT,
+      </if>
+      <if test="ogalegal != null">
+        OGALEGAL,
+      </if>
+      <if test="oga71 != null">
+        OGA71,
+      </if>
+      <if test="ogaoriu != null">
+        OGAORIU,
+      </if>
+      <if test="ogaorig != null">
+        OGAORIG,
+      </if>
+      <if test="ogacont != null">
+        OGACONT,
+      </if>
+      <if test="oga98 != null">
+        OGA98,
+      </if>
+      <if test="oga72 != null">
+        OGA72,
+      </if>
+      <if test="oga57 != null">
+        OGA57,
+      </if>
+      <if test="ogaslk01 != null">
+        OGASLK01,
+      </if>
+      <if test="ogaslk02 != null">
+        OGASLK02,
+      </if>
+      <if test="oga56 != null">
+        OGA56,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oga00 != null">
+        #{oga00,jdbcType=VARCHAR},
+      </if>
+      <if test="oga011 != null">
+        #{oga011,jdbcType=VARCHAR},
+      </if>
+      <if test="oga02 != null">
+        #{oga02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga021 != null">
+        #{oga021,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga022 != null">
+        #{oga022,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga03 != null">
+        #{oga03,jdbcType=VARCHAR},
+      </if>
+      <if test="oga032 != null">
+        #{oga032,jdbcType=VARCHAR},
+      </if>
+      <if test="oga033 != null">
+        #{oga033,jdbcType=VARCHAR},
+      </if>
+      <if test="oga04 != null">
+        #{oga04,jdbcType=VARCHAR},
+      </if>
+      <if test="oga044 != null">
+        #{oga044,jdbcType=VARCHAR},
+      </if>
+      <if test="oga05 != null">
+        #{oga05,jdbcType=VARCHAR},
+      </if>
+      <if test="oga06 != null">
+        #{oga06,jdbcType=VARCHAR},
+      </if>
+      <if test="oga07 != null">
+        #{oga07,jdbcType=VARCHAR},
+      </if>
+      <if test="oga08 != null">
+        #{oga08,jdbcType=VARCHAR},
+      </if>
+      <if test="oga09 != null">
+        #{oga09,jdbcType=VARCHAR},
+      </if>
+      <if test="oga10 != null">
+        #{oga10,jdbcType=VARCHAR},
+      </if>
+      <if test="oga11 != null">
+        #{oga11,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga12 != null">
+        #{oga12,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga13 != null">
+        #{oga13,jdbcType=VARCHAR},
+      </if>
+      <if test="oga14 != null">
+        #{oga14,jdbcType=VARCHAR},
+      </if>
+      <if test="oga15 != null">
+        #{oga15,jdbcType=VARCHAR},
+      </if>
+      <if test="oga16 != null">
+        #{oga16,jdbcType=VARCHAR},
+      </if>
+      <if test="oga161 != null">
+        #{oga161,jdbcType=DECIMAL},
+      </if>
+      <if test="oga162 != null">
+        #{oga162,jdbcType=DECIMAL},
+      </if>
+      <if test="oga163 != null">
+        #{oga163,jdbcType=DECIMAL},
+      </if>
+      <if test="oga17 != null">
+        #{oga17,jdbcType=DECIMAL},
+      </if>
+      <if test="oga18 != null">
+        #{oga18,jdbcType=VARCHAR},
+      </if>
+      <if test="oga19 != null">
+        #{oga19,jdbcType=VARCHAR},
+      </if>
+      <if test="oga20 != null">
+        #{oga20,jdbcType=VARCHAR},
+      </if>
+      <if test="oga21 != null">
+        #{oga21,jdbcType=VARCHAR},
+      </if>
+      <if test="oga211 != null">
+        #{oga211,jdbcType=DECIMAL},
+      </if>
+      <if test="oga212 != null">
+        #{oga212,jdbcType=VARCHAR},
+      </if>
+      <if test="oga213 != null">
+        #{oga213,jdbcType=VARCHAR},
+      </if>
+      <if test="oga23 != null">
+        #{oga23,jdbcType=VARCHAR},
+      </if>
+      <if test="oga24 != null">
+        #{oga24,jdbcType=DECIMAL},
+      </if>
+      <if test="oga25 != null">
+        #{oga25,jdbcType=VARCHAR},
+      </if>
+      <if test="oga26 != null">
+        #{oga26,jdbcType=VARCHAR},
+      </if>
+      <if test="oga27 != null">
+        #{oga27,jdbcType=VARCHAR},
+      </if>
+      <if test="oga28 != null">
+        #{oga28,jdbcType=VARCHAR},
+      </if>
+      <if test="oga29 != null">
+        #{oga29,jdbcType=DECIMAL},
+      </if>
+      <if test="oga30 != null">
+        #{oga30,jdbcType=VARCHAR},
+      </if>
+      <if test="oga31 != null">
+        #{oga31,jdbcType=VARCHAR},
+      </if>
+      <if test="oga32 != null">
+        #{oga32,jdbcType=VARCHAR},
+      </if>
+      <if test="oga33 != null">
+        #{oga33,jdbcType=VARCHAR},
+      </if>
+      <if test="oga34 != null">
+        #{oga34,jdbcType=DECIMAL},
+      </if>
+      <if test="oga35 != null">
+        #{oga35,jdbcType=VARCHAR},
+      </if>
+      <if test="oga36 != null">
+        #{oga36,jdbcType=VARCHAR},
+      </if>
+      <if test="oga37 != null">
+        #{oga37,jdbcType=VARCHAR},
+      </if>
+      <if test="oga38 != null">
+        #{oga38,jdbcType=VARCHAR},
+      </if>
+      <if test="oga39 != null">
+        #{oga39,jdbcType=VARCHAR},
+      </if>
+      <if test="oga40 != null">
+        #{oga40,jdbcType=VARCHAR},
+      </if>
+      <if test="oga41 != null">
+        #{oga41,jdbcType=VARCHAR},
+      </if>
+      <if test="oga42 != null">
+        #{oga42,jdbcType=VARCHAR},
+      </if>
+      <if test="oga43 != null">
+        #{oga43,jdbcType=VARCHAR},
+      </if>
+      <if test="oga44 != null">
+        #{oga44,jdbcType=VARCHAR},
+      </if>
+      <if test="oga45 != null">
+        #{oga45,jdbcType=VARCHAR},
+      </if>
+      <if test="oga46 != null">
+        #{oga46,jdbcType=VARCHAR},
+      </if>
+      <if test="oga47 != null">
+        #{oga47,jdbcType=VARCHAR},
+      </if>
+      <if test="oga48 != null">
+        #{oga48,jdbcType=VARCHAR},
+      </if>
+      <if test="oga49 != null">
+        #{oga49,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga50 != null">
+        #{oga50,jdbcType=DECIMAL},
+      </if>
+      <if test="oga501 != null">
+        #{oga501,jdbcType=DECIMAL},
+      </if>
+      <if test="oga51 != null">
+        #{oga51,jdbcType=DECIMAL},
+      </if>
+      <if test="oga511 != null">
+        #{oga511,jdbcType=DECIMAL},
+      </if>
+      <if test="oga52 != null">
+        #{oga52,jdbcType=DECIMAL},
+      </if>
+      <if test="oga53 != null">
+        #{oga53,jdbcType=DECIMAL},
+      </if>
+      <if test="oga54 != null">
+        #{oga54,jdbcType=DECIMAL},
+      </if>
+      <if test="oga99 != null">
+        #{oga99,jdbcType=VARCHAR},
+      </if>
+      <if test="oga901 != null">
+        #{oga901,jdbcType=VARCHAR},
+      </if>
+      <if test="oga902 != null">
+        #{oga902,jdbcType=VARCHAR},
+      </if>
+      <if test="oga903 != null">
+        #{oga903,jdbcType=VARCHAR},
+      </if>
+      <if test="oga904 != null">
+        #{oga904,jdbcType=VARCHAR},
+      </if>
+      <if test="oga905 != null">
+        #{oga905,jdbcType=VARCHAR},
+      </if>
+      <if test="oga906 != null">
+        #{oga906,jdbcType=VARCHAR},
+      </if>
+      <if test="oga907 != null">
+        #{oga907,jdbcType=VARCHAR},
+      </if>
+      <if test="oga908 != null">
+        #{oga908,jdbcType=VARCHAR},
+      </if>
+      <if test="oga909 != null">
+        #{oga909,jdbcType=VARCHAR},
+      </if>
+      <if test="oga910 != null">
+        #{oga910,jdbcType=VARCHAR},
+      </if>
+      <if test="oga911 != null">
+        #{oga911,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaconf != null">
+        #{ogaconf,jdbcType=VARCHAR},
+      </if>
+      <if test="ogapost != null">
+        #{ogapost,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaprsw != null">
+        #{ogaprsw,jdbcType=DECIMAL},
+      </if>
+      <if test="ogauser != null">
+        #{ogauser,jdbcType=VARCHAR},
+      </if>
+      <if test="ogagrup != null">
+        #{ogagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="ogamodu != null">
+        #{ogamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="ogadate != null">
+        #{ogadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga55 != null">
+        #{oga55,jdbcType=VARCHAR},
+      </if>
+      <if test="ogamksg != null">
+        #{ogamksg,jdbcType=VARCHAR},
+      </if>
+      <if test="oga65 != null">
+        #{oga65,jdbcType=VARCHAR},
+      </if>
+      <if test="oga66 != null">
+        #{oga66,jdbcType=VARCHAR},
+      </if>
+      <if test="oga67 != null">
+        #{oga67,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1001 != null">
+        #{oga1001,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1002 != null">
+        #{oga1002,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1003 != null">
+        #{oga1003,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1004 != null">
+        #{oga1004,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1005 != null">
+        #{oga1005,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1006 != null">
+        #{oga1006,jdbcType=DECIMAL},
+      </if>
+      <if test="oga1007 != null">
+        #{oga1007,jdbcType=DECIMAL},
+      </if>
+      <if test="oga1008 != null">
+        #{oga1008,jdbcType=DECIMAL},
+      </if>
+      <if test="oga1009 != null">
+        #{oga1009,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1010 != null">
+        #{oga1010,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1011 != null">
+        #{oga1011,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1012 != null">
+        #{oga1012,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1013 != null">
+        #{oga1013,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1014 != null">
+        #{oga1014,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1015 != null">
+        #{oga1015,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1016 != null">
+        #{oga1016,jdbcType=VARCHAR},
+      </if>
+      <if test="oga68 != null">
+        #{oga68,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaspc != null">
+        #{ogaspc,jdbcType=VARCHAR},
+      </if>
+      <if test="oga69 != null">
+        #{oga69,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga912 != null">
+        #{oga912,jdbcType=VARCHAR},
+      </if>
+      <if test="oga913 != null">
+        #{oga913,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga914 != null">
+        #{oga914,jdbcType=VARCHAR},
+      </if>
+      <if test="oga70 != null">
+        #{oga70,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud01 != null">
+        #{ogaud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud02 != null">
+        #{ogaud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud03 != null">
+        #{ogaud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud04 != null">
+        #{ogaud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud05 != null">
+        #{ogaud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud06 != null">
+        #{ogaud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud07 != null">
+        #{ogaud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud08 != null">
+        #{ogaud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud09 != null">
+        #{ogaud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud10 != null">
+        #{ogaud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud11 != null">
+        #{ogaud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud12 != null">
+        #{ogaud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud13 != null">
+        #{ogaud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogaud14 != null">
+        #{ogaud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogaud15 != null">
+        #{ogaud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga83 != null">
+        #{oga83,jdbcType=VARCHAR},
+      </if>
+      <if test="oga84 != null">
+        #{oga84,jdbcType=VARCHAR},
+      </if>
+      <if test="oga85 != null">
+        #{oga85,jdbcType=VARCHAR},
+      </if>
+      <if test="oga86 != null">
+        #{oga86,jdbcType=VARCHAR},
+      </if>
+      <if test="oga87 != null">
+        #{oga87,jdbcType=VARCHAR},
+      </if>
+      <if test="oga88 != null">
+        #{oga88,jdbcType=VARCHAR},
+      </if>
+      <if test="oga89 != null">
+        #{oga89,jdbcType=VARCHAR},
+      </if>
+      <if test="oga90 != null">
+        #{oga90,jdbcType=VARCHAR},
+      </if>
+      <if test="oga91 != null">
+        #{oga91,jdbcType=VARCHAR},
+      </if>
+      <if test="oga92 != null">
+        #{oga92,jdbcType=VARCHAR},
+      </if>
+      <if test="oga93 != null">
+        #{oga93,jdbcType=VARCHAR},
+      </if>
+      <if test="oga94 != null">
+        #{oga94,jdbcType=VARCHAR},
+      </if>
+      <if test="oga95 != null">
+        #{oga95,jdbcType=DECIMAL},
+      </if>
+      <if test="oga96 != null">
+        #{oga96,jdbcType=VARCHAR},
+      </if>
+      <if test="oga97 != null">
+        #{oga97,jdbcType=DECIMAL},
+      </if>
+      <if test="ogacond != null">
+        #{ogacond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogaconu != null">
+        #{ogaconu,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaplant != null">
+        #{ogaplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ogalegal != null">
+        #{ogalegal,jdbcType=VARCHAR},
+      </if>
+      <if test="oga71 != null">
+        #{oga71,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaoriu != null">
+        #{ogaoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaorig != null">
+        #{ogaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="ogacont != null">
+        #{ogacont,jdbcType=VARCHAR},
+      </if>
+      <if test="oga98 != null">
+        #{oga98,jdbcType=VARCHAR},
+      </if>
+      <if test="oga72 != null">
+        #{oga72,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga57 != null">
+        #{oga57,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaslk01 != null">
+        #{ogaslk01,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaslk02 != null">
+        #{ogaslk02,jdbcType=VARCHAR},
+      </if>
+      <if test="oga56 != null">
+        #{oga56,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.sale.pojo.OgaFile">
+    update OGA_FILE
+    <set>
+      <if test="oga00 != null">
+        OGA00 = #{oga00,jdbcType=VARCHAR},
+      </if>
+      <if test="oga011 != null">
+        OGA011 = #{oga011,jdbcType=VARCHAR},
+      </if>
+      <if test="oga02 != null">
+        OGA02 = #{oga02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga021 != null">
+        OGA021 = #{oga021,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga022 != null">
+        OGA022 = #{oga022,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga03 != null">
+        OGA03 = #{oga03,jdbcType=VARCHAR},
+      </if>
+      <if test="oga032 != null">
+        OGA032 = #{oga032,jdbcType=VARCHAR},
+      </if>
+      <if test="oga033 != null">
+        OGA033 = #{oga033,jdbcType=VARCHAR},
+      </if>
+      <if test="oga04 != null">
+        OGA04 = #{oga04,jdbcType=VARCHAR},
+      </if>
+      <if test="oga044 != null">
+        OGA044 = #{oga044,jdbcType=VARCHAR},
+      </if>
+      <if test="oga05 != null">
+        OGA05 = #{oga05,jdbcType=VARCHAR},
+      </if>
+      <if test="oga06 != null">
+        OGA06 = #{oga06,jdbcType=VARCHAR},
+      </if>
+      <if test="oga07 != null">
+        OGA07 = #{oga07,jdbcType=VARCHAR},
+      </if>
+      <if test="oga08 != null">
+        OGA08 = #{oga08,jdbcType=VARCHAR},
+      </if>
+      <if test="oga09 != null">
+        OGA09 = #{oga09,jdbcType=VARCHAR},
+      </if>
+      <if test="oga10 != null">
+        OGA10 = #{oga10,jdbcType=VARCHAR},
+      </if>
+      <if test="oga11 != null">
+        OGA11 = #{oga11,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga12 != null">
+        OGA12 = #{oga12,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga13 != null">
+        OGA13 = #{oga13,jdbcType=VARCHAR},
+      </if>
+      <if test="oga14 != null">
+        OGA14 = #{oga14,jdbcType=VARCHAR},
+      </if>
+      <if test="oga15 != null">
+        OGA15 = #{oga15,jdbcType=VARCHAR},
+      </if>
+      <if test="oga16 != null">
+        OGA16 = #{oga16,jdbcType=VARCHAR},
+      </if>
+      <if test="oga161 != null">
+        OGA161 = #{oga161,jdbcType=DECIMAL},
+      </if>
+      <if test="oga162 != null">
+        OGA162 = #{oga162,jdbcType=DECIMAL},
+      </if>
+      <if test="oga163 != null">
+        OGA163 = #{oga163,jdbcType=DECIMAL},
+      </if>
+      <if test="oga17 != null">
+        OGA17 = #{oga17,jdbcType=DECIMAL},
+      </if>
+      <if test="oga18 != null">
+        OGA18 = #{oga18,jdbcType=VARCHAR},
+      </if>
+      <if test="oga19 != null">
+        OGA19 = #{oga19,jdbcType=VARCHAR},
+      </if>
+      <if test="oga20 != null">
+        OGA20 = #{oga20,jdbcType=VARCHAR},
+      </if>
+      <if test="oga21 != null">
+        OGA21 = #{oga21,jdbcType=VARCHAR},
+      </if>
+      <if test="oga211 != null">
+        OGA211 = #{oga211,jdbcType=DECIMAL},
+      </if>
+      <if test="oga212 != null">
+        OGA212 = #{oga212,jdbcType=VARCHAR},
+      </if>
+      <if test="oga213 != null">
+        OGA213 = #{oga213,jdbcType=VARCHAR},
+      </if>
+      <if test="oga23 != null">
+        OGA23 = #{oga23,jdbcType=VARCHAR},
+      </if>
+      <if test="oga24 != null">
+        OGA24 = #{oga24,jdbcType=DECIMAL},
+      </if>
+      <if test="oga25 != null">
+        OGA25 = #{oga25,jdbcType=VARCHAR},
+      </if>
+      <if test="oga26 != null">
+        OGA26 = #{oga26,jdbcType=VARCHAR},
+      </if>
+      <if test="oga27 != null">
+        OGA27 = #{oga27,jdbcType=VARCHAR},
+      </if>
+      <if test="oga28 != null">
+        OGA28 = #{oga28,jdbcType=VARCHAR},
+      </if>
+      <if test="oga29 != null">
+        OGA29 = #{oga29,jdbcType=DECIMAL},
+      </if>
+      <if test="oga30 != null">
+        OGA30 = #{oga30,jdbcType=VARCHAR},
+      </if>
+      <if test="oga31 != null">
+        OGA31 = #{oga31,jdbcType=VARCHAR},
+      </if>
+      <if test="oga32 != null">
+        OGA32 = #{oga32,jdbcType=VARCHAR},
+      </if>
+      <if test="oga33 != null">
+        OGA33 = #{oga33,jdbcType=VARCHAR},
+      </if>
+      <if test="oga34 != null">
+        OGA34 = #{oga34,jdbcType=DECIMAL},
+      </if>
+      <if test="oga35 != null">
+        OGA35 = #{oga35,jdbcType=VARCHAR},
+      </if>
+      <if test="oga36 != null">
+        OGA36 = #{oga36,jdbcType=VARCHAR},
+      </if>
+      <if test="oga37 != null">
+        OGA37 = #{oga37,jdbcType=VARCHAR},
+      </if>
+      <if test="oga38 != null">
+        OGA38 = #{oga38,jdbcType=VARCHAR},
+      </if>
+      <if test="oga39 != null">
+        OGA39 = #{oga39,jdbcType=VARCHAR},
+      </if>
+      <if test="oga40 != null">
+        OGA40 = #{oga40,jdbcType=VARCHAR},
+      </if>
+      <if test="oga41 != null">
+        OGA41 = #{oga41,jdbcType=VARCHAR},
+      </if>
+      <if test="oga42 != null">
+        OGA42 = #{oga42,jdbcType=VARCHAR},
+      </if>
+      <if test="oga43 != null">
+        OGA43 = #{oga43,jdbcType=VARCHAR},
+      </if>
+      <if test="oga44 != null">
+        OGA44 = #{oga44,jdbcType=VARCHAR},
+      </if>
+      <if test="oga45 != null">
+        OGA45 = #{oga45,jdbcType=VARCHAR},
+      </if>
+      <if test="oga46 != null">
+        OGA46 = #{oga46,jdbcType=VARCHAR},
+      </if>
+      <if test="oga47 != null">
+        OGA47 = #{oga47,jdbcType=VARCHAR},
+      </if>
+      <if test="oga48 != null">
+        OGA48 = #{oga48,jdbcType=VARCHAR},
+      </if>
+      <if test="oga49 != null">
+        OGA49 = #{oga49,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga50 != null">
+        OGA50 = #{oga50,jdbcType=DECIMAL},
+      </if>
+      <if test="oga501 != null">
+        OGA501 = #{oga501,jdbcType=DECIMAL},
+      </if>
+      <if test="oga51 != null">
+        OGA51 = #{oga51,jdbcType=DECIMAL},
+      </if>
+      <if test="oga511 != null">
+        OGA511 = #{oga511,jdbcType=DECIMAL},
+      </if>
+      <if test="oga52 != null">
+        OGA52 = #{oga52,jdbcType=DECIMAL},
+      </if>
+      <if test="oga53 != null">
+        OGA53 = #{oga53,jdbcType=DECIMAL},
+      </if>
+      <if test="oga54 != null">
+        OGA54 = #{oga54,jdbcType=DECIMAL},
+      </if>
+      <if test="oga99 != null">
+        OGA99 = #{oga99,jdbcType=VARCHAR},
+      </if>
+      <if test="oga901 != null">
+        OGA901 = #{oga901,jdbcType=VARCHAR},
+      </if>
+      <if test="oga902 != null">
+        OGA902 = #{oga902,jdbcType=VARCHAR},
+      </if>
+      <if test="oga903 != null">
+        OGA903 = #{oga903,jdbcType=VARCHAR},
+      </if>
+      <if test="oga904 != null">
+        OGA904 = #{oga904,jdbcType=VARCHAR},
+      </if>
+      <if test="oga905 != null">
+        OGA905 = #{oga905,jdbcType=VARCHAR},
+      </if>
+      <if test="oga906 != null">
+        OGA906 = #{oga906,jdbcType=VARCHAR},
+      </if>
+      <if test="oga907 != null">
+        OGA907 = #{oga907,jdbcType=VARCHAR},
+      </if>
+      <if test="oga908 != null">
+        OGA908 = #{oga908,jdbcType=VARCHAR},
+      </if>
+      <if test="oga909 != null">
+        OGA909 = #{oga909,jdbcType=VARCHAR},
+      </if>
+      <if test="oga910 != null">
+        OGA910 = #{oga910,jdbcType=VARCHAR},
+      </if>
+      <if test="oga911 != null">
+        OGA911 = #{oga911,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaconf != null">
+        OGACONF = #{ogaconf,jdbcType=VARCHAR},
+      </if>
+      <if test="ogapost != null">
+        OGAPOST = #{ogapost,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaprsw != null">
+        OGAPRSW = #{ogaprsw,jdbcType=DECIMAL},
+      </if>
+      <if test="ogauser != null">
+        OGAUSER = #{ogauser,jdbcType=VARCHAR},
+      </if>
+      <if test="ogagrup != null">
+        OGAGRUP = #{ogagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="ogamodu != null">
+        OGAMODU = #{ogamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="ogadate != null">
+        OGADATE = #{ogadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga55 != null">
+        OGA55 = #{oga55,jdbcType=VARCHAR},
+      </if>
+      <if test="ogamksg != null">
+        OGAMKSG = #{ogamksg,jdbcType=VARCHAR},
+      </if>
+      <if test="oga65 != null">
+        OGA65 = #{oga65,jdbcType=VARCHAR},
+      </if>
+      <if test="oga66 != null">
+        OGA66 = #{oga66,jdbcType=VARCHAR},
+      </if>
+      <if test="oga67 != null">
+        OGA67 = #{oga67,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1001 != null">
+        OGA1001 = #{oga1001,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1002 != null">
+        OGA1002 = #{oga1002,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1003 != null">
+        OGA1003 = #{oga1003,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1004 != null">
+        OGA1004 = #{oga1004,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1005 != null">
+        OGA1005 = #{oga1005,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1006 != null">
+        OGA1006 = #{oga1006,jdbcType=DECIMAL},
+      </if>
+      <if test="oga1007 != null">
+        OGA1007 = #{oga1007,jdbcType=DECIMAL},
+      </if>
+      <if test="oga1008 != null">
+        OGA1008 = #{oga1008,jdbcType=DECIMAL},
+      </if>
+      <if test="oga1009 != null">
+        OGA1009 = #{oga1009,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1010 != null">
+        OGA1010 = #{oga1010,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1011 != null">
+        OGA1011 = #{oga1011,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1012 != null">
+        OGA1012 = #{oga1012,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1013 != null">
+        OGA1013 = #{oga1013,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1014 != null">
+        OGA1014 = #{oga1014,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1015 != null">
+        OGA1015 = #{oga1015,jdbcType=VARCHAR},
+      </if>
+      <if test="oga1016 != null">
+        OGA1016 = #{oga1016,jdbcType=VARCHAR},
+      </if>
+      <if test="oga68 != null">
+        OGA68 = #{oga68,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaspc != null">
+        OGASPC = #{ogaspc,jdbcType=VARCHAR},
+      </if>
+      <if test="oga69 != null">
+        OGA69 = #{oga69,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga912 != null">
+        OGA912 = #{oga912,jdbcType=VARCHAR},
+      </if>
+      <if test="oga913 != null">
+        OGA913 = #{oga913,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga914 != null">
+        OGA914 = #{oga914,jdbcType=VARCHAR},
+      </if>
+      <if test="oga70 != null">
+        OGA70 = #{oga70,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud01 != null">
+        OGAUD01 = #{ogaud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud02 != null">
+        OGAUD02 = #{ogaud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud03 != null">
+        OGAUD03 = #{ogaud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud04 != null">
+        OGAUD04 = #{ogaud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud05 != null">
+        OGAUD05 = #{ogaud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud06 != null">
+        OGAUD06 = #{ogaud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaud07 != null">
+        OGAUD07 = #{ogaud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud08 != null">
+        OGAUD08 = #{ogaud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud09 != null">
+        OGAUD09 = #{ogaud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud10 != null">
+        OGAUD10 = #{ogaud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud11 != null">
+        OGAUD11 = #{ogaud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud12 != null">
+        OGAUD12 = #{ogaud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ogaud13 != null">
+        OGAUD13 = #{ogaud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogaud14 != null">
+        OGAUD14 = #{ogaud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogaud15 != null">
+        OGAUD15 = #{ogaud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga83 != null">
+        OGA83 = #{oga83,jdbcType=VARCHAR},
+      </if>
+      <if test="oga84 != null">
+        OGA84 = #{oga84,jdbcType=VARCHAR},
+      </if>
+      <if test="oga85 != null">
+        OGA85 = #{oga85,jdbcType=VARCHAR},
+      </if>
+      <if test="oga86 != null">
+        OGA86 = #{oga86,jdbcType=VARCHAR},
+      </if>
+      <if test="oga87 != null">
+        OGA87 = #{oga87,jdbcType=VARCHAR},
+      </if>
+      <if test="oga88 != null">
+        OGA88 = #{oga88,jdbcType=VARCHAR},
+      </if>
+      <if test="oga89 != null">
+        OGA89 = #{oga89,jdbcType=VARCHAR},
+      </if>
+      <if test="oga90 != null">
+        OGA90 = #{oga90,jdbcType=VARCHAR},
+      </if>
+      <if test="oga91 != null">
+        OGA91 = #{oga91,jdbcType=VARCHAR},
+      </if>
+      <if test="oga92 != null">
+        OGA92 = #{oga92,jdbcType=VARCHAR},
+      </if>
+      <if test="oga93 != null">
+        OGA93 = #{oga93,jdbcType=VARCHAR},
+      </if>
+      <if test="oga94 != null">
+        OGA94 = #{oga94,jdbcType=VARCHAR},
+      </if>
+      <if test="oga95 != null">
+        OGA95 = #{oga95,jdbcType=DECIMAL},
+      </if>
+      <if test="oga96 != null">
+        OGA96 = #{oga96,jdbcType=VARCHAR},
+      </if>
+      <if test="oga97 != null">
+        OGA97 = #{oga97,jdbcType=DECIMAL},
+      </if>
+      <if test="ogacond != null">
+        OGACOND = #{ogacond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogaconu != null">
+        OGACONU = #{ogaconu,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaplant != null">
+        OGAPLANT = #{ogaplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ogalegal != null">
+        OGALEGAL = #{ogalegal,jdbcType=VARCHAR},
+      </if>
+      <if test="oga71 != null">
+        OGA71 = #{oga71,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaoriu != null">
+        OGAORIU = #{ogaoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaorig != null">
+        OGAORIG = #{ogaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="ogacont != null">
+        OGACONT = #{ogacont,jdbcType=VARCHAR},
+      </if>
+      <if test="oga98 != null">
+        OGA98 = #{oga98,jdbcType=VARCHAR},
+      </if>
+      <if test="oga72 != null">
+        OGA72 = #{oga72,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oga57 != null">
+        OGA57 = #{oga57,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaslk01 != null">
+        OGASLK01 = #{ogaslk01,jdbcType=VARCHAR},
+      </if>
+      <if test="ogaslk02 != null">
+        OGASLK02 = #{ogaslk02,jdbcType=VARCHAR},
+      </if>
+      <if test="oga56 != null">
+        OGA56 = #{oga56,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OGA01 = #{oga01,jdbcType=VARCHAR}
+  </update>
+  <update id="alterOgaDate">
+      update ${centre}.oga_file
+      set oga02   = #{oga02},
+          ogadate = #{oga02},
+          oga69   = #{oga02},
+          ogacond = #{oga02}
+      where oga01 = #{oga01}
+  </update>
+  <select id="searchOgaListPageHelper" resultType="com.keboda.eomsback.sale.pojo.OgaFile">
+      select oga01,SMYDESC,oga02,oga03,occ02,oga69,oga08,oga14,gen02,oga15,gem02,oga021,OGA99,OGACONF,oga55,ogapost,oga10,#{centre} centre
+      from ${centre}.OGA_FILE
+      left join ${centre}.SMY_FILE on smyslip = substr(oga01,0,4)
+      left join ${centre}.OCC_FILE on occ01 = oga03
+      left join ${centre}.gem_file on gem01 = oga15
+      left join ${centre}.gen_file on gen01 = oga14
+      <where>
+          <if test="code != null and code != '' ">
+              and lower(oga01) like lower('%${code}%')
+          </if>
+          <if test="multiTradeCode != null and multiTradeCode != '' ">
+              and lower(oga99) like lower('%${multiTradeCode}%')
+          </if>
+      </where>
+  </select>
+
+</mapper>

@@ -32,7 +32,7 @@
       </el-table-column>
       <el-table-column label="审核状态" width="90">
         <template slot-scope="scope">
-          {{ scope.row.pmiconf | formatStatus }}
+          {{ scope.row.pmiconf | formatVerifyStatus }}
         </template>
       </el-table-column>
       <el-table-column prop="pmi04" label="备注" width="160">
@@ -81,7 +81,7 @@
           </el-col>
           <el-col :span="7" :offset="1">
             <el-form-item label="审核状态:">
-              {{ documents.master.pmiconf | formatStatus }}
+              {{ documents.master.pmiconf | formatVerifyStatus }}
             </el-form-item>
             <el-form-item label="状况码:">
               {{ documents.master.pmi06 | formatSignoff }}

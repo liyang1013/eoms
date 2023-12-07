@@ -32,7 +32,7 @@
       </el-table-column>
       <el-table-column prop="pmk18" label="审核状态">
         <template slot-scope="scope">
-          {{scope.row.pmk18 | formatStatus}}
+          {{scope.row.pmk18 | formatVerifyStatus}}
         </template>
       </el-table-column>
       <el-table-column label="状况" >
@@ -81,7 +81,7 @@
           </el-col>
           <el-col :span="7" :offset="1">
             <el-form-item label="审核状态:">
-              {{ documents.master.pmk18 | formatStatus }}
+              {{ documents.master.pmk18 | formatVerifyStatus }}
             </el-form-item>
             <el-form-item label="状况码:">
               {{ documents.master.pmk25 | formatSignoff }}

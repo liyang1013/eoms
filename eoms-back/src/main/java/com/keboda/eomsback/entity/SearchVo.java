@@ -18,6 +18,8 @@ public class SearchVo {
 
     private String batch;
 
+    private String multiTradeCode;
+
     private String imd;
 
     private String zx;

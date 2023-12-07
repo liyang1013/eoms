@@ -1,38 +1,4 @@
 
-//数字转字符串
-function formatNumber(n) {
-    const str = n.toString()
-    return str[1] ? str : `0${str}`
-}
-
-//格式化时间格式
-export function formatTime(date) {
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-
-    const hour = date.getHours()
-    const minute = date.getMinutes()
-    const second = date.getSeconds()
-
-    const t1 = [year, month, day].map(formatNumber).join('/')
-    const t2 = [hour, minute, second].map(formatNumber).join(':')
-
-    return `${t1} ${t2}`
-}
-
-/**
- * 单据审核状态
- */
-export function formatStatus(conf) {
-
-    if (conf === 'N') return '未审核';
-    if (conf === 'Y') return '已审核';
-    if (conf === 'P') return '收/发料中';
-    if (conf === 'F') return '收/发料完成';
-    if (conf === 'X') return '作废';
-
-}
 
 /**
  * 采购性质类型
@@ -201,12 +167,6 @@ export function formatSfb04(code) {
     if (code === '8') return '结案';
 }
 
-export function formatApproval(code) {
-    if (code === '0') return '已核准';
-    if (code === '1') return '核准中';
-    if (code === '2') return '未核准';
-}
-
 export function formatChangeType(code) {
     if (code === '1') return '入库';
     if (code === '2') return '验退';
@@ -241,3 +201,97 @@ export function formatSfp06(code){
 }
 
 
+/*********************************** 销售 ***********************************/
+
+/**
+ * 销售类型
+ * @param code {string}
+ * @returns {string}
+ */
+export function formatSaleType(code){
+    let type = 'undefine';
+    if (code === '1') type = '内销';
+    if (code === '2') type = '外销';
+    if (code === '3') type = '视同外销';
+    return code + ': ' + type;
+}
+
+/*********************************** Common ***********************************/
+
+/**
+ * 状况码
+ * @param code {string}
+ * @returns {string}
+ */
+export function formatStatus(code) {
+    let type = 'undefine';
+    if (code === '0') type = '开立';
+    if (code === '1') type = '已核准';
+    if (code === '9') type = '作废';
+    if (code === 'R') type = '送签退回';
+    if (code === 'S') type = '送签中';
+    if (code === 'W') type = '抽单';
+    return code + ': ' + type;
+}
+
+/**
+ * 审核状态
+ * @param code {string}
+ * @returns {string}
+ */
+export function formatVerifyStatus(code) {
+    let type = 'undefine';
+    if (code === 'N') type =  '未审核';
+    if (code === 'Y') type =  '已审核';
+    if (code === 'P') type =  '收/发料中';
+    if (code === 'F') type =  '收/发料完成';
+    if (code === 'X') type =  '作废';
+    return code + ': ' + type;
+
+}
+
+/**
+* 核准状态
+* @param code {string}
+* @returns {string}
+*/
+export function formatApproval(code) {
+    let type = 'undefine';
+    if (code === '0') type = '已核准';
+    if (code === '1') type = '核准中';
+    if (code === '2') type = '未核准';
+    return code + ': ' + type;
+}
+
+/*********************************** 常用格式化函数 ***********************************/
+
+/**
+ * 时间格式化 yyyy/MM/dd hh:mm:ss
+ * @param date {Date}
+ * @returns {string}
+ */
+export function formatTime(date) {
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+
+    const hour = date.getHours()
+    const minute = date.getMinutes()
+    const second = date.getSeconds()
+
+    const t1 = [year, month, day].map(formatNumber).join('/')
+    const t2 = [hour, minute, second].map(formatNumber).join(':')
+
+    return `${t1} ${t2}`
+}
+
+/**
+ * 不满2位数字前自动补0
+ * @param num {number}
+ * @returns {string|string}
+ * @constructor
+ */
+function ZeroFill(num) {
+    const str = num.toString()
+    return str[1] ? str : `0${str}`
+}

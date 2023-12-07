@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.OgbFileMapper">
+
+  <insert id="insertSelective" keyColumn="OGB01" keyProperty="ogb01" parameterType="com.keboda.eomsback.sale.pojo.OgbFile" useGeneratedKeys="true">
+    insert into OGB_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ogb03 != null">
+        OGB03,
+      </if>
+      <if test="ogb04 != null">
+        OGB04,
+      </if>
+      <if test="ogb05 != null">
+        OGB05,
+      </if>
+      <if test="ogb05Fac != null">
+        OGB05_FAC,
+      </if>
+      <if test="ogb06 != null">
+        OGB06,
+      </if>
+      <if test="ogb07 != null">
+        OGB07,
+      </if>
+      <if test="ogb08 != null">
+        OGB08,
+      </if>
+      <if test="ogb09 != null">
+        OGB09,
+      </if>
+      <if test="ogb091 != null">
+        OGB091,
+      </if>
+      <if test="ogb092 != null">
+        OGB092,
+      </if>
+      <if test="ogb11 != null">
+        OGB11,
+      </if>
+      <if test="ogb12 != null">
+        OGB12,
+      </if>
+      <if test="ogb13 != null">
+        OGB13,
+      </if>
+      <if test="ogb14 != null">
+        OGB14,
+      </if>
+      <if test="ogb14t != null">
+        OGB14T,
+      </if>
+      <if test="ogb15 != null">
+        OGB15,
+      </if>
+      <if test="ogb15Fac != null">
+        OGB15_FAC,
+      </if>
+      <if test="ogb16 != null">
+        OGB16,
+      </if>
+      <if test="ogb17 != null">
+        OGB17,
+      </if>
+      <if test="ogb18 != null">
+        OGB18,
+      </if>
+      <if test="ogb19 != null">
+        OGB19,
+      </if>
+      <if test="ogb20 != null">
+        OGB20,
+      </if>
+      <if test="ogb21 != null">
+        OGB21,
+      </if>
+      <if test="ogb22 != null">
+        OGB22,
+      </if>
+      <if test="ogb31 != null">
+        OGB31,
+      </if>
+      <if test="ogb32 != null">
+        OGB32,
+      </if>
+      <if test="ogb60 != null">
+        OGB60,
+      </if>
+      <if test="ogb63 != null">
+        OGB63,
+      </if>
+      <if test="ogb64 != null">
+        OGB64,
+      </if>
+      <if test="ogb901 != null">
+        OGB901,
+      </if>
+      <if test="ogb902 != null">
+        OGB902,
+      </if>
+      <if test="ogb903 != null">
+        OGB903,
+      </if>
+      <if test="ogb904 != null">
+        OGB904,
+      </if>
+      <if test="ogb905 != null">
+        OGB905,
+      </if>
+      <if test="ogb906 != null">
+        OGB906,
+      </if>
+      <if test="ogb907 != null">
+        OGB907,
+      </if>
+      <if test="ogb908 != null">
+        OGB908,
+      </if>
+      <if test="ogb909 != null">
+        OGB909,
+      </if>
+      <if test="ogb910 != null">
+        OGB910,
+      </if>
+      <if test="ogb911 != null">
+        OGB911,
+      </if>
+      <if test="ogb912 != null">
+        OGB912,
+      </if>
+      <if test="ogb913 != null">
+        OGB913,
+      </if>
+      <if test="ogb914 != null">
+        OGB914,
+      </if>
+      <if test="ogb915 != null">
+        OGB915,
+      </if>
+      <if test="ogb916 != null">
+        OGB916,
+      </if>
+      <if test="ogb917 != null">
+        OGB917,
+      </if>
+      <if test="ogb65 != null">
+        OGB65,
+      </if>
+      <if test="ogb1001 != null">
+        OGB1001,
+      </if>
+      <if test="ogb1002 != null">
+        OGB1002,
+      </if>
+      <if test="ogb1005 != null">
+        OGB1005,
+      </if>
+      <if test="ogb1007 != null">
+        OGB1007,
+      </if>
+      <if test="ogb1008 != null">
+        OGB1008,
+      </if>
+      <if test="ogb1009 != null">
+        OGB1009,
+      </if>
+      <if test="ogb1010 != null">
+        OGB1010,
+      </if>
+      <if test="ogb1011 != null">
+        OGB1011,
+      </if>
+      <if test="ogb1003 != null">
+        OGB1003,
+      </if>
+      <if test="ogb1004 != null">
+        OGB1004,
+      </if>
+      <if test="ogb1006 != null">
+        OGB1006,
+      </if>
+      <if test="ogb1012 != null">
+        OGB1012,
+      </if>
+      <if test="ogb930 != null">
+        OGB930,
+      </if>
+      <if test="ogb1013 != null">
+        OGB1013,
+      </if>
+      <if test="ogb1014 != null">
+        OGB1014,
+      </if>
+      <if test="ogb41 != null">
+        OGB41,
+      </if>
+      <if test="ogb42 != null">
+        OGB42,
+      </if>
+      <if test="ogb43 != null">
+        OGB43,
+      </if>
+      <if test="ogb931 != null">
+        OGB931,
+      </if>
+      <if test="ogb932 != null">
+        OGB932,
+      </if>
+      <if test="ogbud01 != null">
+        OGBUD01,
+      </if>
+      <if test="ogbud02 != null">
+        OGBUD02,
+      </if>
+      <if test="ogbud03 != null">
+        OGBUD03,
+      </if>
+      <if test="ogbud04 != null">
+        OGBUD04,
+      </if>
+      <if test="ogbud05 != null">
+        OGBUD05,
+      </if>
+      <if test="ogbud06 != null">
+        OGBUD06,
+      </if>
+      <if test="ogbud07 != null">
+        OGBUD07,
+      </if>
+      <if test="ogbud08 != null">
+        OGBUD08,
+      </if>
+      <if test="ogbud09 != null">
+        OGBUD09,
+      </if>
+      <if test="ogbud10 != null">
+        OGBUD10,
+      </if>
+      <if test="ogbud11 != null">
+        OGBUD11,
+      </if>
+      <if test="ogbud12 != null">
+        OGBUD12,
+      </if>
+      <if test="ogbud13 != null">
+        OGBUD13,
+      </if>
+      <if test="ogbud14 != null">
+        OGBUD14,
+      </if>
+      <if test="ogbud15 != null">
+        OGBUD15,
+      </if>
+      <if test="ogb44 != null">
+        OGB44,
+      </if>
+      <if test="ogb45 != null">
+        OGB45,
+      </if>
+      <if test="ogb46 != null">
+        OGB46,
+      </if>
+      <if test="ogb47 != null">
+        OGB47,
+      </if>
+      <if test="ogbplant != null">
+        OGBPLANT,
+      </if>
+      <if test="ogblegal != null">
+        OGBLEGAL,
+      </if>
+      <if test="ogb48 != null">
+        OGB48,
+      </if>
+      <if test="ogb49 != null">
+        OGB49,
+      </if>
+      <if test="ogb37 != null">
+        OGB37,
+      </if>
+      <if test="ogb40 != null">
+        OGB40,
+      </if>
+      <if test="ogb71 != null">
+        OGB71,
+      </if>
+      <if test="ogb50 != null">
+        OGB50,
+      </if>
+      <if test="ogb51 != null">
+        OGB51,
+      </if>
+      <if test="ogb52 != null">
+        OGB52,
+      </if>
+      <if test="ogb53 != null">
+        OGB53,
+      </if>
+      <if test="ogb54 != null">
+        OGB54,
+      </if>
+      <if test="ogb55 != null">
+        OGB55,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ogb03 != null">
+        #{ogb03,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb04 != null">
+        #{ogb04,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb05 != null">
+        #{ogb05,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb05Fac != null">
+        #{ogb05Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb06 != null">
+        #{ogb06,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb07 != null">
+        #{ogb07,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb08 != null">
+        #{ogb08,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb09 != null">
+        #{ogb09,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb091 != null">
+        #{ogb091,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb092 != null">
+        #{ogb092,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb11 != null">
+        #{ogb11,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb12 != null">
+        #{ogb12,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb13 != null">
+        #{ogb13,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb14 != null">
+        #{ogb14,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb14t != null">
+        #{ogb14t,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb15 != null">
+        #{ogb15,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb15Fac != null">
+        #{ogb15Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb16 != null">
+        #{ogb16,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb17 != null">
+        #{ogb17,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb18 != null">
+        #{ogb18,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb19 != null">
+        #{ogb19,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb20 != null">
+        #{ogb20,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb21 != null">
+        #{ogb21,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb22 != null">
+        #{ogb22,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb31 != null">
+        #{ogb31,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb32 != null">
+        #{ogb32,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb60 != null">
+        #{ogb60,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb63 != null">
+        #{ogb63,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb64 != null">
+        #{ogb64,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb901 != null">
+        #{ogb901,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb902 != null">
+        #{ogb902,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb903 != null">
+        #{ogb903,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb904 != null">
+        #{ogb904,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb905 != null">
+        #{ogb905,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb906 != null">
+        #{ogb906,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb907 != null">
+        #{ogb907,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb908 != null">
+        #{ogb908,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb909 != null">
+        #{ogb909,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb910 != null">
+        #{ogb910,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb911 != null">
+        #{ogb911,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb912 != null">
+        #{ogb912,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb913 != null">
+        #{ogb913,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb914 != null">
+        #{ogb914,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb915 != null">
+        #{ogb915,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb916 != null">
+        #{ogb916,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb917 != null">
+        #{ogb917,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb65 != null">
+        #{ogb65,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1001 != null">
+        #{ogb1001,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1002 != null">
+        #{ogb1002,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1005 != null">
+        #{ogb1005,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1007 != null">
+        #{ogb1007,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1008 != null">
+        #{ogb1008,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1009 != null">
+        #{ogb1009,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb1010 != null">
+        #{ogb1010,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1011 != null">
+        #{ogb1011,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1003 != null">
+        #{ogb1003,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogb1004 != null">
+        #{ogb1004,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1006 != null">
+        #{ogb1006,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb1012 != null">
+        #{ogb1012,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb930 != null">
+        #{ogb930,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1013 != null">
+        #{ogb1013,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb1014 != null">
+        #{ogb1014,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb41 != null">
+        #{ogb41,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb42 != null">
+        #{ogb42,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb43 != null">
+        #{ogb43,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb931 != null">
+        #{ogb931,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb932 != null">
+        #{ogb932,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud01 != null">
+        #{ogbud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud02 != null">
+        #{ogbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud03 != null">
+        #{ogbud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud04 != null">
+        #{ogbud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud05 != null">
+        #{ogbud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud06 != null">
+        #{ogbud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud07 != null">
+        #{ogbud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud08 != null">
+        #{ogbud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud09 != null">
+        #{ogbud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud10 != null">
+        #{ogbud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud11 != null">
+        #{ogbud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud12 != null">
+        #{ogbud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud13 != null">
+        #{ogbud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogbud14 != null">
+        #{ogbud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogbud15 != null">
+        #{ogbud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogb44 != null">
+        #{ogb44,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb45 != null">
+        #{ogb45,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb46 != null">
+        #{ogb46,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb47 != null">
+        #{ogb47,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbplant != null">
+        #{ogbplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ogblegal != null">
+        #{ogblegal,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb48 != null">
+        #{ogb48,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb49 != null">
+        #{ogb49,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb37 != null">
+        #{ogb37,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb40 != null">
+        #{ogb40,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb71 != null">
+        #{ogb71,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb50 != null">
+        #{ogb50,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb51 != null">
+        #{ogb51,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb52 != null">
+        #{ogb52,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb53 != null">
+        #{ogb53,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb54 != null">
+        #{ogb54,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb55 != null">
+        #{ogb55,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.sale.pojo.OgbFile">
+    update OGB_FILE
+    <set>
+      <if test="ogb04 != null">
+        OGB04 = #{ogb04,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb05 != null">
+        OGB05 = #{ogb05,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb05Fac != null">
+        OGB05_FAC = #{ogb05Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb06 != null">
+        OGB06 = #{ogb06,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb07 != null">
+        OGB07 = #{ogb07,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb08 != null">
+        OGB08 = #{ogb08,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb09 != null">
+        OGB09 = #{ogb09,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb091 != null">
+        OGB091 = #{ogb091,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb092 != null">
+        OGB092 = #{ogb092,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb11 != null">
+        OGB11 = #{ogb11,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb12 != null">
+        OGB12 = #{ogb12,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb13 != null">
+        OGB13 = #{ogb13,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb14 != null">
+        OGB14 = #{ogb14,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb14t != null">
+        OGB14T = #{ogb14t,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb15 != null">
+        OGB15 = #{ogb15,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb15Fac != null">
+        OGB15_FAC = #{ogb15Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb16 != null">
+        OGB16 = #{ogb16,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb17 != null">
+        OGB17 = #{ogb17,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb18 != null">
+        OGB18 = #{ogb18,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb19 != null">
+        OGB19 = #{ogb19,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb20 != null">
+        OGB20 = #{ogb20,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb21 != null">
+        OGB21 = #{ogb21,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb22 != null">
+        OGB22 = #{ogb22,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb31 != null">
+        OGB31 = #{ogb31,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb32 != null">
+        OGB32 = #{ogb32,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb60 != null">
+        OGB60 = #{ogb60,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb63 != null">
+        OGB63 = #{ogb63,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb64 != null">
+        OGB64 = #{ogb64,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb901 != null">
+        OGB901 = #{ogb901,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb902 != null">
+        OGB902 = #{ogb902,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb903 != null">
+        OGB903 = #{ogb903,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb904 != null">
+        OGB904 = #{ogb904,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb905 != null">
+        OGB905 = #{ogb905,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb906 != null">
+        OGB906 = #{ogb906,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb907 != null">
+        OGB907 = #{ogb907,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb908 != null">
+        OGB908 = #{ogb908,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb909 != null">
+        OGB909 = #{ogb909,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb910 != null">
+        OGB910 = #{ogb910,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb911 != null">
+        OGB911 = #{ogb911,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb912 != null">
+        OGB912 = #{ogb912,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb913 != null">
+        OGB913 = #{ogb913,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb914 != null">
+        OGB914 = #{ogb914,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb915 != null">
+        OGB915 = #{ogb915,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb916 != null">
+        OGB916 = #{ogb916,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb917 != null">
+        OGB917 = #{ogb917,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb65 != null">
+        OGB65 = #{ogb65,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1001 != null">
+        OGB1001 = #{ogb1001,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1002 != null">
+        OGB1002 = #{ogb1002,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1005 != null">
+        OGB1005 = #{ogb1005,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1007 != null">
+        OGB1007 = #{ogb1007,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1008 != null">
+        OGB1008 = #{ogb1008,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1009 != null">
+        OGB1009 = #{ogb1009,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb1010 != null">
+        OGB1010 = #{ogb1010,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1011 != null">
+        OGB1011 = #{ogb1011,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1003 != null">
+        OGB1003 = #{ogb1003,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogb1004 != null">
+        OGB1004 = #{ogb1004,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1006 != null">
+        OGB1006 = #{ogb1006,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb1012 != null">
+        OGB1012 = #{ogb1012,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb930 != null">
+        OGB930 = #{ogb930,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb1013 != null">
+        OGB1013 = #{ogb1013,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb1014 != null">
+        OGB1014 = #{ogb1014,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb41 != null">
+        OGB41 = #{ogb41,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb42 != null">
+        OGB42 = #{ogb42,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb43 != null">
+        OGB43 = #{ogb43,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb931 != null">
+        OGB931 = #{ogb931,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb932 != null">
+        OGB932 = #{ogb932,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud01 != null">
+        OGBUD01 = #{ogbud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud02 != null">
+        OGBUD02 = #{ogbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud03 != null">
+        OGBUD03 = #{ogbud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud04 != null">
+        OGBUD04 = #{ogbud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud05 != null">
+        OGBUD05 = #{ogbud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud06 != null">
+        OGBUD06 = #{ogbud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ogbud07 != null">
+        OGBUD07 = #{ogbud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud08 != null">
+        OGBUD08 = #{ogbud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud09 != null">
+        OGBUD09 = #{ogbud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud10 != null">
+        OGBUD10 = #{ogbud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud11 != null">
+        OGBUD11 = #{ogbud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud12 != null">
+        OGBUD12 = #{ogbud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbud13 != null">
+        OGBUD13 = #{ogbud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogbud14 != null">
+        OGBUD14 = #{ogbud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogbud15 != null">
+        OGBUD15 = #{ogbud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ogb44 != null">
+        OGB44 = #{ogb44,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb45 != null">
+        OGB45 = #{ogb45,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb46 != null">
+        OGB46 = #{ogb46,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb47 != null">
+        OGB47 = #{ogb47,jdbcType=DECIMAL},
+      </if>
+      <if test="ogbplant != null">
+        OGBPLANT = #{ogbplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ogblegal != null">
+        OGBLEGAL = #{ogblegal,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb48 != null">
+        OGB48 = #{ogb48,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb49 != null">
+        OGB49 = #{ogb49,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb37 != null">
+        OGB37 = #{ogb37,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb40 != null">
+        OGB40 = #{ogb40,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb71 != null">
+        OGB71 = #{ogb71,jdbcType=VARCHAR},
+      </if>
+      <if test="ogb50 != null">
+        OGB50 = #{ogb50,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb51 != null">
+        OGB51 = #{ogb51,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb52 != null">
+        OGB52 = #{ogb52,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb53 != null">
+        OGB53 = #{ogb53,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb54 != null">
+        OGB54 = #{ogb54,jdbcType=DECIMAL},
+      </if>
+      <if test="ogb55 != null">
+        OGB55 = #{ogb55,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where OGB01 = #{ogb01,jdbcType=VARCHAR}
+      and OGB03 = #{ogb03,jdbcType=DECIMAL}
+  </update>
+  <select id="searchOgbList" resultType="com.keboda.eomsback.sale.pojo.OgbFile">
+    select ogb03,ogb04,ogb06,ima021,imd02,ogb12,ogb05,ogb13,ogb14t
+    from ${centre}.ogb_file
+    left join ${centre}.ima_file on ima01 = ogb04
+    left join ${centre}.imd_file on imd01 = ogb09
+    where ogb01 = #{code}
+  </select>
+
+</mapper>

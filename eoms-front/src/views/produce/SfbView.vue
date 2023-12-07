@@ -106,7 +106,7 @@
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.gen02 }}</span>
             </el-form-item>
             <el-form-item label="审核状态:">
-              {{ documents.master.sfb87 | formatStatus }}
+              {{ documents.master.sfb87 | formatVerifyStatus }}
             </el-form-item>
             <el-form-item label="状况码:">
               {{ documents.master.sfb04 | formatSfb04 }}

@@ -34,7 +34,7 @@
       </el-table-column>
       <el-table-column prop="sfpconf" label="审核状态" width="90">
         <template slot-scope="scope">
-          {{ scope.row.sfpconf | formatStatus }}
+          {{ scope.row.sfpconf | formatVerifyStatus }}
         </template>
       </el-table-column>
       <el-table-column prop="sfp15" label="签核状况" width="90">
@@ -111,7 +111,6 @@
 <script>
 import selectedCentre from '@/components/selected/selected-centre.vue';
 import selectedConf from '@/components/selected/selected-conf.vue';
-import {formatSfp06} from "@/filters/filters";
 
 export default {
   name: 'sfp',

@@ -37,7 +37,7 @@
       </el-table-column>
       <el-table-column label="审核状态" width="90">
         <template slot-scope="scope">
-          {{ scope.row.pmm18 | formatStatus }}
+          {{ scope.row.pmm18 | formatVerifyStatus }}
         </template>
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
@@ -95,7 +95,7 @@
               {{ documents.master.pmm04 }}
             </el-form-item>
             <el-form-item label="审核状态:">
-              {{ documents.master.pmm18 | formatStatus }}
+              {{ documents.master.pmm18 | formatVerifyStatus }}
             </el-form-item>
             <el-form-item label="状况码:">
               {{ documents.master.pmm25 | formatSignoff }}

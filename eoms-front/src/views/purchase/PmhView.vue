@@ -66,7 +66,6 @@
 
 import selectedCentre from '@/components/selected/selected-centre.vue';
 import selectedActi from "@/components/selected/selected-acti.vue";
-import {formatApproval} from "@/filters/filters";
 
 export default {
   name: "pmh",

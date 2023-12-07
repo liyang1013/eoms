@@ -62,6 +62,11 @@ public class CommonField {
      */
     private String pnz02;
 
+    /**
+     * 客户
+     */
+    private String occ02;
+
     private String gem01;
     /**
      * 部门

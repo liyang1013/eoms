@@ -112,10 +112,10 @@ export const menu = [
         component: null,
         children: [
             {
-                path: 'wdi',
-                name: '拣货单',
+                path: 'oga',
+                name: '销售出货单',
                 icon: 'el-icon-tickets',
-                component: () => import('@/views/sale/WdiView')
+                component: () => import('@/views/sale/OgaView')
             }
         ]
     },

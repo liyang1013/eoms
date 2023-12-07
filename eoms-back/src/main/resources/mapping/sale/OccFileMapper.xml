@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.OccFileMapper">
+
+  <insert id="insertSelective" keyColumn="OCC01" keyProperty="occ01" parameterType="com.keboda.eomsback.sale.pojo.OccFile" useGeneratedKeys="true">
+    insert into OCC_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="occ02 != null">
+        OCC02,
+      </if>
+      <if test="occ03 != null">
+        OCC03,
+      </if>
+      <if test="occ04 != null">
+        OCC04,
+      </if>
+      <if test="occ05 != null">
+        OCC05,
+      </if>
+      <if test="occ06 != null">
+        OCC06,
+      </if>
+      <if test="occ07 != null">
+        OCC07,
+      </if>
+      <if test="occ08 != null">
+        OCC08,
+      </if>
+      <if test="occ09 != null">
+        OCC09,
+      </if>
+      <if test="occ10 != null">
+        OCC10,
+      </if>
+      <if test="occ11 != null">
+        OCC11,
+      </if>
+      <if test="occ12 != null">
+        OCC12,
+      </if>
+      <if test="occ13 != null">
+        OCC13,
+      </if>
+      <if test="occ14 != null">
+        OCC14,
+      </if>
+      <if test="occ15 != null">
+        OCC15,
+      </if>
+      <if test="occ16 != null">
+        OCC16,
+      </if>
+      <if test="occ171 != null">
+        OCC171,
+      </if>
+      <if test="occ172 != null">
+        OCC172,
+      </if>
+      <if test="occ173 != null">
+        OCC173,
+      </if>
+      <if test="occ174 != null">
+        OCC174,
+      </if>
+      <if test="occ175 != null">
+        OCC175,
+      </if>
+      <if test="occ18 != null">
+        OCC18,
+      </if>
+      <if test="occ19 != null">
+        OCC19,
+      </if>
+      <if test="occ20 != null">
+        OCC20,
+      </if>
+      <if test="occ21 != null">
+        OCC21,
+      </if>
+      <if test="occ22 != null">
+        OCC22,
+      </if>
+      <if test="occ231 != null">
+        OCC231,
+      </if>
+      <if test="occ232 != null">
+        OCC232,
+      </if>
+      <if test="occ233 != null">
+        OCC233,
+      </if>
+      <if test="occ241 != null">
+        OCC241,
+      </if>
+      <if test="occ242 != null">
+        OCC242,
+      </if>
+      <if test="occ243 != null">
+        OCC243,
+      </if>
+      <if test="occ261 != null">
+        OCC261,
+      </if>
+      <if test="occ262 != null">
+        OCC262,
+      </if>
+      <if test="occ263 != null">
+        OCC263,
+      </if>
+      <if test="occ271 != null">
+        OCC271,
+      </if>
+      <if test="occ272 != null">
+        OCC272,
+      </if>
+      <if test="occ273 != null">
+        OCC273,
+      </if>
+      <if test="occ28 != null">
+        OCC28,
+      </if>
+      <if test="occ29 != null">
+        OCC29,
+      </if>
+      <if test="occ292 != null">
+        OCC292,
+      </if>
+      <if test="occ30 != null">
+        OCC30,
+      </if>
+      <if test="occ302 != null">
+        OCC302,
+      </if>
+      <if test="occ31 != null">
+        OCC31,
+      </if>
+      <if test="occ32 != null">
+        OCC32,
+      </if>
+      <if test="occ33 != null">
+        OCC33,
+      </if>
+      <if test="occ34 != null">
+        OCC34,
+      </if>
+      <if test="occ35 != null">
+        OCC35,
+      </if>
+      <if test="occ36 != null">
+        OCC36,
+      </if>
+      <if test="occ37 != null">
+        OCC37,
+      </if>
+      <if test="occ38 != null">
+        OCC38,
+      </if>
+      <if test="occ39 != null">
+        OCC39,
+      </if>
+      <if test="occ39a != null">
+        OCC39A,
+      </if>
+      <if test="occ40 != null">
+        OCC40,
+      </if>
+      <if test="occ41 != null">
+        OCC41,
+      </if>
+      <if test="occ42 != null">
+        OCC42,
+      </if>
+      <if test="occ43 != null">
+        OCC43,
+      </if>
+      <if test="occ44 != null">
+        OCC44,
+      </if>
+      <if test="occ45 != null">
+        OCC45,
+      </if>
+      <if test="occ46 != null">
+        OCC46,
+      </if>
+      <if test="occ47 != null">
+        OCC47,
+      </if>
+      <if test="occ48 != null">
+        OCC48,
+      </if>
+      <if test="occ49 != null">
+        OCC49,
+      </if>
+      <if test="occ50 != null">
+        OCC50,
+      </if>
+      <if test="occ51 != null">
+        OCC51,
+      </if>
+      <if test="occ52 != null">
+        OCC52,
+      </if>
+      <if test="occ53 != null">
+        OCC53,
+      </if>
+      <if test="occ55 != null">
+        OCC55,
+      </if>
+      <if test="occ56 != null">
+        OCC56,
+      </if>
+      <if test="occ57 != null">
+        OCC57,
+      </if>
+      <if test="occ61 != null">
+        OCC61,
+      </if>
+      <if test="occ62 != null">
+        OCC62,
+      </if>
+      <if test="occ63 != null">
+        OCC63,
+      </if>
+      <if test="occ631 != null">
+        OCC631,
+      </if>
+      <if test="occ64 != null">
+        OCC64,
+      </if>
+      <if test="occ701 != null">
+        OCC701,
+      </if>
+      <if test="occ702 != null">
+        OCC702,
+      </if>
+      <if test="occ703 != null">
+        OCC703,
+      </if>
+      <if test="occ704 != null">
+        OCC704,
+      </if>
+      <if test="occacti != null">
+        OCCACTI,
+      </if>
+      <if test="occuser != null">
+        OCCUSER,
+      </if>
+      <if test="occgrup != null">
+        OCCGRUP,
+      </if>
+      <if test="occmodu != null">
+        OCCMODU,
+      </if>
+      <if test="occdate != null">
+        OCCDATE,
+      </if>
+      <if test="occ65 != null">
+        OCC65,
+      </if>
+      <if test="occ1001 != null">
+        OCC1001,
+      </if>
+      <if test="occ1002 != null">
+        OCC1002,
+      </if>
+      <if test="occ1003 != null">
+        OCC1003,
+      </if>
+      <if test="occ1004 != null">
+        OCC1004,
+      </if>
+      <if test="occ1005 != null">
+        OCC1005,
+      </if>
+      <if test="occ1006 != null">
+        OCC1006,
+      </if>
+      <if test="occ1007 != null">
+        OCC1007,
+      </if>
+      <if test="occ1008 != null">
+        OCC1008,
+      </if>
+      <if test="occ1009 != null">
+        OCC1009,
+      </if>
+      <if test="occ1010 != null">
+        OCC1010,
+      </if>
+      <if test="occ1011 != null">
+        OCC1011,
+      </if>
+      <if test="occ1012 != null">
+        OCC1012,
+      </if>
+      <if test="occ1013 != null">
+        OCC1013,
+      </if>
+      <if test="occ1014 != null">
+        OCC1014,
+      </if>
+      <if test="occ1015 != null">
+        OCC1015,
+      </if>
+      <if test="occ1016 != null">
+        OCC1016,
+      </if>
+      <if test="occ1017 != null">
+        OCC1017,
+      </if>
+      <if test="occ1018 != null">
+        OCC1018,
+      </if>
+      <if test="occ1019 != null">
+        OCC1019,
+      </if>
+      <if test="occ1020 != null">
+        OCC1020,
+      </if>
+      <if test="occ1021 != null">
+        OCC1021,
+      </if>
+      <if test="occ1022 != null">
+        OCC1022,
+      </if>
+      <if test="occ1023 != null">
+        OCC1023,
+      </if>
+      <if test="occ1024 != null">
+        OCC1024,
+      </if>
+      <if test="occ1025 != null">
+        OCC1025,
+      </if>
+      <if test="occ1026 != null">
+        OCC1026,
+      </if>
+      <if test="occ1027 != null">
+        OCC1027,
+      </if>
+      <if test="occ1028 != null">
+        OCC1028,
+      </if>
+      <if test="occud01 != null">
+        OCCUD01,
+      </if>
+      <if test="occud02 != null">
+        OCCUD02,
+      </if>
+      <if test="occud03 != null">
+        OCCUD03,
+      </if>
+      <if test="occud04 != null">
+        OCCUD04,
+      </if>
+      <if test="occud05 != null">
+        OCCUD05,
+      </if>
+      <if test="occud06 != null">
+        OCCUD06,
+      </if>
+      <if test="occud07 != null">
+        OCCUD07,
+      </if>
+      <if test="occud08 != null">
+        OCCUD08,
+      </if>
+      <if test="occud09 != null">
+        OCCUD09,
+      </if>
+      <if test="occud10 != null">
+        OCCUD10,
+      </if>
+      <if test="occud11 != null">
+        OCCUD11,
+      </if>
+      <if test="occud12 != null">
+        OCCUD12,
+      </if>
+      <if test="occud13 != null">
+        OCCUD13,
+      </if>
+      <if test="occud14 != null">
+        OCCUD14,
+      </if>
+      <if test="occud15 != null">
+        OCCUD15,
+      </if>
+      <if test="occ66 != null">
+        OCC66,
+      </if>
+      <if test="occ1029 != null">
+        OCC1029,
+      </if>
+      <if test="occ67 != null">
+        OCC67,
+      </if>
+      <if test="occ1705 != null">
+        OCC1705,
+      </if>
+      <if test="occ1706 != null">
+        OCC1706,
+      </if>
+      <if test="occ1707 != null">
+        OCC1707,
+      </if>
+      <if test="occ1708 != null">
+        OCC1708,
+      </if>
+      <if test="occ234 != null">
+        OCC234,
+      </if>
+      <if test="occ235 != null">
+        OCC235,
+      </if>
+      <if test="occ244 != null">
+        OCC244,
+      </if>
+      <if test="occ245 != null">
+        OCC245,
+      </if>
+      <if test="occ246 != null">
+        OCC246,
+      </if>
+      <if test="occ247 != null">
+        OCC247,
+      </if>
+      <if test="occ248 != null">
+        OCC248,
+      </if>
+      <if test="occ68 != null">
+        OCC68,
+      </if>
+      <if test="occ69 != null">
+        OCC69,
+      </if>
+      <if test="occ71 != null">
+        OCC71,
+      </if>
+      <if test="occ72 != null">
+        OCC72,
+      </if>
+      <if test="occ930 != null">
+        OCC930,
+      </if>
+      <if test="occpos != null">
+        OCCPOS,
+      </if>
+      <if test="occoriu != null">
+        OCCORIU,
+      </if>
+      <if test="occorig != null">
+        OCCORIG,
+      </if>
+      <if test="occ73 != null">
+        OCC73,
+      </if>
+      <if test="occ74 != null">
+        OCC74,
+      </if>
+      <if test="occ75 != null">
+        OCC75,
+      </if>
+      <if test="occ76 != null">
+        OCC76,
+      </if>
+      <if test="occ77 != null">
+        OCC77,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="occ02 != null">
+        #{occ02,jdbcType=VARCHAR},
+      </if>
+      <if test="occ03 != null">
+        #{occ03,jdbcType=VARCHAR},
+      </if>
+      <if test="occ04 != null">
+        #{occ04,jdbcType=VARCHAR},
+      </if>
+      <if test="occ05 != null">
+        #{occ05,jdbcType=VARCHAR},
+      </if>
+      <if test="occ06 != null">
+        #{occ06,jdbcType=VARCHAR},
+      </if>
+      <if test="occ07 != null">
+        #{occ07,jdbcType=VARCHAR},
+      </if>
+      <if test="occ08 != null">
+        #{occ08,jdbcType=VARCHAR},
+      </if>
+      <if test="occ09 != null">
+        #{occ09,jdbcType=VARCHAR},
+      </if>
+      <if test="occ10 != null">
+        #{occ10,jdbcType=VARCHAR},
+      </if>
+      <if test="occ11 != null">
+        #{occ11,jdbcType=VARCHAR},
+      </if>
+      <if test="occ12 != null">
+        #{occ12,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ13 != null">
+        #{occ13,jdbcType=DECIMAL},
+      </if>
+      <if test="occ14 != null">
+        #{occ14,jdbcType=DECIMAL},
+      </if>
+      <if test="occ15 != null">
+        #{occ15,jdbcType=DECIMAL},
+      </if>
+      <if test="occ16 != null">
+        #{occ16,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ171 != null">
+        #{occ171,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ172 != null">
+        #{occ172,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ173 != null">
+        #{occ173,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ174 != null">
+        #{occ174,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ175 != null">
+        #{occ175,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ18 != null">
+        #{occ18,jdbcType=VARCHAR},
+      </if>
+      <if test="occ19 != null">
+        #{occ19,jdbcType=VARCHAR},
+      </if>
+      <if test="occ20 != null">
+        #{occ20,jdbcType=VARCHAR},
+      </if>
+      <if test="occ21 != null">
+        #{occ21,jdbcType=VARCHAR},
+      </if>
+      <if test="occ22 != null">
+        #{occ22,jdbcType=VARCHAR},
+      </if>
+      <if test="occ231 != null">
+        #{occ231,jdbcType=VARCHAR},
+      </if>
+      <if test="occ232 != null">
+        #{occ232,jdbcType=VARCHAR},
+      </if>
+      <if test="occ233 != null">
+        #{occ233,jdbcType=VARCHAR},
+      </if>
+      <if test="occ241 != null">
+        #{occ241,jdbcType=VARCHAR},
+      </if>
+      <if test="occ242 != null">
+        #{occ242,jdbcType=VARCHAR},
+      </if>
+      <if test="occ243 != null">
+        #{occ243,jdbcType=VARCHAR},
+      </if>
+      <if test="occ261 != null">
+        #{occ261,jdbcType=VARCHAR},
+      </if>
+      <if test="occ262 != null">
+        #{occ262,jdbcType=VARCHAR},
+      </if>
+      <if test="occ263 != null">
+        #{occ263,jdbcType=VARCHAR},
+      </if>
+      <if test="occ271 != null">
+        #{occ271,jdbcType=VARCHAR},
+      </if>
+      <if test="occ272 != null">
+        #{occ272,jdbcType=VARCHAR},
+      </if>
+      <if test="occ273 != null">
+        #{occ273,jdbcType=VARCHAR},
+      </if>
+      <if test="occ28 != null">
+        #{occ28,jdbcType=VARCHAR},
+      </if>
+      <if test="occ29 != null">
+        #{occ29,jdbcType=VARCHAR},
+      </if>
+      <if test="occ292 != null">
+        #{occ292,jdbcType=VARCHAR},
+      </if>
+      <if test="occ30 != null">
+        #{occ30,jdbcType=VARCHAR},
+      </if>
+      <if test="occ302 != null">
+        #{occ302,jdbcType=VARCHAR},
+      </if>
+      <if test="occ31 != null">
+        #{occ31,jdbcType=VARCHAR},
+      </if>
+      <if test="occ32 != null">
+        #{occ32,jdbcType=DECIMAL},
+      </if>
+      <if test="occ33 != null">
+        #{occ33,jdbcType=VARCHAR},
+      </if>
+      <if test="occ34 != null">
+        #{occ34,jdbcType=VARCHAR},
+      </if>
+      <if test="occ35 != null">
+        #{occ35,jdbcType=VARCHAR},
+      </if>
+      <if test="occ36 != null">
+        #{occ36,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ37 != null">
+        #{occ37,jdbcType=VARCHAR},
+      </if>
+      <if test="occ38 != null">
+        #{occ38,jdbcType=VARCHAR},
+      </if>
+      <if test="occ39 != null">
+        #{occ39,jdbcType=VARCHAR},
+      </if>
+      <if test="occ39a != null">
+        #{occ39a,jdbcType=VARCHAR},
+      </if>
+      <if test="occ40 != null">
+        #{occ40,jdbcType=VARCHAR},
+      </if>
+      <if test="occ41 != null">
+        #{occ41,jdbcType=VARCHAR},
+      </if>
+      <if test="occ42 != null">
+        #{occ42,jdbcType=VARCHAR},
+      </if>
+      <if test="occ43 != null">
+        #{occ43,jdbcType=VARCHAR},
+      </if>
+      <if test="occ44 != null">
+        #{occ44,jdbcType=VARCHAR},
+      </if>
+      <if test="occ45 != null">
+        #{occ45,jdbcType=VARCHAR},
+      </if>
+      <if test="occ46 != null">
+        #{occ46,jdbcType=VARCHAR},
+      </if>
+      <if test="occ47 != null">
+        #{occ47,jdbcType=VARCHAR},
+      </if>
+      <if test="occ48 != null">
+        #{occ48,jdbcType=VARCHAR},
+      </if>
+      <if test="occ49 != null">
+        #{occ49,jdbcType=VARCHAR},
+      </if>
+      <if test="occ50 != null">
+        #{occ50,jdbcType=VARCHAR},
+      </if>
+      <if test="occ51 != null">
+        #{occ51,jdbcType=VARCHAR},
+      </if>
+      <if test="occ52 != null">
+        #{occ52,jdbcType=VARCHAR},
+      </if>
+      <if test="occ53 != null">
+        #{occ53,jdbcType=DECIMAL},
+      </if>
+      <if test="occ55 != null">
+        #{occ55,jdbcType=VARCHAR},
+      </if>
+      <if test="occ56 != null">
+        #{occ56,jdbcType=VARCHAR},
+      </if>
+      <if test="occ57 != null">
+        #{occ57,jdbcType=VARCHAR},
+      </if>
+      <if test="occ61 != null">
+        #{occ61,jdbcType=VARCHAR},
+      </if>
+      <if test="occ62 != null">
+        #{occ62,jdbcType=VARCHAR},
+      </if>
+      <if test="occ63 != null">
+        #{occ63,jdbcType=DECIMAL},
+      </if>
+      <if test="occ631 != null">
+        #{occ631,jdbcType=VARCHAR},
+      </if>
+      <if test="occ64 != null">
+        #{occ64,jdbcType=DECIMAL},
+      </if>
+      <if test="occ701 != null">
+        #{occ701,jdbcType=VARCHAR},
+      </if>
+      <if test="occ702 != null">
+        #{occ702,jdbcType=VARCHAR},
+      </if>
+      <if test="occ703 != null">
+        #{occ703,jdbcType=VARCHAR},
+      </if>
+      <if test="occ704 != null">
+        #{occ704,jdbcType=VARCHAR},
+      </if>
+      <if test="occacti != null">
+        #{occacti,jdbcType=VARCHAR},
+      </if>
+      <if test="occuser != null">
+        #{occuser,jdbcType=VARCHAR},
+      </if>
+      <if test="occgrup != null">
+        #{occgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="occmodu != null">
+        #{occmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="occdate != null">
+        #{occdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ65 != null">
+        #{occ65,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1001 != null">
+        #{occ1001,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1002 != null">
+        #{occ1002,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1003 != null">
+        #{occ1003,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1004 != null">
+        #{occ1004,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1005 != null">
+        #{occ1005,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1006 != null">
+        #{occ1006,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1007 != null">
+        #{occ1007,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1008 != null">
+        #{occ1008,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1009 != null">
+        #{occ1009,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1010 != null">
+        #{occ1010,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1011 != null">
+        #{occ1011,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1012 != null">
+        #{occ1012,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1013 != null">
+        #{occ1013,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1014 != null">
+        #{occ1014,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1015 != null">
+        #{occ1015,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1016 != null">
+        #{occ1016,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1017 != null">
+        #{occ1017,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1018 != null">
+        #{occ1018,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1019 != null">
+        #{occ1019,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1020 != null">
+        #{occ1020,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1021 != null">
+        #{occ1021,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1022 != null">
+        #{occ1022,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1023 != null">
+        #{occ1023,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1024 != null">
+        #{occ1024,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1025 != null">
+        #{occ1025,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1026 != null">
+        #{occ1026,jdbcType=DECIMAL},
+      </if>
+      <if test="occ1027 != null">
+        #{occ1027,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1028 != null">
+        #{occ1028,jdbcType=DECIMAL},
+      </if>
+      <if test="occud01 != null">
+        #{occud01,jdbcType=VARCHAR},
+      </if>
+      <if test="occud02 != null">
+        #{occud02,jdbcType=VARCHAR},
+      </if>
+      <if test="occud03 != null">
+        #{occud03,jdbcType=VARCHAR},
+      </if>
+      <if test="occud04 != null">
+        #{occud04,jdbcType=VARCHAR},
+      </if>
+      <if test="occud05 != null">
+        #{occud05,jdbcType=VARCHAR},
+      </if>
+      <if test="occud06 != null">
+        #{occud06,jdbcType=VARCHAR},
+      </if>
+      <if test="occud07 != null">
+        #{occud07,jdbcType=DECIMAL},
+      </if>
+      <if test="occud08 != null">
+        #{occud08,jdbcType=DECIMAL},
+      </if>
+      <if test="occud09 != null">
+        #{occud09,jdbcType=DECIMAL},
+      </if>
+      <if test="occud10 != null">
+        #{occud10,jdbcType=DECIMAL},
+      </if>
+      <if test="occud11 != null">
+        #{occud11,jdbcType=DECIMAL},
+      </if>
+      <if test="occud12 != null">
+        #{occud12,jdbcType=DECIMAL},
+      </if>
+      <if test="occud13 != null">
+        #{occud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occud14 != null">
+        #{occud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occud15 != null">
+        #{occud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ66 != null">
+        #{occ66,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1029 != null">
+        #{occ1029,jdbcType=VARCHAR},
+      </if>
+      <if test="occ67 != null">
+        #{occ67,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1705 != null">
+        #{occ1705,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1706 != null">
+        #{occ1706,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1707 != null">
+        #{occ1707,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1708 != null">
+        #{occ1708,jdbcType=VARCHAR},
+      </if>
+      <if test="occ234 != null">
+        #{occ234,jdbcType=VARCHAR},
+      </if>
+      <if test="occ235 != null">
+        #{occ235,jdbcType=VARCHAR},
+      </if>
+      <if test="occ244 != null">
+        #{occ244,jdbcType=VARCHAR},
+      </if>
+      <if test="occ245 != null">
+        #{occ245,jdbcType=VARCHAR},
+      </if>
+      <if test="occ246 != null">
+        #{occ246,jdbcType=VARCHAR},
+      </if>
+      <if test="occ247 != null">
+        #{occ247,jdbcType=DECIMAL},
+      </if>
+      <if test="occ248 != null">
+        #{occ248,jdbcType=DECIMAL},
+      </if>
+      <if test="occ68 != null">
+        #{occ68,jdbcType=VARCHAR},
+      </if>
+      <if test="occ69 != null">
+        #{occ69,jdbcType=VARCHAR},
+      </if>
+      <if test="occ71 != null">
+        #{occ71,jdbcType=VARCHAR},
+      </if>
+      <if test="occ72 != null">
+        #{occ72,jdbcType=DECIMAL},
+      </if>
+      <if test="occ930 != null">
+        #{occ930,jdbcType=VARCHAR},
+      </if>
+      <if test="occpos != null">
+        #{occpos,jdbcType=VARCHAR},
+      </if>
+      <if test="occoriu != null">
+        #{occoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="occorig != null">
+        #{occorig,jdbcType=VARCHAR},
+      </if>
+      <if test="occ73 != null">
+        #{occ73,jdbcType=VARCHAR},
+      </if>
+      <if test="occ74 != null">
+        #{occ74,jdbcType=VARCHAR},
+      </if>
+      <if test="occ75 != null">
+        #{occ75,jdbcType=VARCHAR},
+      </if>
+      <if test="occ76 != null">
+        #{occ76,jdbcType=DECIMAL},
+      </if>
+      <if test="occ77 != null">
+        #{occ77,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.sale.pojo.OccFile">
+    update OCC_FILE
+    <set>
+      <if test="occ02 != null">
+        OCC02 = #{occ02,jdbcType=VARCHAR},
+      </if>
+      <if test="occ03 != null">
+        OCC03 = #{occ03,jdbcType=VARCHAR},
+      </if>
+      <if test="occ04 != null">
+        OCC04 = #{occ04,jdbcType=VARCHAR},
+      </if>
+      <if test="occ05 != null">
+        OCC05 = #{occ05,jdbcType=VARCHAR},
+      </if>
+      <if test="occ06 != null">
+        OCC06 = #{occ06,jdbcType=VARCHAR},
+      </if>
+      <if test="occ07 != null">
+        OCC07 = #{occ07,jdbcType=VARCHAR},
+      </if>
+      <if test="occ08 != null">
+        OCC08 = #{occ08,jdbcType=VARCHAR},
+      </if>
+      <if test="occ09 != null">
+        OCC09 = #{occ09,jdbcType=VARCHAR},
+      </if>
+      <if test="occ10 != null">
+        OCC10 = #{occ10,jdbcType=VARCHAR},
+      </if>
+      <if test="occ11 != null">
+        OCC11 = #{occ11,jdbcType=VARCHAR},
+      </if>
+      <if test="occ12 != null">
+        OCC12 = #{occ12,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ13 != null">
+        OCC13 = #{occ13,jdbcType=DECIMAL},
+      </if>
+      <if test="occ14 != null">
+        OCC14 = #{occ14,jdbcType=DECIMAL},
+      </if>
+      <if test="occ15 != null">
+        OCC15 = #{occ15,jdbcType=DECIMAL},
+      </if>
+      <if test="occ16 != null">
+        OCC16 = #{occ16,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ171 != null">
+        OCC171 = #{occ171,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ172 != null">
+        OCC172 = #{occ172,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ173 != null">
+        OCC173 = #{occ173,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ174 != null">
+        OCC174 = #{occ174,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ175 != null">
+        OCC175 = #{occ175,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ18 != null">
+        OCC18 = #{occ18,jdbcType=VARCHAR},
+      </if>
+      <if test="occ19 != null">
+        OCC19 = #{occ19,jdbcType=VARCHAR},
+      </if>
+      <if test="occ20 != null">
+        OCC20 = #{occ20,jdbcType=VARCHAR},
+      </if>
+      <if test="occ21 != null">
+        OCC21 = #{occ21,jdbcType=VARCHAR},
+      </if>
+      <if test="occ22 != null">
+        OCC22 = #{occ22,jdbcType=VARCHAR},
+      </if>
+      <if test="occ231 != null">
+        OCC231 = #{occ231,jdbcType=VARCHAR},
+      </if>
+      <if test="occ232 != null">
+        OCC232 = #{occ232,jdbcType=VARCHAR},
+      </if>
+      <if test="occ233 != null">
+        OCC233 = #{occ233,jdbcType=VARCHAR},
+      </if>
+      <if test="occ241 != null">
+        OCC241 = #{occ241,jdbcType=VARCHAR},
+      </if>
+      <if test="occ242 != null">
+        OCC242 = #{occ242,jdbcType=VARCHAR},
+      </if>
+      <if test="occ243 != null">
+        OCC243 = #{occ243,jdbcType=VARCHAR},
+      </if>
+      <if test="occ261 != null">
+        OCC261 = #{occ261,jdbcType=VARCHAR},
+      </if>
+      <if test="occ262 != null">
+        OCC262 = #{occ262,jdbcType=VARCHAR},
+      </if>
+      <if test="occ263 != null">
+        OCC263 = #{occ263,jdbcType=VARCHAR},
+      </if>
+      <if test="occ271 != null">
+        OCC271 = #{occ271,jdbcType=VARCHAR},
+      </if>
+      <if test="occ272 != null">
+        OCC272 = #{occ272,jdbcType=VARCHAR},
+      </if>
+      <if test="occ273 != null">
+        OCC273 = #{occ273,jdbcType=VARCHAR},
+      </if>
+      <if test="occ28 != null">
+        OCC28 = #{occ28,jdbcType=VARCHAR},
+      </if>
+      <if test="occ29 != null">
+        OCC29 = #{occ29,jdbcType=VARCHAR},
+      </if>
+      <if test="occ292 != null">
+        OCC292 = #{occ292,jdbcType=VARCHAR},
+      </if>
+      <if test="occ30 != null">
+        OCC30 = #{occ30,jdbcType=VARCHAR},
+      </if>
+      <if test="occ302 != null">
+        OCC302 = #{occ302,jdbcType=VARCHAR},
+      </if>
+      <if test="occ31 != null">
+        OCC31 = #{occ31,jdbcType=VARCHAR},
+      </if>
+      <if test="occ32 != null">
+        OCC32 = #{occ32,jdbcType=DECIMAL},
+      </if>
+      <if test="occ33 != null">
+        OCC33 = #{occ33,jdbcType=VARCHAR},
+      </if>
+      <if test="occ34 != null">
+        OCC34 = #{occ34,jdbcType=VARCHAR},
+      </if>
+      <if test="occ35 != null">
+        OCC35 = #{occ35,jdbcType=VARCHAR},
+      </if>
+      <if test="occ36 != null">
+        OCC36 = #{occ36,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ37 != null">
+        OCC37 = #{occ37,jdbcType=VARCHAR},
+      </if>
+      <if test="occ38 != null">
+        OCC38 = #{occ38,jdbcType=VARCHAR},
+      </if>
+      <if test="occ39 != null">
+        OCC39 = #{occ39,jdbcType=VARCHAR},
+      </if>
+      <if test="occ39a != null">
+        OCC39A = #{occ39a,jdbcType=VARCHAR},
+      </if>
+      <if test="occ40 != null">
+        OCC40 = #{occ40,jdbcType=VARCHAR},
+      </if>
+      <if test="occ41 != null">
+        OCC41 = #{occ41,jdbcType=VARCHAR},
+      </if>
+      <if test="occ42 != null">
+        OCC42 = #{occ42,jdbcType=VARCHAR},
+      </if>
+      <if test="occ43 != null">
+        OCC43 = #{occ43,jdbcType=VARCHAR},
+      </if>
+      <if test="occ44 != null">
+        OCC44 = #{occ44,jdbcType=VARCHAR},
+      </if>
+      <if test="occ45 != null">
+        OCC45 = #{occ45,jdbcType=VARCHAR},
+      </if>
+      <if test="occ46 != null">
+        OCC46 = #{occ46,jdbcType=VARCHAR},
+      </if>
+      <if test="occ47 != null">
+        OCC47 = #{occ47,jdbcType=VARCHAR},
+      </if>
+      <if test="occ48 != null">
+        OCC48 = #{occ48,jdbcType=VARCHAR},
+      </if>
+      <if test="occ49 != null">
+        OCC49 = #{occ49,jdbcType=VARCHAR},
+      </if>
+      <if test="occ50 != null">
+        OCC50 = #{occ50,jdbcType=VARCHAR},
+      </if>
+      <if test="occ51 != null">
+        OCC51 = #{occ51,jdbcType=VARCHAR},
+      </if>
+      <if test="occ52 != null">
+        OCC52 = #{occ52,jdbcType=VARCHAR},
+      </if>
+      <if test="occ53 != null">
+        OCC53 = #{occ53,jdbcType=DECIMAL},
+      </if>
+      <if test="occ55 != null">
+        OCC55 = #{occ55,jdbcType=VARCHAR},
+      </if>
+      <if test="occ56 != null">
+        OCC56 = #{occ56,jdbcType=VARCHAR},
+      </if>
+      <if test="occ57 != null">
+        OCC57 = #{occ57,jdbcType=VARCHAR},
+      </if>
+      <if test="occ61 != null">
+        OCC61 = #{occ61,jdbcType=VARCHAR},
+      </if>
+      <if test="occ62 != null">
+        OCC62 = #{occ62,jdbcType=VARCHAR},
+      </if>
+      <if test="occ63 != null">
+        OCC63 = #{occ63,jdbcType=DECIMAL},
+      </if>
+      <if test="occ631 != null">
+        OCC631 = #{occ631,jdbcType=VARCHAR},
+      </if>
+      <if test="occ64 != null">
+        OCC64 = #{occ64,jdbcType=DECIMAL},
+      </if>
+      <if test="occ701 != null">
+        OCC701 = #{occ701,jdbcType=VARCHAR},
+      </if>
+      <if test="occ702 != null">
+        OCC702 = #{occ702,jdbcType=VARCHAR},
+      </if>
+      <if test="occ703 != null">
+        OCC703 = #{occ703,jdbcType=VARCHAR},
+      </if>
+      <if test="occ704 != null">
+        OCC704 = #{occ704,jdbcType=VARCHAR},
+      </if>
+      <if test="occacti != null">
+        OCCACTI = #{occacti,jdbcType=VARCHAR},
+      </if>
+      <if test="occuser != null">
+        OCCUSER = #{occuser,jdbcType=VARCHAR},
+      </if>
+      <if test="occgrup != null">
+        OCCGRUP = #{occgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="occmodu != null">
+        OCCMODU = #{occmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="occdate != null">
+        OCCDATE = #{occdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ65 != null">
+        OCC65 = #{occ65,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1001 != null">
+        OCC1001 = #{occ1001,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1002 != null">
+        OCC1002 = #{occ1002,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1003 != null">
+        OCC1003 = #{occ1003,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1004 != null">
+        OCC1004 = #{occ1004,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1005 != null">
+        OCC1005 = #{occ1005,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1006 != null">
+        OCC1006 = #{occ1006,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1007 != null">
+        OCC1007 = #{occ1007,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1008 != null">
+        OCC1008 = #{occ1008,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1009 != null">
+        OCC1009 = #{occ1009,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1010 != null">
+        OCC1010 = #{occ1010,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1011 != null">
+        OCC1011 = #{occ1011,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1012 != null">
+        OCC1012 = #{occ1012,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1013 != null">
+        OCC1013 = #{occ1013,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1014 != null">
+        OCC1014 = #{occ1014,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1015 != null">
+        OCC1015 = #{occ1015,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1016 != null">
+        OCC1016 = #{occ1016,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1017 != null">
+        OCC1017 = #{occ1017,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1018 != null">
+        OCC1018 = #{occ1018,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1019 != null">
+        OCC1019 = #{occ1019,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ1020 != null">
+        OCC1020 = #{occ1020,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1021 != null">
+        OCC1021 = #{occ1021,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1022 != null">
+        OCC1022 = #{occ1022,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1023 != null">
+        OCC1023 = #{occ1023,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1024 != null">
+        OCC1024 = #{occ1024,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1025 != null">
+        OCC1025 = #{occ1025,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1026 != null">
+        OCC1026 = #{occ1026,jdbcType=DECIMAL},
+      </if>
+      <if test="occ1027 != null">
+        OCC1027 = #{occ1027,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1028 != null">
+        OCC1028 = #{occ1028,jdbcType=DECIMAL},
+      </if>
+      <if test="occud01 != null">
+        OCCUD01 = #{occud01,jdbcType=VARCHAR},
+      </if>
+      <if test="occud02 != null">
+        OCCUD02 = #{occud02,jdbcType=VARCHAR},
+      </if>
+      <if test="occud03 != null">
+        OCCUD03 = #{occud03,jdbcType=VARCHAR},
+      </if>
+      <if test="occud04 != null">
+        OCCUD04 = #{occud04,jdbcType=VARCHAR},
+      </if>
+      <if test="occud05 != null">
+        OCCUD05 = #{occud05,jdbcType=VARCHAR},
+      </if>
+      <if test="occud06 != null">
+        OCCUD06 = #{occud06,jdbcType=VARCHAR},
+      </if>
+      <if test="occud07 != null">
+        OCCUD07 = #{occud07,jdbcType=DECIMAL},
+      </if>
+      <if test="occud08 != null">
+        OCCUD08 = #{occud08,jdbcType=DECIMAL},
+      </if>
+      <if test="occud09 != null">
+        OCCUD09 = #{occud09,jdbcType=DECIMAL},
+      </if>
+      <if test="occud10 != null">
+        OCCUD10 = #{occud10,jdbcType=DECIMAL},
+      </if>
+      <if test="occud11 != null">
+        OCCUD11 = #{occud11,jdbcType=DECIMAL},
+      </if>
+      <if test="occud12 != null">
+        OCCUD12 = #{occud12,jdbcType=DECIMAL},
+      </if>
+      <if test="occud13 != null">
+        OCCUD13 = #{occud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occud14 != null">
+        OCCUD14 = #{occud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occud15 != null">
+        OCCUD15 = #{occud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="occ66 != null">
+        OCC66 = #{occ66,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1029 != null">
+        OCC1029 = #{occ1029,jdbcType=VARCHAR},
+      </if>
+      <if test="occ67 != null">
+        OCC67 = #{occ67,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1705 != null">
+        OCC1705 = #{occ1705,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1706 != null">
+        OCC1706 = #{occ1706,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1707 != null">
+        OCC1707 = #{occ1707,jdbcType=VARCHAR},
+      </if>
+      <if test="occ1708 != null">
+        OCC1708 = #{occ1708,jdbcType=VARCHAR},
+      </if>
+      <if test="occ234 != null">
+        OCC234 = #{occ234,jdbcType=VARCHAR},
+      </if>
+      <if test="occ235 != null">
+        OCC235 = #{occ235,jdbcType=VARCHAR},
+      </if>
+      <if test="occ244 != null">
+        OCC244 = #{occ244,jdbcType=VARCHAR},
+      </if>
+      <if test="occ245 != null">
+        OCC245 = #{occ245,jdbcType=VARCHAR},
+      </if>
+      <if test="occ246 != null">
+        OCC246 = #{occ246,jdbcType=VARCHAR},
+      </if>
+      <if test="occ247 != null">
+        OCC247 = #{occ247,jdbcType=DECIMAL},
+      </if>
+      <if test="occ248 != null">
+        OCC248 = #{occ248,jdbcType=DECIMAL},
+      </if>
+      <if test="occ68 != null">
+        OCC68 = #{occ68,jdbcType=VARCHAR},
+      </if>
+      <if test="occ69 != null">
+        OCC69 = #{occ69,jdbcType=VARCHAR},
+      </if>
+      <if test="occ71 != null">
+        OCC71 = #{occ71,jdbcType=VARCHAR},
+      </if>
+      <if test="occ72 != null">
+        OCC72 = #{occ72,jdbcType=DECIMAL},
+      </if>
+      <if test="occ930 != null">
+        OCC930 = #{occ930,jdbcType=VARCHAR},
+      </if>
+      <if test="occpos != null">
+        OCCPOS = #{occpos,jdbcType=VARCHAR},
+      </if>
+      <if test="occoriu != null">
+        OCCORIU = #{occoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="occorig != null">
+        OCCORIG = #{occorig,jdbcType=VARCHAR},
+      </if>
+      <if test="occ73 != null">
+        OCC73 = #{occ73,jdbcType=VARCHAR},
+      </if>
+      <if test="occ74 != null">
+        OCC74 = #{occ74,jdbcType=VARCHAR},
+      </if>
+      <if test="occ75 != null">
+        OCC75 = #{occ75,jdbcType=VARCHAR},
+      </if>
+      <if test="occ76 != null">
+        OCC76 = #{occ76,jdbcType=DECIMAL},
+      </if>
+      <if test="occ77 != null">
+        OCC77 = #{occ77,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where OCC01 = #{occ01,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

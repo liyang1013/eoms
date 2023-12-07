@@ -30,7 +30,7 @@
       </el-table-column>
       <el-table-column label="状态" width="120">
         <template slot-scope="scope">
-          {{scope.row.inaconf | formatStatus}}
+          {{scope.row.inaconf | formatVerifyStatus}}
         </template>
       </el-table-column>
       <el-table-column label="项目" width="160">
