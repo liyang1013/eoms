@@ -5,9 +5,11 @@ import com.github.pagehelper.PageHelper;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.purchase.pojo.RvaFile;
 import com.keboda.eomsback.purchase.pojo.RvbFile;
+import com.keboda.eomsback.purchase.pojo.RvuFile;
 import com.keboda.eomsback.purchase.service.IRvaService;
 import com.keboda.eomsback.entity.BaseResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,4 +48,9 @@ public class RvaController {
         return BaseResult.success("修改成功");
     }
 
+    @PostMapping("/alterRvaDate")
+    public BaseResult alterRvaDate(@RequestBody RvaFile rvaFile){
+        iRvaService.alterRvaDate(rvaFile);
+        return BaseResult.success("收货日期修改成功");
+    }
 }

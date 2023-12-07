@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p style="font-size: 13px; background-color: #032338;color: rgb(30 167 221) ;text-align: center;line-height: 15px">{{floor}}楼小车运行轨迹</p>
+    <p style=" font-size: 26px; background-color: #032338;color: rgb(30 167 221) ;text-align: center;line-height: 30px">{{floor}}楼小车运行轨迹</p>
     <canvas id="floorMap">
       您的浏览器不支持canvas，请升级或选择其他浏览器
     </canvas>
@@ -87,16 +87,10 @@ export default {
       c.clearRect(0, 0, canvas.width, canvas.height);
       this.$http.post('http://172.17.200.154:8090/rest/robots/states',{params: {id: []}}).then(res => {
         res.data.data.filter(e => e.position.floorId === this.floor).forEach(e =>{
-
-          // c.font="10px";
-          // c.fillText(e.id,(e.position.x - 45) * 18 + 5, (e.position.y - 22) * 20);
-          // c.fillText(e.id,(e.position.x - 49) * 9  , (e.position.y - 25) * 7 );
-
           const image = new Image();
           image.src = "/static/location/car.png";
           image.onload = function () {
-            c.drawImage(this, (e.position.x - 45) * 18 , (e.position.y - 22) * 20 , 15, 15)
-            // c.drawImage(this, (e.position.x - 49) * 9 - 1.5, (e.position.y - 25.5) * 7 -1.5 , 8, 8)
+            c.drawImage(this, (e.position.x - 41) * 18 , (e.position.y - 21) * 20 , 25, 25)
           }
         })
       });

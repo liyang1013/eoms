@@ -6,6 +6,11 @@
     set rvv17 = #{rvv17}, rvv87 = #{rvv17}, rvv39 = round(rvv38 * #{rvv17},2), rvv39t = round(rvv38t * #{rvv17},2)
     where rvv01 = #{rvv01} and rvv02 = #{rvv02}
   </update>
+    <update id="alterRvvDate">
+      update ${centre}.rvv_file
+      set rvv09 = #{rvu03}
+      where rvv01 = #{rvu01}
+    </update>
 
     <select id="searchRvvList" resultType="com.keboda.eomsback.purchase.pojo.RvvFile">
       select rvv02,rvv17,rvv25,rvv31,rvv031,rvv32,imd02,ima021,rvv35,rvv36,rvv37,rvv38,rvv38t,rvv39,rvv39t

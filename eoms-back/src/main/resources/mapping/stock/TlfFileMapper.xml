@@ -35,7 +35,17 @@
     <update id="alterDate">
         update ${centre}.TLF_FILE
         set tlf06 = #{ddate}, tlf07 = #{ddate}
-        where tlf026 = #{tlf026} and  tlf036 = #{tlf036} and tlf907 = #{tlf907}
+        <where>
+            <if test="tlf026 != null and tlf026 != '' ">
+                and tlf026 = #{tlf026}
+            </if>
+            <if test="tlf036 != null and tlf036 != '' ">
+                and tlf036 = #{tlf036}
+            </if>
+            <if test="tlf907 != null and tlf907 != '' ">
+                and tlf907 = #{tlf907}
+            </if>
+        </where>
     </update>
     <select id="searchEWStockGapPageHelper" resultType="com.keboda.eomsback.stock.pojo.EWStockGap">
         SELECT CPRODUCENO,ima02 cproducename,CDANHAO,nvl(sum(IQTY),0) iqty, nvl(tlf10,0) qty,CRTYPE, CWHCODE,imd02,(nvl(sum(IQTY),0) -  nvl(tlf10,0)) gapqty

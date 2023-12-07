@@ -11,4 +11,6 @@ public interface RvaFileMapper {
     void alterRvaConf(RvaFile rvaFile);
 
     RvaFile selectByKey(@Param("rva01") String rva01, @Param("centre") String centre);
+
+    void alterRvaDate(RvaFile rvaFile);
 }

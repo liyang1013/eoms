@@ -24,7 +24,7 @@ const routes = [
             {
                 path: 'carMap',
                 name: 'carMap',
-                component: () => import('@/views/report/CarMapView.vue')
+                component: () => import('@/views/report/CarMapView')
             }
         ]
     },

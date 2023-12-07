@@ -12,7 +12,7 @@
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
-    <el-alert title="用户权限类型: p_zxw; 权限类型: p_zw" type="success" :closable="false">
+    <el-alert title="用户权限组设置: p_zxw; 权限组类型: p_zw; 权限组运行作业设置: p_zy" type="success" :closable="false">
     </el-alert>
     <el-table :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading">

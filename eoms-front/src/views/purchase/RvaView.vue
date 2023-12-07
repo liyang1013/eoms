@@ -68,7 +68,7 @@
               <span style=" margin-left: 10px; color: #8492a6; font-size: 13px">{{ documents.master.smydesc }}</span>
             </el-form-item>
             <el-form-item label="预计收货日期:">
-              {{ documents.master.rva06}}
+              <el-date-picker type="date" placeholder="选择日期" v-model="documents.master.rva06" value-format="yyyy-MM-dd" style="width: 140px;" @change="alterRvaDate(documents.master)"></el-date-picker>
             </el-form-item>
             <el-form-item label="采购性质:">
               {{ documents.master.rva10 | formatNature }}
@@ -189,6 +189,9 @@ export default {
     },
     alterRvb() {
       this.$http.post('/api/rva/alterRvbQty', this.documents.slave)
+    },
+    alterRvaDate(master){
+      this.$http.post('/api/rva/alterRvaDate', master)
     },
     handleCurrentChange(val) {
       this.search(val);

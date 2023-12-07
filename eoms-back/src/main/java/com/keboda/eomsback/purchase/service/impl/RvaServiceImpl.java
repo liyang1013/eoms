@@ -72,4 +72,11 @@ public class RvaServiceImpl implements IRvaService {
             }
         }
     }
+
+    @Override
+    @Transactional
+    public void alterRvaDate(RvaFile rvaFile) {
+        rvaFileMapper.alterRvaDate(rvaFile);
+        iTlfService.alterDate(rvaFile.getCentre(),rvaFile.getRva02(),rvaFile.getRva01(),rvaFile.getRva06(),"0");
+    }
 }

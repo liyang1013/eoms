@@ -15,4 +15,6 @@ public interface IRvaService {
     void alterRvaConf(RvaFile rvaFile);
 
     void alterRvbQty(List<RvbFile> rvbFiles);
+
+    void alterRvaDate(RvaFile rvaFile);
 }

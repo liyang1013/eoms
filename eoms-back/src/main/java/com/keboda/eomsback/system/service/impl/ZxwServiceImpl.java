@@ -71,6 +71,7 @@ public class ZxwServiceImpl implements IZxwService {
                 if (department.size() > 0) {
 
                     String search = "";
+                    String alterRvuDatesearch = "";
                     for (String s : power) {
                         search += "'" + s + "',";
                     }

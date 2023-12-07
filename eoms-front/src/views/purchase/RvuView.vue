@@ -11,7 +11,7 @@
         <el-input v-model="searchVo.code" placeholder="入库单号" clearable></el-input>
       </el-form-item>
     </el-form>
-    <el-alert title="采购入库: apmt720; 采购验退: apmt721; 采购退货: apmt722; 委外采购入库: apmt730; 委外采购验退: apmt731; 委外采购退货: apmt732" type="success"
+    <el-alert title="采购入库: apmt720; 采购验退: apmt721; 采购退货: apmt722; 委外采购入库: apmt730; 委外采购验退: apmt731; 委外采购退货: apmt732; 多角采购入库: apmt740" type="success"
               :closable="false">
     </el-alert>
     <el-table :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"

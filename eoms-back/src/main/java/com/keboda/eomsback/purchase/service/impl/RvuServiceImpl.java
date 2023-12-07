@@ -35,13 +35,18 @@ public class RvuServiceImpl implements IRvuService {
         return rvvFileMapper.searchRvvList(searchVo);
     }
 
+    /**
+     * 根据入库单号 修改rvu、rvv、tlf表相关的时间字段
+     * @param rvuFile 要修改的入库单
+     */
     @Override
     @Transactional
     public void alterRvuDate(RvuFile rvuFile) {
         rvuFileMapper.alterRvuDate(rvuFile);
-        if(rvuFile.getRvu00().equals("1")){//入库
+        rvvFileMapper.alterRvvDate(rvuFile);
+        if(rvuFile.getRvu00().equals("1")){
             iTlfService.alterDate(rvuFile.getCentre(),rvuFile.getRvu02(),rvuFile.getRvu01(),rvuFile.getRvu03(),"1");
-        }else{//退货
+        }else{
             iTlfService.alterDate(rvuFile.getCentre(),rvuFile.getRvu01(),rvuFile.getRvu02(),rvuFile.getRvu03(),"-1");
         }
     }

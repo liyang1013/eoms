@@ -6,6 +6,11 @@
         set rvaconf = #{rvaconf}
         where rva01 = #{rva01}
     </update>
+    <update id="alterRvaDate">
+        update ${centre}.rva_file
+        set rva06 = #{rva06}, rvadate = #{rva06},rvaud13 = #{rva06},rvaud14 = #{rva06}, rvacond =  #{rva06}, rvacrat =  #{rva06}
+        where rva01 = #{rva01}
+    </update>
 
     <select id="searchRvaListPageHelper" resultType="com.keboda.eomsback.purchase.pojo.RvaFile">
         select rva01, rva02, pmc03, rvaconf, rva10, rva05,rva06, gen02,rvaud02,rvaud03,rva32, rva33,rvaud13,rvaud14,#{centre} centre,smydesc
