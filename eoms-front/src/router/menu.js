@@ -116,6 +116,12 @@ export const menu = [
                 name: '销售出货单',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/sale/OgaView')
+            },
+            {
+                path: 'oha',
+                name: '销售退货单',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/sale/OhaView')
             }
         ]
     },

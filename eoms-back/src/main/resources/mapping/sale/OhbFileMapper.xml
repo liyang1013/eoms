@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.OhbFileMapper">
+
+  <insert id="insertSelective" keyColumn="OHB01" keyProperty="ohb01" parameterType="com.keboda.eomsback.sale.pojo.OhbFile" useGeneratedKeys="true">
+    insert into OHB_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ohb03 != null">
+        OHB03,
+      </if>
+      <if test="ohb04 != null">
+        OHB04,
+      </if>
+      <if test="ohb05 != null">
+        OHB05,
+      </if>
+      <if test="ohb05Fac != null">
+        OHB05_FAC,
+      </if>
+      <if test="ohb06 != null">
+        OHB06,
+      </if>
+      <if test="ohb07 != null">
+        OHB07,
+      </if>
+      <if test="ohb08 != null">
+        OHB08,
+      </if>
+      <if test="ohb09 != null">
+        OHB09,
+      </if>
+      <if test="ohb091 != null">
+        OHB091,
+      </if>
+      <if test="ohb092 != null">
+        OHB092,
+      </if>
+      <if test="ohb11 != null">
+        OHB11,
+      </if>
+      <if test="ohb12 != null">
+        OHB12,
+      </if>
+      <if test="ohb13 != null">
+        OHB13,
+      </if>
+      <if test="ohb14 != null">
+        OHB14,
+      </if>
+      <if test="ohb14t != null">
+        OHB14T,
+      </if>
+      <if test="ohb15 != null">
+        OHB15,
+      </if>
+      <if test="ohb15Fac != null">
+        OHB15_FAC,
+      </if>
+      <if test="ohb16 != null">
+        OHB16,
+      </if>
+      <if test="ohb30 != null">
+        OHB30,
+      </if>
+      <if test="ohb31 != null">
+        OHB31,
+      </if>
+      <if test="ohb32 != null">
+        OHB32,
+      </if>
+      <if test="ohb33 != null">
+        OHB33,
+      </if>
+      <if test="ohb34 != null">
+        OHB34,
+      </if>
+      <if test="ohb50 != null">
+        OHB50,
+      </if>
+      <if test="ohb51 != null">
+        OHB51,
+      </if>
+      <if test="ohb52 != null">
+        OHB52,
+      </if>
+      <if test="ohb53 != null">
+        OHB53,
+      </if>
+      <if test="ohb60 != null">
+        OHB60,
+      </if>
+      <if test="ohb910 != null">
+        OHB910,
+      </if>
+      <if test="ohb911 != null">
+        OHB911,
+      </if>
+      <if test="ohb912 != null">
+        OHB912,
+      </if>
+      <if test="ohb913 != null">
+        OHB913,
+      </if>
+      <if test="ohb914 != null">
+        OHB914,
+      </if>
+      <if test="ohb915 != null">
+        OHB915,
+      </if>
+      <if test="ohb916 != null">
+        OHB916,
+      </if>
+      <if test="ohb917 != null">
+        OHB917,
+      </if>
+      <if test="ohb1001 != null">
+        OHB1001,
+      </if>
+      <if test="ohb1002 != null">
+        OHB1002,
+      </if>
+      <if test="ohb1003 != null">
+        OHB1003,
+      </if>
+      <if test="ohb1004 != null">
+        OHB1004,
+      </if>
+      <if test="ohb1005 != null">
+        OHB1005,
+      </if>
+      <if test="ohb1007 != null">
+        OHB1007,
+      </if>
+      <if test="ohb1008 != null">
+        OHB1008,
+      </if>
+      <if test="ohb1009 != null">
+        OHB1009,
+      </if>
+      <if test="ohb1010 != null">
+        OHB1010,
+      </if>
+      <if test="ohb1011 != null">
+        OHB1011,
+      </if>
+      <if test="ohb930 != null">
+        OHB930,
+      </if>
+      <if test="ohb1012 != null">
+        OHB1012,
+      </if>
+      <if test="ohb61 != null">
+        OHB61,
+      </if>
+      <if test="ohbud01 != null">
+        OHBUD01,
+      </if>
+      <if test="ohbud02 != null">
+        OHBUD02,
+      </if>
+      <if test="ohbud03 != null">
+        OHBUD03,
+      </if>
+      <if test="ohbud04 != null">
+        OHBUD04,
+      </if>
+      <if test="ohbud05 != null">
+        OHBUD05,
+      </if>
+      <if test="ohbud06 != null">
+        OHBUD06,
+      </if>
+      <if test="ohbud07 != null">
+        OHBUD07,
+      </if>
+      <if test="ohbud08 != null">
+        OHBUD08,
+      </if>
+      <if test="ohbud09 != null">
+        OHBUD09,
+      </if>
+      <if test="ohbud10 != null">
+        OHBUD10,
+      </if>
+      <if test="ohbud11 != null">
+        OHBUD11,
+      </if>
+      <if test="ohbud12 != null">
+        OHBUD12,
+      </if>
+      <if test="ohbud13 != null">
+        OHBUD13,
+      </if>
+      <if test="ohbud14 != null">
+        OHBUD14,
+      </if>
+      <if test="ohbud15 != null">
+        OHBUD15,
+      </if>
+      <if test="ohb64 != null">
+        OHB64,
+      </if>
+      <if test="ohb65 != null">
+        OHB65,
+      </if>
+      <if test="ohb66 != null">
+        OHB66,
+      </if>
+      <if test="ohb67 != null">
+        OHB67,
+      </if>
+      <if test="ohb68 != null">
+        OHB68,
+      </if>
+      <if test="ohbplant != null">
+        OHBPLANT,
+      </if>
+      <if test="ohblegal != null">
+        OHBLEGAL,
+      </if>
+      <if test="ohb69 != null">
+        OHB69,
+      </if>
+      <if test="ohb70 != null">
+        OHB70,
+      </if>
+      <if test="ohb37 != null">
+        OHB37,
+      </if>
+      <if test="ohb40 != null">
+        OHB40,
+      </if>
+      <if test="ohb71 != null">
+        OHB71,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ohb03 != null">
+        #{ohb03,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb04 != null">
+        #{ohb04,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb05 != null">
+        #{ohb05,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb05Fac != null">
+        #{ohb05Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb06 != null">
+        #{ohb06,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb07 != null">
+        #{ohb07,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb08 != null">
+        #{ohb08,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb09 != null">
+        #{ohb09,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb091 != null">
+        #{ohb091,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb092 != null">
+        #{ohb092,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb11 != null">
+        #{ohb11,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb12 != null">
+        #{ohb12,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb13 != null">
+        #{ohb13,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb14 != null">
+        #{ohb14,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb14t != null">
+        #{ohb14t,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb15 != null">
+        #{ohb15,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb15Fac != null">
+        #{ohb15Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb16 != null">
+        #{ohb16,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb30 != null">
+        #{ohb30,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb31 != null">
+        #{ohb31,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb32 != null">
+        #{ohb32,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb33 != null">
+        #{ohb33,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb34 != null">
+        #{ohb34,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb50 != null">
+        #{ohb50,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb51 != null">
+        #{ohb51,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb52 != null">
+        #{ohb52,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb53 != null">
+        #{ohb53,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb60 != null">
+        #{ohb60,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb910 != null">
+        #{ohb910,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb911 != null">
+        #{ohb911,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb912 != null">
+        #{ohb912,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb913 != null">
+        #{ohb913,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb914 != null">
+        #{ohb914,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb915 != null">
+        #{ohb915,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb916 != null">
+        #{ohb916,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb917 != null">
+        #{ohb917,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb1001 != null">
+        #{ohb1001,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1002 != null">
+        #{ohb1002,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1003 != null">
+        #{ohb1003,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb1004 != null">
+        #{ohb1004,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1005 != null">
+        #{ohb1005,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1007 != null">
+        #{ohb1007,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1008 != null">
+        #{ohb1008,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1009 != null">
+        #{ohb1009,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb1010 != null">
+        #{ohb1010,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1011 != null">
+        #{ohb1011,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb930 != null">
+        #{ohb930,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1012 != null">
+        #{ohb1012,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb61 != null">
+        #{ohb61,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud01 != null">
+        #{ohbud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud02 != null">
+        #{ohbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud03 != null">
+        #{ohbud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud04 != null">
+        #{ohbud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud05 != null">
+        #{ohbud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud06 != null">
+        #{ohbud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud07 != null">
+        #{ohbud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud08 != null">
+        #{ohbud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud09 != null">
+        #{ohbud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud10 != null">
+        #{ohbud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud11 != null">
+        #{ohbud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud12 != null">
+        #{ohbud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud13 != null">
+        #{ohbud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohbud14 != null">
+        #{ohbud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohbud15 != null">
+        #{ohbud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohb64 != null">
+        #{ohb64,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb65 != null">
+        #{ohb65,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb66 != null">
+        #{ohb66,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb67 != null">
+        #{ohb67,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb68 != null">
+        #{ohb68,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbplant != null">
+        #{ohbplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ohblegal != null">
+        #{ohblegal,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb69 != null">
+        #{ohb69,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb70 != null">
+        #{ohb70,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb37 != null">
+        #{ohb37,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb40 != null">
+        #{ohb40,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb71 != null">
+        #{ohb71,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.sale.pojo.OhbFile">
+    update OHB_FILE
+    <set>
+      <if test="ohb04 != null">
+        OHB04 = #{ohb04,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb05 != null">
+        OHB05 = #{ohb05,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb05Fac != null">
+        OHB05_FAC = #{ohb05Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb06 != null">
+        OHB06 = #{ohb06,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb07 != null">
+        OHB07 = #{ohb07,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb08 != null">
+        OHB08 = #{ohb08,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb09 != null">
+        OHB09 = #{ohb09,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb091 != null">
+        OHB091 = #{ohb091,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb092 != null">
+        OHB092 = #{ohb092,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb11 != null">
+        OHB11 = #{ohb11,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb12 != null">
+        OHB12 = #{ohb12,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb13 != null">
+        OHB13 = #{ohb13,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb14 != null">
+        OHB14 = #{ohb14,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb14t != null">
+        OHB14T = #{ohb14t,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb15 != null">
+        OHB15 = #{ohb15,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb15Fac != null">
+        OHB15_FAC = #{ohb15Fac,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb16 != null">
+        OHB16 = #{ohb16,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb30 != null">
+        OHB30 = #{ohb30,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb31 != null">
+        OHB31 = #{ohb31,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb32 != null">
+        OHB32 = #{ohb32,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb33 != null">
+        OHB33 = #{ohb33,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb34 != null">
+        OHB34 = #{ohb34,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb50 != null">
+        OHB50 = #{ohb50,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb51 != null">
+        OHB51 = #{ohb51,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb52 != null">
+        OHB52 = #{ohb52,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb53 != null">
+        OHB53 = #{ohb53,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb60 != null">
+        OHB60 = #{ohb60,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb910 != null">
+        OHB910 = #{ohb910,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb911 != null">
+        OHB911 = #{ohb911,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb912 != null">
+        OHB912 = #{ohb912,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb913 != null">
+        OHB913 = #{ohb913,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb914 != null">
+        OHB914 = #{ohb914,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb915 != null">
+        OHB915 = #{ohb915,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb916 != null">
+        OHB916 = #{ohb916,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb917 != null">
+        OHB917 = #{ohb917,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb1001 != null">
+        OHB1001 = #{ohb1001,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1002 != null">
+        OHB1002 = #{ohb1002,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1003 != null">
+        OHB1003 = #{ohb1003,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb1004 != null">
+        OHB1004 = #{ohb1004,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1005 != null">
+        OHB1005 = #{ohb1005,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1007 != null">
+        OHB1007 = #{ohb1007,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1008 != null">
+        OHB1008 = #{ohb1008,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1009 != null">
+        OHB1009 = #{ohb1009,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb1010 != null">
+        OHB1010 = #{ohb1010,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1011 != null">
+        OHB1011 = #{ohb1011,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb930 != null">
+        OHB930 = #{ohb930,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb1012 != null">
+        OHB1012 = #{ohb1012,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb61 != null">
+        OHB61 = #{ohb61,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud01 != null">
+        OHBUD01 = #{ohbud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud02 != null">
+        OHBUD02 = #{ohbud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud03 != null">
+        OHBUD03 = #{ohbud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud04 != null">
+        OHBUD04 = #{ohbud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud05 != null">
+        OHBUD05 = #{ohbud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud06 != null">
+        OHBUD06 = #{ohbud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbud07 != null">
+        OHBUD07 = #{ohbud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud08 != null">
+        OHBUD08 = #{ohbud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud09 != null">
+        OHBUD09 = #{ohbud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud10 != null">
+        OHBUD10 = #{ohbud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud11 != null">
+        OHBUD11 = #{ohbud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud12 != null">
+        OHBUD12 = #{ohbud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ohbud13 != null">
+        OHBUD13 = #{ohbud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohbud14 != null">
+        OHBUD14 = #{ohbud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohbud15 != null">
+        OHBUD15 = #{ohbud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohb64 != null">
+        OHB64 = #{ohb64,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb65 != null">
+        OHB65 = #{ohb65,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb66 != null">
+        OHB66 = #{ohb66,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb67 != null">
+        OHB67 = #{ohb67,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb68 != null">
+        OHB68 = #{ohb68,jdbcType=VARCHAR},
+      </if>
+      <if test="ohbplant != null">
+        OHBPLANT = #{ohbplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ohblegal != null">
+        OHBLEGAL = #{ohblegal,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb69 != null">
+        OHB69 = #{ohb69,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb70 != null">
+        OHB70 = #{ohb70,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb37 != null">
+        OHB37 = #{ohb37,jdbcType=DECIMAL},
+      </if>
+      <if test="ohb40 != null">
+        OHB40 = #{ohb40,jdbcType=VARCHAR},
+      </if>
+      <if test="ohb71 != null">
+        OHB71 = #{ohb71,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OHB01 = #{ohb01,jdbcType=VARCHAR}
+      and OHB03 = #{ohb03,jdbcType=DECIMAL}
+  </update>
+  <select id="searchOhbList" resultType="com.keboda.eomsback.sale.pojo.OhbFile">
+    select ohb03,ohb04,ohb06,ima021,imd02,ohb12,ohb05,ohb13,ohb14t
+    from ${centre}.ohb_file
+           left join ${centre}.ima_file on ima01 = ohb04
+           left join ${centre}.imd_file on imd01 = ohb09
+    where ohb01 = #{code}
+  </select>
+
+</mapper>

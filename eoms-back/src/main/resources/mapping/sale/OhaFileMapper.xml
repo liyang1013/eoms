@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.sale.mapper.OhaFileMapper">
+
+  <insert id="insertSelective" keyColumn="OHA01" keyProperty="oha01" parameterType="com.keboda.eomsback.sale.pojo.OhaFile" useGeneratedKeys="true">
+    insert into OHA_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oha02 != null">
+        OHA02,
+      </if>
+      <if test="oha03 != null">
+        OHA03,
+      </if>
+      <if test="oha032 != null">
+        OHA032,
+      </if>
+      <if test="oha04 != null">
+        OHA04,
+      </if>
+      <if test="oha05 != null">
+        OHA05,
+      </if>
+      <if test="oha08 != null">
+        OHA08,
+      </if>
+      <if test="oha09 != null">
+        OHA09,
+      </if>
+      <if test="oha10 != null">
+        OHA10,
+      </if>
+      <if test="oha14 != null">
+        OHA14,
+      </if>
+      <if test="oha15 != null">
+        OHA15,
+      </if>
+      <if test="oha16 != null">
+        OHA16,
+      </if>
+      <if test="oha17 != null">
+        OHA17,
+      </if>
+      <if test="oha21 != null">
+        OHA21,
+      </if>
+      <if test="oha211 != null">
+        OHA211,
+      </if>
+      <if test="oha212 != null">
+        OHA212,
+      </if>
+      <if test="oha213 != null">
+        OHA213,
+      </if>
+      <if test="oha23 != null">
+        OHA23,
+      </if>
+      <if test="oha24 != null">
+        OHA24,
+      </if>
+      <if test="oha25 != null">
+        OHA25,
+      </if>
+      <if test="oha26 != null">
+        OHA26,
+      </if>
+      <if test="oha31 != null">
+        OHA31,
+      </if>
+      <if test="oha41 != null">
+        OHA41,
+      </if>
+      <if test="oha42 != null">
+        OHA42,
+      </if>
+      <if test="oha43 != null">
+        OHA43,
+      </if>
+      <if test="oha44 != null">
+        OHA44,
+      </if>
+      <if test="oha45 != null">
+        OHA45,
+      </if>
+      <if test="oha46 != null">
+        OHA46,
+      </if>
+      <if test="oha47 != null">
+        OHA47,
+      </if>
+      <if test="oha48 != null">
+        OHA48,
+      </if>
+      <if test="oha50 != null">
+        OHA50,
+      </if>
+      <if test="oha53 != null">
+        OHA53,
+      </if>
+      <if test="oha54 != null">
+        OHA54,
+      </if>
+      <if test="oha99 != null">
+        OHA99,
+      </if>
+      <if test="ohaconf != null">
+        OHACONF,
+      </if>
+      <if test="ohapost != null">
+        OHAPOST,
+      </if>
+      <if test="ohaprsw != null">
+        OHAPRSW,
+      </if>
+      <if test="ohauser != null">
+        OHAUSER,
+      </if>
+      <if test="ohagrup != null">
+        OHAGRUP,
+      </if>
+      <if test="ohamodu != null">
+        OHAMODU,
+      </if>
+      <if test="ohadate != null">
+        OHADATE,
+      </if>
+      <if test="oha55 != null">
+        OHA55,
+      </if>
+      <if test="ohamksg != null">
+        OHAMKSG,
+      </if>
+      <if test="oha1001 != null">
+        OHA1001,
+      </if>
+      <if test="oha1002 != null">
+        OHA1002,
+      </if>
+      <if test="oha1003 != null">
+        OHA1003,
+      </if>
+      <if test="oha1004 != null">
+        OHA1004,
+      </if>
+      <if test="oha1005 != null">
+        OHA1005,
+      </if>
+      <if test="oha1006 != null">
+        OHA1006,
+      </if>
+      <if test="oha1007 != null">
+        OHA1007,
+      </if>
+      <if test="oha1008 != null">
+        OHA1008,
+      </if>
+      <if test="oha1009 != null">
+        OHA1009,
+      </if>
+      <if test="oha1010 != null">
+        OHA1010,
+      </if>
+      <if test="oha1011 != null">
+        OHA1011,
+      </if>
+      <if test="oha1012 != null">
+        OHA1012,
+      </if>
+      <if test="oha1013 != null">
+        OHA1013,
+      </if>
+      <if test="oha1014 != null">
+        OHA1014,
+      </if>
+      <if test="oha1015 != null">
+        OHA1015,
+      </if>
+      <if test="oha1016 != null">
+        OHA1016,
+      </if>
+      <if test="oha1017 != null">
+        OHA1017,
+      </if>
+      <if test="oha1018 != null">
+        OHA1018,
+      </if>
+      <if test="oha1019 != null">
+        OHA1019,
+      </if>
+      <if test="oha1020 != null">
+        OHA1020,
+      </if>
+      <if test="oha100 != null">
+        OHA100,
+      </if>
+      <if test="oha101 != null">
+        OHA101,
+      </if>
+      <if test="oha102 != null">
+        OHA102,
+      </if>
+      <if test="oha56 != null">
+        OHA56,
+      </if>
+      <if test="ohaud01 != null">
+        OHAUD01,
+      </if>
+      <if test="ohaud02 != null">
+        OHAUD02,
+      </if>
+      <if test="ohaud03 != null">
+        OHAUD03,
+      </if>
+      <if test="ohaud04 != null">
+        OHAUD04,
+      </if>
+      <if test="ohaud05 != null">
+        OHAUD05,
+      </if>
+      <if test="ohaud06 != null">
+        OHAUD06,
+      </if>
+      <if test="ohaud07 != null">
+        OHAUD07,
+      </if>
+      <if test="ohaud08 != null">
+        OHAUD08,
+      </if>
+      <if test="ohaud09 != null">
+        OHAUD09,
+      </if>
+      <if test="ohaud10 != null">
+        OHAUD10,
+      </if>
+      <if test="ohaud11 != null">
+        OHAUD11,
+      </if>
+      <if test="ohaud12 != null">
+        OHAUD12,
+      </if>
+      <if test="ohaud13 != null">
+        OHAUD13,
+      </if>
+      <if test="ohaud14 != null">
+        OHAUD14,
+      </if>
+      <if test="ohaud15 != null">
+        OHAUD15,
+      </if>
+      <if test="oha85 != null">
+        OHA85,
+      </if>
+      <if test="oha86 != null">
+        OHA86,
+      </if>
+      <if test="oha87 != null">
+        OHA87,
+      </if>
+      <if test="oha88 != null">
+        OHA88,
+      </if>
+      <if test="oha89 != null">
+        OHA89,
+      </if>
+      <if test="oha90 != null">
+        OHA90,
+      </if>
+      <if test="oha91 != null">
+        OHA91,
+      </if>
+      <if test="oha92 != null">
+        OHA92,
+      </if>
+      <if test="oha93 != null">
+        OHA93,
+      </if>
+      <if test="oha94 != null">
+        OHA94,
+      </if>
+      <if test="oha95 != null">
+        OHA95,
+      </if>
+      <if test="oha96 != null">
+        OHA96,
+      </if>
+      <if test="oha97 != null">
+        OHA97,
+      </if>
+      <if test="ohacond != null">
+        OHACOND,
+      </if>
+      <if test="ohaconu != null">
+        OHACONU,
+      </if>
+      <if test="ohaplant != null">
+        OHAPLANT,
+      </if>
+      <if test="ohalegal != null">
+        OHALEGAL,
+      </if>
+      <if test="ohaoriu != null">
+        OHAORIU,
+      </if>
+      <if test="ohaorig != null">
+        OHAORIG,
+      </if>
+      <if test="oha98 != null">
+        OHA98,
+      </if>
+      <if test="oha57 != null">
+        OHA57,
+      </if>
+      <if test="ohacont != null">
+        OHACONT,
+      </if>
+      <if test="ohaslk02 != null">
+        OHASLK02,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oha02 != null">
+        #{oha02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha03 != null">
+        #{oha03,jdbcType=VARCHAR},
+      </if>
+      <if test="oha032 != null">
+        #{oha032,jdbcType=VARCHAR},
+      </if>
+      <if test="oha04 != null">
+        #{oha04,jdbcType=VARCHAR},
+      </if>
+      <if test="oha05 != null">
+        #{oha05,jdbcType=VARCHAR},
+      </if>
+      <if test="oha08 != null">
+        #{oha08,jdbcType=VARCHAR},
+      </if>
+      <if test="oha09 != null">
+        #{oha09,jdbcType=VARCHAR},
+      </if>
+      <if test="oha10 != null">
+        #{oha10,jdbcType=VARCHAR},
+      </if>
+      <if test="oha14 != null">
+        #{oha14,jdbcType=VARCHAR},
+      </if>
+      <if test="oha15 != null">
+        #{oha15,jdbcType=VARCHAR},
+      </if>
+      <if test="oha16 != null">
+        #{oha16,jdbcType=VARCHAR},
+      </if>
+      <if test="oha17 != null">
+        #{oha17,jdbcType=VARCHAR},
+      </if>
+      <if test="oha21 != null">
+        #{oha21,jdbcType=VARCHAR},
+      </if>
+      <if test="oha211 != null">
+        #{oha211,jdbcType=DECIMAL},
+      </if>
+      <if test="oha212 != null">
+        #{oha212,jdbcType=VARCHAR},
+      </if>
+      <if test="oha213 != null">
+        #{oha213,jdbcType=VARCHAR},
+      </if>
+      <if test="oha23 != null">
+        #{oha23,jdbcType=VARCHAR},
+      </if>
+      <if test="oha24 != null">
+        #{oha24,jdbcType=DECIMAL},
+      </if>
+      <if test="oha25 != null">
+        #{oha25,jdbcType=VARCHAR},
+      </if>
+      <if test="oha26 != null">
+        #{oha26,jdbcType=VARCHAR},
+      </if>
+      <if test="oha31 != null">
+        #{oha31,jdbcType=VARCHAR},
+      </if>
+      <if test="oha41 != null">
+        #{oha41,jdbcType=VARCHAR},
+      </if>
+      <if test="oha42 != null">
+        #{oha42,jdbcType=VARCHAR},
+      </if>
+      <if test="oha43 != null">
+        #{oha43,jdbcType=VARCHAR},
+      </if>
+      <if test="oha44 != null">
+        #{oha44,jdbcType=VARCHAR},
+      </if>
+      <if test="oha45 != null">
+        #{oha45,jdbcType=VARCHAR},
+      </if>
+      <if test="oha46 != null">
+        #{oha46,jdbcType=VARCHAR},
+      </if>
+      <if test="oha47 != null">
+        #{oha47,jdbcType=VARCHAR},
+      </if>
+      <if test="oha48 != null">
+        #{oha48,jdbcType=VARCHAR},
+      </if>
+      <if test="oha50 != null">
+        #{oha50,jdbcType=DECIMAL},
+      </if>
+      <if test="oha53 != null">
+        #{oha53,jdbcType=DECIMAL},
+      </if>
+      <if test="oha54 != null">
+        #{oha54,jdbcType=DECIMAL},
+      </if>
+      <if test="oha99 != null">
+        #{oha99,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaconf != null">
+        #{ohaconf,jdbcType=VARCHAR},
+      </if>
+      <if test="ohapost != null">
+        #{ohapost,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaprsw != null">
+        #{ohaprsw,jdbcType=DECIMAL},
+      </if>
+      <if test="ohauser != null">
+        #{ohauser,jdbcType=VARCHAR},
+      </if>
+      <if test="ohagrup != null">
+        #{ohagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="ohamodu != null">
+        #{ohamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="ohadate != null">
+        #{ohadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha55 != null">
+        #{oha55,jdbcType=VARCHAR},
+      </if>
+      <if test="ohamksg != null">
+        #{ohamksg,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1001 != null">
+        #{oha1001,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1002 != null">
+        #{oha1002,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1003 != null">
+        #{oha1003,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1004 != null">
+        #{oha1004,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1005 != null">
+        #{oha1005,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1006 != null">
+        #{oha1006,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1007 != null">
+        #{oha1007,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1008 != null">
+        #{oha1008,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1009 != null">
+        #{oha1009,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1010 != null">
+        #{oha1010,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1011 != null">
+        #{oha1011,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1012 != null">
+        #{oha1012,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1013 != null">
+        #{oha1013,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1014 != null">
+        #{oha1014,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1015 != null">
+        #{oha1015,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1016 != null">
+        #{oha1016,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1017 != null">
+        #{oha1017,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1018 != null">
+        #{oha1018,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1019 != null">
+        #{oha1019,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1020 != null">
+        #{oha1020,jdbcType=DECIMAL},
+      </if>
+      <if test="oha100 != null">
+        #{oha100,jdbcType=VARCHAR},
+      </if>
+      <if test="oha101 != null">
+        #{oha101,jdbcType=VARCHAR},
+      </if>
+      <if test="oha102 != null">
+        #{oha102,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha56 != null">
+        #{oha56,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud01 != null">
+        #{ohaud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud02 != null">
+        #{ohaud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud03 != null">
+        #{ohaud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud04 != null">
+        #{ohaud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud05 != null">
+        #{ohaud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud06 != null">
+        #{ohaud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud07 != null">
+        #{ohaud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud08 != null">
+        #{ohaud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud09 != null">
+        #{ohaud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud10 != null">
+        #{ohaud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud11 != null">
+        #{ohaud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud12 != null">
+        #{ohaud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud13 != null">
+        #{ohaud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohaud14 != null">
+        #{ohaud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohaud15 != null">
+        #{ohaud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha85 != null">
+        #{oha85,jdbcType=VARCHAR},
+      </if>
+      <if test="oha86 != null">
+        #{oha86,jdbcType=VARCHAR},
+      </if>
+      <if test="oha87 != null">
+        #{oha87,jdbcType=VARCHAR},
+      </if>
+      <if test="oha88 != null">
+        #{oha88,jdbcType=VARCHAR},
+      </if>
+      <if test="oha89 != null">
+        #{oha89,jdbcType=VARCHAR},
+      </if>
+      <if test="oha90 != null">
+        #{oha90,jdbcType=VARCHAR},
+      </if>
+      <if test="oha91 != null">
+        #{oha91,jdbcType=VARCHAR},
+      </if>
+      <if test="oha92 != null">
+        #{oha92,jdbcType=VARCHAR},
+      </if>
+      <if test="oha93 != null">
+        #{oha93,jdbcType=VARCHAR},
+      </if>
+      <if test="oha94 != null">
+        #{oha94,jdbcType=VARCHAR},
+      </if>
+      <if test="oha95 != null">
+        #{oha95,jdbcType=DECIMAL},
+      </if>
+      <if test="oha96 != null">
+        #{oha96,jdbcType=VARCHAR},
+      </if>
+      <if test="oha97 != null">
+        #{oha97,jdbcType=DECIMAL},
+      </if>
+      <if test="ohacond != null">
+        #{ohacond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohaconu != null">
+        #{ohaconu,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaplant != null">
+        #{ohaplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ohalegal != null">
+        #{ohalegal,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaoriu != null">
+        #{ohaoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaorig != null">
+        #{ohaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="oha98 != null">
+        #{oha98,jdbcType=VARCHAR},
+      </if>
+      <if test="oha57 != null">
+        #{oha57,jdbcType=VARCHAR},
+      </if>
+      <if test="ohacont != null">
+        #{ohacont,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaslk02 != null">
+        #{ohaslk02,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.sale.pojo.OhaFile">
+    update OHA_FILE
+    <set>
+      <if test="oha02 != null">
+        OHA02 = #{oha02,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha03 != null">
+        OHA03 = #{oha03,jdbcType=VARCHAR},
+      </if>
+      <if test="oha032 != null">
+        OHA032 = #{oha032,jdbcType=VARCHAR},
+      </if>
+      <if test="oha04 != null">
+        OHA04 = #{oha04,jdbcType=VARCHAR},
+      </if>
+      <if test="oha05 != null">
+        OHA05 = #{oha05,jdbcType=VARCHAR},
+      </if>
+      <if test="oha08 != null">
+        OHA08 = #{oha08,jdbcType=VARCHAR},
+      </if>
+      <if test="oha09 != null">
+        OHA09 = #{oha09,jdbcType=VARCHAR},
+      </if>
+      <if test="oha10 != null">
+        OHA10 = #{oha10,jdbcType=VARCHAR},
+      </if>
+      <if test="oha14 != null">
+        OHA14 = #{oha14,jdbcType=VARCHAR},
+      </if>
+      <if test="oha15 != null">
+        OHA15 = #{oha15,jdbcType=VARCHAR},
+      </if>
+      <if test="oha16 != null">
+        OHA16 = #{oha16,jdbcType=VARCHAR},
+      </if>
+      <if test="oha17 != null">
+        OHA17 = #{oha17,jdbcType=VARCHAR},
+      </if>
+      <if test="oha21 != null">
+        OHA21 = #{oha21,jdbcType=VARCHAR},
+      </if>
+      <if test="oha211 != null">
+        OHA211 = #{oha211,jdbcType=DECIMAL},
+      </if>
+      <if test="oha212 != null">
+        OHA212 = #{oha212,jdbcType=VARCHAR},
+      </if>
+      <if test="oha213 != null">
+        OHA213 = #{oha213,jdbcType=VARCHAR},
+      </if>
+      <if test="oha23 != null">
+        OHA23 = #{oha23,jdbcType=VARCHAR},
+      </if>
+      <if test="oha24 != null">
+        OHA24 = #{oha24,jdbcType=DECIMAL},
+      </if>
+      <if test="oha25 != null">
+        OHA25 = #{oha25,jdbcType=VARCHAR},
+      </if>
+      <if test="oha26 != null">
+        OHA26 = #{oha26,jdbcType=VARCHAR},
+      </if>
+      <if test="oha31 != null">
+        OHA31 = #{oha31,jdbcType=VARCHAR},
+      </if>
+      <if test="oha41 != null">
+        OHA41 = #{oha41,jdbcType=VARCHAR},
+      </if>
+      <if test="oha42 != null">
+        OHA42 = #{oha42,jdbcType=VARCHAR},
+      </if>
+      <if test="oha43 != null">
+        OHA43 = #{oha43,jdbcType=VARCHAR},
+      </if>
+      <if test="oha44 != null">
+        OHA44 = #{oha44,jdbcType=VARCHAR},
+      </if>
+      <if test="oha45 != null">
+        OHA45 = #{oha45,jdbcType=VARCHAR},
+      </if>
+      <if test="oha46 != null">
+        OHA46 = #{oha46,jdbcType=VARCHAR},
+      </if>
+      <if test="oha47 != null">
+        OHA47 = #{oha47,jdbcType=VARCHAR},
+      </if>
+      <if test="oha48 != null">
+        OHA48 = #{oha48,jdbcType=VARCHAR},
+      </if>
+      <if test="oha50 != null">
+        OHA50 = #{oha50,jdbcType=DECIMAL},
+      </if>
+      <if test="oha53 != null">
+        OHA53 = #{oha53,jdbcType=DECIMAL},
+      </if>
+      <if test="oha54 != null">
+        OHA54 = #{oha54,jdbcType=DECIMAL},
+      </if>
+      <if test="oha99 != null">
+        OHA99 = #{oha99,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaconf != null">
+        OHACONF = #{ohaconf,jdbcType=VARCHAR},
+      </if>
+      <if test="ohapost != null">
+        OHAPOST = #{ohapost,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaprsw != null">
+        OHAPRSW = #{ohaprsw,jdbcType=DECIMAL},
+      </if>
+      <if test="ohauser != null">
+        OHAUSER = #{ohauser,jdbcType=VARCHAR},
+      </if>
+      <if test="ohagrup != null">
+        OHAGRUP = #{ohagrup,jdbcType=VARCHAR},
+      </if>
+      <if test="ohamodu != null">
+        OHAMODU = #{ohamodu,jdbcType=VARCHAR},
+      </if>
+      <if test="ohadate != null">
+        OHADATE = #{ohadate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha55 != null">
+        OHA55 = #{oha55,jdbcType=VARCHAR},
+      </if>
+      <if test="ohamksg != null">
+        OHAMKSG = #{ohamksg,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1001 != null">
+        OHA1001 = #{oha1001,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1002 != null">
+        OHA1002 = #{oha1002,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1003 != null">
+        OHA1003 = #{oha1003,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1004 != null">
+        OHA1004 = #{oha1004,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1005 != null">
+        OHA1005 = #{oha1005,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1006 != null">
+        OHA1006 = #{oha1006,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1007 != null">
+        OHA1007 = #{oha1007,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1008 != null">
+        OHA1008 = #{oha1008,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1009 != null">
+        OHA1009 = #{oha1009,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1010 != null">
+        OHA1010 = #{oha1010,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1011 != null">
+        OHA1011 = #{oha1011,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1012 != null">
+        OHA1012 = #{oha1012,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1013 != null">
+        OHA1013 = #{oha1013,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1014 != null">
+        OHA1014 = #{oha1014,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1015 != null">
+        OHA1015 = #{oha1015,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1016 != null">
+        OHA1016 = #{oha1016,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1017 != null">
+        OHA1017 = #{oha1017,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1018 != null">
+        OHA1018 = #{oha1018,jdbcType=VARCHAR},
+      </if>
+      <if test="oha1019 != null">
+        OHA1019 = #{oha1019,jdbcType=DECIMAL},
+      </if>
+      <if test="oha1020 != null">
+        OHA1020 = #{oha1020,jdbcType=DECIMAL},
+      </if>
+      <if test="oha100 != null">
+        OHA100 = #{oha100,jdbcType=VARCHAR},
+      </if>
+      <if test="oha101 != null">
+        OHA101 = #{oha101,jdbcType=VARCHAR},
+      </if>
+      <if test="oha102 != null">
+        OHA102 = #{oha102,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha56 != null">
+        OHA56 = #{oha56,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud01 != null">
+        OHAUD01 = #{ohaud01,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud02 != null">
+        OHAUD02 = #{ohaud02,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud03 != null">
+        OHAUD03 = #{ohaud03,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud04 != null">
+        OHAUD04 = #{ohaud04,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud05 != null">
+        OHAUD05 = #{ohaud05,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud06 != null">
+        OHAUD06 = #{ohaud06,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaud07 != null">
+        OHAUD07 = #{ohaud07,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud08 != null">
+        OHAUD08 = #{ohaud08,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud09 != null">
+        OHAUD09 = #{ohaud09,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud10 != null">
+        OHAUD10 = #{ohaud10,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud11 != null">
+        OHAUD11 = #{ohaud11,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud12 != null">
+        OHAUD12 = #{ohaud12,jdbcType=DECIMAL},
+      </if>
+      <if test="ohaud13 != null">
+        OHAUD13 = #{ohaud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohaud14 != null">
+        OHAUD14 = #{ohaud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohaud15 != null">
+        OHAUD15 = #{ohaud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="oha85 != null">
+        OHA85 = #{oha85,jdbcType=VARCHAR},
+      </if>
+      <if test="oha86 != null">
+        OHA86 = #{oha86,jdbcType=VARCHAR},
+      </if>
+      <if test="oha87 != null">
+        OHA87 = #{oha87,jdbcType=VARCHAR},
+      </if>
+      <if test="oha88 != null">
+        OHA88 = #{oha88,jdbcType=VARCHAR},
+      </if>
+      <if test="oha89 != null">
+        OHA89 = #{oha89,jdbcType=VARCHAR},
+      </if>
+      <if test="oha90 != null">
+        OHA90 = #{oha90,jdbcType=VARCHAR},
+      </if>
+      <if test="oha91 != null">
+        OHA91 = #{oha91,jdbcType=VARCHAR},
+      </if>
+      <if test="oha92 != null">
+        OHA92 = #{oha92,jdbcType=VARCHAR},
+      </if>
+      <if test="oha93 != null">
+        OHA93 = #{oha93,jdbcType=VARCHAR},
+      </if>
+      <if test="oha94 != null">
+        OHA94 = #{oha94,jdbcType=VARCHAR},
+      </if>
+      <if test="oha95 != null">
+        OHA95 = #{oha95,jdbcType=DECIMAL},
+      </if>
+      <if test="oha96 != null">
+        OHA96 = #{oha96,jdbcType=VARCHAR},
+      </if>
+      <if test="oha97 != null">
+        OHA97 = #{oha97,jdbcType=DECIMAL},
+      </if>
+      <if test="ohacond != null">
+        OHACOND = #{ohacond,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ohaconu != null">
+        OHACONU = #{ohaconu,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaplant != null">
+        OHAPLANT = #{ohaplant,jdbcType=VARCHAR},
+      </if>
+      <if test="ohalegal != null">
+        OHALEGAL = #{ohalegal,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaoriu != null">
+        OHAORIU = #{ohaoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaorig != null">
+        OHAORIG = #{ohaorig,jdbcType=VARCHAR},
+      </if>
+      <if test="oha98 != null">
+        OHA98 = #{oha98,jdbcType=VARCHAR},
+      </if>
+      <if test="oha57 != null">
+        OHA57 = #{oha57,jdbcType=VARCHAR},
+      </if>
+      <if test="ohacont != null">
+        OHACONT = #{ohacont,jdbcType=VARCHAR},
+      </if>
+      <if test="ohaslk02 != null">
+        OHASLK02 = #{ohaslk02,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where OHA01 = #{oha01,jdbcType=VARCHAR}
+  </update>
+  <update id="alterOhaDate">
+    update ${centre}.oha_file
+    set oha02   = #{oha02},
+        ohadate = #{oha02},
+        ohacond = #{oha02}
+    where oha01 = #{oha01}
+  </update>
+  <select id="searchOhaListPageHelper" resultType="com.keboda.eomsback.sale.pojo.OhaFile">
+    select oha01,SMYDESC,oha02,oha03,occ02,oha08,oha14,gen02,oha15,gem02,OHA99,OHACONF,oha55,ohapost,oha10,#{centre} centre
+    from ${centre}.OHA_FILE
+    left join ${centre}.SMY_FILE on smyslip = substr(oha01,0,4)
+    left join ${centre}.OCC_FILE on occ01 = oha03
+    left join ${centre}.gem_file on gem01 = oha15
+    left join ${centre}.gen_file on gen01 = oha14
+    <where>
+      <if test="code != null and code != '' ">
+        and lower(oha01) like lower('%${code}%')
+      </if>
+      <if test="multiTradeCode != null and multiTradeCode != '' ">
+        and lower(oha99) like lower('%${multiTradeCode}%')
+      </if>
+    </where>
+  </select>
+
+</mapper>

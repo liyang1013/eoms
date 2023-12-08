@@ -40,7 +40,7 @@
       </el-table-column>
       <el-table-column label="过账" width="120">
         <template slot-scope="scope">
-          {{scope.row.inapost | formatPost}}
+          {{scope.row.inapost | formatPostStatus}}
         </template>
       </el-table-column>
       <el-table-column prop="ina02" label="过账时间" width="120"></el-table-column>
