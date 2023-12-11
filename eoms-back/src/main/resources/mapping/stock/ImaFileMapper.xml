@@ -1272,7 +1272,12 @@
     </update>
     <update id="imaClass">
         update ${centre}.ima_file
-        set ima131  = '9999'
+        set ima131  = #{ima131}
+        where ima01 = #{ima01}
+    </update>
+    <update id="alterImaPurchaser">
+        update ${centre}.ima_file
+        set ima43  = #{ima43}
         where ima01 = #{ima01}
     </update>
 </mapper>

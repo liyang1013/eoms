@@ -25,4 +25,6 @@ public interface ImaFileMapper {
     void alterGfe(ImaFile imaFile);
 
     void imaClass(ImaFile imaFile);
+
+    void alterImaPurchaser(ImaFile imaFile);
 }

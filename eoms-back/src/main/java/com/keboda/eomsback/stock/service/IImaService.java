@@ -22,4 +22,6 @@ public interface IImaService {
     void alterGfe(ImaFile imaFile);
 
     void imaClass(MultipartFile file, String centre) throws IOException;
+
+    void alterImaPurchaser(MultipartFile file, String centre) throws IOException;
 }

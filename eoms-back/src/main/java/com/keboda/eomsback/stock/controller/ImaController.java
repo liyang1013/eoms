@@ -52,4 +52,11 @@ public class ImaController {
         iImaService.alterGfe(imaFile);
         return BaseResult.success("修改单位成功");
     }
+
+    @RequestMapping("/alterImaPurchaser")
+    public BaseResult alterImaPurchaser( MultipartFile file, String centre) throws IOException {
+        iImaService.alterImaPurchaser(file,centre);
+        return BaseResult.success("物料采购员批量修改成功");
+    }
+
 }

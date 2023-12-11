@@ -194,7 +194,22 @@ public class ImaServiceImpl implements IImaService {
             ImaFile imaFile = new ImaFile();
             imaFile.setCentre(centre);
             imaFile.setIma01(map.get("料件").toString());
+            imaFile.setIma131("9999");
             imaFileMapper.imaClass(imaFile);
+        }
+    }
+
+    @Override
+    @Transactional
+    public void alterImaPurchaser(MultipartFile file, String centre) throws IOException {
+        ExcelReader reader = ExcelUtil.getReader(file.getInputStream());
+        List<Map<String, Object>> read = reader.readAll();
+        for (Map<String, Object> map : read) {
+            ImaFile imaFile = new ImaFile();
+            imaFile.setCentre(centre);
+            imaFile.setIma01(map.get("料号").toString());
+            imaFile.setIma43(map.get("采购员工号 ").toString());
+            imaFileMapper.alterImaPurchaser(imaFile);
         }
     }
 }

@@ -14,6 +14,9 @@
       <el-card class="upload_card" shadow="never">
         <baseUpload url="/api/sfb/alterCostCenter" title="工单成本中心批量维护" :centre="centre" href="/static/工单成本中心导入模板.xlsx"></baseUpload>
       </el-card>
+      <el-card class="upload_card" shadow="never">
+        <baseUpload url="/api/ima/alterImaPurchaser" title="物料采购员批量维护" :centre="centre" href="/static/物料采购员导入模板.xlsx"></baseUpload>
+      </el-card>
     </el-alert>
   </div>
 </template>
