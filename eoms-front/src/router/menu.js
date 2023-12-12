@@ -18,7 +18,7 @@ export const menu = [
                 component: () => import('@/views/purchase/PmaView')
             },
             {
-                path: 'pmy',
+                path: 'pmc',
                 name: '供应商档案',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/purchase/PmcView')
@@ -111,6 +111,12 @@ export const menu = [
         icon: 'el-icon-box',
         component: null,
         children: [
+            {
+                path: 'occ',
+                name: '客户档案',
+                icon: 'el-icon-tickets',
+                component: () => import('@/views/sale/OccView')
+            },
             {
                 path: 'oga',
                 name: '销售出货单',

@@ -52,6 +52,8 @@ public class CommonField {
      */
     private String pmy02;
 
+    private String oca02;
+
     /**
      * 付款方式
      */

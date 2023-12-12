@@ -1,14 +1,9 @@
-package com.keboda.eomsback.sale.mapper;
+package com.keboda.eomsback.sale.service;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.sale.pojo.OccFile;
 
-public interface OccFileMapper {
-
-    int insertSelective(OccFile record);
-
-    int updateByPrimaryKeySelective(OccFile record);
-
+public interface IOccService {
     Page<OccFile> searchOccListPageHelper(SearchVo searchVo);
 }

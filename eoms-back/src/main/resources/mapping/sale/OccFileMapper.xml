@@ -1401,5 +1401,18 @@
     </set>
     where OCC01 = #{occ01,jdbcType=VARCHAR}
   </update>
+    <select id="searchOccListPageHelper" resultType="com.keboda.eomsback.sale.pojo.OccFile">
+      select occ01,occ02,oca02,occ42
+      from ${centre}.OCC_FILE
+      left join  ${centre}.oca_file on occ03 = oca01
+      <where>
+        <if test="occ != null and occ != '' ">
+          and ( lower(occ01) like lower('%${occ}%') or lower(occ02) like lower('%${occ}%') )
+        </if>
+        <if test="acti != null and acti != '' ">
+          and occacti = #{acti}
+        </if>
+      </where>
+    </select>
 
 </mapper>

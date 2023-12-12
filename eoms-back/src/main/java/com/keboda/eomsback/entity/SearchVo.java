@@ -14,6 +14,8 @@ public class SearchVo {
 
     private String pmc;
 
+    private String occ;
+
     private String ima;
 
     private String batch;
