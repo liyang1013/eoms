@@ -427,7 +427,7 @@
     where SFS01 = #{sfs01,jdbcType=VARCHAR}
       and SFS02 = #{sfs02,jdbcType=DECIMAL}
   </update>
-  <select id="searchSfseList" resultType="com.keboda.eomsback.produce.pojo.SfsFile">
+  <select id="searchSfsList" resultType="com.keboda.eomsback.produce.pojo.SfsFile">
     select sfs02,
            sfs03,
            sfs04,

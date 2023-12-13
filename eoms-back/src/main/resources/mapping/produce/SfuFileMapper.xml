@@ -29,4 +29,16 @@
         group by sfu01, sfu14, sfu02, tlf06,sfu00,sfv09
         order by sfu14
     </select>
+    <select id="searchSfuListPageHelper" resultType="com.keboda.eomsback.produce.pojo.SfuFile">
+        select SFU01,SMYDESC,sfu02,sfu04,gem02,sfu14,sfu15,sfu16,gen02,sfuconf,sfupost,#{centre} centre
+        from ${centre}.SFU_FILE
+        left join ${centre}.SMY_FILE on SMYSLIP = substr(sfu01,0,4)
+        left join ${centre}.GEM_FILE on gem01 = sfu04
+        left join ${centre}.GEN_FILE on gen01 = sfu16
+        <where>
+            <if test="code != null and code != ''">
+                and lower(sfu01) like lower('%${code}%')
+            </if>
+        </where>
+    </select>
 </mapper>

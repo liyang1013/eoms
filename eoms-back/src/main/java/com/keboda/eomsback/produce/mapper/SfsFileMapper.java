@@ -13,5 +13,5 @@ public interface SfsFileMapper {
 
     int updateByPrimaryKeySelective(SfsFile record);
 
-    List<SfsFile> searchSfseList(SearchVo searchVo);
+    List<SfsFile> searchSfsList(SearchVo searchVo);
 }

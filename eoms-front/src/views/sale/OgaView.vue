@@ -44,7 +44,7 @@
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">
-          <el-button @click="searchOgbList(scope.row)" type="text">查看</el-button>
+          <el-button @click="searchSlaveList(scope.row)" type="text">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -151,7 +151,7 @@ export default {
       }).finally(() => this.tableLoading = false);
 
     },
-    searchOgbList(row) {
+    searchSlaveList(row) {
       this.dialogTableVisible = true;
       this.documents.master = {...row};
       this.$http.post('/api/oga/searchOgbList', {code: row.oga01, centre: row.centre}).then(res => {

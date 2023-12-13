@@ -10,7 +10,7 @@ import java.util.List;
 public interface ISfpService {
     Page<SfpFile> searchSfpListPageHelper(SearchVo searchVo);
 
-    List<SfsFile> searchSfseList(SearchVo searchVo);
+    List<SfsFile> searchSfsList(SearchVo searchVo);
 
     void alterSfpConf(SfpFile sfpFile);
 }

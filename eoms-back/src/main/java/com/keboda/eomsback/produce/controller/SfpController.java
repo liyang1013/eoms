@@ -27,9 +27,9 @@ public class SfpController {
         return BaseResult.success(page,page.getTotal());
     }
 
-    @RequestMapping("/searchSfseList")
-    public BaseResult searchSfseList(@RequestBody SearchVo searchVo){
-        return BaseResult.success(iSfpService.searchSfseList(searchVo));
+    @RequestMapping("/searchSfsList")
+    public BaseResult searchSfsList(@RequestBody SearchVo searchVo){
+        return BaseResult.success(iSfpService.searchSfsList(searchVo));
     }
 
     @RequestMapping("/alterSfpConf")

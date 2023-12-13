@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author
  */
 @Data
-public class SfuFile implements Serializable {
+public class SfuFile extends CommonField implements Serializable {
     private String sfu01;
 
     private String sfu00;

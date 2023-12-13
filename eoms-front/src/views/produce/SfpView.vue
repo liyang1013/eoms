@@ -8,7 +8,7 @@
         <selectedCentre v-model="searchVo.centre" key="sfp"></selectedCentre>
       </el-form-item>
       <el-form-item label="发料单号:">
-        <el-input v-model="searchVo.code" placeholder="收货单号" clearable></el-input>
+        <el-input v-model="searchVo.code" placeholder="发料单号" clearable></el-input>
       </el-form-item>
     </el-form>
     <el-alert title="工单发料: asfi510; 工单成套发料: asfi511; 工单超领发料: asfi512; 工单欠料补料: asfi513; 工单退料: asfi520; 工单成套退料: asfi526; 工单超领退料: asfi527; 工单一般退料: asfi528;" type="success" :closable="false">
@@ -44,7 +44,7 @@
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">
-          <el-button @click="searchRvbList(scope.row)" type="text">查看</el-button>
+          <el-button @click="searchSlaveList(scope.row)" type="text">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -147,10 +147,10 @@ export default {
       }).finally(() => this.tableLoading = false);
 
     },
-    searchRvbList(row) {
+    searchSlaveList(row) {
       this.dialogTableVisible = true;
       this.documents.master = {...row};
-      this.$http.post('/api/sfp/searchSfseList', {code: row.sfp01, centre: row.centre}).then(res => {
+      this.$http.post('/api/sfp/searchSfsList', {code: row.sfp01, centre: row.centre}).then(res => {
         this.documents.slave = res.data.result;
       })
     },

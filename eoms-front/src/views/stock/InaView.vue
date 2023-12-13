@@ -46,7 +46,7 @@
       <el-table-column prop="ina02" label="过账时间" width="120"></el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">
-          <el-button @click="searchInbList(scope.row)" type="text">查看</el-button>
+          <el-button @click="searchSlaveList(scope.row)" type="text">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -124,7 +124,7 @@ export default {
       }).finally(() => this.table_loading = false);
 
     },
-    searchInbList(row) {
+    searchSlaveList(row) {
       this.dialogTableVisible = true;
       this.$http.post('/api/ina/searchInbList', {code: row.ina01, centre: row.centre}).then(res => {
         this.inbList = res.data.result;

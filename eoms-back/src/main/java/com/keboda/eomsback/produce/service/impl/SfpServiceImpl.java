@@ -27,8 +27,8 @@ public class SfpServiceImpl implements ISfpService {
     }
 
     @Override
-    public List<SfsFile> searchSfseList(SearchVo searchVo) {
-        return sfsFileMapper.searchSfseList(searchVo);
+    public List<SfsFile> searchSfsList(SearchVo searchVo) {
+        return sfsFileMapper.searchSfsList(searchVo);
     }
 
     @Override

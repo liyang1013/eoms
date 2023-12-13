@@ -62,7 +62,7 @@
       </el-table-column>
       <el-table-column fixed="right" label="操作" width="90">
         <template slot-scope="scope">
-          <el-button @click="searchSfaList(scope.row)" type="text">查看</el-button>
+          <el-button @click="searchSlaveList(scope.row)" type="text">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -204,7 +204,7 @@ export default {
         this.searchVo.total = res.data.total;
       }).finally(() => this.tableLoading = false)
     },
-    searchSfaList(row) {
+    searchSlaveList(row) {
       this.dialogTableVisible = true;
       this.documents.master = {...row};
       this.$http.post('/api/sfb/searchSfaList', {code: row.sfb01, centre: row.centre}).then(res => {
