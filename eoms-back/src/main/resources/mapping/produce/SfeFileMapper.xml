@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.produce.mapper.SfeFileMapper">
+
+  <insert id="insertSelective" parameterType="com.keboda.eomsback.produce.pojo.SfeFile">
+    insert into SFE_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sfe01 != null">
+        SFE01,
+      </if>
+      <if test="sfe02 != null">
+        SFE02,
+      </if>
+      <if test="sfe03 != null">
+        SFE03,
+      </if>
+      <if test="sfe04 != null">
+        SFE04,
+      </if>
+      <if test="sfe05 != null">
+        SFE05,
+      </if>
+      <if test="sfe06 != null">
+        SFE06,
+      </if>
+      <if test="sfe07 != null">
+        SFE07,
+      </if>
+      <if test="sfe08 != null">
+        SFE08,
+      </if>
+      <if test="sfe09 != null">
+        SFE09,
+      </if>
+      <if test="sfe10 != null">
+        SFE10,
+      </if>
+      <if test="sfe11 != null">
+        SFE11,
+      </if>
+      <if test="sfe12 != null">
+        SFE12,
+      </if>
+      <if test="sfe13 != null">
+        SFE13,
+      </if>
+      <if test="sfe14 != null">
+        SFE14,
+      </if>
+      <if test="sfe15 != null">
+        SFE15,
+      </if>
+      <if test="sfe16 != null">
+        SFE16,
+      </if>
+      <if test="sfe17 != null">
+        SFE17,
+      </if>
+      <if test="sfe18 != null">
+        SFE18,
+      </if>
+      <if test="sfe19 != null">
+        SFE19,
+      </if>
+      <if test="sfe20 != null">
+        SFE20,
+      </if>
+      <if test="sfe21 != null">
+        SFE21,
+      </if>
+      <if test="sfe22 != null">
+        SFE22,
+      </if>
+      <if test="sfe23 != null">
+        SFE23,
+      </if>
+      <if test="sfe24 != null">
+        SFE24,
+      </if>
+      <if test="sfe25 != null">
+        SFE25,
+      </if>
+      <if test="sfe26 != null">
+        SFE26,
+      </if>
+      <if test="sfe27 != null">
+        SFE27,
+      </if>
+      <if test="sfe28 != null">
+        SFE28,
+      </if>
+      <if test="sfe91 != null">
+        SFE91,
+      </if>
+      <if test="sfe92 != null">
+        SFE92,
+      </if>
+      <if test="sfe93 != null">
+        SFE93,
+      </if>
+      <if test="sfe94 != null">
+        SFE94,
+      </if>
+      <if test="sfe95 != null">
+        SFE95,
+      </if>
+      <if test="sfe30 != null">
+        SFE30,
+      </if>
+      <if test="sfe31 != null">
+        SFE31,
+      </if>
+      <if test="sfe32 != null">
+        SFE32,
+      </if>
+      <if test="sfe33 != null">
+        SFE33,
+      </if>
+      <if test="sfe34 != null">
+        SFE34,
+      </if>
+      <if test="sfe35 != null">
+        SFE35,
+      </if>
+      <if test="sfe930 != null">
+        SFE930,
+      </if>
+      <if test="sfe36 != null">
+        SFE36,
+      </if>
+      <if test="sfeplant != null">
+        SFEPLANT,
+      </if>
+      <if test="sfelegal != null">
+        SFELEGAL,
+      </if>
+      <if test="sfe012 != null">
+        SFE012,
+      </if>
+      <if test="sfe013 != null">
+        SFE013,
+      </if>
+      <if test="sfe014 != null">
+        SFE014,
+      </if>
+      <if test="sfeud01 != null">
+        SFEUD01,
+      </if>
+      <if test="sfeud02 != null">
+        SFEUD02,
+      </if>
+      <if test="sfeud03 != null">
+        SFEUD03,
+      </if>
+      <if test="sfeud04 != null">
+        SFEUD04,
+      </if>
+      <if test="sfeud05 != null">
+        SFEUD05,
+      </if>
+      <if test="sfeud06 != null">
+        SFEUD06,
+      </if>
+      <if test="sfeud07 != null">
+        SFEUD07,
+      </if>
+      <if test="sfeud08 != null">
+        SFEUD08,
+      </if>
+      <if test="sfeud09 != null">
+        SFEUD09,
+      </if>
+      <if test="sfeud10 != null">
+        SFEUD10,
+      </if>
+      <if test="sfeud11 != null">
+        SFEUD11,
+      </if>
+      <if test="sfeud12 != null">
+        SFEUD12,
+      </if>
+      <if test="sfeud13 != null">
+        SFEUD13,
+      </if>
+      <if test="sfeud14 != null">
+        SFEUD14,
+      </if>
+      <if test="sfeud15 != null">
+        SFEUD15,
+      </if>
+      <if test="sfe37 != null">
+        SFE37,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sfe01 != null">
+        #{sfe01,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe02 != null">
+        #{sfe02,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe03 != null">
+        #{sfe03,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe04 != null">
+        #{sfe04,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfe05 != null">
+        #{sfe05,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe06 != null">
+        #{sfe06,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe07 != null">
+        #{sfe07,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe08 != null">
+        #{sfe08,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe09 != null">
+        #{sfe09,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe10 != null">
+        #{sfe10,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe11 != null">
+        #{sfe11,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe12 != null">
+        #{sfe12,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe13 != null">
+        #{sfe13,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe14 != null">
+        #{sfe14,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe15 != null">
+        #{sfe15,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe16 != null">
+        #{sfe16,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe17 != null">
+        #{sfe17,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe18 != null">
+        #{sfe18,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe19 != null">
+        #{sfe19,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe20 != null">
+        #{sfe20,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe21 != null">
+        #{sfe21,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe22 != null">
+        #{sfe22,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe23 != null">
+        #{sfe23,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe24 != null">
+        #{sfe24,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe25 != null">
+        #{sfe25,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe26 != null">
+        #{sfe26,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe27 != null">
+        #{sfe27,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe28 != null">
+        #{sfe28,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe91 != null">
+        #{sfe91,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe92 != null">
+        #{sfe92,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe93 != null">
+        #{sfe93,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe94 != null">
+        #{sfe94,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe95 != null">
+        #{sfe95,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe30 != null">
+        #{sfe30,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe31 != null">
+        #{sfe31,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe32 != null">
+        #{sfe32,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe33 != null">
+        #{sfe33,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe34 != null">
+        #{sfe34,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe35 != null">
+        #{sfe35,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe930 != null">
+        #{sfe930,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe36 != null">
+        #{sfe36,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeplant != null">
+        #{sfeplant,jdbcType=VARCHAR},
+      </if>
+      <if test="sfelegal != null">
+        #{sfelegal,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe012 != null">
+        #{sfe012,jdbcType=VARCHAR},
+      </if>
+      <if test="sfe013 != null">
+        #{sfe013,jdbcType=DECIMAL},
+      </if>
+      <if test="sfe014 != null">
+        #{sfe014,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud01 != null">
+        #{sfeud01,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud02 != null">
+        #{sfeud02,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud03 != null">
+        #{sfeud03,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud04 != null">
+        #{sfeud04,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud05 != null">
+        #{sfeud05,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud06 != null">
+        #{sfeud06,jdbcType=VARCHAR},
+      </if>
+      <if test="sfeud07 != null">
+        #{sfeud07,jdbcType=DECIMAL},
+      </if>
+      <if test="sfeud08 != null">
+        #{sfeud08,jdbcType=DECIMAL},
+      </if>
+      <if test="sfeud09 != null">
+        #{sfeud09,jdbcType=DECIMAL},
+      </if>
+      <if test="sfeud10 != null">
+        #{sfeud10,jdbcType=DECIMAL},
+      </if>
+      <if test="sfeud11 != null">
+        #{sfeud11,jdbcType=DECIMAL},
+      </if>
+      <if test="sfeud12 != null">
+        #{sfeud12,jdbcType=DECIMAL},
+      </if>
+      <if test="sfeud13 != null">
+        #{sfeud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfeud14 != null">
+        #{sfeud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfeud15 != null">
+        #{sfeud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sfe37 != null">
+        #{sfe37,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

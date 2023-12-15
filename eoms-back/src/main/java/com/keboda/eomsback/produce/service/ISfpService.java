@@ -13,5 +13,7 @@ public interface ISfpService {
     List<SfsFile> searchSfsList(SearchVo searchVo);
 
     void alterSfpConf(SfpFile sfpFile);
+
+    void alterSfsGfe(SfsFile sfsFile);
 }
 

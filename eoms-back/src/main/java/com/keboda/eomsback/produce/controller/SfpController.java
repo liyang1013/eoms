@@ -6,6 +6,7 @@ import com.keboda.eomsback.entity.BaseResult;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.produce.pojo.SfbFile;
 import com.keboda.eomsback.produce.pojo.SfpFile;
+import com.keboda.eomsback.produce.pojo.SfsFile;
 import com.keboda.eomsback.produce.service.ISfpService;
 import com.keboda.eomsback.purchase.pojo.RvaFile;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,12 @@ public class SfpController {
     @RequestMapping("/alterSfpConf")
     public BaseResult alterSfpConf(@RequestBody SfpFile sfpFile){
         iSfpService.alterSfpConf(sfpFile);
+        return BaseResult.success("修改成功");
+    }
+
+    @RequestMapping("/alterSfsGfe")
+    public BaseResult alterSfsGfe(@RequestBody SfsFile sfsFile){
+        iSfpService.alterSfsGfe(sfsFile);
         return BaseResult.success("修改成功");
     }
 }

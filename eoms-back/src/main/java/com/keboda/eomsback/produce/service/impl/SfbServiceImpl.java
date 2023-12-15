@@ -48,11 +48,9 @@ public class SfbServiceImpl implements ISfbService {
     @Resource
     private SmaFileMapper smaFileMapper;
     @Resource
-    private TlfFileMapper tlfFileMapper;
+    private ITlfService iTlfService;
 
-    /*
-     查询工单单号,每次100条
-     */
+
     @Override
     public List<SfbFile> searchSfbList(SearchVo searchVo) {
         return sfbFileMapper.searchSfbList(searchVo);
@@ -145,9 +143,9 @@ public class SfbServiceImpl implements ISfbService {
 
         for (SfbFile sfbFile : sfbModify.getSfbArr()) {
 
-            SmaFile sma = smaFileMapper.select(sfbFile.getCentre());
-            if (sma.getSma53().compareTo(ddate) > 0)
-                throw new RuntimeException("修改日期成本已关帐,请重新设置关帐日期asmp620");
+//            SmaFile sma = smaFileMapper.select(sfbFile.getCentre());
+//            if (sma.getSma53().compareTo(ddate) > 0)
+//                throw new RuntimeException("修改日期成本已关帐,请重新设置关帐日期asmp620");
 
             SearchVo searchVo = new SearchVo();
             searchVo.setCentre(sfbFile.getCentre());
@@ -175,7 +173,8 @@ public class SfbServiceImpl implements ISfbService {
                     }
                     //发料异动记录
                     if (sfp.getTlf06() != null && ((sfbModify.getFlag() ? sfp.getTlf06().compareTo(ddate) < 0 : sfp.getTlf06().compareTo(ddate) > 0))) {
-                        tlfFileMapper.updateDate(sfb.getSfb01(), sfp.getSfp01(), sfbFile.getCentre(), ddate);//只修改了发料单
+                        if(sfp.getTlf907().equals("发料")) iTlfService.alterDate(sfbFile.getCentre(), sfp.getSfp01(), null,ddate,"-1");
+                        else iTlfService.alterDate(sfbFile.getCentre(),null, sfp.getSfp01(),ddate,"1");
                     }
                 }
             }
@@ -216,7 +215,8 @@ public class SfbServiceImpl implements ISfbService {
                     }
                     //入库异动记录
                     if (sfu.getTlf06() != null && (sfbModify.getFlag() ? sfu.getTlf06().compareTo(ddate) < 0 : sfu.getTlf06().compareTo(ddate) > 0)) {
-                        tlfFileMapper.updateDate(sfb.getSfb01(), sfu.getSfu01(), sfbFile.getCentre(), ddate);
+                        if(sfu.getTlf907().equals("入库")) iTlfService.alterDate(sfbFile.getCentre(),null,sfu.getSfu01(),ddate,"1");
+                        else iTlfService.alterDate(sfbFile.getCentre(),sfu.getSfu01(),null,ddate,"-1");
                     }
                 }
             }

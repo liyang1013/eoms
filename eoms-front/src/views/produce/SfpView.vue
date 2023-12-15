@@ -99,7 +99,11 @@
         <el-table-column prop="sfs03" label="工单号" width="120"></el-table-column>
         <el-table-column prop="sfs04" label="发料料号" width="120"></el-table-column>
         <el-table-column prop="ima02" label="品名" width="160"></el-table-column>
-        <el-table-column prop="sfs06" label="单位" width="120"></el-table-column>
+        <el-table-column  label="单位" width="160">
+          <template slot-scope="scope">
+            <selected-gfe v-model="scope.row.sfs06" :centre="documents.master.centre" :key="scope.row.sfs04" @change="alterSfsGfe($event,scope.row)"></selected-gfe>
+          </template>
+        </el-table-column>
         <el-table-column prop="sfs07" label="仓库" width="120"></el-table-column>
         <el-table-column prop="imd02" label="仓库名称" width="120"></el-table-column>
         <el-table-column prop="sfs05" label="发料量" width="120"></el-table-column>
@@ -109,8 +113,9 @@
 </template>
 
 <script>
-import selectedCentre from '@/components/selected/selected-centre.vue';
-import selectedConf from '@/components/selected/selected-conf.vue';
+import selectedCentre from '@/components/selected/selected-centre';
+import selectedConf from '@/components/selected/selected-conf';
+import selectedGfe from "@/components/selected/selected-gfe";
 
 export default {
   name: 'sfp',
@@ -135,7 +140,8 @@ export default {
   },
   components: {
     selectedCentre,
-    selectedConf
+    selectedConf,
+    selectedGfe
   },
   methods: {
     search(val = 1) {
@@ -160,6 +166,9 @@ export default {
         centre: this.documents.master.centre,
         sfpconf: val
       })
+    },
+    alterSfsGfe(gfe01,row){
+      this.$http.post('/api/sfp/alterSfsGfe',{sfs01: row.sfs01,sfs02: row.sfs02,sfs06: gfe01,centre: row.centre})
     },
     handleCurrentChange(val) {
       this.search(val);

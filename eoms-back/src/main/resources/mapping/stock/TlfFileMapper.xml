@@ -2,11 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.stock.mapper.TlfFileMapper">
 
-    <update id="updateDate">
-        update ${centre}.TLF_FILE
-        set tlf06 = #{ddate}
-        where tlf62 = #{tlf62} and ( tlf036 = #{tlf0236} or  tlf026 = #{tlf0236})
-    </update>
     <update id="alterQty">
         update ${centre}.TLF_FILE
         set tlf10 = #{tlf10}, tlf18 = tlf18 + #{tlf18}
