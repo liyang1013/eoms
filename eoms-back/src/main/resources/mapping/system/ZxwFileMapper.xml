@@ -162,5 +162,38 @@
     where zxacti = 'Y' and zx18 is null and zx01 in (${workcode})
     group by zx01, zx02, zxy03,azp02
   </select>
+    <select id="selectPositionCodeByName" resultType="java.lang.String">
+        select zw01
+        from zw_file
+        where zw02 = #{positionName}
+    </select>
+    <select id="searchRecordsList" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
+        select ZW01 positioncode,
+               ZW02 positionname,
+               ZY02 permissioncode,
+               GAZ03 permissionname,
+               case when gae01 is not null then 'Y' else 'N' end                                           containAmount
+        from ZW_FILE
+                 LEFT JOIN zy_file ON ZY01 = ZW01
+                 LEFT join gaz_file on gaz01 = zy02 and gaz02 = 2
+                 left join (select GAE01
+                            from (SELECT GAE01, GAE04
+                                  FROM GAE_FILE
+                                  where GAE03 = '2'
+                                  UNION ALL
+                                  SELECT ZAI01, ZAL05
+                                  FROM ZAI_FILE
+                                           LEFT JOIN ZAL_FILE ON ZAI01 = ZAL01
+                                  WHERE ZAL03 = '2')
+                            where gae04 like '%金额%' or gae04 like '%单价%' or gae04 like '%账款%' or gae04 like '%余额%'
+                               or gae04 like '%异动成本%' or gae04 like '%人工%' or gae04 like '%制费%'
+                            group by GAE01) on gae01 = zy02
+        <where>
+            <if test="code != null and code != '' ">
+                and zw01 =#{code}
+            </if>
+        </where>
+
+    </select>
 
 </mapper>

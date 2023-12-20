@@ -29,6 +29,11 @@ const routes = [
         ]
     },
     {
+        path: '/authorityReview',
+        name: 'authorityReview',
+        component: () => import('@/views/authority/ReviewIndex')
+    },
+    {
         path: '/eoms',
         name: 'eoms',
         component: () => import('@/views/Eoms')

@@ -3,7 +3,9 @@ package com.keboda.eomsback.system.service.impl;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.github.pagehelper.Page;
+import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.system.enums.CentreOa;
 import com.keboda.eomsback.system.mapper.ZxwFileMapper;
@@ -20,6 +22,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@DS("tiptop")
 public class ZxwServiceImpl implements IZxwService {
 
     @Resource
@@ -40,7 +43,6 @@ public class ZxwServiceImpl implements IZxwService {
 
             String code = centre.getCode();
             String name = centre.getName();
-            String ds = centre.name();
 
             List<HrmResource> hr = iHrmResourceService.selectByDepartCode(code);
             Map<String, List<HrmResource>> groupByDep = hr.stream().collect(Collectors.groupingBy(HrmResource::getDepname));
@@ -131,5 +133,15 @@ public class ZxwServiceImpl implements IZxwService {
                 }
             }
         }
+    }
+
+    @Override
+    public String selectPositionCodeByName(String positionName) {
+        return zxwFileMapper.selectPositionCodeByName(positionName);
+    }
+
+    @Override
+    public List<AuthorityRecordsVo> searchRecordsList(String code) {
+        return zxwFileMapper.searchRecordsList(code);
     }
 }

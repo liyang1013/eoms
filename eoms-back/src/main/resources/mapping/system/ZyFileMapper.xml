@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.system.mapper.ZyFileMapper">
+
+
+    <select id="selectPermissionByCode" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
+        select distinct
+               ZY02 permissioncode,
+               gaz03 permissionname,
+               case when gae01 is not null then 'Y' else 'N' end                                           containAmount
+        from ZW_FILE
+                 LEFT JOIN zy_file ON ZY01 = ZW01
+                 left join GAZ_FILE on gaz01 = zy02 and gaz02 = 2
+                 left join (select GAE01
+                            from (SELECT GAE01, GAE04
+                                  FROM GAE_FILE
+                                  where GAE03 = '2'
+                                  UNION ALL
+                                  SELECT ZAI01, ZAL05
+                                  FROM ZAI_FILE
+                                           LEFT JOIN ZAL_FILE ON ZAI01 = ZAL01
+                                  WHERE ZAL03 = '2')
+                            where gae04 like '%金额%'
+                               or gae04 like '%单价%'
+                               or gae04 like '%账款%'
+                               or gae04 like '%余额%'
+                               or gae04 like '%异动成本%'
+                               or gae04 like '%人工%'
+                               or gae04 like '%制费%'
+                            group by GAE01) on gae01 = zy02
+ where zy02 = #{permissioncode}
+    </select>
+</mapper>

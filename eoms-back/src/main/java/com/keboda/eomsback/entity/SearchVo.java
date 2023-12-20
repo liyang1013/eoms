@@ -12,6 +12,10 @@ public class SearchVo {
 
     private String code;
 
+    private String[] codes;
+
+    private Integer year;
+
     private String pmc;
 
     private String occ;

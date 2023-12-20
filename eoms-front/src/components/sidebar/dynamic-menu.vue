@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     gotoRoute(item) {
-      this.$router.push( '/eoms/' + item.path )
+      this.$router.push( './' + item.path )
       store.commit('SET_CURRENT_MENU', item.path)
       store.commit('addMenu', {name: item.name,path: item.path})
     }

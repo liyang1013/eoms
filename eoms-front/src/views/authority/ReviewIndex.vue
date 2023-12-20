@@ -17,14 +17,14 @@
 import sidebarNav from '@/components/sidebar/sidebar-nav'
 import TopAside from '@/components/main-content/top-aside'
 import {mapState} from 'vuex'
-import {menu} from "@/router/menu";
+import {menu} from "@/router/authorityReviewMenu";
 import router from "@/router";
 
 export default {
-  name: "emos",
+  name: "review",
   data(){
     return{
-      menuList: menu,
+      menuList: menu
     }
   },
   computed: {
@@ -50,16 +50,16 @@ export default {
       menuList.forEach(view => {
         const temp = {
           name: view.path,
-          path: '/eoms/'+view.path,
+          path: '/authorityReview/'+view.path,
           component: view.component
         }
-        router.addRoute('eoms',temp)
+        router.addRoute('authorityReview',temp)
       })
     }
   },
   mounted() {
     this.routesData(this.filterRoute(menu))
-    this.$router.push('/eoms/home')
+    this.$router.push('/authorityReview/home')
   }
 }
 </script>

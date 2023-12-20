@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.authorityReview.mapper.PermissionMapper">
+  <insert id="insertSelective">
+    insert into permission (uuid,permissioncode) values(#{uuid},#{permissioncode})
+  </insert>
+  <delete id="deleteRecords">
+    delete from permission
+    where uuid = #{uuid} and permissioncode = #{permissioncode}
+  </delete>
+
+  <select id="selectByKey" resultType="com.keboda.eomsback.authorityReview.pojo.Permission">
+    select *
+    from permission
+    where uuid = #{uuid} and permissioncode  = #{permissioncode}
+  </select>
+  <select id="searchRecordsList" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
+    select po.positioncode,po.positionname, permissioncode
+    from permission pe
+    left join position po on po.uuid = pe.uuid
+    where po.positioncode = #{code} and po.year = #{year}
+  </select>
+</mapper>

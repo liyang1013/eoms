@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.authorityReview.mapper.PositionMapper">
+
+  <insert id="insertSelective" parameterType="com.keboda.eomsback.authorityReview.pojo.Position" useGeneratedKeys="true">
+    insert into position
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="year != null">
+        year,
+      </if>
+      <if test="positioncode != null">
+        positionCode,
+      </if>
+      <if test="positionname != null">
+        positionName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="year != null">
+        #{year},
+      </if>
+      <if test="positioncode != null">
+        #{positioncode,jdbcType=VARCHAR},
+      </if>
+      <if test="positionname != null">
+        #{positionname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.authorityReview.pojo.Position">
+    update position
+    <set>
+      <if test="positionname != null">
+        positionName = #{positionname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where year = #{year,jdbcType=INTEGER}
+      and positionCode = #{positioncode,jdbcType=VARCHAR}
+  </update>
+  <select id="searchRecordsListPageHelper" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
+    select po.uuid, po.year, po.positionCode, po.positionName,pe.permissionCode
+    from position po
+    left join permission  pe on po.uuid = pe.uuid
+    <where>
+      pe.permissionCode is not null
+      <if test="year != null and year != '' ">
+        and po.year = #{year}
+      </if>
+      <if test="code != null and code != '' ">
+        and ( lower(po.positionCode) like lower('%${code}%')  or  lower(po.positionName) like lower('%${code}%')  )
+      </if>
+    </where>
+  </select>
+  <select id="selectByYearWithCode" resultType="java.lang.Integer">
+    select uuid
+    from  position
+    where year = #{year} and positioncode = #{positioncode}
+  </select>
+
+</mapper>

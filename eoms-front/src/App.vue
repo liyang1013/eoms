@@ -6,11 +6,16 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      flushList: ['eoms','authorityReview']
+    }
   },
   mounted() {
-    if(window.location.pathname.indexOf('/eoms/') !== -1){
-      this.$router.push('/eoms/')
+    for(let i = 0; i < this.flushList.length; i++){
+      if(window.location.pathname.indexOf('/' + this.flushList[i] + '/') !== -1){
+        this.$router.push('/' + this.flushList[i] + '/');
+        return
+      }
     }
   }
 }
