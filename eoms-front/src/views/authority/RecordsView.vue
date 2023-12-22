@@ -27,10 +27,11 @@
             :data="{'year': searchVo.year}"
             :on-success="upload_success"
             :on-error="upload_err"
+            :on-change="handleOnChange"
             accept=".xlsx,.xls"
             action="/api/authorityReview/importRecords"
             multiple>
-          <el-button type="success" round icon="el-icon-upload2">上传</el-button>
+          <el-button type="success" round icon="el-icon-upload2" :loading="uploadLoading">上传</el-button>
         </el-upload>
       </el-form-item>
     </el-form>
@@ -68,7 +69,8 @@ export default {
       },
       documentList: [],
       selectedList: [],
-      tableLoading: false
+      tableLoading: false,
+      uploadLoading: false
     }
   },
   methods: {
@@ -105,6 +107,12 @@ export default {
     },
     upload_err(data) {
       this.$message.warning(data.message)
+    },
+    handleOnChange(file, fileList){
+      this.uploadLoading= true
+      if(file.percentage === 100){
+        this.uploadLoading= false
+      }
     },
     handleSelect(val) {
       this.searchVo.code = val.zw02;

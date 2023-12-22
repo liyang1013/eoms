@@ -5,7 +5,6 @@ import com.keboda.eomsback.authorityReview.mapper.PermissionMapper;
 import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
 import com.keboda.eomsback.authorityReview.pojo.Permission;
 import com.keboda.eomsback.authorityReview.service.IPermissionService;
-import com.keboda.eomsback.entity.SearchVo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

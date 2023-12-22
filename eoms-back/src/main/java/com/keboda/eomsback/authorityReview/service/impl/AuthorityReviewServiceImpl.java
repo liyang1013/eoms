@@ -23,7 +23,6 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +46,6 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
         Map<String, AuthorityRecordsVo> map = new HashMap<>();
         page.getResult().forEach(e -> {
             if (!map.containsKey(e.getPermissioncode())) {
-
                 AuthorityRecordsVo vo = iZyService.selectPermissionByCode(e.getPermissioncode());
                 map.put(e.getPermissioncode(), vo);
             }
@@ -57,7 +55,6 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
             e.setPermissionname(vo.getPermissionname());
             e.setContainAmount(vo.getContainAmount());
         });
-
         return page;
     }
 
@@ -65,8 +62,10 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
     @DSTransactional
     public String importRecords(MultipartFile file, String year) throws IOException {
 
-        if (year.isEmpty() || year.equals("null")) throw new RuntimeException("导入目标年份不可为空");
+        if (year == null || year.isEmpty() || year.equals("null")) throw new RuntimeException("导入目标年份不可为空");
         StringBuilder sb = new StringBuilder();
+        StringBuilder failName = new StringBuilder();
+        StringBuilder successName = new StringBuilder();
         int successCount = 0;
         int failCount = 0;
 
@@ -87,26 +86,36 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
                 position.setPositionname(positionName);
 
                 Integer uuid = iPositionService.selectByYearWithCode(position);
+                position.setUuid(uuid);
                 if (uuid == null) {
-                    uuid = iPositionService.insertSelective(position);
+                    iPositionService.insertSelective(position);
                 }
 
                 for (Map<String, String> map : sheetData) {
 
                     Permission permission = new Permission();
-                    permission.setUuid(uuid);
+                    permission.setUuid(position.getUuid());
                     permission.setPermissioncode(map.get("作业代码"));
 
-                    Permission isExit  = iPermissionService.selectByKey(permission);
-                    if(isExit == null) iPermissionService.insertSelective(permission);
+                    if (permission.getPermissioncode() != null && !permission.getPermissioncode().isEmpty()) {
+
+                        AuthorityRecordsVo authorityRecordsVo = iZyService.selectPermissionByCode(permission.getPermissioncode());
+                        permission.setPermissionname(authorityRecordsVo.getPermissionname());
+
+                        Permission isExit = iPermissionService.selectByKey(permission);
+                        if (isExit == null) iPermissionService.insertSelective(permission);
+                    }
                 }
+
                 successCount++;
+                successName.append(" ").append(positionName);
 
             } else {
                 failCount++;
+                failName.append(" ").append(positionName);
             }
         }
-        sb.append("导入成功：").append(successCount).append(" 导入失败：").append(failCount);
+        sb.append("导入成功：").append(successCount).append(successName).append(" ;导入失败：").append(failCount).append(failName);
         return sb.toString();
     }
 
@@ -116,50 +125,54 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
     }
 
     @Override
-    public Map<String,List<AuthorityRecordsVo>> contrastRecords(SearchVo searchVo) {
-        Map<String,List<AuthorityRecordsVo>> map = new HashMap<>();
+    public Map<String, List<AuthorityRecordsVo>> contrastRecords(SearchVo searchVo) {
+        Map<String, List<AuthorityRecordsVo>> map = new HashMap<>();
 
         for (String code : searchVo.getCodes()) {
             StringBuilder sb = new StringBuilder();
 
             List<AuthorityRecordsVo> current = iZxwService.searchRecordsList(code);
-            List<AuthorityRecordsVo> records = iPermissionService.searchRecordsList(searchVo.getYear(),code);
+            List<AuthorityRecordsVo> records = iPermissionService.searchRecordsList(searchVo.getYear(), code);
 
             sb.append("职位：").append(current.get(0).getPositionname());
 
             for (AuthorityRecordsVo vo : current) {
                 vo.setColor("green");
                 for (AuthorityRecordsVo record : records) {
-                    if(vo.getPermissioncode().equals(record.getPermissioncode())){
+                    if (vo.getPermissioncode().equals(record.getPermissioncode())) {
                         vo.setColor("white");
                         records.remove(record);
                         break;
                     }
                 }
             }
-            records.forEach(e -> e.setColor("red"));
-            current.addAll(records);
+            for (AuthorityRecordsVo record : records) {
+                AuthorityRecordsVo authorityRecordsVo = iZyService.selectPermissionByCode(record.getPermissioncode());
+                record.setContainAmount(authorityRecordsVo.getContainAmount());
+                record.setColor("red");
+                current.add(record);
+            }
             sb.append(" 新增权限：").append(current.stream().filter(e -> e.getColor().equals("green")).count());
             sb.append(" 移除权限：").append(current.stream().filter(e -> e.getColor().equals("red")).count());
-            map.put(sb.toString(),current);
+            map.put(sb.toString(), current);
         }
         return map;
     }
 
     @Override
     public void currentPermissionExcel(HttpServletResponse response) throws IOException {
-        
+
         List<AuthorityRecordsVo> list = iZxwService.searchRecordsList(null);
-        Map<String,List<AuthorityRecordsVo>> map = list.stream().collect(Collectors.groupingBy(AuthorityRecordsVo::getPositionname));
+        Map<String, List<AuthorityRecordsVo>> map = list.stream().collect(Collectors.groupingBy(AuthorityRecordsVo::getPositionname));
         ExcelWriter writer = ExcelUtil.getWriter(true);
 
         int i = 0;
         for (String sheetName : map.keySet()) {
             List<AuthorityRecordsVo> vo = map.get(sheetName);
 
-            sheetName  = sheetName.replace("/","、");
+            sheetName = sheetName.replace("/", "、");
 
-            if(i == 0) writer.renameSheet(sheetName);
+            if (i == 0) writer.renameSheet(sheetName);
             else writer.setSheet(sheetName);
 
             writer.addHeaderAlias("positioncode", "职位代码");
@@ -172,11 +185,11 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
             writer.write(vo, true);
             i++;
         }
-        
+
 
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
-        response.setHeader("Content-Disposition","attachment;filename=现行权限档案.xlsx");
-        ServletOutputStream out=response.getOutputStream();
+        response.setHeader("Content-Disposition", "attachment;filename=现行权限档案.xlsx");
+        ServletOutputStream out = response.getOutputStream();
 
         writer.flush(out, true);
         writer.close();

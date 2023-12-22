@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.authorityReview.mapper.PositionMapper">
 
-  <insert id="insertSelective" parameterType="com.keboda.eomsback.authorityReview.pojo.Position" useGeneratedKeys="true">
+  <insert id="insertSelective" parameterType="com.keboda.eomsback.authorityReview.pojo.Position" keyProperty="uuid" useGeneratedKeys="true">
     insert into position
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="year != null">
@@ -51,7 +51,7 @@
       </if>
     </where>
   </select>
-  <select id="selectByYearWithCode" resultType="java.lang.Integer">
+  <select id="selectByYearWithCode" resultType="java.lang.Integer" >
     select uuid
     from  position
     where year = #{year} and positioncode = #{positioncode}
