@@ -10,8 +10,6 @@ import java.util.List;
 public interface IZxwService {
     Page<ZxwFile> searchZxwListPageHelper(SearchVo searchVo);
 
-    void authorityReview();
-
     String selectPositionCodeByName(String positionName);
 
     List<AuthorityRecordsVo> searchRecordsList(String code);

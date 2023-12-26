@@ -8,7 +8,6 @@
         <el-input v-model="searchVo.code" placeholder="员工姓名\编码" clearable></el-input>
       </el-form-item>
       <el-form-item style="float:right;">
-        <el-button type="danger"  round @click="authorityReview">权限评审</el-button>
         <el-button type="primary" @click="search(1)" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
     </el-form>
@@ -64,11 +63,6 @@ export default {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total
       }).finally(() => this.tableLoading = false);
-    },
-    authorityReview(){
-      this.$http.post('/api/zxw/authorityReview').then(res => {
-          console.log(res)
-      });
     },
     handleCurrentChange(val){
       this.search(val);

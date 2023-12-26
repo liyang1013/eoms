@@ -16,8 +16,4 @@ public class HrmResourceServiceImpl implements IHrmResourceService {
     @Resource
     private HrmResourceMapper hrmResourceMapper;
 
-    @Override
-    public List<HrmResource> selectByDepartCode(String code) {
-        return hrmResourceMapper.selectByDepartCode(code);
-    }
 }

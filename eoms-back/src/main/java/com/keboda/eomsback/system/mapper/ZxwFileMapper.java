@@ -19,10 +19,6 @@ public interface ZxwFileMapper {
 
     Page<ZxwFile> searchZxwListPageHelper(SearchVo searchVo);
 
-    List<Authority> authorityReview(String power);
-
-    List<Department> searchDepartmentByWorkCode(String workcode);
-
     String selectPositionCodeByName(String positionName);
 
     List<AuthorityRecordsVo> searchRecordsList(String code);

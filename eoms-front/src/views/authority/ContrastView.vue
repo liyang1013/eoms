@@ -14,6 +14,7 @@
         <el-select style="width: 400px" v-model="searchVo.codes" filterable remote reserve-keyword multiple collapse-tags
                    placeholder="请选择职位" clearable :remote-method="searchZwList">
           <el-option
+              :disabled="item.zw01 === 'CLASS-A'"
               v-for="item in zwList"
               :key="item.zw01"
               :label="item.zw02"

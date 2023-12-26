@@ -39,6 +39,11 @@ const routes = [
         component: () => import('@/views/Eoms')
     },
     {
+        path: '/ocr',
+        name: 'ocr',
+        component: () => import('@/views/ocr/ocrdemo.vue')
+    },
+    {
         path: '*',
         name: '404',
         component: () => import('@/views/exception/404')

@@ -4,7 +4,6 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.keboda.eomsback.entity.BaseResult;
 import com.keboda.eomsback.entity.SearchVo;
-import com.keboda.eomsback.system.pojo.ZxFile;
 import com.keboda.eomsback.system.pojo.ZxwFile;
 import com.keboda.eomsback.system.service.IZxwService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +23,5 @@ public class ZxwController {
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
         Page<ZxwFile> page = iZxwService.searchZxwListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
-    }
-
-    @RequestMapping("/authorityReview")
-    public BaseResult authorityReview(){
-        iZxwService.authorityReview();
-        return BaseResult.success();
     }
 }
