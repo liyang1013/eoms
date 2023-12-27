@@ -18,5 +18,12 @@ module.exports = defineConfig({
         }
       },
     }
+  },
+  pluginOptions: {
+    electronBuilder: {
+      chainWebpackMainProcess: (config) => {
+        config.output.filename('background.js');
+      }
+    }
   }
 });

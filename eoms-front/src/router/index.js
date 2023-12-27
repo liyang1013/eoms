@@ -39,9 +39,9 @@ const routes = [
         component: () => import('@/views/Eoms')
     },
     {
-        path: '/ocr',
-        name: 'ocr',
-        component: () => import('@/views/ocr/ocrdemo.vue')
+        path: '/utils',
+        name: 'utils',
+        component: () => import('@/views/utils/UtilsIndex.vue')
     },
     {
         path: '*',
