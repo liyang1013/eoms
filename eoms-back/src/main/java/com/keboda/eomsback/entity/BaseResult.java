@@ -50,6 +50,13 @@ public class BaseResult implements Serializable {
     }
 
     /**
+     * 返回成功带消息和对象
+     */
+    public static BaseResult success(Object result,String message) {
+        return BaseResult.createResult(STATUS_SUCCESS, message, result,1);
+    }
+
+    /**
      * 返回成功带数据
      */
     public static BaseResult success(Object result) {

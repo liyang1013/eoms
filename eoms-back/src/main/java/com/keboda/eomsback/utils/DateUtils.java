@@ -264,6 +264,16 @@ public class DateUtils {
     }
 
     /**
+     * 将 yyyyMMdd 格式时间转化为 Date 格式时间
+     *
+     * @param dateString yyyy-MM-dd 格式时间（如：2022-06-17）
+     * @return Date 格式时间
+     */
+    public static Date parseNODate(String dateString) {
+        return parse(dateString, FORMAT_NO_DATE);
+    }
+
+    /**
      * 将 yyyy-MM-dd HH:mm:ss 格式时间转化为 Date 格式时间
      *
      * @param dateTimeStr yyyy-MM-dd HH:mm:ss 格式时间（如：2022-06-17 16:06:17）

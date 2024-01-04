@@ -30,7 +30,7 @@
         </el-button>
       </el-form-item>
     </el-form>
-    <el-alert title="工单维护: asfi301; 工单状况: asfq301; 工单逐张结案: asfp400; 工单批结案: asfp401;" type="success" :closable="false">
+    <el-alert title="工单维护: asfi301; 工单状况: asfq301; 工单逐张结案: asfp400; 工单批结案: asfp401; 工单结案还原: asfp410; 工单返工结案: axcp013" type="success" :closable="false">
     </el-alert>
     <el-table :data="documentList" stripe border max-height="400px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading"

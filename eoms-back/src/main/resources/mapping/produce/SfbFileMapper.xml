@@ -34,6 +34,12 @@
           <if test="sfb.sfb36 != null and sfb.sfb36  > ddate and !flag">
               sfb36 = #{ddate},
           </if>
+          <if test="sfb.sfb37 != null and sfb.sfb37  > ddate and !flag">
+              sfb37 = #{ddate},
+          </if>
+          <if test="sfb.sfb37 != null and sfb.sfb37 &lt; ddate and flag">
+              sfb37 = #{ddate},
+          </if>
           <if test="sfb.sfb38 != null and sfb.sfb38 &lt; ddate and flag">
               sfb38 = #{ddate},
           </if>

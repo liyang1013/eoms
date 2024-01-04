@@ -33,6 +33,11 @@ spring:
           url: jdbc:mysql://172.17.200.108:3306/eoms?characterEncoding=UTF-8&serverTimezone=UTC
           username: root
           password: root
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 200MB
+
 mybatis:
   type-aliases-package: com.keboda.eomsback.*.pojo
   mapper-locations: classpath:mapping/*/*Mapper.xml

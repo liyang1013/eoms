@@ -31,7 +31,10 @@ const routes = [
     {
         path: '/authorityReview',
         name: 'authorityReview',
-        component: () => import('@/views/authority/ReviewIndex')
+        component: () => import('@/views/authority/ReviewIndex'),
+        meta: {
+            title:'authority-review',
+        },
     },
     {
         path: '/eoms',
@@ -39,9 +42,27 @@ const routes = [
         component: () => import('@/views/Eoms')
     },
     {
-        path: '/utils',
-        name: 'utils',
-        component: () => import('@/views/utils/UtilsIndex.vue')
+        path: '/invoice',
+        name: 'invoice',
+        redirect: 'invoice/identify',
+        meta: {
+            title:'invoice-tools',
+        },
+        component: () => import('@/views/invoice/InvoiceIndex.vue'),
+        children: [
+            {
+                path: 'identify',
+                name: '发票识别',
+                icon: 'el-icon-s-check',
+                component: () => import('@/views/invoice/OcrView.vue')
+            },
+            {
+                path: 'records',
+                name: '发票管理',
+                icon: 'el-icon-s-check',
+                component: () => import('@/views/invoice/InvoiceView.vue')
+            },
+        ]
     },
     {
         path: '*',
@@ -70,6 +91,9 @@ const router = new VueRouter({
  * 路由守护
  */
 router.beforeEach((to, from, next) => {
+    if(to.meta.title) {
+        document.title = to.meta.title
+    }
     next();
 })
 

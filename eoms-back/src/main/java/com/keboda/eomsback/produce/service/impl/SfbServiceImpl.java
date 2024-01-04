@@ -158,6 +158,7 @@ public class SfbServiceImpl implements ISfbService {
                     || (sfb.getSfb25() != null && (sfbModify.getFlag() ? sfb.getSfb25().compareTo(ddate) < 0 : sfb.getSfb25().compareTo(ddate) > 0))
                     || (sfb.getSfb36() != null && (sfbModify.getFlag() ? sfb.getSfb36().compareTo(ddate) < 0 : sfb.getSfb36().compareTo(ddate) > 0))
                     || (sfb.getSfb38() != null && (sfbModify.getFlag() ? sfb.getSfb38().compareTo(ddate) < 0 : sfb.getSfb38().compareTo(ddate) > 0))
+                    || (sfb.getSfb37() != null && (sfbModify.getFlag() ? sfb.getSfb37().compareTo(ddate) < 0 : sfb.getSfb37().compareTo(ddate) > 0))
             ) sfbFileMapper.updateDate(sfb, sfbFile.getCentre(), ddate, sfbModify.getFlag());
 
             //发料日期修改
