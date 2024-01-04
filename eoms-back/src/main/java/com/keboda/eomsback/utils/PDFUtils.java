@@ -6,7 +6,7 @@ import com.google.zxing.MultiFormatReader;
 import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
-import com.keboda.eomsback.invoice.pojo.Invoice;
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -15,7 +15,6 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -68,7 +67,7 @@ public class PDFUtils {
     private List<BufferedImage> extractImage(File pdfFile) throws Exception {
         List<BufferedImage> imageList = new ArrayList<BufferedImage>();
 
-        PDDocument document = PDDocument.load(pdfFile);
+        PDDocument document =  Loader.loadPDF(pdfFile);
         PDPage page = document.getPage(0); //电子发票只有一页
         PDResources resources = page.getResources();
 
