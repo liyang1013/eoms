@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 
@@ -17,8 +18,10 @@ public class InaFile extends CommonField implements Serializable {
 
     private String ina00;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date ina02;
 
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date ina03;
 
     private String ina04;

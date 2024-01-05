@@ -63,4 +63,10 @@ public class InaServiceImpl implements IInaService {
         inbFileMapper.alterPjb(inbFile);
         tlfFileMapper.alterPjb(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(),inbFile.getInb42());
     }
+
+    @Override
+    @Transactional
+    public void alterConf(InaFile inaFile) {
+        inaFileMapper.alterConf(inaFile);
+    }
 }

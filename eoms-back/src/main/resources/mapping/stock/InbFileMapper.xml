@@ -677,7 +677,7 @@
     where inb01 = #{inb01} and inb03 = #{inb03}
   </update>
   <select id="searchInbList" resultType="com.keboda.eomsback.stock.pojo.InbFile">
-        select inb01,inb03,inb04,inb05,inb15,inb16,inb08,inb09,inbplant centre ,imd02,ima02,ima021,inb41,inb42
+        select inb01,inb03,inb04,inb05,inb15,inb16,inb08,inb09,#{centre} centre ,imd02,ima02,ima021,inb41,inb42
         from ${centre}.inb_file
         left join ${centre}.imd_file on imd01 = inb05
         left join ${centre}.ima_file on ima01 = inb04

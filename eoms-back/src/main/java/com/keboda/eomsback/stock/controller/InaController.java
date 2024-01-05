@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.keboda.eomsback.entity.BaseResult;
 import com.keboda.eomsback.entity.SearchVo;
+import com.keboda.eomsback.purchase.pojo.RvaFile;
 import com.keboda.eomsback.stock.pojo.InaFile;
 import com.keboda.eomsback.stock.pojo.InbFile;
 import com.keboda.eomsback.stock.service.IInaService;
@@ -51,5 +52,11 @@ public class InaController {
     public BaseResult alterPjb(@RequestBody InbFile inbFile){
         iInaService.alterPjb(inbFile);
         return BaseResult.success("修改WBS成功");
+    }
+
+    @RequestMapping("/alterConf")
+    public BaseResult alterConf(@RequestBody InaFile inaFile){
+        iInaService.alterConf(inaFile);
+        return BaseResult.success("修改成功");
     }
 }

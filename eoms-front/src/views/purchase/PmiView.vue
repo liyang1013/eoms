@@ -141,7 +141,6 @@ export default {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total;
       }).finally(() => this.tableLoading = false);
-
     },
     searchSlaveList(row) {
       this.dialogTableVisible = true;

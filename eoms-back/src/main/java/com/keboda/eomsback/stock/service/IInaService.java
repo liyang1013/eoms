@@ -19,4 +19,6 @@ public interface IInaService {
     void alterPja(InaFile inaFile);
 
     void alterPjb(InbFile inbFile);
+
+    void alterConf(InaFile inaFile);
 }

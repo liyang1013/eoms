@@ -17,4 +17,6 @@ public interface InaFileMapper {
     void alterPja(InaFile inaFile);
 
     void InvalidDocumentDelete(@Param("centre")String centre);
+
+    void alterConf(InaFile inaFile);
 }

@@ -691,13 +691,22 @@
       set ina06 = #{ina06}
       where ina01 = #{ina01}
     </update>
-    <delete id="InvalidDocumentDelete">
+  <update id="alterConf">
+    update ${centre}.ina_file
+    set inaconf = #{inaconf}
+    where ina01 = #{ina01}
+  </update>
+  <delete id="InvalidDocumentDelete">
       delete ${centre}.ina_file
       where  ina02 &lt;=sysdate  AND inaconf !='X' and ina01 not in (select  distinct inb01 from ${centre}.inb_file)
     </delete>
     <select id="searchInaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
-    select ina00,ina01,ina02,ina03,ina04,ina06,inaconf,inapost,inaplant as centre
-    from ${centre}.ina_file
+      select ina00,ina01,SMYDESC,ina02,ina03,ina04,gem02,ina06,pja02 ,ina07,inaconf,ina08,ina11,gen02, #{centre} centre
+      from  ${centre}.ina_file
+      left join  ${centre}.SMY_FILE on SMYSLIP = substr(ina01,0,4)
+      left join  ${centre}.GEM_FILE on gem01 = ina04
+      left join  ${centre}.GEN_FILE on gen01 = ina11
+      left join  ${centre}.PJA_FILE on pja01 = ina06
     <where>
       <if test="code != null and code != '' ">
         and lower(ina01) like lower('%${code}%')

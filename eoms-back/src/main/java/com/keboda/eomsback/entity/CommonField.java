@@ -47,6 +47,8 @@ public class CommonField {
      */
     private String pmc03;
 
+    private String pja02;
+
     /**
      * 供应商分类
      */
