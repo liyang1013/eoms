@@ -40,6 +40,6 @@ public class OgaServiceImpl implements IOgaService {
     @Transactional
     public void alterOgaDate(OgaFile ogaFile) {
         ogaFileMapper.alterOgaDate(ogaFile);
-        iTlfService.alterDate(ogaFile.getCentre(),ogaFile.getOga01(),null,ogaFile.getOga02(),"-1");
+        iTlfService.alterByCode(ogaFile.getCentre(),ogaFile.getOga01(),null,"-1",ogaFile.getOga02(),null,null);
     }
 }

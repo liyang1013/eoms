@@ -700,7 +700,7 @@
       delete ${centre}.ina_file
       where  ina02 &lt;=sysdate  AND inaconf !='X' and ina01 not in (select  distinct inb01 from ${centre}.inb_file)
     </delete>
-    <select id="searchInaListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
+    <select id="searchListPageHelper" resultType="com.keboda.eomsback.stock.pojo.InaFile">
       select ina00,ina01,SMYDESC,ina02,ina03,ina04,gem02,ina06,pja02 ,ina07,inaconf,ina08,ina11,gen02, #{centre} centre
       from  ${centre}.ina_file
       left join  ${centre}.SMY_FILE on SMYSLIP = substr(ina01,0,4)

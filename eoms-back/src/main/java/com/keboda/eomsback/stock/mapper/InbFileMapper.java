@@ -12,7 +12,7 @@ public interface InbFileMapper {
 
     int updateByPrimaryKeySelective(InbFile record);
 
-    List<InbFile> searchInbList(SearchVo searchVo);
+    List<InbFile> searchSlaveList(SearchVo searchVo);
 
     void alterAzf(InbFile inbFile);
 

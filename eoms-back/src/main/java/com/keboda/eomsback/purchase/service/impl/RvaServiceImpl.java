@@ -66,7 +66,7 @@ public class RvaServiceImpl implements IRvaService {
                     pmnFileMapper.updatePmn50(rvb.getCentre(),rvbFile.getRvb04(),rvbFile.getRvb03(),rvb.getRvb07().subtract(rvbFile.getRvb07()));
                 }
                 //更新收货异动表
-                iTlfService.alterQty(rvb.getCentre(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),BigDecimal.ZERO);
+                iTlfService.alterByRow(rvb.getCentre(),rvbFile.getRvb04(),rvb.getRvb03(), rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07(),null,null);
                 //更新收货单表
                 rvbFileMapper.alterRvbQty(rvb.getCentre(),rvb.getRvb01(),rvb.getRvb02(),rvb.getRvb07());
             }
@@ -77,6 +77,6 @@ public class RvaServiceImpl implements IRvaService {
     @Transactional
     public void alterRvaDate(RvaFile rvaFile) {
         rvaFileMapper.alterRvaDate(rvaFile);
-        iTlfService.alterDate(rvaFile.getCentre(),rvaFile.getRva02(),rvaFile.getRva01(),rvaFile.getRva06(),"0");
+        iTlfService.alterByCode(rvaFile.getCentre(),rvaFile.getRva02(),rvaFile.getRva01(),"0",rvaFile.getRva06(),null,null);
     }
 }

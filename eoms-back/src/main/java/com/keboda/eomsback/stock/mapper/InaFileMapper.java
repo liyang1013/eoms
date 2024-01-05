@@ -10,7 +10,7 @@ public interface InaFileMapper {
 
     int updateByPrimaryKeySelective(InaFile record);
 
-    Page<InaFile> searchInaListPageHelper(SearchVo searchVo);
+    Page<InaFile> searchListPageHelper(SearchVo searchVo);
 
     void alterGem(InaFile inaFile);
 

@@ -38,6 +38,6 @@ public class OhaServiceImpl implements IOhaService {
     @Transactional
     public void alterOhaDate(OhaFile ohaFile) {
         ohaFileMapper.alterOhaDate(ohaFile);
-        iTlfService.alterDate(ohaFile.getCentre(),ohaFile.getOha01(),ohaFile.getOha01(),ohaFile.getOha02(),"1");
+        iTlfService.alterByCode(ohaFile.getCentre(),ohaFile.getOha01(),ohaFile.getOha01(),"1",ohaFile.getOha02(),null,null);
     }
 }

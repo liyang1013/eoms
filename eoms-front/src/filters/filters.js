@@ -31,12 +31,16 @@ export function formatImaType(code) {
  * @returns {string}
  */
 export function formatInaType(code) {
-    if (code === '1') return '库存杂项发料';
-    if (code === '2') return 'WIP 杂项发料';
-    if (code === '3') return '库存杂项收料';
-    if (code === '4') return 'WIP 杂项收料';
-    if (code === '5') return '库存杂项报废';
-    if (code === '6') return 'WIP 杂项报废';
+
+    let type = 'undefine';
+    if (code === '1') type = '库存杂项发料';
+    if (code === '2') type = 'WIP 杂项发料';
+    if (code === '3') type = '库存杂项收料';
+    if (code === '4') type = 'WIP 杂项收料';
+    if (code === '5') type = '库存杂项报废';
+    if (code === '6') type = 'WIP 杂项报废';
+
+    return code + ': ' + type;
 }
 
 

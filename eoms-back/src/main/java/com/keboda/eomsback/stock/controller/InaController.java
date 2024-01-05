@@ -18,16 +18,16 @@ public class InaController {
     @Autowired
     private IInaService iInaService;
 
-    @PostMapping("/searchInaListPageHelper")
-    public BaseResult searchInaListPageHelper(@RequestBody SearchVo searchVo){
+    @PostMapping("/searchListPageHelper")
+    public BaseResult searchListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<InaFile> page = iInaService.searchInaListPageHelper(searchVo);
+        Page<InaFile> page = iInaService.searchListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 
-    @PostMapping("/searchInbList")
-    public BaseResult searchInbList(@RequestBody SearchVo searchVo){
-        return BaseResult.success(iInaService.searchInbList(searchVo));
+    @PostMapping("/searchSlaveList")
+    public BaseResult searchSlaveList(@RequestBody SearchVo searchVo){
+        return BaseResult.success(iInaService.searchSlaveList(searchVo));
     }
 
     @PostMapping("/alterGem")
@@ -57,6 +57,6 @@ public class InaController {
     @RequestMapping("/alterConf")
     public BaseResult alterConf(@RequestBody InaFile inaFile){
         iInaService.alterConf(inaFile);
-        return BaseResult.success("修改成功");
+        return BaseResult.success("修改状态成功");
     }
 }

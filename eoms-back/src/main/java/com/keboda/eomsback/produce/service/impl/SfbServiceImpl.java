@@ -172,8 +172,8 @@ public class SfbServiceImpl implements ISfbService {
                     }
                     //发料异动记录
                     if (sfp.getTlf06() != null && ((sfbModify.getFlag() ? sfp.getTlf06().compareTo(ddate) < 0 : sfp.getTlf06().compareTo(ddate) > 0))) {
-                        if(sfp.getTlf907().equals("发料")) iTlfService.alterDate(sfbFile.getCentre(), sfp.getSfp01(), null,ddate,"-1");
-                        else iTlfService.alterDate(sfbFile.getCentre(),null, sfp.getSfp01(),ddate,"1");
+                        if(sfp.getTlf907().equals("发料")) iTlfService.alterByCode(sfbFile.getCentre(), sfp.getSfp01(), null,"-1", ddate,null,null);
+                        else iTlfService.alterByCode(sfbFile.getCentre(),null, sfp.getSfp01(),"1",ddate,null,null);
                     }
                 }
             }
@@ -214,8 +214,8 @@ public class SfbServiceImpl implements ISfbService {
                     }
                     //入库异动记录
                     if (sfu.getTlf06() != null && (sfbModify.getFlag() ? sfu.getTlf06().compareTo(ddate) < 0 : sfu.getTlf06().compareTo(ddate) > 0)) {
-                        if(sfu.getTlf907().equals("入库")) iTlfService.alterDate(sfbFile.getCentre(),null,sfu.getSfu01(),ddate,"1");
-                        else iTlfService.alterDate(sfbFile.getCentre(),sfu.getSfu01(),null,ddate,"-1");
+                        if(sfu.getTlf907().equals("入库")) iTlfService.alterByCode(sfbFile.getCentre(),null,sfu.getSfu01(),"1",ddate,null,null);
+                        else iTlfService.alterByCode(sfbFile.getCentre(),sfu.getSfu01(),null,"-1",ddate,null,null);
                     }
                 }
             }

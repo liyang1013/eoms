@@ -45,9 +45,9 @@ public class RvuServiceImpl implements IRvuService {
         rvuFileMapper.alterRvuDate(rvuFile);
         rvvFileMapper.alterRvvDate(rvuFile);
         if(rvuFile.getRvu00().equals("1")){
-            iTlfService.alterDate(rvuFile.getCentre(),rvuFile.getRvu02(),rvuFile.getRvu01(),rvuFile.getRvu03(),"1");
+            iTlfService.alterByCode(rvuFile.getCentre(),rvuFile.getRvu02(),rvuFile.getRvu01(),"1",rvuFile.getRvu03(),null,null);
         }else{
-            iTlfService.alterDate(rvuFile.getCentre(),rvuFile.getRvu01(),rvuFile.getRvu02(),rvuFile.getRvu03(),"-1");
+            iTlfService.alterByCode(rvuFile.getCentre(),rvuFile.getRvu01(),rvuFile.getRvu02(),"-1",rvuFile.getRvu03(),null,null);
         }
     }
 }

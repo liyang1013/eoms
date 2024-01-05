@@ -147,7 +147,7 @@ export default {
     search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true;
-      this.$http.post('/api/ina/searchInaListPageHelper', this.searchVo).then(res => {
+      this.$http.post('/api/ina/searchListPageHelper', this.searchVo).then(res => {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total;
       }).finally(() => this.tableLoading = false);
@@ -156,7 +156,7 @@ export default {
     searchSlaveList(row) {
       this.dialogTableVisible = true;
       this.documents.master = {...row};
-      this.$http.post('/api/ina/searchInbList', {code: row.ina01, centre: row.centre}).then(res => {
+      this.$http.post('/api/ina/searchSlaveList', {code: row.ina01, centre: row.centre}).then(res => {
         this.documents.slave = res.data.result;
       })
     },

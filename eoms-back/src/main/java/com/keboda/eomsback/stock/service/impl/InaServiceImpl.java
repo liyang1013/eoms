@@ -8,6 +8,7 @@ import com.keboda.eomsback.stock.mapper.TlfFileMapper;
 import com.keboda.eomsback.stock.pojo.InaFile;
 import com.keboda.eomsback.stock.pojo.InbFile;
 import com.keboda.eomsback.stock.service.IInaService;
+import com.keboda.eomsback.stock.service.ITlfService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,33 +21,33 @@ public class InaServiceImpl implements IInaService {
     @Resource
     private InaFileMapper inaFileMapper;
     @Resource
-    private TlfFileMapper tlfFileMapper;
+    private ITlfService iTlfService;
     @Resource
     private InbFileMapper inbFileMapper;
 
 
     @Override
-    public Page<InaFile> searchInaListPageHelper(SearchVo searchVo) {
-        return inaFileMapper.searchInaListPageHelper(searchVo);
+    public Page<InaFile> searchListPageHelper(SearchVo searchVo) {
+        return inaFileMapper.searchListPageHelper(searchVo);
     }
 
     @Override
     @Transactional
     public void alterGem(InaFile inaFile) {
         inaFileMapper.alterGem(inaFile);
-        tlfFileMapper.updateGem(inaFile.getCentre(),inaFile.getIna01(),inaFile.getIna04());
+        iTlfService.alterByCode(inaFile.getCentre(),inaFile.getIna01(),inaFile.getIna01(),null,null, inaFile.getIna04(),null);
     }
 
     @Override
-    public List<InbFile> searchInbList(SearchVo searchVo) {
-        return inbFileMapper.searchInbList(searchVo);
+    public List<InbFile> searchSlaveList(SearchVo searchVo) {
+        return inbFileMapper.searchSlaveList(searchVo);
     }
 
     @Override
     @Transactional
     public void alterAzf(InbFile inbFile) {
         inbFileMapper.alterAzf(inbFile);
-        tlfFileMapper.alterAzf(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(),inbFile.getInb15());
+        iTlfService.alterByRow(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(), inbFile.getInb01(),inbFile.getInb03(),null, inbFile.getInb15(),null);
     }
 
     @Override
@@ -54,14 +55,15 @@ public class InaServiceImpl implements IInaService {
     public void alterPja(InaFile inaFile) {
         inaFileMapper.alterPja(inaFile);
         inbFileMapper.alterPja(inaFile);
-        tlfFileMapper.alterPja(inaFile.getCentre(),inaFile.getIna01(),inaFile.getIna06());
+        iTlfService.alterByCode(inaFile.getCentre(),inaFile.getIna01(),inaFile.getIna01(),null,null, null,inaFile.getIna06());
     }
 
     @Override
     @Transactional
     public void alterPjb(InbFile inbFile) {
         inbFileMapper.alterPjb(inbFile);
-        tlfFileMapper.alterPjb(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(),inbFile.getInb42());
+        iTlfService.alterByRow(inbFile.getCentre(),inbFile.getInb01(),inbFile.getInb03(), inbFile.getInb01(),inbFile.getInb03(),null,null, inbFile.getInb42());
+
     }
 
     @Override

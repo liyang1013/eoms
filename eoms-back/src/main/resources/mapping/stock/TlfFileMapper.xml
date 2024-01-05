@@ -2,34 +2,48 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.stock.mapper.TlfFileMapper">
 
-    <update id="alterQty">
+    <update id="alterByRow">
         update ${centre}.TLF_FILE
-        set tlf10 = #{tlf10}, tlf18 = tlf18 + #{tlf18}
-        where tlf026 = #{tlf026} and tlf027 = #{tlf027} and tlf036 = #{tlf036} and tlf037 = #{tlf037}
+        <set>
+            <if test="tlf10 != null and tlf10 != '' ">
+                tlf10 = #{tlf10},
+            </if>
+            <if test="tlf14 != null and tlf14 != ''">
+                tlf14 = #{tlf14},
+            </if>
+            <if test="tlf41 != null and tlf41 != ''">
+                tlf41 = #{tlf41},
+            </if>
+        </set>
+        <where>
+            <if test="tlf026 != null and tlf026 != '' ">
+                and tlf026 = #{tlf026}
+            </if>
+            <if test="tlf027 != null and tlf027 != '' ">
+                and tlf027 = #{tlf027}
+            </if>
+            <if test="tlf036 != null and tlf036 != '' ">
+                and tlf036 = #{tlf036}
+            </if>
+            <if test="tlf037 != null and tlf037 != '' ">
+                and tlf037 = #{tlf037}
+            </if>
+        </where>
     </update>
-    <update id="updateGem">
-        update ${centre}.tlf_file
-        set tlf19 = #{tlf19}
-        where tlf026 = #{code} or tlf036 = #{code}
-    </update>
-    <update id="alterAzf">
-        update ${centre}.tlf_file
-        set tlf14 = #{tlf14}
-        where ( tlf026 = #{code} or tlf036 = #{code} ) and tlf037 = #{tlf037}
-    </update>
-    <update id="alterPja">
-        update ${centre}.tlf_file
-        set tlf20 = #{tlf20}
-        where  tlf026 = #{code} or tlf036 = #{code}
-    </update>
-    <update id="alterPjb">
-        update ${centre}.tlf_file
-        set tlf41 = #{tlf41}
-        where  ( tlf026 = #{code} or tlf036 = #{code} ) and tlf037 = #{tlf037}
-    </update>
-    <update id="alterDate">
+
+    <update id="alterByCode">
         update ${centre}.TLF_FILE
-        set tlf06 = #{ddate}, tlf07 = #{ddate}
+        <set>
+            <if test="ddate != null and ddate != ''">
+                tlf06 = #{ddate}, tlf07 = #{ddate},
+            </if>
+            <if test="tlf19 != null and tlf19 != ''">
+                tlf19 = #{tlf19},
+            </if>
+            <if test="tlf20 != null and tlf20 != ''">
+                tlf20 = #{tlf20},
+            </if>
+        </set>
         <where>
             <if test="tlf026 != null and tlf026 != '' ">
                 and tlf026 = #{tlf026}

@@ -14,7 +14,7 @@ import java.util.List;
 public interface ITlfService {
     Page<EWStockGap> searchEWStockGapPageHelper(SearchVo searchVo);
 
-    void alterDate(String centre, String tlf026, String tlf036, Date ddate, String tlf907);
+    void alterByCode(String centre, String tlf026, String tlf036, String tlf907, Date ddate,String tlf19,String tlf20);
 
-    void alterQty(String centre, String tlf026, Integer tlf027, String tlf036, Integer tlf037, BigDecimal tlf10, BigDecimal tlf18);
+    void alterByRow(String centre, String tlf026, Integer tlf027, String tlf036, Integer tlf037, BigDecimal tlf10,String tlf14,String tlf41);
 }
