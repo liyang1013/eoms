@@ -85,7 +85,6 @@ export default {
         let blob = new Blob([res.data], {type: "application/vnd.ms-excel",});
         let fileName = "现行权限档案.xlsx";
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-          // IE
           window.navigator.msSaveOrOpenBlob(blob, fileName);
         } else {
           let objectUrl = (window.URL || window.webkitURL).createObjectURL(

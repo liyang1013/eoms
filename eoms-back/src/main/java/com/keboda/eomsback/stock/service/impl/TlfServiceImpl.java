@@ -1,6 +1,10 @@
 package com.keboda.eomsback.stock.service.impl;
 
+import cn.hutool.core.io.IoUtil;
+import cn.hutool.poi.excel.ExcelUtil;
+import cn.hutool.poi.excel.ExcelWriter;
 import com.github.pagehelper.Page;
+import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.stock.mapper.TlfFileMapper;
 import com.keboda.eomsback.stock.pojo.EWStockGap;
@@ -10,10 +14,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class TlfServiceImpl implements ITlfService {

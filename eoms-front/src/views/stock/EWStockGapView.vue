@@ -2,7 +2,6 @@
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline">
       <el-form-item style="float: right">
-        <el-button type="success" icon="el-icon-printer" @click="toExcel" round>导出</el-button>
         <el-button type="primary" @click="search()" icon="el-icon-search" round>查询</el-button>
       </el-form-item>
       <el-form-item label="中心:">
@@ -17,7 +16,7 @@
     </el-form>
     <el-table :data="documentList" border max-height="500px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading" :row-style="tableRowClassName"
-              show-summary :summary-method="getSummaries" ref="tableToExcel">
+              show-summary :summary-method="getSummaries">
       <el-table-column prop="cdanhao" label="单号">
       </el-table-column>
       <el-table-column prop="cproduceno" label="品号">
@@ -107,10 +106,6 @@ export default {
         }
       });
       return sums;
-    },
-    toExcel(){
-      const table = this.$refs["tableToExcel"].$el;
-      useExcel(table,'EW库存差异');
     },
     handleCurrentChange(val) {
       this.search(val);
