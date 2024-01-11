@@ -7,9 +7,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-public class Invoice {
+public class VatInvoice {
 
     private String uuid;
+
+    private String suffix;
 
     //发票类型
     private String invoiceType;

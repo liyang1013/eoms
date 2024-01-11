@@ -7,7 +7,7 @@
 export default {
   data() {
     return {
-      flushList: ['eoms','authorityReview']
+      flushList: ['eoms','authorityReview','invoice']
     }
   },
   mounted() {

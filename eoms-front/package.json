@@ -21,9 +21,11 @@
     "element-resize-detector": "^1.2.4",
     "element-ui": "^2.15.13",
     "file-saver": "^2.0.2",
+    "patch-package": "^8.0.0",
     "tesseract.js": "^5.0.4",
     "vue": "^2.6.14",
     "vue-pdf": "^4.3.0",
+    "vue-pdf-signature": "^4.2.7",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2",
     "xlsx": "0.16.0"

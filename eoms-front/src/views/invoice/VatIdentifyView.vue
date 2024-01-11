@@ -1,26 +1,14 @@
 <template>
   <div class="block">
-<!--    <div>-->
-<!--      <el-card>-->
-<!--        <span>图片灰阶   (范围：0 ~ 255) </span>-->
-<!--        <el-input-number v-model="grayscale" style="float: right" :min="0" :step="1"-->
-<!--                         :max="255"  :controls="false"></el-input-number>-->
-<!--      </el-card>-->
-<!--    </div>-->
     <div class="title">
-      <span style="font-size: 15px; ">发票识别</span>
-      <el-button type="info" size="small" style="float: right; background-color: #FFFFFF; color: #000000;" @click="ocr">
-        OCR识别
-      </el-button>
+      <span style="font-size: 15px; ">增值税发票识别（pdf, jpg, png, jpeg）</span>
     </div>
     <el-card>
       <el-upload multiple ref="upload"
                  list-type="picture-card"
-                 :data="{'grayscale':grayscale}"
-                 action="/api/invoice/ocr"
-                 :auto-upload="false"
+                 action="/api/invoice/vatIdentify"
                  accept=".pdf,.jpg,.png,.jpeg"
-                 :limit="6"
+                 :limit="8"
                  :before-upload="handleBefore"
                  :on-exceed="handleExceed"
                  :on-success="handleSuccess"
@@ -30,7 +18,7 @@
         <div slot="file" slot-scope="{file}">
           <img class="el-upload-list__item-thumbnail" v-if="file.raw.type.indexOf('image') !== -1" :src="file.url"
                alt="">
-          <pdf v-if="file.raw.type === 'application/pdf'" :src="cMapPdf(file.url)"></pdf>
+          <pdf v-if="file.raw.type === 'application/pdf'" :src="cMapPdf(file.url)" :page="1"></pdf>
           <span class="el-upload-list__item-actions">
                   <span class="el-upload-list__item-preview" @click="handlePictureCardPreview(file)">
                     <i class="el-icon-zoom-in"></i>
@@ -46,33 +34,32 @@
         <img width="100%" :src="preview.image.url" alt="">
       </el-dialog>
       <el-dialog :visible.sync="preview.pdf.dialogVisible">
-        <pdf :src="preview.pdf.url"></pdf>
+        <pdf :src="preview.pdf.url" :page="1"></pdf>
       </el-dialog>
     </el-card>
 
     <div class="title">
-      <span style="font-size: 15px">识别内容</span>
-
-      <el-button type="info" size="small"
-                 style="float: right;margin-left: 10px; background-color: #FFFFFF; color: #000000;">保存
+      <span style="font-size: 15px">识别结果</span>
+      <el-button type="primary" size="small"
+                 style="float: right;margin-left: 10px;"
+                 @click="saveInvoice">保存
       </el-button>
-      <el-button type="info" size="small" style="float: right; background-color: #FFFFFF; color: #000000">验证
+      <el-button type="success" size="small" style="float: right;">验证
       </el-button>
-
     </div>
     <el-card>
       <el-table :data="documentList" style="width: 100%" max-height="300px" element-loading-spinner="el-icon-loading">
-        <el-table-column label="发票代码">
+        <el-table-column label="发票代码" :show-overflow-tooltip="false">
           <template slot-scope="scope">
             <el-input v-model="scope.row.invoiceCode"></el-input>
           </template>
         </el-table-column>
-        <el-table-column label="发票号码" >
+        <el-table-column label="发票号码" :show-overflow-tooltip="false">
           <template slot-scope="scope">
             <el-input v-model="scope.row.invoiceNo"></el-input>
           </template>
         </el-table-column>
-        <el-table-column label="发票金额">
+        <el-table-column label="发票金额" :show-overflow-tooltip="false">
           <template slot-scope="scope">
             <el-input v-model="scope.row.amount"></el-input>
           </template>
@@ -90,7 +77,8 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button type="text" size="medium"><i class="el-icon-delete"></i></el-button>
+            <el-button type="text" size="medium" @click="deleteInvoice(scope.$index)">删除 <i
+                class="el-icon-delete"></i></el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -101,9 +89,8 @@
 </template>
 
 <script>
-import {createWorker} from "tesseract.js";
-import pdf from 'vue-pdf';
-import {Message} from 'element-ui'
+
+import pdf from 'vue-pdf-signature'
 
 export default {
   name: "ocr",
@@ -112,18 +99,14 @@ export default {
   },
   data() {
     return {
-      grayscale: 150,
       preview: {
         pdf: {dialogVisible: false, url: ''},
         image: {dialogVisible: false, url: ''}
       },
-      documentList: []
+      documentList: [],
     }
   },
   methods: {
-    ocr() {
-      this.$refs.upload.submit();
-    },
     handleRemove(file) {
       const uploadFiles = this.$refs.upload.uploadFiles
       for (let i = 0; i < uploadFiles.length; i++) {
@@ -139,30 +122,67 @@ export default {
         this.preview.image = {dialogVisible: true, url: file.url}
       }
     },
+    saveInvoice() {
+      if (!this.documentList.length) return
+      let row;
+      for (let i = 0; i < this.documentList.length; i++) {
+        row = this.documentList[i];
+        if (row.invoiceCode.length !== 12) {
+          this.$message.warning('发票代码格式错误');
+          return;
+        }
+        if (row.invoiceNo.length !== 8) {
+          this.$message.warning('发票号码格式错误');
+          return;
+        }
+        if (!row.amount) {
+          this.$message.warning('发票金额不能为0');
+          return;
+        }
+        if (!row.invoiceDate) {
+          this.$message.warning('发票日期不能为空');
+          return;
+        }
+      }
+      this.$http.post('/api/invoice/saveVatInvoice', this.documentList).then(res =>{
+        this.$message.success(res.data.message);
+        this.documentList = [];
+        this.$refs.upload.clearFiles();
+      });
+    },
+    deleteInvoice(index) {
+      this.documentList.splice(index, 1)
+    },
     handleExceed() {
-      Message.warning('一次最大上传6个')
+      this.$message.warning('一次最大上传8个')
     },
     handleBefore(file) {
       if (file.type.indexOf('image') === -1 && file.type.indexOf('pdf') === -1) {
-        Message.warning('请上传pdf或图片格式文件,非法文件将直接被删除');
+        this.$message.warning('请上传pdf或图片格式文件');
         return false
       }
       return true
     },
-    handleProgress(event, file, fileList){},
-    handleError(err, file, fileList){
-      console.log(err)
-      Message.error(err)
+    handleProgress(event, file, fileList) {
     },
-    handleSuccess(response, file, fileList){
-      if(response.status === 200){
+    handleError(err, file, fileList) {
+      this.$message.error(err)
+    },
+    handleSuccess(response, file, fileList) {
+      if (response.status === 200) {
         let obj = response.result;
         let f = true;
         this.documentList.filter(e => e.invoiceCode === obj.invoiceCode).forEach(e => f = false);
-        if(f) this.documentList.push(obj);
+        if (f) this.documentList.push(obj);
 
-      }else{
-        Message.error(response.message);
+      } else {
+        // Message.error(response.message);
+        const uploadFiles = this.$refs.upload.uploadFiles
+        for (let i = 0; i < uploadFiles.length; i++) {
+          if (uploadFiles[i]['url'] === file.url) {
+            uploadFiles.splice(i, 1)
+          }
+        }
       }
     },
     cMapPdf(url) {
@@ -179,22 +199,21 @@ export default {
 <style lang="scss" scoped>
 
 body {
-  background-color: #bdf4a2 !important;
-
   .block {
-    margin: 20px;
-
-    ::v-deep .el-input__inner{
+    ::v-deep .el-input__inner {
       box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
     }
 
-    .title{
+    .title {
       margin-top: 20px;
       margin-bottom: 15px;
       padding-left: 10px;
-      ::v-deep .el-button{
+
+      ::v-deep .el-button {
         border: 1px solid #e9e9e9;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        background-color: #FFFFFF;
+        color: #000000;
       }
     }
 

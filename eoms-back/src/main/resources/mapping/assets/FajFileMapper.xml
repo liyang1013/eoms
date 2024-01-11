@@ -1,0 +1,1741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.assets.mapper.FajFileMapper">
+
+  <insert id="insertSelective" keyColumn="FAJ01" keyProperty="faj01" parameterType="com.keboda.eomsback.assets.pojo.FajFile" useGeneratedKeys="true">
+    insert into FAJ_FILE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="faj02 != null">
+        FAJ02,
+      </if>
+      <if test="faj022 != null">
+        FAJ022,
+      </if>
+      <if test="faj021 != null">
+        FAJ021,
+      </if>
+      <if test="faj03 != null">
+        FAJ03,
+      </if>
+      <if test="faj04 != null">
+        FAJ04,
+      </if>
+      <if test="faj05 != null">
+        FAJ05,
+      </if>
+      <if test="faj06 != null">
+        FAJ06,
+      </if>
+      <if test="faj061 != null">
+        FAJ061,
+      </if>
+      <if test="faj07 != null">
+        FAJ07,
+      </if>
+      <if test="faj071 != null">
+        FAJ071,
+      </if>
+      <if test="faj08 != null">
+        FAJ08,
+      </if>
+      <if test="faj09 != null">
+        FAJ09,
+      </if>
+      <if test="faj10 != null">
+        FAJ10,
+      </if>
+      <if test="faj11 != null">
+        FAJ11,
+      </if>
+      <if test="faj12 != null">
+        FAJ12,
+      </if>
+      <if test="faj13 != null">
+        FAJ13,
+      </if>
+      <if test="faj14 != null">
+        FAJ14,
+      </if>
+      <if test="faj141 != null">
+        FAJ141,
+      </if>
+      <if test="faj15 != null">
+        FAJ15,
+      </if>
+      <if test="faj16 != null">
+        FAJ16,
+      </if>
+      <if test="faj17 != null">
+        FAJ17,
+      </if>
+      <if test="faj171 != null">
+        FAJ171,
+      </if>
+      <if test="faj18 != null">
+        FAJ18,
+      </if>
+      <if test="faj19 != null">
+        FAJ19,
+      </if>
+      <if test="faj20 != null">
+        FAJ20,
+      </if>
+      <if test="faj21 != null">
+        FAJ21,
+      </if>
+      <if test="faj22 != null">
+        FAJ22,
+      </if>
+      <if test="faj23 != null">
+        FAJ23,
+      </if>
+      <if test="faj24 != null">
+        FAJ24,
+      </if>
+      <if test="faj25 != null">
+        FAJ25,
+      </if>
+      <if test="faj26 != null">
+        FAJ26,
+      </if>
+      <if test="faj27 != null">
+        FAJ27,
+      </if>
+      <if test="faj28 != null">
+        FAJ28,
+      </if>
+      <if test="faj29 != null">
+        FAJ29,
+      </if>
+      <if test="faj30 != null">
+        FAJ30,
+      </if>
+      <if test="faj31 != null">
+        FAJ31,
+      </if>
+      <if test="faj32 != null">
+        FAJ32,
+      </if>
+      <if test="faj33 != null">
+        FAJ33,
+      </if>
+      <if test="faj34 != null">
+        FAJ34,
+      </if>
+      <if test="faj35 != null">
+        FAJ35,
+      </if>
+      <if test="faj36 != null">
+        FAJ36,
+      </if>
+      <if test="faj37 != null">
+        FAJ37,
+      </if>
+      <if test="faj38 != null">
+        FAJ38,
+      </if>
+      <if test="faj39 != null">
+        FAJ39,
+      </if>
+      <if test="faj40 != null">
+        FAJ40,
+      </if>
+      <if test="faj41 != null">
+        FAJ41,
+      </if>
+      <if test="faj42 != null">
+        FAJ42,
+      </if>
+      <if test="faj421 != null">
+        FAJ421,
+      </if>
+      <if test="faj422 != null">
+        FAJ422,
+      </if>
+      <if test="faj423 != null">
+        FAJ423,
+      </if>
+      <if test="faj43 != null">
+        FAJ43,
+      </if>
+      <if test="faj44 != null">
+        FAJ44,
+      </if>
+      <if test="faj45 != null">
+        FAJ45,
+      </if>
+      <if test="faj451 != null">
+        FAJ451,
+      </if>
+      <if test="faj46 != null">
+        FAJ46,
+      </if>
+      <if test="faj461 != null">
+        FAJ461,
+      </if>
+      <if test="faj462 != null">
+        FAJ462,
+      </if>
+      <if test="faj47 != null">
+        FAJ47,
+      </if>
+      <if test="faj471 != null">
+        FAJ471,
+      </if>
+      <if test="faj48 != null">
+        FAJ48,
+      </if>
+      <if test="faj49 != null">
+        FAJ49,
+      </if>
+      <if test="faj491 != null">
+        FAJ491,
+      </if>
+      <if test="faj50 != null">
+        FAJ50,
+      </if>
+      <if test="faj51 != null">
+        FAJ51,
+      </if>
+      <if test="faj511 != null">
+        FAJ511,
+      </if>
+      <if test="faj52 != null">
+        FAJ52,
+      </if>
+      <if test="faj53 != null">
+        FAJ53,
+      </if>
+      <if test="faj54 != null">
+        FAJ54,
+      </if>
+      <if test="faj55 != null">
+        FAJ55,
+      </if>
+      <if test="faj56 != null">
+        FAJ56,
+      </if>
+      <if test="faj57 != null">
+        FAJ57,
+      </if>
+      <if test="faj571 != null">
+        FAJ571,
+      </if>
+      <if test="faj58 != null">
+        FAJ58,
+      </if>
+      <if test="faj59 != null">
+        FAJ59,
+      </if>
+      <if test="faj60 != null">
+        FAJ60,
+      </if>
+      <if test="faj61 != null">
+        FAJ61,
+      </if>
+      <if test="faj62 != null">
+        FAJ62,
+      </if>
+      <if test="faj63 != null">
+        FAJ63,
+      </if>
+      <if test="faj64 != null">
+        FAJ64,
+      </if>
+      <if test="faj65 != null">
+        FAJ65,
+      </if>
+      <if test="faj66 != null">
+        FAJ66,
+      </if>
+      <if test="faj67 != null">
+        FAJ67,
+      </if>
+      <if test="faj68 != null">
+        FAJ68,
+      </if>
+      <if test="faj69 != null">
+        FAJ69,
+      </if>
+      <if test="faj70 != null">
+        FAJ70,
+      </if>
+      <if test="faj71 != null">
+        FAJ71,
+      </if>
+      <if test="faj72 != null">
+        FAJ72,
+      </if>
+      <if test="faj73 != null">
+        FAJ73,
+      </if>
+      <if test="faj74 != null">
+        FAJ74,
+      </if>
+      <if test="faj741 != null">
+        FAJ741,
+      </if>
+      <if test="faj80 != null">
+        FAJ80,
+      </if>
+      <if test="faj81 != null">
+        FAJ81,
+      </if>
+      <if test="faj811 != null">
+        FAJ811,
+      </if>
+      <if test="faj812 != null">
+        FAJ812,
+      </if>
+      <if test="faj813 != null">
+        FAJ813,
+      </if>
+      <if test="faj82 != null">
+        FAJ82,
+      </if>
+      <if test="faj83 != null">
+        FAJ83,
+      </if>
+      <if test="faj84 != null">
+        FAJ84,
+      </if>
+      <if test="faj85 != null">
+        FAJ85,
+      </if>
+      <if test="faj851 != null">
+        FAJ851,
+      </if>
+      <if test="faj86 != null">
+        FAJ86,
+      </if>
+      <if test="faj87 != null">
+        FAJ87,
+      </if>
+      <if test="faj88 != null">
+        FAJ88,
+      </if>
+      <if test="faj89 != null">
+        FAJ89,
+      </if>
+      <if test="faj90 != null">
+        FAJ90,
+      </if>
+      <if test="faj91 != null">
+        FAJ91,
+      </if>
+      <if test="faj92 != null">
+        FAJ92,
+      </if>
+      <if test="faj921 != null">
+        FAJ921,
+      </if>
+      <if test="faj100 != null">
+        FAJ100,
+      </if>
+      <if test="faj201 != null">
+        FAJ201,
+      </if>
+      <if test="faj202 != null">
+        FAJ202,
+      </if>
+      <if test="faj203 != null">
+        FAJ203,
+      </if>
+      <if test="faj204 != null">
+        FAJ204,
+      </if>
+      <if test="faj205 != null">
+        FAJ205,
+      </if>
+      <if test="faj206 != null">
+        FAJ206,
+      </if>
+      <if test="faj207 != null">
+        FAJ207,
+      </if>
+      <if test="fajconf != null">
+        FAJCONF,
+      </if>
+      <if test="fajuser != null">
+        FAJUSER,
+      </if>
+      <if test="fajgrup != null">
+        FAJGRUP,
+      </if>
+      <if test="fajmodu != null">
+        FAJMODU,
+      </if>
+      <if test="fajdate != null">
+        FAJDATE,
+      </if>
+      <if test="faj101 != null">
+        FAJ101,
+      </if>
+      <if test="faj102 != null">
+        FAJ102,
+      </if>
+      <if test="faj103 != null">
+        FAJ103,
+      </if>
+      <if test="faj104 != null">
+        FAJ104,
+      </if>
+      <if test="faj105 != null">
+        FAJ105,
+      </if>
+      <if test="faj106 != null">
+        FAJ106,
+      </if>
+      <if test="faj107 != null">
+        FAJ107,
+      </if>
+      <if test="faj108 != null">
+        FAJ108,
+      </if>
+      <if test="faj109 != null">
+        FAJ109,
+      </if>
+      <if test="faj110 != null">
+        FAJ110,
+      </if>
+      <if test="faj111 != null">
+        FAJ111,
+      </if>
+      <if test="faj112 != null">
+        FAJ112,
+      </if>
+      <if test="faj113 != null">
+        FAJ113,
+      </if>
+      <if test="faj114 != null">
+        FAJ114,
+      </if>
+      <if test="faj115 != null">
+        FAJ115,
+      </if>
+      <if test="faj531 != null">
+        FAJ531,
+      </if>
+      <if test="faj541 != null">
+        FAJ541,
+      </if>
+      <if test="faj551 != null">
+        FAJ551,
+      </if>
+      <if test="fajud01 != null">
+        FAJUD01,
+      </if>
+      <if test="fajud02 != null">
+        FAJUD02,
+      </if>
+      <if test="fajud03 != null">
+        FAJUD03,
+      </if>
+      <if test="fajud04 != null">
+        FAJUD04,
+      </if>
+      <if test="fajud05 != null">
+        FAJUD05,
+      </if>
+      <if test="fajud06 != null">
+        FAJUD06,
+      </if>
+      <if test="fajud07 != null">
+        FAJUD07,
+      </if>
+      <if test="fajud08 != null">
+        FAJUD08,
+      </if>
+      <if test="fajud09 != null">
+        FAJUD09,
+      </if>
+      <if test="fajud10 != null">
+        FAJUD10,
+      </if>
+      <if test="fajud11 != null">
+        FAJUD11,
+      </if>
+      <if test="fajud12 != null">
+        FAJUD12,
+      </if>
+      <if test="fajud13 != null">
+        FAJUD13,
+      </if>
+      <if test="fajud14 != null">
+        FAJUD14,
+      </if>
+      <if test="fajud15 != null">
+        FAJUD15,
+      </if>
+      <if test="faj331 != null">
+        FAJ331,
+      </if>
+      <if test="faj681 != null">
+        FAJ681,
+      </if>
+      <if test="fajoriu != null">
+        FAJORIU,
+      </if>
+      <if test="fajorig != null">
+        FAJORIG,
+      </if>
+      <if test="faj93 != null">
+        FAJ93,
+      </if>
+      <if test="faj1012 != null">
+        FAJ1012,
+      </if>
+      <if test="faj1022 != null">
+        FAJ1022,
+      </if>
+      <if test="faj1062 != null">
+        FAJ1062,
+      </if>
+      <if test="faj1072 != null">
+        FAJ1072,
+      </if>
+      <if test="faj1082 != null">
+        FAJ1082,
+      </if>
+      <if test="faj1412 != null">
+        FAJ1412,
+      </if>
+      <if test="faj142 != null">
+        FAJ142,
+      </if>
+      <if test="faj143 != null">
+        FAJ143,
+      </if>
+      <if test="faj144 != null">
+        FAJ144,
+      </if>
+      <if test="faj2032 != null">
+        FAJ2032,
+      </if>
+      <if test="faj2042 != null">
+        FAJ2042,
+      </if>
+      <if test="faj232 != null">
+        FAJ232,
+      </if>
+      <if test="faj242 != null">
+        FAJ242,
+      </if>
+      <if test="faj262 != null">
+        FAJ262,
+      </if>
+      <if test="faj272 != null">
+        FAJ272,
+      </if>
+      <if test="faj282 != null">
+        FAJ282,
+      </if>
+      <if test="faj292 != null">
+        FAJ292,
+      </if>
+      <if test="faj302 != null">
+        FAJ302,
+      </if>
+      <if test="faj312 != null">
+        FAJ312,
+      </if>
+      <if test="faj322 != null">
+        FAJ322,
+      </if>
+      <if test="faj3312 != null">
+        FAJ3312,
+      </if>
+      <if test="faj332 != null">
+        FAJ332,
+      </if>
+      <if test="faj342 != null">
+        FAJ342,
+      </if>
+      <if test="faj352 != null">
+        FAJ352,
+      </if>
+      <if test="faj362 != null">
+        FAJ362,
+      </if>
+      <if test="faj432 != null">
+        FAJ432,
+      </if>
+      <if test="faj5712 != null">
+        FAJ5712,
+      </if>
+      <if test="faj572 != null">
+        FAJ572,
+      </if>
+      <if test="faj582 != null">
+        FAJ582,
+      </if>
+      <if test="faj592 != null">
+        FAJ592,
+      </if>
+      <if test="faj602 != null">
+        FAJ602,
+      </if>
+      <if test="faj922 != null">
+        FAJ922,
+      </if>
+      <if test="taFajud16 != null">
+        TA_FAJUD16,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="faj02 != null">
+        #{faj02,jdbcType=VARCHAR},
+      </if>
+      <if test="faj022 != null">
+        #{faj022,jdbcType=VARCHAR},
+      </if>
+      <if test="faj021 != null">
+        #{faj021,jdbcType=VARCHAR},
+      </if>
+      <if test="faj03 != null">
+        #{faj03,jdbcType=VARCHAR},
+      </if>
+      <if test="faj04 != null">
+        #{faj04,jdbcType=VARCHAR},
+      </if>
+      <if test="faj05 != null">
+        #{faj05,jdbcType=VARCHAR},
+      </if>
+      <if test="faj06 != null">
+        #{faj06,jdbcType=VARCHAR},
+      </if>
+      <if test="faj061 != null">
+        #{faj061,jdbcType=VARCHAR},
+      </if>
+      <if test="faj07 != null">
+        #{faj07,jdbcType=VARCHAR},
+      </if>
+      <if test="faj071 != null">
+        #{faj071,jdbcType=VARCHAR},
+      </if>
+      <if test="faj08 != null">
+        #{faj08,jdbcType=VARCHAR},
+      </if>
+      <if test="faj09 != null">
+        #{faj09,jdbcType=VARCHAR},
+      </if>
+      <if test="faj10 != null">
+        #{faj10,jdbcType=VARCHAR},
+      </if>
+      <if test="faj11 != null">
+        #{faj11,jdbcType=VARCHAR},
+      </if>
+      <if test="faj12 != null">
+        #{faj12,jdbcType=VARCHAR},
+      </if>
+      <if test="faj13 != null">
+        #{faj13,jdbcType=DECIMAL},
+      </if>
+      <if test="faj14 != null">
+        #{faj14,jdbcType=DECIMAL},
+      </if>
+      <if test="faj141 != null">
+        #{faj141,jdbcType=DECIMAL},
+      </if>
+      <if test="faj15 != null">
+        #{faj15,jdbcType=VARCHAR},
+      </if>
+      <if test="faj16 != null">
+        #{faj16,jdbcType=DECIMAL},
+      </if>
+      <if test="faj17 != null">
+        #{faj17,jdbcType=DECIMAL},
+      </if>
+      <if test="faj171 != null">
+        #{faj171,jdbcType=DECIMAL},
+      </if>
+      <if test="faj18 != null">
+        #{faj18,jdbcType=VARCHAR},
+      </if>
+      <if test="faj19 != null">
+        #{faj19,jdbcType=VARCHAR},
+      </if>
+      <if test="faj20 != null">
+        #{faj20,jdbcType=VARCHAR},
+      </if>
+      <if test="faj21 != null">
+        #{faj21,jdbcType=VARCHAR},
+      </if>
+      <if test="faj22 != null">
+        #{faj22,jdbcType=VARCHAR},
+      </if>
+      <if test="faj23 != null">
+        #{faj23,jdbcType=VARCHAR},
+      </if>
+      <if test="faj24 != null">
+        #{faj24,jdbcType=VARCHAR},
+      </if>
+      <if test="faj25 != null">
+        #{faj25,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj26 != null">
+        #{faj26,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj27 != null">
+        #{faj27,jdbcType=VARCHAR},
+      </if>
+      <if test="faj28 != null">
+        #{faj28,jdbcType=VARCHAR},
+      </if>
+      <if test="faj29 != null">
+        #{faj29,jdbcType=DECIMAL},
+      </if>
+      <if test="faj30 != null">
+        #{faj30,jdbcType=DECIMAL},
+      </if>
+      <if test="faj31 != null">
+        #{faj31,jdbcType=DECIMAL},
+      </if>
+      <if test="faj32 != null">
+        #{faj32,jdbcType=DECIMAL},
+      </if>
+      <if test="faj33 != null">
+        #{faj33,jdbcType=DECIMAL},
+      </if>
+      <if test="faj34 != null">
+        #{faj34,jdbcType=VARCHAR},
+      </if>
+      <if test="faj35 != null">
+        #{faj35,jdbcType=DECIMAL},
+      </if>
+      <if test="faj36 != null">
+        #{faj36,jdbcType=DECIMAL},
+      </if>
+      <if test="faj37 != null">
+        #{faj37,jdbcType=VARCHAR},
+      </if>
+      <if test="faj38 != null">
+        #{faj38,jdbcType=VARCHAR},
+      </if>
+      <if test="faj39 != null">
+        #{faj39,jdbcType=VARCHAR},
+      </if>
+      <if test="faj40 != null">
+        #{faj40,jdbcType=VARCHAR},
+      </if>
+      <if test="faj41 != null">
+        #{faj41,jdbcType=VARCHAR},
+      </if>
+      <if test="faj42 != null">
+        #{faj42,jdbcType=VARCHAR},
+      </if>
+      <if test="faj421 != null">
+        #{faj421,jdbcType=DECIMAL},
+      </if>
+      <if test="faj422 != null">
+        #{faj422,jdbcType=DECIMAL},
+      </if>
+      <if test="faj423 != null">
+        #{faj423,jdbcType=DECIMAL},
+      </if>
+      <if test="faj43 != null">
+        #{faj43,jdbcType=VARCHAR},
+      </if>
+      <if test="faj44 != null">
+        #{faj44,jdbcType=VARCHAR},
+      </if>
+      <if test="faj45 != null">
+        #{faj45,jdbcType=VARCHAR},
+      </if>
+      <if test="faj451 != null">
+        #{faj451,jdbcType=DECIMAL},
+      </if>
+      <if test="faj46 != null">
+        #{faj46,jdbcType=VARCHAR},
+      </if>
+      <if test="faj461 != null">
+        #{faj461,jdbcType=DECIMAL},
+      </if>
+      <if test="faj462 != null">
+        #{faj462,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj47 != null">
+        #{faj47,jdbcType=VARCHAR},
+      </if>
+      <if test="faj471 != null">
+        #{faj471,jdbcType=DECIMAL},
+      </if>
+      <if test="faj48 != null">
+        #{faj48,jdbcType=VARCHAR},
+      </if>
+      <if test="faj49 != null">
+        #{faj49,jdbcType=VARCHAR},
+      </if>
+      <if test="faj491 != null">
+        #{faj491,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj50 != null">
+        #{faj50,jdbcType=VARCHAR},
+      </if>
+      <if test="faj51 != null">
+        #{faj51,jdbcType=VARCHAR},
+      </if>
+      <if test="faj511 != null">
+        #{faj511,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj52 != null">
+        #{faj52,jdbcType=VARCHAR},
+      </if>
+      <if test="faj53 != null">
+        #{faj53,jdbcType=VARCHAR},
+      </if>
+      <if test="faj54 != null">
+        #{faj54,jdbcType=VARCHAR},
+      </if>
+      <if test="faj55 != null">
+        #{faj55,jdbcType=VARCHAR},
+      </if>
+      <if test="faj56 != null">
+        #{faj56,jdbcType=VARCHAR},
+      </if>
+      <if test="faj57 != null">
+        #{faj57,jdbcType=DECIMAL},
+      </if>
+      <if test="faj571 != null">
+        #{faj571,jdbcType=DECIMAL},
+      </if>
+      <if test="faj58 != null">
+        #{faj58,jdbcType=DECIMAL},
+      </if>
+      <if test="faj59 != null">
+        #{faj59,jdbcType=DECIMAL},
+      </if>
+      <if test="faj60 != null">
+        #{faj60,jdbcType=DECIMAL},
+      </if>
+      <if test="faj61 != null">
+        #{faj61,jdbcType=VARCHAR},
+      </if>
+      <if test="faj62 != null">
+        #{faj62,jdbcType=DECIMAL},
+      </if>
+      <if test="faj63 != null">
+        #{faj63,jdbcType=DECIMAL},
+      </if>
+      <if test="faj64 != null">
+        #{faj64,jdbcType=DECIMAL},
+      </if>
+      <if test="faj65 != null">
+        #{faj65,jdbcType=DECIMAL},
+      </if>
+      <if test="faj66 != null">
+        #{faj66,jdbcType=DECIMAL},
+      </if>
+      <if test="faj67 != null">
+        #{faj67,jdbcType=DECIMAL},
+      </if>
+      <if test="faj68 != null">
+        #{faj68,jdbcType=DECIMAL},
+      </if>
+      <if test="faj69 != null">
+        #{faj69,jdbcType=DECIMAL},
+      </if>
+      <if test="faj70 != null">
+        #{faj70,jdbcType=DECIMAL},
+      </if>
+      <if test="faj71 != null">
+        #{faj71,jdbcType=VARCHAR},
+      </if>
+      <if test="faj72 != null">
+        #{faj72,jdbcType=DECIMAL},
+      </if>
+      <if test="faj73 != null">
+        #{faj73,jdbcType=DECIMAL},
+      </if>
+      <if test="faj74 != null">
+        #{faj74,jdbcType=DECIMAL},
+      </if>
+      <if test="faj741 != null">
+        #{faj741,jdbcType=DECIMAL},
+      </if>
+      <if test="faj80 != null">
+        #{faj80,jdbcType=DECIMAL},
+      </if>
+      <if test="faj81 != null">
+        #{faj81,jdbcType=DECIMAL},
+      </if>
+      <if test="faj811 != null">
+        #{faj811,jdbcType=DECIMAL},
+      </if>
+      <if test="faj812 != null">
+        #{faj812,jdbcType=DECIMAL},
+      </if>
+      <if test="faj813 != null">
+        #{faj813,jdbcType=VARCHAR},
+      </if>
+      <if test="faj82 != null">
+        #{faj82,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj83 != null">
+        #{faj83,jdbcType=VARCHAR},
+      </if>
+      <if test="faj84 != null">
+        #{faj84,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj85 != null">
+        #{faj85,jdbcType=VARCHAR},
+      </if>
+      <if test="faj851 != null">
+        #{faj851,jdbcType=VARCHAR},
+      </if>
+      <if test="faj86 != null">
+        #{faj86,jdbcType=DECIMAL},
+      </if>
+      <if test="faj87 != null">
+        #{faj87,jdbcType=DECIMAL},
+      </if>
+      <if test="faj88 != null">
+        #{faj88,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj89 != null">
+        #{faj89,jdbcType=VARCHAR},
+      </if>
+      <if test="faj90 != null">
+        #{faj90,jdbcType=VARCHAR},
+      </if>
+      <if test="faj91 != null">
+        #{faj91,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj92 != null">
+        #{faj92,jdbcType=VARCHAR},
+      </if>
+      <if test="faj921 != null">
+        #{faj921,jdbcType=VARCHAR},
+      </if>
+      <if test="faj100 != null">
+        #{faj100,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj201 != null">
+        #{faj201,jdbcType=VARCHAR},
+      </if>
+      <if test="faj202 != null">
+        #{faj202,jdbcType=DECIMAL},
+      </if>
+      <if test="faj203 != null">
+        #{faj203,jdbcType=DECIMAL},
+      </if>
+      <if test="faj204 != null">
+        #{faj204,jdbcType=DECIMAL},
+      </if>
+      <if test="faj205 != null">
+        #{faj205,jdbcType=DECIMAL},
+      </if>
+      <if test="faj206 != null">
+        #{faj206,jdbcType=DECIMAL},
+      </if>
+      <if test="faj207 != null">
+        #{faj207,jdbcType=VARCHAR},
+      </if>
+      <if test="fajconf != null">
+        #{fajconf,jdbcType=VARCHAR},
+      </if>
+      <if test="fajuser != null">
+        #{fajuser,jdbcType=VARCHAR},
+      </if>
+      <if test="fajgrup != null">
+        #{fajgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="fajmodu != null">
+        #{fajmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="fajdate != null">
+        #{fajdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj101 != null">
+        #{faj101,jdbcType=DECIMAL},
+      </if>
+      <if test="faj102 != null">
+        #{faj102,jdbcType=DECIMAL},
+      </if>
+      <if test="faj103 != null">
+        #{faj103,jdbcType=DECIMAL},
+      </if>
+      <if test="faj104 != null">
+        #{faj104,jdbcType=DECIMAL},
+      </if>
+      <if test="faj105 != null">
+        #{faj105,jdbcType=VARCHAR},
+      </if>
+      <if test="faj106 != null">
+        #{faj106,jdbcType=DECIMAL},
+      </if>
+      <if test="faj107 != null">
+        #{faj107,jdbcType=DECIMAL},
+      </if>
+      <if test="faj108 != null">
+        #{faj108,jdbcType=DECIMAL},
+      </if>
+      <if test="faj109 != null">
+        #{faj109,jdbcType=DECIMAL},
+      </if>
+      <if test="faj110 != null">
+        #{faj110,jdbcType=DECIMAL},
+      </if>
+      <if test="faj111 != null">
+        #{faj111,jdbcType=DECIMAL},
+      </if>
+      <if test="faj112 != null">
+        #{faj112,jdbcType=DECIMAL},
+      </if>
+      <if test="faj113 != null">
+        #{faj113,jdbcType=DECIMAL},
+      </if>
+      <if test="faj114 != null">
+        #{faj114,jdbcType=DECIMAL},
+      </if>
+      <if test="faj115 != null">
+        #{faj115,jdbcType=VARCHAR},
+      </if>
+      <if test="faj531 != null">
+        #{faj531,jdbcType=VARCHAR},
+      </if>
+      <if test="faj541 != null">
+        #{faj541,jdbcType=VARCHAR},
+      </if>
+      <if test="faj551 != null">
+        #{faj551,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud01 != null">
+        #{fajud01,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud02 != null">
+        #{fajud02,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud03 != null">
+        #{fajud03,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud04 != null">
+        #{fajud04,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud05 != null">
+        #{fajud05,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud06 != null">
+        #{fajud06,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud07 != null">
+        #{fajud07,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud08 != null">
+        #{fajud08,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud09 != null">
+        #{fajud09,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud10 != null">
+        #{fajud10,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud11 != null">
+        #{fajud11,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud12 != null">
+        #{fajud12,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud13 != null">
+        #{fajud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fajud14 != null">
+        #{fajud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fajud15 != null">
+        #{fajud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj331 != null">
+        #{faj331,jdbcType=DECIMAL},
+      </if>
+      <if test="faj681 != null">
+        #{faj681,jdbcType=DECIMAL},
+      </if>
+      <if test="fajoriu != null">
+        #{fajoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="fajorig != null">
+        #{fajorig,jdbcType=VARCHAR},
+      </if>
+      <if test="faj93 != null">
+        #{faj93,jdbcType=VARCHAR},
+      </if>
+      <if test="faj1012 != null">
+        #{faj1012,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1022 != null">
+        #{faj1022,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1062 != null">
+        #{faj1062,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1072 != null">
+        #{faj1072,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1082 != null">
+        #{faj1082,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1412 != null">
+        #{faj1412,jdbcType=DECIMAL},
+      </if>
+      <if test="faj142 != null">
+        #{faj142,jdbcType=DECIMAL},
+      </if>
+      <if test="faj143 != null">
+        #{faj143,jdbcType=VARCHAR},
+      </if>
+      <if test="faj144 != null">
+        #{faj144,jdbcType=DECIMAL},
+      </if>
+      <if test="faj2032 != null">
+        #{faj2032,jdbcType=DECIMAL},
+      </if>
+      <if test="faj2042 != null">
+        #{faj2042,jdbcType=DECIMAL},
+      </if>
+      <if test="faj232 != null">
+        #{faj232,jdbcType=VARCHAR},
+      </if>
+      <if test="faj242 != null">
+        #{faj242,jdbcType=VARCHAR},
+      </if>
+      <if test="faj262 != null">
+        #{faj262,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj272 != null">
+        #{faj272,jdbcType=VARCHAR},
+      </if>
+      <if test="faj282 != null">
+        #{faj282,jdbcType=VARCHAR},
+      </if>
+      <if test="faj292 != null">
+        #{faj292,jdbcType=DECIMAL},
+      </if>
+      <if test="faj302 != null">
+        #{faj302,jdbcType=DECIMAL},
+      </if>
+      <if test="faj312 != null">
+        #{faj312,jdbcType=DECIMAL},
+      </if>
+      <if test="faj322 != null">
+        #{faj322,jdbcType=DECIMAL},
+      </if>
+      <if test="faj3312 != null">
+        #{faj3312,jdbcType=DECIMAL},
+      </if>
+      <if test="faj332 != null">
+        #{faj332,jdbcType=DECIMAL},
+      </if>
+      <if test="faj342 != null">
+        #{faj342,jdbcType=VARCHAR},
+      </if>
+      <if test="faj352 != null">
+        #{faj352,jdbcType=DECIMAL},
+      </if>
+      <if test="faj362 != null">
+        #{faj362,jdbcType=DECIMAL},
+      </if>
+      <if test="faj432 != null">
+        #{faj432,jdbcType=VARCHAR},
+      </if>
+      <if test="faj5712 != null">
+        #{faj5712,jdbcType=DECIMAL},
+      </if>
+      <if test="faj572 != null">
+        #{faj572,jdbcType=DECIMAL},
+      </if>
+      <if test="faj582 != null">
+        #{faj582,jdbcType=DECIMAL},
+      </if>
+      <if test="faj592 != null">
+        #{faj592,jdbcType=DECIMAL},
+      </if>
+      <if test="faj602 != null">
+        #{faj602,jdbcType=DECIMAL},
+      </if>
+      <if test="faj922 != null">
+        #{faj922,jdbcType=VARCHAR},
+      </if>
+      <if test="taFajud16 != null">
+        #{taFajud16,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.assets.pojo.FajFile">
+    update ${centre}.FAJ_FILE
+    <set>
+      <if test="faj021 != null">
+        FAJ021 = #{faj021,jdbcType=VARCHAR},
+      </if>
+      <if test="faj03 != null">
+        FAJ03 = #{faj03,jdbcType=VARCHAR},
+      </if>
+      <if test="faj04 != null">
+        FAJ04 = #{faj04,jdbcType=VARCHAR},
+      </if>
+      <if test="faj05 != null">
+        FAJ05 = #{faj05,jdbcType=VARCHAR},
+      </if>
+      <if test="faj06 != null">
+        FAJ06 = #{faj06,jdbcType=VARCHAR},
+      </if>
+      <if test="faj061 != null">
+        FAJ061 = #{faj061,jdbcType=VARCHAR},
+      </if>
+      <if test="faj07 != null">
+        FAJ07 = #{faj07,jdbcType=VARCHAR},
+      </if>
+      <if test="faj071 != null">
+        FAJ071 = #{faj071,jdbcType=VARCHAR},
+      </if>
+      <if test="faj08 != null">
+        FAJ08 = #{faj08,jdbcType=VARCHAR},
+      </if>
+      <if test="faj09 != null">
+        FAJ09 = #{faj09,jdbcType=VARCHAR},
+      </if>
+      <if test="faj10 != null">
+        FAJ10 = #{faj10,jdbcType=VARCHAR},
+      </if>
+      <if test="faj11 != null">
+        FAJ11 = #{faj11,jdbcType=VARCHAR},
+      </if>
+      <if test="faj12 != null">
+        FAJ12 = #{faj12,jdbcType=VARCHAR},
+      </if>
+      <if test="faj13 != null">
+        FAJ13 = #{faj13,jdbcType=DECIMAL},
+      </if>
+      <if test="faj14 != null">
+        FAJ14 = #{faj14,jdbcType=DECIMAL},
+      </if>
+      <if test="faj141 != null">
+        FAJ141 = #{faj141,jdbcType=DECIMAL},
+      </if>
+      <if test="faj15 != null">
+        FAJ15 = #{faj15,jdbcType=VARCHAR},
+      </if>
+      <if test="faj16 != null">
+        FAJ16 = #{faj16,jdbcType=DECIMAL},
+      </if>
+      <if test="faj17 != null">
+        FAJ17 = #{faj17,jdbcType=DECIMAL},
+      </if>
+      <if test="faj171 != null">
+        FAJ171 = #{faj171,jdbcType=DECIMAL},
+      </if>
+      <if test="faj18 != null">
+        FAJ18 = #{faj18,jdbcType=VARCHAR},
+      </if>
+      <if test="faj19 != null">
+        FAJ19 = #{faj19,jdbcType=VARCHAR},
+      </if>
+      <if test="faj20 != null">
+        FAJ20 = #{faj20,jdbcType=VARCHAR},
+      </if>
+      <if test="faj21 != null">
+        FAJ21 = #{faj21,jdbcType=VARCHAR},
+      </if>
+      <if test="faj22 != null">
+        FAJ22 = #{faj22,jdbcType=VARCHAR},
+      </if>
+      <if test="faj23 != null">
+        FAJ23 = #{faj23,jdbcType=VARCHAR},
+      </if>
+      <if test="faj24 != null">
+        FAJ24 = #{faj24,jdbcType=VARCHAR},
+      </if>
+      <if test="faj25 != null">
+        FAJ25 = #{faj25,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj26 != null">
+        FAJ26 = #{faj26,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj27 != null">
+        FAJ27 = #{faj27,jdbcType=VARCHAR},
+      </if>
+      <if test="faj28 != null">
+        FAJ28 = #{faj28,jdbcType=VARCHAR},
+      </if>
+      <if test="faj29 != null">
+        FAJ29 = #{faj29,jdbcType=DECIMAL},
+      </if>
+      <if test="faj30 != null">
+        FAJ30 = #{faj30,jdbcType=DECIMAL},
+      </if>
+      <if test="faj31 != null">
+        FAJ31 = #{faj31,jdbcType=DECIMAL},
+      </if>
+      <if test="faj32 != null">
+        FAJ32 = #{faj32,jdbcType=DECIMAL},
+      </if>
+      <if test="faj33 != null">
+        FAJ33 = #{faj33,jdbcType=DECIMAL},
+      </if>
+      <if test="faj34 != null">
+        FAJ34 = #{faj34,jdbcType=VARCHAR},
+      </if>
+      <if test="faj35 != null">
+        FAJ35 = #{faj35,jdbcType=DECIMAL},
+      </if>
+      <if test="faj36 != null">
+        FAJ36 = #{faj36,jdbcType=DECIMAL},
+      </if>
+      <if test="faj37 != null">
+        FAJ37 = #{faj37,jdbcType=VARCHAR},
+      </if>
+      <if test="faj38 != null">
+        FAJ38 = #{faj38,jdbcType=VARCHAR},
+      </if>
+      <if test="faj39 != null">
+        FAJ39 = #{faj39,jdbcType=VARCHAR},
+      </if>
+      <if test="faj40 != null">
+        FAJ40 = #{faj40,jdbcType=VARCHAR},
+      </if>
+      <if test="faj41 != null">
+        FAJ41 = #{faj41,jdbcType=VARCHAR},
+      </if>
+      <if test="faj42 != null">
+        FAJ42 = #{faj42,jdbcType=VARCHAR},
+      </if>
+      <if test="faj421 != null">
+        FAJ421 = #{faj421,jdbcType=DECIMAL},
+      </if>
+      <if test="faj422 != null">
+        FAJ422 = #{faj422,jdbcType=DECIMAL},
+      </if>
+      <if test="faj423 != null">
+        FAJ423 = #{faj423,jdbcType=DECIMAL},
+      </if>
+      <if test="faj43 != null">
+        FAJ43 = #{faj43,jdbcType=VARCHAR},
+      </if>
+      <if test="faj44 != null">
+        FAJ44 = #{faj44,jdbcType=VARCHAR},
+      </if>
+      <if test="faj45 != null">
+        FAJ45 = #{faj45,jdbcType=VARCHAR},
+      </if>
+      <if test="faj451 != null">
+        FAJ451 = #{faj451,jdbcType=DECIMAL},
+      </if>
+      <if test="faj46 != null">
+        FAJ46 = #{faj46,jdbcType=VARCHAR},
+      </if>
+      <if test="faj461 != null">
+        FAJ461 = #{faj461,jdbcType=DECIMAL},
+      </if>
+      <if test="faj462 != null">
+        FAJ462 = #{faj462,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj47 != null">
+        FAJ47 = #{faj47,jdbcType=VARCHAR},
+      </if>
+      <if test="faj471 != null">
+        FAJ471 = #{faj471,jdbcType=DECIMAL},
+      </if>
+      <if test="faj48 != null">
+        FAJ48 = #{faj48,jdbcType=VARCHAR},
+      </if>
+      <if test="faj49 != null">
+        FAJ49 = #{faj49,jdbcType=VARCHAR},
+      </if>
+      <if test="faj491 != null">
+        FAJ491 = #{faj491,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj50 != null">
+        FAJ50 = #{faj50,jdbcType=VARCHAR},
+      </if>
+      <if test="faj51 != null">
+        FAJ51 = #{faj51,jdbcType=VARCHAR},
+      </if>
+      <if test="faj511 != null">
+        FAJ511 = #{faj511,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj52 != null">
+        FAJ52 = #{faj52,jdbcType=VARCHAR},
+      </if>
+      <if test="faj53 != null">
+        FAJ53 = #{faj53,jdbcType=VARCHAR},
+      </if>
+      <if test="faj54 != null">
+        FAJ54 = #{faj54,jdbcType=VARCHAR},
+      </if>
+      <if test="faj55 != null">
+        FAJ55 = #{faj55,jdbcType=VARCHAR},
+      </if>
+      <if test="faj56 != null">
+        FAJ56 = #{faj56,jdbcType=VARCHAR},
+      </if>
+      <if test="faj57 != null">
+        FAJ57 = #{faj57,jdbcType=DECIMAL},
+      </if>
+      <if test="faj571 != null">
+        FAJ571 = #{faj571,jdbcType=DECIMAL},
+      </if>
+      <if test="faj58 != null">
+        FAJ58 = #{faj58,jdbcType=DECIMAL},
+      </if>
+      <if test="faj59 != null">
+        FAJ59 = #{faj59,jdbcType=DECIMAL},
+      </if>
+      <if test="faj60 != null">
+        FAJ60 = #{faj60,jdbcType=DECIMAL},
+      </if>
+      <if test="faj61 != null">
+        FAJ61 = #{faj61,jdbcType=VARCHAR},
+      </if>
+      <if test="faj62 != null">
+        FAJ62 = #{faj62,jdbcType=DECIMAL},
+      </if>
+      <if test="faj63 != null">
+        FAJ63 = #{faj63,jdbcType=DECIMAL},
+      </if>
+      <if test="faj64 != null">
+        FAJ64 = #{faj64,jdbcType=DECIMAL},
+      </if>
+      <if test="faj65 != null">
+        FAJ65 = #{faj65,jdbcType=DECIMAL},
+      </if>
+      <if test="faj66 != null">
+        FAJ66 = #{faj66,jdbcType=DECIMAL},
+      </if>
+      <if test="faj67 != null">
+        FAJ67 = #{faj67,jdbcType=DECIMAL},
+      </if>
+      <if test="faj68 != null">
+        FAJ68 = #{faj68,jdbcType=DECIMAL},
+      </if>
+      <if test="faj69 != null">
+        FAJ69 = #{faj69,jdbcType=DECIMAL},
+      </if>
+      <if test="faj70 != null">
+        FAJ70 = #{faj70,jdbcType=DECIMAL},
+      </if>
+      <if test="faj71 != null">
+        FAJ71 = #{faj71,jdbcType=VARCHAR},
+      </if>
+      <if test="faj72 != null">
+        FAJ72 = #{faj72,jdbcType=DECIMAL},
+      </if>
+      <if test="faj73 != null">
+        FAJ73 = #{faj73,jdbcType=DECIMAL},
+      </if>
+      <if test="faj74 != null">
+        FAJ74 = #{faj74,jdbcType=DECIMAL},
+      </if>
+      <if test="faj741 != null">
+        FAJ741 = #{faj741,jdbcType=DECIMAL},
+      </if>
+      <if test="faj80 != null">
+        FAJ80 = #{faj80,jdbcType=DECIMAL},
+      </if>
+      <if test="faj81 != null">
+        FAJ81 = #{faj81,jdbcType=DECIMAL},
+      </if>
+      <if test="faj811 != null">
+        FAJ811 = #{faj811,jdbcType=DECIMAL},
+      </if>
+      <if test="faj812 != null">
+        FAJ812 = #{faj812,jdbcType=DECIMAL},
+      </if>
+      <if test="faj813 != null">
+        FAJ813 = #{faj813,jdbcType=VARCHAR},
+      </if>
+      <if test="faj82 != null">
+        FAJ82 = #{faj82,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj83 != null">
+        FAJ83 = #{faj83,jdbcType=VARCHAR},
+      </if>
+      <if test="faj84 != null">
+        FAJ84 = #{faj84,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj85 != null">
+        FAJ85 = #{faj85,jdbcType=VARCHAR},
+      </if>
+      <if test="faj851 != null">
+        FAJ851 = #{faj851,jdbcType=VARCHAR},
+      </if>
+      <if test="faj86 != null">
+        FAJ86 = #{faj86,jdbcType=DECIMAL},
+      </if>
+      <if test="faj87 != null">
+        FAJ87 = #{faj87,jdbcType=DECIMAL},
+      </if>
+      <if test="faj88 != null">
+        FAJ88 = #{faj88,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj89 != null">
+        FAJ89 = #{faj89,jdbcType=VARCHAR},
+      </if>
+      <if test="faj90 != null">
+        FAJ90 = #{faj90,jdbcType=VARCHAR},
+      </if>
+      <if test="faj91 != null">
+        FAJ91 = #{faj91,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj92 != null">
+        FAJ92 = #{faj92,jdbcType=VARCHAR},
+      </if>
+      <if test="faj921 != null">
+        FAJ921 = #{faj921,jdbcType=VARCHAR},
+      </if>
+      <if test="faj100 != null">
+        FAJ100 = #{faj100,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj201 != null">
+        FAJ201 = #{faj201,jdbcType=VARCHAR},
+      </if>
+      <if test="faj202 != null">
+        FAJ202 = #{faj202,jdbcType=DECIMAL},
+      </if>
+      <if test="faj203 != null">
+        FAJ203 = #{faj203,jdbcType=DECIMAL},
+      </if>
+      <if test="faj204 != null">
+        FAJ204 = #{faj204,jdbcType=DECIMAL},
+      </if>
+      <if test="faj205 != null">
+        FAJ205 = #{faj205,jdbcType=DECIMAL},
+      </if>
+      <if test="faj206 != null">
+        FAJ206 = #{faj206,jdbcType=DECIMAL},
+      </if>
+      <if test="faj207 != null">
+        FAJ207 = #{faj207,jdbcType=VARCHAR},
+      </if>
+      <if test="fajconf != null">
+        FAJCONF = #{fajconf,jdbcType=VARCHAR},
+      </if>
+      <if test="fajuser != null">
+        FAJUSER = #{fajuser,jdbcType=VARCHAR},
+      </if>
+      <if test="fajgrup != null">
+        FAJGRUP = #{fajgrup,jdbcType=VARCHAR},
+      </if>
+      <if test="fajmodu != null">
+        FAJMODU = #{fajmodu,jdbcType=VARCHAR},
+      </if>
+      <if test="fajdate != null">
+        FAJDATE = #{fajdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj101 != null">
+        FAJ101 = #{faj101,jdbcType=DECIMAL},
+      </if>
+      <if test="faj102 != null">
+        FAJ102 = #{faj102,jdbcType=DECIMAL},
+      </if>
+      <if test="faj103 != null">
+        FAJ103 = #{faj103,jdbcType=DECIMAL},
+      </if>
+      <if test="faj104 != null">
+        FAJ104 = #{faj104,jdbcType=DECIMAL},
+      </if>
+      <if test="faj105 != null">
+        FAJ105 = #{faj105,jdbcType=VARCHAR},
+      </if>
+      <if test="faj106 != null">
+        FAJ106 = #{faj106,jdbcType=DECIMAL},
+      </if>
+      <if test="faj107 != null">
+        FAJ107 = #{faj107,jdbcType=DECIMAL},
+      </if>
+      <if test="faj108 != null">
+        FAJ108 = #{faj108,jdbcType=DECIMAL},
+      </if>
+      <if test="faj109 != null">
+        FAJ109 = #{faj109,jdbcType=DECIMAL},
+      </if>
+      <if test="faj110 != null">
+        FAJ110 = #{faj110,jdbcType=DECIMAL},
+      </if>
+      <if test="faj111 != null">
+        FAJ111 = #{faj111,jdbcType=DECIMAL},
+      </if>
+      <if test="faj112 != null">
+        FAJ112 = #{faj112,jdbcType=DECIMAL},
+      </if>
+      <if test="faj113 != null">
+        FAJ113 = #{faj113,jdbcType=DECIMAL},
+      </if>
+      <if test="faj114 != null">
+        FAJ114 = #{faj114,jdbcType=DECIMAL},
+      </if>
+      <if test="faj115 != null">
+        FAJ115 = #{faj115,jdbcType=VARCHAR},
+      </if>
+      <if test="faj531 != null">
+        FAJ531 = #{faj531,jdbcType=VARCHAR},
+      </if>
+      <if test="faj541 != null">
+        FAJ541 = #{faj541,jdbcType=VARCHAR},
+      </if>
+      <if test="faj551 != null">
+        FAJ551 = #{faj551,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud01 != null">
+        FAJUD01 = #{fajud01,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud02 != null">
+        FAJUD02 = #{fajud02,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud03 != null">
+        FAJUD03 = #{fajud03,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud04 != null">
+        FAJUD04 = #{fajud04,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud05 != null">
+        FAJUD05 = #{fajud05,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud06 != null">
+        FAJUD06 = #{fajud06,jdbcType=VARCHAR},
+      </if>
+      <if test="fajud07 != null">
+        FAJUD07 = #{fajud07,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud08 != null">
+        FAJUD08 = #{fajud08,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud09 != null">
+        FAJUD09 = #{fajud09,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud10 != null">
+        FAJUD10 = #{fajud10,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud11 != null">
+        FAJUD11 = #{fajud11,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud12 != null">
+        FAJUD12 = #{fajud12,jdbcType=DECIMAL},
+      </if>
+      <if test="fajud13 != null">
+        FAJUD13 = #{fajud13,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fajud14 != null">
+        FAJUD14 = #{fajud14,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fajud15 != null">
+        FAJUD15 = #{fajud15,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj331 != null">
+        FAJ331 = #{faj331,jdbcType=DECIMAL},
+      </if>
+      <if test="faj681 != null">
+        FAJ681 = #{faj681,jdbcType=DECIMAL},
+      </if>
+      <if test="fajoriu != null">
+        FAJORIU = #{fajoriu,jdbcType=VARCHAR},
+      </if>
+      <if test="fajorig != null">
+        FAJORIG = #{fajorig,jdbcType=VARCHAR},
+      </if>
+      <if test="faj93 != null">
+        FAJ93 = #{faj93,jdbcType=VARCHAR},
+      </if>
+      <if test="faj1012 != null">
+        FAJ1012 = #{faj1012,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1022 != null">
+        FAJ1022 = #{faj1022,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1062 != null">
+        FAJ1062 = #{faj1062,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1072 != null">
+        FAJ1072 = #{faj1072,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1082 != null">
+        FAJ1082 = #{faj1082,jdbcType=DECIMAL},
+      </if>
+      <if test="faj1412 != null">
+        FAJ1412 = #{faj1412,jdbcType=DECIMAL},
+      </if>
+      <if test="faj142 != null">
+        FAJ142 = #{faj142,jdbcType=DECIMAL},
+      </if>
+      <if test="faj143 != null">
+        FAJ143 = #{faj143,jdbcType=VARCHAR},
+      </if>
+      <if test="faj144 != null">
+        FAJ144 = #{faj144,jdbcType=DECIMAL},
+      </if>
+      <if test="faj2032 != null">
+        FAJ2032 = #{faj2032,jdbcType=DECIMAL},
+      </if>
+      <if test="faj2042 != null">
+        FAJ2042 = #{faj2042,jdbcType=DECIMAL},
+      </if>
+      <if test="faj232 != null">
+        FAJ232 = #{faj232,jdbcType=VARCHAR},
+      </if>
+      <if test="faj242 != null">
+        FAJ242 = #{faj242,jdbcType=VARCHAR},
+      </if>
+      <if test="faj262 != null">
+        FAJ262 = #{faj262,jdbcType=TIMESTAMP},
+      </if>
+      <if test="faj272 != null">
+        FAJ272 = #{faj272,jdbcType=VARCHAR},
+      </if>
+      <if test="faj282 != null">
+        FAJ282 = #{faj282,jdbcType=VARCHAR},
+      </if>
+      <if test="faj292 != null">
+        FAJ292 = #{faj292,jdbcType=DECIMAL},
+      </if>
+      <if test="faj302 != null">
+        FAJ302 = #{faj302,jdbcType=DECIMAL},
+      </if>
+      <if test="faj312 != null">
+        FAJ312 = #{faj312,jdbcType=DECIMAL},
+      </if>
+      <if test="faj322 != null">
+        FAJ322 = #{faj322,jdbcType=DECIMAL},
+      </if>
+      <if test="faj3312 != null">
+        FAJ3312 = #{faj3312,jdbcType=DECIMAL},
+      </if>
+      <if test="faj332 != null">
+        FAJ332 = #{faj332,jdbcType=DECIMAL},
+      </if>
+      <if test="faj342 != null">
+        FAJ342 = #{faj342,jdbcType=VARCHAR},
+      </if>
+      <if test="faj352 != null">
+        FAJ352 = #{faj352,jdbcType=DECIMAL},
+      </if>
+      <if test="faj362 != null">
+        FAJ362 = #{faj362,jdbcType=DECIMAL},
+      </if>
+      <if test="faj432 != null">
+        FAJ432 = #{faj432,jdbcType=VARCHAR},
+      </if>
+      <if test="faj5712 != null">
+        FAJ5712 = #{faj5712,jdbcType=DECIMAL},
+      </if>
+      <if test="faj572 != null">
+        FAJ572 = #{faj572,jdbcType=DECIMAL},
+      </if>
+      <if test="faj582 != null">
+        FAJ582 = #{faj582,jdbcType=DECIMAL},
+      </if>
+      <if test="faj592 != null">
+        FAJ592 = #{faj592,jdbcType=DECIMAL},
+      </if>
+      <if test="faj602 != null">
+        FAJ602 = #{faj602,jdbcType=DECIMAL},
+      </if>
+      <if test="faj922 != null">
+        FAJ922 = #{faj922,jdbcType=VARCHAR},
+      </if>
+      <if test="taFajud16 != null">
+        TA_FAJUD16 = #{taFajud16,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FAJ02 = #{faj02,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

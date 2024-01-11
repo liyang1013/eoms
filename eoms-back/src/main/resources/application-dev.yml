@@ -70,3 +70,8 @@ timer:
     corn: 0 0 6 1 * ?
   checkRcsStatus:
     corn: 0 59 23 * * ?
+
+#发票上传文件路径
+filepath:
+  invoiceTemp: D:/Project/invoice/temp/
+  invoiceVat: D:/Project/invoice/vat/

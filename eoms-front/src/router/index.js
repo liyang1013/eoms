@@ -34,35 +34,20 @@ const routes = [
         component: () => import('@/views/authority/ReviewIndex'),
         meta: {
             title:'authority-review',
-        },
+        }
     },
     {
         path: '/eoms',
         name: 'eoms',
-        component: () => import('@/views/Eoms')
+        component: () => import('@/views/EomsIndex')
     },
     {
         path: '/invoice',
         name: 'invoice',
-        redirect: 'invoice/identify',
         meta: {
             title:'invoice-tools',
         },
-        component: () => import('@/views/invoice/InvoiceIndex.vue'),
-        children: [
-            {
-                path: 'identify',
-                name: '发票识别',
-                icon: 'el-icon-s-check',
-                component: () => import('@/views/invoice/OcrView.vue')
-            },
-            {
-                path: 'records',
-                name: '发票管理',
-                icon: 'el-icon-s-check',
-                component: () => import('@/views/invoice/InvoiceView.vue')
-            },
-        ]
+        component: () => import('@/views/invoice/InvoiceIndex')
     },
     {
         path: '*',
