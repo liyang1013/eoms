@@ -11,4 +11,6 @@ public interface IPmiService {
     Page<PmiFile> searchPmiListPageHelper(SearchVo searchVo);
 
     List<PmjFile> searchPmjList(SearchVo searchVo);
+
+    void alterDate(PmjFile pmjFile, String flag);
 }

@@ -97,8 +97,18 @@
         <el-table-column prop="ima44" label="单位" width="120"></el-table-column>
         <el-table-column prop="pmj07" label="未税单价" width="120"></el-table-column>
         <el-table-column prop="pmj07t" label="含税单价" width="120"></el-table-column>
-        <el-table-column prop="pmj09" label="生效日期" width="120"></el-table-column>
-        <el-table-column prop="pmj091" label="失效日期" width="120"></el-table-column>
+        <el-table-column  label="生效日期" width="160"  :show-overflow-tooltip="false">
+          <template slot-scope="scope">
+            <el-date-picker v-model="scope.row.pmj09" format="yyyy-MM-dd" value-format="yyyy-MM-dd"
+                            placeholder="生效日期" style="width: 130px" @change="alterDate(scope.row,0)"></el-date-picker>
+          </template>
+        </el-table-column>
+        <el-table-column  label="失效日期" width="160"  :show-overflow-tooltip="false">
+          <template slot-scope="scope">
+            <el-date-picker v-model="scope.row.pmj091" format="yyyy-MM-dd" value-format="yyyy-MM-dd"
+                            placeholder="失效日期" style="width: 130px"  @change="alterDate(scope.row,1)"></el-date-picker>
+          </template>
+        </el-table-column>
       </el-table>
     </el-dialog>
   </div>
@@ -148,6 +158,9 @@ export default {
       this.$http.post('/api/pmi/searchPmjList', {code: row.pmi01, centre: row.centre}).then(res => {
         this.documents.slave = res.data.result;
       })
+    },
+    alterDate(row,flag){
+      this.$http.post('/api/pmi/alterDate?flag=' + flag, row).then(res => {})
     },
     handleCurrentChange(val) {
       this.search(val);

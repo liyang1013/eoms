@@ -30,4 +30,16 @@ public class PmiServiceImpl implements IPmiService {
     public List<PmjFile> searchPmjList(SearchVo searchVo) {
         return pmjFileMapper.searchPmjList(searchVo);
     }
+
+    @Override
+    public void alterDate(PmjFile pmjFile, String flag) {
+
+        if(flag.equals("0")){
+            pmjFile.setPmj091(null);
+        }else {
+            pmjFile.setPmj09(null);
+        }
+
+        pmjFileMapper.updateByPrimaryKeySelective(pmjFile);
+    }
 }

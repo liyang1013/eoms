@@ -177,89 +177,20 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.purchase.pojo.PmjFile">
-    update PMJ_FILE
+    update ${centre}.PMJ_FILE
     <set>
-      <if test="pmj03 != null">
-        PMJ03 = #{pmj03,jdbcType=VARCHAR},
-      </if>
-      <if test="pmj031 != null">
-        PMJ031 = #{pmj031,jdbcType=VARCHAR},
-      </if>
-      <if test="pmj032 != null">
-        PMJ032 = #{pmj032,jdbcType=VARCHAR},
-      </if>
-      <if test="pmj04 != null">
-        PMJ04 = #{pmj04,jdbcType=VARCHAR},
-      </if>
-      <if test="pmj05 != null">
-        PMJ05 = #{pmj05,jdbcType=VARCHAR},
-      </if>
-      <if test="pmj06 != null">
-        PMJ06 = #{pmj06,jdbcType=DECIMAL},
-      </if>
-      <if test="pmj07 != null">
-        PMJ07 = #{pmj07,jdbcType=DECIMAL},
-      </if>
-      <if test="pmj08 != null">
-        PMJ08 = #{pmj08,jdbcType=TIMESTAMP},
-      </if>
       <if test="pmj09 != null">
         PMJ09 = #{pmj09,jdbcType=TIMESTAMP},
-      </if>
-      <if test="pmj06t != null">
-        PMJ06T = #{pmj06t,jdbcType=DECIMAL},
-      </if>
-      <if test="pmj07t != null">
-        PMJ07T = #{pmj07t,jdbcType=DECIMAL},
-      </if>
-      <if test="pmj11 != null">
-        PMJ11 = #{pmj11,jdbcType=VARCHAR},
-      </if>
-      <if test="pmjplant != null">
-        PMJPLANT = #{pmjplant,jdbcType=VARCHAR},
-      </if>
-      <if test="pmjlegal != null">
-        PMJLEGAL = #{pmjlegal,jdbcType=VARCHAR},
-      </if>
-      <if test="pmj14 != null">
-        PMJ14 = #{pmj14,jdbcType=VARCHAR},
-      </if>
-      <if test="pmjicd14 != null">
-        PMJICD14 = #{pmjicd14,jdbcType=VARCHAR},
       </if>
       <if test="pmj091 != null">
         PMJ091 = #{pmj091,jdbcType=TIMESTAMP},
       </if>
-      <if test="taPmjud01 != null">
-        TA_PMJUD01 = #{taPmjud01,jdbcType=VARCHAR},
-      </if>
-      <if test="taPmjud02 != null">
-        TA_PMJUD02 = #{taPmjud02,jdbcType=VARCHAR},
-      </if>
-      <if test="taPmjud03 != null">
-        TA_PMJUD03 = #{taPmjud03,jdbcType=VARCHAR},
-      </if>
-      <if test="taPmjud04 != null">
-        TA_PMJUD04 = #{taPmjud04,jdbcType=VARCHAR},
-      </if>
-      <if test="taPmjud05 != null">
-        TA_PMJUD05 = #{taPmjud05,jdbcType=TIMESTAMP},
-      </if>
-      <if test="taPmj01 != null">
-        TA_PMJ01 = #{taPmj01,jdbcType=VARCHAR},
-      </if>
-      <if test="taPmj02 != null">
-        TA_PMJ02 = #{taPmj02,jdbcType=VARCHAR},
-      </if>
     </set>
     where PMJ01 = #{pmj01,jdbcType=VARCHAR}
       and PMJ02 = #{pmj02,jdbcType=DECIMAL}
-      and PMJ10 = #{pmj10,jdbcType=VARCHAR}
-      and PMJ12 = #{pmj12,jdbcType=VARCHAR}
-      and PMJ13 = #{pmj13,jdbcType=VARCHAR}
   </update>
     <select id="searchPmjList" resultType="com.keboda.eomsback.purchase.pojo.PmjFile">
-        select pmj02,pmj03,pmj031,pmj032,ima44,pmj07,pmj07t,pmj09,pmj091
+        select pmj01,pmj02,pmj03,pmj031,pmj032,ima44,pmj07,pmj07t,pmj09,pmj091,#{centre} centre
         FROM ${centre}.PMJ_FILE
         left join  ${centre}.ima_file on pmj03 = ima01
         where pmj01 = #{code}
