@@ -119,7 +119,7 @@
     from ${centre}.gfe_file
     <where>
         <if test="gfe != null and gfe != '' ">
-          and lower(gfe) like lower('%${gfe}%')
+          and (lower(gfe01) like lower('%${gfe}%') or lower(gfe02) like lower('%${gfe}%') )
         </if>
       <if test="acti != null and acti != '' ">
         and gfeacti= #{acti}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.authorityReview.mapper.ActionMenuMapper">
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from actionmenu
+    where code = #{code,jdbcType=VARCHAR}
+  </delete>
+  <select id="initAction" resultType="com.keboda.eomsback.authorityReview.pojo.ActionMenu">
+    select *
+    from actionmenu
+  </select>
+    <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.authorityReview.pojo.ActionMenu">
+        select *
+        from actionmenu
+        where code = #{code}
+    </select>
+
+    <update id="updateByPrimaryKey" parameterType="com.keboda.eomsback.authorityReview.pojo.ActionMenu">
+    update actionmenu
+    set action = #{action,jdbcType=VARCHAR}
+    where code = #{code,jdbcType=VARCHAR}
+  </update>
+</mapper>

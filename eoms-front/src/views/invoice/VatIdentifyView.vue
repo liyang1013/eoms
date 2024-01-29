@@ -1,8 +1,9 @@
 <template>
   <div class="block">
-    <div class="title">
+    <el-alert type="success" class="title" :closable="false">
       <span style="font-size: 15px; ">增值税发票识别（pdf, jpg, png, jpeg）</span>
-    </div>
+    </el-alert>
+
     <el-card>
       <el-upload multiple ref="upload"
                  list-type="picture-card"
@@ -38,15 +39,13 @@
       </el-dialog>
     </el-card>
 
-    <div class="title">
+    <el-alert type="success" class="title" :closable="false">
       <span style="font-size: 15px">识别结果</span>
-      <el-button type="primary" size="small"
-                 style="float: right;margin-left: 10px;"
-                 @click="saveInvoice">保存
+      <el-button type="primary" style="margin-left: 10px;" @click="saveInvoice">保存
       </el-button>
-      <el-button type="success" size="small" style="float: right;">验证
+      <el-button type="success" @click="check">验证
       </el-button>
-    </div>
+    </el-alert>
     <el-card>
       <el-table :data="documentList" style="width: 100%" max-height="300px" element-loading-spinner="el-icon-loading">
         <el-table-column label="发票代码" :show-overflow-tooltip="false">
@@ -61,7 +60,7 @@
         </el-table-column>
         <el-table-column label="发票金额" :show-overflow-tooltip="false">
           <template slot-scope="scope">
-            <el-input v-model="scope.row.amount"></el-input>
+            <el-input-number v-model="scope.row.amount" :controls="false" :min="0" :precision="2"></el-input-number>
           </template>
         </el-table-column>
         <el-table-column label="发票日期" :show-overflow-tooltip="false">
@@ -77,20 +76,18 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <el-button type="text" size="medium" @click="deleteInvoice(scope.$index)">删除 <i
-                class="el-icon-delete"></i></el-button>
+            <el-button type="text" size="medium" @click="deleteInvoice(scope.$index)">移除</el-button>
           </template>
         </el-table-column>
       </el-table>
-
     </el-card>
-
   </div>
 </template>
 
 <script>
 
 import pdf from 'vue-pdf-signature'
+import axios from "axios";
 
 export default {
   name: "ocr",
@@ -104,6 +101,7 @@ export default {
         image: {dialogVisible: false, url: ''}
       },
       documentList: [],
+      isCheck: false
     }
   },
   methods: {
@@ -122,8 +120,18 @@ export default {
         this.preview.image = {dialogVisible: true, url: file.url}
       }
     },
+    check(){
+      if (this.isCheck && !this.documentList.length) {this.$message.info("没有内容可以检验");return}
+      this.$http.post('/api/invoice/checkInvoice', this.documentList).then(res => {
+        if(res.data.status === 200){
+          this.isCheck = true
+        }
+      })
+
+    },
     saveInvoice() {
-      if (!this.documentList.length) return
+      if (!this.documentList.length) {this.$message.info("没有内容可以保存");return}
+      if(!this.isCheck) {this.$message.info("未检验发票不能保存");return}
       let row;
       for (let i = 0; i < this.documentList.length; i++) {
         row = this.documentList[i];
@@ -144,11 +152,13 @@ export default {
           return;
         }
       }
-      this.$http.post('/api/invoice/saveVatInvoice', this.documentList).then(res =>{
-        this.$message.success(res.data.message);
-        this.documentList = [];
-        this.$refs.upload.clearFiles();
-      });
+      this.$http.post('/api/invoice/saveVatInvoice', this.documentList).then(res => {
+        if(res.data.status === 200){
+          this.documentList = [];
+          this.$refs.upload.clearFiles();
+          this.isCheck = false
+        }
+      })
     },
     deleteInvoice(index) {
       this.documentList.splice(index, 1)
@@ -176,7 +186,6 @@ export default {
         if (f) this.documentList.push(obj);
 
       } else {
-        // Message.error(response.message);
         const uploadFiles = this.$refs.upload.uploadFiles
         for (let i = 0; i < uploadFiles.length; i++) {
           if (uploadFiles[i]['url'] === file.url) {
@@ -206,15 +215,23 @@ body {
 
     .title {
       margin-top: 20px;
-      margin-bottom: 15px;
+      //margin-bottom: 15px;
       padding-left: 10px;
 
-      ::v-deep .el-button {
-        border: 1px solid #e9e9e9;
-        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-        background-color: #FFFFFF;
-        color: #000000;
+      ::v-deep .el-alert__content {
+        width: 100%;
+        .el-alert__description {
+          width: 100%;
+           .el-button {
+            border: 1px solid #e9e9e9;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+            background-color: #FFFFFF;
+            color: #000000;
+            float: right;
+          }
+        }
       }
+
     }
 
     ::v-deep .el-table tbody tr:hover > td {

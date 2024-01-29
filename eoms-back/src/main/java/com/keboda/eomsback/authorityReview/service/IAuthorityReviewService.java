@@ -20,4 +20,6 @@ public interface IAuthorityReviewService {
     Map<String,List<AuthorityRecordsVo>> contrastRecords(SearchVo searchVo);
 
     void currentPermissionExcel(HttpServletResponse response) throws IOException;
+
+    void contrastPermissionExcel(HttpServletResponse response,String year);
 }

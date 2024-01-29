@@ -2,8 +2,8 @@
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline">
       <el-form-item style="float:right;">
-        <el-button type="success" round icon="el-icon-download" @click="currentPermissionExcel" :loading="downloadLoading">
-          现行权限档案
+        <el-button type="success" round icon="el-icon-download" @click="contrastPermissionExcel" :loading="downloadLoading">
+          权限对比档案
         </el-button>
         <el-button type="primary" @click="search()" icon="el-icon-search" round :loading="tableLoading">查询</el-button>
       </el-form-item>
@@ -30,14 +30,25 @@
     <el-table :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading" :cell-class-name="delLine">
       <el-table-column type="index" label="序号"></el-table-column>
-      <el-table-column prop="positionname" label="职位"></el-table-column>
-      <el-table-column prop="permissioncode" label="作业代码"></el-table-column>
-      <el-table-column prop="permissionname" label="作业名称"></el-table-column>
-      <el-table-column prop="containAmount" label="是否有金额"></el-table-column>
+      <el-table-column prop="permissionCode" label="作业代码"  width="90"></el-table-column>
+      <el-table-column prop="permissionName" label="作业名称"  width="120"></el-table-column>
+      <el-table-column prop="isAmount" label="金额" width="90"></el-table-column>
+      <el-table-column prop="isCreate" label="新增" width="90"></el-table-column>
+      <el-table-column prop="isDelete" label="删除" width="90"></el-table-column>
+      <el-table-column prop="isUpdate" label="修改" width="90"></el-table-column>
+      <el-table-column prop="isRead" label="查询" width="90"></el-table-column>
+      <el-table-column prop="isConfirm" label="审核" width="90"></el-table-column>
+      <el-table-column prop="isUnConfirm" label="撤销审核" width="90"></el-table-column>
+      <el-table-column prop="isVoid" label="作废" width="90"></el-table-column>
+      <el-table-column prop="isUnVoid" label="撤销作废" width="90"></el-table-column>
+      <el-table-column prop="isPost" label="过账" width="90"></el-table-column>
+      <el-table-column prop="isUnPost" label="撤销过账" width="90"></el-table-column>
+      <el-table-column prop="isPrint" label="打印" width="90"></el-table-column>
+      <el-table-column prop="isExport" label="数据导出" width="90"></el-table-column>
     </el-table>
     <el-pagination background layout="total, prev, pager, next" :total="titleMap.length"
                    style=" margin-top: 10px;"
-                   @current-change="handleCurrentChange" page-size="1"
+                   @current-change="handleCurrentChange" :page-size="1"
                    :current-page.sync="index" >
     </el-pagination>
   </div>
@@ -78,6 +89,30 @@ export default {
 
       }).finally(() => this.tableLoading = false);
     },
+    contrastPermissionExcel(){
+      if(!this.searchVo.year) {this.$message.warning('目标年份不能为空');return}
+      this.downloadLoading = true;
+      this.$http.get('/api/authorityReview/contrastPermissionExcel?year='+ this.searchVo.year, {responseType: 'blob',timeout: 1200000}).then(res => {
+
+        let blob = new Blob([res.data], {type: "application/vnd.ms-excel",});
+        let fileName = this.searchVo.year+"年权限对比档案.xlsx";
+        if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+          window.navigator.msSaveOrOpenBlob(blob, fileName);
+        } else {
+          let objectUrl = (window.URL || window.webkitURL).createObjectURL(
+              blob
+          );
+          let downFile = document.createElement("a");
+          downFile.style.display = "none";
+          downFile.href = objectUrl;
+          downFile.download = fileName;
+          document.body.appendChild(downFile);
+          downFile.click();
+          document.body.removeChild(downFile);
+          window.URL.revokeObjectURL(objectUrl);
+        }
+      }).finally(() => this.downloadLoading = false )
+    },
     currentPermissionExcel() {
       this.downloadLoading = true;
       this.$http.get('/api/authorityReview/currentPermissionExcel', {responseType: 'blob'}).then(res => {
@@ -110,6 +145,7 @@ export default {
     delLine({row, column, rowIndex, columnIndex}) {
       if (row.color === 'red') return "del_line";
       if (row.color === 'green') return "add_line";
+      if(row.color === 'yellow') return  "update_line";
     },
     handleCurrentChange(val) {
       this.title = Object.keys(this.documentMap)[this.index - 1]
@@ -135,5 +171,8 @@ export default {
 
 .add_line {
   background: #bdf4a2 !important
+}
+.update_line {
+  background: #E6A23C !important
 }
 </style>

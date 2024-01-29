@@ -14,11 +14,11 @@ public class Position  implements Serializable {
 
     private Integer year;
 
-    private String positioncode;
+    private String positionCode;
     /**
      * 职位名
      */
-    private String positionname;
+    private String positionName;
 
     private static final long serialVersionUID = 1L;
 }

@@ -7443,6 +7443,11 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.npmmirror.com/obuf/-/obuf-1.1.2.tgz"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
+odf@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmmirror.com/odf/-/odf-2.3.2.tgz#eb65eb95a91dc4f3dcedf4527571ca1454cc8b49"
+  integrity sha512-o6wml0tx31n9nQ3Dj1zaz5+CaMiNIZJ9UxX+p36LYFNBcXfVNLv2NCjStdC6XJtwgUqTsevs6ZKLmkM8ZTz6oQ==
+
 on-finished@2.4.1:
   version "2.4.1"
   resolved "https://registry.npmmirror.com/on-finished/-/on-finished-2.4.1.tgz"

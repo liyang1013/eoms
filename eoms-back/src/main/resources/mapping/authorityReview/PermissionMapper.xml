@@ -2,22 +2,50 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.authorityReview.mapper.PermissionMapper">
   <insert id="insertSelective">
-    insert into permission (uuid,permissioncode,permissionname) values(#{uuid},#{permissioncode},#{permissionname})
+    insert into permission
+        (uuid,permissionCode,permissionName,containAmount,containCreate,containDelete,
+         containUpdate,containRead,containConfirm,containUnConfirm,containVoid,containUnVoid,
+         containPost,containUnPost,containPrint,containExport)
+    values(#{uuid},#{permissionCode},#{permissionName}, #{containAmount}, #{containCreate}, #{containDelete},
+            #{containUpdate}, #{containRead}, #{containConfirm}, #{containUnConfirm}, #{containVoid}, #{containUnVoid},
+            #{containPost}, #{containUnPost}, #{containPrint}, #{containExport})
   </insert>
+  <update id="updateSelective">
+    update permission
+    set permissionName = #{permissionName},containAmount = #{containAmount},containCreate = #{containCreate},
+        containDelete = #{containDelete},containUpdate = #{containUpdate},containRead = #{containRead},
+        containConfirm = #{containConfirm},containUnConfirm = #{containUnConfirm},containVoid = #{containVoid},
+        containUnVoid = #{containUnVoid},containPost = #{containPost},containUnPost =#{containUnPost},
+        containPrint =#{containPrint},containExport = #{containExport}
+    where uuid = #{uuid} and permissionCode  = #{permissionCode}
+  </update>
   <delete id="deleteRecords">
     delete from permission
-    where uuid = #{uuid} and permissioncode = #{permissioncode}
+    where uuid = #{uuid} and permissioncode = #{permissionCode}
   </delete>
 
   <select id="selectByKey" resultType="com.keboda.eomsback.authorityReview.pojo.Permission">
     select *
     from permission
-    where uuid = #{uuid} and permissioncode  = #{permissioncode}
+    where uuid = #{uuid} and permissioncode  = #{permissionCode}
   </select>
   <select id="searchRecordsList" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
-    select po.positioncode,po.positionname, permissioncode,permissionname
+    select po.positionCode,po.positionName, permissionCode,permissionName,
+           IF(containAmount = 1, 'Y', 'N') isAmount,
+           IF(containCreate = 1, 'Y', 'N') isCreate,
+           IF(containDelete = 1, 'Y', 'N') isDelete,
+           IF(containUpdate = 1, 'Y', 'N') isUpdate,
+           IF(containRead = 1, 'Y', 'N') isRead,
+           IF(containConfirm = 1, 'Y', 'N') isConfirm,
+           IF(containUnConfirm = 1, 'Y', 'N') isUnConfirm,
+           IF(containVoid = 1, 'Y', 'N') isVoid,
+           IF(containUnVoid = 1, 'Y', 'N') isUnVoid,
+           IF(containPost = 1, 'Y', 'N') isPost,
+           IF(containUnPost = 1, 'Y', 'N') isUnPost,
+           IF(containPrint = 1, 'Y', 'N') isPrint,
+           IF(containExport = 1, 'Y', 'N') isExport
     from permission pe
     left join position po on po.uuid = pe.uuid
-    where po.positioncode = #{code} and po.year = #{year}
+    where po.positionCode = #{code} and po.year = #{year}
   </select>
 </mapper>

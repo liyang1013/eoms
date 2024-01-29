@@ -4,6 +4,37 @@
 
 
     <insert id="saveVatInvoice">
-        insert into vat_invoice (uuid,invoiceType,invoiceCode,invoiceNo,amount,invoiceDate,checkCode) values (#{uuid})
+        insert into vat_invoice (fileName,invoiceType,invoiceCode,invoiceNo,amount,invoiceDate,checkCode)
+        values (#{fileName},#{invoiceType},#{invoiceCode},#{invoiceNo},#{amount},#{invoiceDate},#{checkCode})
     </insert>
+    <update id="updateByPrimarykey">
+        update vat_invoice
+        set fileName = #{fileName},invoiceType = #{invoiceType},
+           amount = #{amount},invoiceDate = #{invoiceDate},checkCode = #{checkCode}
+        where invoiceCode = #{invoiceCode} and invoiceNo = #{invoiceNo}
+    </update>
+    <select id="selectByPrimarykey" resultType="com.keboda.eomsback.invoice.pojo.VatInvoice">
+        select *
+        from vat_invoice
+        where invoiceCode = #{invoiceCode} and invoiceNo = #{invoiceNo}
+    </select>
+    <select id="searchVatInvoiceListPageHelper" resultType="com.keboda.eomsback.invoice.pojo.VatInvoice">
+        select fileName, invoiceCode, invoiceNo, amount, invoiceDate, name as invoiceType
+        from vat_invoice
+        left join invoicetype on invoiceType = type
+        <where>
+            <if test="code != null and code != '' ">
+                and invoiceCode like '%${code}%'
+            </if>
+            <if test="no != null and no != '' ">
+                and invoiceNo like '%${no}%'
+            </if>
+            <if test="startdate != null ">
+                and invoiceDate  >= #{startdate}
+            </if>
+            <if test="enddate != null ">
+                and invoiceDate &lt;=  #{enddate}
+            </if>
+        </where>
+    </select>
 </mapper>

@@ -12,8 +12,8 @@ async function createWindow() {
     webPreferences: {
     }
   })
-    // await win.loadURL('http://localhost/invoice')
-  await  win.loadFile('index.html')
+    await win.loadURL('http://localhost/invoice')
+  // await  win.loadFile('index.html')
 }
 
 app.on('window-all-closed', () => {

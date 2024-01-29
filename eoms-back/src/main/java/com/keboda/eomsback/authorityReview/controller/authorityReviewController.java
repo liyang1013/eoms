@@ -6,9 +6,11 @@ import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
 import com.keboda.eomsback.authorityReview.service.IAuthorityReviewService;
 import com.keboda.eomsback.entity.BaseResult;
 import com.keboda.eomsback.entity.SearchVo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -51,5 +53,11 @@ public class authorityReviewController {
     @RequestMapping("/currentPermissionExcel")
     public void currentPermissionExcel(HttpServletResponse response) throws IOException {
         iAuthorityReviewService.currentPermissionExcel(response);
+    }
+
+
+    @RequestMapping("/contrastPermissionExcel")
+    public void contrastPermissionExcel(@RequestParam("year") String year, HttpServletResponse response) {
+        iAuthorityReviewService.contrastPermissionExcel(response,year);
     }
 }

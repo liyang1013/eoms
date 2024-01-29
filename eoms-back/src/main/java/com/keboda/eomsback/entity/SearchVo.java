@@ -3,6 +3,7 @@ package com.keboda.eomsback.entity;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 查询通用Vo，带分页
@@ -11,6 +12,8 @@ import java.util.Date;
 public class SearchVo {
 
     private String code;
+
+    private String no;
 
     private String[] codes;
 

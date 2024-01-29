@@ -9,6 +9,7 @@ export const menu = [
         path: 'identify',
         name: '发票识别',
         component: null,
+        icon: 'el-icon-picture',
         children: [
             {
                 path: 'vat-identify',
@@ -22,6 +23,7 @@ export const menu = [
         path: 'records',
         name: '发票管理',
         component: null,
+        icon: 'el-icon-tickets',
         children: [
             {
                 path: 'vat-records',

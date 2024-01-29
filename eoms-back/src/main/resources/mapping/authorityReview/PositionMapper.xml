@@ -8,10 +8,10 @@
       <if test="year != null">
         year,
       </if>
-      <if test="positioncode != null">
+      <if test="positionCode != null">
         positionCode,
       </if>
-      <if test="positionname != null">
+      <if test="positionName != null">
         positionName,
       </if>
     </trim>
@@ -19,42 +19,58 @@
       <if test="year != null">
         #{year},
       </if>
-      <if test="positioncode != null">
-        #{positioncode,jdbcType=VARCHAR},
+      <if test="positionCode != null">
+        #{positionCode,jdbcType=VARCHAR},
       </if>
-      <if test="positionname != null">
-        #{positionname,jdbcType=VARCHAR},
+      <if test="positionName != null">
+        #{positionName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.keboda.eomsback.authorityReview.pojo.Position">
     update position
     <set>
-      <if test="positionname != null">
-        positionName = #{positionname,jdbcType=VARCHAR},
+      <if test="positionName != null">
+        positionName = #{positionName,jdbcType=VARCHAR},
       </if>
     </set>
     where year = #{year,jdbcType=INTEGER}
-      and positionCode = #{positioncode,jdbcType=VARCHAR}
+      and positionCode = #{positionCode,jdbcType=VARCHAR}
   </update>
   <select id="searchRecordsListPageHelper" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
-    select po.uuid, po.year, po.positionCode, po.positionName,pe.permissionCode
-    from position po
-    left join permission  pe on po.uuid = pe.uuid
-    <where>
-      pe.permissionCode is not null
-      <if test="year != null and year != '' ">
-        and po.year = #{year}
-      </if>
-      <if test="code != null and code != '' ">
-        and ( lower(po.positionCode) like lower('%${code}%')  or  lower(po.positionName) like lower('%${code}%')  )
-      </if>
-    </where>
+      select po.uuid, po.year, po.positionCode, po.positionName,pe.permissionCode,pe.permissionName,
+      IF(containAmount = 1, 'Y', 'N') isAmount,
+      IF(containCreate = 1, 'Y', 'N') isCreate,
+      IF(containDelete = 1, 'Y', 'N') isDelete,
+      IF(containUpdate = 1, 'Y', 'N') isUpdate,
+      IF(containRead = 1, 'Y', 'N') isRead,
+      IF(containConfirm = 1, 'Y', 'N') isConfirm,
+      IF(containUnConfirm = 1, 'Y', 'N') isUnConfirm,
+      IF(containVoid = 1, 'Y', 'N') isVoid,
+      IF(containUnVoid = 1, 'Y', 'N') isUnVoid,
+      IF(containPost = 1, 'Y', 'N') isPost,
+      IF(containUnPost = 1, 'Y', 'N') isUnPost,
+      IF(containPrint = 1, 'Y', 'N') isPrint,
+      IF(containExport = 1, 'Y', 'N') isExport
+      from position po
+      left join permission pe on po.uuid = pe.uuid
+      <where>
+          pe.permissionCode is not null
+          <if test="year != null and year != '' ">
+              and po.year = #{year}
+          </if>
+          <if test="code != null and code != '' ">
+              and ( lower(po.positionCode) like lower('%${code}%') or lower(po.positionName) like lower('%${code}%') )
+          </if>
+          <if test="gaz != null and gaz != '' ">
+              and ( lower(pe.permissionCode) like lower('%${gaz}%') or lower(pe.permissionName) like lower('%${gaz}%') )
+          </if>
+      </where>
   </select>
   <select id="selectByYearWithCode" resultType="java.lang.Integer" >
     select uuid
     from  position
-    where year = #{year} and positioncode = #{positioncode}
+    where year = #{year} and positionCode = #{positionCode}
   </select>
 
 </mapper>

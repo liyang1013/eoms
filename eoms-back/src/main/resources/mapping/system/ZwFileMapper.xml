@@ -5,6 +5,10 @@
     <select id="searchZwList" resultType="com.keboda.eomsback.system.pojo.ZwFile">
         select zw01,zw02
         from zw_file
-        where lower(zw01) like lower('%${query}%') or  lower(zw02) like lower('%${query}%')
+        <where>
+            <if test="query != null and query != '' ">
+                lower(zw01) like lower('%${query}%') or  lower(zw02) like lower('%${query}%')
+            </if>
+        </where>
     </select>
 </mapper>

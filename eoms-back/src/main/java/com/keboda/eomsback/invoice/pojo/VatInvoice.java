@@ -9,9 +9,7 @@ import java.util.Date;
 @Data
 public class VatInvoice {
 
-    private String uuid;
-
-    private String suffix;
+    private String fileName;
 
     //发票类型
     private String invoiceType;

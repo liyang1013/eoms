@@ -74,4 +74,4 @@ timer:
 #发票上传文件路径
 filepath:
   invoiceTemp: D:/Project/invoice/temp/
-  invoiceVat: D:/Project/invoice/vat/
+  vatInvoice: D:/Project/invoice/vat/

@@ -9,20 +9,44 @@ public class AuthorityRecordsVo {
 
     private Integer year;
 
-    private String positioncode;
+    private String positionCode;
     /**
      * 职位名
      */
-    private String positionname;
+    private String positionName;
 
-    private String permissioncode;
+    private String permissionCode;
 
     /**
      * 权限名
      */
-    private String permissionname;
+    private String permissionName;
 
-    private String containAmount;
+    private String isAmount;
+
+    private String isCreate;
+
+    private String isDelete;
+
+    private String isUpdate;
+
+    private String isRead;
+
+    private String isConfirm;
+
+    private String isUnConfirm;
+
+    private String isVoid;
+
+    private String isUnVoid;
+
+    private String isPost;
+
+    private String isUnPost;
+
+    private String isPrint;
+
+    private String isExport;
 
     private String color;
 

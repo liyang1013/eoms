@@ -40,4 +40,9 @@ public class PermissionServiceImpl implements IPermissionService {
     public List<AuthorityRecordsVo> searchRecordsList(Integer year,String code) {
         return permissionMapper.searchRecordsList(year,code);
     }
+
+    @Override
+    public void updateSelective(Permission permission) {
+        permissionMapper.updateSelective(permission);
+    }
 }

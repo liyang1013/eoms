@@ -5,7 +5,7 @@
         <el-button type="success" round icon="el-icon-download">
           <el-link :underline="false" style="color: white" href="/static/历年职位权限导入模板.xlsx">模板</el-link>
         </el-button>
-        <el-button type="danger" icon="el-icon-delete" round @click="deleteRecords">删除</el-button>
+        <el-button type="danger" icon="el-icon-delete" round @click="deleteRecords" :loading="deleteLoading">删除</el-button>
         <el-button type="primary" @click="search()" icon="el-icon-search" round :loading="tableLoading">查询</el-button>
       </el-form-item>
 
@@ -31,7 +31,7 @@
             accept=".xlsx,.xls"
             action="/api/authorityReview/importRecords"
             multiple>
-          <el-button type="success" round icon="el-icon-upload2" :loading="uploadLoading">上传</el-button>
+          <el-button type="success" round icon="el-icon-upload2" :loading="uploadLoading">导入</el-button>
         </el-upload>
       </el-form-item>
     </el-form>
@@ -39,13 +39,25 @@
     </el-alert>
     <el-table @selection-change="handleSelectionChange" :data="documentList" border style="width: 100%" max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading" >
-      <el-table-column type="selection" width="60"></el-table-column>
-      <el-table-column type="index" label="序号"></el-table-column>
-      <el-table-column prop="year" label="年度"></el-table-column>
-      <el-table-column prop="positionname" label="职位"></el-table-column>
-      <el-table-column prop="permissioncode" label="作业代码"></el-table-column>
-      <el-table-column prop="permissionname" label="作业名称"></el-table-column>
-      <el-table-column prop="containAmount" label="是否有金额"></el-table-column>
+      <el-table-column type="selection" width="50"></el-table-column>
+      <el-table-column type="index" label="序号" width="60"></el-table-column>
+      <el-table-column prop="year" label="年度" width="80"></el-table-column>
+      <el-table-column prop="positionName" label="职位" width="120"></el-table-column>
+      <el-table-column prop="permissionCode" label="作业代码" width="90"></el-table-column>
+      <el-table-column prop="permissionName" label="作业名称" width="120"></el-table-column>
+      <el-table-column prop="isAmount" label="金额" width="90"></el-table-column>
+      <el-table-column prop="isCreate" label="新增" width="90"></el-table-column>
+      <el-table-column prop="isDelete" label="删除" width="90"></el-table-column>
+      <el-table-column prop="isUpdate" label="修改" width="90"></el-table-column>
+      <el-table-column prop="isRead" label="查询" width="90"></el-table-column>
+      <el-table-column prop="isConfirm" label="审核" width="90"></el-table-column>
+      <el-table-column prop="isUnConfirm" label="撤销审核" width="90"></el-table-column>
+      <el-table-column prop="isVoid" label="作废" width="90"></el-table-column>
+      <el-table-column prop="isUnVoid" label="撤销作废" width="90"></el-table-column>
+      <el-table-column prop="isPost" label="过账" width="90"></el-table-column>
+      <el-table-column prop="isUnPost" label="撤销过账" width="90"></el-table-column>
+      <el-table-column prop="isPrint" label="打印" width="90"></el-table-column>
+      <el-table-column prop="isExport" label="数据导出" width="90"></el-table-column>
     </el-table>
     <el-pagination background layout="total, sizes, prev, pager, next" :total="searchVo.total"
                    style=" margin-top: 10px;"
@@ -55,6 +67,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "records",
   data() {
@@ -70,7 +83,8 @@ export default {
       documentList: [],
       selectedList: [],
       tableLoading: false,
-      uploadLoading: false
+      uploadLoading: false,
+      deleteLoading: false
     }
   },
   methods: {
@@ -89,9 +103,10 @@ export default {
         confirmButtonText: '确定',
         cancelButtonText: '取消'
       }).then(() => {
+        this.deleteLoading = true;
         this.$http.post('/api/authorityReview/deleteRecords', this.selectedList).then(res => {
           this.search(1);
-        });
+        }).finally(() => this.deleteLoading = false);
       }).catch(action => {
         this.$message({type: 'info', message: '取消'})
       });

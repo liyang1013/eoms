@@ -21,4 +21,6 @@ public interface PermissionMapper {
     void deleteRecords(AuthorityRecordsVo vo);
 
     List<AuthorityRecordsVo> searchRecordsList(@Param("year") Integer year, @Param("code") String code);
+
+    void updateSelective(Permission permission);
 }

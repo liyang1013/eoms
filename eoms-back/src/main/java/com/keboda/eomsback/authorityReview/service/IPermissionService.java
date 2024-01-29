@@ -14,4 +14,6 @@ public interface IPermissionService {
     void deleteRecords(List<AuthorityRecordsVo> authorityRecordsVoList);
 
     List<AuthorityRecordsVo> searchRecordsList(Integer year,String code);
+
+    void updateSelective(Permission permission);
 }
