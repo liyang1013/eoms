@@ -32,11 +32,6 @@ public class ZxwServiceImpl implements IZxwService {
     private IActionMenuService iActionMenuService;
 
     @Override
-    public Page<ZxwFile> searchZxwListPageHelper(SearchVo searchVo) {
-        return zxwFileMapper.searchZxwListPageHelper(searchVo);
-    }
-
-    @Override
     public String selectPositionCodeByName(String positionName) {
         return zxwFileMapper.selectPositionCodeByName(positionName);
     }

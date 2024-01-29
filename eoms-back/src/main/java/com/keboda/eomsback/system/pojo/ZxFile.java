@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.keboda.eomsback.entity.CommonField;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,7 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * @author 
  */
 @Data
-public class ZxFile implements Serializable {
+public class ZxFile extends CommonField implements Serializable {
     private String zx01;
 
     private String zx02;
@@ -69,6 +70,10 @@ public class ZxFile implements Serializable {
     private String zxorig;
 
     private String token;
+
+    private String zxy03;
+
+    private String azp02;
 
     private static final long serialVersionUID = 1L;
 }

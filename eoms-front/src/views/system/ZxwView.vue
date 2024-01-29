@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       searchVo: {
-        centre: 'WCTZ',
+        centre: null,
         code: null,
         currentPage: 1,
         sizes: [20, 50, 100, 500],

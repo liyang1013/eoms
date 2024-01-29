@@ -18,10 +18,5 @@ public class ZxwController {
     @Autowired
     private IZxwService iZxwService;
 
-    @RequestMapping("/searchZxwListPageHelper")
-    public BaseResult searchZxwListPageHelper(@RequestBody SearchVo searchVo){
-        PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<ZxwFile> page = iZxwService.searchZxwListPageHelper(searchVo);
-        return BaseResult.success(page,page.getTotal());
-    }
+
 }

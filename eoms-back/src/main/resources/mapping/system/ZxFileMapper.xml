@@ -2,11 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.keboda.eomsback.system.mapper.ZxFileMapper">
 
-  <select id="searchZxListPageHelper" resultType="com.keboda.eomsback.system.pojo.ZxFile">
-      select zx01,zx02, zx03,zw02 as zx04,zx08,zx09,zx10,zx16,zx18
-      from DS.ZX_FILE
-      left join DS.ZW_FILE on zx04 = zw01
+  <select id="searchListPageHelper" resultType="com.keboda.eomsback.system.pojo.ZxFile">
+      select zx01,
+      zx02 ,
+      LISTAGG(zw01, ', ') WITHIN GROUP (ORDER BY zw01) zx04,
+      LISTAGG(zw02, ', ') WITHIN GROUP (ORDER BY zw02) zw02,
+      zxy03,
+      azp02,
+      zx03 gem01,
+      gem02,
+      zx08
+      from ZX_FILE
+      left join  ${centre}.GEM_FILE on gem01 = zx03
+      left join ZXW_FILE on zxw01 = zx01 and zxw03 = 1
+      left join ZW_FILE on zw01 = nvl(zxw04, zx04)
+      left join (select zxy01,
+      LISTAGG(zxy03, ', ') WITHIN GROUP (ORDER BY zxy01)            zxy03,
+      LISTAGG(nvl(azp02, zx08), ', ') WITHIN GROUP (ORDER BY zxy01) azp02
+      from ZXY_FILE
+      left join AZP_FILE on azp01 = zxy03
+      left join ZX_FILE on zx01 = zxy01
+      group by zxy01) on zxy01 = zx01
       <where>
+            and zxacti = 'Y' and zx18 is null
           <if test="centre != null and centre != '' ">
               and zx08 = #{centre}
           </if>
@@ -17,7 +35,6 @@
               and zxacti = #{acti}
           </if>
       </where>
-      group by zx01,zx02,zx03,zw02,zx08,zx09,zx10,zx16,zx18
-      order by zx01,zx02
+      group by zx01, zx02, zxy03,azp02,zx03,gem02,zx08
   </select>
 </mapper>

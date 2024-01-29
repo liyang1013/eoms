@@ -5,5 +5,5 @@ import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.system.pojo.ZxFile;
 
 public interface IZxService {
-    Page<ZxFile> searchZxListPageHelper(SearchVo searchVo);
+    Page<ZxFile> searchListPageHelper(SearchVo searchVo);
 }

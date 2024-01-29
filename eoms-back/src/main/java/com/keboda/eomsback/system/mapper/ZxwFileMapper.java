@@ -18,8 +18,6 @@ public interface ZxwFileMapper {
 
     int updateByPrimaryKeySelective(ZxwFile record);
 
-    Page<ZxwFile> searchZxwListPageHelper(SearchVo searchVo);
-
     String selectPositionCodeByName(String positionName);
 
     List<AuthorityRecordsVo> searchRecordsList(@Param("code") String code, @Param("amountTags") String[] amountTags,@Param("createTags") String[] createTags,

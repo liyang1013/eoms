@@ -170,16 +170,10 @@ export const menu = [
         component: null,
         children: [
             {
-                path: 'contacts',
+                path: 'zx',
                 name: '人员档案',
                 icon: 'el-icon-user-solid',
                 component: () => import('@/views/system/ZxView')
-            },
-            {
-                path: 'zxw',
-                name: '权限档案',
-                icon: 'el-icon-tickets',
-                component: () => import('@/views/system/ZxwView')
             },
             {
                 path: 'operation',

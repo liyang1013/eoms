@@ -10,7 +10,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface IZxwService {
-    Page<ZxwFile> searchZxwListPageHelper(SearchVo searchVo);
 
     String selectPositionCodeByName(String positionName);
 
