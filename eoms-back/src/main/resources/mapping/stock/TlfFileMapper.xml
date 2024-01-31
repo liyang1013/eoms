@@ -34,8 +34,8 @@
     <update id="alterByCode">
         update ${centre}.TLF_FILE
         <set>
-            <if test="ddate != null and ddate != ''">
-                tlf06 = #{ddate}, tlf07 = #{ddate},
+            <if test="ddate != null ">
+                tlf06 =#{ddate}, tlf07 = #{ddate},
             </if>
             <if test="tlf19 != null and tlf19 != ''">
                 tlf19 = #{tlf19},

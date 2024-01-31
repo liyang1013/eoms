@@ -4,12 +4,8 @@ import com.github.pagehelper.Page;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.stock.pojo.EWStockGap;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 public interface ITlfService {
     Page<EWStockGap> searchEWStockGapPageHelper(SearchVo searchVo);
