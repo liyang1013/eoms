@@ -19,4 +19,9 @@ public class ZwServiceImpl implements IZwService {
     public List<ZwFile> searchZwList(String query) {
         return zwFileMapper.searchZwList(query);
     }
+
+    @Override
+    public ZwFile selectByPrimaryKey(String zw01) {
+        return zwFileMapper.selectByPrimaryKey(zw01);
+    }
 }

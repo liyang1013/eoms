@@ -10,7 +10,7 @@
       </el-form-item>
 
       <el-form-item label="年度:">
-        <el-date-picker v-model="searchVo.year" type="year" value-format="yyyy" placeholder="选择年"></el-date-picker>
+        <el-date-picker v-model="searchVo.year" type="year" value-format="yyyy" placeholder="选择年" style="width: 120px"></el-date-picker>
       </el-form-item>
       <el-form-item label="职位:">
         <el-autocomplete style="width: 400px" clearable v-model="searchVo.code" :fetch-suggestions="searchZwList" placeholder="职位名称/代码" @select="handleSelect">
@@ -29,7 +29,7 @@
             :on-error="upload_err"
             :on-change="handleOnChange"
             accept=".xlsx,.xls"
-            action="/api/authorityReview/importRecords"
+            action="/api/authorityReview/importPositionRecords"
             multiple>
           <el-button type="success" round icon="el-icon-upload2" :loading="uploadLoading">导入</el-button>
         </el-upload>
@@ -69,7 +69,7 @@
 <script>
 
 export default {
-  name: "records",
+  name: "PositionRecords",
   data() {
     return {
       searchVo: {
@@ -91,7 +91,7 @@ export default {
     search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true
-      this.$http.post('/api/authorityReview/searchRecordsListPageHelper', this.searchVo).then(res => {
+      this.$http.post('/api/authorityReview/searchPositionRecordsListPageHelper', this.searchVo).then(res => {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total
       }).finally(() => this.tableLoading = false);
@@ -104,7 +104,7 @@ export default {
         cancelButtonText: '取消'
       }).then(() => {
         this.deleteLoading = true;
-        this.$http.post('/api/authorityReview/deleteRecords', this.selectedList).then(res => {
+        this.$http.post('/api/authorityReview/deletePositionRecords', this.selectedList).then(res => {
           this.search(1);
         }).finally(() => this.deleteLoading = false);
       }).catch(action => {

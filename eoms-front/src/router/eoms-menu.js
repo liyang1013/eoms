@@ -93,7 +93,7 @@ export const menu = [
             },
             {
                 path: 'sfu',
-                name: '完工入库单',
+                name: '入库单',
                 icon: 'el-icon-tickets',
                 component: () => import('@/views/produce/SfuView')
             },

@@ -22,14 +22,10 @@ public class SfpServiceImpl implements ISfpService {
     private SfpFileMapper sfpFileMapper;
     @Resource
     private SfsFileMapper sfsFileMapper;
-    @Resource
-    private SfeFileMapper sfeFileMapper;
-    @Resource
-    private ITlfService iTlfService;
 
     @Override
-    public Page<SfpFile> searchSfpListPageHelper(SearchVo searchVo) {
-        return sfpFileMapper.searchSfpListPageHelper(searchVo);
+    public Page<SfpFile> searchListPageHelper(SearchVo searchVo) {
+        return sfpFileMapper.searchListPageHelper(searchVo);
     }
 
     @Override

@@ -30,9 +30,9 @@ public class PermissionServiceImpl implements IPermissionService {
 
     @Override
     @Transactional
-    public void deleteRecords(List<AuthorityRecordsVo> authorityRecordsVoList) {
+    public void deletePositionRecords(List<AuthorityRecordsVo> authorityRecordsVoList) {
         for (AuthorityRecordsVo vo : authorityRecordsVoList) {
-            permissionMapper.deleteRecords(vo);
+            permissionMapper.deletePositionRecords(vo);
         }
     }
 

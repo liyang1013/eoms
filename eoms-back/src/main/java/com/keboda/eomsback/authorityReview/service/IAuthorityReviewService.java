@@ -2,6 +2,7 @@ package com.keboda.eomsback.authorityReview.service;
 
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
+import com.keboda.eomsback.authorityReview.pojo.PersonalPosition;
 import com.keboda.eomsback.entity.SearchVo;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,15 +12,25 @@ import java.util.List;
 import java.util.Map;
 
 public interface IAuthorityReviewService {
-    Page<AuthorityRecordsVo> searchRecordsListPageHelper(SearchVo searchVo);
+    Page<AuthorityRecordsVo> searchPositionRecordsListPageHelper(SearchVo searchVo);
 
-    String importRecords(MultipartFile file, String year) throws IOException;
+    String importPositionRecords(MultipartFile file, String year) throws IOException;
 
-    void deleteRecords(List<AuthorityRecordsVo> authorityRecordsVoList);
+    void deletePositionRecords(List<AuthorityRecordsVo> authorityRecordsVoList);
 
-    Map<String,List<AuthorityRecordsVo>> contrastRecords(SearchVo searchVo);
+    Map<String,List<AuthorityRecordsVo>> positionContrastRecords(SearchVo searchVo);
 
     void currentPermissionExcel(HttpServletResponse response) throws IOException;
 
-    void contrastPermissionExcel(HttpServletResponse response,String year);
+    void positionContrastRecords2Excel(HttpServletResponse response,String year);
+
+    Page<PersonalPosition> searchPersonalPositionRecordsListPageHelper(SearchVo searchVo);
+
+    String importPersonalPositionRecords(MultipartFile file, String year,Integer itype) throws IOException;
+
+    void deletePersonalPositionRecords(List<PersonalPosition> personalPositions);
+
+    Page<PersonalPosition> searchPersonalPositionContrastRecordsListPageHelper(SearchVo searchVo);
+
+    void PersonalPositionContrastRecords2Excel(HttpServletResponse response, String year,Integer itype);
 }

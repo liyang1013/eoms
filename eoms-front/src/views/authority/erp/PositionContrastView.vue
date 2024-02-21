@@ -2,13 +2,13 @@
   <div>
     <el-form :inline="true" :model="searchVo" class="demo-form-inline">
       <el-form-item style="float:right;">
-        <el-button type="success" round icon="el-icon-download" @click="contrastPermissionExcel" :loading="downloadLoading">
-          权限对比档案
+        <el-button type="success" round icon="el-icon-download" @click="download" :loading="downloadLoading">
+          权限对比记录
         </el-button>
         <el-button type="primary" @click="search()" icon="el-icon-search" round :loading="tableLoading">查询</el-button>
       </el-form-item>
       <el-form-item label="对比年度:">
-        <el-date-picker v-model="searchVo.year" type="year" value-format="yyyy" placeholder="选择年"></el-date-picker>
+        <el-date-picker v-model="searchVo.year" type="year" value-format="yyyy" placeholder="选择年" style="width: 120px" :clearable="false"></el-date-picker>
       </el-form-item>
       <el-form-item label="职位:">
         <el-select style="width: 400px" v-model="searchVo.codes" filterable remote reserve-keyword multiple collapse-tags
@@ -54,8 +54,10 @@
   </div>
 </template>
 <script>
+
+
 export default {
-  name: "contrast",
+  name: "PositionContrast",
   data() {
     return {
       searchVo: {
@@ -76,11 +78,11 @@ export default {
   methods: {
     search() {
       if (!(this.searchVo.year && this.searchVo.codes.length)) {
-        this.$message({type: 'info', message: '对比年年度和职位不能为空'})
+        this.$message({type: 'info', message: '对比年度和职位不能为空'})
         return
       }
       this.tableLoading = true
-      this.$http.post('/api/authorityReview/contrastRecords', this.searchVo).then(res => {
+      this.$http.post('/api/authorityReview/positionContrastRecords', this.searchVo).then(res => {
         this.index = 1;
         this.documentMap = res.data.result
         this.titleMap = Object.keys(this.documentMap);
@@ -89,13 +91,13 @@ export default {
 
       }).finally(() => this.tableLoading = false);
     },
-    contrastPermissionExcel(){
+    download(){
       if(!this.searchVo.year) {this.$message.warning('目标年份不能为空');return}
       this.downloadLoading = true;
-      this.$http.get('/api/authorityReview/contrastPermissionExcel?year='+ this.searchVo.year, {responseType: 'blob',timeout: 1200000}).then(res => {
+      this.$http.get('/api/authorityReview/positionContrastRecords2Excel?year='+ this.searchVo.year, {responseType: 'blob',timeout: 1200000}).then(res => {
 
         let blob = new Blob([res.data], {type: "application/vnd.ms-excel",});
-        let fileName = this.searchVo.year+"年权限对比档案.xlsx";
+        let fileName = this.searchVo.year+"年权限组对比记录"+new Date()+".xlsx";
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
           window.navigator.msSaveOrOpenBlob(blob, fileName);
         } else {
@@ -173,6 +175,6 @@ export default {
   background: #bdf4a2 !important
 }
 .update_line {
-  background: #E6A23C !important
+  background:  #ffff00 !important
 }
 </style>

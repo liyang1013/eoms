@@ -17,7 +17,7 @@
 import sidebarNav from '@/components/sidebar/sidebar-nav'
 import TopAside from '@/components/main-content/top-aside'
 import {mapState} from 'vuex'
-import {menu} from "@/router/authorityReview-menu";
+import {menu} from "@/router/authority-review-menu";
 import router from "@/router";
 
 export default {

@@ -17,8 +17,8 @@ public class GazServiceImpl implements IGazService {
     private GazFileMapper gazFileMapper;
 
     @Override
-    public GazFile selectByKey(String gaz01) {
-        return gazFileMapper.selectByKey(gaz01);
+    public GazFile selectByPrimaryKey(String gaz01) {
+        return gazFileMapper.selectByPrimaryKey(gaz01);
     }
 
     @Override

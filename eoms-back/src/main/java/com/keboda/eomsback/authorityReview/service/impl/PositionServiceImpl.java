@@ -19,8 +19,8 @@ public class PositionServiceImpl implements IPositionService {
     private PositionMapper positionMapper;
 
     @Override
-    public Page<AuthorityRecordsVo> searchRecordsListPageHelper(SearchVo searchVo) {
-        return positionMapper.searchRecordsListPageHelper(searchVo);
+    public Page<AuthorityRecordsVo> searchPositionRecordsListPageHelper(SearchVo searchVo) {
+        return positionMapper.searchPositionRecordsListPageHelper(searchVo);
     }
 
     @Override

@@ -6,7 +6,7 @@ import com.keboda.eomsback.system.pojo.GazFile;
 
 public interface IGazService {
 
-    GazFile selectByKey(String gaz01);
+    GazFile selectByPrimaryKey(String gaz01);
 
     Page<GazFile> searchGazListPageHelper(SearchVo searchVo);
 }

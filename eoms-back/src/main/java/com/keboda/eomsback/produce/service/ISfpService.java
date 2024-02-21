@@ -8,7 +8,7 @@ import com.keboda.eomsback.produce.pojo.SfsFile;
 import java.util.List;
 
 public interface ISfpService {
-    Page<SfpFile> searchSfpListPageHelper(SearchVo searchVo);
+    Page<SfpFile> searchListPageHelper(SearchVo searchVo);
 
     List<SfsFile> searchSfsList(SearchVo searchVo);
 

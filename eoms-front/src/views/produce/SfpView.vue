@@ -7,6 +7,9 @@
       <el-form-item label="中心:">
         <selectedCentre v-model="searchVo.centre" key="sfp"></selectedCentre>
       </el-form-item>
+      <el-form-item label="工单号:">
+        <el-input v-model="searchVo.sfb" placeholder="工单号" clearable></el-input>
+      </el-form-item>
       <el-form-item label="发料单号:">
         <el-input v-model="searchVo.code" placeholder="发料单号" clearable></el-input>
       </el-form-item>
@@ -147,7 +150,7 @@ export default {
     search(val = 1) {
       this.searchVo.currentPage = val;
       this.tableLoading = true;
-      this.$http.post('/api/sfp/searchSfpListPageHelper', this.searchVo).then(res => {
+      this.$http.post('/api/sfp/searchListPageHelper', this.searchVo).then(res => {
         this.documentList = res.data.result
         this.searchVo.total = res.data.total;
       }).finally(() => this.tableLoading = false);

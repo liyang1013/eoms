@@ -11,7 +11,7 @@ public interface IPermissionService {
 
     void insertSelective(Permission permission);
 
-    void deleteRecords(List<AuthorityRecordsVo> authorityRecordsVoList);
+    void deletePositionRecords(List<AuthorityRecordsVo> authorityRecordsVoList);
 
     List<AuthorityRecordsVo> searchRecordsList(Integer year,String code);
 

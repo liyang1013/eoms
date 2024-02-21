@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
 public interface GazFileMapper {
     int updateByPrimaryKeySelective(GazFile record);
 
-    GazFile selectByKey(@Param("gaz01") String gaz01);
+    GazFile selectByPrimaryKey(@Param("gaz01") String gaz01);
 
     Page<GazFile> searchGazListPageHelper(SearchVo searchVo);
 }

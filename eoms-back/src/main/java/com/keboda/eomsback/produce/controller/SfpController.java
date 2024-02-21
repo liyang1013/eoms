@@ -21,10 +21,10 @@ public class SfpController {
     @Autowired
     private ISfpService iSfpService;
 
-    @RequestMapping("/searchSfpListPageHelper")
-    public BaseResult searchSfpListPageHelper(@RequestBody SearchVo searchVo){
+    @RequestMapping("/searchListPageHelper")
+    public BaseResult searchListPageHelper(@RequestBody SearchVo searchVo){
         PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
-        Page<SfpFile> page = iSfpService.searchSfpListPageHelper(searchVo);
+        Page<SfpFile> page = iSfpService.searchListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
 

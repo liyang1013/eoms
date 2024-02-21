@@ -4,29 +4,29 @@ import cn.hutool.core.io.IoUtil;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
-import cn.hutool.poi.excel.StyleSet;
 import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 import com.github.pagehelper.Page;
 import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
 import com.keboda.eomsback.authorityReview.pojo.Permission;
+import com.keboda.eomsback.authorityReview.pojo.PersonalPosition;
 import com.keboda.eomsback.authorityReview.pojo.Position;
 import com.keboda.eomsback.authorityReview.service.IAuthorityReviewService;
 import com.keboda.eomsback.authorityReview.service.IPermissionService;
+import com.keboda.eomsback.authorityReview.service.IPersonalPositionService;
 import com.keboda.eomsback.authorityReview.service.IPositionService;
 import com.keboda.eomsback.entity.SearchVo;
 import com.keboda.eomsback.system.pojo.GazFile;
 import com.keboda.eomsback.system.pojo.ZwFile;
+import com.keboda.eomsback.system.pojo.ZxFile;
 import com.keboda.eomsback.system.service.IGazService;
 import com.keboda.eomsback.system.service.IZwService;
+import com.keboda.eomsback.system.service.IZxService;
 import com.keboda.eomsback.system.service.IZxwService;
-import com.keboda.eomsback.system.service.IZyService;
 import com.keboda.eomsback.utils.ImportExcelUtil;
 import com.keboda.eomsback.utils.StringUtils;
-import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -34,11 +34,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CountDownLatch;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -54,15 +50,19 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
     private IGazService iGazService;
     @Resource
     private IZwService iZwService;
+    @Resource
+    private IZxService iZxService;
+    @Resource
+    private IPersonalPositionService iPersonalPositionService;
 
     @Override
-    public Page<AuthorityRecordsVo> searchRecordsListPageHelper(SearchVo searchVo) {
-        return iPositionService.searchRecordsListPageHelper(searchVo);
+    public Page<AuthorityRecordsVo> searchPositionRecordsListPageHelper(SearchVo searchVo) {
+        return iPositionService.searchPositionRecordsListPageHelper(searchVo);
     }
 
     @Override
     @DSTransactional
-    public String importRecords(MultipartFile file, String year) throws IOException {
+    public String importPositionRecords(MultipartFile file, String year) throws IOException {
 
         if (year == null || year.isEmpty() || year.equals("null")) throw new RuntimeException("导入目标年份不可为空");
         StringBuilder sb = new StringBuilder();
@@ -101,7 +101,7 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
 
                     if (permission.getPermissionCode() != null && !permission.getPermissionCode().isEmpty()) {
 
-                        GazFile gazFile = iGazService.selectByKey(permission.getPermissionCode());
+                        GazFile gazFile = iGazService.selectByPrimaryKey(permission.getPermissionCode());
                         if (gazFile != null) {
 
                             permission.setPermissionName(gazFile.getGaz03());
@@ -139,12 +139,12 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
     }
 
     @Override
-    public void deleteRecords(List<AuthorityRecordsVo> authorityRecordsVoList) {
-        iPermissionService.deleteRecords(authorityRecordsVoList);
+    public void deletePositionRecords(List<AuthorityRecordsVo> authorityRecordsVoList) {
+        iPermissionService.deletePositionRecords(authorityRecordsVoList);
     }
 
     @Override
-    public Map<String, List<AuthorityRecordsVo>> contrastRecords(SearchVo searchVo) {
+    public Map<String, List<AuthorityRecordsVo>> positionContrastRecords(SearchVo searchVo) {
 
         Map<String, List<AuthorityRecordsVo>> map = new HashMap<>();
 
@@ -271,7 +271,7 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
     }
 
     @Override
-    public void contrastPermissionExcel(HttpServletResponse response, String year) {
+    public void positionContrastRecords2Excel(HttpServletResponse response, String year) {
 
         if (year == null || year.isEmpty() || year.equals("null")) throw new RuntimeException("目标年份不可为空");
 
@@ -283,7 +283,7 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
         List<Thread> threadSet = new ArrayList<>();
 
         for (ZwFile zwFile : zw) {
-            Thread thread = new Thread(() ->{
+            Thread thread = new Thread(() -> {
                 list.addAll(iZxwService.searchRecordsList(zwFile.getZw01()));
             });
             thread.start();
@@ -298,8 +298,7 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
             }
         }
 
-
-        Map<String, List<AuthorityRecordsVo>> map = list.stream().collect(Collectors.groupingBy(AuthorityRecordsVo::getPositionName));
+        Map<String, List<AuthorityRecordsVo>> map = list.stream().filter(Objects::nonNull).collect(Collectors.groupingBy(AuthorityRecordsVo::getPositionName));
         ExcelWriter writer = ExcelUtil.getWriter(true);
 
 
@@ -388,6 +387,9 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
             writer.addHeaderAlias("isPrint", "打印");
             writer.addHeaderAlias("isExport", "数据导出");
 
+            writer.getSheet().setColumnWidth(0, 5000);
+            writer.getSheet().setColumnWidth(1, 10000);
+
             writer.setOnlyAlias(true);
             writer.write(current, true);
 
@@ -403,22 +405,19 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
                 }
                 if (e.getColor().equals("green")) {
 
-                        CellStyle cellStyle = writer.createCellStyle(0, current.indexOf(e) + 1);
-                        cellStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-                        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+                    CellStyle cellStyle = writer.createCellStyle(0, current.indexOf(e) + 1);
+                    cellStyle.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+                    cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
                 }
                 if (e.getColor().equals("yellow")) {
 
-                        CellStyle cellStyle = writer.createCellStyle(0, current.indexOf(e) + 1);
-
-                        cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-                        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+                    CellStyle cellStyle = writer.createCellStyle(0, current.indexOf(e) + 1);
+                    cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+                    cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
                 }
-
             });
-
             i++;
         }
 
@@ -438,5 +437,146 @@ public class AuthorityReviewServiceImpl implements IAuthorityReviewService {
 
     }
 
+    @Override
+    public Page<PersonalPosition> searchPersonalPositionRecordsListPageHelper(SearchVo searchVo) {
+        return iPersonalPositionService.searchPersonalPositionRecordsListPageHelper(searchVo);
+    }
+
+    @Override
+    @DSTransactional
+    public String importPersonalPositionRecords(MultipartFile file, String year,Integer itype) throws IOException {
+
+        if (year == null || year.isEmpty() || year.equals("null")) throw new RuntimeException("导入目标年份不可为空");
+        if(itype == null) throw new RuntimeException("导入类型不能为空");
+
+        ExcelReader reader = ExcelUtil.getReader(file.getInputStream());
+        List<Map<String, Object>> sheetData = reader.readAll();
+
+        for (Map<String, Object> map : sheetData) {
+
+            String zx01 = (String) map.get("工号");
+            String zw01 = (String) map.get("组权限");
+
+            PersonalPosition personalPosition = iPersonalPositionService.selectByPrimaryKey(year, zx01, zw01);
+
+            if (personalPosition == null) {
+                ZxFile zxFile = iZxService.selectByPrimaryKey(zx01);
+
+                ZwFile zwFile = iZwService.selectByPrimaryKey(zw01);
+                GazFile gazFile = iGazService.selectByPrimaryKey(zw01);
+
+
+                if (zxFile != null && ((itype == 1 && zwFile != null ) || (itype == 2 && gazFile != null ))) {
+
+                    personalPosition = new PersonalPosition();
+                    personalPosition.setYear(Integer.valueOf(year));
+                    personalPosition.setItype(itype);
+                    personalPosition.setCode(zxFile.getZx01());
+                    personalPosition.setName(zxFile.getZx02());
+                    if(itype == 1) {
+                        personalPosition.setPermissionCode(zwFile.getZw01());
+                        personalPosition.setPermissionName(zwFile.getZw02());
+                    } else  {
+                        personalPosition.setPermissionCode(gazFile.getGaz01());
+                        personalPosition.setPermissionName(gazFile.getGaz03());
+                    }
+                    iPersonalPositionService.insertSelective(personalPosition);
+                }
+            }
+        }
+        return "导入完成";
+    }
+
+    @Override
+    @DSTransactional
+    public void deletePersonalPositionRecords(List<PersonalPosition> personalPositions) {
+        for (PersonalPosition personalPosition : personalPositions) {
+            iPersonalPositionService.deletePersonalPositionRecords(personalPosition);
+        }
+
+    }
+
+    @Override
+    public Page<PersonalPosition> searchPersonalPositionContrastRecordsListPageHelper(SearchVo searchVo) {
+        Page<PersonalPosition> page = iZxService.searchPersonalPositionContrastRecordsListPageHelper(searchVo);
+        for (PersonalPosition personalPosition : page.getResult()) {
+
+            PersonalPosition position = iPersonalPositionService.PersonalPositionContrastRecords(searchVo.getYear(), searchVo.getItype(), personalPosition.getCode());
+            if (position != null) {
+                personalPosition.setPermissionCode(position.getPermissionCode());
+                personalPosition.setPermissionName(position.getPermissionName());
+            }
+        }
+        return page;
+    }
+
+    @Override
+    public void PersonalPositionContrastRecords2Excel(HttpServletResponse response, String year,Integer itype) {
+
+        if (year == null || year.isEmpty() || year.equals("null")) throw new RuntimeException("目标年份不可为空");
+
+        Integer iyear = Integer.valueOf(year);
+        List<PersonalPosition> list = iZxService.personalPositionContrastRecords(itype);
+
+        ExcelWriter writer = ExcelUtil.getWriter(true);
+
+
+        for (PersonalPosition personalPosition : list) {
+            PersonalPosition position = iPersonalPositionService.PersonalPositionContrastRecords(iyear, itype, personalPosition.getCode());
+            if (position != null) {
+                personalPosition.setPermissionCode(position.getPermissionCode());
+                personalPosition.setPermissionName(position.getPermissionName());
+            }
+        }
+
+        writer.addHeaderAlias("code", "工号");
+        writer.addHeaderAlias("name", "姓名");
+        if(itype == 1) {
+            writer.addHeaderAlias("zx04", "当前职位代码");
+            writer.addHeaderAlias("zw02", "当前职位");
+            writer.addHeaderAlias("permissionCode", "历史职位代码");
+            writer.addHeaderAlias("permissionName", "历史职位");
+        }else if(itype == 2){
+            writer.addHeaderAlias("zx04", "当前作业代码");
+            writer.addHeaderAlias("zw02", "当前作业");
+            writer.addHeaderAlias("permissionCode", "历史作业代码");
+            writer.addHeaderAlias("permissionName", "历史作业");
+        }
+
+        writer.getSheet().setColumnWidth(0, 5000);
+        writer.getSheet().setColumnWidth(1, 5000);
+        writer.getSheet().setColumnWidth(2, 10000);
+        writer.getSheet().setColumnWidth(3, 20000);
+        writer.getSheet().setColumnWidth(4, 10000);
+        writer.getSheet().setColumnWidth(5, 20000);
+
+        writer.setOnlyAlias(true);
+        writer.write(list, true);
+
+
+        for (PersonalPosition personalPosition : list) {
+
+            if(personalPosition.getZx04() == null) personalPosition.setZx04("");
+            if(personalPosition.getPermissionCode() == null) personalPosition.setPermissionCode("");
+
+            if (! personalPosition.getPermissionCode().equals((personalPosition.getZx04()))) {
+
+                CellStyle cellStyle = writer.createCellStyle(0, list.indexOf(personalPosition) + 1);
+                cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+                cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+            }
+        }
+
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8");
+        response.setHeader("Content-Disposition", "attachment;filename=现行权限档案.xlsx");
+
+        ServletOutputStream out = null;
+        try {out = response.getOutputStream();
+        } catch (IOException e) {throw new RuntimeException(e);}
+
+        writer.flush(out, true);
+        writer.close();
+        IoUtil.close(out);
+    }
 
 }

@@ -11,4 +11,9 @@
             </if>
         </where>
     </select>
+    <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.system.pojo.ZwFile">
+        select *
+        from zw_file
+        where zw01 = #{zw01}
+    </select>
 </mapper>

@@ -37,7 +37,7 @@
       and GAZ02 = #{gaz02,jdbcType=VARCHAR}
       and GAZ05 = #{gaz05,jdbcType=VARCHAR}
   </update>
-  <select id="selectByKey" resultType="com.keboda.eomsback.system.pojo.GazFile">
+  <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.system.pojo.GazFile">
     select *
     from GAZ_FILE
     where gaz01 = #{gaz01} and gaz02 = 2

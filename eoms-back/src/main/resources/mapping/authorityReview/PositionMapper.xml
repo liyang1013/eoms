@@ -37,7 +37,7 @@
     where year = #{year,jdbcType=INTEGER}
       and positionCode = #{positionCode,jdbcType=VARCHAR}
   </update>
-  <select id="searchRecordsListPageHelper" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
+  <select id="searchPositionRecordsListPageHelper" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
       select po.uuid, po.year, po.positionCode, po.positionName,pe.permissionCode,pe.permissionName,
       IF(containAmount = 1, 'Y', 'N') isAmount,
       IF(containCreate = 1, 'Y', 'N') isCreate,

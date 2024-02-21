@@ -19,7 +19,7 @@
         containPrint =#{containPrint},containExport = #{containExport}
     where uuid = #{uuid} and permissionCode  = #{permissionCode}
   </update>
-  <delete id="deleteRecords">
+  <delete id="deletePositionRecords">
     delete from permission
     where uuid = #{uuid} and permissioncode = #{permissionCode}
   </delete>

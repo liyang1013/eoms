@@ -12,7 +12,7 @@
         <el-input v-model="searchVo.code" placeholder="采购单号" clearable></el-input>
       </el-form-item>
     </el-form>
-    <el-alert title="一般采购: apmt540; MRO采购: cpmt540; 委外采购: cpmt590; 采购变更: apmt910; MRO采购变更: cpmt910;采购结案: apmp551; 采购结案还原: apmp552;" type="success" :closable="false">
+    <el-alert title="一般采购: apmt540; MRO采购: cpmt540; 委外采购: apmt590; 采购变更: apmt910; MRO采购变更: cpmt910;采购结案: apmp551; 采购结案还原: apmp552;" type="success" :closable="false">
     </el-alert>
     <el-table :data="documentList" border max-height="450px" v-loading="tableLoading"
               element-loading-spinner="el-icon-loading"

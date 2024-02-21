@@ -6,7 +6,7 @@ import com.keboda.eomsback.authorityReview.pojo.Position;
 import com.keboda.eomsback.entity.SearchVo;
 
 public interface IPositionService {
-    Page<AuthorityRecordsVo> searchRecordsListPageHelper(SearchVo searchVo);
+    Page<AuthorityRecordsVo> searchPositionRecordsListPageHelper(SearchVo searchVo);
 
     Integer selectByYearWithCode(Position position);
 

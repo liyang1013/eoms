@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keboda.eomsback.authorityReview.mapper.PersonalPositionMapper">
+
+  <insert id="insertSelective" parameterType="com.keboda.eomsback.authorityReview.pojo.PersonalPosition">
+    insert into personalposition
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        code,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="itype != null">
+        itype,
+      </if>
+      <if test="permissionCode != null">
+        permissionCode,
+      </if>
+      <if test="permissionName != null">
+        permissionName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="itype != null">
+        #{itype,jdbcType=BIT},
+      </if>
+      <if test="permissionCode != null">
+        #{permissionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionName != null">
+        #{permissionName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <delete id="deleteByPrimaryKey">
+    delete from  personalposition
+    where uuid = #{uuid}
+  </delete>
+  <select id="searchPersonalPositionRecordsListPageHelper" resultType="com.keboda.eomsback.authorityReview.pojo.PersonalPosition">
+    select *
+    from personalposition
+    <where>
+        <if test="itype != null">
+          and itype = #{itype}
+        </if>
+      <if test="year != null and year != '' ">
+        and year = #{year}
+      </if>
+      <if test="code != null and code != '' ">
+        and ( lower(permissioncode) like lower('%${code}%') or lower(permissionname) like lower('%${code}%') )
+      </if>
+      <if test="zx != null and zx != '' ">
+        and ( lower(code) like lower('%${zx}%') or lower(name) like lower('%${zx}%') )
+      </if>
+    </where>
+    order by code,permissioncode
+  </select>
+  <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.authorityReview.pojo.PersonalPosition">
+    select *
+    from personalposition
+    where year = #{year} and code = #{code} and permissioncode = #{permissionCode}
+  </select>
+  <select id="PersonalPositionContrastRecords" resultType="com.keboda.eomsback.authorityReview.pojo.PersonalPosition">
+    select code,
+           name,
+           GROUP_CONCAT(permissionCode) permissionCode,
+           GROUP_CONCAT(permissionName) permissionName
+    from personalposition
+    where itype = #{itype} and code = #{code} and year = #{year}
+    group by code, name
+  </select>
+
+</mapper>

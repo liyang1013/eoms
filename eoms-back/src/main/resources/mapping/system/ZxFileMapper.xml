@@ -37,4 +37,70 @@
       </where>
       group by zx01, zx02, zxy03,azp02,zx03,gem02,zx08
   </select>
+    <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.system.pojo.ZxFile">
+        select *
+        from zx_file
+        where zx01 = #{zx01}
+    </select>
+    <select id="searchPersonalPositionContrastRecordsListPageHelper" resultType="com.keboda.eomsback.authorityReview.pojo.PersonalPosition">
+        select * from (
+        select zx01                                             code,
+        zx02                                             name,
+        LISTAGG(zw01, ', ') WITHIN GROUP (ORDER BY zw01) zx04,
+        LISTAGG(zw02, ', ') WITHIN GROUP (ORDER BY zw02) zw02,
+        zxw03
+        from ZX_FILE
+        left join ZXW_FILE on zxw01 = zx01
+        left join ZW_FILE on zw01 = nvl(zxw04, zx04)
+        where zxw03 = 1
+        group by zx01, zx02,zxw03
+
+        union all
+
+        select zx01                                               code,
+        zx02                                               name,
+        LISTAGG(gaz01, ', ') WITHIN GROUP (ORDER BY gaz01) zx04,
+        LISTAGG(gaz03, ', ') WITHIN GROUP (ORDER BY gaz03) zw02,
+        zxw03
+        from ZX_FILE
+        left join ZXW_FILE on zxw01 = zx01
+        left join GAZ_FILE on gaz01 = nvl(zxw04, zx04) and gaz02 = 2
+        where zxw03 = 2
+        group by zx01, zx02,zxw03 )
+        <where>
+          and zxw03 = #{itype}
+            <if test="zx != null and zx != '' ">
+                and  (lower(code) like lower('%${zx}%') or lower(name) like lower('%${zx}%') )
+            </if>
+        </where>
+
+    </select>
+    <select id="personalPositionContrastRecords"
+            resultType="com.keboda.eomsback.authorityReview.pojo.PersonalPosition">
+select * from (
+        select zx01                                             code,
+               zx02                                             name,
+               LISTAGG(zw01, ', ') WITHIN GROUP (ORDER BY zw01) zx04,
+               LISTAGG(zw02, ', ') WITHIN GROUP (ORDER BY zw02) zw02,
+               zxw03
+        from ZX_FILE
+                 left join ZXW_FILE on zxw01 = zx01
+                 left join ZW_FILE on zw01 = nvl(zxw04, zx04)
+        where zxw03 = 1
+        group by zx01, zx02,zxw03
+
+        union all
+
+        select zx01                                               code,
+               zx02                                               name,
+               LISTAGG(gaz01, ', ') WITHIN GROUP (ORDER BY gaz01) zx04,
+               LISTAGG(gaz03, ', ') WITHIN GROUP (ORDER BY gaz03) zw02,
+               zxw03
+        from ZX_FILE
+                 left join ZXW_FILE on zxw01 = zx01
+                 left join GAZ_FILE on gaz01 = nvl(zxw04, zx04) and gaz02 = 2
+        where zxw03 = 2
+        group by zx01, zx02,zxw03 )
+    where zxw03 = #{itype}
+    </select>
 </mapper>

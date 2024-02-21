@@ -13,6 +13,8 @@ public class SearchVo {
 
     private String code;
 
+    private String sfb;
+
     private String no;
 
     private String[] codes;
@@ -72,4 +74,6 @@ public class SearchVo {
     private Integer size = 20;
 
     private Integer total;
+
+    private Integer itype;
 }

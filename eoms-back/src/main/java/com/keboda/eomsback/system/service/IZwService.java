@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IZwService {
     List<ZwFile> searchZwList(String query);
+
+    ZwFile selectByPrimaryKey(String zw01);
 }
