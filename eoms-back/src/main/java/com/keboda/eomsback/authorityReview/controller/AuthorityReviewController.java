@@ -27,7 +27,6 @@ public class AuthorityReviewController {
 
     @RequestMapping("/searchPositionRecordsListPageHelper")
     private BaseResult searchPositionRecordsListPageHelper(@RequestBody SearchVo searchVo){
-        PageHelper.startPage(searchVo.getCurrentPage(),searchVo.getSize());
         Page<AuthorityRecordsVo> page = iAuthorityReviewService.searchPositionRecordsListPageHelper(searchVo);
         return BaseResult.success(page,page.getTotal());
     }
@@ -50,9 +49,9 @@ public class AuthorityReviewController {
         return BaseResult.success(iAuthorityReviewService.positionContrastRecords(searchVo));
     }
 
-    @RequestMapping("/currentPermissionExcel")
-    public void currentPermissionExcel(HttpServletResponse response) throws IOException {
-        iAuthorityReviewService.currentPermissionExcel(response);
+    @RequestMapping("/currentPermission2Excel")
+    public void currentPermission2Excel(HttpServletResponse response) throws IOException {
+        iAuthorityReviewService.currentPermission2Excel(response);
     }
 
 

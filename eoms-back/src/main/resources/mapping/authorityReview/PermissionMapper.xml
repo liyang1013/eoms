@@ -24,7 +24,7 @@
     where uuid = #{uuid} and permissioncode = #{permissionCode}
   </delete>
 
-  <select id="selectByKey" resultType="com.keboda.eomsback.authorityReview.pojo.Permission">
+  <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.authorityReview.pojo.Permission">
     select *
     from permission
     where uuid = #{uuid} and permissioncode  = #{permissionCode}
@@ -46,6 +46,14 @@
            IF(containExport = 1, 'Y', 'N') isExport
     from permission pe
     left join position po on po.uuid = pe.uuid
-    where po.positionCode = #{code} and po.year = #{year}
+    <where>
+        po.positionCode = #{code} and po.year = #{year}
+        <if test="exclude != null and exclude.length > 0">
+            and permissionCode not in
+            <foreach item="item" index="index" collection="exclude" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </where>
   </select>
 </mapper>

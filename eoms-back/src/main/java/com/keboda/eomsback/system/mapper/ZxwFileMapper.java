@@ -18,11 +18,9 @@ public interface ZxwFileMapper {
 
     int updateByPrimaryKeySelective(ZxwFile record);
 
-    String selectPositionCodeByName(String positionName);
-
     List<AuthorityRecordsVo> searchRecordsList(@Param("code") String code, @Param("amountTags") String[] amountTags,@Param("createTags") String[] createTags,
             @Param("deleteTags") String[] deleteTags,@Param("updateTags") String[] updateTags,@Param("readTags") String[] readTags,@Param("confirmTags") String[] confirmTags,
             @Param("unConfirmTags") String[] unConfirmTags,@Param("voidTags") String[] voidTags,@Param("unVoidTags") String[] unVoidTags,@Param("postTags") String[] postTags,
-            @Param("unPostTags") String[] unPostTags,@Param("printTags") String[] printTags,@Param("exportTags") String[] exportTags);
+            @Param("unPostTags") String[] unPostTags,@Param("printTags") String[] printTags,@Param("exportTags") String[] exportTags,@Param("exclude")String[] exclude);
 
 }

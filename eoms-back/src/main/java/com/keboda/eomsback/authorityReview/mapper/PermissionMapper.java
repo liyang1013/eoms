@@ -9,13 +9,13 @@ import java.util.List;
 
 public interface PermissionMapper {
 
-    Permission selectByKey(Permission permission);
+    Permission selectByPrimaryKey(Permission permission);
 
     void insertSelective(Permission permission);
 
     void deletePositionRecords(AuthorityRecordsVo vo);
 
-    List<AuthorityRecordsVo> searchRecordsList(@Param("year") Integer year, @Param("code") String code);
+    List<AuthorityRecordsVo> searchRecordsList(@Param("year") Integer year, @Param("code") String code,@Param("exclude") String[] exclude);
 
     void updateSelective(Permission permission);
 }

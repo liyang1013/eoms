@@ -1,6 +1,7 @@
 package com.keboda.eomsback.authorityReview.service.impl;
 
 import com.baomidou.dynamic.datasource.annotation.DS;
+import com.keboda.eomsback.authorityReview.mapper.ActionMenuMapper;
 import com.keboda.eomsback.authorityReview.mapper.PermissionMapper;
 import com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo;
 import com.keboda.eomsback.authorityReview.pojo.Permission;
@@ -17,10 +18,12 @@ public class PermissionServiceImpl implements IPermissionService {
 
     @Resource
     private PermissionMapper permissionMapper;
+    @Resource
+    private ActionMenuMapper actionMenuMapper;
 
     @Override
-    public Permission selectByKey(Permission permission) {
-        return permissionMapper.selectByKey(permission);
+    public Permission selectByPrimaryKey(Permission permission) {
+        return permissionMapper.selectByPrimaryKey(permission);
     }
 
     @Override
@@ -38,11 +41,14 @@ public class PermissionServiceImpl implements IPermissionService {
 
     @Override
     public List<AuthorityRecordsVo> searchRecordsList(Integer year,String code) {
-        return permissionMapper.searchRecordsList(year,code);
+        String[] exclude = actionMenuMapper.selectByPrimaryKey("exclude").getAction().split(",");
+        return permissionMapper.searchRecordsList(year,code,exclude);
     }
 
     @Override
-    public void updateSelective(Permission permission) {
-        permissionMapper.updateSelective(permission);
+    public void merge(Permission permission) {
+        Permission isExit = permissionMapper.selectByPrimaryKey(permission);
+        if (isExit == null) permissionMapper.insertSelective(permission);
+        else permissionMapper.updateSelective(permission);
     }
 }

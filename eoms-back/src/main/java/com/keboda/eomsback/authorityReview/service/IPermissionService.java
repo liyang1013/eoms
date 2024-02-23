@@ -7,7 +7,7 @@ import com.keboda.eomsback.entity.SearchVo;
 import java.util.List;
 
 public interface IPermissionService {
-    Permission selectByKey(Permission permission);
+    Permission selectByPrimaryKey(Permission permission);
 
     void insertSelective(Permission permission);
 
@@ -15,5 +15,5 @@ public interface IPermissionService {
 
     List<AuthorityRecordsVo> searchRecordsList(Integer year,String code);
 
-    void updateSelective(Permission permission);
+    void merge(Permission permission);
 }

@@ -6,9 +6,8 @@ import com.keboda.eomsback.authorityReview.pojo.Position;
 import com.keboda.eomsback.entity.SearchVo;
 
 public interface IPositionService {
-    Page<AuthorityRecordsVo> searchPositionRecordsListPageHelper(SearchVo searchVo);
+    Page<AuthorityRecordsVo> searchPositionRecordsListPageHelper(SearchVo searchVo,String[] exclude);
 
-    Integer selectByYearWithCode(Position position);
 
-    Integer insertSelective(Position position);
+    Integer merge(String positionCode, String positionName, String year);
 }

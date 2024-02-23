@@ -77,20 +77,17 @@
       and ZXW02 = #{zxw02,jdbcType=DECIMAL}
   </update>
 
-    <select id="selectPositionCodeByName" resultType="java.lang.String">
-        select zw01
-        from zw_file
-        where zw02 = #{positionName}
-    </select>
+
     <select id="searchRecordsList" resultType="com.keboda.eomsback.authorityReview.pojo.AuthorityRecordsVo">
-        select zw01                                                                   positionCode,
-        zw02                                                                   positionName,
-        zy02                                                                   permissionCode,
-        gaz03                                                                  permissionName,
+        select zw01 positionCode,
+        zw02 positionName,
+        zy02 permissionCode,
+        gaz03 permissionName,
         <choose>
             <when test="createTags != null and createTags.length > 0">
-                <foreach item="item" index="index" collection="createTags" open="case when " separator="or" close="then 'Y' else 'N' end  isCreate,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="createTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isCreate,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -100,8 +97,9 @@
 
         <choose>
             <when test="deleteTags != null and deleteTags.length > 0">
-                <foreach item="item" index="index" collection="deleteTags" open="case when " separator="or" close="then 'Y' else 'N' end isDelete,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="deleteTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end isDelete,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -111,8 +109,9 @@
 
         <choose>
             <when test="updateTags != null and updateTags.length > 0">
-                <foreach item="item" index="index" collection="updateTags" open="case when " separator="or" close="then 'Y' else 'N' end  isUpdate ,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="updateTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isUpdate ,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -122,8 +121,9 @@
 
         <choose>
             <when test="readTags != null and readTags.length > 0">
-                <foreach item="item" index="index" collection="readTags" open="case when " separator="or" close="then 'Y' else 'N' end  isRead,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="readTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isRead,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -133,8 +133,9 @@
 
         <choose>
             <when test="confirmTags != null and confirmTags.length > 0">
-                <foreach item="item" index="index" collection="confirmTags" open="case when " separator="or" close="then 'Y' else 'N' end isConfirm,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="confirmTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end isConfirm,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -144,8 +145,9 @@
 
         <choose>
             <when test="unConfirmTags != null and unConfirmTags.length > 0">
-                <foreach item="item" index="index" collection="unConfirmTags" open="case when " separator="or" close="then 'Y' else 'N' end  isUnConfirm,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="unConfirmTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isUnConfirm,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -155,8 +157,9 @@
 
         <choose>
             <when test="voidTags != null and voidTags.length > 0">
-                <foreach item="item" index="index" collection="voidTags" open="case when " separator="or" close="then 'Y' else 'N' end  isVoid,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="voidTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isVoid,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -166,8 +169,9 @@
 
         <choose>
             <when test="unVoidTags != null and unVoidTags.length > 0">
-                <foreach item="item" index="index" collection="unVoidTags" open="case when " separator="or" close="then 'Y' else 'N' end isUnVoid,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="unVoidTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end isUnVoid,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -177,8 +181,9 @@
 
         <choose>
             <when test="postTags != null and postTags.length > 0">
-                <foreach item="item" index="index" collection="postTags" open="case when " separator="or" close="then 'Y' else 'N' end  isPost,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="postTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isPost,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -188,8 +193,9 @@
 
         <choose>
             <when test="unPostTags != null and unPostTags.length > 0">
-                <foreach item="item" index="index" collection="unPostTags" open="case when " separator="or" close="then 'Y' else 'N' end  isUnPost,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="unPostTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isUnPost,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -199,8 +205,9 @@
 
         <choose>
             <when test="printTags != null and printTags.length > 0">
-                <foreach item="item" index="index" collection="printTags" open="case when " separator="or" close="then 'Y' else 'N' end  isPrint,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="printTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isPrint,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -210,8 +217,9 @@
 
         <choose>
             <when test="exportTags != null and exportTags.length > 0">
-                <foreach item="item" index="index" collection="exportTags" open="case when " separator="or" close="then 'Y' else 'N' end  isExport,">
-                    REGEXP_LIKE(zy03, '(^|,)(${item})(,|$)')
+                <foreach item="item" index="index" collection="exportTags" open="case when " separator="or"
+                         close="then 'Y' else 'N' end  isExport,">
+                    REGEXP_LIKE(zy03, '(^|, )(${item})(, |$)|, (${item}),')
                 </foreach>
             </when>
             <otherwise>
@@ -219,7 +227,7 @@
             </otherwise>
         </choose>
 
-        case when col is null then 'N' else 'Y' end                                isAmount
+        case when col is null then 'N' else 'Y' end isAmount
 
         from ZW_FILE
         left join zy_file ON ZY01 = ZW01
@@ -234,17 +242,23 @@
             lang = '2'
             <if test="amountTags != null and amountTags.length > 0">
                 <foreach item="item" index="index" collection="amountTags" open="and (" separator="or " close=")">
-                    colname like  '%${item}%'
+                    colname like '%${item}%'
                 </foreach>
             </if>
         </where>
         group by col) on col = zy02
         <where>
+            <if test="exclude != null and exclude.length > 0">
+                and zy02 not in
+                <foreach item="item" index="index" collection="exclude" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
             <if test="code != null and code != '' ">
                 and zw01 =#{code}
             </if>
         </where>
-
+        order by zw01, zy02
     </select>
 
 

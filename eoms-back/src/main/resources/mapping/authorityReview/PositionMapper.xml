@@ -56,19 +56,25 @@
       left join permission pe on po.uuid = pe.uuid
       <where>
           pe.permissionCode is not null
-          <if test="year != null and year != '' ">
-              and po.year = #{year}
+          <if test="exclude != null and exclude.length > 0">
+              and permissionCode not in
+              <foreach item="item" index="index" collection="exclude" open="(" separator="," close=")">
+                  #{item}
+              </foreach>
           </if>
-          <if test="code != null and code != '' ">
-              and ( lower(po.positionCode) like lower('%${code}%') or lower(po.positionName) like lower('%${code}%') )
+          <if test="searchVo.year != null and searchVo.year != '' ">
+              and po.year = #{searchVo.year}
           </if>
-          <if test="gaz != null and gaz != '' ">
-              and ( lower(pe.permissionCode) like lower('%${gaz}%') or lower(pe.permissionName) like lower('%${gaz}%') )
+          <if test="searchVo.code != null and searchVo.code != '' ">
+              and ( lower(po.positionCode) like lower('%${searchVo.code}%') or lower(po.positionName) like lower('%${searchVo.code}%') )
+          </if>
+          <if test="searchVo.gaz != null and searchVo.gaz != '' ">
+              and ( lower(pe.permissionCode) like lower('%${searchVo.gaz}%') or lower(pe.permissionName) like lower('%${searchVo.gaz}%') )
           </if>
       </where>
   </select>
-  <select id="selectByYearWithCode" resultType="java.lang.Integer" >
-    select uuid
+  <select id="selectByPrimaryKey" resultType="com.keboda.eomsback.authorityReview.pojo.Position" >
+    select *
     from  position
     where year = #{year} and positionCode = #{positionCode}
   </select>

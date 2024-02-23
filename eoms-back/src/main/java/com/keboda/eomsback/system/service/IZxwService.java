@@ -11,7 +11,5 @@ import java.util.List;
 
 public interface IZxwService {
 
-    String selectPositionCodeByName(String positionName);
-
     List<AuthorityRecordsVo> searchRecordsList(String code);
 }

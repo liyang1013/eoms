@@ -5,6 +5,9 @@
         <el-button type="success" round icon="el-icon-download" @click="download" :loading="downloadLoading">
           权限对比记录
         </el-button>
+        <el-button type="success" round icon="el-icon-download" @click="currentPermission2Excel" :loading="downloadLoading1">
+          现行权限
+        </el-button>
         <el-button type="primary" @click="search()" icon="el-icon-search" round :loading="tableLoading">查询</el-button>
       </el-form-item>
       <el-form-item label="对比年度:">
@@ -70,6 +73,7 @@ export default {
       selectedList: [],
       zwList: [],
       tableLoading: false,
+      downloadLoading1: false,
       titleMap: [],
       title: '',
       index: 1
@@ -115,12 +119,12 @@ export default {
         }
       }).finally(() => this.downloadLoading = false )
     },
-    currentPermissionExcel() {
-      this.downloadLoading = true;
-      this.$http.get('/api/authorityReview/currentPermissionExcel', {responseType: 'blob'}).then(res => {
+    currentPermission2Excel() {
+      this.downloadLoading1 = true;
+      this.$http.get('/api/authorityReview/currentPermission2Excel', {responseType: 'blob',timeout: 1200000}).then(res => {
 
         let blob = new Blob([res.data], {type: "application/vnd.ms-excel",});
-        let fileName = "现行权限档案.xlsx";
+        let fileName = "现行权限档案"+new Date()+".xlsx";
         if (window.navigator && window.navigator.msSaveOrOpenBlob) {
           window.navigator.msSaveOrOpenBlob(blob, fileName);
         } else {
@@ -136,7 +140,7 @@ export default {
           document.body.removeChild(downFile);
           window.URL.revokeObjectURL(objectUrl);
         }
-      }).finally(() => this.downloadLoading = false )
+      }).finally(() => this.downloadLoading1 = false )
     },
     searchZwList(str) {
       if (!str) return;

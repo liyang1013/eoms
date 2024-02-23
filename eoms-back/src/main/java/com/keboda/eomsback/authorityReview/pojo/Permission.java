@@ -14,6 +14,12 @@ public class Permission implements Serializable {
      */
     private Integer uuid;
 
+    private String positionCode;
+    /**
+     * 职位名
+     */
+    private String positionName;
+
     /**
      * 权限编码
      */

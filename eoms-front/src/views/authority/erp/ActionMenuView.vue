@@ -75,6 +75,7 @@ export default {
 
 .el-tag + .el-tag {
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 .button-new-tag {

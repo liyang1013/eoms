@@ -31,14 +31,11 @@ public class ZxwServiceImpl implements IZxwService {
     @Resource
     private IActionMenuService iActionMenuService;
 
-    @Override
-    public String selectPositionCodeByName(String positionName) {
-        return zxwFileMapper.selectPositionCodeByName(positionName);
-    }
 
     @Override
     public List<AuthorityRecordsVo> searchRecordsList(String code) {
 
+        String[] exclude = iActionMenuService.selectByPrimaryKey("exclude").getAction().split(",");
         String[] amountTags = iActionMenuService.selectByPrimaryKey("amount").getAction().split(",");
         String[] createTags = iActionMenuService.selectByPrimaryKey("create").getAction().split(",");
         String[] deleteTags = iActionMenuService.selectByPrimaryKey("delete").getAction().split(",");
@@ -53,7 +50,7 @@ public class ZxwServiceImpl implements IZxwService {
         String[] printTags = iActionMenuService.selectByPrimaryKey("print").getAction().split(",");
         String[] exportTags = iActionMenuService.selectByPrimaryKey("export").getAction().split(",");
 
-        return zxwFileMapper.searchRecordsList(code,amountTags,createTags,deleteTags,updateTags,readTags,confirmTags,unConfirmTags,postTags,unPostTags,voidTags,unVoidTags,printTags,exportTags);
+        return zxwFileMapper.searchRecordsList(code,amountTags,createTags,deleteTags,updateTags,readTags,confirmTags,unConfirmTags,postTags,unPostTags,voidTags,unVoidTags,printTags,exportTags,exclude);
     }
 
 }
